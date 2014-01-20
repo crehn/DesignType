@@ -1,0 +1,97 @@
+/* structure */
+
+body {
+    background-color: #F5F5FF;
+}
+
+div.page {
+    margin: 0 auto;
+    padding: 1em;
+    background-color: white;
+	width:69em;
+	box-shadow: 0 0 0.5em #999999;
+}
+
+article.question {
+    padding: 0.5em;
+    border-top: 1px solid black;
+    clear: both;
+}
+
+section.submit {
+    border-top: 1px solid black;
+    padding: 0.5em;
+    clear: both;
+}
+
+
+/* headings */
+
+h1 {
+    text-align: center;
+}
+div.tagline {
+    text-align: center;
+}
+
+h2 {
+    padding: 0.5em;
+    background-color: #F5F5FF;
+    box-shadow: 0 0 0.5em #999999 inset;
+}
+
+/* question table */
+
+.question tr:nth-child(odd) td:nth-child(1) {
+	text-align: left;
+	font-weight: bold;
+}
+
+.question .left {
+	width: 10em;
+}
+.question tr:nth-child(even) td:nth-child(1) {
+	text-align: right;
+}
+
+.question col.radio {
+	width: 9em;
+}
+
+.question col.right {
+	width: 10em;
+}
+
+/* details */
+
+.question .details {
+    float: right;
+    width: 38em;
+}
+
+/* misc */
+
+.question pre {
+	padding: 0em 0.5em;
+	border: 1em solid lightgray;
+	background-color: lightyellow;
+}
+
+.todo:before {
+	content: "ToDo: ";
+	color: red;
+}
+.todo {
+	font-style: italic;
+}
+
+/* result table */
+
+table.result, table.result td {
+    border: 1px solid black;
+}
+
+table.dimension col {
+    width: 50%;
+}
+

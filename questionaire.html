@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+    <title>How Do You Design Software?</title>
+</head>
+<body>
+<div class="page">
+    <header>
+        <h1>How Do You Design Software?</h1>
+        <div class="tagline">Find out by answering this questionaire</div>
+    </header>    
+    <section>
+        <p>
+            <span class="todo">add some introductory text here</span>
+        </p>
+    </section>
+
+    <h2>Simple vs. Powerful</h2>
+    <article class="question">
+        <a id="SvP_q1"></a>
+        <h1>Q1: What is more important: simplicity or generality?</h1>
+        <div class="details">
+            Simple solutions are easier to write and understand whereas SvPhisticated solutions can be much more 
+            powerful and generic. Which kinds of solutions do you prefer?
+        </div>
+        <table>
+            <colgroup>
+                <col class="left">
+                <col class="radio">
+                <col class="right">
+            </colgroup>
+            <tr>
+                <td colspan="3">
+                    I favor ...
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    simplicity
+                </td>
+                <td>
+                    <input type="radio" name="SvP_q1_tendency" value="ll">
+                    <input type="radio" name="SvP_q1_tendency" value="l">
+                    <input type="radio" name="SvP_q1_tendency" value="0" checked>
+                    <input type="radio" name="SvP_q1_tendency" value="r">
+                    <input type="radio" name="SvP_q1_tendency" value="rr">
+                </td>
+                <td>
+                    generality
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    This is ...
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    a differenciated opinion
+                </td>
+                <td>
+                    <input type="radio" name="SvP_q1_certainty" value="ll">
+                    <input type="radio" name="SvP_q1_certainty" value="l">
+                    <input type="radio" name="SvP_q1_certainty" value="0">
+                    <input type="radio" name="SvP_q1_certainty" value="r">
+                    <input type="radio" name="SvP_q1_certainty" value="rr" checked>
+                <td>
+                    just a tendency
+                </td>
+            </tr>
+        </table>
+    </article>
+    
+    
+    <h2>Abstract vs. Concrete</h2>
+    <article class="question">
+        <a id="AvC_q1"></a>
+        <h1>Q1: When you program, do you think in abstractions or code?</h1>
+        <div class="details">
+            Some people think directly in code. When they design software they have methods, classes and 
+            statements in mind. Others rather think in abstractions and models which can be expressed using code
+            but which are not the code itself. What's your way of thinking?
+        </div>
+        <table>
+            <colgroup>
+                <col class="left">
+                <col class="radio">
+                <col class="right">
+            </colgroup>
+            <tr>
+                <td colspan="3">
+                    I think in ...
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    abstractions
+                </td>
+                <td>
+                    <input type="radio" name="AvC_q1_tendency" value="ll">
+                    <input type="radio" name="AvC_q1_tendency" value="l">
+                    <input type="radio" name="AvC_q1_tendency" value="0" checked>
+                    <input type="radio" name="AvC_q1_tendency" value="r">
+                    <input type="radio" name="AvC_q1_tendency" value="rr">
+                </td>
+                <td>
+                    code
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    This is ...
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    a differenciated opinion
+                </td>
+                <td>
+                    <input type="radio" name="AvC_q1_certainty" value="ll">
+                    <input type="radio" name="AvC_q1_certainty" value="l">
+                    <input type="radio" name="AvC_q1_certainty" value="0">
+                    <input type="radio" name="AvC_q1_certainty" value="r">
+                    <input type="radio" name="AvC_q1_certainty" value="rr" checked>
+                <td>
+                    just a tendency
+                </td>
+            </tr>
+        </table>
+    </article>
+    <article class="question">
+        <a id="AvC_q2"></a>
+        <h1>Q2: How do you compute a person's age?</h1>
+                <div class="details">
+            Suppose there is a list of persons and you have to compute their age. How would you rather do that?
+            <br>Solution 1:
+            <pre><code>
+private void printAges(List<Person> persons) {
+    for (Person person : persons) {
+        System.out.println(person.getFullName() + " - age " + person.getAge());
+    }
+}
+
+public class Person {
+    private String firstName;
+    private String lastName;
+    private Birthday birthday;
+    
+    public Person(String firstName, String lastName, LocalDate birthday) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.birthday = new Birthday(birthday);
+    }
+    
+    public String getFullName() {
+        return firstName + " " + lastName;
+    }
+    
+    public int getAge() {
+        return birthday.getAge().getYears();
+    }
+    
+    ...
+}
+
+public class Birthday {
+    LocalDate birthday;
+    
+    public Period getAge() {
+        return new Period(birthday.toDateTimeAtStartOfDay(), new DateTime());
+    }
+    ...
+}
+            </code></pre>
+            Solution 2:
+            <pre><code>
+private void printAges(List<Person> persons) {
+    for (Person person : persons) {
+        System.out.println(fullName(person) + " - age " + age(person));
+    }
+}
+
+private String fullName(Person person) {
+    return person.getFirstName() + " " + person.getLastName();
+}
+
+private int age(Person person) {
+    return Years.yearsBetween(person.getBirthday().toDateTimeAtStartOfDay(),
+        new DateTime()).getYears();
+}
+            </code></pre>
+        </div>
+        <table>
+            <colgroup>
+                <col class="left">
+                <col class="radio">
+                <col class="right">
+            </colgroup>
+            <tr>
+                <td colspan="3">
+                    I prefer ...
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    solution 1
+                </td>
+                <td>
+                    <input type="radio" name="AvC_q2_tendency" value="ll">
+                    <input type="radio" name="AvC_q2_tendency" value="l">
+                    <input type="radio" name="AvC_q2_tendency" value="0" checked>
+                    <input type="radio" name="AvC_q2_tendency" value="r">
+                    <input type="radio" name="AvC_q2_tendency" value="rr">
+                </td>
+                <td>
+                    solution 2
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    This is ...
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    a differenciated opinion
+                </td>
+                <td>
+                    <input type="radio" name="AvC_q2_certainty" value="ll">
+                    <input type="radio" name="AvC_q2_certainty" value="l">
+                    <input type="radio" name="AvC_q2_certainty" value="0">
+                    <input type="radio" name="AvC_q2_certainty" value="r">
+                    <input type="radio" name="AvC_q2_certainty" value="rr" checked>
+                <td>
+                    just a tendency
+                </td>
+            </tr>
+        </table>
+    </article>
+    <article class="question">
+        <a id="AvC_q3"></a>
+        <h1>Q3: How would you represent a customer number?</h1>
+        <div class="details">
+            <pre><code>
+private CustomerNumber customerNumber;
+            </code></pre>
+            vs.
+            <pre><code>
+private long customerNumber;
+            </code></pre>
+        </div>
+        <table>
+            <colgroup>
+                <col class="left">
+                <col class="radio">
+                <col class="right">
+            </colgroup>
+            <tr>
+                <td colspan="3">
+                    A customer number is ...
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    a class
+                </td>
+                <td>
+                    <input type="radio" name="AvC_q3_tendency" value="ll">
+                    <input type="radio" name="AvC_q3_tendency" value="l">
+                    <input type="radio" name="AvC_q3_tendency" value="0" checked>
+                    <input type="radio" name="AvC_q3_tendency" value="r">
+                    <input type="radio" name="AvC_q3_tendency" value="rr">
+                </td>
+                <td>
+                    a long
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    This is ...
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    a differenciated opinion
+                </td>
+                <td>
+                    <input type="radio" name="AvC_q3_certainty" value="ll">
+                    <input type="radio" name="AvC_q3_certainty" value="l">
+                    <input type="radio" name="AvC_q3_certainty" value="0">
+                    <input type="radio" name="AvC_q3_certainty" value="r">
+                    <input type="radio" name="AvC_q3_certainty" value="rr" checked>
+                <td>
+                    just a tendency
+                </td>
+            </tr>
+        </table>
+    </article>
+    <section class="submit">
+        <input type="submit" name="Show Result"><span class="todo">This leads to a result page like <a href="result.html">this</a></span>
+    </section>
+</div>
+</body>
+</html>
