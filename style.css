@@ -91,6 +91,11 @@ table.result, table.result td {
     border: 1px solid black;
 }
 
+/* dimension tables */
+table.dimension {
+    width: 100%;
+}
+
 table.dimension col {
     width: 50%;
 }
