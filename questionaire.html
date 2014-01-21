@@ -137,7 +137,7 @@
             Suppose there is a list of persons and you have to compute their age. How would you rather do that?
             <br>Solution 1:
             <pre><code>
-private void printAges(List<Person> persons) {
+private void printAges(List&lt;Person&gt; persons) {
     for (Person person : persons) {
         System.out.println(person.getFullName() + " - age " + person.getAge());
     }
@@ -176,7 +176,7 @@ public class Birthday {
             </code></pre>
             Solution 2:
             <pre><code>
-private void printAges(List<Person> persons) {
+private void printAges(List&lt;Person&gt; persons) {
     for (Person person : persons) {
         System.out.println(fullName(person) + " - age " + age(person));
     }
