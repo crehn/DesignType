@@ -72,6 +72,59 @@
             </tr>
         </table>
     </article>
+    <article class="question">
+        <a id="SvP_q2"></a>
+        <h1>Q2: How would you design a <code>List</code> class?</h1>
+        <div class="details">
+            There are two possibilities for constructing interfaces. Either you provide only the methods which are absolutely necessary (<a hreF="http://martinfowler.com/bliki/MinimalInterface.html">minimal interface</a>) or you provide a possibly large amout of additional helper methods (<a href="http://martinfowler.com/bliki/HumaneInterface.html">humane interface</a>). For example a <code>List</code> class absolutely needs methods to get/set an item at a given index and one that returns its length. Without these methods the data structure is not a real list. But one might want to add methods for returning the <code>first()</code> and <code>last()</code> element. This is not necessary as the same functionality can be achieved by using the <code>get</code> and <code>length</code> methods. What do you prefer?
+        </div>
+        <table>
+            <colgroup>
+                <col class="left">
+                <col class="radio">
+                <col class="right">
+            </colgroup>
+            <tr>
+                <td colspan="3">
+                    A <code>List</code> class should have ...
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    also many tiny helper methods
+                </td>
+                <td>
+                    <input type="radio" name="SvP_q2_tendency" value="ll">
+                    <input type="radio" name="SvP_q2_tendency" value="l">
+                    <input type="radio" name="SvP_q2_tendency" value="0" checked>
+                    <input type="radio" name="SvP_q2_tendency" value="r">
+                    <input type="radio" name="SvP_q2_tendency" value="rr">
+                </td>
+                <td>
+                    just as much methods as necessary
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    This is ...
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    a differenciated opinion
+                </td>
+                <td>
+                    <input type="radio" name="SvP_q2_certainty" value="ll">
+                    <input type="radio" name="SvP_q2_certainty" value="l">
+                    <input type="radio" name="SvP_q2_certainty" value="0">
+                    <input type="radio" name="SvP_q2_certainty" value="r">
+                    <input type="radio" name="SvP_q2_certainty" value="rr" checked>
+                <td>
+                    just a tendency
+                </td>
+            </tr>
+        </table>
+    </article>
     
     
     <h2>Abstract vs. Concrete</h2>
