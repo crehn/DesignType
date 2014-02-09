@@ -351,6 +351,65 @@ private long customerNumber;
             </tr>
         </table>
     </article>
+    <article class="question">
+        <a id="AvC_q4"></a>
+        <h1>Q4: How would you pass a URL to a method?</h1>
+        <div class="details">
+            <pre><code>
+getService(new URL("http://server.address/endpoint"));
+            </code></pre>
+            vs.
+            <pre><code>
+getService("http://server.address/endpoint");
+            </code></pre>
+        </div>
+        <table>
+            <colgroup>
+                <col class="left">
+                <col class="radio">
+                <col class="right">
+            </colgroup>
+            <tr>
+                <td colspan="3">
+                    A URL is should be passed to a method as...
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    an object
+                </td>
+                <td>
+                    <input type="radio" name="AvC_q4_tendency" value="ll">
+                    <input type="radio" name="AvC_q4_tendency" value="l">
+                    <input type="radio" name="AvC_q4_tendency" value="0" checked>
+                    <input type="radio" name="AvC_q4_tendency" value="r">
+                    <input type="radio" name="AvC_q4_tendency" value="rr">
+                </td>
+                <td>
+                    a string
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    This is ...
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    a differenciated opinion
+                </td>
+                <td>
+                    <input type="radio" name="AvC_q4_certainty" value="ll">
+                    <input type="radio" name="AvC_q4_certainty" value="l">
+                    <input type="radio" name="AvC_q4_certainty" value="0">
+                    <input type="radio" name="AvC_q4_certainty" value="r">
+                    <input type="radio" name="AvC_q4_certainty" value="rr" checked>
+                <td>
+                    just a tendency
+                </td>
+            </tr>
+        </table>
+    </article>
     <section class="submit">
         <input type="submit" name="Show Result"><span class="todo">This leads to a result page like <a href="result.html">this</a></span>
     </section>
