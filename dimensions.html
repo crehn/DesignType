@@ -10,10 +10,11 @@
     <header>
         <h1>Dimensions</h1>
     </header>    
-    <section>
         <p>
             <span class="todo">add some introductory text here</span>
         </p>
+    </section>
+    <section>
         <h1>Simple vs. Powerful</h1>
         <table class="dimension">
             <colgroup>
@@ -48,6 +49,8 @@
                 </td>
             </tr>
         </table>
+    </section>
+    <section>
         <h1>Abstract vs. Concrete</h1>
         <table class="dimension">
             <colgroup>
@@ -83,7 +86,9 @@
                 </td>
             </tr>
         </table>
-        <h1>Enabling vs. Directing</h1>
+    </section>
+    <section>
+        <h1>Pragmatic vs. Idealistic</h1>
         <table class="dimension">
             <colgroup>
                 <col>
@@ -91,28 +96,89 @@
             </colgroup>
             <tr>
                 <th>
-                    Enabling
+                    Pragmatic
                 </th>
                 <th>
-                    Directing
+                    Idealistic
                 </th>
             </tr>
             <tr>
                 <td>
-                    Developers who have an <em>enabling attitude</em> ...
+                    Developers who have a <em>pragmatic attitude</em> ...
                     <ul>
-                        <lI>... </li>
+                        <li>... <a href="http://www.principles-wiki.net/principles:you_aint_gonna_need_it">only implement what's necessary</a> (YAGNI)</li>
+                        <li>... tend towards <a href="http://www.principles-wiki.net/principles:rule_of_explicitness">explicit solutions</a> (RoE)</li>
+                        <li>... don't focus on principles like <a href="http://www.principles-wiki.net/principles:liskov_substitution_principle">LSP</a>, <a href="http://www.principles-wiki.net/principles:model_principle">MP</a> or <a href="http://www.principles-wiki.net/principles:principle_of_separate_understandability">PSU</a></li>
+                        <li>... aren't afraid of <a href="http://www.principles-wiki.net/principles:liskov_substitution_principle">duplicating code</a> if there is a reason for that</li>
+                        <li>... frequently trade code quality for time to market</li>
                     </ul>
                 </td>
                 <td>
-                    Developers who have a <em>directing attitude</em> ...
+                    Developers who have an <em>idealistic attitude</em> ...
                     <ul>
-                        <li>... (ML)</li>
-                        <li>... (EUHM)</li>
+                        <li>... strive for principles like <a href="http://www.principles-wiki.net/principles:model_principle">MP</a> or <a href="http://www.principles-wiki.net/principles:principle_of_separate_understandability">PSU</a>, <a href="http://www.principles-wiki.net/principles:information_hiding_encapsulation">TdA/IE</a>, <a href="http://www.principles-wiki.net/principles:uniformity_principle">UP</a></li>
+                        <li>... avoid <a href="http://www.principles-wiki.net/principles:liskov_substitution_principle">duplication</a> whereever they can</li>
                     </ul>
                 </td>
             </tr>
         </table>
+    </section>
+    <section>
+        <h1>Technology vs. Stability</h1>
+        <table class="dimension">
+            <colgroup>
+                <col>
+                <col>
+            </colgroup>
+            <tr>
+                <th>
+                    Technology
+                </th>
+                <th>
+                    Stability
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    Developers who embrace <em>new technology</em> ...
+                    <ul>
+                        <lI>... like trying out new frameworks, libraries, design strategies, and languages</li>
+                        <lI>... prefer keeping up with the times by frequently updating to new technology</li>
+                        <li>... move fast and don't fear breaking things</li>
+                        <li>... won't be left behind by evolving technology</li>
+                    </ul>
+                </td>
+                <td>
+                    Developers who strive for <em>stable and robust technolgy</em> ...
+                    <ul>
+                        <li>... like stable, proven solutions which stood the test of time</li>
+                        <li>... withstand the hype of new technology which might vanish soon</li>
+                        <li>... don't fear being left behind by evolving technology</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </section>
+    <section>
+        <h1>Stereotypes, Examples, ...</h1>
+        <ul>
+            <li>Duct-tape propgrammer: simple, concrete, pragmatic, stability-oriented. A MacGyver-like programmer who can fix everything with a string of duct-tape.</li>
+            <li>Traditional: powerful, abstract, idealistic, stability-oriented. Traditional plan-driven thinking.</li>
+            <li>Worse is better: simple, concrete, pragmatic, technology-oriented</li>
+            <li>Right thing: powerful, abstract, idealistic, technology-oriented</li>
+            <li>Rü: simple, abstract, idealistic, technology-oriented</li>
+            <li>Ma: simple, abstract, pragmatic, stability-oriented</li>
+        </ul>
+    </section>
+    <section>
+        <h1>Further Dimensions</h1>
+        Besides the above mentioned, there are other dimensions characterizing developers' ways of thinking. In contrast to the dimensions above, they don't directly influence design decisions but rather manifest in opinions, working styles, problem-solving approaches, etc.:
+        <ul>
+            <li><a href="http://martinfowler.com/bliki/SoftwareDevelopmentAttitude.html">Enabling vs. directing attitude</a></li>
+            <li>Structured vs. creative working style</li>
+            <li>Focus on requrements vs. technology</li>
+            <li>...</li>
+        </ul>
     </section>
 </div>
 </body>
