@@ -8,10 +8,19 @@
 <body>
 <div class="page">
     <header>
-        <h1>Dimensions</h1>
+        <h1>How Do You Design Software?</h1>
     </header>    
         <p>
-            <span class="todo">add some introductory text here</span>
+            As developers we frequently make design decisions. They can be as general as "How many levels of abstractions do I need?" or "Which framework should I use?" and as concrete as "How to name this method?" and "In which order should these values be supplied?". They center around modularization (how to break a problem down into classes and methods), interface design (how to craft these modules such that they are easily useable) and internal module structure (how to compose the inner workings of classes).
+        </p>
+        <p>
+            Unfortunately there is no single correct solution for any of these questions. There are many bad solutions but there typically are several "good" ones. Deciding among these good solutions is not an objective task as each of them has different benefits and drawbacks. So the decisions are made in a subjective way which depends on a developer's way of thinking. 
+        </p>
+        <p>
+            The different attitudes may lead to frequent arguments on which way is best. The following questionaire may help to find out how you make design decisions. You may even try to use it to find out how your collegues think about software design. We hope that a better understanding of how other developers think, improves the communication in a team.
+        </p>
+        <p>
+            In each group check exactly fife statements. Use those you can identify with most.
         </p>
     </section>
     <section>
@@ -31,20 +40,27 @@
             </tr>
             <tr>
                 <td>
-                    Developers who are in favor of <em>simple</em> solutions ...
                     <ul>
-                        <li>... <a href="http://www.principles-wiki.net/principles:keep_it_simple_stupid">avoid complexity</a> (KISS)</li>
-                        <li>... don't like <a href="http://www.principles-wiki.net/principles:more_is_more_complex">large amouts of code</a> (MIMC)</li>
-                        <li>... <a href="http://www.principles-wiki.net/principles:you_aint_gonna_need_it">only implement what's necessary</a> (YAGNI)</li>
-                        <li>... tend towards <a href="http://www.principles-wiki.net/principles:rule_of_explicitness">explicit solutions</a> (RoE)</li>
+                        <li><input type="checkbox" id="simple0" />"A simple solution is always better than a complex one."</li>
+                        <li><input type="checkbox" id="simple1" />"A class is good when it's small. Large classes are a smell."</li>
+                        <li><input type="checkbox" id="simple2" />"A method should not be longer than ten lines of code."</li>
+                        <li><input type="checkbox" id="simple3" />"If you don't need it (yet), don't implement it (yet)."</li>
+                        <li><input type="checkbox" id="simple4" />"Don't provide configurability if you don't need to."</li>
+                        <li><input type="checkbox" id="simple5" />"Avoid generics, polymorphism, reflection, and other complicated programming language features."</li>
+                        <li><input type="checkbox" id="simple6" />"Avoid low-level optimization of algorithms especially when involving assembler, bit-operations, and pointers. Slower implementations will work just fine."</li>
+                        <li><input type="checkbox" id="simple7" />"Use simple brute-force solutions instead of complicated algorithms. Slower algorithms will work in the first place."</li>
                     </ul>
                 </td>
                 <td>
-                    Developers who are in favor of <em>powerful</em> solutions ...
                     <ul>
-                        <li>... like <a href="http://www.principles-wiki.net/principles:generalization_principle">code that solves many problems at once</a> (GP)</li>
-                        <li>... like to <a href="http://www.principles-wiki.net/principles:encapsulate_the_concept_that_varies">identify things that vary and encapsulate them</a> (EVC)</li>
-                        <li>... like generics, frameworks, new technology, abstractions, etc.</li>
+                        <li><input type="checkbox" id="powerful0" />"A solution is always better when it solves more problems."</li>
+                        <li><input type="checkbox" id="powerful1" />"Code is beautiful when it solves many problems at the same time."</li>
+                        <li><input type="checkbox" id="powerful2" />"If there is a library or framework, use it. Don't reinvent the wheel."</li>
+                        <li><input type="checkbox" id="powerful3" />"If you build something, think about non-functional requirements like performance, scalability, changability, portability, etc. early on."</li>
+                        <li><input type="checkbox" id="powerful4" />"A configurable solution is better than a hard-wired one."</li>
+                        <li><input type="checkbox" id="powerful5" />"I like generics, exceptions, polymorphism, closures, operator overloading, aspect-orientation, reflection, annotations, etc."</li>
+                        <li><input type="checkbox" id="powerful6" />"I like code generators, configurable builds, and SOAP."</li>
+                        <li><input type="checkbox" id="powerful7" />"If you get a lot more functionality with a little bit of extra work, don't think for too long. Do it."</li>
                     </ul>
                 </td>
             </tr>
@@ -67,21 +83,27 @@
             </tr>
             <tr>
                 <td>
-                    Developers who think <em>abstractly</em> ...
                     <ul>
-                        <lI>... thnk in terms in <a href="http://www.principles-wiki.net/principles:model_principle">abstractions, concepts, and models</a> (MP)</li>
-                        <li>... assign responsibilities based on <a href="http://www.principles-wiki.net/principles:tell_don_t_ask_information_expert">Tell, don't Ask/Information Expert</a> (TdA/IE)</li>
-                        <li>... like code to be <a href="http://www.principles-wiki.net/principles:principle_of_separate_understandability">separately understandable</a> (PSU)</li>
-                        <li>... keep sure to <a href="http://www.principles-wiki.net/principles:information_hiding_encapsulation">hide implementation details</a> (IH/E)</li>
+                        <li><input type="checkbox" id="abstract0" />"I think in terms of abstractions, concepts, and models"</li>
+                        <li><input type="checkbox" id="abstract1" />"In most cases duplication can be eliminated by finding the right abstractions."</li>
+                        <li><input type="checkbox" id="abstract2" />"Each class should represent a real-world concept."</li>
+                        <li><input type="checkbox" id="abstract3" />"<code>Birthday</code> is a perfectly valid class. It's more than a pure Date as it can, for example, compute an age."</li>
+                        <li><input type="checkbox" id="abstract4" />"<code>CustomerNumber</code> should be a class in order to facilitate type checking."</li>
+                        <li><input type="checkbox" id="abstract5" />"Class names which end with <code>Object, Manager, Handler, Data, Info</code>, etc. are a smell."</li>
+                        <li><input type="checkbox" id="abstract6" />"Each class and each method should be understandable on it's own, i.e. without knowing the rest of the system. If that's not the case, a suitable abstraction is missing."</li>
+                        <li><input type="checkbox" id="abstract7" />"An interface shouldn't expose the inner workings of a module."</li>
                     </ul>
                 </td>
                 <td>
-                    Developers who think <em>concretely</em> ...
                     <ul>
-                        <li>... think in code (i.e. in terms of classes methods and statements)</li>
-                        <li>... keep their code clean by <a href="http://www.principles-wiki.net/principles:don_t_repeat_yourself">eliminating duplication</a> (DRY)</li>
-                        <li>... don't like <a href="http://www.principles-wiki.net/principles:more_is_more_complex">large amouts of code</a> (MIMC)</li>
-                        <li>... like to <a href="http://www.principles-wiki.net/principles:encapsulate_the_concept_that_varies">identify things that vary and encapsulate them</a> (EVC)</li>
+                        <li><input type="checkbox" id="concrete0" />"I think in code (i.e. in terms of classes methods and statements)"</li>
+                        <li><input type="checkbox" id="concrete1" />"Duplication is the root of all evil. Avoid it at any cost."</li>
+                        <li><input type="checkbox" id="concrete2" />"I frequently extract classes when I see that this improves the structure of the code."</li>
+                        <li><input type="checkbox" id="concrete3" />"Avoid tiny classes which don't provide functionality."</li>
+                        <li><input type="checkbox" id="concrete4" />"Coding is the repetions of writing code and extracting redundancy."</li>
+                        <li><input type="checkbox" id="concrete5" />"It is more important for the implementation to be simple than the interface."</li>
+                        <li><input type="checkbox" id="concrete6" />"You can read good code from top to bottom. And this is a good way of understanding it."</li>
+                        <li><input type="checkbox" id="concrete7" />"You can refactor code without completely understanding it."</li>
                     </ul>
                 </td>
             </tr>
@@ -104,20 +126,27 @@
             </tr>
             <tr>
                 <td>
-                    Developers who have a <em>pragmatic attitude</em> ...
                     <ul>
-                        <li>... <a href="http://www.principles-wiki.net/principles:you_aint_gonna_need_it">only implement what's necessary</a> (YAGNI)</li>
-                        <li>... tend towards <a href="http://www.principles-wiki.net/principles:rule_of_explicitness">explicit solutions</a> (RoE)</li>
-                        <li>... don't focus on principles like <a href="http://www.principles-wiki.net/principles:liskov_substitution_principle">LSP</a>, <a href="http://www.principles-wiki.net/principles:model_principle">MP</a> or <a href="http://www.principles-wiki.net/principles:principle_of_separate_understandability">PSU</a></li>
-                        <li>... aren't afraid of <a href="http://www.principles-wiki.net/principles:liskov_substitution_principle">duplicating code</a> if there is a reason for that</li>
-                        <li>... frequently trade code quality for time to market</li>
+                        <li><input type="checkbox" id="pragmatic0" />"Time to market is sometimes more important than code quality."</li>
+                        <li><input type="checkbox" id="pragmatic1" />"I'm not afraid of duplicatinmg code... if there is a good reason to do so."</li>
+                        <li><input type="checkbox" id="pragmatic2" />"Often you get 80% of the solution for 20% the effort. We can care about the remaining 20% manually or partly automated if needed afterwards."</li>
+                        <li><input type="checkbox" id="pragmatic3" />"I only implement what's necessary. I don't care about completeness and symmetry. If it's not needed it's worthless."</li>
+                        <li><input type="checkbox" id="pragmatic4" />"Surprisingly many badly written systems in practice work quite well for quite a long while. There is no need to produce art."</li>
+                        <li><input type="checkbox" id="pragmatic5" />"It's the result that counts. Not the tiny details. A workaround is better than no solution at all."</li>
+                        <li><input type="checkbox" id="pragmatic6" />"Don't care about non-functional requirements which are not relevant for the system. If the system will never be ported, it doesn't need to be portable."</li>
+                        <li><input type="checkbox" id="pragmatic7" />"I don't have to understand all the code I find at stackoverflow. If it works, it's good."</li>
                     </ul>
                 </td>
                 <td>
-                    Developers who have an <em>idealistic attitude</em> ...
                     <ul>
-                        <li>... strive for principles like <a href="http://www.principles-wiki.net/principles:model_principle">MP</a> or <a href="http://www.principles-wiki.net/principles:principle_of_separate_understandability">PSU</a>, <a href="http://www.principles-wiki.net/principles:information_hiding_encapsulation">TdA/IE</a>, <a href="http://www.principles-wiki.net/principles:uniformity_principle">UP</a></li>
-                        <li>... avoid <a href="http://www.principles-wiki.net/principles:liskov_substitution_principle">duplication</a> whereever they can</li>
+                        <li><input type="checkbox" id="idealistic0" />"Bad code quality will kill you in the long run."</li>
+                        <li><input type="checkbox" id="idealistic1" />"Avoid duplication. Period."</li>
+                        <li><input type="checkbox" id="idealistic2" />"Classes are meant to represent concepts. If they don't, the code will be less understandable."</li>
+                        <li><input type="checkbox" id="idealistic3" />"Code is good, when it's symmetric. Classes should have all expected methods. Don't implement a class for complex numbers which can add but not subtract."</li>
+                        <li><input type="checkbox" id="idealistic4" />"Don't misuse programming language constructs. Don't missuse frameworks, patterns and concepts. Don't say REST when it's actually not."</li>
+                        <li><input type="checkbox" id="idealistic5" />"Each piece of functionality has it's place where it belongs to. It should be implemented exactly there."</li>
+                        <li><input type="checkbox" id="idealistic6" />"If in doubt, invest two more minutes for finding a good identifier. If there is no good identifier, that's a sign that the abstraction is wrong."</li>
+                        <li><input type="checkbox" id="idealistic7" />"Each module (package, class, method) and even each line of code should be understandable on it's own, i.e. without knowing the rest of the system."</li>
                     </ul>
                 </td>
             </tr>
@@ -140,20 +169,27 @@
             </tr>
             <tr>
                 <td>
-                    Developers who embrace <em>new technology</em> ...
                     <ul>
-                        <lI>... like trying out new frameworks, libraries, design strategies, and languages</li>
-                        <lI>... prefer keeping up with the times by frequently updating to new technology</li>
-                        <li>... move fast and don't fear breaking things</li>
-                        <li>... won't be left behind by evolving technology</li>
+                        <li><input type="checkbox" id="technology0" />"Technology evolves. We should, too."</li>
+                        <li><input type="checkbox" id="technology1" />"I prefer keeping up with the times by frequently updating to new technology."</li>
+                        <li><input type="checkbox" id="technology2" />"Move fast and don't fear breaking things."</li>
+                        <li><input type="checkbox" id="technology3" />"New technology often is an improvement. We should enbrace that in order to get better."</li>
+                        <li><input type="checkbox" id="technology4" />"Upgrading technology regularly is easy as it's always a small step. Waiting for too long creates huge unnecessary efforts."</li>
+                        <li><input type="checkbox" id="technology5" />"I like trying out new frameworks, libraries, design strategies, and languages. Even if I won't use it in practice, it's good to look left and right."</li>
+                        <li><input type="checkbox" id="technology6" />"Stagnation kills creativity."</li>
+                        <li><input type="checkbox" id="technology7" />"We build software such that it's easily fixed when there is a problem. Roll forward is typically better than roll back."</li>
                     </ul>
                 </td>
                 <td>
-                    Developers who strive for <em>stable and robust technolgy</em> ...
                     <ul>
-                        <li>... like stable, proven solutions which stood the test of time</li>
-                        <li>... withstand the hype of new technology which might vanish soon</li>
-                        <li>... don't fear being left behind by evolving technology</li>
+                        <li><input type="checkbox" id="stability0" />"If it works, there is no need to change it."</li>
+                        <li><input type="checkbox" id="stability1" />"I don't fear being left behind by evolving technology. Let's first see what comes out on top."</li>
+                        <li><input type="checkbox" id="stability2" />"I like stable technology which stood the test of time."</li>
+                        <li><input type="checkbox" id="stability3" />"New technology often is just a hype. It won't last long and the next one will be praised as the solution to all problems."</li>
+                        <li><input type="checkbox" id="stability4" />"There is no silver bullet. That's an often neglected fact."</li>
+                        <li><input type="checkbox" id="stability5" />"Better double check."</li>
+                        <li><input type="checkbox" id="stability6" />"Too much creativity is risky when you already have accomplished something. You need to find the correct amout of creativioty which fits the business."</li>
+                        <li><input type="checkbox" id="stability7" />"Prepare to rollback. If something goes wrong, we can still switch to a working solution."</li>
                     </ul>
                 </td>
             </tr>
