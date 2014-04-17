@@ -1,6 +1,6 @@
-
 body {
     background-color: #F5F5FF;
+    margin-bottom: 1em;
 }
 
 div.page {
@@ -14,7 +14,7 @@ div.page .navbar {
 
 div.page .jumbotron {
     background-color: #008800;
-    color:white;
+    color: white;
     margin: 15px -15px;
 }
 
@@ -27,29 +27,7 @@ div.page .jumbotron {
     list-style-type: none;
 }
 
-
-/* headings */
-
 h1 {
     text-align: center;
-}
-div.tagline {
-    text-align: center;
-}
-
-h2 {
-    padding: 0.5em;
-    background-color: #F5F5FF;
-    box-shadow: 0 0 0.5em #999999 inset;
-}
-
-/* misc */
-
-.todo:before {
-	content: "ToDo: ";
-	color: red;
-}
-.todo {
-	font-style: italic;
 }
 
