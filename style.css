@@ -3,6 +3,21 @@ body {
     background-color: #F5F5FF;
 }
 
+div.page {
+    background-color: white;
+    box-shadow: 0 0 0.5em #999999;
+}
+
+div.page .navbar {
+    margin: 0 -15px;
+}
+
+div.page .jumbotron {
+    background-color: #008800;
+    color:white;
+    margin: 15px -15px;
+}
+
 .dimension .panel-heading {
     text-align: center;
     font-weight: bold;
