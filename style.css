@@ -13,9 +13,13 @@ div.page .navbar {
 }
 
 div.page .jumbotron {
-    background-color: #008800;
+    background-color: #f6a828;
     color: white;
     margin: 15px -15px;
+}
+
+h1 {
+    text-align: center;
 }
 
 .dimension .panel-heading {
@@ -27,7 +31,6 @@ div.page .jumbotron {
     list-style-type: none;
 }
 
-h1 {
-    text-align: center;
+.result .type {
+    display: none;
 }
-

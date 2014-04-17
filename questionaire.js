@@ -16,7 +16,7 @@ function dimension(value1, value2) {
             "class": "alert alert-danger",
             html: "<strong>Hint:</strong> " + SUPPLY_CORRECT_NUMBER_OD_STATEMENTS,
             style: "display:none"});
-        $(".dimension#" + id()).after(box);
+        $(".dimension#" + id()).append(box);
         return box;
     };
     
@@ -103,6 +103,17 @@ function dimension(value1, value2) {
         panel.removeClass("panel-warning");
         panel.addClass("panel-default");
     }
+    
+    this.resultAsChar = function() {
+        if (! isComplete())
+            return "?";
+            
+        if (score1 > score2) {
+            return value1[0].toUpperCase();
+        } else {
+            return value2[0].toUpperCase();
+        }
+    };
 };
 
  
@@ -118,6 +129,23 @@ $(document).ready(function() {
         for (dim in dimensions) {
             dimensions[dim].check();
         }
+        $("#resultDiv").html("<strong>Result:</strong> Your design type is <strong>" + getDesignTypeFor(dimensions) + "</strong>.");
     });
+    
+    $(".result .types a").on('click', function(event) {
+        $(".result .type").hide();
+        $(".types .list-group-item").removeClass("active");
+        $("#" + this.text.toLowerCase()).show("fast");
+        event.preventDefault();
+    });
+    
 });
+
+function getDesignTypeFor(dimensions) {
+    var result = "";
+    for (dim in dimensions) {
+        result += dimensions[dim].resultAsChar();
+    }
+    return result;
+}
 

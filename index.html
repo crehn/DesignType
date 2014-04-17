@@ -44,7 +44,7 @@
     <div class="jumbotron">
         <h1>How Do You Design Software?</h1>
         <p>
-            Find out by answering this questionaire.
+            Find out by filling out this questionaire.
         </p>
     </div>
 
@@ -64,9 +64,9 @@
         </div>
     </section>
     <a id="questions"></a>
-    <section>
+    <section class="dimension" id="simple-vs-powerful">
         <h1>Simple vs. Powerful</h1>
-        <div class="dimension row" id="simple-vs-powerful">
+        <div class="row">
             <div class="col-sm-6"><div class="panel panel-default" id="simple">
                 <div class="panel-heading">
                     Simple
@@ -103,9 +103,9 @@
             </div></div>
         </div>
     </section>
-    <section>
+    <section class="dimension" id="abstract-vs-concrete">
         <h1>Abstract vs. Concrete</h1>
-        <div class="dimension row" id="abstract-vs-concrete">
+        <div class="row">
             <div class="col-sm-6"><div class="panel panel-default" id="abstract">
                 <div class="panel-heading">
                     Abstract
@@ -142,9 +142,9 @@
             </div></div>
         </div>
     </section>
-    <section>
+    <section class="dimension" id="pragmatic-vs-idealistic">
         <h1>Pragmatic vs. Idealistic</h1>
-        <div class="dimension row" id="pragmatic-vs-idealistic">
+        <div class="row">
             <div class="col-sm-6"><div class="panel panel-default" id="pragmatic">
                 <div class="panel-heading">
                     Pragamtic
@@ -181,9 +181,9 @@
             </div></div>
         </div>
     </section>
-    <section>
+    <section class="dimension" id="technology-vs-stability">
         <h1>Technology vs. Stability</h1>
-        <div class="dimension row" id="technology-vs.stability">
+        <div class="row">
             <div class="col-sm-6"><div class="panel panel-default" id="technology">
                 <div class="panel-heading">
                     Technology-Oriented
@@ -220,9 +220,116 @@
             </div></div>
         </div>
     </section>
-    <section>
+    <section class="result">
         <a id="result"></a>
         <h1>Result</h1>
+        
+        <div class="alert alert-info" id="resultDiv">Fill in the questionaire to detrermine your design type.</div>
+        
+        <div class="types row">
+            <div class="col-sm-3">
+                <div class="list-group">
+                    <a href="" class="list-group-item active">SAPT</a>
+                    <a href="" class="list-group-item">SAPS</a>
+                    <a href="" class="list-group-item">SAIT</a>
+                    <a href="" class="list-group-item">SAIS</a>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="list-group">
+                    <a href="" class="list-group-item">SCPT</a>
+                    <a href="" class="list-group-item">SCPS</a>
+                    <a href="" class="list-group-item">SCIT</a>
+                    <a href="" class="list-group-item">SCIS</a>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="list-group">
+                    <a href="" class="list-group-item">PAPT</a>
+                    <a href="" class="list-group-item">PAPS</a>
+                    <a href="" class="list-group-item">PAIT</a>
+                    <a href="" class="list-group-item">PAIS</a>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="list-group">
+                    <a href="" class="list-group-item">PCPT</a>
+                    <a href="" class="list-group-item">PCPS</a>
+                    <a href="" class="list-group-item">PCIT</a>
+                    <a href="" class="list-group-item">PCIS</a>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-info type" id="sapt">
+            <div class="panel-heading"><strong>SAPT</strong>: Simple, Abstract, Pragmatic, Technology-oriented</div>
+            <div class="panel-body row">
+            
+            </div>
+        </div>
+        <div class="panel panel-info type" id="saps">
+            <div class="panel-heading"><strong>SAPS</strong>: Simple, Abstract, Pragmatic, Stability-oriented</div>
+            <div class="panel-body row">
+            
+            </div>
+        </div>
+        <div class="panel panel-info type" id="sait">
+            <div class="panel-heading"><strong>SAIT</strong>: Simple, Abstract, Idealistic, Technology-oriented</div>
+            <div class="panel-body row">
+            
+            </div>
+        </div>
+        <div class="panel panel-info type" id="sais">
+            <div class="panel-heading"><strong>SAIS</strong>: Simple, Abstract, Idealistic, Stability-oriented</div>
+            <div class="panel-body row">
+            
+            </div>
+        </div>
+        <div class="panel panel-info type" id="scpt">
+            <div class="panel-heading"><strong>SCPT</strong>: Simple, Concrete, Pragmatic, Technology-oriented</div>
+            <div class="panel-body row">
+            
+            </div>
+        </div>
+        <div class="panel panel-info type" id="scps">
+            <div class="panel-heading"><strong>SCPS</strong>: Simple, Concrete, Pragmatic, Stability-oriented</div>
+            <div class="panel-body row">
+                <div class="col-sm-6">
+                    <dl>
+                        <dt>Also known as</td>
+                        <dd>McGyver</dd>
+                        <dt>Description</dt>
+                        <dd>
+                            You can fix anything with a string of duct tape. When there is a problem, you are the one to find a simple and efficient solution for it.
+                        </dd>
+                        <dt>Principles you probably like</dt>
+                        <dd>
+                            <a href="">KISS</a>, 
+                            <a href="">MIMC</a>, 
+                            <a href="">RoE</a>
+                        </dd>
+                        <dt>Principles you rather disregard</dt>
+                        <dd>
+                            <a href="">GP</a>,
+                            <a href="">MP</a>, 
+                            <a href="">PSU</a>, 
+                            <a href="">KISS</a>, 
+                            <a href="">KISS</a>, 
+                        </dd>
+                    </dl>
+                </div>
+                <div class="col-sm-6">
+                    <dl>
+                        <dt>Strengths</td>
+                        <dd></dd>
+                        <dt>Suggestions</dt>
+                        <dd></dd>
+                        <dt>Further reading</dt>
+                        <dd>
+                        </dd>
+                    </dl>
+                </div>
+            </div>        
+        </div>
     </section>
     <section>
         <h1>Stereotypes, Examples, ...</h1>
