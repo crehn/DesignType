@@ -2,11 +2,46 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="style.css" />
+    
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="bower_components/html5shiv/dist/html5shiv.js"></script>
+      <script src="bower_components/respond.js/dest/respond.min.js"></script>
+    <![endif]-->
+    
     <title>How Do You Design Software?</title>
 </head>
 <body>
-<div class="page">
+
+<div class="navbar navbar-inverse navbar-static-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Design Type</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#questions">Questions</a></li>
+                <li><a href="#result">Result</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="container">
     <header>
         <h1>How Do You Design Software?</h1>
     </header>    
@@ -20,180 +55,169 @@
             The different attitudes may lead to frequent arguments on which way is best. The following questionaire may help to find out how you make design decisions. You may even try to use it to find out how your collegues think about software design. We hope that a better understanding of how other developers think, improves the communication in a team.
         </p>
         <p>
-            In each group check exactly fife statements. Use those you can identify with most.
+            In each group check exactly fife statements. Use those you can identify with most, those statements you could make yourself.
         </p>
     </section>
     <section>
+        <a id="questions"></a>
         <h1>Simple vs. Powerful</h1>
-        <table class="dimension">
-            <colgroup>
-                <col>
-                <col>
-            </colgroup>
-            <tr>
-                <th>
+        <div class="dimension row">
+            <div class="col-sm-6"><div class="panel panel-default">
+                <div class="panel-heading">
                     Simple
-                </th>
-                <th>
+                </div>
+                <div class="panel-body">
+                    <ul>
+                        <li><input type="checkbox" id="simple0" /> "A simple solution is always better than a complex one."</li>
+                        <li><input type="checkbox" id="simple1" /> "A class is good when it's small. Large classes are a smell."</li>
+                        <li><input type="checkbox" id="simple2" /> "A method should not be longer than ten lines of code."</li>
+                        <li><input type="checkbox" id="simple3" /> "If you don't need it (yet), don't implement it (yet)."</li>
+                        <li><input type="checkbox" id="simple4" /> "Don't provide configurability if you don't need to."</li>
+                        <li><input type="checkbox" id="simple5" /> "Avoid generics, polymorphism, reflection, and other complicated programming language features."</li>
+                        <li><input type="checkbox" id="simple6" /> "Avoid low-level optimization of algorithms especially when involving assembler, bit-operations, and pointers. Slower implementations will work just fine."</li>
+                        <li><input type="checkbox" id="simple7" /> "Use simple brute-force solutions instead of complicated algorithms. Slower algorithms will work in the first place."</li>
+                    </ul>
+                </div>
+            </div></div>
+            <div class="col-sm-6"><div class="panel panel-default">
+                <div class="panel-heading">
                     Powerful
-                </th>
-            </tr>
-            <tr>
-                <td>
+                </div>
+                <div class="panel-body">
                     <ul>
-                        <li><input type="checkbox" id="simple0" />"A simple solution is always better than a complex one."</li>
-                        <li><input type="checkbox" id="simple1" />"A class is good when it's small. Large classes are a smell."</li>
-                        <li><input type="checkbox" id="simple2" />"A method should not be longer than ten lines of code."</li>
-                        <li><input type="checkbox" id="simple3" />"If you don't need it (yet), don't implement it (yet)."</li>
-                        <li><input type="checkbox" id="simple4" />"Don't provide configurability if you don't need to."</li>
-                        <li><input type="checkbox" id="simple5" />"Avoid generics, polymorphism, reflection, and other complicated programming language features."</li>
-                        <li><input type="checkbox" id="simple6" />"Avoid low-level optimization of algorithms especially when involving assembler, bit-operations, and pointers. Slower implementations will work just fine."</li>
-                        <li><input type="checkbox" id="simple7" />"Use simple brute-force solutions instead of complicated algorithms. Slower algorithms will work in the first place."</li>
+                        <li><input type="checkbox" id="powerful0" /> "A solution is always better when it solves more problems."</li>
+                        <li><input type="checkbox" id="powerful1" /> "Code is beautiful when it solves many problems at the same time."</li>
+                        <li><input type="checkbox" id="powerful2" /> "If there is a library or framework, use it. Don't reinvent the wheel."</li>
+                        <li><input type="checkbox" id="powerful3" /> "If you build something, think about non-functional requirements like performance, scalability, changability, portability, etc. early on."</li>
+                        <li><input type="checkbox" id="powerful4" /> "A configurable solution is better than a hard-wired one."</li>
+                        <li><input type="checkbox" id="powerful5" /> "I like generics, exceptions, polymorphism, closures, operator overloading, aspect-orientation, reflection, annotations, etc."</li>
+                        <li><input type="checkbox" id="powerful6" /> "I like code generators, configurable builds, and SOAP."</li>
+                        <li><input type="checkbox" id="powerful7" /> "If you get a lot more functionality with a little bit of extra work, don't think for too long. Do it."</li>
                     </ul>
-                </td>
-                <td>
-                    <ul>
-                        <li><input type="checkbox" id="powerful0" />"A solution is always better when it solves more problems."</li>
-                        <li><input type="checkbox" id="powerful1" />"Code is beautiful when it solves many problems at the same time."</li>
-                        <li><input type="checkbox" id="powerful2" />"If there is a library or framework, use it. Don't reinvent the wheel."</li>
-                        <li><input type="checkbox" id="powerful3" />"If you build something, think about non-functional requirements like performance, scalability, changability, portability, etc. early on."</li>
-                        <li><input type="checkbox" id="powerful4" />"A configurable solution is better than a hard-wired one."</li>
-                        <li><input type="checkbox" id="powerful5" />"I like generics, exceptions, polymorphism, closures, operator overloading, aspect-orientation, reflection, annotations, etc."</li>
-                        <li><input type="checkbox" id="powerful6" />"I like code generators, configurable builds, and SOAP."</li>
-                        <li><input type="checkbox" id="powerful7" />"If you get a lot more functionality with a little bit of extra work, don't think for too long. Do it."</li>
-                    </ul>
-                </td>
-            </tr>
-        </table>
+                </div>
+            </div></div>
+        </div>
     </section>
     <section>
         <h1>Abstract vs. Concrete</h1>
-        <table class="dimension">
-            <colgroup>
-                <col>
-                <col>
-            </colgroup>
-            <tr>
-                <th>
+        <div class="dimension row">
+            <div class="col-sm-6"><div class="panel panel-default">
+                <div class="panel-heading">
                     Abstract
-                </th>
-                <th>
+                </div>
+                <div class="panel-body">
+                    <ul>
+                        <li><input type="checkbox" id="abstract0" /> "I think in terms of abstractions, concepts, and models"</li>
+                        <li><input type="checkbox" id="abstract1" /> "In most cases duplication can be eliminated by finding the right abstractions."</li>
+                        <li><input type="checkbox" id="abstract2" /> "Each class should represent a real-world concept."</li>
+                        <li><input type="checkbox" id="abstract3" /> "<code>Birthday</code> is a perfectly valid class. It's more than a pure Date as it can, for example, compute an age."</li>
+                        <li><input type="checkbox" id="abstract4" /> "<code>CustomerNumber</code> should be a class in order to facilitate type checking."</li>
+                        <li><input type="checkbox" id="abstract5" /> "Class names which end with <code>Object, Manager, Handler, Data, Info</code>, etc. are a smell."</li>
+                        <li><input type="checkbox" id="abstract6" /> "Each class and each method should be understandable on it's own, i.e. without knowing the rest of the system. If that's not the case, a suitable abstraction is missing."</li>
+                        <li><input type="checkbox" id="abstract7" /> "An interface shouldn't expose the inner workings of a module."</li>
+                    </ul>
+                </div>
+            </div></div>
+            <div class="col-sm-6"><div class="panel panel-default">
+                <div class="panel-heading">
                     Concrete
-                </th>
-            </tr>
-            <tr>
-                <td>
+                </div>
+                <div class="panel-body">
                     <ul>
-                        <li><input type="checkbox" id="abstract0" />"I think in terms of abstractions, concepts, and models"</li>
-                        <li><input type="checkbox" id="abstract1" />"In most cases duplication can be eliminated by finding the right abstractions."</li>
-                        <li><input type="checkbox" id="abstract2" />"Each class should represent a real-world concept."</li>
-                        <li><input type="checkbox" id="abstract3" />"<code>Birthday</code> is a perfectly valid class. It's more than a pure Date as it can, for example, compute an age."</li>
-                        <li><input type="checkbox" id="abstract4" />"<code>CustomerNumber</code> should be a class in order to facilitate type checking."</li>
-                        <li><input type="checkbox" id="abstract5" />"Class names which end with <code>Object, Manager, Handler, Data, Info</code>, etc. are a smell."</li>
-                        <li><input type="checkbox" id="abstract6" />"Each class and each method should be understandable on it's own, i.e. without knowing the rest of the system. If that's not the case, a suitable abstraction is missing."</li>
-                        <li><input type="checkbox" id="abstract7" />"An interface shouldn't expose the inner workings of a module."</li>
+                        <li><input type="checkbox" id="concrete0" /> "I think in code (i.e. in terms of classes methods and statements)"</li>
+                        <li><input type="checkbox" id="concrete1" /> "Duplication is the root of all evil. Avoid it at any cost."</li>
+                        <li><input type="checkbox" id="concrete2" /> "I frequently extract classes when I see that this improves the structure of the code."</li>
+                        <li><input type="checkbox" id="concrete3" /> "Avoid tiny classes which don't provide functionality."</li>
+                        <li><input type="checkbox" id="concrete4" /> "Coding is the repetions of writing code and extracting redundancy."</li>
+                        <li><input type="checkbox" id="concrete5" /> "It is more important for the implementation to be simple than the interface."</li>
+                        <li><input type="checkbox" id="concrete6" /> "You can read good code from top to bottom. And this is a good way of understanding it."</li>
+                        <li><input type="checkbox" id="concrete7" /> "You can refactor code without completely understanding it."</li>
                     </ul>
-                </td>
-                <td>
-                    <ul>
-                        <li><input type="checkbox" id="concrete0" />"I think in code (i.e. in terms of classes methods and statements)"</li>
-                        <li><input type="checkbox" id="concrete1" />"Duplication is the root of all evil. Avoid it at any cost."</li>
-                        <li><input type="checkbox" id="concrete2" />"I frequently extract classes when I see that this improves the structure of the code."</li>
-                        <li><input type="checkbox" id="concrete3" />"Avoid tiny classes which don't provide functionality."</li>
-                        <li><input type="checkbox" id="concrete4" />"Coding is the repetions of writing code and extracting redundancy."</li>
-                        <li><input type="checkbox" id="concrete5" />"It is more important for the implementation to be simple than the interface."</li>
-                        <li><input type="checkbox" id="concrete6" />"You can read good code from top to bottom. And this is a good way of understanding it."</li>
-                        <li><input type="checkbox" id="concrete7" />"You can refactor code without completely understanding it."</li>
-                    </ul>
-                </td>
-            </tr>
-        </table>
+                </div>
+            </div></div>
+        </div>
     </section>
     <section>
         <h1>Pragmatic vs. Idealistic</h1>
-        <table class="dimension">
-            <colgroup>
-                <col>
-                <col>
-            </colgroup>
-            <tr>
-                <th>
-                    Pragmatic
-                </th>
-                <th>
+        <div class="dimension row">
+            <div class="col-sm-6"><div class="panel panel-default">
+                <div class="panel-heading">
+                    Pragamtic
+                </div>
+                <div class="panel-body">
+                    <ul>
+                        <li><input type="checkbox" id="pragmatic0" /> "Time to market is sometimes more important than code quality."</li>
+                        <li><input type="checkbox" id="pragmatic1" /> "I'm not afraid of duplicatinmg code... if there is a good reason to do so."</li>
+                        <li><input type="checkbox" id="pragmatic2" /> "Often you get 80% of the solution for 20% the effort. We can care about the remaining 20% manually or partly automated if needed afterwards."</li>
+                        <li><input type="checkbox" id="pragmatic3" /> "I only implement what's necessary. I don't care about completeness and symmetry. If it's not needed it's worthless."</li>
+                        <li><input type="checkbox" id="pragmatic4" /> "Surprisingly many badly written systems in practice work quite well for quite a long while. There is no need to produce art."</li>
+                        <li><input type="checkbox" id="pragmatic5" /> "It's the result that counts. Not the tiny details. A workaround is better than no solution at all."</li>
+                        <li><input type="checkbox" id="pragmatic6" /> "Don't care about non-functional requirements which are not relevant for the system. If the system will never be ported, it doesn't need to be portable."</li>
+                        <li><input type="checkbox" id="pragmatic7" /> "I don't have to understand all the code I find at stackoverflow. If it works, it's good."</li>
+                    </ul>
+                </div>
+            </div></div>
+            <div class="col-sm-6"><div class="panel panel-default">
+                <div class="panel-heading">
                     Idealistic
-                </th>
-            </tr>
-            <tr>
-                <td>
+                </div>
+                <div class="panel-body">
                     <ul>
-                        <li><input type="checkbox" id="pragmatic0" />"Time to market is sometimes more important than code quality."</li>
-                        <li><input type="checkbox" id="pragmatic1" />"I'm not afraid of duplicatinmg code... if there is a good reason to do so."</li>
-                        <li><input type="checkbox" id="pragmatic2" />"Often you get 80% of the solution for 20% the effort. We can care about the remaining 20% manually or partly automated if needed afterwards."</li>
-                        <li><input type="checkbox" id="pragmatic3" />"I only implement what's necessary. I don't care about completeness and symmetry. If it's not needed it's worthless."</li>
-                        <li><input type="checkbox" id="pragmatic4" />"Surprisingly many badly written systems in practice work quite well for quite a long while. There is no need to produce art."</li>
-                        <li><input type="checkbox" id="pragmatic5" />"It's the result that counts. Not the tiny details. A workaround is better than no solution at all."</li>
-                        <li><input type="checkbox" id="pragmatic6" />"Don't care about non-functional requirements which are not relevant for the system. If the system will never be ported, it doesn't need to be portable."</li>
-                        <li><input type="checkbox" id="pragmatic7" />"I don't have to understand all the code I find at stackoverflow. If it works, it's good."</li>
+                        <li><input type="checkbox" id="idealistic0" /> "Bad code quality will kill you in the long run."</li>
+                        <li><input type="checkbox" id="idealistic1" /> "Avoid duplication. Period."</li>
+                        <li><input type="checkbox" id="idealistic2" /> "Classes are meant to represent concepts. If they don't, the code will be less understandable."</li>
+                        <li><input type="checkbox" id="idealistic3" /> "Code is good, when it's symmetric. Classes should have all expected methods. Don't implement a class for complex numbers which can add but not subtract."</li>
+                        <li><input type="checkbox" id="idealistic4" /> "Don't misuse programming language constructs. Don't missuse frameworks, patterns and concepts. Don't say REST when it's actually not."</li>
+                        <li><input type="checkbox" id="idealistic5" /> "Each piece of functionality has it's place where it belongs to. It should be implemented exactly there."</li>
+                        <li><input type="checkbox" id="idealistic6" /> "If in doubt, invest two more minutes for finding a good identifier. If there is no good identifier, that's a sign that the abstraction is wrong."</li>
+                        <li><input type="checkbox" id="idealistic7" /> "Each module (package, class, method) and even each line of code should be understandable on it's own, i.e. without knowing the rest of the system."</li>
                     </ul>
-                </td>
-                <td>
-                    <ul>
-                        <li><input type="checkbox" id="idealistic0" />"Bad code quality will kill you in the long run."</li>
-                        <li><input type="checkbox" id="idealistic1" />"Avoid duplication. Period."</li>
-                        <li><input type="checkbox" id="idealistic2" />"Classes are meant to represent concepts. If they don't, the code will be less understandable."</li>
-                        <li><input type="checkbox" id="idealistic3" />"Code is good, when it's symmetric. Classes should have all expected methods. Don't implement a class for complex numbers which can add but not subtract."</li>
-                        <li><input type="checkbox" id="idealistic4" />"Don't misuse programming language constructs. Don't missuse frameworks, patterns and concepts. Don't say REST when it's actually not."</li>
-                        <li><input type="checkbox" id="idealistic5" />"Each piece of functionality has it's place where it belongs to. It should be implemented exactly there."</li>
-                        <li><input type="checkbox" id="idealistic6" />"If in doubt, invest two more minutes for finding a good identifier. If there is no good identifier, that's a sign that the abstraction is wrong."</li>
-                        <li><input type="checkbox" id="idealistic7" />"Each module (package, class, method) and even each line of code should be understandable on it's own, i.e. without knowing the rest of the system."</li>
-                    </ul>
-                </td>
-            </tr>
-        </table>
+                </div>
+            </div></div>
+        </div>
     </section>
     <section>
         <h1>Technology vs. Stability</h1>
-        <table class="dimension">
-            <colgroup>
-                <col>
-                <col>
-            </colgroup>
-            <tr>
-                <th>
-                    Technology
-                </th>
-                <th>
-                    Stability
-                </th>
-            </tr>
-            <tr>
-                <td>
+        <div class="dimension row">
+            <div class="col-sm-6"><div class="panel panel-default">
+                <div class="panel-heading">
+                    Technology-Oriented
+                </div>
+                <div class="panel-body">
                     <ul>
-                        <li><input type="checkbox" id="technology0" />"Technology evolves. We should, too."</li>
-                        <li><input type="checkbox" id="technology1" />"I prefer keeping up with the times by frequently updating to new technology."</li>
-                        <li><input type="checkbox" id="technology2" />"Move fast and don't fear breaking things."</li>
-                        <li><input type="checkbox" id="technology3" />"New technology often is an improvement. We should enbrace that in order to get better."</li>
-                        <li><input type="checkbox" id="technology4" />"Upgrading technology regularly is easy as it's always a small step. Waiting for too long creates huge unnecessary efforts."</li>
-                        <li><input type="checkbox" id="technology5" />"I like trying out new frameworks, libraries, design strategies, and languages. Even if I won't use it in practice, it's good to look left and right."</li>
-                        <li><input type="checkbox" id="technology6" />"Stagnation kills creativity."</li>
-                        <li><input type="checkbox" id="technology7" />"We build software such that it's easily fixed when there is a problem. Roll forward is typically better than roll back."</li>
+                        <li><input type="checkbox" id="technology0" /> "Technology evolves. We should, too."</li>
+                        <li><input type="checkbox" id="technology1" /> "I prefer keeping up with the times by frequently updating to new technology."</li>
+                        <li><input type="checkbox" id="technology2" /> "Move fast and don't fear breaking things."</li>
+                        <li><input type="checkbox" id="technology3" /> "New technology often is an improvement. We should enbrace that in order to get better."</li>
+                        <li><input type="checkbox" id="technology4" /> "Upgrading technology regularly is easy as it's always a small step. Waiting for too long creates huge unnecessary efforts."</li>
+                        <li><input type="checkbox" id="technology5" /> "I like trying out new frameworks, libraries, design strategies, and languages. Even if I won't use it in practice, it's good to look left and right."</li>
+                        <li><input type="checkbox" id="technology6" /> "Stagnation kills creativity."</li>
+                        <li><input type="checkbox" id="technology7" /> "We build software such that it's easily fixed when there is a problem. Roll forward is typically better than roll back."</li>
                     </ul>
-                </td>
-                <td>
+                </div>
+            </div></div>
+            <div class="col-sm-6"><div class="panel panel-default">
+                <div class="panel-heading">
+                    Stability-Oriented
+                </div>
+                <div class="panel-body">
                     <ul>
-                        <li><input type="checkbox" id="stability0" />"If it works, there is no need to change it."</li>
-                        <li><input type="checkbox" id="stability1" />"I don't fear being left behind by evolving technology. Let's first see what comes out on top."</li>
-                        <li><input type="checkbox" id="stability2" />"I like stable technology which stood the test of time."</li>
-                        <li><input type="checkbox" id="stability3" />"New technology often is just a hype. It won't last long and the next one will be praised as the solution to all problems."</li>
-                        <li><input type="checkbox" id="stability4" />"There is no silver bullet. That's an often neglected fact."</li>
-                        <li><input type="checkbox" id="stability5" />"Better double check."</li>
-                        <li><input type="checkbox" id="stability6" />"Too much creativity is risky when you already have accomplished something. You need to find the correct amout of creativioty which fits the business."</li>
-                        <li><input type="checkbox" id="stability7" />"Prepare to rollback. If something goes wrong, we can still switch to a working solution."</li>
+                        <li><input type="checkbox" id="stability0" /> "If it works, there is no need to change it."</li>
+                        <li><input type="checkbox" id="stability1" /> "I don't fear being left behind by evolving technology. Let's first see what comes out on top."</li>
+                        <li><input type="checkbox" id="stability2" /> "I like stable technology which stood the test of time."</li>
+                        <li><input type="checkbox" id="stability3" /> "New technology often is just a hype. It won't last long and the next one will be praised as the solution to all problems."</li>
+                        <li><input type="checkbox" id="stability4" /> "There is no silver bullet. That's an often neglected fact."</li>
+                        <li><input type="checkbox" id="stability5" /> "Better double check."</li>
+                        <li><input type="checkbox" id="stability6" /> "Too much creativity is risky when you already have accomplished something. You need to find the correct amout of creativioty which fits the business."</li>
+                        <li><input type="checkbox" id="stability7" /> "Prepare to rollback. If something goes wrong, we can still switch to a working solution."</li>
                     </ul>
-                </td>
-            </tr>
-        </table>
+                </div>
+            </div></div>
+        </div>
+    </section>
+    <section>
+        <a id="result"></a>
+        <h1>Result</h1>
     </section>
     <section>
         <h1>Stereotypes, Examples, ...</h1>
@@ -216,6 +240,12 @@
             <li>...</li>
         </ul>
     </section>
+    
 </div>
+
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="questionaire.js"></script>
 </body>
 </html>
