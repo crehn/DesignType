@@ -166,6 +166,8 @@ function Questionaire() {
     
     function showType(type) {
         $("#types").accordion("option", "active", typeToIndex(type));
+        $("#types h2").removeClass("marked");
+        $("#" + type.toLowerCase()).addClass("marked");
     }
     
     function typeToIndex(type) {

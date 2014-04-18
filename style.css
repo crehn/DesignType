@@ -31,6 +31,8 @@ h1 {
     list-style-type: none;
 }
 
-.result .type {
-    display: none;
+.result .ui-accordion-header.marked {
+    border: 2px solid #f6a828;
 }
+
+
