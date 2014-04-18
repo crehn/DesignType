@@ -35,4 +35,10 @@ h1 {
     border: 2px solid #f6a828;
 }
 
+.result .ui-accordion-content a {
+    text-decoration: underline;
+}
 
+.result .ui-accordion-content a:hover {
+    text-decoration: none;
+}
