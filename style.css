@@ -29,6 +29,7 @@ h1 {
 
 .dimension .panel-body ul {
     list-style-type: none;
+    padding: 0;
 }
 
 .result .ui-accordion-header.marked {
