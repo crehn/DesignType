@@ -1,7 +1,6 @@
-function dimension(value1, value2) {
+function Dimension(value1, value2) {
     var NUMBER_OF_STATEMENTS_NEEDED = 5;
     var SUPPLY_CORRECT_NUMBER_OD_STATEMENTS = "Check exactly 5 stametements!";
-
 
     var wasOnceComplete = false;
     var score1 = 0;
@@ -10,6 +9,9 @@ function dimension(value1, value2) {
     var box1 = $(".dimension #" + value1);
     var box2 = $(".dimension #" + value2);
     var errorBox = createErrorBox();
+    
+    this.value1 = value1;
+    this.value2 = value2;
     
     function createErrorBox() {
         var box = $("<div/>", {
@@ -24,7 +26,7 @@ function dimension(value1, value2) {
         return value1 + "-vs-" + value2;
     };
     
-    this.check = function() {
+    this.update = function() {
         computeScores();
         checkForError();
         checkForSuccess();
@@ -50,6 +52,10 @@ function dimension(value1, value2) {
             errorBox.hide("slow");
         }
     }
+    
+    this.isComplete = function() {
+        return isComplete();
+    };
         
     function isComplete() {
         return (score1 + score2) == NUMBER_OF_STATEMENTS_NEEDED;
@@ -109,43 +115,76 @@ function dimension(value1, value2) {
             return "?";
             
         if (score1 > score2) {
-            return value1[0].toUpperCase();
+            return value1[0];
         } else {
-            return value2[0].toUpperCase();
+            return value2[0];
         }
     };
 };
 
+
+function Questionaire() {
+    $("#types").accordion({ 
+        collapsible: true,
+        active: false 
+    });
+
+    var dimensions = [
+        new Dimension("simple", "powerful"),
+        new Dimension("abstract", "concrete"),
+        new Dimension("pragmatic", "idealistic"),
+        new Dimension("technology", "stability")
+    ];
+    
+    this.update = function () {
+        for (dim in dimensions) {
+            dimensions[dim].update();
+        }
+        $("#resultDiv").html("<strong>Result:</strong> Your design type is <strong>" + getDesignType() + "</strong>.");
+        
+        if (isComplete()) {
+            showType(getDesignType());
+        }
+    }
+
+    function getDesignType() {
+        var result = "";
+        for (dim in dimensions) {
+            result += dimensions[dim].resultAsChar();
+        }
+        return result.toUpperCase();
+    }
+    
+    function isComplete() {
+        for (dim in dimensions) {
+            if (! dimensions[dim].isComplete()) {
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    function showType(type) {
+        $("#types").accordion("option", "active", typeToIndex(type));
+    }
+    
+    function typeToIndex(type) {
+        // the types are ordered just if they were binary numbers. value1 (left) is a binary 0, value2 (right) a binary 1.
+        var result = 0;
+        for (i = 0; i < dimensions.length; i++) {
+            var position = dimensions.length -1 - i;
+            var digit = dimensions[i].resultAsChar() == dimensions[i].value1[0] ? 0 : 1;
+            result += Math.pow(2, position) * digit;
+        }
+        return result;
+    }
+}
  
 $(document).ready(function() {
-    var dimensions = [
-        new dimension("simple", "powerful"),
-        new dimension("abstract", "concrete"),
-        new dimension("pragmatic", "idealistic"),
-        new dimension("technology", "stability")
-    ];
+    var questionaire = new Questionaire();
 
     $(".dimension input").on('click', function() {
-        for (dim in dimensions) {
-            dimensions[dim].check();
-        }
-        $("#resultDiv").html("<strong>Result:</strong> Your design type is <strong>" + getDesignTypeFor(dimensions) + "</strong>.");
+        questionaire.update();
     });
-    
-    $(".result .types a").on('click', function(event) {
-        $(".result .type").hide();
-        $(".types .list-group-item").removeClass("active");
-        $("#" + this.text.toLowerCase()).show("fast");
-        event.preventDefault();
-    });
-    
 });
-
-function getDesignTypeFor(dimensions) {
-    var result = "";
-    for (dim in dimensions) {
-        result += dimensions[dim].resultAsChar();
-    }
-    return result;
-}
 
