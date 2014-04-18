@@ -126,7 +126,8 @@ function Dimension(value1, value2) {
 function Questionaire() {
     $("#types").accordion({ 
         collapsible: true,
-        active: false 
+        active: false ,
+        heightStyle: "content"
     });
 
     var dimensions = [
