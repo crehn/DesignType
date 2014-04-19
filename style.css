@@ -43,3 +43,13 @@ h1 {
 .result .ui-accordion-content a:hover {
     text-decoration: none;
 }
+
+@media print {
+    #types div {
+        display: block !important;
+    }
+    
+    a.dont-print-url:after {
+        content: "";
+    }
+}
