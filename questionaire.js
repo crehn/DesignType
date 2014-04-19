@@ -141,7 +141,7 @@ function Questionaire() {
         for (dim in dimensions) {
             dimensions[dim].update();
         }
-        $("#resultDiv").html("<strong>Result:</strong> Your design type is <strong>" + getDesignType() + "</strong>.");
+        $("#resultString").html("<strong>Result:</strong> Your design type is <strong>" + getDesignType() + "</strong>.");
         
         if (isComplete()) {
             showType(getDesignType());
