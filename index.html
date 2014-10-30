@@ -4,19 +4,19 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="bower_components/jquery-ui/themes/ui-lightness/jquery-ui.min.css">
     <link rel="stylesheet" href="style.css" />
-    
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
       <script src="bower_components/html5shiv/dist/html5shiv.js"></script>
       <script src="bower_components/respond.js/dest/respond.min.js"></script>
     <![endif]-->
-    
+
     <title>How Do You Design Software?</title>
 </head>
 <body>
@@ -58,7 +58,7 @@
             As developers we frequently make design decisions. They can be as general as "How many levels of abstractions do I need?" or "Which framework should I use?" and as concrete as "How to name this method?" and "In which order should these values be supplied?". They center around modularization (how to break a problem down into classes and methods), interface design (how to craft these modules such that they are easily useable) and internal module structure (how to compose the inner workings of classes).
         </p>
         <p>
-            Unfortunately there is no single correct solution for any of these questions. There are many bad solutions but there typically are several "good" ones. Deciding among these good solutions is not an objective task as each of them has different benefits and drawbacks. So the decisions are made in a subjective way which depends on a developer's way of thinking. 
+            Unfortunately there is no single correct solution for any of these questions. There are many bad solutions but there typically are several "good" ones. Deciding among these good solutions is not an objective task as each of them has different benefits and drawbacks. So the decisions are made in a subjective way which depends on a developer's way of thinking.
         </p>
         <p>
             The different attitudes may lead to frequent arguments on which way is best. The following questionaire may help to find out how you make design decisions. You may even try to use it to find out how your colleagues think about software design. We hope that a better understanding of how other developers think, improves the communication in a team.
@@ -80,14 +80,12 @@
                         Developers with this attitude prefer avoiding complexity at the cost of generality and completeness.
                     </p>
                     <ul>
-                        <li><input type="checkbox" /> "A simple solution is always better than a complex one."</li>
-                        <li><input type="checkbox" /> "A class is good when it's small. Large classes are a smell."</li>
-                        <li><input type="checkbox" /> "A method should not be longer than ten lines of code."</li>
-                        <li><input type="checkbox" /> "If you don't need it (yet), don't implement it (yet)."</li>
-                        <li><input type="checkbox" /> "Don't provide configurability if you don't need to."</li>
-                        <li><input type="checkbox" /> "Avoid generics, polymorphism, reflection, and other complicated programming language features."</li>
-                        <li><input type="checkbox" /> "Avoid low-level optimization of algorithms especially when involving assembler, bit-operations, and pointers. Slower implementations will work just fine."</li>
-                        <li><input type="checkbox" /> "Use simple brute-force solutions instead of complicated algorithms. Slower algorithms will work in the first place."</li>
+                        <li><input type="checkbox" /> "Software should be simple in order to be fast to write, maintainable, and low on bugs."</li>
+                        <li><input type="checkbox" /> "Avoid dependencies, libraries and complex language features that do not have a substantial advantage."</li>
+                        <li><input type="checkbox" /> "Don't implement features/flexibility/configurability unless there is a good reason to do so."</li>
+                        <li><input type="checkbox" /> "A class/method is good when it's small. Large units/modules are a smell."</li>
+                        <li><input type="checkbox" /> "Simple brute-force solutions may be slow but will work in the first place."</li>
+                        <li><input type="checkbox" /> "Good code needs almost no documentation."</li>
                     </ul>
                 </div>
             </div></div>
@@ -100,14 +98,12 @@
                         Developers with this attitude prefer generality and completeness at the cost of higher complexity.
                     </p>
                     <ul>
-                        <li><input type="checkbox" /> "A solution is always better when it solves more problems."</li>
-                        <li><input type="checkbox" /> "Code is beautiful when it solves many problems at the same time."</li>
-                        <li><input type="checkbox" /> "If there is a library or framework, use it. Don't reinvent the wheel."</li>
-                        <li><input type="checkbox" /> "If you build something, think about non-functional requirements like performance, scalability, changability, portability, etc. early on."</li>
-                        <li><input type="checkbox" /> "A configurable solution is better than a hard-wired one."</li>
-                        <li><input type="checkbox" /> "I like generics, exceptions, polymorphism, closures, operator overloading, aspect-orientation, reflection, annotations, etc."</li>
-                        <li><input type="checkbox" /> "I like code generators, configurable builds, and SOAP."</li>
-                        <li><input type="checkbox" /> "If you get a lot more functionality with a little bit of extra work, don't think for too long. Do it."</li>
+                        <li><input type="checkbox" /> "Investing a bit more time to solve a problem in a generic way, saves time in the long run."</li>
+                        <li><input type="checkbox" /> "Performance, scalability, portability, etc. have to be considered before and during implementation."</li>
+                        <li><input type="checkbox" /> "Make your software extensible, flexible and configurable at runtime so you don't have to change your code continuously."</li>
+                        <li><input type="checkbox" /> "Make yourself independent from external systems. Use an abstraction layer to do so."</li>
+                        <li><input type="checkbox" /> "Generics, exceptions, polymorphism, closures, operator overloading, aspect-orientation, reflection, etc. are powerful instruments that bring up a valuable benefit."</li>
+                        <li><input type="checkbox" /> "Code generators, DSLs, build profiles and configurable libraries can lift you to a higher level of effectiveness."</li>
                     </ul>
                 </div>
             </div></div>
@@ -125,14 +121,12 @@
                         Developers with this attitude think in models and concepts when making design decisions.
                     </p>
                     <ul>
-                        <li><input type="checkbox" /> "I think in terms of abstractions, concepts, and models"</li>
-                        <li><input type="checkbox" /> "In most cases duplication can be eliminated by finding the right abstractions."</li>
+                        <li><input type="checkbox" /> "Don't look at the code with a magnifying glass. Rather think in terms of abstractions, concepts and models."</li>
+                        <li><input type="checkbox" /> "Establish architectural constraints and check them. Software should be cleanly structured."</li>
                         <li><input type="checkbox" /> "Each class should represent a real-world concept."</li>
-                        <li><input type="checkbox" /> "<code>Birthday</code> is a perfectly valid class. It's more than a pure Date as it can, for example, compute an age."</li>
-                        <li><input type="checkbox" /> "<code>CustomerNumber</code> should be a class in order to facilitate type checking."</li>
-                        <li><input type="checkbox" /> "Class names which end with <code>Object, Manager, Handler, Data, Info</code>, etc. are a smell."</li>
-                        <li><input type="checkbox" /> "Each class and each method should be understandable on it's own, i.e. without knowing the rest of the system. If that's not the case, a suitable abstraction is missing."</li>
-                        <li><input type="checkbox" /> "An interface shouldn't expose the inner workings of a module."</li>
+                        <li><input type="checkbox" /> "To document software means to explain the concepts, layers and dependencies."</li>
+                        <li><input type="checkbox" /> "Also "small" concepts like <code>Birthday</code>, <code>CustomerNumber</code>, and <code>EmailAddress</code> should be represented by a class."</li>
+                        <li><input type="checkbox" /> "Each change/refactoring has to be done with the big picture in mind. Every functionality has its place, every layer its purpose."</li>
                     </ul>
                 </div>
             </div></div>
@@ -145,13 +139,11 @@
                         Developers with this attitude think in programming language constructs when making design decisions.
                     </p>
                     <ul>
-                        <li><input type="checkbox" /> "I think in code (i.e. in terms of classes methods and statements)"</li>
-                        <li><input type="checkbox" /> "Duplication is the root of all evil. Avoid it at any cost."</li>
-                        <li><input type="checkbox" /> "I frequently extract classes when I see that this improves the structure of the code."</li>
-                        <li><input type="checkbox" /> "Avoid tiny classes which don't provide functionality."</li>
-                        <li><input type="checkbox" /> "Coding is the repetions of writing code and extracting redundancy."</li>
-                        <li><input type="checkbox" /> "It is more important for the implementation to be simple than the interface."</li>
-                        <li><input type="checkbox" /> "You can read good code from top to bottom. And this is a good way of understanding it."</li>
+                        <li><input type="checkbox" /> "Programming is about writing code, not about drawing pictures."</li>
+                        <li><input type="checkbox" /> "Coding is the repetition of writing code and extracting redundancy."</li>
+                        <li><input type="checkbox" /> "Software is like bushes or hedgerows. It naturally grows in several directions and needs to be trimmed every now and then."</li>
+                        <li><input type="checkbox" /> "To document software means to explain the classes and methods."</li>
+                        <li><input type="checkbox" /> "The best way to understand software is to read the code."</li>
                         <li><input type="checkbox" /> "You can refactor code without completely understanding it."</li>
                     </ul>
                 </div>
@@ -170,14 +162,12 @@
                         Developers with this attitude prefer providing imperfect solutions over providing no solution at all.
                     </p>
                     <ul>
-                        <li><input type="checkbox" /> "Time to market is sometimes more important than code quality."</li>
-                        <li><input type="checkbox" /> "I'm not afraid of duplicating code... if there is a good reason to do so."</li>
-                        <li><input type="checkbox" /> "Often you get 80% of the solution for 20% the effort. We can care about the remaining 20% manually or partly automated if needed afterwards."</li>
-                        <li><input type="checkbox" /> "I only implement what's necessary. I don't care about completeness and symmetry. If it's not needed it's worthless."</li>
-                        <li><input type="checkbox" /> "Surprisingly many badly written systems in practice work quite well for quite a long while. There is no need to produce art."</li>
-                        <li><input type="checkbox" /> "It's the result that counts. Not the tiny details. A workaround is better than no solution at all."</li>
-                        <li><input type="checkbox" /> "Don't care about non-functional requirements which are not relevant for the system. If the system will never be ported, it doesn't need to be portable."</li>
-                        <li><input type="checkbox" /> "I don't have to understand all the code I find at stackoverflow. If it works, it's good."</li>
+                        <li><input type="checkbox" /> "Software is an instrument to achieve a certain goal e.g. satisfy business needs, automate processes, etc."</li>
+                        <li><input type="checkbox" /> "An 80% solution now is often better than a 100% solution next month."</li>
+                        <li><input type="checkbox" /> "Only necessary things have to be implemented. Technical completeness and symmetry have no value on their own."</li>
+                        <li><input type="checkbox" /> "Not every task needs a fancy framework or special programming language feature to be accomplished."</li>
+                        <li><input type="checkbox" /> "Sometimes it is necessary to omit certain time consuming tasks like unit tests, consistent exception handling or documentation."</li>
+                        <li><input type="checkbox" /> "It's not a shame to use code snippets you find on the Internet. They can be extremely helpful and boost development speed."</li>
                     </ul>
                 </div>
             </div></div>
@@ -190,14 +180,12 @@
                         Developers with this attitude prefer doing things right.
                     </p>
                     <ul>
-                        <li><input type="checkbox" /> "Bad code quality will kill you in the long run."</li>
-                        <li><input type="checkbox" /> "Avoid duplication. Period."</li>
-                        <li><input type="checkbox" /> "Classes are meant to represent concepts. If they don't, the code will be less understandable."</li>
-                        <li><input type="checkbox" /> "Code is good, when it's symmetric. Classes should have all expected methods. Don't implement a class for complex numbers which can add but not subtract."</li>
-                        <li><input type="checkbox" /> "Don't misuse programming language constructs. Don't missuse frameworks, patterns and concepts. Don't say REST when it's actually not."</li>
-                        <li><input type="checkbox" /> "Each piece of functionality has it's place where it belongs to. It should be implemented exactly there."</li>
-                        <li><input type="checkbox" /> "If in doubt, invest two more minutes for finding a good identifier. If there is no good identifier, that's a sign that the abstraction is wrong."</li>
-                        <li><input type="checkbox" /> "Each module (package, class, method) and even each line of code should be understandable on it's own, i.e. without knowing the rest of the system."</li>
+                        <li><input type="checkbox" /> "Bad quality will kill you in the long run."</li>
+                        <li><input type="checkbox" /> "Each piece of functionality has its place where it belongs. It should be implemented exactly there."</li>
+                        <li><input type="checkbox" /> "Don't misuse programming language constructs. Don't misuse frameworks, patterns and concepts (e.g. don't say REST when it's actually not)."</li>
+                        <li><input type="checkbox" /> "Good design combines precise structure with symmetry."</li>
+                        <li><input type="checkbox" /> "Duplication is the root of all evil. Avoid it."</li>
+                        <li><input type="checkbox" /> "Good identifiers are important. If there is no good identifier, it is a sign that the abstraction is wrong."</li>
                     </ul>
                 </div>
             </div></div>
@@ -216,13 +204,11 @@
                     </p>
                     <ul>
                         <li><input type="checkbox" /> "Technology evolves. We should, too."</li>
-                        <li><input type="checkbox" /> "I prefer keeping up with the times by frequently updating to new technology."</li>
                         <li><input type="checkbox" /> "Move fast and don't fear breaking things."</li>
-                        <li><input type="checkbox" /> "New technology often is an improvement. We should embrace that in order to get better."</li>
-                        <li><input type="checkbox" /> "Upgrading technology regularly is easy as it's always a small step. Waiting for too long creates huge unnecessary efforts."</li>
-                        <li><input type="checkbox" /> "I like trying out new frameworks, libraries, design strategies, and languages. Even if I won't use it in practice, it's good to look left and right."</li>
-                        <li><input type="checkbox" /> "Stagnation kills creativity."</li>
-                        <li><input type="checkbox" /> "We build software such that it's easily fixed when there is a problem. Roll forward is typically better than roll back."</li>
+                        <li><input type="checkbox" /> "Upgrading technology regularly is easy as it's always a small step. Waiting for too long makes upgrading hard and painful when it becomes unavoidable."</li>
+                        <li><input type="checkbox" /> "Try out new frameworks, libraries, design strategies, and languages. Even if you won't use it in practice, it's good to broaden your horizon."</li>
+                        <li><input type="checkbox" /> "It is absolutely normal that a coding style changes over time. This just reflects that developers are able to learn something new."</li>
+                        <li><input type="checkbox" /> "New programming language constructs like generics, annotations, lambdas, etc. are there for a certain reason and should be used in this case."</li>
                     </ul>
                 </div>
             </div></div>
@@ -235,14 +221,12 @@
                         Developers with this attitude prefer proven solutions at the risk of missing the current evolution.
                     </p>
                     <ul>
-                        <li><input type="checkbox" /> "If it works, there is no need to change it."</li>
-                        <li><input type="checkbox" /> "I don't fear being left behind by evolving technology. Let's first see what comes out on top."</li>
-                        <li><input type="checkbox" /> "I like stable technology which stood the test of time."</li>
-                        <li><input type="checkbox" /> "New technology often is just a hype. It won't last long and the next one will be praised as the solution to all problems."</li>
-                        <li><input type="checkbox" /> "There is no silver bullet. That's an often neglected fact."</li>
-                        <li><input type="checkbox" /> "Better double check."</li>
-                        <li><input type="checkbox" /> "Too much creativity is risky when you already have accomplished something. You need to find the correct amout of creativity which fits the business."</li>
-                        <li><input type="checkbox" /> "Prepare to rollback. If something goes wrong, we can still switch to a working solution."</li>
+                        <li><input type="checkbox" /> "Never change a running system."</li>
+                        <li><input type="checkbox" /> "Strive towards standardization: Use standard technologies, standard architectures, standard coding styles, standard formatting, standardized checklists, etc."</li>
+                        <li><input type="checkbox" /> "Use stable technology which stood the test of time. Buggy libraries are annoying and new technologies are often just hyped."</li>
+                        <li><input type="checkbox" /> "Better write a few more lines of code instead of adding a dependency to another new library."</li>
+                        <li><input type="checkbox" /> "Defensive programming is an essential part of writing code."</li>
+                        <li><input type="checkbox" /> "Avoid code magic like bytecode manipulation, reflection and aspect orientation."</li>
                     </ul>
                 </div>
             </div></div>
@@ -251,7 +235,7 @@
     <section class="result">
         <a id="result"></a>
         <h1>Result</h1>
-        
+
         <div class="alert alert-info">
             <p id="resultString">
                 Fill in the questionaire to determine your design type.
@@ -265,7 +249,7 @@
                 </p>
             </noscript>
         </div>
-        
+
         <div id="types">
             <h2 id="sapt">SAPT</h2>
             <div class ="row">
@@ -324,9 +308,9 @@
                         <dd>Like managing a construction site. Somethiong has to be built.</dd>
                         <dt>Principles you probably like</dt>
                         <dd>
-                            <a class="dont-print-url" href="http://www.principles-wiki.net/principles:keep_it_simple_stupid">KISS</a>, 
-                            <a class="dont-print-url" href="http://www.principles-wiki.net/principles:murphy_s_law">ML</a>, 
-                            <a class="dont-print-url" href="http://www.principles-wiki.net/principles:low_coupling">LC</a>, 
+                            <a class="dont-print-url" href="http://www.principles-wiki.net/principles:keep_it_simple_stupid">KISS</a>,
+                            <a class="dont-print-url" href="http://www.principles-wiki.net/principles:murphy_s_law">ML</a>,
+                            <a class="dont-print-url" href="http://www.principles-wiki.net/principles:low_coupling">LC</a>,
                             <a class="dont-print-url" href="http://www.principles-wiki.net/principles:high_cohesion">HC</a>
                         </dd>
                         <dt>Principles you rather disregard</dt>
@@ -453,7 +437,7 @@
                         <dd>A craft</dd>
                         <dt>Principles you probably like</dt>
                         <dd>
-                            <a class="dont-print-url" href="http://www.principles-wiki.net/principles:keep_it_simple_stupid">KISS</a>, 
+                            <a class="dont-print-url" href="http://www.principles-wiki.net/principles:keep_it_simple_stupid">KISS</a>,
                             <a class="dont-print-url" href="http://www.principles-wiki.net/principles:don_t_repeat_yourself">DRY</a>,
                             <a class="dont-print-url" href="http://www.principles-wiki.net/principles:easy_to_use_and_hard_to_misuse">EUHM</a>
                         </dd>
@@ -482,7 +466,7 @@
                         <dd>
                         </dd>
                     </dl>
-                </div> 
+                </div>
             </div>
             <h2 id="scps">SCPS: MacGyver or The Fire Fighter</h2>
             <div class="row">
@@ -500,14 +484,14 @@
                         <dd>Problem solving</dd>
                         <dt>Principles you probably like</dt>
                         <dd>
-                            <a class="dont-print-url" href="http://www.principles-wiki.net/principles:keep_it_simple_stupid">KISS</a>, 
-                            <a class="dont-print-url" href="http://www.principles-wiki.net/principles:more_is_more_complex">MIMC</a>, 
+                            <a class="dont-print-url" href="http://www.principles-wiki.net/principles:keep_it_simple_stupid">KISS</a>,
+                            <a class="dont-print-url" href="http://www.principles-wiki.net/principles:more_is_more_complex">MIMC</a>,
                             <a class="dont-print-url" href="http://www.principles-wiki.net/principles:rule_of_explicitness">RoE</a>
                         </dd>
                         <dt>Principles you rather disregard</dt>
                         <dd>
                             <a class="dont-print-url" href="http://www.principles-wiki.net/principles:generalization_principle">GP</a>,
-                            <a class="dont-print-url" href="http://www.principles-wiki.net/principles:model_principle">MP</a>, 
+                            <a class="dont-print-url" href="http://www.principles-wiki.net/principles:model_principle">MP</a>,
                             <a class="dont-print-url" href="http://www.principles-wiki.net/principles:principle_of_separate_understandability">PSU</a>
                         </dd>
                     </dl>
@@ -671,7 +655,7 @@
                         <dd>Powerful, Abstract, Pragmatic, Stability-oriented</dd>
                         <dt>Description</dt>
                         <dd>
-                            
+
                         </dd>
                         <dt>Your designs are</dt>
                         <dd>
@@ -717,7 +701,7 @@
                         <dd>Powerful, Abstract, Idealistic, Technology-oriented</dd>
                         <dt>Description</dt>
                         <dd>
-                            
+
                         </dd>
                         <dt>Your designs are</dt>
                         <dd>Well thought-out and sophisticated but sometimes a bit over the top.</dd>
@@ -762,7 +746,7 @@
                         <dd>Powerful, Abstract, Idealistic, Stability-oriented</dd>
                         <dt>Description</dt>
                         <dd>
-                            
+
                         </dd>
                         <dt>Your designs are</dt>
                         <dd></dd>
@@ -807,7 +791,7 @@
                         <dd>Powerful, Concrete, Pragmatic, Technology-oriented</dd>
                         <dt>Description</dt>
                         <dd>
-                            
+
                         </dd>
                         <dt>Your designs are</dt>
                         <dd></dd>
@@ -852,7 +836,7 @@
                         <dd>Powerful, Concrete, Pragmatic, Stability-oriented</dd>
                         <dt>Description</dt>
                         <dd>
-                            
+
                         </dd>
                         <dt>Your designs are</dt>
                         <dd></dd>
@@ -897,7 +881,7 @@
                         <dd>Powerful, Concrete, Idealistic, Technology-oriented</dd>
                         <dt>Description</dt>
                         <dd>
-                            
+
                         </dd>
                         <dt>Your designs are</dt>
                         <dd></dd>
@@ -942,7 +926,7 @@
                         <dd>Powerful, Concrete, Idealistic, Stability-oriented</dd>
                         <dt>Description</dt>
                         <dd>
-                            
+
                         </dd>
                         <dt>Your designs are</dt>
                         <dd></dd>
