@@ -166,6 +166,7 @@ function Dimension(value1, value2) {
 
 function Questionaire() {
     var SUPPLY_CORRECT_NUMBER_OF_STATEMENTS = "Check exactly five stametements in each group!";
+    var RESULT_STRING = '<strong>Result:</strong> Your design type is <a href="types.html?type=${type}"><strong>${type}</strong>.';
 
     var dimensions = [
         new Dimension("simple", "powerful"),
@@ -179,7 +180,7 @@ function Questionaire() {
             dimensions[dim].update();
         }
         var type = getDesignType();
-        $("#resultString").html('<strong>Result:</strong> Your design type is <a href="types.html?type=' + type + '"><strong>' + type + "</strong>.");
+        $("#resultString").html(RESULT_STRING.replace(/\$\{type\}/g, type));
     }
 
     function getDesignType() {
@@ -207,7 +208,7 @@ function Questionaire() {
             for (dim in dimensions) {
                 dimensions[dim].reveal();
             }
-            $("#types").show();
+            $("#result-description").show();
         }
     }
 }
