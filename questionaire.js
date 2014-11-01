@@ -20,7 +20,7 @@ function Dimension(value1, value2) {
         var box = $("<div/>", {
             "class": "alert alert-danger",
             html: "<strong>Hint:</strong> " + SUPPLY_CORRECT_NUMBER_OF_STATEMENTS,
-            style: "display:none"});
+            style: "display:none; margin:1em;"});
         $(".dimension#" + id()).append(box);
         return box;
     };
@@ -31,6 +31,7 @@ function Dimension(value1, value2) {
     
     this.update = function() {
         computeScores();
+        checkForCompleteness();
         checkForError();
         checkForSuccess();
     }
@@ -38,17 +39,29 @@ function Dimension(value1, value2) {
     function computeScores() {
         score1 = count(value1);
         score2 = count(value2);
+    
+        if (isComplete()) {
+            wasOnceComplete = true;
+        }
     }
     
     function count(id) {
         return $(".dimension #" + id + " :checked").length;
     }
+
+    function checkForCompleteness() {
+        if (wasOnceComplete) {
+            if (isComplete()) {
+                group.addClass("complete");
+                group.removeClass("incomplete");
+            } else {
+                group.addClass("incomplete");
+                group.removeClass("complete");
+            }
+        }
+    }
     
     function checkForError() {
-        if (isComplete()) {
-            wasOnceComplete = true;
-        }
-    
         if (isError()) {
             errorBox.show("slow");
         } else {

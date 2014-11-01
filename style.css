@@ -27,6 +27,14 @@ h1 {
     border: 1px solid gray;
 }
 
+.dimension.bordered.complete {
+    border: 2px solid #5cb85c;
+}
+
+.dimension.bordered.incomplete {
+    border: 2px solid #d9534f;
+}
+
 .dimension .panel-heading {
     text-align: center;
     font-weight: bold;
