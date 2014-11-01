@@ -1,13 +1,16 @@
 function Dimension(value1, value2) {
     var NUMBER_OF_STATEMENTS_NEEDED = 5;
-    var SUPPLY_CORRECT_NUMBER_OD_STATEMENTS = "Check exactly 5 stametements!";
+    var SUPPLY_CORRECT_NUMBER_OF_STATEMENTS = "Check exactly five stametements!";
 
     var wasOnceComplete = false;
     var score1 = 0;
     var score2 = 0;
     
-    var box1 = $(".dimension #" + value1);
-    var box2 = $(".dimension #" + value2);
+    var group = $("#" + value1 + "-vs-" + value2);
+    var groupName = group.children("h1").children(".group-name");
+    var groupNumber = group.children("h1").children(".group-number");
+    var panel1 = $(".dimension #" + value1);
+    var panel2 = $(".dimension #" + value2);
     var errorBox = createErrorBox();
     
     this.value1 = value1;
@@ -16,7 +19,7 @@ function Dimension(value1, value2) {
     function createErrorBox() {
         var box = $("<div/>", {
             "class": "alert alert-danger",
-            html: "<strong>Hint:</strong> " + SUPPLY_CORRECT_NUMBER_OD_STATEMENTS,
+            html: "<strong>Hint:</strong> " + SUPPLY_CORRECT_NUMBER_OF_STATEMENTS,
             style: "display:none"});
         $(".dimension#" + id()).append(box);
         return box;
@@ -69,25 +72,25 @@ function Dimension(value1, value2) {
     function checkForSuccess() {
         if (isComplete()) {
             if (score1 > score2) {
-                markPanel(box1);
-                unmarkPanel(box2);
+                markPanel(panel1);
+                unmarkPanel(panel2);
             } else if (score1 < score2) {
-                unmarkPanel(box1);
-                markPanel(box2);
+                unmarkPanel(panel1);
+                markPanel(panel2);
             } else {
-                unmarkPanel(box1);
-                unmarkPanel(box2);
+                unmarkPanel(panel1);
+                unmarkPanel(panel2);
             }
         } else {
             if (score1 > score2) {
-                markPanelTentative(box1);
-                unmarkPanel(box2);
+                markPanelTentative(panel1);
+                unmarkPanel(panel2);
             } else if (score1 < score2) {
-                unmarkPanel(box1);
-                markPanelTentative(box2);
+                unmarkPanel(panel1);
+                markPanelTentative(panel2);
             } else {
-                unmarkPanel(box1);
-                unmarkPanel(box2);
+                unmarkPanel(panel1);
+                unmarkPanel(panel2);
             }
         }
     }
@@ -120,10 +123,37 @@ function Dimension(value1, value2) {
             return value2[0];
         }
     };
+    
+    this.reveal= function() {
+        showGroupName();
+        showPanel(panel1);
+        showPanel(panel2);
+        removeGroupBorder();
+    }
+    
+    function showGroupName() {
+        groupName.show();
+        groupNumber.hide();
+    }
+    
+    function showPanel(panel) {
+        panel.addClass("panel");
+        headerOf(panel).show();
+    }
+    
+    function headerOf(panel) {
+        return panel.children(".panel-heading").show();
+    }
+    
+    function removeGroupBorder() {
+        group.removeClass("bordered");
+    }
 };
 
 
 function Questionaire() {
+    var SUPPLY_CORRECT_NUMBER_OF_STATEMENTS = "Check exactly 5 stametements in each group!";
+    
     $("#types").accordion({ 
         collapsible: true,
         active: false ,
@@ -134,10 +164,10 @@ function Questionaire() {
         new Dimension("simple", "powerful"),
         new Dimension("abstract", "concrete"),
         new Dimension("pragmatic", "idealistic"),
-        new Dimension("technology", "stability")
+        new Dimension("technologic", "robust")
     ];
     
-    this.update = function () {
+    this.update = function() {
         for (dim in dimensions) {
             dimensions[dim].update();
         }
@@ -181,13 +211,28 @@ function Questionaire() {
         }
         return result;
     }
+    
+    this.finish = function() {
+        if (! isComplete()) {
+            $("#globalErrorBox").show("slow");
+        } else {
+            $("#globalErrorBox").hide("slow");
+            for (dim in dimensions) {
+                dimensions[dim].reveal();
+            }
+        }
+    }
 }
  
 $(document).ready(function() {
-    var questionaire = new Questionaire();
+    window.questionaire = new Questionaire();
 
     $(".dimension input").on('click', function() {
         questionaire.update();
+    });
+    
+    $("#finish").on('click', function() {
+        questionaire.finish();
     });
 });
 

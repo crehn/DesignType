@@ -68,11 +68,11 @@
         </div>
     </section>
     <a id="questions"></a>
-    <section class="dimension" id="simple-vs-powerful">
-        <h1>Simple vs. Powerful</h1>
+    <section class="dimension bordered" id="simple-vs-powerful">
+        <h1><span class="group-number">Group 1</span><span class="group-name" style="display:none">Simple vs. Powerful</span></h1>
         <div class="row">
-            <div class="col-sm-6"><div class="panel panel-default" id="simple">
-                <div class="panel-heading">
+            <div class="col-sm-6"><div class="panel-default" id="simple">
+                <div class="panel-heading" style="display:none">
                     Simple
                 </div>
                 <div class="panel-body">
@@ -86,8 +86,8 @@
                     </ul>
                 </div>
             </div></div>
-            <div class="col-sm-6"><div class="panel panel-default" id="powerful">
-                <div class="panel-heading">
+            <div class="col-sm-6"><div class="panel-default" id="powerful">
+                <div class="panel-heading" style="display:none">
                     Powerful
                 </div>
                 <div class="panel-body">
@@ -103,11 +103,11 @@
             </div></div>
         </div>
     </section>
-    <section class="dimension" id="abstract-vs-concrete">
-        <h1>Abstract vs. Concrete</h1>
+    <section class="dimension bordered" id="abstract-vs-concrete">
+        <h1><span class="group-number">Group 2</span><span class="group-name" style="display:none">Abstract vs. Concrete</span></h1>
         <div class="row">
-            <div class="col-sm-6"><div class="panel panel-default" id="abstract">
-                <div class="panel-heading">
+            <div class="col-sm-6"><div class="panel-default" id="abstract">
+                <div class="panel-heading" style="display:none">
                     Abstract
                 </div>
                 <div class="panel-body">
@@ -121,8 +121,8 @@
                     </ul>
                 </div>
             </div></div>
-            <div class="col-sm-6"><div class="panel panel-default" id="concrete">
-                <div class="panel-heading">
+            <div class="col-sm-6"><div class="panel-default" id="concrete">
+                <div class="panel-heading" style="display:none">
                     Concrete
                 </div>
                 <div class="panel-body">
@@ -138,11 +138,11 @@
             </div></div>
         </div>
     </section>
-    <section class="dimension" id="pragmatic-vs-idealistic">
-        <h1>Pragmatic vs. Idealistic</h1>
+    <section class="dimension bordered" id="pragmatic-vs-idealistic">
+        <h1><span class="group-number">Group 3</span><span class="group-name" style="display:none">Pragmatic vs. Idealistic</span></h1>
         <div class="row">
-            <div class="col-sm-6"><div class="panel panel-default" id="pragmatic">
-                <div class="panel-heading">
+            <div class="col-sm-6"><div class="panel-default" id="pragmatic">
+                <div class="panel-heading" style="display:none">
                     Pragmatic
                 </div>
                 <div class="panel-body">
@@ -156,8 +156,8 @@
                     </ul>
                 </div>
             </div></div>
-            <div class="col-sm-6"><div class="panel panel-default" id="idealistic">
-                <div class="panel-heading">
+            <div class="col-sm-6"><div class="panel-default" id="idealistic">
+                <div class="panel-heading" style="display:none">
                     Idealistic
                 </div>
                 <div class="panel-body">
@@ -173,12 +173,12 @@
             </div></div>
         </div>
     </section>
-    <section class="dimension" id="technology-vs-stability">
-        <h1>Technology vs. Stability</h1>
+    <section class="dimension bordered" id="technologic-vs-robust">
+        <h1><span class="group-number">Group 4</span><span class="group-name" style="display:none">Technologic vs. Robust</span></h1>
         <div class="row">
-            <div class="col-sm-6"><div class="panel panel-default" id="technology">
-                <div class="panel-heading">
-                    Technology-Oriented
+            <div class="col-sm-6"><div class="panel-default" id="technologic">
+                <div class="panel-heading" style="display:none">
+                    Technologic
                 </div>
                 <div class="panel-body">
                     <p class="definition">
@@ -194,9 +194,9 @@
                     </ul>
                 </div>
             </div></div>
-            <div class="col-sm-6"><div class="panel panel-default" id="stability">
-                <div class="panel-heading">
-                    Stability-Oriented
+            <div class="col-sm-6"><div class="panel-default" id="robust">
+                <div class="panel-heading" style="display:none">
+                    Robust
                 </div>
                 <div class="panel-body">
                     <p class="definition">
@@ -214,6 +214,12 @@
             </div></div>
         </div>
     </section>
+    <section class="bordered">
+        <input type="submit" id="finish" value="Finish" class="btn btn-lg btn-primary" />
+        <div class="alert alert-danger" style="display:none" id="globalErrorBox">
+            <strong>Hint:</strong> Please check exactly five statements in each group!
+        </div>
+    </section>
     <section class="result">
         <a id="result"></a>
         <h1>Result</h1>
@@ -224,7 +230,7 @@
             </p>
             <noscript>
                 <p>
-                    Check exactly five statements for each of the above four dimensions (e.g. "simple vs. powerful"). As a result you will get more crosses on the one or the other side of each dimension. For example you could have checked three statements in the group "simple" and two in "powerful". So for each dimension you get an attribute. Taking the first letter of each dimension results in your design type, e.g. SAPT stands for "Simple, Abstract, Pragmatic, and Technology-oriented".
+                    Check exactly five statements for each of the above four dimensions (e.g. "simple vs. powerful"). As a result you will get more crosses on the one or the other side of each dimension. For example you could have checked three statements in the group "simple" and two in "powerful". So for each dimension you get an attribute. Taking the first letter of each dimension results in your design type, e.g. SAPT stands for "Simple, Abstract, Pragmatic, and Technologic".
                 </p>
                 <p>
                     Activate JavaScript for more convenience.
