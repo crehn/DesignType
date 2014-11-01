@@ -57,6 +57,10 @@ h1 {
     text-decoration: none;
 }
 
+#types {
+    margin: 0.5em;
+}
+
 @media print {
     #types div {
         display: block !important;

@@ -165,13 +165,7 @@ function Dimension(value1, value2) {
 
 
 function Questionaire() {
-    var SUPPLY_CORRECT_NUMBER_OF_STATEMENTS = "Check exactly 5 stametements in each group!";
-    
-    $("#types").accordion({ 
-        collapsible: true,
-        active: false ,
-        heightStyle: "content"
-    });
+    var SUPPLY_CORRECT_NUMBER_OF_STATEMENTS = "Check exactly five stametements in each group!";
 
     var dimensions = [
         new Dimension("simple", "powerful"),
@@ -184,11 +178,8 @@ function Questionaire() {
         for (dim in dimensions) {
             dimensions[dim].update();
         }
-        $("#resultString").html("<strong>Result:</strong> Your design type is <strong>" + getDesignType() + "</strong>.");
-        
-        if (isComplete()) {
-            showType(getDesignType());
-        }
+        var type = getDesignType();
+        $("#resultString").html('<strong>Result:</strong> Your design type is <a href="types.html?type=' + type + '"><strong>' + type + "</strong>.");
     }
 
     function getDesignType() {
@@ -208,23 +199,6 @@ function Questionaire() {
         return true;
     }
     
-    function showType(type) {
-        $("#types").accordion("option", "active", typeToIndex(type));
-        $("#types h2").removeClass("marked");
-        $("#" + type.toLowerCase()).addClass("marked");
-    }
-    
-    function typeToIndex(type) {
-        // the types are ordered just if they were binary numbers. value1 (left) is a binary 0, value2 (right) a binary 1.
-        var result = 0;
-        for (i = 0; i < dimensions.length; i++) {
-            var position = dimensions.length -1 - i;
-            var digit = dimensions[i].resultAsChar() == dimensions[i].value1[0] ? 0 : 1;
-            result += Math.pow(2, position) * digit;
-        }
-        return result;
-    }
-    
     this.finish = function() {
         if (! isComplete()) {
             $("#globalErrorBox").show("slow");
@@ -233,6 +207,7 @@ function Questionaire() {
             for (dim in dimensions) {
                 dimensions[dim].reveal();
             }
+            $("#types").show();
         }
     }
 }
