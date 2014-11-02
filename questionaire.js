@@ -182,6 +182,10 @@ function Questionaire() {
         var type = getDesignType();
         $("#resultString").html(RESULT_STRING.replace(/\$\{type\}/g, type));
     }
+    
+    this.getDesignType = function() {
+        return getDesignType();
+    }
 
     function getDesignType() {
         var result = "";
@@ -222,6 +226,10 @@ $(document).ready(function() {
     
     $("#finish").on('click', function() {
         questionaire.finish();
+    });
+    
+    $("#continue").on('click', function() {
+        window.location.href='submit.html?type='+questionaire.getDesignType();
     });
 });
 
