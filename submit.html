@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="bower_components/html5shiv/dist/html5shiv.js"></script>
+      <script src="bower_components/respond.js/dest/respond.min.js"></script>
+    <![endif]-->
+
+    <title>How Do You Design Software?</title>
+</head>
+<body>
+<div class="container page">
+    <nav class="navbar navbar-inverse navbar-default" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Design Type</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="index.html#questions">Questionaire</a></li>
+                    <li><a href="dimensions.html">Dimensions</a></li>
+                    <li><a href="types.html">Types</a></li>
+                    <li class="active"><a href="#">Submit</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="http://www.principles-wiki.net">principles-wiki.net</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="jumbotron">
+        <h1>How Do You Design Software?</h1>
+        <p>
+            Take part in the statistical analysis.
+        </p>
+    </div>
+    
+    <noscript>
+        <div class="alert alert-danger">
+            This questionaire needs JavaScript in order to work.
+        </div>
+    </noscript>
+
+    <section>
+        <h1>Take Part in the Statistical Analysis</h1>
+        <p>
+            Take part in the statistical analysis by submitting the result. As soon as we have anough statistical data we will present our results here. Our goal is to understand design types better and to correlate design types with experience and working background. Questions we want to answer are:
+            <ul>
+                <li>Which are the predominant design types per age, education, and experience level?</li>
+                <li>How does the design type change over time?</li>
+                <li>Which are the predominant design types in certain industry sectors and companies?</li>
+                <li>Which are the predominant design types in certain job positions?</li>
+                <li>...</li>
+            </ul>
+        </p>
+    </section>
+    <section>
+        <h1>Statistical Questions</h1>
+        <form action="" method="post">
+            <label for="designType">Your Design Type:</label>
+            <select id="designType" name="designType" size="1">
+                <option></option>
+                <option>SAPT</option>
+                <option>SAPR</option>
+                <option>SAIT</option>
+                <option>SAIR</option>
+                <option>SCPT</option>
+                <option>SCPR</option>
+                <option>SCIT</option>
+                <option>SCIR</option>
+                <option>PAPT</option>
+                <option>PAPR</option>
+                <option>PAIT</option>
+                <option>PAIR</option>
+                <option>PCPT</option>
+                <option>PCPR</option>
+                <option>PCIT</option>
+                <option>PCIR</option>
+            </select>
+            
+            
+            <h2>Programming Experience</h2>
+            
+            <label for="age">Age:</label>
+            <select id="age" name="age" size="1">
+                <option></option>
+                <option>&lt; 15</option>
+                <option>15-18</option>
+                <option>19-25</option>
+                <option>26-35</option>
+                <option>36-45</option>
+                <option>46-55</option>
+                <option>56-65</option>
+                <option>&gt; 65</option>
+            </select><br />
+            
+            <label for="startedProgrammingAge">I started programming at the age of:</label>
+            <select id="startedProgrammingAge" name="startedProgrammingAge" size="1">
+                <option></option>
+                <option>&lt; 15</option>
+                <option>15-18</option>
+                <option>19-25</option>
+                <option>26-35</option>
+                <option>36-45</option>
+                <option>46-55</option>
+                <option>56-65</option>
+                <option>&gt; 65</option>
+            </select><br />
+            
+            <label for="startedProgramming">This was in the:</label>
+            <select id="startedProgramming" name="startedProgramming" size="1">
+                <option></option>
+                <option>2010s</option>
+                <option>2000s</option>
+                <option>90s</option>
+                <option>80s</option>
+                <option>70s</option>
+                <option>60s</option>
+                <option>even earlier</option>
+            </select><br />
+            
+            <label for="professionalYears">I've been working professionally in the software business for:</label>
+            <select id="professionalYears" name="professionalYears" size="1">
+                <option></option>
+                <option>I'm not working, yet</option>
+                <option>&lt; 1 year</option>
+                <option>1-2 years</option>
+                <option>2-5 years</option>
+                <option>5-10 years</option>
+                <option>10-15 years</option>
+                <option>15-25 years</option>
+                <option>25-35 years</option>
+                <option>35-45 years</option>
+                <option>&gt; 45 years</option>
+            </select> (keep in mind periods when you did something different)
+            
+            
+            <h2>Education</h2>
+            
+            <label for="educationLevel">Professional education:</label>
+            <select id="educationLevel" name="educationLevel" size="1">
+                <option></option>
+                <option>No professional education, yet</option>
+                <option>Self-taught</option>
+                <option>Professional training/college</option>
+                <option>University degree or similar</option>
+                <option>PhD</option>
+            </select><br />
+            
+            <label for="educationBackground">Educational background:</label>
+            <select id="educationBackground" name="educationBackground" size="1">
+                <option></option>
+                <option>Programming/computer science</option>
+                <option>Mathematics</option>
+                <option>Physics</option>
+                <option>Chemistry/pharmacy</option>
+                <option>Biology</option>
+                <option>Other science</option>
+                <option>Electrical engineering</option>
+                <option>Chemical engineering</option>
+                <option>Other engineering</option>
+                <option>Economics</option>
+                <option>Something different</option>
+            </select>
+            
+            
+            <h2>Working Background</h2>
+            
+            <label for="companySize">Company size:</label>
+            <select id="companySize" name="companySize" size="1">
+                <option></option>
+                <option>I don't work</option>
+                <option>Self-employed</option>
+                <option>&lt; 10 employees</option>
+                <option>10-50 employees</option>
+                <option>50-100 employees</option>
+                <option>100-250 employees</option>
+                <option>250-1000 employees</option>
+                <option>1000-5000 employees</option>
+                <option>5000-15 000 employees</option>
+                <option>15 000-50 000 employees</option>
+                <option>50 000-250 000 employees</option>
+                <option>&gt; 250 000 employees</option>
+            </select><br />
+            
+            <label for="industrySector">Industry Sector:</label>
+            <select id="industrySector" name="industrySector" size="1">
+                <option></option>
+                <option>I don't work</option>
+                <option>Pure software development</option>
+                <option>Telecommunication</option>
+                <option>Media</option>
+                <option>Consumer products</option>
+                <option>Engineering</option>
+                <option>Chemistry</option>
+                <option>Finance</option>
+                <option>Insurance</option>
+                <option>Medical</option>
+                <option>Other</option>
+            </select><br />
+            
+            <label for="role">Role:</label>
+            <select id="role" name="role" size="1">
+                <option></option>
+                <option>I don't work</option>
+                <option>Software developer</option>
+                <option>Software architect/designer</option>
+                <option>Requirements engineer/business analyst</option>
+                <option>Project manager</option>
+                <option>Tester</option>
+                <option>Operator</option>
+                <option>Database admin</option>
+                <option>Consultant</option>
+                <option>Manager</option>
+                <option>Other</option>
+            </select><br />
+            
+            <label for="programmingLanguage">I mainly use:</label>
+            <select id="programmingLanguage" name="programmingLanguage" size="1">
+                <option></option>
+                <option>HTML/JavaScript, etc.</option>
+                <option>Dynamically typed languages (PHP, Ruby, Phython, ...)</option>
+                <option>Statically typed languages (Java, C#, C, C++, Delphi, ...)</option>
+                <option>Other programming languages</option>
+                <option>UML or other diagrams</option>
+                <option>Neither</option>
+            </select><br />
+            
+            <label for="methodology">Software development process:</label>
+            <select id="methodology" name="methodology" size="1">
+                <option></option>
+                <option>Plan-driven (waterfall, v-model, ...)</option>
+                <option>Agile (Scrum, kanban, XP, ...)</option>
+                <option>Neither</option>
+            </select><br />
+            
+            <div class="well">
+                <input type="submit" id="submit" value="Submit" class="btn btn-lg btn-primary pull-right" />
+                <div class="clearfix">
+                    Wen you submit your data we will first just store it in a database. As soon as we've got enough data, we will analyze it and directly show the results here. We plan to have some nice graphs showing how experience, education and working background correlates with the design type.
+                </div>
+            </div>
+        </form>
+    </section>
+</div>
+
+</body>
+</html>

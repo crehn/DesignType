@@ -36,6 +36,7 @@
                     <li class="active"><a href="#questions">Questionaire</a></li>
                     <li><a href="dimensions.html">Dimensions</a></li>
                     <li><a href="types.html">Types</a></li>
+                    <li><a href="submit.html">Submit</a></li>
                     <li><a href="about.html">About</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
@@ -51,6 +52,12 @@
             Find out by answering this questionaire.
         </p>
     </div>
+    
+    <noscript>
+        <div class="alert alert-danger">
+            This questionaire needs JavaScript in order to work.
+        </div>
+    </noscript>
 
     <section>
         <h1>Introduction</h1>
@@ -209,7 +216,7 @@
         </div>
     </section>
     <section class="well">
-        <input type="submit" id="finish" value="Finish" class="btn btn-lg btn-primary pull-right" />
+        <input type="button" id="finish" value="Finish" class="btn btn-lg btn-primary pull-right" />
         <div class="clearfix">
             Fill in the questionaire to determine your design type. Check five statements in each group, then hit "finish".
         </div>
@@ -225,8 +232,11 @@
             Fill in the questionaire to determine your design type.
         </div>
         <div id="result-description" style="display:none">
-            Play around with the result, see how it changes as you vary your answers and read about the different <a href="types.html">design types</a>. You may also want to think about how your colleages may have answered the questionaire and which design type they are. Maybe this helps you to understand your colleagues and their way of thinking better.
-        </dev>
+            <input type="button" id="continue" value="Continue" class="btn btn-lg btn-primary pull-right" />
+            <div class="clearfix">
+                Play around with the result, see how it changes as you vary your answers and read about the different <a href="types.html">design types</a>. You may also want to think about how your colleages may have answered the questionaire and which design type they are. Maybe this helps you to understand your colleagues and their way of thinking better. Please hit "continue" for taking part in the statistical analysis.
+            </div>
+        </div>
     </section>
     <section>
         <h1>Final Remarks</h1>
