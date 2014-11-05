@@ -29,15 +29,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Design Type</a>
+                <a class="navbar-brand" href="index.html">Design Type</a>
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#questions">Questionaire</a></li>
-                    <li><a href="dimensions.html">Dimensions</a></li>
-                    <li><a href="types.html">Types</a></li>
-                    <li><a href="submit.html">Submit</a></li>
-                    <li><a href="about.html">About</a></li>
+                    <li><a href="questionaire.html">Test Yourself</a></li>
+                    <li><a href="questionaire.html?revealed">Play Around</a></li>
+                    <li><a href="about.html">Learn More</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="http://www.principles-wiki.net">principles-wiki.net</a></li>
@@ -215,7 +213,7 @@
             </div></div>
         </div>
     </section>
-    <section class="well">
+    <section id="controls" class="well">
         <input type="button" id="continue" value="Continue" class="btn btn-lg btn-primary pull-right" />
         <div class="clearfix">
             Fill in the questionaire to determine your design type. Check five statements in each group, then hit "continue".
@@ -223,6 +221,9 @@
         <div class="alert alert-danger" style="display:none; margin-top:0.5em;margin-bottom:0;" id="globalErrorBox">
             <strong>Hint:</strong> Please check exactly five statements in each group!
         </div>
+    </section>
+    <section id="result" style="display:none">
+        <div id="resultString" class="alert alert-info"><strong>Result</strong>: Your design type is ????.</div>
     </section>
 </div>
 

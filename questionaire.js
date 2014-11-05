@@ -212,6 +212,14 @@ function Questionaire() {
             window.location.href='submit.html?type='+questionaire.getDesignType();
         }
     }
+    
+    this.reveal = function() {
+        for (dim in dimensions) {
+            dimensions[dim].reveal();
+        }
+        $("#result").show();
+        $("#controls").hide();
+    }
 }
  
 $(document).ready(function() {
@@ -224,5 +232,9 @@ $(document).ready(function() {
     $("#continue").on('click', function() {
         questionaire.finish();
     });
+    
+    if (window.location.search === "?revealed") {
+        questionaire.reveal();
+    }
 });
 
