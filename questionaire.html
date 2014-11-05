@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="bower_components/html5shiv/dist/html5shiv.js"></script>
+      <script src="bower_components/respond.js/dest/respond.min.js"></script>
+    <![endif]-->
+
+    <title>How Do You Design Software?</title>
+</head>
+<body>
+<div class="container page">
+    <nav class="navbar navbar-inverse navbar-default" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Design Type</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#questions">Questionaire</a></li>
+                    <li><a href="dimensions.html">Dimensions</a></li>
+                    <li><a href="types.html">Types</a></li>
+                    <li><a href="submit.html">Submit</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="http://www.principles-wiki.net">principles-wiki.net</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="jumbotron">
+        <h1>How Do You Design Software?</h1>
+        <p>
+            Find out by answering this questionaire.
+        </p>
+    </div>
+    
+    <noscript>
+        <div class="alert alert-danger">
+            This questionaire needs JavaScript in order to work.
+        </div>
+    </noscript>
+
+    <section>
+        <h1>Introduction</h1>
+        <p>
+            As developers we frequently make design decisions. They can be as general as "How many levels of abstractions do I need?" or "Which framework should I use?" and as concrete as "How to name this method?" and "In which order should these values be supplied?". They center around modularization (how to break a problem down into classes and methods), interface design (how to craft these modules such that they are easily useable) and internal module structure (how to compose the inner workings of classes).
+        </p>
+        <p>
+            Unfortunately there is no single correct solution for any of these questions. There are many bad solutions but there typically are several "good" ones. Deciding among these good solutions is not an objective task as each of them has different benefits and drawbacks. So the decisions are made in a subjective way which depends on a developer's way of thinking.
+        </p>
+        <p>
+            The different attitudes may lead to frequent arguments on which way is best. The following questionaire may help to find out how you make design decisions. You may even try to use it to find out how your colleagues think about software design. We hope that a better understanding of how other developers think, improves the communication in a team.
+        </p>
+        <div class="alert alert-info">
+            <strong>Usage:</strong> In each group check <em>exactly five</em> statements. Use those you can identify with most, those statements you could make yourself.
+        </div>
+    </section>
+    <a id="questions"></a>
+    <section class="dimension bordered" id="simple-vs-powerful">
+        <h1><span class="group-number">Group 1</span><span class="group-name" style="display:none">Simple vs. Powerful</span></h1>
+        <div class="row">
+            <div class="col-sm-6"><div class="panel-default" id="simple">
+                <div class="panel-heading" style="display:none">
+                    Simple
+                </div>
+                <div class="panel-body">
+                    <ul>
+                        <li><input type="checkbox" /> "Software should be simple in order to be fast to write, maintainable, and low on bugs."</li>
+                        <li><input type="checkbox" /> "Avoid dependencies, libraries and complex language features that do not have a substantial advantage."</li>
+                        <li><input type="checkbox" /> "Don't implement features/flexibility/configurability unless there is a good reason to do so."</li>
+                        <li><input type="checkbox" /> "A class/method is good when it's small. Large units/modules are a smell."</li>
+                        <li><input type="checkbox" /> "Simple brute-force solutions may be slow but will work in the first place."</li>
+                        <li><input type="checkbox" /> "Good code needs almost no documentation."</li>
+                    </ul>
+                </div>
+            </div></div>
+            <div class="col-sm-6"><div class="panel-default" id="powerful">
+                <div class="panel-heading" style="display:none">
+                    Powerful
+                </div>
+                <div class="panel-body">
+                    <ul>
+                        <li><input type="checkbox" /> "Investing a bit more time to solve a problem in a generic way, saves time in the long run."</li>
+                        <li><input type="checkbox" /> "Performance, scalability, portability, etc. have to be considered before and during implementation."</li>
+                        <li><input type="checkbox" /> "Make your software extensible, flexible and configurable at runtime so you don't have to change your code continuously."</li>
+                        <li><input type="checkbox" /> "Make yourself independent from external systems. Use an abstraction layer to do so."</li>
+                        <li><input type="checkbox" /> "Generics, exceptions, polymorphism, closures, operator overloading, aspect-orientation, reflection, etc. are powerful instruments that bring up a valuable benefit."</li>
+                        <li><input type="checkbox" /> "Code generators, DSLs, build profiles and configurable libraries can lift you to a higher level of effectiveness."</li>
+                    </ul>
+                </div>
+            </div></div>
+        </div>
+    </section>
+    <section class="dimension bordered" id="abstract-vs-concrete">
+        <h1><span class="group-number">Group 2</span><span class="group-name" style="display:none">Abstract vs. Concrete</span></h1>
+        <div class="row">
+            <div class="col-sm-6"><div class="panel-default" id="abstract">
+                <div class="panel-heading" style="display:none">
+                    Abstract
+                </div>
+                <div class="panel-body">
+                    <ul>
+                        <li><input type="checkbox" /> "Don't look at the code with a magnifying glass. Rather think in terms of abstractions, concepts and models."</li>
+                        <li><input type="checkbox" /> "Establish architectural constraints and check them. Software should be cleanly structured."</li>
+                        <li><input type="checkbox" /> "Each class should represent a real-world concept."</li>
+                        <li><input type="checkbox" /> "To document software means to explain the concepts, layers and dependencies."</li>
+                        <li><input type="checkbox" /> "Also "small" concepts like <code>Birthday</code>, <code>CustomerNumber</code>, and <code>EmailAddress</code> should be represented by a class."</li>
+                        <li><input type="checkbox" /> "Each change/refactoring has to be done with the big picture in mind. Every functionality has its place, every layer its purpose."</li>
+                    </ul>
+                </div>
+            </div></div>
+            <div class="col-sm-6"><div class="panel-default" id="concrete">
+                <div class="panel-heading" style="display:none">
+                    Concrete
+                </div>
+                <div class="panel-body">
+                    <ul>
+                        <li><input type="checkbox" /> "Programming is about writing code, not about drawing pictures."</li>
+                        <li><input type="checkbox" /> "Coding is the repetition of writing code and extracting redundancy."</li>
+                        <li><input type="checkbox" /> "Software is like bushes or hedgerows. It naturally grows in several directions and needs to be trimmed every now and then."</li>
+                        <li><input type="checkbox" /> "To document software means to explain the classes and methods."</li>
+                        <li><input type="checkbox" /> "The best way to understand software is to read the code."</li>
+                        <li><input type="checkbox" /> "You can refactor code without completely understanding it."</li>
+                    </ul>
+                </div>
+            </div></div>
+        </div>
+    </section>
+    <section class="dimension bordered" id="pragmatic-vs-idealistic">
+        <h1><span class="group-number">Group 3</span><span class="group-name" style="display:none">Pragmatic vs. Idealistic</span></h1>
+        <div class="row">
+            <div class="col-sm-6"><div class="panel-default" id="pragmatic">
+                <div class="panel-heading" style="display:none">
+                    Pragmatic
+                </div>
+                <div class="panel-body">
+                    <ul>
+                        <li><input type="checkbox" /> "Software is an instrument to achieve a certain goal e.g. satisfy business needs, automate processes, etc."</li>
+                        <li><input type="checkbox" /> "An 80% solution now is often better than a 100% solution next month."</li>
+                        <li><input type="checkbox" /> "Only necessary things have to be implemented. Technical completeness and symmetry have no value on their own."</li>
+                        <li><input type="checkbox" /> "Not every task needs a fancy framework or special programming language feature to be accomplished."</li>
+                        <li><input type="checkbox" /> "Sometimes it is necessary to omit certain time consuming tasks like unit tests, consistent exception handling or documentation."</li>
+                        <li><input type="checkbox" /> "It's not a shame to use code snippets you find on the Internet. They can be extremely helpful and boost development speed."</li>
+                    </ul>
+                </div>
+            </div></div>
+            <div class="col-sm-6"><div class="panel-default" id="idealistic">
+                <div class="panel-heading" style="display:none">
+                    Idealistic
+                </div>
+                <div class="panel-body">
+                    <ul>
+                        <li><input type="checkbox" /> "Bad quality will kill you in the long run."</li>
+                        <li><input type="checkbox" /> "Each piece of functionality has its place where it belongs. It should be implemented exactly there."</li>
+                        <li><input type="checkbox" /> "Don't misuse programming language constructs. Don't misuse frameworks, patterns and concepts (e.g. don't say REST when it's actually not)."</li>
+                        <li><input type="checkbox" /> "Good design combines precise structure with symmetry."</li>
+                        <li><input type="checkbox" /> "Duplication is the root of all evil. Avoid it."</li>
+                        <li><input type="checkbox" /> "Good identifiers are important. If there is no good identifier, it is a sign that the abstraction is wrong."</li>
+                    </ul>
+                </div>
+            </div></div>
+        </div>
+    </section>
+    <section class="dimension bordered" id="technologic-vs-robust">
+        <h1><span class="group-number">Group 4</span><span class="group-name" style="display:none">Technologic vs. Robust</span></h1>
+        <div class="row">
+            <div class="col-sm-6"><div class="panel-default" id="technologic">
+                <div class="panel-heading" style="display:none">
+                    Technologic
+                </div>
+                <div class="panel-body">
+                    <ul>
+                        <li><input type="checkbox" /> "Technology evolves. We should, too."</li>
+                        <li><input type="checkbox" /> "Move fast and don't fear breaking things."</li>
+                        <li><input type="checkbox" /> "Upgrading technology regularly is easy as it's always a small step. Waiting for too long makes upgrading hard and painful when it becomes unavoidable."</li>
+                        <li><input type="checkbox" /> "Try out new frameworks, libraries, design strategies, and languages. Even if you won't use it in practice, it's good to broaden your horizon."</li>
+                        <li><input type="checkbox" /> "It is absolutely normal that a coding style changes over time. This just reflects that developers are able to learn something new."</li>
+                        <li><input type="checkbox" /> "New programming language constructs like generics, annotations, lambdas, etc. are there for a certain reason and should be used in this case."</li>
+                    </ul>
+                </div>
+            </div></div>
+            <div class="col-sm-6"><div class="panel-default" id="robust">
+                <div class="panel-heading" style="display:none">
+                    Robust
+                </div>
+                <div class="panel-body">
+                    <ul>
+                        <li><input type="checkbox" /> "Never change a running system."</li>
+                        <li><input type="checkbox" /> "Strive towards standardization: Use standard technologies, standard architectures, standard coding styles, standard formatting, standardized checklists, etc."</li>
+                        <li><input type="checkbox" /> "Use stable technology which stood the test of time. Buggy libraries are annoying and new technologies are often just hyped."</li>
+                        <li><input type="checkbox" /> "Better write a few more lines of code instead of adding a dependency to another new library."</li>
+                        <li><input type="checkbox" /> "Defensive programming is an essential part of writing code."</li>
+                        <li><input type="checkbox" /> "Avoid code magic like bytecode manipulation, reflection and aspect orientation."</li>
+                    </ul>
+                </div>
+            </div></div>
+        </div>
+    </section>
+    <section class="well">
+        <input type="button" id="finish" value="Finish" class="btn btn-lg btn-primary pull-right" />
+        <div class="clearfix">
+            Fill in the questionaire to determine your design type. Check five statements in each group, then hit "finish".
+        </div>
+        <div class="alert alert-danger" style="display:none; margin-top:0.5em;margin-bottom:0;" id="globalErrorBox">
+            <strong>Hint:</strong> Please check exactly five statements in each group!
+        </div>
+    </section>
+    <section class="result">
+        <a id="result"></a>
+        <h1>Result</h1>
+
+        <div class="alert alert-info" id="resultString">
+            Fill in the questionaire to determine your design type.
+        </div>
+        <div id="result-description" style="display:none">
+            <input type="button" id="continue" value="Continue" class="btn btn-lg btn-primary pull-right" />
+            <div class="clearfix">
+                Play around with the result, see how it changes as you vary your answers and read about the different <a href="types.html">design types</a>. You may also want to think about how your colleages may have answered the questionaire and which design type they are. Maybe this helps you to understand your colleagues and their way of thinking better. Please hit "continue" for taking part in the statistical analysis.
+            </div>
+        </div>
+    </section>
+    <section>
+        <h1>Final Remarks</h1>
+        <p>
+            This categorization is by far not covering all aspects of a developer. Working style, prefered development process, people skills, and many other aspects are neglected here. That's also not the goal of this questionaire. Rather the hope is that this structure helps you to understand how your colleagues think when they make design decisions.
+        </p>
+        <p>
+            This questionaire is still work in progress. It still hasn't been tried out how well the mapping of the selected statements to design types works. Neither it's clear whether the design types are described correctly. Feedback is welcome.
+        </p>
+    </section>
+</div>
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="questionaire.js"></script>
+</body>
+</html>

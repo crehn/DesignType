@@ -12,7 +12,7 @@ div.page .navbar {
     margin: 0 -15px;
 }
 
-div.page .jumbotron {
+.jumbotron {
     background-color: #f6a828;
     color: white;
     margin: 15px -15px;
@@ -20,6 +20,23 @@ div.page .jumbotron {
 
 h1 {
     text-align: center;
+}
+
+h1.main-title {
+    font-size:550%;
+    margin-bottom: 0.3em;
+}
+
+.entry-point-col {
+    text-align: center;
+}
+
+.entry-point {
+    border:1px solid white;
+    border-radius:10%;
+    font-size:10em;
+    background:rgba(255,255,255,0.5);
+    padding: 0.1em;
 }
 
 .dimension.bordered {
@@ -70,4 +87,3 @@ h1 {
         content: "";
     }
 }
-
