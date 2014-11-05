@@ -31,12 +31,19 @@ h1.main-title {
     text-align: center;
 }
 
+.entry-point-primary {
+    text-align: center;
+}
+
 .entry-point {
     border:1px solid white;
     border-radius:10%;
-    font-size:10em;
     background:rgba(255,255,255,0.5);
-    padding: 0.1em;
+    padding: 2em;
+}
+
+.entry-point-primary .btn-primary {
+    font-size:2em;
 }
 
 .dimension.bordered {

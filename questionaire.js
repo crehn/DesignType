@@ -208,11 +208,8 @@ function Questionaire() {
         if (! isComplete()) {
             $("#globalErrorBox").show("slow");
         } else {
-            $("#globalErrorBox").hide("slow");
-            for (dim in dimensions) {
-                dimensions[dim].reveal();
-            }
-            $("#result-description").show();
+            $("#globalErrorBox").hide();
+            window.location.href='submit.html?type='+questionaire.getDesignType();
         }
     }
 }
@@ -224,12 +221,8 @@ $(document).ready(function() {
         questionaire.update();
     });
     
-    $("#finish").on('click', function() {
-        questionaire.finish();
-    });
-    
     $("#continue").on('click', function() {
-        window.location.href='submit.html?type='+questionaire.getDesignType();
+        questionaire.finish();
     });
 });
 
