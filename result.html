@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="bower_components/jquery-ui/themes/ui-lightness/jquery-ui.min.css">
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="bower_components/html5shiv/dist/html5shiv.js"></script>
+      <script src="bower_components/respond.js/dest/respond.min.js"></script>
+    <![endif]-->
+
+    <title>How Do You Design Software?</title>
+</head>
+<body>
+<div class="container page">
+    <nav class="navbar navbar-inverse navbar-default" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Design Type</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="questionaire.html">Test Yourself</a></li>
+                    <li><a href="questionaire.html?revealed">Play Around</a></li>
+                    <li><a href="about.html">Learn More</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="http://www.principles-wiki.net">principles-wiki.net</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="jumbotron">
+        <h1>How Do You Design Software?</h1>
+        <p>
+            This is your result.
+        </p>
+    </div>
+
+    <section>
+        <a id="result"></a>
+        <h1>Your Design Type</h1>
+        <div class="alert alert-info" id="resultString">
+            Fill in the questionaire to determine your design type.
+        </div>
+        <div id="types">
+            <h2 style="display:none" id="sapt">SAPT</h2>
+            <div class ="row" style="display:none">
+                <div class="col-sm-6">
+                    <dl>
+                        <dt>Attributes</dt>
+                        <dd>Simple, Abstract, Pragmatic, Technologic</dd>
+                        <dt>Description</dt>
+                        <dd>
+                        </dd>
+                        <dt>Your designs are</dt>
+                        <dd></dd>
+                        <dt>Programming is</dt>
+                        <dd></dd>
+                        <dt>Principles you probably like</dt>
+                        <dd>
+                        </dd>
+                        <dt>Principles you rather disregard</dt>
+                        <dd>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="col-sm-6">
+                    <dl>
+                        <dt>Strengths</dt>
+                        <dd>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </dd>
+                        <dt>Suggestions</dt>
+                        <dd>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </dd>
+                        <dt>Further reading</dt>
+                        <dd>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            <h2 style="display:none" id="sapr">SAPR: The Construction Manager</h2>
+            <div class ="row" style="display:none">
+                <div class="col-sm-6">
+                    <dl>
+                        <dt>Attributes</dt>
+                        <dd>Simple, Abstract, Pragmatic, Robust</dd>
+                        <dt>Description</dt>
+                        <dd>
+                            Software development is like a construction site. Don't make things more complicated than they are, think ahead and plan in a reasonable manner, but get things done.
+                        </dd>
+                        <dt>Your designs are</dt>
+                        <dd>Reasonably planned but a bit conservative</dd>
+                        <dt>Programming is</dt>
+                        <dd>Like managing a construction site. Somethiong has to be built.</dd>
+                        <dt>Principles you probably like</dt>
+                        <dd>
+                            <a class="dont-print-url" href="http://www.principles-wiki.net/principles:keep_it_simple_stupid">KISS</a>,
+                            <a class="dont-print-url" href="http://www.principles-wiki.net/principles:murphy_s_law">ML</a>,
+                            <a class="dont-print-url" href="http://www.principles-wiki.net/principles:low_coupling">LC</a>,
+                            <a class="dont-print-url" href="http://www.principles-wiki.net/principles:high_cohesion">HC</a>
+                        </dd>
+                        <dt>Principles you rather disregard</dt>
+                        <dd>
+                            <a class="dont-print-url" href="http://www.principles-wiki.net/principles:principle_of_separate_understandability">PSU</a>,
+                            <a class="dont-print-url" href="http://www.principles-wiki.net/principles:tell_don_t_ask_information_expert">TdA/IE</a>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="col-sm-6">
+                    <dl>
+                        <dt>Strengths</dt>
+                        <dd>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </dd>
+                        <dt>Suggestions</dt>
+                        <dd>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </dd>
+                        <dt>Further reading</dt>
+                        <dd>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            <h2 style="display:none" id="sait">SAIT</h2>
+            <div class ="row" style="display:none">
+                <div class="col-sm-6">
+                    <dl>
+                        <dt>Attributes</dt>
+                        <dd>Simple, Abstract, Idealistic, Technologic</dd>
+                        <dt>Description</dt>
+                        <dd>
+                        </dd>
+                        <dt>Your designs are</dt>
+                        <dd></dd>
+                        <dt>Programming is</dt>
+                        <dd></dd>
+                        <dt>Principles you probably like</dt>
+                        <dd>
+                        </dd>
+                        <dt>Principles you rather disregard</dt>
+                        <dd>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="col-sm-6">
+                    <dl>
+                        <dt>Strengths</dt>
+                        <dd>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </dd>
+                        <dt>Suggestions</dt>
+                        <dd>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </dd>
+                        <dt>Further reading</dt>
+                        <dd>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            <h2 style="display:none" id="sair">SAIR</h2>
+            <div class ="row" style="display:none">
+                <div class="col-sm-6">
+                    <dl>
+                        <dt>Attributes</dt>
+                        <dd>Simple, Abstract, Idealistic, Robust</dd>
+                        <dt>Description</dt>
+                        <dd>
+                        </dd>
+                        <dt>Your designs are</dt>
+                        <dd></dd>
+                        <dt>Programming is</dt>
+                        <dd></dd>
+                        <dt>Principles you probably like</dt>
+                        <dd>
+                        </dd>
+                        <dt>Principles you rather disregard</dt>
+                        <dd>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="col-sm-6">
+                    <dl>
+                        <dt>Strengths</dt>
+                        <dd>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </dd>
+                        <dt>Suggestions</dt>
+                        <dd>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </dd>
+                        <dt>Further reading</dt>
+                        <dd>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            <h2 style="display:none" id="scpt">SCPT: The Craftsman</h2>
+            <div class ="row" style="display:none">
+                <div class="col-sm-6">
+                    <dl>
+                        <dt>Attributes</dt>
+                        <dd>Simple, Concrete, Pragmatic, Technologic</dd>
+                        <dt>Description</dt>
+                        <dd>
+                        </dd>
+                        <dt>Your designs are</dt>
+                        <dd></dd>
+                        <dt>Programming is</dt>
+                        <dd>A craft</dd>
+                        <dt>Principles you probably like</dt>
+                        <dd>
+                            <a class="dont-print-url" href="http://www.principles-wiki.net/principles:keep_it_simple_stupid">KISS</a>,
+                            <a class="dont-print-url" href="http://www.principles-wiki.net/principles:don_t_repeat_yourself">DRY</a>,
+                            <a class="dont-print-url" href="http://www.principles-wiki.net/principles:easy_to_use_and_hard_to_misuse">EUHM</a>
+                        </dd>
+                        <dt>Principles you rather disregard</dt>
+                        <dd>
+                            <a class="dont-print-url" href="http://www.principles-wiki.net/principles:model_principle">MP</a>,
+                            <a class="dont-print-url" href="http://www.principles-wiki.net/principles:principle_of_separate_understandability">PSU</a>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="col-sm-6">
+                    <dl>
+                        <dt>Strengths</dt>
+                        <dd>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </dd>
+                        <dt>Suggestions</dt>
+                        <dd>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </dd>
+                        <dt>Further reading</dt>
+                        <dd>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            <h2 style="display:none" id="scpr">SCPR: MacGyver or The Fire Fighter</h2>
+            <div class="row" style="display:none" >
+                <div class="col-sm-6">
+                    <dl>
+                        <dt>Attributes</dt>
+                        <dd>Simple, Concrete, Pragmatic, Robust</dd>
+                        <dt>Description</dt>
+                        <dd>
+                            You can fix anything with a string of duct tape. When there is a problem, you are the one to find a simple and efficient solution for it. You don't like endless discussions without getting anything done. While others may still be dreaming of a big system which can do anything, while they spent large amouts of time keeping up with the latest hype, you have already solved the problem and begin looking around where the next problem can be fixed. You don't know everything but when there is something you cannot solve yourself, you know where to find helpful code snippets in the internet.
+                        </dd>
+                        <dt>Your designs are</dt>
+                        <dd>Small, simple and efficient but probably less foresightful</dd>
+                        <dt>Programming is</dt>
+                        <dd>Problem solving</dd>
+                        <dt>Principles you probably like</dt>
+                        <dd>
+                            <a class="dont-print-url" href="http://www.principles-wiki.net/principles:keep_it_simple_stupid">KISS</a>,
+                            <a class="dont-print-url" href="http://www.principles-wiki.net/principles:more_is_more_complex">MIMC</a>,
+                            <a class="dont-print-url" href="http://www.principles-wiki.net/principles:rule_of_explicitness">RoE</a>
+                        </dd>
+                        <dt>Principles you rather disregard</dt>
+                        <dd>
+                            <a class="dont-print-url" href="http://www.principles-wiki.net/principles:generalization_principle">GP</a>,
+                            <a class="dont-print-url" href="http://www.principles-wiki.net/principles:model_principle">MP</a>,
+                            <a class="dont-print-url" href="http://www.principles-wiki.net/principles:principle_of_separate_understandability">PSU</a>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="col-sm-6">
+                    <dl>
+                        <dt>Strengths</dt>
+                        <dd>
+                            <ul>
+                                <li>You are an efficient problem solver</li>
+                                <li>You don't loose time in endless discussions</li>
+                                <lI>You simply get things done</li>
+                            </ul>
+                        </dd>
+                        <dt>Suggestions</dt>
+                        <dd>
+                            <ul>
+                                <li>Try not to loose the big picture</li>
+                                <li>Your solutions work now pretty well but in the future they may need to be revised. Be careful that all those necessary future changes don't add up such that the overall effort is higher than that for the more elaborate solutions of you colleagues.</li>
+                                <li>Don't forget to refactor. Otherwise all those simple enhancements may result in something complicated.</li>
+                            </ul>
+                        </dd>
+                        <dt>Further reading</dt>
+                        <dd>
+                            <ul>
+                                <li><a href="http://www.joelonsoftware.com/items/2009/09/23.html">The Duct Tape Programmer</a></li>
+                                <li><a href="http://www.jwz.org/doc/worse-is-better.html">Worse is better</a></li>
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            <h2 style="display:none" id="scit">SCIT</h2>
+            <div class ="row" style="display:none">
+                <div class="col-sm-6">
+                    <dl>
+                        <dt>Attributes</dt>
+                        <dd>Simple, Concrete, Idealistic, Technologic</dd>
+                        <dt>Description</dt>
+                        <dd>
+                        </dd>
+                        <dt>Your designs are</dt>
+                        <dd></dd>
+                        <dt>Programming is</dt>
+                        <dd></dd>
+                        <dt>Principles you probably like</dt>
+                        <dd>
+                        </dd>
+                        <dt>Principles you rather disregard</dt>
+                        <dd>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="col-sm-6">
+                    <dl>
+                        <dt>Strengths</dt>
+                        <dd>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </dd>
+                        <dt>Suggestions</dt>
+                        <dd>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </dd>
+                        <dt>Further reading</dt>
+                        <dd>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            <h2 style="display:none" id="scir">SCIR</h2>
+            <div class ="row" style="display:none">
+                <div class="col-sm-6">
+                    <dl>
+                        <dt>Attributes</dt>
+                        <dd>Simple, Concrete, Idealistic, Robust</dd>
+                        <dt>Description</dt>
+                        <dd>
+                        </dd>
+                        <dt>Your designs are</dt>
+                        <dd></dd>
+                        <dt>Programming is</dt>
+                        <dd></dd>
+                        <dt>Principles you probably like</dt>
+                        <dd>
+                        </dd>
+                        <dt>Principles you rather disregard</dt>
+                        <dd>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="col-sm-6">
+                    <dl>
+                        <dt>Strengths</dt>
+                        <dd>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </dd>
+                        <dt>Suggestions</dt>
+                        <dd>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </dd>
+                        <dt>Further reading</dt>
+                        <dd>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            <h2 style="display:none" id="papt">PAPT: The Engineer</h2>
+            <div class ="row" style="display:none">
+                <div class="col-sm-6">
+                    <dl>
+                        <dt>Attributes</dt>
+                        <dd>Powerful, Abstract, Pragmatic, Technologic</dd>
+                        <dt>Description</dt>
+                        <dd>
+                        </dd>
+                        <dt>Your designs are</dt>
+                        <dd></dd>
+                        <dt>Programming is</dt>
+                        <dd>An engineering discipline</dd>
+                        <dt>Principles you probably like</dt>
+                        <dd>
+                        </dd>
+                        <dt>Principles you rather disregard</dt>
+                        <dd>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="col-sm-6">
+                    <dl>
+                        <dt>Strengths</dt>
+                        <dd>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </dd>
+                        <dt>Suggestions</dt>
+                        <dd>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </dd>
+                        <dt>Further reading</dt>
+                        <dd>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            <h2 style="display:none" id="papr">PAPR</h2>
+            <div class ="row" style="display:none">
+                <div class="col-sm-6">
+                    <dl>
+                        <dt>Attributes</dt>
+                        <dd>Powerful, Abstract, Pragmatic, Robust</dd>
+                        <dt>Description</dt>
+                        <dd>
+
+                        </dd>
+                        <dt>Your designs are</dt>
+                        <dd>
+                        </dd>
+                        <dt>Programming is</dt>
+                        <dd></dd>
+                        <dt>Principles you probably like</dt>
+                        <dd>
+                        </dd>
+                        <dt>Principles you rather disregard</dt>
+                        <dd>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="col-sm-6">
+                    <dl>
+                        <dt>Strengths</dt>
+                        <dd>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </dd>
+                        <dt>Suggestions</dt>
+                        <dd>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </dd>
+                        <dt>Further reading</dt>
+                        <dd>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            <h2 style="display:none" id="pait">PAIT</h2>
+            <div class ="row" style="display:none">
+                <div class="col-sm-6">
+                    <dl>
+                        <dt>Attributes</dt>
+                        <dd>Powerful, Abstract, Idealistic, Technologic</dd>
+                        <dt>Description</dt>
+                        <dd>
+
+                        </dd>
+                        <dt>Your designs are</dt>
+                        <dd>Well thought-out and sophisticated but sometimes a bit over the top.</dd>
+                        <dt>Programming is</dt>
+                        <dd></dd>
+                        <dt>Principles you probably like</dt>
+                        <dd>
+                        </dd>
+                        <dt>Principles you rather disregard</dt>
+                        <dd>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="col-sm-6">
+                    <dl>
+                        <dt>Strengths</dt>
+                        <dd>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </dd>
+                        <dt>Suggestions</dt>
+                        <dd>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </dd>
+                        <dt>Further reading</dt>
+                        <dd>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            <h2 style="display:none" id="pair">PAIR: The Architect</h2>
+            <div class ="row" style="display:none">
+                <div class="col-sm-6">
+                    <dl>
+                        <dt>Attributes</dt>
+                        <dd>Powerful, Abstract, Idealistic, Robust</dd>
+                        <dt>Description</dt>
+                        <dd>
+
+                        </dd>
+                        <dt>Your designs are</dt>
+                        <dd></dd>
+                        <dt>Programming is</dt>
+                        <dd></dd>
+                        <dt>Principles you probably like</dt>
+                        <dd>
+                        </dd>
+                        <dt>Principles you rather disregard</dt>
+                        <dd>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="col-sm-6">
+                    <dl>
+                        <dt>Strengths</dt>
+                        <dd>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </dd>
+                        <dt>Suggestions</dt>
+                        <dd>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </dd>
+                        <dt>Further reading</dt>
+                        <dd>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            <h2 style="display:none" id="pcpt">PCPT: The Wizard</h2>
+            <div class ="row" style="display:none">
+                <div class="col-sm-6">
+                    <dl>
+                        <dt>Attributes</dt>
+                        <dd>Powerful, Concrete, Pragmatic, Technologic</dd>
+                        <dt>Description</dt>
+                        <dd>
+
+                        </dd>
+                        <dt>Your designs are</dt>
+                        <dd></dd>
+                        <dt>Programming is</dt>
+                        <dd></dd>
+                        <dt>Principles you probably like</dt>
+                        <dd>
+                        </dd>
+                        <dt>Principles you rather disregard</dt>
+                        <dd>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="col-sm-6">
+                    <dl>
+                        <dt>Strengths</dt>
+                        <dd>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </dd>
+                        <dt>Suggestions</dt>
+                        <dd>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </dd>
+                        <dt>Further reading</dt>
+                        <dd>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            <h2 style="display:none" id="pcpr">PCPR: The Technician</h2>
+            <div class ="row" style="display:none">
+                <div class="col-sm-6">
+                    <dl>
+                        <dt>Attributes</dt>
+                        <dd>Powerful, Concrete, Pragmatic, Robust</dd>
+                        <dt>Description</dt>
+                        <dd>
+
+                        </dd>
+                        <dt>Your designs are</dt>
+                        <dd></dd>
+                        <dt>Programming is</dt>
+                        <dd></dd>
+                        <dt>Principles you probably like</dt>
+                        <dd>
+                        </dd>
+                        <dt>Principles you rather disregard</dt>
+                        <dd>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="col-sm-6">
+                    <dl>
+                        <dt>Strengths</dt>
+                        <dd>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </dd>
+                        <dt>Suggestions</dt>
+                        <dd>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </dd>
+                        <dt>Further reading</dt>
+                        <dd>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            <h2 style="display:none" id="pcit">PCIT: The Clockmaker</h2>
+            <div class ="row" style="display:none">
+                <div class="col-sm-6">
+                    <dl>
+                        <dt>Attributes</dt>
+                        <dd>Powerful, Concrete, Idealistic, Technologic</dd>
+                        <dt>Description</dt>
+                        <dd>
+
+                        </dd>
+                        <dt>Your designs are</dt>
+                        <dd></dd>
+                        <dt>Programming is</dt>
+                        <dd></dd>
+                        <dt>Principles you probably like</dt>
+                        <dd>
+                        </dd>
+                        <dt>Principles you rather disregard</dt>
+                        <dd>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="col-sm-6">
+                    <dl>
+                        <dt>Strengths</dt>
+                        <dd>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </dd>
+                        <dt>Suggestions</dt>
+                        <dd>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </dd>
+                        <dt>Further reading</dt>
+                        <dd>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            <h2 style="display:none" id="pcir">PCIR</h2>
+            <div class ="row" style="display:none">
+            <div class="col-sm-6">
+                    <dl>
+                        <dt>Attributes</dt>
+                        <dd>Powerful, Concrete, Idealistic, Robust</dd>
+                        <dt>Description</dt>
+                        <dd>
+
+                        </dd>
+                        <dt>Your designs are</dt>
+                        <dd></dd>
+                        <dt>Programming is</dt>
+                        <dd></dd>
+                        <dt>Principles you probably like</dt>
+                        <dd>
+                        </dd>
+                        <dt>Principles you rather disregard</dt>
+                        <dd>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="col-sm-6">
+                    <dl>
+                        <dt>Strengths</dt>
+                        <dd>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </dd>
+                        <dt>Suggestions</dt>
+                        <dd>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </dd>
+                        <dt>Further reading</dt>
+                        <dd>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="result">
+        <a id="result"></a>
+        <h1>What's Next</h1>
+        <ul>
+            <li><a href="questionaire.html?revealed">Play around</a> with the questionaire and find out how your collegues may have answered the questions</li>
+            <li>Explore the other <a href="types.html">design types</a></li>
+            <li>Learn more about the four <a href="dimensions.html">dimensions</a>: simple-vs-powerful, abstract-vs-concrete, pragmatic-vs-idealistic, and technologic-vs-robust</li>
+            <li>Read more about the whole <a href="about.html">idea</a></li>
+            <li>Please give us <a href="mailto:email@design-types.net">feedback</a> on design types, the questionaire and your result.</li>
+        </ul>
+    <section>
+        <h1>Final Remarks</h1>
+        <p>
+            This categorization is by far not covering all aspects of a developer. Working style, prefered development process, people skills, and many other aspects are neglected here. That's also not the goal of this questionaire. Rather the hope is that this structure helps you to understand how your colleagues think when they make design decisions.
+        </p>
+        <p>
+            This questionaire is still work in progress. It still hasn't been tried out how well the mapping of the selected statements to design types works. Neither it's clear whether the design types are described correctly. Feedback is welcome.
+        </p>
+    </section>
+</div>
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/jquery-ui/ui/minified/jquery-ui.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="result.js"></script>
+</body>
+</html>
