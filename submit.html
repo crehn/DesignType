@@ -97,60 +97,42 @@
             </select>
             
             
-            <h2>Programming Experience</h2>
+            <h2>You</h2>
+            
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" size="1">
+                <option></option>
+                <option>male</option>
+                <option>female</option>
+            </select><br />
             
             <label for="age">Age:</label>
             <select id="age" name="age" size="1">
                 <option></option>
-                <option>&lt; 15</option>
-                <option>15-18</option>
-                <option>19-25</option>
-                <option>26-35</option>
-                <option>36-45</option>
-                <option>46-55</option>
-                <option>56-65</option>
-                <option>&gt; 65</option>
-            </select><br />
-            
-            <label for="startedProgrammingAge">I started programming at the age of:</label>
-            <select id="startedProgrammingAge" name="startedProgrammingAge" size="1">
-                <option></option>
-                <option>&lt; 15</option>
-                <option>15-18</option>
-                <option>19-25</option>
-                <option>26-35</option>
-                <option>36-45</option>
-                <option>46-55</option>
-                <option>56-65</option>
-                <option>&gt; 65</option>
-            </select><br />
-            
-            <label for="startedProgramming">This was in the:</label>
-            <select id="startedProgramming" name="startedProgramming" size="1">
-                <option></option>
-                <option>2010s</option>
-                <option>2000s</option>
-                <option>90s</option>
-                <option>80s</option>
-                <option>70s</option>
-                <option>60s</option>
-                <option>even earlier</option>
+                <option value="till_18">till 18</option>
+                <option>19-27</option>
+                <option>28-36</option>
+                <option>37-45</option>
+                <option>46-54</option>
+                <option>55-58</option>
+                <option>59-67</option>
+                <option value="over_67">over 67</option>
             </select><br />
             
             <label for="professionalYears">I've been working professionally in the software business for:</label>
             <select id="professionalYears" name="professionalYears" size="1">
                 <option></option>
-                <option>I'm not working, yet</option>
-                <option>&lt; 1 year</option>
-                <option>1-2 years</option>
-                <option>2-5 years</option>
-                <option>5-10 years</option>
-                <option>10-15 years</option>
-                <option>15-25 years</option>
-                <option>25-35 years</option>
-                <option>35-45 years</option>
-                <option>&gt; 45 years</option>
-            </select> (keep in mind periods when you did something different)
+                <option value="0">I'm not working, yet</option>
+                <option value="1-3">1-3 years</option>
+                <option value="4-6">4-6 years</option>
+                <option value="7-9">7-9 years</option>
+                <option value="10-12">10-12 years</option>
+                <option value="13-15">13-15 years</option>
+                <option value="16-25">16-25 years</option>
+                <option value="26-35">26-35 years</option>
+                <option value="36-45">36-45 years</option>
+                <option value="over_45">&gt; 45 years</option>
+            </select>
             
             
             <h2>Education</h2>
@@ -158,11 +140,12 @@
             <label for="educationLevel">Professional education:</label>
             <select id="educationLevel" name="educationLevel" size="1">
                 <option></option>
-                <option>No professional education, yet</option>
+                <option value="No">No professional education, yet</option>
                 <option>Self-taught</option>
-                <option>Professional training/college</option>
-                <option>University degree or similar</option>
+                <option value="Training">Professional training/college</option>
+                <option value="Academic">University degree or similar</option>
                 <option>PhD</option>
+                <option>Prof</option>
             </select><br />
             
             <label for="educationBackground">Educational background:</label>
@@ -187,25 +170,24 @@
             <label for="companySize">Company size:</label>
             <select id="companySize" name="companySize" size="1">
                 <option></option>
-                <option>I don't work</option>
-                <option>Self-employed</option>
-                <option>&lt; 10 employees</option>
-                <option>10-50 employees</option>
-                <option>50-100 employees</option>
-                <option>100-250 employees</option>
-                <option>250-1000 employees</option>
-                <option>1000-5000 employees</option>
-                <option>5000-15 000 employees</option>
-                <option>15 000-50 000 employees</option>
-                <option>50 000-250 000 employees</option>
-                <option>&gt; 250 000 employees</option>
+                <option value="0">I don't work</option>
+                <option value="1">Self-employed</option>
+                <option value="2-10">&lt; 10 employees</option>
+                <option value="10-50">10-50 employees</option>
+                <option value="50-100">50-100 employees</option>
+                <option value="100-250">100-250 employees</option>
+                <option value="250-1000">250-1000 employees</option>
+                <option value="1000-5000">1000-5000 employees</option>
+                <option value="5000-15000">5000-15 000 employees</option>
+                <option value="15000-50000">15 000-50 000 employees</option>
+                <option value="over_50000">&gt; 250 000 employees</option>
             </select><br />
             
             <label for="industrySector">Industry Sector:</label>
             <select id="industrySector" name="industrySector" size="1">
                 <option></option>
-                <option>I don't work</option>
-                <option>Pure software development</option>
+                <option value="n/a">I don't work</option>
+                <option value="Software">Pure software development</option>
                 <option>Telecommunication</option>
                 <option>Media</option>
                 <option>Consumer products</option>
@@ -220,10 +202,12 @@
             <label for="role">Role:</label>
             <select id="role" name="role" size="1">
                 <option></option>
-                <option>I don't work</option>
+                <option value="n/a">I don't work</option>
+                <option>Student</option>                
                 <option>Software developer</option>
-                <option>Software architect/designer</option>
-                <option>Requirements engineer/business analyst</option>
+                <option>Lead developer</option>
+                <option value="Architect">Software architect/designer</option>
+                <option value="Requirements engineer">Requirements engineer/business analyst</option>
                 <option>Project manager</option>
                 <option>Tester</option>
                 <option>Operator</option>
@@ -236,26 +220,31 @@
             <label for="programmingLanguage">I mainly use:</label>
             <select id="programmingLanguage" name="programmingLanguage" size="1">
                 <option></option>
-                <option>HTML/JavaScript, etc.</option>
-                <option>Dynamically typed languages (PHP, Ruby, Phython, ...)</option>
-                <option>Statically typed languages (Java, C#, C, C++, Delphi, ...)</option>
-                <option>Other programming languages</option>
-                <option>UML or other diagrams</option>
+                <option value="Web">HTML/JavaScript, etc.</option>
+                <option value="Dynamic">Dynamically typed languages (PHP, Ruby, Phython, ...)</option>
+                <option value="Static">Statically typed languages (Java, C#, C, C++, Delphi, ...)</option>
+                <option value="Other">Other programming languages</option>
+                <option value="Diagrams">UML or other diagrams</option>
                 <option>Neither</option>
             </select><br />
             
             <label for="methodology">Software development process:</label>
             <select id="methodology" name="methodology" size="1">
                 <option></option>
-                <option>Plan-driven (waterfall, v-model, ...)</option>
-                <option>Agile (Scrum, kanban, XP, ...)</option>
+                <option value="Traditional">Plan-driven (waterfall, v-model, ...)</option>
+                <option value="Agile">Agile (Scrum, kanban, XP, ...)</option>
                 <option>Neither</option>
             </select><br />
             
             <div class="well">
                 <input type="submit" id="submit" value="Submit" class="btn btn-lg btn-primary pull-right" />
                 <div class="clearfix">
-                    Wen you submit your data we will first just store it in a database. As soon as we've got enough data, we will analyze it and directly show the results here. We plan to have some nice graphs showing how experience, education and working background correlates with the design type.
+                    <p>
+                        When you submit your data, we will first just store it in a database. As soon as we've got enough data, we will analyze it and present the results here. We plan to have some nice graphs showing how experience, education and working background correlates with the design type.
+                    </p>
+                    <p>
+                        Click "submit" to see your result.
+                    </p>
                 </div>
             </div>
         </form>
