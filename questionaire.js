@@ -219,6 +219,8 @@ function Questionaire() {
         }
         $("#result").show();
         $("#controls").hide();
+        $("#introduction1").hide();
+        $("#introduction2").show();
     }
 }
  
