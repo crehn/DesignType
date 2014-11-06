@@ -10,6 +10,6 @@ function getParameterByName(name) {
 }
 
 $(document).ready(function() {
-    $("#designType option[value='" + getDesignType().toLowerCase() + "']").attr('selected',true);
+    $("#designType").attr('value', getDesignType());
 });
 
