@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="bower_components/jquery-ui/themes/ui-lightness/jquery-ui.min.css">
     <link rel="stylesheet" href="style.css" />
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -58,91 +59,125 @@
             In order to distinguish how developers think when making design decisions, one can describe four dimensions: simple-vs-powerful, abstract-vs-concrete, pragmatic-vs-idealistic, and technologic-vs-robust. These four dimensions are describes here:
         </p>
     </section>
-    <section class="dimension" id="simple-vs-powerful">
-        <h1>Simple vs. Powerful</h1>
-        <div class="row">
-            <div class="col-sm-6"><div class="panel panel-default" id="simple">
-                <div class="panel-heading">
-                    Simple
-                </div>
-                <div class="panel-body">
-                    Developers with this attitude prefer simple solutions which are easy to write and maintain.
-                </div>
-            </div></div>
-            <div class="col-sm-6"><div class="panel panel-default" id="powerful">
-                <div class="panel-heading">
-                    Powerful
-                </div>
-                <div class="panel-body">
-                    Developers with this attitude prefer powerful, flexible, and foresighted solutions.
-                </div>
-            </div></div>
+    <section id="dimensions">
+        <h2 id="simple">Simple</h2>
+        <div>
+            <p>
+                Developers with this attitude prefer simple solutions which are easy to write and maintain.
+            </p>
+            <p>
+                The main idea is keeping everything simple. Simple means to implement only necessary and requested things and to avoid any ornaments. Simple code is easier to read, better to maintain and often contains less bugs. Typical followers know about the power of simplicity. They handle complexity by splitting it up and easing it as long as it results in simple parts. Simple also prevents for several risks like necessary knowledge about complex code or additional frameworks or libraries. Followers typically implement explicitly instead of ways where you need implicit knowledge or where you have to analyze difficult to understand abstractions. Normally terminology of classes, methods or variables is easy to understand and deep inheritance hierarchies will be avoided.
+            </p>
+            <p>
+                On the other hand the design contains nothing foresighted which often leads to many changes. Especially changes at elements that should have a stable characteristic like interfaces often head in expensive refactoring. Implementing things explicitly means that it is tight to a specific case and cannot being reused. Also bindings to libraries or to external systems are often coupled to tight because additional abstraction layers for decoupling are not really simple. Another problem is misunderstanding what simple really means because follower does not always have the same opinion on this topic. At least simple also takes quite some time for easing complexity.
+            </p>
+            <p>
+                Typical applied principles for dimension simple are: KISS, MIMC, YAGNI, RoE, PLS Irrelevant principles for this dimension are (maybe also interesting to have an eye on it): GP
+            </p>
         </div>
-    </section>
-    <section class="dimension" id="abstract-vs-concrete">
-        <h1>Abstract vs. Concrete</h1>
-        <div class="row">
-            <div class="col-sm-6"><div class="panel panel-default" id="abstract">
-                <div class="panel-heading">
-                    Abstract
-                </div>
-                <div class="panel-body">
-                    Developers with this attitude think in terms of abstractions and concepts.
-                </div>
-            </div></div>
-            <div class="col-sm-6"><div class="panel panel-default" id="concrete">
-                <div class="panel-heading">
-                    Concrete
-                </div>
-                <div class="panel-body">
-                    Programmers with this attitude directly think in code.
-                </div>
-            </div></div>
+        <h2 id="powerful">Powerful</h2>
+        <div>
+            <p>
+                Developers with this attitude prefer powerful, flexible, and foresighted solutions.
+            </p>
+            <p>
+                The main idea ist to create powerful and generalized solutions that can be applied for several use cases by just customizing it. Followers typically include flexibility and extensibility naturally into software design. One motivation can be manipulating runtime behavior with less or no changes in code just by configuration. Foresighted elements keep interfaces and structure stable. Especially creative followers have many awesome ideas in parallel for additional features in mind. Simple solutions are often too simple dominating complexity is often another big motivation for followers.
+            </p>
+            <p>
+                On the other hand powerful solutions take much time especially for initial creation. There is also a risk that followers loose the origin target by focusing on functionality. Source code is not easy to understand caused by the level of complexity for example by using several abstraction levels. Bugs are also not obvious to find and therefore a debugger is frequently necessary. For followers of other dimensions it is often hard to understand the concepts or to takeover code. This can lead to displeasing situations where those feel mistreated or unable.
+            </p>
+            <p>
+                Typical applied principles for dimension powerful are: GP, ECV, IH/E, DIP, LC Irrelevant principles for this dimension are (maybe also interesting to have an eye on it): KISS, YAGNI, RoE
+            </p>
         </div>
-    </section>
-    <section class="dimension" id="pragmatic-vs-idealistic">
-        <h1>Pragmatic vs. Idealistic</h1>
-        <div class="row">
-            <div class="col-sm-6"><div class="panel panel-default" id="pragmatic">
-                <div class="panel-heading">
-                    Pragmatic
-                </div>
-                <div class="panel-body">
-                    Developers with this attitude prefer pramatic solutions.
-                </div>
-            </div></div>
-            <div class="col-sm-6"><div class="panel panel-default" id="idealistic">
-                <div class="panel-heading">
-                    Idealistic
-                </div>
-                <div class="panel-body">
-                    Developers with this attitude prefer clean solutions.
-                </div>
-            </div></div>
+        <h2 id="abstract">Abstract</h2>
+        <div>
+            <p>
+                Developers with this attitude think in terms of abstractions and concepts.
+            </p>
+            <p>
+                The mindset of this dimension leads clearly to an overall structure and focus on the interaction of particular components up to a big picture. Followers attach importance to structure and also to its compliance. Every change will be considered from a bird’s eye view first before thinking about the details in code. Modules or components are normally independent form each other and therefore exchangeable and reusable. Followers have a very good overview over the whole system to any time and are able to localize parts without knowing their implementation details. Furthermore they are also able to give advice about consequences of particular changes. They typically tend to conception motivated by the need for having a plan. This will normally lead to sustainable architectures if sufficient information and experience are available. Passionate followers use a real world model wherein each element keeps its inherent state and behavior.
+            </p>
+            <p>
+                An approach that starts with conception trying to find the right abstractions and structures takes quite some time. Compliance of structure over time costs additional time. If followers are too far from reality they tend to build over engineered systems with too much complexity in it. There is also a risk that solutions differ too much from the origin requirements caused by focusing too much on architecture instead of customer wishes. For several technical circumstances the transformation of a real world model into a technical one can lead to conflicts in structure.
+            </p>
+            <p>
+                Typical applied principles for dimension abstract are: TdA/IE, PSU, PLS, HC, LSP, IH/E, SLA, MP Irrelevant principles for this dimension are (maybe also interesting to have an eye on it): KISS, YAGNI
+            </p>
         </div>
-    </section>
-    <section class="dimension" id="technologic-vs-robust">
-        <h1>Technologic vs. Robust</h1>
-        <div class="row">
-            <div class="col-sm-6"><div class="panel panel-default" id="technologic">
-                <div class="panel-heading">
-                    Technologic
-                </div>
-                <div class="panel-body">
-                    Developers with this attitude prefer technically advanced solutions.
-                </div>
-            </div></div>
-            <div class="col-sm-6"><div class="panel panel-default" id="robust">
-                <div class="panel-heading">
-                    Robust
-                </div>
-                <div class="panel-body">
-                    Developers with this attitude prefer stabe solutions which stood the test of time.
-                </div>
-            </div></div>
+        <h2 id="concrete">Concrete</h2>
+        <div>
+            <p>
+                Programmers with this attitude directly think in code.
+            </p>
+            <p>
+                The mindset of this dimension is to think and act in code. Requirements will be transformed immediately in components, classes and algorithms on the fly. Followers understand systems best by inspecting how it is implemented and find abnormalities extreme quickly. They normally have a wide spectrum of commands in mind and know how to improve algorithms for more efficiency. Furthermore they are familiar with several coding styles and easily refactor code even if it is from someone else. This ability can also be applied to code they do not understand whereat they claim to understand it at some time.
+            </p>
+            <p>
+                Their code grows naturally instead of being planned structurally and this is why structural borders are often violated. If this increases too much large-area refactorings will be the consequence. Besides this optimized code is often much more complex, hard to understand/maintain and often costs more time for implementation than it saves. Keeping all eyes on code often leads to lose focus on economical goals or architectural compliance.
+            </p>
+            <p>
+                Typical applied principles for dimension concrete are: DRY, HC bzw. SRP, ECV bzw. OCP Irrelevant principles for this dimension are (maybe also interesting to have an eye on it): MP, TdA/IE, PSU, LSP
+            </p>
+        </div>
+        <h2 id="pragmatic">Pragmatic</h2>
+        <div>
+            <p>
+                Developers with this attitude prefer pramatic solutions.
+            </p>
+            <p>
+                The main motivation of this dimension is to fulfill requested requirements as soon as possible. The end justifies the means implies that only those things will be used that guarantee a certain value. Unnecessary ones will be omitted. This approach prevents complexity and confusing situations in the first place. Followers do not like to invent the wheel and use templates, code snippets, etc. to avoid implementing everything by their own. This normally leads to faster solutions and success. Freed from technical or structural sensitivities followers of this dimension adapt very fast to any new environment, rules or specifications for example to a new team. They are also able to bring others back to earth and redirect them to the origin goal.
+            </p>
+            <p>
+                Downside of this dimension is that followers accept incompleteness. This means for example that quality, structure, symmetry or anything else can be affected negatively. Shortcomings in structure can violate the architecture; shortcomings in symmetry can lead to uncertain terminology and for this to less understandable Code. Shortcomings in code style normally leads to less maintainable code, etc. Besides this usage of code snippets can contain risks especially if its contents have not been understood totally or mandatory context knowledge is missing. The lack of detailed knowledge can also lead to onions by adding layers surround existing code instead of refactoring the design. Often used copy and paste parts can raise one bug several times. All in all sustainability is often sacrificed for quick results.
+            </p>
+            <p>
+                Typical applied principles for dimension pragmatic are: YAGNI, RoE, KISS, MIMC Irrelevant principles for this dimension are (maybe also interesting to have an eye on it): UP, GP, MP, LSP, IH/E, DIP, LC, HC, TdA/IE, EUHM, IAP
+            </p>
+        </div>
+        <h2 id="idealistic">Idealistic</h2>
+        <div>
+            <p>
+                Developers with this attitude prefer clean solutions.
+            </p>
+            <p>
+                The main motivation of this dimension is doing it right or let it be. Sustainability is a very important aspect that pays back at the latest in the long term. Is everything at the right placed and implemented correctly there will be less disappointment and less effort instead of continous changes. Everything also implies to consider non functional requirements as well which leads to well prepared solutions. Several other aspects like logging, exception handling, security, defensive programming, test strategy, etc. will be also considered from begin on. Symmetrie in code and well understandable terms lead to a better understandability and maintainability. Beeing idealistic means doing things more precisely and intensive which boosts other positive aspects of this species.
+            </p>
+            <p>
+                Downside of this dimension is that boosting works in two ways. Negative aspects will be boosted also and can worsen everything. To achieve a certain degree of perfection costs much effort and is not fitting to each situation. A typical goal like reaching completeness often ends in unnecessary complexity. There is a risk of loosing focus on real requirements or real goals by striving towards sustainability and perfection. Economical aspects will be often omitted. Followers can also tend to hyperbolism and this attitude may end up in religious discussions or in ones without an outcome.
+            </p>
+            <p>
+                Typical applied principles for dimension idealistic are: UP, PSU, DRY, IH/E, furthermore being idealistic adds even more weight on the principles you favor because of the other dimensions Irrelevant principles for this dimension are (maybe also interesting to have an eye on it): KISS, MIMC
+            </p>
+        </div>
+        <h2 id="technologic">Technologic</h2>
+        <div>
+            <p>
+                Developers with this attitude prefer technically advanced solutions.
+            </p>
+            <p>
+            Neue Technologien bieten die Chance, bestehende Denk- und Vorgehensweisen zu revolutionieren und bisher Bekanntes obsolet zu machen. Darüber hinaus erweitern sie den eigenen Wissenshorizont und erhalten einem die Offenheit für Neues. Nur wer aktiv an der Weiterentwicklung teilnimmt, erspart sich und anderen das Erzeugen von Legacy und bleibt dauerhaft wettbewerbsfähig. Kontinuierliches Updaten schützt vor Risiken und spart Zeit in der Pflege von Altsystemen. Vertreter dieser Dimension schöpfen aus einem breiten Wissens- und Erfahrungsschatz und kommen oft auf kreativere Lösungen als andere. Kontinuierliches Verbessern ermöglicht effektiver und effizienter zu werden. Immer wieder neues zu sehen und zu verstehen hilft außerdem sich schnell in Konzepte oder Quellcode von anderen rein zu finden.
+
+Allerdings besteht das Risiko auf kurzfristige Hypes rein zu fallen und sich für die falsche Richtung zu entscheiden, was ggf. katastrophale Folgen haben kann speziell wenn dafür die Stabilität gefährdet wird. Zu viele Einflüsse können die Homogenität von Systemen, Code Stilen, etc. stören und die Komplexität erhöhen. Außerdem muss beachtet werden, dass jede Veränderung diverse Auswirkungen auf andere haben kann: Wissen muss aufgebaut werden, andere müssen sich mental auf die Veränderung einstellen können, ohne das Gefühl zu bekommen abgehängt zu werden. In Extremfällen geht viel Zeit für das Herumspielen mit neuen Technologien verloren. Nicht zuletzt besteht die Gefahr, dass das eigentliche Ziel aus den Augen verloren wird. Vertreter diese Dimension benötigen Freiraum und können allergisch darauf reagieren eingeengt zu werden oder sich schnell langweilen. Das kann dazu führen, dass sie sich beispielsweise nicht an gegebene Strukturen wie das Design oder die Architektur einer Anwendung halten. Typische, angewandte Prinzipien für die Dimension Simple sind: ECV, GP, DRY Nicht so relevante Prinzipien (die man sich mal anschauen sollte) für diese Dimension sind: UP, KISS, MIMC, PLS
+            </p>
+        </div>
+        <h2 id="robust">Robust</h2>
+        <div>
+            <p>
+                Developers with this attitude prefer stabe solutions which stood the test of time.
+            </p>
+            <p>
+            Stabilität von Anwendungen und Systemen schützt vor vielen Risiken und Problemen. Jegliche Art von Veränderung birgt zunächst ein Risiko und die Begrenzung von Risiken bedeutet auch die Begrenzung von Veränderungen, wie neue Technologien oder unnötige Updates. In aller Regel werden Standards eingesetzt, um ein gewisses Maß an einheitlicher und fester Struktur zu definieren, was Halt gibt und vor unüberschaubarem Wildwuchs schützt. Diese Standards können dafür sorgen, dass Systeme einfacher verstanden werden. Es werden normalerweise nur Sachen eingesetzt, die sich bewährt haben oder zumindest einer Prüfung standgehalten haben. Jegliche Art von Magie, die zusätzliche Komplexität schafft wird vermieden und stattdessen mehr Zeit in die Absicherung von manipulativen Eingriffen investiert. Bugs können so meist schnell und genau lokalisiert und behoben werden, selbst, wenn man den Quellcode nicht kennt. Vertreter dieser Dimension denken oft an mehr als nur den Code selbst, sondern auch an: logging, exception handling, security, defensive programming, test strategy, etc.
+
+Stabilität zu erreichen bedeutet Aufwand und kostet natürlich auch Zeit. Im schlimmsten Fall verpasst man den Anschluss an neue Technologien, die vieles einfacher machen und man muss im Vergleich zu anderen deutlich mehr Zeit investieren. Das kann im direkten Vergleich zu Frust führen. Code kann durch Absicherungsmaßnahmen viel komplexer und schwerer zu verstehen werden. Vertreter dieser Dimension müssen aufpassen nicht als „Bremser“ wahrgenommen zu werden. Typische, angewandte Prinzipien für die Dimension Simple sind: ML, EUHM, UP, IH/E Nicht so relevante Prinzipien (die man sich mal anschauen sollte) für diese Dimension sind: KISS
+            </p>
         </div>
     </section>
 </div>
 
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/jquery-ui/ui/minified/jquery-ui.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="dimensions.js"></script>
 </body>
 </html>

@@ -81,7 +81,7 @@ h1.main-title {
     text-decoration: none;
 }
 
-#types {
+.ui-accordion {
     margin: 0.5em;
 }
 
