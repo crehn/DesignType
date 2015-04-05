@@ -168,6 +168,7 @@ function Dimension(leftValue, rightValue, statements, number) {
         showPanel(panel1);
         showPanel(panel2);
         removeGroupBorder();
+        showRevealText();
     }
     
     function showGroupName() {
@@ -186,6 +187,10 @@ function Dimension(leftValue, rightValue, statements, number) {
     
     function removeGroupBorder() {
         group.removeClass("bordered");
+    }
+    
+    function showRevealText() {
+        $(".only-revealed").show();
     }
 };
 
