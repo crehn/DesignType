@@ -124,9 +124,14 @@ function Types() {
     function showDesignType(type) {
         $("#resultString").html("<strong>Result:</strong> Your design type is <strong>" + type + "</strong>.");
         
-        $("#types").accordion("option", "active", typeToIndex(type));
-        $("#types h2").removeClass("marked");
-        $("#" + type.toLowerCase()).addClass("marked");
+        if ($("#" + type.toLowerCase()).visible) {
+            $("#types").accordion("option", "active", typeToIndex(type));
+            $("#types h2").removeClass("marked");
+            $("#" + type.toLowerCase()).addClass("marked");
+        } else {
+            $("#" + type.toLowerCase()).show();
+            $("#" + type.toLowerCase()).next().show();
+        }
     }
 
     function typeToIndex(type) {
