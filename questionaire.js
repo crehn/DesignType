@@ -25,9 +25,9 @@ function Dimension(leftValue, rightValue, statements, number) {
         group.attr("id", id());
         fillPanel(group.find("#leftValue"), leftValue, statements[leftValue]);
         fillPanel(group.find("#rightValue"), rightValue, statements[rightValue]);
-        $("#dimensions").append(group);
         group.find(".group-name").text(leftValue.capitalize() + " vs. " + rightValue.capitalize());
         group.find(".group-number").text("Group " + number);
+        $("#dimensions").append(group);
         return group;
     }
     

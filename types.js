@@ -1,10 +1,61 @@
-function Dimension(value1, value2) {
-    this.value1 = value1;
-    this.value2 = value2;
+String.prototype.capitalize = function() {
+    return this.charAt(0).toUpperCase() + this.slice(1);
 }
 
-function Result() {
+function Dimension(leftValue, rightValue) {
+    this.leftValue = leftValue;
+    this.rightValue = rightValue;
+}
 
+function Type(value1, value2, value3, value4) {
+    var header = createHeader();
+    var panel = createPanel();
+    
+    function createHeader() {
+        var result = $("#templateTypeName").clone();
+        result.attr("id", abbreviation());
+        result.text(abbreviation().toUpperCase() + ": " + typesData[abbreviation()].name);
+        $("#types").append(result);
+        return result;
+    }
+    
+    this.abbreviation = function() {
+        return abbreviation();
+    }
+    
+    function abbreviation() {
+        return value1[0].toLowerCase()
+            + value2[0].toLowerCase()
+            + value3[0].toLowerCase()
+            + value4[0].toLowerCase();
+    }
+    
+    function createPanel() {
+        var result = $("#templateType").clone();
+        result.attr("id", abbreviation() + "_info");
+        result.find(".attributes").html(buildAttributes());
+        result.find(".description").html(typesData[abbreviation()].description);
+        result.find(".designs").html(typesData[abbreviation()].designs);
+        result.find(".programming").html(typesData[abbreviation()].programming);
+        result.find(".principles-liked").html(typesData[abbreviation()].principlesLiked);
+        result.find(".principles-disregarded").html(typesData[abbreviation()].principlesDisregarded);
+        result.find(".strengths").html(typesData[abbreviation()].strengths);
+        result.find(".suggestions").html(typesData[abbreviation()].suggestions);
+        result.find(".further-reading").html(typesData[abbreviation()].furtherReading);
+        $("#types").append(result);
+        return result;
+    }
+    
+    function buildAttributes() {
+        return attribute(value1) + attribute(value2) + attribute(value3) + attribute(value4);
+    }
+    
+    function attribute(value) {
+        return '<a class="dont-print-url" href="dimensions.html?dimension=' + value + '">' + value.capitalize() + '</a> ';
+    }
+}
+
+function Types() {
     var dimensions = [
         new Dimension("simple", "powerful"),
         new Dimension("abstract", "concrete"),
@@ -12,14 +63,41 @@ function Result() {
         new Dimension("technologic", "robust")
     ];
     
-    this.show = function() {
-        var type = getDesignType();
+    var types = buildTypes();
+    
+    function buildTypes() {
+        var result = {};
+        for (i = 0; i < 16; i++) {
+            result[i] = indexToType(i);
+            console.log("built type number " + i + ": " + result[i].abbreviation());
+        }
+        return result;
+    }
+    
+    function indexToType(index) {
+        var digit1 = Math.floor(index / 8);
+        var digit2 = Math.floor(index % 8 / 4);
+        var digit3 = Math.floor(index % 4  / 2);
+        var digit4 = Math.floor(index % 2);
+        var value1 = digitToValue(digit1, dimensions[0]);
+        var value2 = digitToValue(digit2, dimensions[1]);
+        var value3 = digitToValue(digit3, dimensions[2]);
+        var value4 = digitToValue(digit4, dimensions[3]);
+        return new Type(value1, value2, value3, value4);
+    }
+    
+    function digitToValue(digit, dimension) {
+        return digit === 0 ? dimension.leftValue : dimension.rightValue;
+    }
+    
+    this.showResultingDesignType = function() {
+        var type = getResultingDesignType();
         if (type !== "") {
             showDesignType(type);
         }
     }
 
-    function getDesignType() {
+    function getResultingDesignType() {
         return getParameterByName("type").substr(0, dimensions.length);
     }
 
@@ -43,21 +121,25 @@ function Result() {
         var result = 0;
         for (i = 0; i < dimensions.length; i++) {
             var position = dimensions.length -1 - i;
-            var digit = type[i].toLowerCase() == dimensions[i].value1[0] ? 0 : 1;
+            var digit = type[i].toLowerCase() == dimensions[i].leftValue[0] ? 0 : 1;
             result += Math.pow(2, position) * digit;
         }
-        return result;
+        return result + 1; // plus template
     }
 }
 
+
 $(document).ready(function() {
+    var types = new Types();
+    $("#templateTypeName").hide();
+    $("#templateType").hide();
+
     $("#types").accordion({ 
         collapsible: true,
         active: false ,
         heightStyle: "content"
     });
     
-    var result = new Result();
-    result.show();
+    types.showResultingDesignType();
 });
 
