@@ -37,11 +37,11 @@ function Type(value1, value2, value3, value4) {
         result.find(".description").html(typesData[abbreviation()].description);
         result.find(".designs").html(typesData[abbreviation()].designs);
         result.find(".programming").html(typesData[abbreviation()].programming);
-        result.find(".principles-liked").html(typesData[abbreviation()].principlesLiked);
-        result.find(".principles-disregarded").html(typesData[abbreviation()].principlesDisregarded);
-        result.find(".strengths").html(typesData[abbreviation()].strengths);
-        result.find(".suggestions").html(typesData[abbreviation()].suggestions);
-        result.find(".further-reading").html(typesData[abbreviation()].furtherReading);
+        result.find(".principles-liked").html(arrayToCommaList(typesData[abbreviation()].principlesLiked));
+        result.find(".principles-disregarded").html(arrayToCommaList(typesData[abbreviation()].principlesDisregarded));
+        result.find(".strengths").html(arrayToUl(typesData[abbreviation()].strengths));
+        result.find(".suggestions").html(arrayToUl(typesData[abbreviation()].suggestions));
+        result.find(".further-reading").html(arrayToUl(typesData[abbreviation()].furtherReading));
         $("#types").append(result);
         return result;
     }
@@ -52,6 +52,19 @@ function Type(value1, value2, value3, value4) {
     
     function attribute(value) {
         return '<a class="dont-print-url" href="dimensions.html?dimension=' + value + '">' + value.capitalize() + '</a> ';
+    }
+    
+    function arrayToUl(array) {
+        var result = "<ul>";
+        for (a in array) {
+            result += "<li>" + array[a] + "</li>";
+        }
+        result += "</ul>";
+        return result;
+    }
+    
+    function arrayToCommaList(array) {
+        return array.join(", ");
     }
 }
 
