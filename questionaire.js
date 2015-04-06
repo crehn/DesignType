@@ -1,4 +1,8 @@
-function Dimension(value1, value2) {
+String.prototype.capitalize = function() {
+    return this.charAt(0).toUpperCase() + this.slice(1);
+}
+
+function Dimension(leftValue, rightValue, statements, number) {
     var NUMBER_OF_STATEMENTS_NEEDED = 5;
     var SUPPLY_CORRECT_NUMBER_OF_STATEMENTS = "Check exactly five stametements!";
 
@@ -6,15 +10,41 @@ function Dimension(value1, value2) {
     var score1 = 0;
     var score2 = 0;
     
-    var group = $("#" + value1 + "-vs-" + value2);
-    var groupName = group.children("h1").children(".group-name");
-    var groupNumber = group.children("h1").children(".group-number");
-    var panel1 = $(".dimension #" + value1);
-    var panel2 = $(".dimension #" + value2);
+    this.leftValue = leftValue;
+    this.rightValue = rightValue;
+    
+    var group = createGroup();
+    var groupName = group.find(".group-name");
+    var groupNumber = group.find(".group-number");
+    var panel1 = $(".dimension #" + leftValue);
+    var panel2 = $(".dimension #" + rightValue);
     var errorBox = createErrorBox();
     
-    this.value1 = value1;
-    this.value2 = value2;
+    function createGroup() {
+        var group = $("#template").clone();
+        group.attr("id", id());
+        fillPanel(group.find("#leftValue"), leftValue, statements[leftValue]);
+        fillPanel(group.find("#rightValue"), rightValue, statements[rightValue]);
+        $("#dimensions").append(group);
+        group.find(".group-name").text(leftValue.capitalize() + " vs. " + rightValue.capitalize());
+        group.find(".group-number").text("Group " + number);
+        return group;
+    }
+    
+    function id() {
+        return leftValue + "-vs-" + rightValue;
+    };
+    
+    function fillPanel(panel, value, statements) {
+        panel.attr("id", value);
+        panel.find(".panel-heading").text(value);
+        for (statement in statements) {
+            var li = $("<li/>");
+            li.append($("<input/>", {type: "checkbox"}));
+            li.append(statements[statement]);
+            panel.find("ul").append(li);
+        }
+    }
     
     function createErrorBox() {
         var box = $("<div/>", {
@@ -25,10 +55,6 @@ function Dimension(value1, value2) {
         return box;
     };
     
-    function id() {
-        return value1 + "-vs-" + value2;
-    };
-    
     this.update = function() {
         computeScores();
         checkForCompleteness();
@@ -37,8 +63,8 @@ function Dimension(value1, value2) {
     }
     
     function computeScores() {
-        score1 = count(value1);
-        score2 = count(value2);
+        score1 = count(leftValue);
+        score2 = count(rightValue);
     
         if (isComplete()) {
             wasOnceComplete = true;
@@ -131,17 +157,18 @@ function Dimension(value1, value2) {
             return "?";
             
         if (score1 > score2) {
-            return value1[0];
+            return leftValue[0];
         } else {
-            return value2[0];
+            return rightValue[0];
         }
     };
     
-    this.reveal= function() {
+    this.reveal = function() {
         showGroupName();
         showPanel(panel1);
         showPanel(panel2);
         removeGroupBorder();
+        showRevealText();
     }
     
     function showGroupName() {
@@ -161,18 +188,22 @@ function Dimension(value1, value2) {
     function removeGroupBorder() {
         group.removeClass("bordered");
     }
+    
+    function showRevealText() {
+        $(".only-revealed").show();
+    }
 };
 
 
 function Questionaire() {
     var SUPPLY_CORRECT_NUMBER_OF_STATEMENTS = "Check exactly five stametements in each group!";
-    var RESULT_STRING = '<strong>Result:</strong> Your design type is <a href="types.html?type=${type}"><strong>${type}</strong>.';
+    var RESULT_STRING = '<strong>Result:</strong> The resulting design type is <a href="types.html?type=${type}"><strong>${type}</strong>.';
 
     var dimensions = [
-        new Dimension("simple", "powerful"),
-        new Dimension("abstract", "concrete"),
-        new Dimension("pragmatic", "idealistic"),
-        new Dimension("technologic", "robust")
+        new Dimension("simple", "powerful", statements, 1),
+        new Dimension("abstract", "concrete", statements, 2),
+        new Dimension("pragmatic", "idealistic", statements, 3),
+        new Dimension("technologic", "robust", statements, 4)
     ];
     
     this.update = function() {
@@ -219,13 +250,12 @@ function Questionaire() {
         }
         $("#result").show();
         $("#controls").hide();
-        $("#introduction1").hide();
-        $("#introduction2").show();
     }
 }
  
 $(document).ready(function() {
     window.questionaire = new Questionaire();
+    $("#template").hide();
 
     $(".dimension input").on('click', function() {
         questionaire.update();

@@ -34,8 +34,8 @@
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="questionaire.html">Test Yourself</a></li>
-                    <li><a href="questionaire.html?revealed">Play Around</a></li>
+                    <li class="active"><a href="test_yourself.html">Test Yourself</a></li>
+                    <li><a href="assess_colleagues.html?revealed">Assess Colleagues</a></li>
                     <li><a href="info.html">Learn More</a></li>
                     <li><a href="about.html">About</a></li>
                 </ul>
@@ -905,13 +905,15 @@
         <a id="result"></a>
         <h1>What's Next</h1>
         <ul>
-            <li><a href="questionaire.html?revealed">Play around</a> with the questionaire and find out how your collegues may have answered the questions</li>
+            <li><a href="test_yourself.html?revealed">Play around</a> with the questionaire and see how your choices change the result</li>
+            <li>Find out how your <a href="assess_colleagues.html?revealed">collegues</a> design software</li>
             <li>Explore the other <a href="types.html">design types</a></li>
             <li>Learn more about the four <a href="dimensions.html">dimensions</a>: simple-vs-powerful, abstract-vs-concrete, pragmatic-vs-idealistic, and technologic-vs-robust</li>
             <li>Read more about the whole <a href="about.html">idea</a></li>
             <li>Please give us <a href="mailto:email@design-types.net">feedback</a> on design types, the questionaire and your result.</li>
         </ul>
-    <section>
+        <a href="test_yourself.html?revealed"><input type="button" id="playAround" value="Play Around" class="btn btn-primary pull-right" /></a>
+    <section class="clearfix">
         <h1>Final Remarks</h1>
         <p>
             This categorization is by far not covering all aspects of a developer. Working style, prefered development process, people skills, and many other aspects are neglected here. That's also not the goal of this questionaire. Rather the hope is that this structure helps you to understand how your colleagues think when they make design decisions.

@@ -18,6 +18,10 @@ div.page .navbar {
     margin: 15px -15px;
 }
 
+.only-revealed {
+    display: none;
+}
+
 h1 {
     text-align: center;
 }

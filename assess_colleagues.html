@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="bower_components/html5shiv/dist/html5shiv.js"></script>
+      <script src="bower_components/respond.js/dest/respond.min.js"></script>
+    <![endif]-->
+
+    <title>How Do You Design Software?</title>
+</head>
+<body>
+<div class="container page">
+    <nav class="navbar navbar-inverse navbar-default" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Design Type</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="test_yourself.html">Test Yourself</a></li>
+                    <li class="active"><a href="assess_colleagues.html?revealed">Assess Colleagues</a></li>
+                    <li><a href="info.html">Learn More</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="http://www.principles-wiki.net">principles-wiki.net</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="jumbotron">
+        <h1>How Do You Design Software?</h1>
+        <p>
+            Find out how your colleagues think.
+        </p>
+    </div>
+    
+    <noscript>
+        <div class="alert alert-danger">
+            This questionaire needs JavaScript in order to work.
+        </div>
+    </noscript>
+
+    <section id="introduction">
+        <h1>Introduction</h1>
+        <p>
+            A big point in collaboration is to understand how code of someone else works or why this code has been implemented in this way. Imagine you have taken over code from a colleague. Didn't you ask yourself "What was his motivation to implement it this way?". It gets weird when you also think "I for myself would have implemented it in a totally different way". There are many ways to handle this situation. One is too remove his code or completely refactor it. Ok - having enough time to do this is rare. Another way is to talk with him and to understand his motivation, find out why he made these design decisions. After you have discovered how you make design decisions by our questionnaire you may assess your colleagues on this page. Knowing yourself as well as your colleagues will help to improve the communication. We hope that you will also be able to avoid exhausting situations. Try it out.
+        </p>
+        <p>
+            Note: currently the statements of this questionnaire are identical to the self test but already show the related dimensions to ease your assessment. In a further version we might provide statements that better match to situations how you could have experienced it.
+        </p>
+        <div class="alert alert-info">
+            <strong>Usage:</strong> For each dimension (like "simple-vs-powerful) check <em>exactly five</em> statements. Use the ones fitting best.
+        </div>
+    </section>
+    <a id="questions"></a>
+    <div id="dimensions">
+    <section class="dimension bordered" id="template">
+        <h1><span class="group-number">Group X</span><span class="group-name" style="display:none">A vs. B</span></h1>
+        <div class="row">
+            <div class="col-sm-6"><div class="panel-default" id="leftValue">
+                <div class="panel-heading" style="display:none">
+                    
+                </div>
+                <div class="panel-body">
+                    <ul>
+
+                    </ul>
+                </div>
+            </div></div>
+            <div class="col-sm-6"><div class="panel-default" id="rightValue">
+                <div class="panel-heading" style="display:none">
+                    
+                </div>
+                <div class="panel-body">
+                    <ul>
+
+                    </ul>
+                </div>
+            </div></div>
+        </div>
+    </section>
+    </div>
+    <section id="result" style="display:none">
+        <div id="resultString" class="alert alert-info"><strong>Result</strong>: The resulting design type is ????.</div>
+    </section>
+</div>
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="assess_colleagues_statements.js"></script>
+<script src="questionaire.js"></script>
+</body>
+</html>
