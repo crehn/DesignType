@@ -40,7 +40,10 @@ function Dimension(leftValue, rightValue, statements, number) {
         panel.find(".panel-heading").text(value);
         for (statement in statements) {
             var li = $("<li/>");
-            li.append($("<input/>", {type: "checkbox"}));
+            li.append($("<input/>", {
+                id: "stmt_" + value + statement,
+                type: "checkbox"
+            }));
             li.append(statements[statement]);
             panel.find("ul").append(li);
         }
@@ -195,7 +198,7 @@ function Dimension(leftValue, rightValue, statements, number) {
 };
 
 
-function Questionaire() {
+function Questionaire(prefix) {
     var SUPPLY_CORRECT_NUMBER_OF_STATEMENTS = "Check exactly five stametements in each group!";
     var RESULT_STRING = '<strong>Result:</strong> The resulting design type is <a href="types.html?type=${type}"><strong>${type}</strong>.';
 
@@ -251,18 +254,51 @@ function Questionaire() {
         $("#result").show();
         $("#controls").hide();
     }
+    
+    this.save = function() {
+        var checkboxes = $(":checkbox");
+        for (cb in checkboxes) {
+            localStorage[prefix + "." + checkboxes[cb].id] = checkboxes[cb].checked;
+        }
+    }
+    
+    this.load = function() {
+        var checkboxes = $(":checkbox");
+        for (cb in checkboxes) {
+            checkboxes[cb].checked = (localStorage[prefix + "." + checkboxes[cb].id] === "true");
+        }
+        this.update();
+    }
+    
+    this.clear = function() {
+        var checkboxes = $(":checkbox");
+        for (cb in checkboxes) {
+            checkboxes[cb].checked = false;
+        }
+        localStorage.clear();
+        this.update();
+    }
 }
  
 $(document).ready(function() {
-    window.questionaire = new Questionaire();
+    window.questionaire = new Questionaire(prefix);
     $("#template").hide();
 
-    $(".dimension input").on('click', function() {
+    $(".dimension :checkbox").click(function() {
         questionaire.update();
+        questionaire.save();
     });
     
     $("#continue").on('click', function() {
         questionaire.finish();
+    });
+    
+    $("#load").click(function() {
+        questionaire.load();
+    });
+    
+    $("#clear").click(function() {
+        questionaire.clear();
     });
     
     if (window.location.search === "?revealed") {

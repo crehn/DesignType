@@ -1,3 +1,4 @@
+var prefix = "you";
 var statements = {}
 statements.simple = [
 	"Software should be simple in order to be fast to write, maintainable, and low on bugs.",
