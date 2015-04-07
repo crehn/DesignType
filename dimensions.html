@@ -72,7 +72,10 @@
                 On the other hand the design contains nothing foresighted which often leads to many changes. Especially changes at elements that should have a stable characteristic like interfaces often head in expensive refactoring. Implementing things explicitly means that it is tight to a specific case and cannot being reused. Also bindings to libraries or to external systems are often coupled to tight because additional abstraction layers for decoupling are not really simple. Another problem is misunderstanding what simple really means because follower does not always have the same opinion on this topic. At least simple also takes quite some time for easing complexity.
             </p>
             <p>
-                Typical applied principles for dimension simple are: KISS, MIMC, YAGNI, RoE, PLS Irrelevant principles for this dimension are (maybe also interesting to have an eye on it): GP
+                Typical applied principles for dimension simple are: KISS, MIMC, YAGNI, RoE, PLS 
+            </p>
+            <p>
+                Irrelevant principles for this dimension are (maybe also interesting to have an eye on it): GP
             </p>
         </div>
         <h2 id="powerful">Powerful</h2>
@@ -87,7 +90,10 @@
                 On the other hand powerful solutions take much time especially for initial creation. There is also a risk that followers loose the origin target by focusing on functionality. Source code is not easy to understand caused by the level of complexity for example by using several abstraction levels. Bugs are also not obvious to find and therefore a debugger is frequently necessary. For followers of other dimensions it is often hard to understand the concepts or to takeover code. This can lead to displeasing situations where those feel mistreated or unable.
             </p>
             <p>
-                Typical applied principles for dimension powerful are: GP, ECV, IH/E, DIP, LC Irrelevant principles for this dimension are (maybe also interesting to have an eye on it): KISS, YAGNI, RoE
+                Typical applied principles for dimension powerful are: GP, ECV, IH/E, DIP, LC 
+            </p>
+            <p>
+                Irrelevant principles for this dimension are (maybe also interesting to have an eye on it): KISS, YAGNI, RoE
             </p>
         </div>
         <h2 id="abstract">Abstract</h2>
@@ -102,7 +108,10 @@
                 An approach that starts with conception trying to find the right abstractions and structures takes quite some time. Compliance of structure over time costs additional time. If followers are too far from reality they tend to build over engineered systems with too much complexity in it. There is also a risk that solutions differ too much from the origin requirements caused by focusing too much on architecture instead of customer wishes. For several technical circumstances the transformation of a real world model into a technical one can lead to conflicts in structure.
             </p>
             <p>
-                Typical applied principles for dimension abstract are: TdA/IE, PSU, PLS, HC, LSP, IH/E, SLA, MP Irrelevant principles for this dimension are (maybe also interesting to have an eye on it): KISS, YAGNI
+                Typical applied principles for dimension abstract are: TdA/IE, PSU, PLS, HC, LSP, IH/E, SLA, MP 
+            </p>
+            <p>
+                Irrelevant principles for this dimension are (maybe also interesting to have an eye on it): KISS, YAGNI
             </p>
         </div>
         <h2 id="concrete">Concrete</h2>
@@ -117,7 +126,10 @@
                 Their code grows naturally instead of being planned structurally and this is why structural borders are often violated. If this increases too much large-area refactorings will be the consequence. Besides this optimized code is often much more complex, hard to understand/maintain and often costs more time for implementation than it saves. Keeping all eyes on code often leads to lose focus on economical goals or architectural compliance.
             </p>
             <p>
-                Typical applied principles for dimension concrete are: DRY, HC bzw. SRP, ECV bzw. OCP Irrelevant principles for this dimension are (maybe also interesting to have an eye on it): MP, TdA/IE, PSU, LSP
+                Typical applied principles for dimension concrete are: DRY, HC bzw. SRP, ECV bzw. OCP 
+            </p>
+            <p>
+                Irrelevant principles for this dimension are (maybe also interesting to have an eye on it): MP, TdA/IE, PSU, LSP
             </p>
         </div>
         <h2 id="pragmatic">Pragmatic</h2>
@@ -132,7 +144,10 @@
                 Downside of this dimension is that followers accept incompleteness. This means for example that quality, structure, symmetry or anything else can be affected negatively. Shortcomings in structure can violate the architecture; shortcomings in symmetry can lead to uncertain terminology and for this to less understandable Code. Shortcomings in code style normally leads to less maintainable code, etc. Besides this usage of code snippets can contain risks especially if its contents have not been understood totally or mandatory context knowledge is missing. The lack of detailed knowledge can also lead to onions by adding layers surround existing code instead of refactoring the design. Often used copy and paste parts can raise one bug several times. All in all sustainability is often sacrificed for quick results.
             </p>
             <p>
-                Typical applied principles for dimension pragmatic are: YAGNI, RoE, KISS, MIMC Irrelevant principles for this dimension are (maybe also interesting to have an eye on it): UP, GP, MP, LSP, IH/E, DIP, LC, HC, TdA/IE, EUHM, IAP
+                Typical applied principles for dimension pragmatic are: YAGNI, RoE, KISS, MIMC 
+            </p>
+            <p>
+                Irrelevant principles for this dimension are (maybe also interesting to have an eye on it): UP, GP, MP, LSP, IH/E, DIP, LC, HC, TdA/IE, EUHM, IAP
             </p>
         </div>
         <h2 id="idealistic">Idealistic</h2>
@@ -147,7 +162,10 @@
                 Downside of this dimension is that boosting works in two ways. Negative aspects will be boosted also and can worsen everything. To achieve a certain degree of perfection costs much effort and is not fitting to each situation. A typical goal like reaching completeness often ends in unnecessary complexity. There is a risk of loosing focus on real requirements or real goals by striving towards sustainability and perfection. Economical aspects will be often omitted. Followers can also tend to hyperbolism and this attitude may end up in religious discussions or in ones without an outcome.
             </p>
             <p>
-                Typical applied principles for dimension idealistic are: UP, PSU, DRY, IH/E, furthermore being idealistic adds even more weight on the principles you favor because of the other dimensions Irrelevant principles for this dimension are (maybe also interesting to have an eye on it): KISS, MIMC
+                Typical applied principles for dimension idealistic are: UP, PSU, DRY, IH/E, furthermore being idealistic adds even more weight on the principles you favor because of the other dimensions 
+            </p>
+            <p>
+                Irrelevant principles for this dimension are (maybe also interesting to have an eye on it): KISS, MIMC
             </p>
         </div>
         <h2 id="technologic">Technologic</h2>
@@ -156,13 +174,16 @@
                 Developers with this attitude prefer technically advanced solutions.
             </p>
             <p>
-            New technologies offer the chance to revolutionize existing mindsets and approaches making existing ones obsolete. It also extends the own horizon and keep oneself open minded. Taking proactively part on future trends protects from building legacy and keeps oneself competitive. Updating continuously safes maintainance time and prevents risks. Followers benefit from a big set of knowledge and experience and often achieve more creative solutions than others. Continuously improving enables being more effective and efficient and the ability to adapt faster to unknown concepts and code.
+                New technologies offer the chance to revolutionize existing mindsets and approaches making existing ones obsolete. It also extends the own horizon and keep oneself open minded. Taking proactively part on future trends protects from building legacy and keeps oneself competitive. Updating continuously safes maintainance time and prevents risks. Followers benefit from a big set of knowledge and experience and often achieve more creative solutions than others. Continuously improving enables being more effective and efficient and the ability to adapt faster to unknown concepts and code.
             </p>
             <p>
-            On the other hand there is a risk to ride the wrong horse means to follow the wrong hype that may have catastrophic consequences (often especially for stability). Besides this too many influences can disturb the homogeneity of systems, designs, code styles, etc. and increase complexity. Additonally each change can raise several implications like building up knowledge, breaking up exisiting mindsets, etc. In extrem cases much time will get lost for playing around with new technologies without any outcome. Last but not least there is a risk to loose focus of the real goal. Follower need their space and can react allergic if it will be limited too close or will get bored. This can lead to disregarding common structure like design or architecture.
+                On the other hand there is a risk to ride the wrong horse means to follow the wrong hype that may have catastrophic consequences (often especially for stability). Besides this too many influences can disturb the homogeneity of systems, designs, code styles, etc. and increase complexity. Additonally each change can raise several implications like building up knowledge, breaking up exisiting mindsets, etc. In extrem cases much time will get lost for playing around with new technologies without any outcome. Last but not least there is a risk to loose focus of the real goal. Follower need their space and can react allergic if it will be limited too close or will get bored. This can lead to disregarding common structure like design or architecture.
             </p>
             <p>
-            Typical applied principles for dimension idealistic are: ECV, GP, DRY Irrelevant principles for this dimension are (maybe also interesting to have an eye on it): UP, KISS, MIMC, PLS
+                Typical applied principles for dimension idealistic are: ECV, GP, DRY 
+            </p>
+            <p>
+                Irrelevant principles for this dimension are (maybe also interesting to have an eye on it): UP, KISS, MIMC, PLS
             </p>
         </div>
         <h2 id="robust">Robust</h2>
@@ -171,13 +192,16 @@
                 Developers with this attitude prefer stabe solutions which stood the test of time.
             </p>
             <p>
-            Stability of applications or systems prevents risks and protects from problems. Each kind of change typically contains a risk and limitation of risks also means to limitate changes like new technologies or unnecessary updates. To gain a certain level of homogenous and stable structure instead of heading towards to a chaotic zoo there is a need for standards. These standards lead to better understandable systems. In general only reality proven elements or those that stood a substantiated check will be used in practice. Any kind of magic that mainly increases complexity will be avoided or omitted. Instead of this effort will be invested in protecting oneself from manipulative intrusions. Consequences are that bugs can be investigated more precisely and fixed faster also if source code is unknown. Follower often think beyond the code itself for example about logging, exception handling, security, defensive programming, test strategy, etc.
+                Stability of applications or systems prevents risks and protects from problems. Each kind of change typically contains a risk and limitation of risks also means to limitate changes like new technologies or unnecessary updates. To gain a certain level of homogenous and stable structure instead of heading towards to a chaotic zoo there is a need for standards. These standards lead to better understandable systems. In general only reality proven elements or those that stood a substantiated check will be used in practice. Any kind of magic that mainly increases complexity will be avoided or omitted. Instead of this effort will be invested in protecting oneself from manipulative intrusions. Consequences are that bugs can be investigated more precisely and fixed faster also if source code is unknown. Follower often think beyond the code itself for example about logging, exception handling, security, defensive programming, test strategy, etc.
             </p>
             <p>
-            Reaching robustness demands effort and time. In the worst case it means to loose catching up new technologies that would make things easier or faster. In comparison with others that use new technologies it can lead to frustration. Protecting code often also leads to more complex or overweight code that is thus hard to understand. Follower have to take care not being noticed as a guy who slows down everything.
+                Reaching robustness demands effort and time. In the worst case it means to loose catching up new technologies that would make things easier or faster. In comparison with others that use new technologies it can lead to frustration. Protecting code often also leads to more complex or overweight code that is thus hard to understand. Follower have to take care not being noticed as a guy who slows down everything.
             </p>
             <p>
-            Typical applied principles for dimension idealistic are: ML, EUHM, UP, IH/E Irrelevant principles for this dimension are (maybe also interesting to have an eye on it): KISS
+                Typical applied principles for dimension idealistic are: ML, EUHM, UP, IH/E 
+            </p>
+            <p>
+                Irrelevant principles for this dimension are (maybe also interesting to have an eye on it): KISS
             </p>
         </div>
     </section>
