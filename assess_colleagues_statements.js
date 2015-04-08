@@ -23,7 +23,7 @@ statements.abstract = [
 ];
 statements.concrete = [
     "Your colleague often has the concrete code to solve the problem in mind and does not waste time with too much conceptual work.",
-    "Your colleague gets familiar with any kind of code very fast and is able to explain you the details. This is why he can also deal very well with any legacy code.",
+    "Your colleague gets familiar with any kind of code very fast and is able to explain the details to you. This is why he can also deal very well with any legacy code.",
     "You sometimes wonder why several independent components of your colleague work perfectly fine for themselves but do not fit into some kind of big picture.",
     "When your colleague talks about documentation, he thinks about code comments and JavaDoc/Doxygen/etc.",
     "When your colleague tries to explain a certain system, he shows you some code."
