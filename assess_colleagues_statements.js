@@ -9,7 +9,7 @@ statements.simple = [
 ];
 statements.powerful = [
     "Understanding your colleague's code can be quite a challenge.",
-    "Your colleague often talks about protecting ones code from external changes.",
+    "Your colleague often talks about protecting ones code from external changes e.g. by using generalization to avoid changes.",
     "You definitely need some documentation about the details or settings if you want to use an API of your colleague.",
     "Your colleague likes runtime configurability, code generators, and build profiles.",
     "Your colleague constantly thinks about extensibility, flexibility, portability, and future requirements."
@@ -23,7 +23,7 @@ statements.abstract = [
 ];
 statements.concrete = [
     "Your colleague often has the concrete code to solve the problem in mind and does not waste time with too much conceptual work.",
-    "Your colleague gets familiar with any kind of code very fast. This is why he can also deal very well with any legacy code.",
+    "Your colleague gets familiar with any kind of code very fast and is able to explain the details to you. This is why he can also deal very well with any legacy code.",
     "You sometimes wonder why several independent components of your colleague work perfectly fine for themselves but do not fit into some kind of big picture.",
     "When your colleague talks about documentation, he thinks about code comments and JavaDoc/Doxygen/etc.",
     "When your colleague tries to explain a certain system, he shows you some code."
