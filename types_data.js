@@ -176,7 +176,7 @@ pait: {
 pair: {
     name: 'The Architect',
     description: '',
-    designs: '',
+    designs: 'Well-thought-out',
     programming: 'A task that needs planned thinking',
     principlesLiked: [principle('GP', 'generalization_principle'),
         principle('LC', 'low_coupling'),
@@ -232,16 +232,17 @@ pcit: {
 },
 pcir: {
     name: 'The Clockmaker',
-    description: 'A good system works precisely, just like a swiss clockwork. When every tiny cog wheel moves as it is suppose to, you can be sure that you\'ve created a masterpiece.',
-    designs: '',
+    description: 'A good system works precisely, just like a swiss clockwork. When every tiny cog wheel moves as it is suppose to, you can be sure that you\'ve created a masterpiece. You know the tiniest details of your code and certaily there are many of them. Your designs are sophisticated but they work perfectly fine.',
+    designs: 'Full of carefully crafted details',
     programming: 'Like creating a beautiful, precise clockwork',
     principlesLiked: [principle('GP', 'generalization_principle'),
         principle('ML', 'murphy_s_law'),
         principle('UP', 'uniformity_principle')],
     principlesDisregarded: [principle('KISS', 'keep_it_simple_stupid'),
         principle('RoE', 'rule_of_explicitness')],
-    strengths: [],
-    suggestions: [],
+    strengths: ['You are very good at writing code which exactly does what you want it to do'],
+    suggestions: ['Don\'t get lost in the details. Thers is some business which depends on you.',
+        'Keep in mind that your colleagues may need to understand your code; it\'s not enough to make calling it foolproof; at some time in the future somebody else might have to make changes to your code for some or the other reason. Maybe you are sick or on vacation, maybe you\'ve left the company, or maybe your code is so great that some other team likes to use and adapt it to their particular needs.'],
     furtherReading: [],
 }
 };
