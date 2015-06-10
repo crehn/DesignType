@@ -77,12 +77,13 @@ h1.main-title {
     border: 2px solid #f6a828;
 }
 
-.result .ui-accordion-content a {
+.ui-accordion-content a {
     text-decoration: underline;
 }
 
-.result .ui-accordion-content a:hover {
+.ui-accordion-content a:hover {
     text-decoration: none;
+    color: #d9534f;
 }
 
 .ui-accordion {
