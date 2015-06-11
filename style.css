@@ -90,6 +90,14 @@ h1.main-title {
     margin: 0.5em;
 }
 
+footer {
+    border-top:1px solid gray; 
+    text-align:center; 
+    color: gray; 
+    padding-top: 2em; 
+    padding-bottom: 2em;
+}
+
 @media print {
     #types div {
         display: block !important;
