@@ -56,7 +56,7 @@
     <section>
         <h1>Introduction</h1>
         <p>
-            In order to distinguish how developers think when making design decisions, one can describe four dimensions: simple-vs-powerful, abstract-vs-concrete, pragmatic-vs-idealistic, and technologic-vs-robust. These four dimensions are describes here:
+            In order to distinguish how developers think when making design decisions, one can distinguish four dimensions: simple-vs-powerful, abstract-vs-concrete, pragmatic-vs-idealistic, and technologic-vs-robust. These four dimensions are described here:
         </p>
     </section>
     <section id="dimensions">
@@ -66,16 +66,21 @@
                 Developers with this attitude prefer simple solutions which are easy to write and maintain.
             </p>
             <p>
-                The main idea is keeping everything simple. Simple means to implement only necessary and requested things and to avoid any ornaments. Simple code is easier to read, better to maintain and often contains less bugs. Typical followers know about the power of simplicity. They handle complexity by splitting it up and easing it as long as it results in simple parts. Simple also prevents for several risks like necessary knowledge about complex code or additional frameworks or libraries. Followers typically implement explicitly instead of ways where you need implicit knowledge or where you have to analyze difficult to understand abstractions. Normally terminology of classes, methods or variables is easy to understand and deep inheritance hierarchies will be avoided.
+                The main idea is avoiding complexity. To prefer simple solutions means to implement only necessary and requested things without any frills. Simple code is easier to read, better to maintain, and cointains fewer bugs. Typical followers know about the power of simplicity. The key to handling complexity is not to master it but rather to avoid it. They prefer small and clear modules with few dependencies. They use libraries and frameworks if this makes the code easier to read and write and they don't use them if this only means that the reader of the code needs to know how all these libraries work. Explicit solutions are preferred to indirect, declaratrive ones. This means that simple solutions are not overly generic but they communicate the intent well.
             </p>
             <p>
-                On the other hand the design contains nothing foresighted which often leads to many changes. Especially changes at elements that should have a stable characteristic like interfaces often head in expensive refactoring. Implementing things explicitly means that it is tight to a specific case and cannot being reused. Also bindings to libraries or to external systems are often coupled to tight because additional abstraction layers for decoupling are not really simple. Another problem is misunderstanding what simple really means because follower does not always have the same opinion on this topic. At least simple also takes quite some time for easing complexity.
+                On the other hand simple design tends to be less foresighted. This makes frequent changes and refactorings necessary. While this is not a problem for a single class, it may become one when interfaces to other teams are affected. Simple and explicit solutions often tend to be tightly coupled to requirements, used libraries and external dependencies. Decoupling introduces complexity (additional abstraction layers, indirect calls, etc.) but it also provides flexibility. This flexibility is sometimes underused by simple developers.
             </p>
             <p>
-                Typical applied principles for dimension simple are: KISS, MIMC, YAGNI, RoE, PLS 
+                Typically applied principles for dimension simple are: 
+                    <a href="http://www.principles-wiki.net/principles:keep_it_simple_stupid">KISS</a>, 
+                    <a href="http://www.principles-wiki.net/principles:more_is_more_complex">MIMC</a>, 
+                    <a href="http://www.principles-wiki.net/principles:you_ain_t_gonna_need_it">YAGNI</a>, 
+                    <a href="http://www.principles-wiki.net/principles:rule_of_explicitness">RoE</a>, 
+                    and <a href="http://www.principles-wiki.net/principles:principle_of_least_surprise">PLS</a> 
             </p>
             <p>
-                Irrelevant principles for this dimension are (maybe also interesting to have an eye on it): GP
+                Rather disregarded principles for this dimension are: <a href="http://www.principles-wiki.net/principles:generalization_principle">GP</a>
             </p>
         </div>
         <h2 id="powerful">Powerful</h2>
