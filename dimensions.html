@@ -73,11 +73,11 @@
             </p>
             <p>
                 Simple developers typically follow the following principles:
-                    <a href="http://www.principles-wiki.net/principles:keep_it_simple_stupid">KISS</a>, 
-                    <a href="http://www.principles-wiki.net/principles:more_is_more_complex">MIMC</a>, 
-                    <a href="http://www.principles-wiki.net/principles:you_ain_t_gonna_need_it">YAGNI</a>, 
-                    <a href="http://www.principles-wiki.net/principles:rule_of_explicitness">RoE</a>, 
-                    and <a href="http://www.principles-wiki.net/principles:principle_of_least_surprise">PLS</a> 
+                <a href="http://www.principles-wiki.net/principles:keep_it_simple_stupid">KISS</a>, 
+                <a href="http://www.principles-wiki.net/principles:more_is_more_complex">MIMC</a>, 
+                <a href="http://www.principles-wiki.net/principles:you_ain_t_gonna_need_it">YAGNI</a>, 
+                <a href="http://www.principles-wiki.net/principles:rule_of_explicitness">RoE</a>, 
+                and <a href="http://www.principles-wiki.net/principles:principle_of_least_surprise">PLS</a> 
             </p>
             <p>
                 Rather disregarded principles for these developers are: 
@@ -97,7 +97,7 @@
                 On the other hand powerful solutions take much time especially for their initial creation. Some of the flexiobility might never be used so one could argure that introducing it was unnecessary effort. Powerful developers may tend also to get lost in providing flexibility instead of fulfilling requirements. Powerful code is flexible and foresighted but it is also hard to read and to understand. Furthermore complex and powerful solutions are more error-prone than simple ones.
             </p>
             <p>
-                Simple developers typically follow the following principles:
+                Powerful developers typically follow the following principles:
                 <a href="http://www.principles-wiki.net/principles:generalization_principle">GP</a>,
                 <a href="http://www.principles-wiki.net/principles:encapsulate_the_concept_that_varies">ECV</a>,
                 <a href="http://www.principles-wiki.net/principles:information_hiding_encapsulation">IH/E</a>,
@@ -118,22 +118,33 @@
                 Developers with this attitude think in terms of abstractions and concepts.
             </p>
             <p>
-                The mindset of this dimension leads clearly to an overall structure and focus on the interaction of particular components up to a big picture. Followers attach importance to structure and also to its compliance. Every change will be considered from a bird’s eye view first before thinking about the details in code. Modules or components are normally independent form each other and therefore exchangeable and reusable. Followers have a very good overview over the whole system to any time and are able to localize parts without knowing their implementation details. Furthermore they are also able to give advice about consequences of particular changes. They typically tend to conception motivated by the need for having a plan. This will normally lead to sustainable architectures if sufficient information and experience are available. Passionate followers use a real world model wherein each element keeps its inherent state and behavior.
+                Abstract developers always have the big picture in mind. They think in terms of abstraction layers, patterns, package dependencies, architectural constraints, etc. Structure is very important and abstract developery keep the structure clean and clearly arranged. Single lines of code are not impotent. You shouldn't look at a software system with a magnifying glass. It has to work as a whole and it can be understood as a whole. Abstract solutions follow clear concepts that are easy to uderstand and fundamental to the whole system. Followers have a very good overview over the whole system. Furthermore they are also able to give advice on consequences of particular changes. Often abstract developers also like having natural, requirements-based object-designs where the software structure mimics the real-world concepts. This can make understanding the code even easier and may lead to fewer code changes when requirements change.
             </p>
             <p>
-                An approach that starts with conception trying to find the right abstractions and structures takes quite some time. Compliance of structure over time costs additional time. If followers are too far from reality they tend to build over engineered systems with too much complexity in it. There is also a risk that solutions differ too much from the origin requirements caused by focusing too much on architecture instead of customer wishes. For several technical circumstances the transformation of a real world model into a technical one can lead to conflicts in structure.
+                Abstract developers typically don't like working with legacy code that has bad structure. They feel the need to understand the system as a whole and will try to refactor the code such that there is a clear structure. If there is time for that and the system will be maintaines further, this is a good thing. In the other cases an abstract developer will feel lost and will be unhappy with making changes to that code which he doesn't quite understand.
             </p>
             <p>
-                Typical applied principles for dimension abstract are: TdA/IE, PSU, PLS, HC, LSP, IH/E, SLA, MP 
+                Abstract developers typically follow the following principles: 
+                <a href="http://www.principles-wiki.net/principles:low_coupling">LC</a>,
+                <a href="http://www.principles-wiki.net/principles:tell_don_t_ask_information_expert">TdA/IE</a>, 
+                <a href="http://www.principles-wiki.net/principles:principle_of_separate_understandability">PSU</a>,
+                <a href="http://www.principles-wiki.net/principles:high_cohesion">HC</a>, 
+                <a href="http://www.principles-wiki.net/principles:information_hiding_encapsulation">IH/E</a>,
+                <a href="http://www.principles-wiki.net/principles:single_level_of_abstraction">SLA</a>, 
+                <a href="http://www.principles-wiki.net/principles:model_principle">MP</a>,
+                and <a href="http://www.principles-wiki.net/principles:uniformity_principle">UP</a>
             </p>
             <p>
-                Irrelevant principles for this dimension are (maybe also interesting to have an eye on it): KISS, YAGNI
+                Rather disregarded principles for these developers are: 
+                <a href="http://www.principles-wiki.net/principles:rule_of_explicitness">RoE</a>,
+                <a href="http://www.principles-wiki.net/principles:encapsulate_the_concept_that_varies">ECV</a>,
+                and <a href="http://www.principles-wiki.net/principles:you_ain_t_gonna_need_it">YAGNI</a>
             </p>
         </div>
         <h2 id="concrete">Concrete</h2>
         <div>
             <p>
-                Programmers with this attitude directly think in code.
+                Programmers with this attitude directly think in terms of code.
             </p>
             <p>
                 The mindset of this dimension is to think and act in code. Requirements will be transformed immediately in components, classes and algorithms on the fly. Followers understand systems best by inspecting how it is implemented and find abnormalities extreme quickly. They normally have a wide spectrum of commands in mind and know how to improve algorithms for more efficiency. Furthermore they are familiar with several coding styles and easily refactor code even if it is from someone else. This ability can also be applied to code they do not understand whereat they claim to understand it at some time.
