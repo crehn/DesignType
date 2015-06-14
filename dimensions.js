@@ -1,5 +1,5 @@
 function getDimension() {
-    return getParameterByName("dimension").substr(0, dimensions.length);
+    return getParameterByName("dimension");
 }
 
 function getParameterByName(name) {
@@ -12,10 +12,12 @@ function getParameterByName(name) {
 function showDimension(dimension) {
     $("#dimensions").accordion("option", "active", dimensionToIndex(dimension));
     $("#dimension h2").removeClass("marked");
-    $("#" + type.toLowerCase()).addClass("marked");
 }
 
 function dimensionToIndex(dimension) {
+    if (dimension == "")
+        return 0;
+
     var dimensions = ['simple', 'powerful', 'abstract', 'concrete', 'pragmatic', 'idealistic', 'technologic', 'robust'];
     return dimensions.indexOf(dimension);
 }

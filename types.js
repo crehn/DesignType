@@ -112,7 +112,7 @@ function Types() {
     }
 
     function getResultingDesignType() {
-        return getParameterByName("type").substr(0, dimensions.length);
+        return getParameterByName("type").substr(0, 4);
     }
 
     function getParameterByName(name) {

@@ -56,7 +56,7 @@
     <section>
         <h1>Introduction</h1>
         <p>
-            In order to distinguish how developers think when making design decisions, one can describe four dimensions: simple-vs-powerful, abstract-vs-concrete, pragmatic-vs-idealistic, and technologic-vs-robust. These four dimensions are describes here:
+            In order to distinguish how developers think when making design decisions, one can distinguish four dimensions: simple-vs-powerful, abstract-vs-concrete, pragmatic-vs-idealistic, and technologic-vs-robust. These four dimensions are described here:
         </p>
     </section>
     <section id="dimensions">
@@ -66,16 +66,23 @@
                 Developers with this attitude prefer simple solutions which are easy to write and maintain.
             </p>
             <p>
-                The main idea is keeping everything simple. Simple means to implement only necessary and requested things and to avoid any ornaments. Simple code is easier to read, better to maintain and often contains less bugs. Typical followers know about the power of simplicity. They handle complexity by splitting it up and easing it as long as it results in simple parts. Simple also prevents for several risks like necessary knowledge about complex code or additional frameworks or libraries. Followers typically implement explicitly instead of ways where you need implicit knowledge or where you have to analyze difficult to understand abstractions. Normally terminology of classes, methods or variables is easy to understand and deep inheritance hierarchies will be avoided.
+                The main idea is avoiding complexity. To prefer simple solutions means to implement only necessary and requested things without any frills. Simple code is easier to read, better to maintain, and cointains fewer bugs. Typical followers know about the power of simplicity. The key to handling complexity is not to master it but rather to avoid it. They prefer small and clear modules with few dependencies. They use libraries and frameworks if this makes the code easier to read and write and they don't use them if this only means that the reader of the code needs to know how all these libraries work. Explicit solutions are preferred to indirect, declaratrive ones. This means that simple solutions are not overly generic but they communicate the intent well.
             </p>
             <p>
-                On the other hand the design contains nothing foresighted which often leads to many changes. Especially changes at elements that should have a stable characteristic like interfaces often head in expensive refactoring. Implementing things explicitly means that it is tight to a specific case and cannot being reused. Also bindings to libraries or to external systems are often coupled to tight because additional abstraction layers for decoupling are not really simple. Another problem is misunderstanding what simple really means because follower does not always have the same opinion on this topic. At least simple also takes quite some time for easing complexity.
+                On the other hand simple design tends to be less foresighted. This makes frequent changes and refactorings necessary. While this is not a problem for a single class, it may become one when interfaces to other teams are affected. Simple and explicit solutions often tend to be tightly coupled to requirements, used libraries and external dependencies. Decoupling introduces complexity (additional abstraction layers, indirect calls, etc.) but it also provides flexibility. This flexibility is sometimes underused by simple developers.
             </p>
             <p>
-                Typical applied principles for dimension simple are: KISS, MIMC, YAGNI, RoE, PLS 
+                Simple developers typically follow the following principles:
+                <a href="http://www.principles-wiki.net/principles:keep_it_simple_stupid">KISS</a>, 
+                <a href="http://www.principles-wiki.net/principles:more_is_more_complex">MIMC</a>, 
+                <a href="http://www.principles-wiki.net/principles:you_ain_t_gonna_need_it">YAGNI</a>, 
+                <a href="http://www.principles-wiki.net/principles:rule_of_explicitness">RoE</a>, 
+                and <a href="http://www.principles-wiki.net/principles:principle_of_least_surprise">PLS</a> 
             </p>
             <p>
-                Irrelevant principles for this dimension are (maybe also interesting to have an eye on it): GP
+                Rather disregarded principles for these developers are: 
+                <a href="http://www.principles-wiki.net/principles:generalization_principle">GP</a>
+                and <a href="http://www.principles-wiki.net/principles:low_coupling">LC</a>
             </p>
         </div>
         <h2 id="powerful">Powerful</h2>
@@ -84,16 +91,25 @@
                 Developers with this attitude prefer powerful, flexible, and foresighted solutions.
             </p>
             <p>
-                The main idea ist to create powerful and generalized solutions that can be applied for several use cases by just customizing it. Followers typically include flexibility and extensibility naturally into software design. One motivation can be manipulating runtime behavior with less or no changes in code just by configuration. Foresighted elements keep interfaces and structure stable. Especially creative followers have many awesome ideas in parallel for additional features in mind. Simple solutions are often too simple dominating complexity is often another big motivation for followers.
+                The main idea is to create flexible and foresightes solutions. Generalized solutions can be applied for several use cases by just customizing or configuring them. Followers typically include flexibility and extensibility naturally into software design. Powerful developers like runtime configurability, powerful frameworks, decoupling, and the use of many design patterns. They think ahead and include thoughts on extensibility, performance, and portability into their design process. This keeps structures and interfaces stable and helps reducing effort imposed by changing requirements inthe future.
             </p>
             <p>
-                On the other hand powerful solutions take much time especially for initial creation. There is also a risk that followers loose the origin target by focusing on functionality. Source code is not easy to understand caused by the level of complexity for example by using several abstraction levels. Bugs are also not obvious to find and therefore a debugger is frequently necessary. For followers of other dimensions it is often hard to understand the concepts or to takeover code. This can lead to displeasing situations where those feel mistreated or unable.
+                On the other hand powerful solutions take much time especially for their initial creation. Some of the flexiobility might never be used so one could argure that introducing it was unnecessary effort. Powerful developers may tend also to get lost in providing flexibility instead of fulfilling requirements. Powerful code is flexible and foresighted but it is also hard to read and to understand. Furthermore complex and powerful solutions are more error-prone than simple ones.
             </p>
             <p>
-                Typical applied principles for dimension powerful are: GP, ECV, IH/E, DIP, LC 
+                Powerful developers typically follow the following principles:
+                <a href="http://www.principles-wiki.net/principles:generalization_principle">GP</a>,
+                <a href="http://www.principles-wiki.net/principles:encapsulate_the_concept_that_varies">ECV</a>,
+                <a href="http://www.principles-wiki.net/principles:information_hiding_encapsulation">IH/E</a>,
+                <a href="http://www.principles-wiki.net/principles:dependency_inversion_principle">DIP</a>, 
+                and <a href="http://www.principles-wiki.net/principles:low_coupling">LC</a>
             </p>
             <p>
-                Irrelevant principles for this dimension are (maybe also interesting to have an eye on it): KISS, YAGNI, RoE
+                Rather disregarded principles for these developers are: 
+                <a href="http://www.principles-wiki.net/principles:keep_it_simple_stupid">KISS</a>, 
+                <a href="http://www.principles-wiki.net/principles:more_is_more_complex">MIMC</a>, 
+                <a href="http://www.principles-wiki.net/principles:you_ain_t_gonna_need_it">YAGNI</a>, 
+                and <a href="http://www.principles-wiki.net/principles:rule_of_explicitness">RoE</a>
             </p>
         </div>
         <h2 id="abstract">Abstract</h2>
@@ -102,34 +118,54 @@
                 Developers with this attitude think in terms of abstractions and concepts.
             </p>
             <p>
-                The mindset of this dimension leads clearly to an overall structure and focus on the interaction of particular components up to a big picture. Followers attach importance to structure and also to its compliance. Every change will be considered from a bird’s eye view first before thinking about the details in code. Modules or components are normally independent form each other and therefore exchangeable and reusable. Followers have a very good overview over the whole system to any time and are able to localize parts without knowing their implementation details. Furthermore they are also able to give advice about consequences of particular changes. They typically tend to conception motivated by the need for having a plan. This will normally lead to sustainable architectures if sufficient information and experience are available. Passionate followers use a real world model wherein each element keeps its inherent state and behavior.
+                Abstract developers always have the big picture in mind. They think in terms of abstraction layers, patterns, package dependencies, architectural constraints, etc. Structure is very important and abstract developery keep the structure clean and clearly arranged. Single lines of code are not impotent. You shouldn't look at a software system with a magnifying glass. It has to work as a whole and it can be understood as a whole. Abstract solutions follow clear concepts that are easy to uderstand and fundamental to the whole system. Followers have a very good overview over the whole system. Furthermore they are also able to give advice on consequences of particular changes. Often abstract developers also like having natural, requirements-based object-designs where the software structure mimics the real-world concepts. This can make understanding the code even easier and may lead to fewer code changes when requirements change.
             </p>
             <p>
-                An approach that starts with conception trying to find the right abstractions and structures takes quite some time. Compliance of structure over time costs additional time. If followers are too far from reality they tend to build over engineered systems with too much complexity in it. There is also a risk that solutions differ too much from the origin requirements caused by focusing too much on architecture instead of customer wishes. For several technical circumstances the transformation of a real world model into a technical one can lead to conflicts in structure.
+                Abstract developers typically don't like working with legacy code that has bad structure. They feel the need to understand the system as a whole and will try to refactor the code such that there is a clear structure. If there is time for that and the system will be maintaines further, this is a good thing. In the other cases an abstract developer will feel lost and will be unhappy with making changes to that code which he doesn't quite understand.
             </p>
             <p>
-                Typical applied principles for dimension abstract are: TdA/IE, PSU, PLS, HC, LSP, IH/E, SLA, MP 
+                Abstract developers typically follow the following principles: 
+                <a href="http://www.principles-wiki.net/principles:low_coupling">LC</a>,
+                <a href="http://www.principles-wiki.net/principles:tell_don_t_ask_information_expert">TdA/IE</a>, 
+                <a href="http://www.principles-wiki.net/principles:principle_of_separate_understandability">PSU</a>,
+                <a href="http://www.principles-wiki.net/principles:high_cohesion">HC</a>, 
+                <a href="http://www.principles-wiki.net/principles:information_hiding_encapsulation">IH/E</a>,
+                <a href="http://www.principles-wiki.net/principles:single_level_of_abstraction">SLA</a>, 
+                <a href="http://www.principles-wiki.net/principles:model_principle">MP</a>,
+                and <a href="http://www.principles-wiki.net/principles:uniformity_principle">UP</a>
             </p>
             <p>
-                Irrelevant principles for this dimension are (maybe also interesting to have an eye on it): KISS, YAGNI
+                Rather disregarded principles for these developers are: 
+                <a href="http://www.principles-wiki.net/principles:rule_of_explicitness">RoE</a>,
+                <a href="http://www.principles-wiki.net/principles:encapsulate_the_concept_that_varies">ECV</a>,
+                and <a href="http://www.principles-wiki.net/principles:you_ain_t_gonna_need_it">YAGNI</a>
             </p>
         </div>
         <h2 id="concrete">Concrete</h2>
         <div>
             <p>
-                Programmers with this attitude directly think in code.
+                Developers with this attitude directly think in terms of code.
             </p>
             <p>
-                The mindset of this dimension is to think and act in code. Requirements will be transformed immediately in components, classes and algorithms on the fly. Followers understand systems best by inspecting how it is implemented and find abnormalities extreme quickly. They normally have a wide spectrum of commands in mind and know how to improve algorithms for more efficiency. Furthermore they are familiar with several coding styles and easily refactor code even if it is from someone else. This ability can also be applied to code they do not understand whereat they claim to understand it at some time.
+                Concrete developers directly transfer requirements to code. They are also good at working with and even refactoring legacy code that they do not completely understand. They don't have to understand the whole system in all its details and they know that thsi attitude wouldn't scale either. As soon as a system has a certain level of complexity, one mind cannot understand it fully. Nevertheless a concrete developer can work quite well with such a system. When they refactor they heavyly rely on the boyscout rule. They improve code bottom-up rather than planning it top-down.
             </p>
             <p>
-                Their code grows naturally instead of being planned structurally and this is why structural borders are often violated. If this increases too much large-area refactorings will be the consequence. Besides this optimized code is often much more complex, hard to understand/maintain and often costs more time for implementation than it saves. Keeping all eyes on code often leads to lose focus on economical goals or architectural compliance.
+                On the other hand concrete developers may overoptimize unnecessary details and tend to loose sight of the big picture. They may violate achitectural constraints and weaken the overall structure because thinking in terms of packages, layers and dependencies is not in their focus.
             </p>
             <p>
-                Typical applied principles for dimension concrete are: DRY, HC bzw. SRP, ECV bzw. OCP 
+                Concrete developers typically follow the following principles: 
+                <a href="http://www.principles-wiki.net/principles:don_t_repeat_yourself">DRY</a>,
+                <a href="http://www.principles-wiki.net/principles:high_cohesion">HC</a>,
+                <a href="http://www.principles-wiki.net/principles:single_responsibility_principle">SRP</a>,
+                <a href="http://www.principles-wiki.net/principles:encapsulate_the_concept_that_varies">ECV</a>,
+                and <a href="http://www.principles-wiki.net/principles:open-closed_principle">OCP</a> 
             </p>
             <p>
-                Irrelevant principles for this dimension are (maybe also interesting to have an eye on it): MP, TdA/IE, PSU, LSP
+                Rather disregarded principles for these developers are:
+                <a href="http://www.principles-wiki.net/principles:model_principle">MP</a>,
+                <a href="http://www.principles-wiki.net/principles:tell_don_t_ask_information_expert">TdA/IE</a>,
+                <a href="http://www.principles-wiki.net/principles:principle_of_separate_understandability">PSU</a>,
+                and <a href="http://www.principles-wiki.net/principles:liskov_substitution_principle">LSP</a>
             </p>
         </div>
         <h2 id="pragmatic">Pragmatic</h2>
@@ -205,6 +241,9 @@
             </p>
         </div>
     </section>
+    <footer>
+        Please give us <a href="mailto:email@design-types.net">Feedback</a>!
+    </footer>
 </div>
 
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
