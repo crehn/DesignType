@@ -34,6 +34,7 @@ function Type(value1, value2, value3, value4) {
         var result = $("#templateType").clone();
         result.attr("id", abbreviation() + "_info");
         result.find(".attributes").html(buildAttributes());
+        result.find(".typeicon").append("<img src='/img/types/" + abbreviation().toUpperCase() + ".png' />");
         result.find(".description").html(typesData[abbreviation()].description);
         result.find(".designs").html(typesData[abbreviation()].designs);
         result.find(".programming").html(typesData[abbreviation()].programming);
@@ -122,7 +123,8 @@ function Types() {
     }
 
     function showDesignType(type) {
-        $("#resultString").html("<strong>Result:</strong> Your design type is <strong>" + type + "</strong>.");
+    	console.log("show type: " + type);
+        $("#resultString").html("<strong>Result:</strong> Your design type is <strong>" + typesData[type.toLowerCase()].name +" (" + type + ")</strong>.");
         
         if ($("#" + type.toLowerCase()).visible) {
             $("#types").accordion("option", "active", typeToIndex(type));
