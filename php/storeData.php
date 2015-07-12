@@ -91,8 +91,11 @@ if ($mysqli->connect_errno) {
     echo "Failed to connect to database: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 }
 
+$tablenameCS = $config_ini['tableprefix'] . "ChoosenStatements";
+$tablenameRT = $config_ini['tableprefix'] . "ResultType";
+
 //insert result type and statistic data
-if (!($stmt = $mysqli->prepare("INSERT INTO ResultType(USERKEY, DESIGN_TYPE, GENDER, AGE, PROF_YEARS, EDU_LEVEL, 
+if (!($stmt = $mysqli->prepare("INSERT INTO " . $tablenameRT . "(USERKEY, DESIGN_TYPE, GENDER, AGE, PROF_YEARS, EDU_LEVEL, 
                                                        EDU_BACKGROUND, ROLE, PROG_LANG, METHODOLOGY, LATITUDE, LONGITUDE, 
                                                        COMPANY_SIZE, INDUSTRY_SECTOR) 
                                                        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"))) {
@@ -113,7 +116,7 @@ $fkType = $stmt->insert_id;
 //echo "FK: " . $fkType . "\n";
 
 // insert specific choosen statements
-if (!($stmt2 = $mysqli->prepare("INSERT INTO ChoosenStatements(SIMPLE_1, SIMPLE_2, SIMPLE_3, SIMPLE_4, SIMPLE_5, SIMPLE_6,
+if (!($stmt2 = $mysqli->prepare("INSERT INTO " . $tablenameCS . "(SIMPLE_1, SIMPLE_2, SIMPLE_3, SIMPLE_4, SIMPLE_5, SIMPLE_6,
                                                         POWERFUL_1, POWERFUL_2, POWERFUL_3, POWERFUL_4, POWERFUL_5, POWERFUL_6,
                                                         ABSTRACT_1, ABSTRACT_2, ABSTRACT_3, ABSTRACT_4, ABSTRACT_5, ABSTRACT_6,
                                                         CONCRETE_1, CONCRETE_2, CONCRETE_3, CONCRETE_4, CONCRETE_5, CONCRETE_6,

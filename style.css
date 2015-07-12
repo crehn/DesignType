@@ -111,3 +111,46 @@ footer {
         content: "";
     }
 }
+
+/* diagnostic boxes */
+.box {
+  fill: steelblue;
+  stroke: black;
+  stroke-width: 3;
+}
+
+.txt {
+  color: white;
+  stroke: white;
+  text-anchor: middle; 
+  font-size: 1.5em; 
+  font-family: Arial;
+}
+
+.middle {
+  text-align: center;
+}
+
+/* Result statistics */
+.bar {
+  fill: steelblue;
+}
+
+.baractive {
+  fill: brown;
+}
+
+.axis {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}

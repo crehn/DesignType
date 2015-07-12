@@ -25,7 +25,7 @@ function storeData() {
     var userKey;
     
     $.when( 
-	    $.post("/php/storeData.php", 
+	    $.post("./php/storeData.php", 
 	       {
 	          designType: resulttype,
 	          gender: $("#gender").val(),

@@ -93,17 +93,49 @@
             </div>
         </div>
     </section>
+    <section>
+        <a id="diagnostic"></a>
+        <h1>Diagnostic</h1>
+        <div id="typediagnostic">
+            <div class="row">
+                <div class="col-sm-6">
+                    <p>See how your results overlap with the contrary dimensions:</p>
+                    <div class="middle" id="box1">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <p>See how your results overlap other result types (click to view closely results):</p>
+                    <div class="middle" id="box2">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>   
+    <section>
+        <a id="statistics"></a>
+        <h1>Statistics</h1>
+        <div id="statisticsummary">
+            <div class="row">
+                <div class="col-sm-12">
+                    <p>See the group distribution:</p>
+                    <div class="middle" id="statsbox">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>  
     <section class="result">
-        <a id="result"></a>
+        <a id="whatsnext"></a>
         <h1>What's Next</h1>
         <ul>
             <li><a href="test_yourself.html?revealed">Play around</a> with the questionaire and see how your choices change the result</li>
-            <li>Find out how your <a href="assess_colleagues.html?revealed">collegues</a> design software</li>
+            <li>Find out how your <a href="assess_colleagues.html?revealed">colleagues</a> design software</li>
             <li>Explore the other <a href="types.html">design types</a></li>
             <li>Learn more about the four <a href="dimensions.html">dimensions</a>: simple-vs-powerful, abstract-vs-concrete, pragmatic-vs-idealistic, and technologic-vs-robust</li>
             <li>Read more about the whole <a href="about.html">idea</a></li>
             <li>Please give us <a href="mailto:email@design-types.net">feedback</a> on design types, the questionaire and your result.</li>
         </ul>
+    </section>
     <section class="clearfix">
         <h1>Final Remarks</h1>
         <p>
@@ -121,7 +153,9 @@
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <script src="bower_components/jquery-ui/ui/minified/jquery-ui.min.js"></script>
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/d3/d3_min_v3.js"></script>
 <script src="types_data.js"></script>
 <script src="types.js"></script>
+<script src="result.js"></script>
 </body>
 </html>
