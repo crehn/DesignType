@@ -89,7 +89,8 @@ function drawDimensionImage() {
       .attr("width", gs.boxWidth)
       .attr("y", function(d) { return d.y } )
       .attr("height", gs.boxHeight)
-      .attr("style", "fill: steelblue; stroke: black; stroke-width: 3;");
+      .attr("style", "fill: steelblue; stroke: black; stroke-width: 3; cursor: pointer;")
+      .attr("onclick", getDimensionRedirect);
 
   svg.selectAll(".txt")
     .data(designTypeBoxes).enter()
@@ -135,7 +136,7 @@ function getAlternativeDimension(designType, curDim) {
     //return ("<tspan fill=\"red\">" + designType.dim1 + "</tspan>");
     return designType.dim1;
   } else {
-    alert("passed dimension["+curDim+"] not available in this object!");
+    console.log("passed dimension["+curDim+"] not available in this object!");
   }
 }
 
@@ -216,23 +217,20 @@ function drawPolygonImage() {
     svg.selectAll(".box")
       .data(resultTypeBoxes).enter()
       .append("rect")
-  //      .attr("class", ".box" )
         .attr("x", function(d) { return d.x } )
         .attr("width", is.boxWidth)
         .attr("y", function(d) { return d.y } )
         .attr("height", is.boxHeight)
-        .attr("style", "fill: steelblue; stroke: black; stroke-width: 3;");
+        .attr("style", "fill: steelblue; stroke: black; stroke-width: 3; cursor: pointer;")
+        .attr("onclick", getResultTypeRedirect);
     svg.selectAll(".txt")
       .data(resultTypeBoxes).enter()
       .append("text")
         .attr("x", function(d) { return d.xTxt } )
         .attr("y", function(d) { return d.yTxt + is.txtSpacer } )
-        //.attr("dy", ".15em")
-  //      .attr("class", ".txt")
         .attr("style", "fill: white; stroke: white; text-anchor: middle; font-size: 1.5em; font-family: Arial; cursor: pointer;")
         .text( function(d, i) { return d.content } )
         .attr("onclick", getResultTypeRedirect);
-        //.text( "<tspan> bold it </tspan>" );
         
     svg.append("polygon")
   //    .attr("points", "163,53 113,163 163,248 273,163")
@@ -266,7 +264,7 @@ function loadQuestionaireDetails(userKey, designType) {
           preparePolygonImage(designType, details);
           drawPolygonImage();
         } catch (err) {
-          alert("Could not load questionaire details! Error: " + err.message);
+          console.log("Could not load questionaire details! Error: " + err.message);
         }   
    });
 } 
