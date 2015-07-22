@@ -127,10 +127,6 @@ footer {
   font-family: Arial;
 }
 
-.middle {
-  text-align: center;
-}
-
 /* Result statistics */
 .bar {
   fill: steelblue;
