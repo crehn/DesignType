@@ -277,15 +277,17 @@ function loadQuestionaireDetails(userKey, designType) {
 var dataForBars;
 
 function drawBarChart(designType) {
-  var margin = {top: 20, right: 20, bottom: 30, left: 40},
-      width = 800 - margin.left - margin.right,
-      height = 250 - margin.top - margin.bottom;
+  var margin = {top: 20, right: 20, bottom: 30, left: 40};
+  var width = 800;
+  var innerWidth = width - margin.left - margin.right;
+  var height = 250;
+  var innerHeight = height - margin.top - margin.bottom;
   
   var x = d3.scale.ordinal()
-      .rangeRoundBands([0, width], .2);
+      .rangeRoundBands([0, innerWidth], .2);
   
   var y = d3.scale.linear()
-      .range([height, 0]);
+      .range([innerHeight, 0]);
   
   var xAxis = d3.svg.axis()
       .scale(x)
@@ -297,8 +299,8 @@ function drawBarChart(designType) {
       .ticks(10, "%");
   
   var svg = d3.select("#statsbox").append("svg")
-      .attr("width", width + margin.left + margin.right)
-      .attr("height", height + margin.top + margin.bottom)
+      .attr("width", width)
+      .attr("height", height)
     .append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
   
@@ -308,7 +310,7 @@ function drawBarChart(designType) {
   
     svg.append("g")
         .attr("class", "x axis")
-        .attr("transform", "translate(0," + height + ")")
+        .attr("transform", "translate(0," + innerHeight + ")")
         .call(xAxis);
   
     svg.append("g")
@@ -323,45 +325,29 @@ function drawBarChart(designType) {
     var bar = svg.selectAll(".bar")
         .data(dataForBars)
       .enter().append("rect")
-        .attr("class", detClass )
+        .attr("class", function(d) { return d.type === resultType ? "baractive" : "bar" })
         .attr("x", function(d) { return x(d.type); })
         .attr("width", x.rangeBand())
         .attr("y", function(d) { return y(d.amount); })
-        .attr("height", function(d) { return height - y(d.amount); });
+        .attr("height", function(d) { return innerHeight - y(d.amount); });
   
   var txt = svg.selectAll(".txtstat")
         .data(dataForBars)
         .enter().append("text")
         .attr("x", function(d) { return x(d.type) + (x.rangeBand() / 2); })
-        .attr("y", height - margin.bottom)
+        .attr("y", function(d) { return y(d.amount) - (margin.top / 2); })
         .attr("dy", ".15em")
         .text(getDisplayText)
-        .style("fill", "darksalmon")
-        .style("stroke", "darksalmon")
         .style("text-anchor", "middle")
         .style("font-size", ".8em");
 }
 
-function type(d) {
-	d.frequency = +d.frequency;
-	return d;
-}
-
-function detClass(d) {
-	if (d.type == resultType) {
-	  return "baractive";
-	} else {
-	  return "bar";
-	}
-}
-
 function getDisplayText(d) {
-	var txtNo = d.amount * 100;
-	if (txtNo < 1) {
-	    return "";
+	var percent = d.amount * 100;
+	if (percent < 1) {
+	    return "< 1 %";
 	} else {
-	    var txtStr = txtNo + "";
-	    return (txtStr.substr(0, 2) + " %");
+	    return Math.round(percent) + " %";
 	}
 }
 
@@ -377,7 +363,7 @@ function loadCountPerResultType() {
         try {
           drawBarChart();
         } catch (err) {
-          alert("Could not load result type count! Error: " + err.message);
+          console.log("Could not load result type count! Error: " + err.message);
         }   
    });
 } 
@@ -398,7 +384,6 @@ function getHttpParameter(key) {
 //###################
 
 $(document).ready(function(){
-    /* Hier der jQuery-Code */    
     prepareDimensionImage();
    
     resultType = getHttpParameter("type");
@@ -411,5 +396,5 @@ $(document).ready(function(){
     }
     
     loadCountPerResultType();
-
 });
+
