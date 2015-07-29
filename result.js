@@ -1,22 +1,6 @@
 var debug = true;
 var resultType;
 
-function GraphSettings(border, space, boxWidth, boxHeight, txtSpacer, yMarginBarTotal) {
-   this.border = border;
-   this.space = space;
-   this.boxWidth = boxWidth;
-   this.boxHeight = boxHeight;
-   this.boxWidthHalf = boxWidth / 2;
-   this.boxHeightHalf = boxHeight / 2;
-   this.txtSpacer = txtSpacer;
-   this.width = border + (2 * space) + (2 * boxWidth) + border;
-   this.height = border + (3 * space) + (4 * boxHeight) + border;
-   this.xBarIncr = (boxWidth + 2*space + boxWidth) / 10;
-   this.yMarginBarTotal = 10;
-   this.barLength = 5 * this.xBarIncr;
-   this.barHeight = boxHeight - yMarginBarTotal;
-}
-
 function DesignTypeBox(x, y, xTxt, yTxt, content) {
   this.x = x;
   this.y = y;
@@ -30,7 +14,6 @@ function Point(x, y) {
   this.y = y;
 }
 
-
 //################### Dimension Overlap chart
 
 function DimensionOverlapChart(details) {
@@ -43,6 +26,22 @@ function DimensionOverlapChart(details) {
     // all possible coordinates of overlay boxes
     var xPoints;
     var yPoints;
+
+    function GraphSettings(border, space, boxWidth, boxHeight, txtSpacer, yMarginBarTotal) {
+       this.border = border;
+       this.space = space;
+       this.boxWidth = boxWidth;
+       this.boxHeight = boxHeight;
+       this.boxWidthHalf = boxWidth / 2;
+       this.boxHeightHalf = boxHeight / 2;
+       this.txtSpacer = txtSpacer;
+       this.width = border + (2 * space) + (2 * boxWidth) + border;
+       this.height = border + (3 * space) + (4 * boxHeight) + border;
+       this.xBarIncr = (boxWidth + 2*space + boxWidth) / 10;
+       this.yMarginBarTotal = 10;
+       this.barLength = 5 * this.xBarIncr;
+       this.barHeight = boxHeight - yMarginBarTotal;
+    }
 
     this.draw = function() {
         calculatePositionsOfBoxesAndText();
@@ -392,7 +391,6 @@ function BarChart(dataForBars) {
 	        return Math.round(percent) + " %";
 	    }
     }
-
 }
 
 //################### Utils
@@ -420,7 +418,7 @@ function loadQuestionaireDetails(userKey, designType) {
    var details;
    debuglog("loadQuestionaireDetails - userKey: " + userKey);
    $.when( 
-        $.get("http://cors.io/?u=http://design-types.net/test/" + "./php/loadQuestionaireDetails.php?userkey=" + userKey, function(data, status) {
+        $.get("./php/loadQuestionaireDetails.php?userkey=" + userKey, function(data, status) {
             debuglog("loadQuestionaireDetails - status: " + status + ", data: " + data);
             details = jQuery.parseJSON(data);
         })
@@ -435,7 +433,7 @@ function loadQuestionaireDetails(userKey, designType) {
 function loadCountPerResultType() {
     var dataForBars;
     $.when( 
-        $.get("http://cors.io/?u=http://design-types.net/test/" + "./php/loadCountPerResultType.php", function(data, status) {
+        $.get("./php/loadCountPerResultType.php", function(data, status) {
             debuglog("loadCountPerResultType - status: " + status + ", data: " + data);
             dataForBars = jQuery.parseJSON(data);
          })
@@ -444,7 +442,6 @@ function loadCountPerResultType() {
         barChart.draw();
    });
 } 
-
 
 $(document).ready(function(){
     resultType = getHttpParameter("type");
