@@ -280,6 +280,7 @@ function TypeOverlapChart(designType, details, ukey) {
     
     function drawPolygon(svg) {
         svg.append("polygon")
+/*
         .attr("points", 
             (polygonPoints[0].x + 15) + "," + polygonPoints[0].y + " " 
              + (polygonPoints[0].x -15) + "," + polygonPoints[0].y + " " 
@@ -290,6 +291,8 @@ function TypeOverlapChart(designType, details, ukey) {
              + polygonPoints[2].x + "," + (polygonPoints[2].y +15) + " " 
              + polygonPoints[2].x + "," + (polygonPoints[2].y -15)
              )
+*/             
+        .attr("points", polygonPoints[0].x + "," + polygonPoints[0].y + " " + polygonPoints[1].x + "," + polygonPoints[1].y + " " + polygonPoints[3].x + "," + polygonPoints[3].y + " " + polygonPoints[2].x + "," + polygonPoints[2].y)
         .attr("style", "stroke:#660000; fill:#cc3333; stroke-width: 2; fill-opacity: .5;" );
     }
 
