@@ -307,8 +307,8 @@ function TypeOverlapChart(designType, details, ukey) {
 //################### Statistics chart
 
 function BarChart(dataForBars) {
-    var width = 800;
-    var height = 250;
+    var width = Math.min(800, $("#statsbox").width());
+    var height = 0.3 * width;
     var margin = {top: 20, right: 20, bottom: 30, left: 40};
 
     var innerWidth = width - margin.left - margin.right;

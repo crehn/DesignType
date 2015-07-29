@@ -33,6 +33,7 @@ h1.main-title {
 
 .entry-point-col {
     text-align: center;
+    margin-bottom: 1.5em;
 }
 
 .entry-point-primary {
@@ -100,6 +101,20 @@ footer {
     color: gray; 
     padding-top: 2em; 
     padding-bottom: 2em;
+}
+
+@media screen and (max-width:480px) {
+    h1.main-title {
+        font-size:350%;
+    }
+    
+    .entry-point-col.entry-point-primary img {
+        height: 150px;
+    }
+    
+    .entry-point-col img {
+        height: 100px;
+    }
 }
 
 @media print {
