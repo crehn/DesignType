@@ -44,6 +44,7 @@ function Dimension(leftValue, rightValue, statements, number) {
                 id: "stmt_" + value + statement,
                 type: "checkbox"
             }));
+            li.append(" ");
             li.append(statements[statement]);
             panel.find("ul").append(li);
         }
