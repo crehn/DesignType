@@ -21,7 +21,7 @@ sapt: {
     suggestions: ['Keep in mind that not all libraries and frameworks are stable. Be prepared that they change. Ideally your architecture allows you to exchange potentially unstable libraries for other ones without changing too much of your system. Otherwise requirement changes or version updates can lead to big refactoring sessions.',
         'Use quality metrics for the architecture to avoid own violations of your design that may have a big impact on your systems.',
         'Keep an eye on stability. Not every new technology keeps its promises. Also defensive programming maybe cost some time but is often worth it.'],
-    furtherReading: ['coming soon'],
+    furtherReading: [''],
 },
 sapr: {
     name: 'The Construction Manager',
@@ -42,7 +42,7 @@ sapr: {
         "Don't get left behind by evolving technology.",
         "Keep your design flexible and extensible to be prepared for continuous requirement changes.",
         "Don't forget the trade-offs you made for increasing development speed."],
-    furtherReading: ['coming soon'],
+    furtherReading: [''],
 },
 sait: {
     name: 'The Author',
@@ -61,7 +61,7 @@ sait: {
     suggestions: ["Try not to loose focus on business needs. Often elegance is not expected but expensive in effort and time.",
         "Learn to accept imperfect solutions.",
         "A good novelist knows: It's hard but necessary to start with something mediocre that's working. The key is to polish over and over again as new requirements, insights and ideas emerge."],
-    furtherReading: ['coming soon'],
+    furtherReading: [''],
 },
 sair: {
     name: 'The  The Space Probe Engineer',
@@ -171,7 +171,7 @@ scir: {
     suggestions: ["Don't forget to stay up to date with new technologies. They often help you getting things done more effective and efficient.",
         "Learn throw things away even if it is/was your baby.",
         "Respect the business needs as part of the overall perspective. Don't focus too much on specific detail needs."],
-    furtherReading: ['coming soon'],
+    furtherReading: [''],
 },
 papt: {
     name: 'The Magician',
@@ -189,7 +189,7 @@ papt: {
     suggestions: ["Think about simplifying those areas where generality is not really necessary. It saves time and reduces complexity especially for others that are maybe not that fast in understanding complex code.",
         "Keep an eye on what you combine. Too many dependencies lead to instability or problems with incompatible versions. Sometimes less is more.",
         "Not every technology keeps its promises. Also have a look into the details and not only on the promised boosting effects."],
-    furtherReading: ['coming soon'],
+    furtherReading: [''],
 },
 papr: {
     name: 'The Engineer',
@@ -205,7 +205,7 @@ papr: {
     suggestions: ["Good and planned solutions take time. Sometimes there is not enough available and you have to decide what part should be skipped. Be sure to skip the right things!",
         "Engineers can become demotivated very fast if they are not challenged enough.",
         "Engineers tend to overengineer. Keep the project constraints in mind -- especially if they are not specified precisely."],
-    furtherReading: ['coming soon'],
+    furtherReading: [''],
 },
 pait: {
     name: 'The Professor',
@@ -243,7 +243,7 @@ pair: {
     suggestions: ["Your colleagues may like to start coding earlier than you. This is not necessarily a shortcoming. It's just another way of building software with its own advantages and disadvantages. Find a way to cooperate with them although they think differently.",
         "Not everything has to be perfect. Perfection costs effort and time and these are things you normally don't have. Try to find these things so you can make trade-offs you can live with.",
         "Don't loose focus on the details and get your hands dirty from time to time to keep you familiar with the current state of coding."],
-    furtherReading: ['coming soon'],
+    furtherReading: [''],
 },
 pcpt: {
     name: 'The Chef',
@@ -259,7 +259,7 @@ pcpt: {
     suggestions: ["Be careful with playing around. It can consume time when you loose focus on the real goal.",
         "Combinations of too many powerful artifacts can lead to complex and instable systems.",
         "Keep an eye on the design and the interaction of all elements. It is much more than linking artifacts together."],
-    furtherReading: ['coming soon'],
+    furtherReading: [''],
 },
 pcpr: {
     name: 'The Sorcerer',
@@ -277,7 +277,7 @@ pcpr: {
     suggestions: ["Sorcerers tend to loose the view for the big picture. Step back once in a while and look if something can be improved. Maybe you will realize that something is unnecessary. You may then remove it and exchange it for something more helpful.",
         "You may like low-level (performance) optimizations. This may be fun but it's often better to optimize readability first and do low-level optimizations only when you are sure that you need them.",
         "Keep time in mind. Personal satisfaction is a good thing as it keeps you motivated and efficient. On the other hand there are normally economical constraints. Find a suitable compromise."],
-    furtherReading: ['coming soon'],
+    furtherReading: [''],
 },
 pcit: {
     name: 'The Artist',
@@ -299,7 +299,7 @@ pcit: {
     suggestions: ["Keep in mind that software is meant to fulfill business needs. Producing beautiful software is nice but typically you are payed for producing business value. Try to distinguish where you can produce art and where you have to restrain yourself.",
         "Others may find it difficult to understand your code. But one day this might be necessary (e.g. illness or vacation). The colleague who gets to change or use your code has to get the chance to understand it. You may want to learn how to build simple and elegant solutions. There is beauty in simplicity, too.",
         "You may find it difficult to agree with your colleagues when you argue about your code or some design decision to make. Try to find a way to make a decision, a compromise and maybe even find consensus."],
-    furtherReading: ['coming soon'],
+    furtherReading: [''],
 },
 pcir: {
     name: 'The Clockmaker',
@@ -314,7 +314,7 @@ pcir: {
     strengths: ['You are very good at writing code which exactly does what you want it to do'],
     suggestions: ["Don't get lost in the details. There is some business which depends on you and loving details can also mean to be inefficient.",
         "Keep in mind that your colleagues may need to understand your code; it's not enough to make calling it foolproof; at some time in the future somebody else might have to make changes to your code for some reason; or maybe your code is so great that some other team likes to use and adapt it."],
-    furtherReading: ['coming soon'],
+    furtherReading: [''],
 }
 };
 
