@@ -189,6 +189,8 @@ function TypeOverlapChart(designType, details, ukey) {
        this.boxHeightHalf = boxHeight / 2;
        this.boxWidthQuarter = boxWidth / 4;
        this.boxHeightQuarter = boxHeight / 4;
+       this.boxWidthThird = boxWidth / 3;
+       this.boxHeightThird = boxHeight / 3;
        this.txtSpacer = txtSpacer;
        this.width = (3 * boxWidth) + (2 * space) + (2 * border);
        this.height = (3 * boxHeight) + (2 * space) + (2 * border);
@@ -243,10 +245,10 @@ function TypeOverlapChart(designType, details, ukey) {
 
         var midImageX = boxOffsetLeft + is.boxWidthHalf;
         var midImageY = boxOffsetTop + is.boxHeightHalf;
-        var polygonPntDimTop = new Point( txtOffsetLeft, midImageY - is.boxHeightHalf - is.space - (is.boxHeightQuarter * matchesDimTop) );
-        var polygonPntDimLeft = new Point( midImageX - is.boxWidthHalf - is.space - (is.boxWidthQuarter * matchesDimLeft), txtOffsetTop );
-        var polygonPntDimRight = new Point( midImageX + is.boxWidthHalf + is.space + (is.boxWidthQuarter * matchesDimRight), txtOffsetTop );
-        var polygonPntDimBottom = new Point( txtOffsetLeft, midImageY + is.boxHeightHalf + is.space + (is.boxHeightQuarter * matchesDimBottom) );
+        var polygonPntDimTop = new Point( txtOffsetLeft, midImageY - is.boxHeightHalf - is.space - (is.boxHeightThird * matchesDimTop) );
+        var polygonPntDimLeft = new Point( midImageX - is.boxWidthHalf - is.space - (is.boxWidthThird * matchesDimLeft), txtOffsetTop );
+        var polygonPntDimRight = new Point( midImageX + is.boxWidthHalf + is.space + (is.boxWidthThird * matchesDimRight), txtOffsetTop );
+        var polygonPntDimBottom = new Point( txtOffsetLeft, midImageY + is.boxHeightHalf + is.space + (is.boxHeightThird * matchesDimBottom) );
 
         polygonPoints = new Array(polygonPntDimTop, polygonPntDimLeft, polygonPntDimRight, polygonPntDimBottom);
     }
