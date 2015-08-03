@@ -11,7 +11,8 @@ if ($mysqli->connect_errno) {
 $tablenameCmt = $config_ini['tableprefix'] . "Comments";
 
 //insert comment
-if (!($stmt = $mysqli->prepare("SELECT name, email, comment, date FROM ". $tablenameCmt . " WHERE id_post = ?"))) {
+$amountOfCommentsToLoad = 20;
+if (!($stmt = $mysqli->prepare("SELECT name, email, comment, date FROM ". $tablenameCmt . " WHERE id_post = ? order by id desc limit " . $amountOfCommentsToLoad))) {
     echo "Prepare for select failed: (" . $mysqli->errno . ") " . $mysqli->error;
 }
 
@@ -37,12 +38,14 @@ while ($stmt->fetch()) {
     $resultArray[$idx] = array($name, $grav_url, $comment, $date);
     $idx = $idx +1;
 }
+// resort to show the newest comments first
+$sortedResult = array_reverse($resultArray);
 
 // close statement and connection
 $stmt->close();
 $mysqli->close();
 
 // return objects as json
-echo json_encode($resultArray);
+echo json_encode($sortedResult);
 
 ?>

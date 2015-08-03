@@ -16,8 +16,7 @@ if($_POST['act'] == 'add-com'):
     $tablenameCmt = $config_ini['tableprefix'] . "Comments";
     
     //insert comment
-    if (!($stmt = $mysqli->prepare("INSERT INTO " . $tablenameCmt . "(name, email, comment, id_post) 
-                                                           VALUES (?, ?, ?, ?)"))) {
+    if (!($stmt = $mysqli->prepare("INSERT INTO " . $tablenameCmt . "(name, email, comment, id_post) VALUES (?, ?, ?, ?)"))) {
         echo "Prepare for insert failed: (" . $mysqli->errno . ") " . $mysqli->error;
     }
     
@@ -47,12 +46,19 @@ if($_POST['act'] == 'add-com'):
     </div><!-- end "cmt-cnt" -->
 
     <?php } ?>
-<?php endif; ?>
-
-<?php 
-
+<?php     
     // close statement and connection
     $stmt->close();
     $mysqli->close();
 
+    $to      = $config_ini['mailrecipients'];
+    $subject = '[new comment at design-types]';
+    $message = "New comment for page with id: " . $id_post . "\r\n\r\n" . "Content:\r\n" . $comment;
+    $headers = 'From: email@design-types.net' . "\r\n" .
+               'Reply-To: email@design-types.net' . "\r\n" .  
+               'X-Mailer: PHP/' . phpversion();
+    
+    mail($to, $subject, $message, $headers);
+        
+endif; 
 ?>
