@@ -42,15 +42,18 @@ function Type(value1, value2, value3, value4) {
         result.find(".principles-disregarded").html(arrayToCommaList(typesData[abbreviation()].principlesDisregarded));
         result.find(".strengths").html(arrayToUl(typesData[abbreviation()].strengths));
         result.find(".suggestions").html(arrayToUl(typesData[abbreviation()].suggestions));
-        if (typesData[abbreviation()].furtherReading != null && typesData[abbreviation()].furtherReading.length > 1) {
-        	result.find(".further-reading").html(arrayToUl(typesData[abbreviation()].furtherReading));
-        } else {
-        	// remove whole 'further reading' part if no content available
-        	result.find(".further-reading").prev().remove();
-        	result.find(".further-reading").remove();
-        }
+        displayFurtherReading(result);
         $("#types").append(result);
         return result;
+    }
+    
+    function displayFurtherReading(panel) {
+        var furtherReading = typesData[abbreviation()].furtherReading;
+        if (furtherReading.length !== 0) {
+            panel.find("dd.further-reading").html(arrayToUl(typesData[abbreviation()].furtherReading));
+        } else {
+            panel.find(".further-reading").hide();
+        }
     }
     
     function buildAttributes() {
