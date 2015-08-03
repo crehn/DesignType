@@ -6,7 +6,9 @@ function writeComment(theName, theAvatarUrl, theDate, theComment) {
     result.find("img").attr("src", theAvatarUrl);
     result.find("div.thecom").find("h5").html(theName);
     result.find("div.thecom").find("span").html(theDate);
-    result.find("div.thecom").find("p").html(theComment);
+    // replace placeholder with real line break
+    var commentMod = theComment.replace(/\[br\]/g, "<br/>");
+    result.find("div.thecom").find("p").html(commentMod);
     result.attr('id', 'copiedCommentId');
     result.show();
     $(".clear").after(result);
@@ -39,6 +41,9 @@ function initializeCommentFunction() {
       // on post comment click
       $('.bt-add-com').click(function(){
           var theCom = $('.the-new-com');
+          // substitute real line break by placeholder
+          var theComMod = theCom.val().replace(/(\r\n|\n|\r)/gm, "[br]");
+          //var theComModImmediate = theCom.val().replace(/(\r\n|\n|\r)/gm, "<br/>");
           var theName = $('#name-com');
           var theMail = $('#mail-com');
 
@@ -48,14 +53,15 @@ function initializeCommentFunction() {
               $.ajax({
                   type: "POST",
                   url: "./php/addComment.php",
-                  data: 'act=add-com&id_post='+pageIdComments+'&name='+theName.val()+'&email='+theMail.val()+'&comment='+theCom.val(),
+                  data: 'act=add-com&id_post='+pageIdComments+'&name='+theName.val()+'&email='+theMail.val()+'&comment='+theComMod,
                   success: function(html){
                       theCom.val('');
                       theMail.val('');
                       theName.val('');
                       $('.new-com-cnt').hide('fast', function(){
                           $('.new-com-bt').show('fast');
-                          $('.clear').after(html);  
+                          var htmlMod = html.replace(/\[br\]/g, "<br/>");
+                          $('.clear').after(htmlMod);  
                       })
                   }  
               });
