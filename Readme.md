@@ -1,10 +1,10 @@
 # DesignType
 
-This is questionaire which attempts to find out how you design software. Just like psychological tests can describe a person's personality, this test tries to distinguish several design types.
+This is a questionaire which attempts to find out how you design software. Just like psychological tests can describe a person's personality, this test tries to distinguish several design types.
 
 # Basic idea
 
-The questionaire is based on four dimensions a developer is located in:
+The questionaire is based on four dimensions a developer is located:
 * __simple vs. powerful__
 * __abstract vs. concrete__
 * __pragmatic vs. idealistic__
