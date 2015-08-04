@@ -1,7 +1,7 @@
 // var pageIdComments has to be defined in each page using this functions.
 
 function writeComment(theName, theAvatarUrl, theDate, theComment) {
-    console.log("write comment: "+ theComment);
+    //console.log("write comment: "+ theComment);
     var result = $("#templateSingleComment").clone();
     result.find("img").attr("src", theAvatarUrl);
     result.find("div.thecom").find("h5").html(theName);
@@ -80,9 +80,11 @@ function loadComments(pageId) {
             allComments = jQuery.parseJSON(data);
         })
    ).then( function() {
-        for(var i=0; i < allComments.length ;i++) {
-          writeComment(allComments[i][0], allComments[i][1], allComments[i][3], allComments[i][2]);
-        } 
+	    if (allComments != null) {
+	        for(var i=0; i < allComments.length ;i++) {
+	          writeComment(allComments[i][0], allComments[i][1], allComments[i][3], allComments[i][2]);
+	        } 
+   		}
     });
 } 
 
