@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="comments.css" />
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -17,6 +18,10 @@
       <script src="bower_components/html5shiv/dist/html5shiv.js"></script>
       <script src="bower_components/respond.js/dest/respond.min.js"></script>
     <![endif]-->
+    
+    <script type="text/javascript">
+       var pageIdComments = 4;
+    </script>
 
     <title>How Do You Design Software?</title>
 </head>
@@ -63,7 +68,7 @@
             Let’s make an example: <em>Simple</em> means to omit things that are not really necessary like never requested features. In an extreme manner it can mean to omit also documentation because really simple code is documentation enough. This can be but does not have to.
         </p>
         <p>
-            What we mean is that all dimensions have a wide range of aspects. You can agree with many of them but do not have to agree to all. To get a contrast between the two parts of a dimension we tried to find naturally contrary mindsets. We use these to force you to decide to which side you belongs most. Well knowing that there are developers who will be very balanced, we agreed in that there will be also ones who are typically extreme. When you think about your colleagues you will quickly know who is extremely dedicated to a specific dimension. Those are often very original guys. In many cases for each person one or two dimensions overshaddow the others and form the impression of others about this person.
+            What we mean is that all dimensions have a wide range of aspects. You can agree with many of them but do not have to agree to all. To get a contrast between the two parts of a dimension we tried to find naturally contrary mindsets. We use these to force you to decide to which side you belong most. Well knowing that there are developers who will be very balanced, we agreed in that there will be also ones who are typically extreme. When you think about your colleagues you will quickly know who is extremely dedicated to a specific dimension. Those are often very original guys. In many cases for each person one or two dimensions overshaddow the others and form the impression of others about this person.
         </p>
         <p>
             Find out more about the definition of all dimensions by exploring our <a href="dimensions.html">dimensions page</a>.
@@ -72,13 +77,38 @@
             When we combine all the predominating dimensions of someone it results in a design type. SAPR for example is the combination of the attitudes Simple – Abstract – Pragmatic – Robust. Someone who is Abstract focuses on concepts and abstractions to find a good structure for his application. If he is also Pragmatic he maybe will tend to violate this structure for satisfying customer needs. If he is also Idealistic he maybe will over engineer the whole system structure. Your predominate dimensions effect each other. In our Design Types we specify these different combinations and describe the consequences for each type.
 Find out more about these combinations by exploring our <a href="types.html">design types page</a>.
         </p>
-        <p class="alert-alert-warning">
-            Note: the Design Types page is still work in progress.
-        </p>
     </section>
+    <section id="comments">
+        <div class="row">
+            <div id="templateSingleComment" class="cmt-cnt">
+                <img src="missing.png">
+                <div class="thecom">
+                    <h5>Template name</h5><span class="com-dt">Template date</span>
+                    <br>
+                    <p>Template comment</p>
+                </div>
+            </div>
+            
+            <div id="commentscontainer" class="cmt-container">
+                <div class="new-com-bt">
+                    <span>Write a comment ...</span>
+                </div>
+                <div id="commentform" class="new-com-cnt">
+                    <input id="name-com" name="name-com" value="" placeholder="Your name" type="text">
+                    <input id="mail-com" name="mail-com" value="" placeholder="Your e-mail adress" type="text">
+                    <textarea class="the-new-com"></textarea>
+                    <div class="bt-add-com">Post comment</div>
+                    <div class="bt-cancel-com">Cancel</div>
+                </div>
+                <div class="clear"></div>
+            </div>  
+        </div>  
+    </section>     
     <footer>
         Please give us <a href="mailto:email@design-types.net">Feedback</a> or discuss with us at <a href="https://www.xing.com/communities/groups/design-principles-patterns-types-08d2-1080100" target="_blank"><img src="./img/xing_logo2.png" alt="XING" height="25" width="25" /></a>
     </footer>
 </div>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="comments.js"></script>
 </body>
 </html>
