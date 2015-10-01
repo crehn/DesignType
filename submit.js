@@ -24,6 +24,17 @@ function storeData() {
     var resulttype = $("#designType").val();
     var userKey;
     
+    var position;
+    
+    /*
+    if (navigator.geolocation) {
+    	var options = {timeout:6000};
+    	position = navigator.geolocation.getCurrentPosition(function(pos) {
+    		position.latitude = pos.coords.latitude;
+    		position.longitude = pos.coords.longitude;
+    	}, function(err) {}, options);
+    }*/
+    
     $.when( 
 	    $.post("./php/storeData.php", 
 	       {
@@ -38,8 +49,10 @@ function storeData() {
 	          methodology: $("#methodology").val(),
 	          companySize: $("#companySize").val(),
 	          industrySector: $("#industrySector").val(),
-	          latitude: "2",
-	          longitude: "2",
+	          //latitude: position === undefined ? "2" : position.latitude,
+	          //longitude: position === undefined ? "2" : position.longitude,
+	          latitude: "2", 
+	          longitude: "2", 
 	          simple1: localStorage["you.stmt_simple0"],
 	          simple2: localStorage["you.stmt_simple1"],
 	          simple3: localStorage["you.stmt_simple2"],
@@ -96,6 +109,12 @@ function storeData() {
     ).then(function () {
     	console.log("redirect to result page with user key: " + userKey);
     	$(location).attr('href','result.html?type=' + resulttype + '&ukey=' + userKey);
+    	/*
+    	setTimeout(function(){
+    		$(location).attr('href','result.html?type=' + resulttype + '&ukey=' + userKey);
+    	}, 6000);
+    	*/
+    	
     });
  }
 
