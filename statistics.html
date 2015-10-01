@@ -21,7 +21,7 @@
     <![endif]-->
     
     <script type="text/javascript">
-       var pageIdComments = 3;
+       var pageIdComments = 4;
     </script>
 
     <title>How Do You Design Software?</title>
@@ -41,10 +41,10 @@
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="test_yourself.html">Test Yourself</a></li>
+                    <li><a href="test_yourself.html">Test Yourself</a></li>
                     <li><a href="assess_colleagues.html?revealed">Assess Colleagues</a></li>
                     <li><a href="info.html">Learn More</a></li>
-                    <li><a href="statistics.html">Statistics</a></li>
+                    <li class="active"><a href="statistics.html">Statistics</a></li>
                     <li><a href="about.html">About</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
@@ -57,67 +57,10 @@
     <div class="jumbotron">
         <h1>How Do You Design Software?</h1>
         <p>
-            This is your result.
+            Some statistics.
         </p>
     </div>
-
-    <section>
-        <a id="result"></a>
-        <h1>Your Design Type</h1>
-        <div class="alert alert-info" id="resultString">
-            Fill in the questionaire to determine your design type.
-        </div>
-        <div id="types">
-            <h2 style="display:none" id="templateTypeName">XXXX: The Foobar</h2>
-            <div style="display:none" class ="row" id="templateType">
-                <div class="typeicon text-center"></div>
-                <div class="col-sm-6">
-                    <dl>
-                        <dt>Attributes</dt>
-                        <dd class="attributes"></dd>
-                        <dt>Description</dt>
-                        <dd class="description"></dd>
-                        <dt>Your designs are</dt>
-                        <dd class="designs"></dd>
-                        <dt>Programming is</dt>
-                        <dd class="programming"></dd>
-                    </dl>
-                </div>
-                <div class="col-sm-6">
-                    <dl>
-                        <dt>Principles you probably like</dt>
-                        <dd class="principles-liked"></dd>
-                        <dt>Principles you rather disregard</dt>
-                        <dd class="principles-disregarded"></dd>
-                        <dt>Strengths</dt>
-                        <dd class="strengths"></dd>
-                        <dt>Suggestions</dt>
-                        <dd class="suggestions"></dd>
-                        <dt class="further-reading">Further reading</dt>
-                        <dd class="further-reading"></dd>
-                    </dl>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section>
-        <a id="diagnostic"></a>
-        <h1>Diagnostic</h1>
-        <div id="typediagnostic">
-            <div class="row">
-                <div class="col-sm-6">
-                    <p>This is how your answers map to the four dimensions. You can see that they are a continuum rather than just two extremes (click on the dimension parts to learn more about it):</p>
-                    <div class="text-center" id="box1">
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <p>As this is just a coarse categorization, you may find that some adjacent type fits better to you (click on the types to see more details). The red area shows how your answers map to the types:</p>
-                    <div class="text-center" id="box2">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>   
+   
     <section>
         <a id="statistics"></a>
         <h1>Statistics</h1>
@@ -130,25 +73,31 @@
                 </div>
             </div>
         </div>
-    </section>  
-    <section class="result">
-        <a id="whatsnext"></a>
-        <h1>What's Next</h1>
-        <ul>
-            <li><a href="test_yourself.html?revealed">Play around</a> with the questionaire and see how your choices change the result</li>
-            <li>Find out how your <a href="assess_colleagues.html?revealed">colleagues</a> design software</li>
-            <li>Explore the other <a href="types.html">design types</a></li>
-            <li>Learn more about the four <a href="dimensions.html">dimensions</a>: simple-vs-powerful, abstract-vs-concrete, pragmatic-vs-idealistic, and technologic-vs-robust</li>
-            <li>Read more about the whole <a href="about.html">idea</a></li>
-            <li>Please give us <a href="mailto:email@design-types.net">feedback</a> on design types, the questionaire and your result.</li>
-        </ul>
     </section>
-    <section class="clearfix">
-        <h1>Final Remarks</h1>
-        <p>
-            This categorization is by far not covering all aspects of a developer. Working style, prefered development process, people skills, and many other aspects are neglected here. That's also not the goal of this questionaire. Rather the hope is that this structure helps you to understand how your colleagues think when they make design decisions.
-        </p>
-    </section>
+    <section>
+        <a id="allstatements"></a>
+        <div id="allstats">
+            <div class="row">
+                <div class="col-sm-12">
+                    <p>This is how often the particular statements have been choosen:</p>
+                    <div class="text-center" id="statementsbox">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> 
+    <section>
+        <a id="dimensionswithexp"></a>
+        <div id="dimexp">
+            <div class="row">
+                <div class="col-sm-12">
+                    <p>This chart shows if there is a relationship between experience and tendency to particular dimensions:</p>
+                    <div class="text-center" id="dimensionsexpbox">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>         
     <section id="comments">
         <div class="row">
             <div id="templateSingleComment" class="cmt-cnt">
@@ -185,8 +134,8 @@
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="bower_components/d3/d3_min_v3.js"></script>
 <script src="types_data.js"></script>
-<script src="types.js"></script>
-<script src="result.js"></script>
+<script src="test_yourself_statements.js"></script>
+<script src="statistics.js"></script>
 <script src="comments.js"></script>
 </body>
 </html>
