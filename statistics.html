@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" type="image/png" href="./favicon.png">
+    <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="./favicon.png">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="bower_components/jquery-ui/themes/ui-lightness/jquery-ui.min.css">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="comments.css" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="bower_components/html5shiv/dist/html5shiv.js"></script>
+      <script src="bower_components/respond.js/dest/respond.min.js"></script>
+    <![endif]-->
+    
+    <script type="text/javascript">
+       var pageIdComments = 4;
+    </script>
+
+    <title>How Do You Design Software?</title>
+</head>
+<body>
+<div class="container page">
+    <nav class="navbar navbar-inverse navbar-default" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Design Types</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="test_yourself.html">Test Yourself</a></li>
+                    <li><a href="assess_colleagues.html?revealed">Assess Colleagues</a></li>
+                    <li><a href="info.html">Learn More</a></li>
+                    <li class="active"><a href="statistics.html">Statistics</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="http://www.principles-wiki.net">principles-wiki.net</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="jumbotron">
+        <h1>How Do You Design Software?</h1>
+        <p>
+            Some statistics.
+        </p>
+    </div>
+   
+    <section>
+        <a id="statistics"></a>
+        <h1>Statistics</h1>
+        <div id="statisticsummary">
+            <div class="row">
+                <div class="col-sm-12">
+                    <p>This is how the design types are distributed among those who already took part in the survey:</p>
+                    <div class="text-center" id="statsbox">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <a id="allstatements"></a>
+        <div id="allstats">
+            <div class="row">
+                <div class="col-sm-12">
+                    <p>This is how often the particular statements have been choosen:</p>
+                    <div class="text-center" id="statementsbox">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> 
+    <section>
+        <a id="dimensionswithexp"></a>
+        <div id="dimexp">
+            <div class="row">
+                <div class="col-sm-12">
+                    <p>This chart shows if there is a relationship between experience and tendency to particular dimensions:</p>
+                    <div class="text-center" id="dimensionsexpbox">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>         
+    <section id="comments">
+        <div class="row">
+            <div id="templateSingleComment" class="cmt-cnt">
+                <img src="missing.png">
+                <div class="thecom">
+                    <h5>Template name</h5><span class="com-dt">Template date</span>
+                    <br>
+                    <p>Template comment</p>
+                </div>
+            </div>
+            
+            <div id="commentscontainer" class="cmt-container">
+                <div class="new-com-bt">
+                    <span>Write a comment ...</span>
+                </div>
+                <div id="commentform" class="new-com-cnt">
+                    <input id="name-com" name="name-com" value="" placeholder="Your name" type="text">
+                    <input id="mail-com" name="mail-com" value="" placeholder="Your e-mail adress" type="text">
+                    <textarea class="the-new-com"></textarea>
+                    <div class="bt-add-com">Post comment</div>
+                    <div class="bt-cancel-com">Cancel</div>
+                </div>
+                <div class="clear"></div>
+            </div>  
+        </div>  
+    </section>    
+    <footer>
+        Please give us <a href="mailto:email@design-types.net">Feedback</a> or discuss with us at <a href="https://www.xing.com/communities/groups/design-principles-patterns-types-08d2-1080100" target="_blank"><img src="./img/xing_logo2.png" alt="XING" height="25" width="25" /></a>
+    </footer>
+</div>
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/jquery-ui/ui/minified/jquery-ui.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/d3/d3_min_v3.js"></script>
+<script src="types_data.js"></script>
+<script src="test_yourself_statements.js"></script>
+<script src="statistics.js"></script>
+<script src="comments.js"></script>
+</body>
+</html>
