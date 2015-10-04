@@ -172,6 +172,10 @@ footer {
   display: none;
 }
 
+.typeicon {
+  margin-bottom: 2em;
+}
+
 .certificate {
   margin-top: 1em;
   padding: 2cm;

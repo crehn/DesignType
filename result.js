@@ -453,7 +453,8 @@ $(document).ready(function(){
     var userkey = getHttpParameter("ukey");
     
     if (userkey != null && userkey !== undefined) {
-    	loadQuestionaireDetails(userkey, resultType);   
+    	loadQuestionaireDetails(userkey, resultType); 
+    	$(".certificate-link").attr("href", "certificate.html?type=" + resultType + "&ukey=" + userkey);
     } else {
     	$('.typediagnostic').hide();
     }
