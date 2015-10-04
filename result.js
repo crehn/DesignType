@@ -455,7 +455,7 @@ $(document).ready(function(){
     if (userkey != null && userkey !== undefined) {
     	loadQuestionaireDetails(userkey, resultType);   
     } else {
-    	$('#diagnostic').parent().hide();
+    	$('.typediagnostic').hide();
     }
     
     loadCountPerResultType();
