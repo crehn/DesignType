@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" type="image/png" href="./favicon.png">
+    <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="./favicon.png">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="bower_components/jquery-ui/themes/ui-lightness/jquery-ui.min.css">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="comments.css" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="bower_components/html5shiv/dist/html5shiv.js"></script>
+      <script src="bower_components/respond.js/dest/respond.min.js"></script>
+    <![endif]-->
+
+    <title>Your Design Type</title>
+</head>
+<body>
+<div class="container page certificate">
+
+    <section class="text-center coat-of-arms">
+        <img src="img/types/SAIT.png" alt="" width="250">
+    </section>
+    <section class="details row">
+        <div>Your Design Type: The Author (SAIT)</div>
+        <div class="col-xs-6">
+            <dl>
+                <dt>Simple</dt>
+                <dd>This means you favor simple, streight-forward solutions</dd>
+                <dt>Idealistic</td>
+                <dd>This means you like doing things right</dd>
+            </dl>
+        </div>
+        <div class="col-xs-6">
+            <dl>
+                <dt>Abstract</dt>
+                <dd>This means you always have a big picture in mind</dd>
+                <dt>Technologic</dt>
+                <dd>This means you see technology as a way to make progress
+            </dl>
+        </div>
+    </section>
+    <section class="typediagnostic row">
+        <div class="col-xs-6">
+            <p>The four dimensions are rather a continuum. This is your result:</p>
+            <div class="text-center" id="box1">
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <p>This is how your answers map to the design types:</p>
+            <div class="text-center" id="box2">
+            </div>
+        </div>
+    </section>
+    <section class="qr">
+        design-types.net&nbsp;<img width="75" src="img/qr.png" alt="" title="http://design-types.net/">
+    </section>
+</div>
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/jquery-ui/ui/minified/jquery-ui.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/d3/d3_min_v3.js"></script>
+<script src="result.js"></script>
+</body>
+</html>

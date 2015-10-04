@@ -171,3 +171,25 @@ footer {
 .x.axis path {
   display: none;
 }
+
+.certificate {
+  margin-top: 1em;
+  padding: 2cm;
+  width:21cm;
+}
+
+.certificate .coat-of-arms {
+  margin-bottom:2em;
+}
+
+.certificate .details {
+  margin-bottom:2em;
+}
+
+.certificate .qr {
+  margin-top:6em;
+  text-align:right;
+  font-size: 14pt;
+  vertical-align:bottom;
+}
+

@@ -17,7 +17,7 @@ function Point(x, y) {
 //################### Dimension Overlap chart
 
 function DimensionOverlapChart(details) {
-    var gs = new GraphSettings(5, 5, 150, 50, 5, 10);
+    var settings = new GraphSettings(5, 5, 135, 45, 5, 10);
     var contentBoxes = new Array("Simple", "Powerful", "Abstract", "Concrete", "Pragmatic", "Idealistic", "Robust", "Technologic");
     // the dimension boxes as background
     var designTypeBoxes;
@@ -49,14 +49,14 @@ function DimensionOverlapChart(details) {
     }
 
     function calculatePositionsOfBoxesAndText() {
-        var xPosBoxesA = gs.border;
-        var xPosBoxesB = (gs.border + gs.boxWidth + 2 * gs.space);
-        var yFirstBoxPos = gs.border;
-        var ySpacerBox =  gs.boxHeight + gs.space;
+        var xPosBoxesA = settings.border;
+        var xPosBoxesB = (settings.border + settings.boxWidth + 2 * settings.space);
+        var yFirstBoxPos = settings.border;
+        var ySpacerBox =  settings.boxHeight + settings.space;
         var yBoxes = new Array( yFirstBoxPos, yFirstBoxPos, yFirstBoxPos + 1*ySpacerBox, yFirstBoxPos + 1*ySpacerBox, yFirstBoxPos + 2*ySpacerBox, yFirstBoxPos + 2*ySpacerBox, yFirstBoxPos + 3*ySpacerBox, yFirstBoxPos + 3*ySpacerBox );
-        var xTxt = new Array( gs.border + gs.txtSpacer, gs.border + 2 * gs.boxWidth + 2 *gs.space - gs.border );
-        var yFirstTextPos = gs.border + gs.boxHeightHalf;
-        var ySpacerTxt = gs.boxHeight + gs.space; 
+        var xTxt = new Array( settings.border + settings.txtSpacer, settings.border + 2 * settings.boxWidth + 2 *settings.space - settings.border );
+        var yFirstTextPos = settings.border + settings.boxHeightHalf;
+        var ySpacerTxt = settings.boxHeight + settings.space; 
         var yTxt = new Array( yFirstTextPos, yFirstTextPos, yFirstTextPos + 1*ySpacerTxt, yFirstTextPos + 1*ySpacerTxt, yFirstTextPos + 2*ySpacerTxt, yFirstTextPos + 2*ySpacerTxt, yFirstTextPos + 3*ySpacerTxt, yFirstTextPos + 3*ySpacerTxt );
 
         designTypeBoxes = new Array( 
@@ -71,13 +71,13 @@ function DimensionOverlapChart(details) {
 
         // content bars
         xPoints = new Array(
-            gs.border, 
-            gs.border + 1*gs.xBarIncr, 
-            gs.border + 2*gs.xBarIncr, 
-            gs.border + 3*gs.xBarIncr, 
-            gs.border + 4*gs.xBarIncr, 
-            gs.border + 5*gs.xBarIncr); // rect start points x axis (5,36,67,98,129,160)
-        var yOffsetBar = gs.barHeight / 2; 
+            settings.border, 
+            settings.border + 1*settings.xBarIncr, 
+            settings.border + 2*settings.xBarIncr, 
+            settings.border + 3*settings.xBarIncr, 
+            settings.border + 4*settings.xBarIncr, 
+            settings.border + 5*settings.xBarIncr); // rect start points x axis (5,36,67,98,129,160)
+        var yOffsetBar = settings.barHeight / 2; 
         yPoints = new Array(
             yTxt[0] - yOffsetBar, 
             yTxt[2] - yOffsetBar, 
@@ -94,8 +94,8 @@ function DimensionOverlapChart(details) {
 
     function draw() {
       var svg = d3.select("#box1").append("svg")
-                    .attr("width", gs.width)
-                    .attr("height", gs.height);
+                    .attr("width", settings.width)
+                    .attr("height", settings.height);
 
         drawBoxes(svg);
         drawTexts(svg);
@@ -107,9 +107,9 @@ function DimensionOverlapChart(details) {
             .data(designTypeBoxes).enter()
                 .append("rect")
                 .attr("x", function(d) { return d.x } )
-                .attr("width", gs.boxWidth)
+                .attr("width", settings.boxWidth)
                 .attr("y", function(d) { return d.y } )
-                .attr("height", gs.boxHeight)
+                .attr("height", settings.boxHeight)
                 .attr("style", "fill: steelblue; stroke: black; stroke-width: 3; cursor: pointer;")
                 .attr("onclick", getDimensionRedirect);
     }
@@ -131,9 +131,9 @@ function DimensionOverlapChart(details) {
             .data(rectPoints).enter()
                 .append("rect")
                 .attr("x", function(d) { return d.x } )
-                .attr("width", gs.barLength)
+                .attr("width", settings.barLength)
                 .attr("y", function(d) { return d.y } )
-                .attr("height", gs.barHeight)
+                .attr("height", settings.barHeight)
                 .attr("style", "stroke:#660000; fill:#cc3333; stroke-width: 2; fill-opacity: .5;");
     }
 
@@ -150,7 +150,7 @@ function DimensionOverlapChart(details) {
 //################### Result Type Overlap chart
 
 function TypeOverlapChart(designType, details, ukey) {
-    var is = new ImageSettings(3, 10, 67, 67, 5);
+    var settings = new ImageSettings(3, 10, 62, 62, 5);
     // overlaps to other design types (for 5 answers -> 2 is max overlap)
     var matchesDimTop;
     var matchesDimLeft;
@@ -199,8 +199,8 @@ function TypeOverlapChart(designType, details, ukey) {
     this.draw = function() {
         preparePolygonImage();
         var svg = d3.select("#box2").append("svg")
-            .attr("width", is.width)
-            .attr("height", is.height);
+            .attr("width", settings.width)
+            .attr("height", settings.height);
       
         drawBoxes(svg);
         drawText(svg);
@@ -221,14 +221,14 @@ function TypeOverlapChart(designType, details, ukey) {
         var contentBoxes = new Array(type1, type2, designType, type4, type5);
 
         // top, left, center, right, bottom 
-        var boxOffsetLeft = is.border + is.boxWidth + is.space;
-        var xBoxes = new Array( boxOffsetLeft, is.border, boxOffsetLeft, (boxOffsetLeft + is.boxWidth + is.space), boxOffsetLeft );
-        var boxOffsetTop = is.border + is.boxHeight + is.space;
-        var yBoxes = new Array( is.border, boxOffsetTop, boxOffsetTop, boxOffsetTop, (boxOffsetTop + is.boxHeight + is.space) );
-        var txtOffsetLeft = is.border + is.boxWidth + is.space + is.boxWidthHalf;
-        var xTxt = new Array( txtOffsetLeft, (is.border + is.boxWidthHalf), txtOffsetLeft, (txtOffsetLeft + is.boxWidth + is.space), txtOffsetLeft );
-        var txtOffsetTop = is.border + is.boxHeight + is.space + is.boxHeightHalf;
-        var yTxt = new Array( (is.border + is.boxHeightHalf), txtOffsetTop, txtOffsetTop, txtOffsetTop, (txtOffsetTop + is.boxHeight + is.space) );
+        var boxOffsetLeft = settings.border + settings.boxWidth + settings.space;
+        var xBoxes = new Array( boxOffsetLeft, settings.border, boxOffsetLeft, (boxOffsetLeft + settings.boxWidth + settings.space), boxOffsetLeft );
+        var boxOffsetTop = settings.border + settings.boxHeight + settings.space;
+        var yBoxes = new Array( settings.border, boxOffsetTop, boxOffsetTop, boxOffsetTop, (boxOffsetTop + settings.boxHeight + settings.space) );
+        var txtOffsetLeft = settings.border + settings.boxWidth + settings.space + settings.boxWidthHalf;
+        var xTxt = new Array( txtOffsetLeft, (settings.border + settings.boxWidthHalf), txtOffsetLeft, (txtOffsetLeft + settings.boxWidth + settings.space), txtOffsetLeft );
+        var txtOffsetTop = settings.border + settings.boxHeight + settings.space + settings.boxHeightHalf;
+        var yTxt = new Array( (settings.border + settings.boxHeightHalf), txtOffsetTop, txtOffsetTop, txtOffsetTop, (txtOffsetTop + settings.boxHeight + settings.space) );
 
         resultTypeBoxes = new Array( 
             new DesignTypeBox(xBoxes[0], yBoxes[0], xTxt[0], yTxt[0], contentBoxes[0]), 
@@ -243,12 +243,12 @@ function TypeOverlapChart(designType, details, ukey) {
         matchesDimBottom = (details[6] > details[7]) ? details[7] : details[6];
         debuglog("preparePolygonImage - top: " + matchesDimTop + "; left: " + matchesDimLeft + "; right: " + matchesDimRight + "; bottom: " + matchesDimBottom);
 
-        var midImageX = boxOffsetLeft + is.boxWidthHalf;
-        var midImageY = boxOffsetTop + is.boxHeightHalf;
-        var polygonPntDimTop = new Point( txtOffsetLeft, midImageY - is.boxHeightHalf - is.space - (is.boxHeightThird * matchesDimTop) );
-        var polygonPntDimLeft = new Point( midImageX - is.boxWidthHalf - is.space - (is.boxWidthThird * matchesDimLeft), txtOffsetTop );
-        var polygonPntDimRight = new Point( midImageX + is.boxWidthHalf + is.space + (is.boxWidthThird * matchesDimRight), txtOffsetTop );
-        var polygonPntDimBottom = new Point( txtOffsetLeft, midImageY + is.boxHeightHalf + is.space + (is.boxHeightThird * matchesDimBottom) );
+        var midImageX = boxOffsetLeft + settings.boxWidthHalf;
+        var midImageY = boxOffsetTop + settings.boxHeightHalf;
+        var polygonPntDimTop = new Point( txtOffsetLeft, midImageY - settings.boxHeightHalf - settings.space - (settings.boxHeightThird * matchesDimTop) );
+        var polygonPntDimLeft = new Point( midImageX - settings.boxWidthHalf - settings.space - (settings.boxWidthThird * matchesDimLeft), txtOffsetTop );
+        var polygonPntDimRight = new Point( midImageX + settings.boxWidthHalf + settings.space + (settings.boxWidthThird * matchesDimRight), txtOffsetTop );
+        var polygonPntDimBottom = new Point( txtOffsetLeft, midImageY + settings.boxHeightHalf + settings.space + (settings.boxHeightThird * matchesDimBottom) );
 
         polygonPoints = new Array(polygonPntDimTop, polygonPntDimLeft, polygonPntDimRight, polygonPntDimBottom);
     }
@@ -258,9 +258,9 @@ function TypeOverlapChart(designType, details, ukey) {
             .data(resultTypeBoxes).enter()
                 .append("rect")
                 .attr("x", function(d) { return d.x } )
-                .attr("width", is.boxWidth)
+                .attr("width", settings.boxWidth)
                 .attr("y", function(d) { return d.y } )
-                .attr("height", is.boxHeight)
+                .attr("height", settings.boxHeight)
                 .attr("style", "fill: steelblue; stroke: black; stroke-width: 3; cursor: pointer;")
                 .attr("onclick", getResultTypeRedirect);
     }
@@ -270,7 +270,7 @@ function TypeOverlapChart(designType, details, ukey) {
             .data(resultTypeBoxes).enter()
                 .append("text")
                 .attr("x", function(d) { return d.xTxt } )
-                .attr("y", function(d) { return d.yTxt + is.txtSpacer } )
+                .attr("y", function(d) { return d.yTxt + settings.txtSpacer } )
                 .attr("style", "fill: white; stroke: white; text-anchor: middle; font-size: 1.5em; font-family: Arial; cursor: pointer;")
                 .text( function(d, i) { return d.content } )
                 .attr("onclick", getResultTypeRedirect);
@@ -423,7 +423,7 @@ function loadQuestionaireDetails(userKey, designType) {
    var details;
    debuglog("loadQuestionaireDetails - userKey: " + userKey);
    $.when( 
-        $.get("./php/loadQuestionaireDetails.php?userkey=" + userKey, function(data, status) {
+        $.get("http://cors.io/?u=http://design-types.net/test/php/loadQuestionaireDetails.php?userkey=" + userKey, function(data, status) {
             debuglog("loadQuestionaireDetails - status: " + status + ", data: " + data);
             details = jQuery.parseJSON(data);
         })
@@ -438,7 +438,7 @@ function loadQuestionaireDetails(userKey, designType) {
 function loadCountPerResultType() {
     var dataForBars;
     $.when( 
-        $.get("./php/loadCountPerResultType.php", function(data, status) {
+        $.get("http://cors.io/?u=http://design-types.net/test/php/loadCountPerResultType.php", function(data, status) {
             debuglog("loadCountPerResultType - status: " + status + ", data: " + data);
             dataForBars = jQuery.parseJSON(data);
          })
