@@ -1,43 +1,74 @@
 <?php
+require_once('Logger.php');
+require_once('config.php');
 
-// connect to db
-$config_ini = parse_ini_file("./dbconfig.ini");
-$mysqli = new mysqli($config_ini['host'], $config_ini['user'], $config_ini['pwd'], $config_ini['dbname']);
-if ($mysqli->connect_errno) {
-    echo "Failed to connect to database: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+$log = new Logger(basename(__FILE__, ".php"));
+if (DEBUG) {
+    $log->setLogLevel(LogLevel::debug());
 }
 
-$tablename = $config_ini['tableprefix'] . "ResultType";
-$query1 = "SELECT COUNT(*) FROM " . $tablename;
-$result1 = $mysqli->query($query1);
-$resultrow = $result1->fetch_row();
-$resultsTotal = $resultrow[0];
-
-$query2 = "SELECT DESIGN_TYPE as type, COUNT(DESIGN_TYPE) as amount FROM " . $tablename . " GROUP by DESIGN_TYPE";
-$result2 = $mysqli->query($query2);
-
-while($row = $result2->fetch_array(MYSQLI_ASSOC)) {
-  $row['amount'] = round( ($row['amount'] / $resultsTotal), 2);
-  $rows[] = $row;
+function loadCountPerResultType() {
+    global $log;
+    try {
+        $log->info("load load count per result type");
+        $mysqli = connectToDb();
+        $totalCount = getTotalNumberOfResults($mysqli);
+        $counts = getCounts($mysqli, $totalCount);
+        echo json_encode($counts);
+    } finally {
+        $mysqli->close();
+    }
 }
 
-/*
-while($row = $result2->fetch_array()) {
-  //$rows[$row[0]] = $row[1]; // total numbers instead of percentage like below
-  //$rows[$row[0]] = round( ($row[1] * 100 / $resultsTotal), 2);
-  $rows[$row[0]] = round( ($row[1] / $resultsTotal), 2);
-  //$rows['type'] = $row[0];
-  //$rows['count'] = round( ($row[1] / $resultsTotal), 2);
+function connectToDb() {
+    global $log;
+    $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+    if ($mysqli->connect_errno) {
+        $log->error("Failed to connect to database: ({$mysqli->connect_errno}) {$mysqli->connect_error}");
+        error500();
+    }
+    return $mysqli;
 }
-*/
 
-$result1->close();
-$result2->free();
-    
-// close connection
-$mysqli->close();
+function error500() {
+    global $log;
+    header("HTTP/1.0 500 Internal Server Error");
+    die("Cannot load count per result type; requestId: " . $log->getRequestId());
+}
 
-// deliver user key for recognization
-echo json_encode($rows);
+function getTotalNumberOfResults($mysqli) {
+    global $log;
+    try {
+        $tablename = DB_TABLEPREFIX . "ResultType";
+        $query = "SELECT COUNT(*) FROM " . $tablename;
+        $log->debug($query);
+        $result = $mysqli->query($query);
+        $resultrow = $result->fetch_row();
+        $totalCount = $resultrow[0];
+        $log->info("totalCount: $totalCount");
+        return $totalCount;
+    } finally {
+        $result->close();
+    }
+}
 
+function getCounts($mysqli, $totalCount) {
+    global $log;
+    try {
+        $tablename = DB_TABLEPREFIX . "ResultType";
+        $query = "SELECT DESIGN_TYPE as type, COUNT(DESIGN_TYPE) as amount FROM $tablename GROUP by DESIGN_TYPE";
+        $log->debug($query);
+        $result = $mysqli->query($query);
+        
+        while($row = $result->fetch_array(MYSQLI_ASSOC)) {
+          $row['amount'] = round( ($row['amount'] / $totalCount), 2);
+          $rows[] = $row;
+        }
+        return $rows;
+    } finally {
+        $result->close();
+    }
+}
+
+loadCountPerResultType();
 ?>
