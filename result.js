@@ -423,7 +423,7 @@ function loadQuestionaireDetails(userKey, designType) {
    var details;
    debuglog("loadQuestionaireDetails - userKey: " + userKey);
    $.when( 
-        $.get("http://design-types.net/test/php/loadQuestionaireDetails.php?userkey=" + userKey, function(data, status) {
+        $.get("php/loadQuestionaireDetails.php?userkey=" + userKey, function(data, status) {
             debuglog("loadQuestionaireDetails - status: " + status + ", data: " + data);
             details = jQuery.parseJSON(data);
         })
@@ -438,7 +438,7 @@ function loadQuestionaireDetails(userKey, designType) {
 function loadCountPerResultType() {
     var dataForBars;
     $.when( 
-        $.get("http://design-types.net/test/php/loadCountPerResultType.php", function(data, status) {
+        $.get("php/loadCountPerResultType.php", function(data, status) {
             debuglog("loadCountPerResultType - status: " + status + ", data: " + data);
             dataForBars = jQuery.parseJSON(data);
          })
