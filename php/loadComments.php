@@ -1,51 +1,90 @@
 <?php
-$pageId = $_GET['pageId'];
+require_once('Logger.php');
+require_once('config.php');
 
-// connect to db
-$config_ini = parse_ini_file("./dbconfig.ini");
-$mysqli = new mysqli($config_ini['host'], $config_ini['user'], $config_ini['pwd'], $config_ini['dbname']);
-if ($mysqli->connect_errno) {
-    echo "Failed to connect to database: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+$log = new Logger(basename(__FILE__, ".php"));
+if (DEBUG) {
+    $log->setLogLevel(LogLevel::debug());
 }
 
-$tablenameCmt = $config_ini['tableprefix'] . "Comments";
+const MAX_COMMENTS = 20;
 
-//insert comment
-$amountOfCommentsToLoad = 20;
-if (!($stmt = $mysqli->prepare("SELECT name, email, comment, date FROM ". $tablenameCmt . " WHERE id_post = ? order by id desc limit " . $amountOfCommentsToLoad))) {
-    echo "Prepare for select failed: (" . $mysqli->errno . ") " . $mysqli->error;
+function loadComments() {
+    global $log;
+    try {  
+        $pageId = $_GET['pageId'];
+        $log->info("load comments for page [$pageId]");
+        $mysqli = connectToDb();
+        $stmt = executeSelect($mysqli, DB_TABLEPREFIX, $pageId);
+        $result = constructResult($stmt);
+        $sortedResult = array_reverse($result); // newest comments first
+        echo json_encode($sortedResult);
+    } finally {
+        $stmt->close();
+        $mysqli->close();
+    }
 }
 
-if (!$stmt->bind_param("i", $pageId)) {
-    echo "Binding parameters failed: (" . $stmt->errno . ") " . $stmt->error;
+function connectToDb() {
+    global $log;
+    $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+    if ($mysqli->connect_errno) {
+        $log->error("Failed to connect to database: ({$mysqli->connect_errno}) {$mysqli->connect_error}");
+        error500();
+    }
+    return $mysqli;
 }
 
-if (!$stmt->execute()) {
-    echo "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
+function executeSelect($mysqli, $tableprefix, $pageId) {
+    global $log;
+    
+    $tablenameCmt = $tableprefix . "Comments";
+    $selectStement = "SELECT name, email, comment, date FROM $tablenameCmt WHERE id_post = ? ORDER BY id DESC LIMIT " . MAX_COMMENTS;
+    $log->debug($selectStement);
+
+    if (!($stmt = $mysqli->prepare($selectStement))) {
+        $log->error("Prepare for select failed: ({$mysqli->errno}) {$mysqli->error}");
+        error500();
+    }
+
+    if (!$stmt->bind_param("i", $pageId)) {
+        $log->error("Binding parameters failed: ({$mysqli->errno}) {$mysqli->error}");
+        error500();
+    }
+
+    if (!$stmt->execute()) {
+        $log->error("Execute failed: ({$mysqli->errno}) {$mysqli->error}");
+        error500();
+    }
+    return $stmt;
 }
 
-$stmt->bind_result($name, $email, $comment, $date);
+function error500() {
+    global $log;
+    header("HTTP/1.0 500 Internal Server Error");
+    die("Cannot load comments; requestId: " . $log->getRequestId());
+}
 
-$resultArray;
-$idx = 0;
-while ($stmt->fetch()) {
-    // Get gravatar Image
+function constructResult($stmt) {
+    global $log;
+    
+    $result;
+    $index = 0;
+    $stmt->bind_result($name, $email, $comment, $date);
+    while ($stmt->fetch()) {
+        $log->debug("found comment by [$name] at [$date]");
+        $result[$index] = array($name, gravatarUrl($email), $comment, $date); //TODO: use a proper object rather than encoding by array index
+        $index++;
+    }
+    return $result;
+}
+
+function gravatarUrl($email) {
     // https://fr.gravatar.com/site/implement/images/php/
     $default = "mm";
     $size = 35;
-    $grav_url = "http://www.gravatar.com/avatar/".md5(strtolower(trim($email)))."?d=".$default."&s=".$size;
-
-    $resultArray[$idx] = array($name, $grav_url, $comment, $date);
-    $idx = $idx +1;
+    return "http://www.gravatar.com/avatar/".md5(strtolower(trim($email)))."?d=".$default."&s=".$size;
 }
-// resort to show the newest comments first
-$sortedResult = array_reverse($resultArray);
 
-// close statement and connection
-$stmt->close();
-$mysqli->close();
-
-// return objects as json
-echo json_encode($sortedResult);
-
+loadComments();
 ?>
