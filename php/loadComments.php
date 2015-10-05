@@ -9,10 +9,9 @@ if (DEBUG) {
 
 const MAX_COMMENTS = 20;
 
-function loadComments() {
+function loadComments($pageId) {
     global $log;
     try {  
-        $pageId = $_GET['pageId'];
         $log->info("load comments for page [$pageId]");
         $mysqli = connectToDb();
         $stmt = executeSelect($mysqli, DB_TABLEPREFIX, $pageId);
@@ -83,8 +82,8 @@ function gravatarUrl($email) {
     // https://fr.gravatar.com/site/implement/images/php/
     $default = "mm";
     $size = 35;
-    return "http://www.gravatar.com/avatar/".md5(strtolower(trim($email)))."?d=".$default."&s=".$size;
+    return "http://www.gravatar.com/avatar/".md5(strtolower(trim($email)))."?d=$default&s=$size";
 }
 
-loadComments();
+loadComments($_GET['pageId']);
 ?>

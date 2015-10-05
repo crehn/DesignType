@@ -53,7 +53,7 @@ function initializeCommentFunction() {
               $.ajax({
                   type: "POST",
                   url: "./php/addComment.php",
-                  data: 'act=add-com&id_post='+pageIdComments+'&name='+theName.val()+'&email='+theMail.val()+'&comment='+theComMod,
+                  data: 'pageId='+pageIdComments+'&name='+theName.val()+'&email='+theMail.val()+'&comment='+theComMod,
                   success: function(html){
                       theCom.val('');
                       theMail.val('');
