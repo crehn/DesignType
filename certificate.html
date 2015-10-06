@@ -25,34 +25,43 @@
 <body>
 <div class="container page certificate">
 
-    <section class="text-center coat-of-arms">
-        <img src="" alt="" width="250" id="coat-of-arms">
-    </section>
-    <section class="details row">
-        <div id="type">Your Design Type: </div>
-        <div class="col-xs-6">
-            <dl>
-                <dt class="simple">Simple</dt>
-                <dd class="simple">This means you favor simple, streight-forward solutions</dd>
-                <dt class="powerful">Powerful</dt>
-                <dd class="powerful">This means you favor flexible, generalized solutions</dd>
-                <dt class="pragmatic">Pragmatic</td>
-                <dd class="pragmatic">This means you like getting things done fast</dd>
-                <dt class="idealistic">Idealistic</td>
-                <dd class="idealistic">This means you like doing things right</dd>
-            </dl>
-        </div>
-        <div class="col-xs-6">
-            <dl>
-                <dt class="abstract">Abstract</dt>
-                <dd class="abstract">This means you always have the big picture in mind</dd>
-                <dt class="concrete">Concrete</dt>
-                <dd class="concrete">This means you care about the very details of your software</dd>
-                <dt class="robust">Robust</dt>
-                <dd class="robust">This means you strive for stable and robust software</dd>
-                <dt class="technologic">Technologic</dt>
-                <dd class="technologic">This means you like using state-of-the-art technology</dd>
-            </dl>
+    <section>
+        <div id="types">
+            <div style="display:none" id="templateType">
+              <div class="row">
+                <div class="col-sm-6 typeicon text-center"></div>
+                <div class="col-sm-6 typelegend">
+                  <table>
+                    <tr class="legendicon simple"></tr>
+                    <tr class="legendicon powerful"></tr>
+                    <tr class="legendicon abstract"></tr>
+                    <tr class="legendicon concrete"></tr>
+                    <tr class="legendicon pragmatic"></tr>
+                    <tr class="legendicon idealistic"></tr>
+                    <tr class="legendicon robust"></tr>
+                    <tr class="legendicon technologic"></tr>
+                  </table>
+                </div>
+              </div> 
+              <div class="row" style="margin-top:1.5em;margin-bottom:1.5em;">           
+                <div class="col-sm-6">
+                    <dl>
+                        <dt>Your designs are</dt>
+                        <dd class="designs"></dd>
+                        <dt>Programming is</dt>
+                        <dd class="programming"></dd>
+                    </dl>
+                </div>
+                <div class="col-sm-6">
+                    <dl>
+                        <dt>Principles you probably like</dt>
+                        <dd class="principles-liked"></dd>
+                        <dt>Principles you rather disregard</dt>
+                        <dd class="principles-disregarded"></dd>
+                    </dl>
+                </div>
+              </div>
+            </div>
         </div>
     </section>
     <section class="typediagnostic row">
@@ -77,6 +86,7 @@
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="bower_components/d3/d3_min_v3.js"></script>
 <script src="types_data.js"></script>
+<script src="dimensions_data.js"></script>
 <script src="result.js"></script>
 <script src="certificate.js"></script>
 </body>

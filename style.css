@@ -176,10 +176,22 @@ footer {
   margin-bottom: 2em;
 }
 
+.typelegend {
+  margin-top: 2em;
+}
+
+.legendicon {
+  margin-top: .3em;	
+}
+
+.legendicon td {
+  padding: 10px 0px 0px 5px;
+}
+
 .certificate {
   margin-top: 1em;
   padding: 2cm;
-  width:21cm;
+  width: 21cm;
 }
 
 .certificate .coat-of-arms {

@@ -73,12 +73,25 @@
         <h1>Design Types</h1>
         <div id="types">
             <h2 id="templateTypeName">XXXX: The Foobar</h2>
-            <div class ="row" id="templateType">
-                <div class="typeicon text-center"></div>
+            <div style="display:none" id="templateType">
+              <div class="row">
+                <div class="col-sm-6 typeicon text-center"></div>
+                <div class="col-sm-6 typelegend">
+                  <table>
+                    <tr class="legendicon simple"></tr>
+                    <tr class="legendicon powerful"></tr>
+                    <tr class="legendicon abstract"></tr>
+                    <tr class="legendicon concrete"></tr>
+                    <tr class="legendicon pragmatic"></tr>
+                    <tr class="legendicon idealistic"></tr>
+                    <tr class="legendicon robust"></tr>
+                    <tr class="legendicon technologic"></tr>
+                  </table>
+                </div>
+              </div> 
+              <div class="row">           
                 <div class="col-sm-6">
                     <dl>
-                        <dt>Attributes</dt>
-                        <dd class="attributes"></dd>
                         <dt>Description</dt>
                         <dd class="description"></dd>
                         <dt>Your designs are</dt>
@@ -101,6 +114,7 @@
                         <dd class="further-reading"></dd>
                     </dl>
                 </div>
+              </div>
             </div>
         </div>
     </section>
@@ -139,6 +153,7 @@
 <script src="bower_components/jquery-ui/ui/minified/jquery-ui.min.js"></script>
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="types_data.js"></script>
+<script src="dimensions_data.js"></script>
 <script src="types.js"></script>
 <script src="comments.js"></script>
 </body>
