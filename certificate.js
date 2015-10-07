@@ -22,6 +22,8 @@ function createCertificatePanel(typeabbreviation) {
     
     result.show();
     
+    $("#templateType").remove();
+    
     return result;
 }
 
@@ -91,13 +93,6 @@ function createLegend(topelement, typeabbreviation) {
 
 $(document).ready(function(){
     type = getHttpParameter("type");
-    
-    $("#coat-of-arms").attr("src", "img/types/" + type.toUpperCase() + ".png");
-    //$("#type").text("Your Design Type: " + typesData[type.toLowerCase()].name + " (" + type + ")");
-    showDimension(type[0], "simple", "powerful");
-    showDimension(type[1], "abstract", "concrete");
-    showDimension(type[2], "pragmatic", "idealistic");
-    showDimension(type[3], "robust", "technologic");
     
     createCertificatePanel(type.toLowerCase());
 });
