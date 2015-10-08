@@ -86,10 +86,10 @@ function DimensionOverlapChart(details) {
             
         var posMidPnt = 5; // 5 is middle index of eleven points (10 areas) in an array
         rectPoints = new Array(
-            new Point(xPoints[(posMidPnt - details[0])], yPoints[0]), 
-            new Point(xPoints[(posMidPnt - details[2])], yPoints[1]), 
-            new Point(xPoints[(posMidPnt - details[4])], yPoints[2]), 
-            new Point(xPoints[(posMidPnt - details[6])], yPoints[3]) );
+            new Point(xPoints[(posMidPnt - details['simple'])], yPoints[0]), 
+            new Point(xPoints[(posMidPnt - details['abstract'])], yPoints[1]), 
+            new Point(xPoints[(posMidPnt - details['pragmatic'])], yPoints[2]), 
+            new Point(xPoints[(posMidPnt - details['robust'])], yPoints[3]) );
     }
 
     function draw() {
@@ -237,10 +237,10 @@ function TypeOverlapChart(designType, details, ukey) {
             new DesignTypeBox(xBoxes[3], yBoxes[3], xTxt[3], yTxt[3], contentBoxes[3]), 
             new DesignTypeBox(xBoxes[4], yBoxes[4], xTxt[4], yTxt[4], contentBoxes[4]) );
 
-        matchesDimTop = (details[0] > details[1]) ? details[1] : details[0];
-        matchesDimLeft = (details[2] > details[3]) ? details[3] : details[2];
-        matchesDimRight = (details[4] > details[5]) ? details[5] : details[4];
-        matchesDimBottom = (details[6] > details[7]) ? details[7] : details[6];
+        matchesDimTop = (details['simple'] > details['powerful']) ? details['powerful'] : details['simple'];
+        matchesDimLeft = (details['abstract'] > details['concrete']) ? details['concrete'] : details['abstract'];
+        matchesDimRight = (details['pragmatic'] > details['idealistic']) ? details['idealistic'] : details['pragmatic'];
+        matchesDimBottom = (details['robust'] > details['technologic']) ? details['technologic'] : details['robust'];
         debuglog("preparePolygonImage - top: " + matchesDimTop + "; left: " + matchesDimLeft + "; right: " + matchesDimRight + "; bottom: " + matchesDimBottom);
 
         var midImageX = boxOffsetLeft + settings.boxWidthHalf;
@@ -419,18 +419,18 @@ function debuglog(msg) {
 
 //###################
 
-function loadQuestionaireDetails(userKey, designType) {
+function loadQuestionaireDetails(ukey, designType) {
    var details;
-   debuglog("loadQuestionaireDetails - userKey: " + userKey);
+   debuglog("loadQuestionaireDetails - ukey: " + ukey);
    $.when( 
-        $.get("php/loadQuestionaireDetails.php?userkey=" + userKey, function(data, status) {
+        $.get("php/loadQuestionaireDetails.php?ukey=" + ukey, function(data, status) {
             debuglog("loadQuestionaireDetails - status: " + status + ", data: " + data);
             details = jQuery.parseJSON(data);
         })
    ).then( function () {
         var dimensionChart = new DimensionOverlapChart(details);
         dimensionChart.draw();
-        var typeChart = new TypeOverlapChart(designType, details, userKey);
+        var typeChart = new TypeOverlapChart(designType, details, ukey);
         typeChart.draw(); 
     });
 } 
