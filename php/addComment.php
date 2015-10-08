@@ -1,6 +1,7 @@
 <?php
-require_once('Logger.php');
-require_once('config.php');
+require_once('inc/Logger.php');
+require_once('inc/config.php');
+require_once('inc/common.php');
 
 $log = new Logger(basename(__FILE__, ".php"));
 if (DEBUG) {
@@ -28,22 +29,6 @@ function doAddComment($pageId, $name, $email, $comment) {
     } finally {
         $mysqli->close();
     }
-}
-
-function connectToDb() {
-    global $log;
-    $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
-    if ($mysqli->connect_errno) {
-        $log->error("Failed to connect to database: ({$mysqli->connect_errno}) {$mysqli->connect_error}");
-        error500();
-    }
-    return $mysqli;
-}
-
-function error500() {
-    global $log;
-    header("HTTP/1.0 500 Internal Server Error");
-    die("Cannot aadd comment; requestId: " . $log->getRequestId());
 }
 
 function insertComment($mysqli, $pageId, $name, $email, $comment) {
@@ -82,13 +67,6 @@ function writeHtml($name, $email, $comment) {
         </div>
     </div>
 <?php     
-}
-     
-function gravatarUrl($email) {
-    // https://fr.gravatar.com/site/implement/images/php/
-    $default = "mm";
-    $size = 35;
-    return "http://www.gravatar.com/avatar/".md5(strtolower(trim($email)))."?d=$default&s=$size";
 }
 
 function writeNotificationEmail($pageId, $name, $email, $comment) {

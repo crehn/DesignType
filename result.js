@@ -425,7 +425,7 @@ function loadQuestionaireDetails(ukey, designType) {
    $.when( 
         $.get("php/loadQuestionaireDetails.php?ukey=" + ukey, function(data, status) {
             debuglog("loadQuestionaireDetails - status: " + status + ", data: " + data);
-            details = jQuery.parseJSON(data);
+            details = data;
         })
    ).then( function () {
         var dimensionChart = new DimensionOverlapChart(details);
@@ -440,7 +440,7 @@ function loadCountPerResultType() {
     $.when( 
         $.get("php/loadCountPerResultType.php", function(data, status) {
             debuglog("loadCountPerResultType - status: " + status + ", data: " + data);
-            dataForBars = jQuery.parseJSON(data);
+            dataForBars = data;
          })
    ).then( function () {
         var barChart = new BarChart(dataForBars);

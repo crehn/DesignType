@@ -103,7 +103,7 @@ function storeData() {
 	          robust6: localStorage["you.stmt_robust5"]
 	       }, function(data, status) {
 		       console.log("storeData - status: " + status + ", data: " + data);
-		       userKey = jQuery.parseJSON(data);
+		       userKey = data;
 		       console.log("result is user key: " + userKey);
 	    })
     ).then(function () {

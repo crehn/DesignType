@@ -77,7 +77,7 @@ function loadComments(pageId) {
    $.when( 
         $.get("./php/loadComments.php?pageId=" + pageId, function(data, status) {
             console.log("loadComments - status: " + status + ", data: " + data);
-            allComments = jQuery.parseJSON(data);
+            allComments = data;
         })
    ).then( function() {
 	    if (allComments != null) {

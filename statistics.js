@@ -350,7 +350,7 @@ function loadCountPerResultType() {
     $.when( 
         $.get("./php/loadCountPerResultType.php", function(data, status) {
             debuglog("loadCountPerResultType - status: " + status + ", data: " + data);
-            dataForBars = jQuery.parseJSON(data);
+            dataForBars = data;
          })
    ).then( function () {
         var barChart = new BarChart(dataForBars);
@@ -363,7 +363,7 @@ function loadTopsAndFlops() {
     $.when( 
         $.get("./php/loadTopAndFlopStatements.php", function(data, status) {
             debuglog("loadTopAndFlopStatements - status: " + status + ", data: " + data);
-            dataForTopsAndFlopsBars = jQuery.parseJSON(data);
+            dataForTopsAndFlopsBars = data;
          })
    ).then( function () {
         var hbarChartTop = new HorizontalBarChart(dataForTopsAndFlopsBars, "statementsbox");
@@ -376,7 +376,7 @@ function loadDimensionsByExperience() {
     $.when( 
         $.get("./php/loadDimensionsByExperience.php", function(data, status) {
             debuglog("loadDimensionsByExperience - status: " + status + ", data: " + data);
-            dataDimsByExp = jQuery.parseJSON(data);
+            dataDimsByExp = data;
          })
    ).then( function () {
         var xyChart = new XYBarChart(dataDimsByExp, "dimensionsexpbox");
