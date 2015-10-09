@@ -67,7 +67,10 @@ class Logger {
     }
     
     private function logline($level, $message) {
-        $timestamp = date(DATE_ATOM);
+        $t = microtime(true);
+        $micro = sprintf("%06d",($t - floor($t)) * 1000000);
+        $now = new DateTime(date("Y-m-d H:i:s.$micro", $t));
+        $timestamp = $now->format("Y-m-d\TH:i:s.uP");
         return "$timestamp|$level|{$this->requestId}|{$this->loggername}|$message\n";
     }
     
