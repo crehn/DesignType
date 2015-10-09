@@ -8,7 +8,7 @@ if (DEBUG) {
     $log->setLogLevel(LogLevel::debug());
 }
 
-const MAX_COMMENTS = 20;
+const MAX_COMMENTS = 100; //TODO: maybe use paging
 
 function loadComments($pageId) {
     global $log;
@@ -19,6 +19,8 @@ function loadComments($pageId) {
         $result = constructResult($stmt);
         $sortedResult = array_reverse($result); // newest comments first
         echo json_encode($sortedResult);
+        $count = count($sortedResult);
+        $log->info("finished loading [$count] comments on page [$pageId]");
     } finally {
         $stmt->close();
         $mysqli->close();
@@ -50,12 +52,10 @@ function constructResult($stmt) {
     global $log;
     
     $result = array();
-    $index = 0;
     $stmt->bind_result($name, $email, $comment, $date);
     while ($stmt->fetch()) {
         $log->debug("found comment by [$name] at [$date]");
-        $result[$index] = array($name, gravatarUrl($email), $comment, $date); //TODO: use a proper object rather than encoding by array index
-        $index++;
+        $result[] = array($name, gravatarUrl($email), $comment, $date); //TODO: use a proper object rather than encoding by array index
     }
     return $result;
 }

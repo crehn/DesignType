@@ -16,6 +16,7 @@ function loadDimensionsByExperience() {
         $result = loadValues($mysqli);
         $sortedResult = sortResult($result);
         echo json_encode($sortedResult);
+        $log->info("finished loading dimensions by experience");
     } finally {
         $mysqli->close();
     }

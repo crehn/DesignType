@@ -26,6 +26,8 @@ function error500($logmessage = 'an error occured') {
 }
 
 function gravatarUrl($email) {
+    global $log;
+    $log->debug("generating gravatar url for $email");
     // https://fr.gravatar.com/site/implement/images/php/
     $default = "mm";
     $size = 35;

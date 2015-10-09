@@ -17,6 +17,7 @@ function storeData() {
         $resultTypeFk = insertResultType($mysqli, $ukey);
         insertChosenStatements($mysqli, $resultTypeFk);
         echo json_encode($ukey);
+        $log->info("finished storing data for ukey [$ukey]");
     } finally {
         $mysqli->close();
     }

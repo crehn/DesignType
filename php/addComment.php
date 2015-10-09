@@ -20,12 +20,13 @@ function addComment() {
 function doAddComment($pageId, $name, $email, $comment) {
     global $log;
     try {
-        $log->info("add comment by [$name] to gabe [$pageId]");
+        $log->info("add comment by [$name] to page [$pageId]");
         $mysqli = connectToDb();
 
         insertComment($mysqli, $pageId, $name, $email, $comment);
         writeNotificationEmail($pageId, $name, $email, $comment);
         writeHtml($name, $email, $comment);
+        $log->info("finished adding comment by [$name] to page [$pageId]");
     } finally {
         $mysqli->close();
     }
@@ -48,6 +49,7 @@ function insertComment($mysqli, $pageId, $name, $email, $comment) {
         if (!$stmt->execute()) {
             error500("Execute failed: ({$mysqli->errno}) {$mysqli->error}");
         }
+        $log->debug("inserted comment with id [{$stmt->insert_id}]");
     } finally {
         $stmt->close();
     }
@@ -68,14 +70,19 @@ function writeHtml($name, $email, $comment) {
 }
 
 function writeNotificationEmail($pageId, $name, $email, $comment) {
+    global $log;
     $to = MAILRECIPIENTS;
     $subject = "[design-types.net] $name wrote a comment";
     $message = "New comment for page with id: $pageId \r\n\r\nContent:\r\n $comment";
+    $message = wordwrap($message, 70, "\r\n");
     $headers = "From: email@design-types.net\r\n" .
                "Reply-To: email@design-types.net\r\n" .
                'X-Mailer: PHP/' . phpversion();
     
-    mail($to, $subject, $message, $headers);
+    if (!mail($to, $subject, $message, $headers)) {
+        $log->error("could not send notification email");
+    }
+    $log->debug("sent notification email");
 }
 
 addComment();

@@ -11,11 +11,12 @@ if (DEBUG) {
 function loadCountPerResultType() {
     global $log;
     try {
-        $log->info("load load count per result type");
+        $log->info("load count per result type");
         $mysqli = connectToDb();
         $totalCount = getTotalNumberOfResults($mysqli);
         $counts = getCounts($mysqli, $totalCount);
         echo json_encode($counts);
+        $log->info("finished loading count per result type");
     } finally {
         $mysqli->close();
     }
@@ -46,8 +47,9 @@ function getCounts($mysqli, $totalCount) {
         $result = $mysqli->query($query);
         
         while($row = $result->fetch_array(MYSQLI_ASSOC)) {
-          $row['amount'] = round( ($row['amount'] / $totalCount), 2);
-          $rows[] = $row;
+            $log->debug("found {$row[type]}: {$row[amount]}");
+            $row['amount'] = round( ($row['amount'] / $totalCount), 2);
+            $rows[] = $row;
         }
         return $rows;
     } finally {

@@ -16,6 +16,7 @@ function loadQuestionaioreDetails($ukey) {
         $stmt = executeSelect($mysqli, $ukey);
         $result = constructResult($stmt);
         echo json_encode($result);
+        $log->info("finished loading questionaire details for ukey [$ukey]");
     } finally {
         $stmt->close();
         $mysqli->close();

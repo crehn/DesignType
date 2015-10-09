@@ -20,18 +20,26 @@ function loadTopAndFlopStatements() {
         $result = constructResult($values, $totalCount);
         $sortedResult = sortResult($result);
         echo json_encode($sortedResult);
+        $log->info("finished loading top and flop statements");
     } finally {
         $mysqli->close();
     }
 }
 
 function getTotalCount($mysqli) {
-    $tablename = DB_TABLEPREFIX . "ChoosenStatements";
-
-    $query = "SELECT COUNT(*) FROM $tablename";
-    $result = $mysqli->query($query);
-    $resultrow = $result->fetch_row();
-    return $resultrow[0];
+    global $log;
+    try {
+        $tablename = DB_TABLEPREFIX . "ChoosenStatements";
+        $query = "SELECT COUNT(*) FROM $tablename";
+        $log->debug($query);
+        $result = $mysqli->query($query);
+        $resultrow = $result->fetch_row();
+        $totalCount = $resultrow[0];
+        $log->info("totalCount: $totalCount");
+        return $totalCount;
+    } finally {
+        $result->close();
+    }
 }
 
 function getCountByStatement($mysqli) {
@@ -66,13 +74,15 @@ function getCountByStatement($mysqli) {
 }
 
 function constructResult($values, $totalCount) {
+    global $log;
     foreach ($values as $index => $value) {
-        $percentage = round( ($value / $totalCount), 2);
+        $percentage = round($value / $totalCount, 2);
         $result[] = array(
             'index' => $index % STATEMENTS_PER_ATTRIBUTE, 
             'percentage' => $percentage,
             'attribute' => indexToAttribute($index)
         );
+        $log->debug("found [$percentage] for statement [$index]");
     }
     return $result;
 }
@@ -88,6 +98,8 @@ function indexToAttribute($index) {
 }
 
 function sortResult($result) {
+    global $log;
+    $log->debug("sorting result");
     usort($result, function($a, $b) { 
         if ($a['percentage'] == $b['percentage'])
             return 0;
