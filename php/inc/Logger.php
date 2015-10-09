@@ -54,8 +54,8 @@ class Logger {
 	return $this->requestId;
     }
     
-    public function error($message) {
-        $this->log(self::ERRLOG, LogLevel::error(), $message . $this->getStacktrace());
+    public function error($message, $details = '') {
+        $this->log(self::ERRLOG, LogLevel::error(), "$message $details {$this->getStacktrace()}");
         $this->log(self::APPLOG, LogLevel::error(), $message);
     }
 

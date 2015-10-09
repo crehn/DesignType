@@ -49,7 +49,7 @@ function executeSelect($mysqli, $tableprefix, $pageId) {
 function constructResult($stmt) {
     global $log;
     
-    $result;
+    $result = array();
     $index = 0;
     $stmt->bind_result($name, $email, $comment, $date);
     while ($stmt->fetch()) {
