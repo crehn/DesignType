@@ -54,6 +54,7 @@ function insertComment($mysqli, $pageId, $name, $email, $comment) {
 }
 
 function writeHtml($name, $email, $comment) {
+    header('Content-Type: text/html');
 ?>
     <div class="cmt-cnt">
         <img src="<?php echo gravatarUrl($email); ?>" alt="" />
