@@ -8,6 +8,8 @@ if (DEBUG) {
     $log->setLogLevel(LogLevel::debug());
 }
 
+const STATEMENTS_PER_ATTRIBUTE = 6;
+
 function loadTopAndFlopStatements() {
     global $log;
     try {
@@ -15,8 +17,9 @@ function loadTopAndFlopStatements() {
         $mysqli = connectToDb();
         $totalCount = getTotalCount($mysqli);
         $values = getCountByStatement($mysqli);
-        $result = asPercent($values, $totalCount);
-        echo json_encode($result);
+        $result = constructResult($values, $totalCount);
+        $sortedResult = sortResult($result);
+        echo json_encode($sortedResult);
     } finally {
         $mysqli->close();
     }
@@ -62,10 +65,41 @@ function getCountByStatement($mysqli) {
     }
 }
 
-function asPercent($values, $totalCount) {
+function constructResult($values, $totalCount) {
     foreach ($values as $index => $value) {
         $percentage = round( ($value / $totalCount), 2);
-        $result[] = array("index" => $index, "percentage" => $percentage);
+        $result[] = array(
+            'index' => $index % STATEMENTS_PER_ATTRIBUTE, 
+            'percentage' => $percentage,
+            'attribute' => indexToAttribute($index)
+        );
+    }
+    return $result;
+}
+
+function indexToAttribute($index) {
+    $attributes = array('simple', 'powerful', 'abstract', 'concrete', 'pragmatic', 'idealistic', 'robust', 'technologic');
+    
+    foreach ($attributes as $attrIndex => $attr) {
+        if ($index < ($attrIndex+1) * STATEMENTS_PER_ATTRIBUTE) {
+            return $attr;
+        }
+    }
+}
+
+function sortResult($result) {
+    usort($result, function($a, $b) { 
+        if ($a['percentage'] == $b['percentage'])
+            return 0;
+        elseif ($a['percentage'] > $b['percentage'])
+            return 1;
+        else
+            return -1;
+    });
+    
+    foreach ($result as $key => $value) {
+        $value['overallIndex'] = $key;
+        $result[$key] = $value;
     }
     return $result;
 }

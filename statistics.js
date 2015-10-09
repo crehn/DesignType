@@ -138,7 +138,7 @@ function HorizontalBarChart(dataForBars, elementName) {
         var yAxis = d3.svg.axis()
             .scale(y)
             .orient("left");
-        y.domain(dataForBars.map(function(d) { return d.index; }));
+        y.domain(dataForBars.map(function(d) { return d.overallIndex; }));
         
         svg.append("g")
             .attr("class", "y axis")
@@ -155,7 +155,7 @@ function HorizontalBarChart(dataForBars, elementName) {
             .data(dataForBars)
             .enter().append("rect")
                 .attr("class", "bar")
-                .attr("y", function(d) { return y(d.index); })
+                .attr("y", function(d) {  return y(d.overallIndex); })
                 .attr("height", y.rangeBand())
                 //.attr("x", function(d) { return x(d.percentage); })
                 .attr("x", 0)
@@ -166,7 +166,7 @@ function HorizontalBarChart(dataForBars, elementName) {
         var txt = svg.selectAll(".txtstat"+elementName)
             .data(dataForBars)
             .enter().append("text")
-                .attr("y", function(d) { return y(d.index) + (y.rangeBand() / 2); })
+                .attr("y", function(d) { return y(d.overallIndex) + (y.rangeBand() / 2); })
                 .attr("x", 2)
                 .attr("dy", ".3em")
                 .text(getStatementText)
@@ -175,31 +175,7 @@ function HorizontalBarChart(dataForBars, elementName) {
     }
 
     function getStatementText(d) {
-    	var curIdx = d.index;
-    	var statementTxt = (Math.round(d.percentage * 100)) + " %: ";
-    	if (curIdx < 6) {
-    		statementTxt += "Simple: " + statements.simple[curIdx];
-    	} else if (curIdx < 12) {
-    		statementTxt += "Powerful: " + statements.powerful[curIdx-6];
-    	} else if (curIdx < 18) {
-    		// it is wrong use regex instead - but currently I am too tired
-    		if (curIdx == 16) {
-    			statementTxt += "Abstract: Also small concepts like 'Birthday', 'CustomerNumber', and 'EmailAddress' should be represented by a class.";
-    		} else {
-    			statementTxt += "Abstract: " + statements.abstract[curIdx-12];
-    		}
-    	} else if (curIdx < 24) {
-    		statementTxt += "Concrete: " + statements.concrete[curIdx-18];
-    	} else if (curIdx < 30) {
-    		statementTxt += "Pragmatic: " + statements.pragmatic[curIdx-24];
-    	} else if (curIdx < 36) {
-    		statementTxt += "Idealistic: " + statements.idealistic[curIdx-30];
-    	} else if (curIdx < 42) {
-    		statementTxt += "Robust: " + statements.robust[curIdx-36];
-    	} else if (curIdx <= 48) {
-    		statementTxt += "Technologic: " + statements.technologic[curIdx-42];
-    	}
-        return statementTxt;
+    	return (Math.round(d.percentage * 100)) + " %: " + d.attribute + ": " + statements[d.attribute][d.index];
     }
 }
 
