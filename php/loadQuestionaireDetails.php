@@ -8,6 +8,13 @@ if (DEBUG) {
     $log->setLogLevel(LogLevel::debug());
 }
 
+function main() {
+    if (!array_key_exists('ukey', $_GET)) {
+        error400("Query parameter missing: ukey");
+    }
+    loadQuestionaioreDetails($_GET['ukey']);
+}
+
 function loadQuestionaioreDetails($ukey) {
     global $log;
     try {
@@ -71,6 +78,5 @@ function constructResult($stmt) {
     return $result;
 }
 
-
-loadQuestionaioreDetails($_GET['ukey'])
+main();
 ?>

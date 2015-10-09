@@ -10,24 +10,36 @@ function connectToDb() {
     return $mysqli;
 }
 
-function error500($logmessage = 'an error occured') {
+function error400($detail) {
     global $log;
-    $log->error($logmessage);
-    header('HTTP/1.0 500 Internal Server Error');
-    header('Content-Type: application/problem+json');
+    $log->warn("bad request: $detail");
+    error(400, 'Bad Request', $detail);
+}
+
+function error($status, $description, $detail) {
+    global $log;
+    header("HTTP/1.0 $status $description");
     
     $errorDetails = array(
-        'status' => 500,
-        'title' => 'Internal Server Error',
+        'status' => $status,
+        'title' => $description,
+        'detail' => $detail,
         'requestId' => $log->getRequestId()
     );
     
     die(json_encode($errorDetails));
 }
 
+function error500($logmessage) {
+    global $log;
+    $log->error($logmessage);
+    $noDetailsForClient = null;
+    error(500, 'Internal Server Error', $noDetailsForClient); 
+}
+
 function gravatarUrl($email) {
     global $log;
-    $log->debug("generating gravatar url for $email");
+    $log->debug("generating gravatar url for [$email]");
     // https://fr.gravatar.com/site/implement/images/php/
     $default = "mm";
     $size = 35;

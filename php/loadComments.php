@@ -10,6 +10,13 @@ if (DEBUG) {
 
 const MAX_COMMENTS = 100; //TODO: maybe use paging
 
+function main() {
+    if (!array_key_exists('pageId', $_GET)) {
+        error400("Query parameter missing: pageId");
+    }
+    loadComments($_GET['pageId']);
+}
+
 function loadComments($pageId) {
     global $log;
     try {  
@@ -52,13 +59,18 @@ function constructResult($stmt) {
     global $log;
     
     $result = array();
-    $stmt->bind_result($name, $email, $comment, $date);
+    $stmt->bind_result($name, $email, $text, $timestamp);
     while ($stmt->fetch()) {
-        $log->debug("found comment by [$name] at [$date]");
-        $result[] = array($name, gravatarUrl($email), $comment, $date); //TODO: use a proper object rather than encoding by array index
+        $log->debug("found comment by [$name] at [$timestamp]");
+        $result[] = array(
+            'name' => $name, 
+            'avatar' => gravatarUrl($email), 
+            'text' => $text, 
+            'timestamp' => $timestamp
+        );
     }
     return $result;
 }
 
-loadComments($_GET['pageId']);
+main();
 ?>

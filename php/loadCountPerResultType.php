@@ -47,7 +47,7 @@ function getCounts($mysqli, $totalCount) {
         $result = $mysqli->query($query);
         
         while($row = $result->fetch_array(MYSQLI_ASSOC)) {
-            $log->debug("found {$row[type]}: {$row[amount]}");
+            $log->debug("found {$row['type']}: {$row['amount']}");
             $row['amount'] = round( ($row['amount'] / $totalCount), 2);
             $rows[] = $row;
         }

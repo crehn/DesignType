@@ -8,31 +8,44 @@ if (DEBUG) {
     $log->setLogLevel(LogLevel::debug());
 }
 
-function addComment() {
-    $pageId = htmlentities($_POST['pageId']);
-    $name = htmlentities($_POST['name']);
-    if(strlen($name) <= '1'){ $name = 'Guest';}
-    $email = htmlentities($_POST['email']);
-    $comment = htmlentities($_POST['comment']);
-    doAddComment($pageId, $name, $email, $comment);
+function main() {
+    if (!array_key_exists('pageId', $_GET)) {
+        error400("Query parameter missing: pageId");
+    }
+    
+    $pageId = htmlentities($_GET['pageId']);
+    $comment = json_decode(getRequestBody());
+    addComment($pageId, sanitize($comment));
 }
 
-function doAddComment($pageId, $name, $email, $comment) {
+function getRequestBody() {
+    return file_get_contents('php://input');
+}
+
+function sanitize($comment) {
+    $comment->name = htmlentities($comment->name);
+    if(strlen($comment->name) <= '1'){ $comment->name = 'Guest';}
+    $comment->email = htmlentities($comment->email);
+    $comment->text = htmlentities($comment->text);
+    return $comment;
+}
+
+function addComment($pageId, $comment) {
     global $log;
     try {
-        $log->info("add comment by [$name] to page [$pageId]");
+        $log->info("add comment by [{$comment->name}] to page [$pageId]");
         $mysqli = connectToDb();
 
-        insertComment($mysqli, $pageId, $name, $email, $comment);
-        writeNotificationEmail($pageId, $name, $email, $comment);
-        writeHtml($name, $email, $comment);
-        $log->info("finished adding comment by [$name] to page [$pageId]");
+        insertComment($mysqli, $pageId, $comment);
+        writeNotificationEmail($pageId, $comment);
+        writeHtml($comment);
+        $log->info("finished adding comment by [{$comment->name}] to page [$pageId]");
     } finally {
         $mysqli->close();
     }
 }
 
-function insertComment($mysqli, $pageId, $name, $email, $comment) {
+function insertComment($mysqli, $pageId, $comment) {
     global $log;
     try {    
         $tablenameCmt = DB_TABLEPREFIX . "Comments";
@@ -42,7 +55,7 @@ function insertComment($mysqli, $pageId, $name, $email, $comment) {
             error500("Prepare for insert failed: ({$mysqli->errno}) {$mysqli->error}");
         }
         
-        if (!$stmt->bind_param("sssi", $name, $email, $comment, $pageId)) {
+        if (!$stmt->bind_param("sssi", $comment->name, $comment->email, $comment->text, $pageId)) {
             error500("Binding parameters failed: ({$mysqli->errno}) {$mysqli->error}");
         }
         
@@ -55,25 +68,25 @@ function insertComment($mysqli, $pageId, $name, $email, $comment) {
     }
 }
 
-function writeHtml($name, $email, $comment) {
+function writeHtml($comment) {
     header('Content-Type: text/html');
 ?>
     <div class="cmt-cnt">
-        <img src="<?php echo gravatarUrl($email); ?>" alt="" />
+        <img src="<?php echo gravatarUrl($comment->email); ?>" alt="" />
         <div class="thecom">
-            <h5><?php echo $name; ?></h5><span  class="com-dt"><?php echo date('Y-m-d H:i'); ?></span>
+            <h5><?php echo $comment->name; ?></h5><span  class="com-dt"><?php echo date('Y-m-d H:i'); ?></span>
             <br/>
-            <p><?php echo $comment; ?></p>
+            <p><?php echo $comment->text; ?></p>
         </div>
     </div>
 <?php     
 }
 
-function writeNotificationEmail($pageId, $name, $email, $comment) {
+function writeNotificationEmail($pageId, $comment) {
     global $log;
     $to = MAILRECIPIENTS;
-    $subject = "[design-types.net] $name wrote a comment";
-    $message = "New comment for page with id: $pageId \r\n\r\nContent:\r\n $comment";
+    $subject = "[design-types.net] {$comment->name} wrote a comment";
+    $message = "New comment for page with id: $pageId \r\n\r\nContent:\r\n {$comment->text}";
     $message = wordwrap($message, 70, "\r\n");
     $headers = "From: email@design-types.net\r\n" .
                "Reply-To: email@design-types.net\r\n" .
@@ -85,5 +98,5 @@ function writeNotificationEmail($pageId, $name, $email, $comment) {
     $log->debug("sent notification email");
 }
 
-addComment();
+main();
 ?>

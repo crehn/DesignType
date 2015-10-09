@@ -49,11 +49,16 @@ function initializeCommentFunction() {
 
           if( !theCom.val()){
               alert('You need to write a comment!');
-          }else{
+          } else {
               $.ajax({
                   type: "POST",
-                  url: "./php/addComment.php",
-                  data: 'pageId='+pageIdComments+'&name='+theName.val()+'&email='+theMail.val()+'&comment='+theComMod,
+                  url: "./php/addComment.php?pageId=" + pageIdComments,
+                  contentType:'application/json',
+                  data: JSON.stringify({
+                    name: theName.val(),
+                    email: theMail.val(),
+                    text: theComMod
+                  }),
                   success: function(html){
                       theCom.val('');
                       theMail.val('');
@@ -82,7 +87,7 @@ function loadComments(pageId) {
    ).then( function() {
 	    if (allComments != null) {
 	        for(var i=0; i < allComments.length ;i++) {
-	          writeComment(allComments[i][0], allComments[i][1], allComments[i][3], allComments[i][2]);
+	          writeComment(allComments[i]['name'], allComments[i]['avatar'], allComments[i]['timestamp'], allComments[i]['text']);
 	        } 
    		}
     });
