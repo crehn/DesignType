@@ -38,18 +38,15 @@ function insertComment($mysqli, $pageId, $name, $email, $comment) {
         $insertStatement = "INSERT INTO $tablenameCmt (name, email, comment, id_post) VALUES (?, ?, ?, ?)";
         $log->debug($insertStatement);
         if (!($stmt = $mysqli->prepare($insertStatement))) {
-            $log->error("Prepare for insert failed: ({$mysqli->errno}) {$mysqli->error}");
-            error500();
+            error500("Prepare for insert failed: ({$mysqli->errno}) {$mysqli->error}");
         }
         
         if (!$stmt->bind_param("sssi", $name, $email, $comment, $pageId)) {
-            $log->error("Binding parameters failed: ({$mysqli->errno}) {$mysqli->error}");
-            error500();
+            error500("Binding parameters failed: ({$mysqli->errno}) {$mysqli->error}");
         }
         
         if (!$stmt->execute()) {
-            $log->error("Execute failed: ({$mysqli->errno}) {$mysqli->error}");
-            error500();
+            error500("Execute failed: ({$mysqli->errno}) {$mysqli->error}");
         }
     } finally {
         $stmt->close();

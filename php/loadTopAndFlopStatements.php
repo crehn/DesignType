@@ -47,13 +47,11 @@ function getCountByStatement($mysqli) {
             FROM $tablename";
         $log->debug($query);
         if (!($stmt = $mysqli->prepare($query))) {
-            $log->error("Prepare for select failed: ({$mysqli->errno}) {$mysqli->error}");
-            error500();
+            error500("Prepare for select failed: ({$mysqli->errno}) {$mysqli->error}");
         }
 
         if (!$stmt->execute()) {
-            $log->error("Execute failed: ({$mysqli->errno}) {$mysqli->error}");
-            error500();
+            error500("Execute failed: ({$mysqli->errno}) {$mysqli->error}");
         }
 
         $stmt->bind_result($s1, $s2, $s3, $s4, $s5, $s6, $p1, $p2, $p3, $p4, $p5, $p6, $a1, $a2, $a3, $a4, $a5, $a6, $c1, $c2, $c3, $c4, $c5, $c6, $pr1, $pr2, $pr3, $pr4, $pr5, $pr6, $i1, $i2, $i3, $i4, $i5, $i6, $t1, $t2, $t3, $t4, $t5, $t6, $r1, $r2, $r3, $r4, $r5, $r6);

@@ -33,18 +33,15 @@ function executeSelect($mysqli, $tableprefix, $pageId) {
     $log->debug($selectStement);
 
     if (!($stmt = $mysqli->prepare($selectStement))) {
-        $log->error("Prepare for select failed: ({$mysqli->errno}) {$mysqli->error}");
-        error500();
+        error500("Prepare for select failed: ({$mysqli->errno}) {$mysqli->error}");
     }
 
     if (!$stmt->bind_param("i", $pageId)) {
-        $log->error("Binding parameters failed: ({$mysqli->errno}) {$mysqli->error}");
-        error500();
+        error500("Binding parameters failed: ({$mysqli->errno}) {$mysqli->error}");
     }
 
     if (!$stmt->execute()) {
-        $log->error("Execute failed: ({$mysqli->errno}) {$mysqli->error}");
-        error500();
+        error500("Execute failed: ({$mysqli->errno}) {$mysqli->error}");
     }
     return $stmt;
 }

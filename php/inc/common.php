@@ -5,19 +5,20 @@ function connectToDb() {
     global $log;
     $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
     if ($mysqli->connect_errno) {
-        $log->error("Failed to connect to database: ({$mysqli->connect_errno}) {$mysqli->connect_error}");
-        error500();
+        error500("Failed to connect to database: ({$mysqli->connect_errno}) {$mysqli->connect_error}");
     }
     return $mysqli;
 }
 
-function error500() {
+function error500($logmessage = 'an error occured') {
     global $log;
-    header("HTTP/1.0 500 Internal Server Error");
+    $log->error($logmessage);
+    header('HTTP/1.0 500 Internal Server Error');
+    header('Content-Type: application/problem+json');
     
     $errorDetails = array(
         'status' => 500,
-        'description' => 'Internal Server Error',
+        'title' => 'Internal Server Error',
         'requestId' => $log->getRequestId()
     );
     
@@ -31,5 +32,5 @@ function gravatarUrl($email) {
     return "http://www.gravatar.com/avatar/".md5(strtolower(trim($email)))."?d=$default&s=$size";
 }
 
-header('Content-Type: application/json');
+header('Content-Type: application/json'); // default
 ?>

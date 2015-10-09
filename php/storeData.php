@@ -33,8 +33,7 @@ function insertResultType($mysqli, $ukey) {
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $log->debug($insertStatement);
         if (!($stmt = $mysqli->prepare($insertStatement))) {
-            $log->error("Prepare for insert failed: ({$mysqli->errno}) {$mysqli->error}");
-            error500();
+            error500("Prepare for insert failed: ({$mysqli->errno}) {$mysqli->error}");
         }
 
         $designType = getData('designType');
@@ -58,13 +57,11 @@ function insertResultType($mysqli, $ukey) {
         if (!$stmt->bind_param("ssssssssssddss", 
             $ukey, $designType, $gender, $age, $professionalYears, $educationLevel, $educationBackground, $role, 
             $programmingLanguage, $methodology, $latitude, $longitude, $companySize, $industrySector)) {
-            $log->error("Binding parameters failed: ({$mysqli->errno}) {$mysqli->error}");
-            error500();
+            error500("Binding parameters failed: ({$mysqli->errno}) {$mysqli->error}");
         }
 
         if (!$stmt->execute()) {
-            $log->error("Execute failed: ({$mysqli->errno}) {$mysqli->error}");
-            error500();
+            error500("Execute failed: ({$mysqli->errno}) {$mysqli->error}");
         }
 
         $insertId = $stmt->insert_id;
@@ -98,8 +95,7 @@ function insertChosenStatements($mysqli, $resultTypeFk) {
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $log->debug($insertStatement);
         if (!($stmt = $mysqli->prepare($insertStatement))) {
-            $log->error("Prepare for insert failed: ({$mysqli->errno}) {$mysqli->error}");
-            error500();
+            error500("Prepare for insert failed: ({$mysqli->errno}) {$mysqli->error}");
         }
 
         if (!$stmt->bind_param("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii", 
@@ -159,13 +155,11 @@ function insertChosenStatements($mysqli, $resultTypeFk) {
             statementAsInt('robust5'),
             statementAsInt('robust6'),
             $resultTypeFk)) {
-            $log->error("Binding parameters failed: ({$mysqli->errno}) {$mysqli->error}");
-            error500();
+            error500("Binding parameters failed: ({$mysqli->errno}) {$mysqli->error}");
         }
 
         if (!$stmt->execute()) {
-            $log->error("Execute failed: ({$mysqli->errno}) {$mysqli->error}");
-            error500();
+            error500("Execute failed: ({$mysqli->errno}) {$mysqli->error}");
         }
         
         $insertId = $stmt->insert_id;

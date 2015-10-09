@@ -38,18 +38,15 @@ function executeSelect($mysqli, $ukey) {
         from $tablenameCS cs inner join $tablenameRT rt on (cs.FK = rt.ID) where rt.USERKEY=?";
     $log->debug($query);
     if (!($stmt = $mysqli->prepare($query))) {
-        $log->error("Prepare for select failed: ({$mysqli->errno}) {$mysqli->error}");
-        error500();
+        error500("Prepare for select failed: ({$mysqli->errno}) {$mysqli->error}");
     }
 
     if (!$stmt->bind_param("s", $ukey)) {
-        $log->error("Binding parameters failed: ({$mysqli->errno}) {$mysqli->error}");
-        error500();
+        error500("Binding parameters failed: ({$mysqli->errno}) {$mysqli->error}");
     }
 
     if (!$stmt->execute()) {
-        $log->error("Execute failed: ({$mysqli->errno}) {$mysqli->error}");
-        error500();
+        error500("Execute failed: ({$mysqli->errno}) {$mysqli->error}");
     }
     return $stmt;
 }
