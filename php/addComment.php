@@ -38,7 +38,8 @@ function addComment($pageId, $comment) {
 
         insertComment($mysqli, $pageId, $comment);
         writeNotificationEmail($pageId, $comment);
-        writeHtml($comment);
+        $result = buildResult($comment);
+        echo json_encode($result);
         $log->info("finished adding comment by [{$comment->name}] to page [$pageId]");
     } finally {
         $mysqli->close();
@@ -68,25 +69,21 @@ function insertComment($mysqli, $pageId, $comment) {
     }
 }
 
-function writeHtml($comment) {
-    header('Content-Type: text/html');
-?>
-    <div class="cmt-cnt">
-        <img src="<?php echo gravatarUrl($comment->email); ?>" alt="" />
-        <div class="thecom">
-            <h5><?php echo $comment->name; ?></h5><span  class="com-dt"><?php echo date('Y-m-d H:i'); ?></span>
-            <br/>
-            <p><?php echo $comment->text; ?></p>
-        </div>
-    </div>
-<?php     
+function buildResult($comment) {
+    return array(
+        'name' => $comment->name,
+        'avatar' => gravatarUrl($comment->email), 
+        'email' => $comment->email,
+        'timestamp' => date(DATE_ATOM),
+        'text' => $comment->text
+    );
 }
 
 function writeNotificationEmail($pageId, $comment) {
     global $log;
     $to = MAILRECIPIENTS;
     $subject = "[design-types.net] {$comment->name} wrote a comment";
-    $message = "New comment for page with id: $pageId \r\n\r\nContent:\r\n {$comment->text}";
+    $message = "New comment for page with id: $pageId \r\n\r\nContent:\r\n" . replaceLineBreaks($comment->text);
     $message = wordwrap($message, 70, "\r\n");
     $headers = "From: email@design-types.net\r\n" .
                "Reply-To: email@design-types.net\r\n" .
@@ -96,6 +93,10 @@ function writeNotificationEmail($pageId, $comment) {
         $log->error("could not send notification email");
     }
     $log->debug("sent notification email");
+}
+
+function replaceLineBreaks($text) {
+    return str_replace('[br]', "\n", $text);
 }
 
 main();

@@ -51,7 +51,7 @@ function insertResultType($mysqli, $ukey) {
         $latitude = getData('latitude');
         $longitude = getData('longitude');
 
-        $log->info("ukey=$ukey, designType=$designType, gender=$gender, age=$age, professionalYears=$professionalYears,"
+        $log->info("ukey=$ukey, designType=$designType, gender=$gender, age=$age, professionalYears=$professionalYears, "
              . "educationLevel=$educationLevel, educationBackground=$educationBackground, role=$role, "
              . "programmingLanguage=$programmingLanguage, methodology=$methodology, companySize=$companySize, "
              . "industrySector=$industrySector, latitude=$latitude, longitude=$longitude");

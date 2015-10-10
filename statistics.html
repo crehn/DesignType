@@ -102,31 +102,28 @@
         <p>Like to see more graphs and an idea which one could be interesting? Write us a comment...</p>
     </section>             
     <section id="comments">
-        <div class="row">
-            <div id="templateSingleComment" class="cmt-cnt">
-                <img src="missing.png">
-                <div class="thecom">
-                    <h5>Template name</h5><span class="com-dt">Template date</span>
-                    <br>
-                    <p>Template comment</p>
-                </div>
-            </div>
-            
-            <div id="commentscontainer" class="cmt-container">
-                <div class="new-com-bt">
-                    <span>Write a comment ...</span>
-                </div>
-                <div id="commentform" class="new-com-cnt">
-                    <input id="name-com" name="name-com" value="" placeholder="Your name" type="text">
-                    <input id="mail-com" name="mail-com" value="" placeholder="Your e-mail adress" type="text">
-                    <textarea class="the-new-com"></textarea>
-                    <div class="bt-add-com">Post comment</div>
-                    <div class="bt-cancel-com">Cancel</div>
-                </div>
-                <div class="clear"></div>
-            </div>  
-        </div>  
-    </section>    
+		<div id="comment-template" class="comment">
+		    <img src="" alt="" class="avatar">
+		    <div>
+		        <h5 class="name">Template name</h5><span class="date">Template date</span><br>
+		        <p class="text">Template comment</p>
+		    </div>
+		</div>
+		
+		<div class="comment-container">
+		    <div class="new-button">
+		        <span>Write a comment ...</span>
+		    </div>
+		    <div class="new-form">
+		        <input type="text" id="new-comment-name" value="" placeholder="Your name">
+		        <input type="text" id="new-comment-email" value="" placeholder="Your e-mail address">
+		        <textarea id="new-comment-text"></textarea>
+		        <div class="btn btn-primary post-button" disabled="true">Post comment</div>
+		        <div class="btn btn-default cancel-button">Cancel</div>
+		    </div>
+		    <div class="clear"></div>
+		</div>  
+    </section>  
     <footer>
         Please give us <a href="mailto:email@design-types.net">Feedback</a> or discuss with us at <a href="https://www.xing.com/communities/groups/design-principles-patterns-types-08d2-1080100" target="_blank"><img src="./img/xing_logo2.png" alt="XING" height="25" width="25" /></a>
     </footer>

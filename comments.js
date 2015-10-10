@@ -1,103 +1,103 @@
 // var pageIdComments has to be defined in each page using this functions.
 
-function writeComment(theName, theAvatarUrl, theDate, theComment) {
-    //console.log("write comment: "+ theComment);
-    var result = $("#templateSingleComment").clone();
-    result.find("img").attr("src", theAvatarUrl);
-    result.find("div.thecom").find("h5").html(theName);
-    result.find("div.thecom").find("span").html(theDate);
-    // replace placeholder with real line break
-    var commentMod = theComment.replace(/\[br\]/g, "<br/>");
-    result.find("div.thecom").find("p").html(commentMod);
-    result.attr('id', 'copiedCommentId');
+function initializeCommentFeature() {
+    $(function() {
+        $('#comments .new-button').click(function(event){    
+            showNewCommentForm();
+        });
+
+        $('#new-comment-text').keyup(function() {
+            activatePostButtonIffThereIsText();
+        });
+
+        $('#comments .post-button').click(function(){
+            postComment();
+        });
+
+        $('#comments .cancel-button').click(function(){
+            cancelComment();
+        });
+    });
+}
+
+function showNewCommentForm() {
+    console.log("show new comment form");
+    $("#comments .new-button").hide();
+    $('#comments .new-form').show();
+    $('#new-comment-name').focus();
+}
+
+function activatePostButtonIffThereIsText() {
+    if ($('#new-comment-text').val().length == 0) {
+        $('#comments .post-button').attr('disabled', true);
+    } else {
+        $('#comments .post-button').attr('disabled', false);
+    }
+}
+
+function postComment() {
+    console.log("post comment");
+    $.ajax({
+        method: "POST",
+        url: "php/addComment.php?pageId=" + pageIdComments,
+        contentType:'application/json',
+        data: JSON.stringify({
+            name: $('#new-comment-name').val(),
+            email: $('#new-comment-email').val(),
+            text: $('#new-comment-text').val().replace(/(\r\n|\n|\r)/gm, "[br]")
+        }),
+        success: function(resultingComment){
+            console.log("comment successfully posted");
+            $('#new-comment-text').val('');
+            hideNewCommentForm(function(){
+                writeComment(resultingComment['name'], resultingComment['avatar'], resultingComment['timestamp'], resultingComment['text']);
+            })
+        }  
+    });
+}
+
+function hideNewCommentForm(doAfter) {
+    $("#comments .new-form").hide('fast', function() {
+        $('#comments .new-button').show('fast');
+        doAfter();
+    });
+}
+
+function cancelComment() {
+    console.log("cancel comment");
+    $('#comments .new-form').fadeOut('fast', function(){
+        $('#comments .new-button').fadeIn('fast');
+    });
+}
+
+function loadComments(pageId) {
+    console.log("loadComments for pageId " + pageId);
+    $.get("php/loadComments.php?pageId=" + pageId, function(comments, status) {
+        console.log("loadComments - status: " + status + ", data: " + comments);
+        if (comments != null) {
+            for(var i=0; i < comments.length; i++) {
+                writeComment(comments[i]['name'], comments[i]['avatar'], comments[i]['timestamp'], comments[i]['text']);
+            } 
+        }
+    });
+} 
+
+function writeComment(name, avatarUrl, timestamp, text) {
+    console.log("write comment by " + name + " at " + timestamp);
+    var result = $("#comment-template").clone();
+    result.find(".avatar").attr("src", avatarUrl);
+    result.find(".name").html(name);
+    result.find(".date").html(timestamp);
+    var commentMod = text.replace(/\[br\]/g, "<br>");
+    result.find(".text").html(commentMod);
+    result.removeAttr('id');
     result.show();
     $(".clear").after(result);
     return result;
 }
 
-function initializeCommentFunction() {
-  $(function() {
-      $('.new-com-bt').click(function(event){    
-          $(this).hide();
-          $('.new-com-cnt').show();
-          $('#name-com').focus();
-      });
-
-      /* when start writing the comment activate the "add" button */
-      $('.the-new-com').bind('input propertychange', function() {
-         $(".bt-add-com").css({opacity:0.6});
-         var checklength = $(this).val().length;
-         if(checklength){ $(".bt-add-com").css({opacity:1}); }
-      });
-
-      /* on clic  on the cancel button */
-      $('.bt-cancel-com').click(function(){
-          $('.the-new-com').val('');
-          $('.new-com-cnt').fadeOut('fast', function(){
-              $('.new-com-bt').fadeIn('fast');
-          });
-      });
-
-      // on post comment click
-      $('.bt-add-com').click(function(){
-          var theCom = $('.the-new-com');
-          // substitute real line break by placeholder
-          var theComMod = theCom.val().replace(/(\r\n|\n|\r)/gm, "[br]");
-          //var theComModImmediate = theCom.val().replace(/(\r\n|\n|\r)/gm, "<br/>");
-          var theName = $('#name-com');
-          var theMail = $('#mail-com');
-
-          if( !theCom.val()){
-              alert('You need to write a comment!');
-          } else {
-              $.ajax({
-                  type: "POST",
-                  url: "./php/addComment.php?pageId=" + pageIdComments,
-                  contentType:'application/json',
-                  data: JSON.stringify({
-                    name: theName.val(),
-                    email: theMail.val(),
-                    text: theComMod
-                  }),
-                  success: function(html){
-                      theCom.val('');
-                      theMail.val('');
-                      theName.val('');
-                      $('.new-com-cnt').hide('fast', function(){
-                          $('.new-com-bt').show('fast');
-                          var htmlMod = html.replace(/\[br\]/g, "<br/>");
-                          $('.clear').after(htmlMod);  
-                      })
-                  }  
-              });
-          }
-      });
-
-  });
-}
-
-function loadComments(pageId) {
-   var allComments;
-   console.log("loadComments - pageId: " + pageId);
-   $.when( 
-        $.get("./php/loadComments.php?pageId=" + pageId, function(data, status) {
-            console.log("loadComments - status: " + status + ", data: " + data);
-            allComments = data;
-        })
-   ).then( function() {
-	    if (allComments != null) {
-	        for(var i=0; i < allComments.length ;i++) {
-	          writeComment(allComments[i]['name'], allComments[i]['avatar'], allComments[i]['timestamp'], allComments[i]['text']);
-	        } 
-   		}
-    });
-} 
-
 $(document).ready(function() {
-
-  $('#templateSingleComment').hide();
-  
-  initializeCommentFunction();  
-
-  loadComments(pageIdComments);
+    $('#comment-template').hide();
+    initializeCommentFeature();  
+    loadComments(pageIdComments);
 });
