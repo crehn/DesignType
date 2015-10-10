@@ -170,8 +170,12 @@ function insertChosenStatements($mysqli, $resultTypeFk) {
     }
 }
 
-function statementAsInt($statementKey) {
-    return ($_POST[$statementKey] === "true") ? 1 : 0;
+function &statementAsInt($statementKey) {
+    // dirty hack to avoid an E_STRICT warning when passing the result of this method to $stmt->bind_param()
+    // this is OK here, as we only do an INSERT and the alternative would be plenty of unnecessary variables
+    static $zero = 0;
+    static $one = 1;
+    return ($_POST[$statementKey] === "true") ? $one : $zero;
 }
 
 storeData();
