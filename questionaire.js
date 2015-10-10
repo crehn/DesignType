@@ -198,6 +198,46 @@ function Dimension(leftValue, rightValue, statements, number) {
     }
 };
 
+function Overlay() {
+    this.show = function() {
+        $("#cover").show();
+        $("#overlay").show('fast');
+    }
+    
+    $("#overlay .cancel").click(function() {
+        hide();
+    });
+    
+    function hide() {
+        $("#overlay").hide('fast', function() {
+            $("#cover").hide();
+        });
+    }
+    
+    $("#overlay .play-around").click(function() {
+        reveal();
+    });
+    
+    function reveal() {
+        window.location.href='?revealed';
+    }
+    
+    $("#overlay .continue-submitting").click(function() {
+        continueSubmitting();
+    });
+    
+    function continueSubmitting() {
+        window.location.href='submit.html?type=' + window.questionaire.getDesignType();
+    }
+    
+    $("#overlay .show-result").click(function() {
+        showResult();
+    });
+    
+    function showResult() {
+        window.location.href='result.html?type=' + window.questionaire.getDesignType() + "&ukey=" + localStorage['you.ukey'];
+    }
+}
 
 function Questionaire(prefix) {
     var SUPPLY_CORRECT_NUMBER_OF_STATEMENTS = "Check exactly five stametements in each group!";
@@ -244,6 +284,14 @@ function Questionaire(prefix) {
             $("#globalErrorBox").show("slow");
         } else {
             $("#globalErrorBox").hide();
+            continueToNextPage();
+        }
+    }
+    
+    function continueToNextPage() {
+        if (prefix === 'you' && localStorage['you.ukey'] != null) {
+            overlay.show();
+        } else {
             window.location.href='submit.html?type='+questionaire.getDesignType();
         }
     }
@@ -254,6 +302,7 @@ function Questionaire(prefix) {
         }
         $("#result").show();
         $("#controls").hide();
+        this.load();
     }
     
     this.save = function() {
@@ -279,8 +328,12 @@ function Questionaire(prefix) {
         localStorage.clear();
         this.update();
     }
+    
+    if (prefix === 'you') {
+        var overlay = new Overlay();
+    }
 }
- 
+
 $(document).ready(function() {
     window.questionaire = new Questionaire(prefix);
     $("#template").hide();

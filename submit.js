@@ -104,6 +104,7 @@ function storeData() {
 	       }, function(data, status) {
 		       console.log("storeData - status: " + status + ", data: " + data);
 		       userKey = data;
+		       localStorage['you.ukey'] = userKey;
 		       console.log("result is user key: " + userKey);
 	    })
     ).then(function () {
