@@ -175,7 +175,8 @@ function HorizontalBarChart(dataForBars, elementName) {
     }
 
     function getStatementText(d) {
-    	return (Math.round(d.percentage * 100)) + " %: " + d.attribute + ": " + statements[d.attribute][d.index];
+        var statement = (statements[d.attribute][d.index]).replace(/\<\/?code\>/g, "'");
+    	return (Math.round(d.percentage * 100)) + " %: " + d.attribute + ": " + statement;
     }
 }
 
