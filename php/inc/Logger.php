@@ -80,6 +80,7 @@ class Logger {
     }
     
     public function warn($message) {
+        $this->log(self::ERRLOG, LogLevel::warn(), "$message {$this->getStacktrace()}");
         $this->log(self::APPLOG, LogLevel::warn(), $message);
     }
     
