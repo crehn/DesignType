@@ -25,44 +25,50 @@
 <body>
 <div class="container page certificate">
 
-    <section>
-        <div id="types">
-            <div style="display:none" id="templateType">
-              <div class="row">
-                <div class="col-xs-6 typeicon text-center"></div>
-                <div class="col-xs-6 typelegend">
-                  <table>
-                    <tr class="legendicon simple"></tr>
-                    <tr class="legendicon powerful"></tr>
-                    <tr class="legendicon abstract"></tr>
-                    <tr class="legendicon concrete"></tr>
-                    <tr class="legendicon pragmatic"></tr>
-                    <tr class="legendicon idealistic"></tr>
-                    <tr class="legendicon robust"></tr>
-                    <tr class="legendicon technologic"></tr>
-                  </table>
-                </div>
-              </div> 
-              <div class="row" style="margin-top:1.5em;margin-bottom:1.5em;">           
-                <div class="col-xs-6">
-                    <dl>
-                        <dt>Your designs are</dt>
-                        <dd class="designs"></dd>
-                        <dt>Programming is</dt>
-                        <dd class="programming"></dd>
-                    </dl>
-                </div>
-                <div class="col-xs-6">
-                    <dl>
-                        <dt>Principles you probably like</dt>
-                        <dd class="principles-liked"></dd>
-                        <dt>Principles you rather disregard</dt>
-                        <dd class="principles-disregarded"></dd>
-                    </dl>
-                </div>
-              </div>
-            </div>
+    <section id="coat-of-arms">
+        <img src="" alt="" width="250">
+    </section>
+    <section id="dimension-description" class="row">
+        <div id="type">Your Design Type: </div>
+        <div class="col-xs-6">
+            <dl>
+                <dt class="simple"><img src="img/dimensions/simple.png" width="20"> Simple</dt>
+                <dd class="simple"></dd>
+                <dt class="powerful"><img src="img/dimensions/powerful.png" width="20"> Powerful</dt>
+                <dd class="powerful"></dd>
+                <dt class="pragmatic"><img src="img/dimensions/pragmatic.png" width="20"> Pragmatic</td>
+                <dd class="pragmatic"></dd>
+                <dt class="idealistic"><img src="img/dimensions/idealistic.png" width="20"> Idealistic</td>
+                <dd class="idealistic"></dd>
+            </dl>
         </div>
+        <div class="col-xs-6">
+            <dl>
+                <dt class="abstract"><img src="img/dimensions/abstract.png" width="20"> Abstract</dt>
+                <dd class="abstract"></dd>
+                <dt class="concrete"><img src="img/dimensions/concrete.png" width="20"> Concrete</dt>
+                <dd class="concrete"></dd>
+                <dt class="robust"><img src="img/dimensions/robust.png" width="20"> Robust</dt>
+                <dd class="robust"></dd>
+                <dt class="technologic"><img src="img/dimensions/technologic.png" width="20"> Technologic</dt>
+                <dd class="technologic"></dd>
+            </dl>
+        </div>
+    </section>
+    <section id="type-description" class="row">
+        <div class="col-xs-6">
+            <dl>
+                <dt>Your designs are:</dt>
+                <dd class="your-designs-are"></dd>
+            </dl>
+        </div>
+        <div class="col-xs-6">
+            <dl>
+                <dt>Programming is to you:</dt>
+                <dd class="programming-is"></dd>
+            </dl>
+        </div>
+    </section>
     </section>
     <section class="typediagnostic row">
         <div class="col-xs-6">
@@ -86,8 +92,7 @@
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="bower_components/d3/d3_min_v3.js"></script>
 <script src="types_data.js"></script>
-<script src="dimensions_data.js"></script>
-<script src="result.js"></script>
+<script src="charts.js"></script>
 <script src="certificate.js"></script>
 </body>
 </html>

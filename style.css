@@ -239,11 +239,12 @@ footer {
   width: 21cm;
 }
 
-.certificate .coat-of-arms {
+#coat-of-arms {
   margin-bottom:2em;
+  text-align: center;
 }
 
-.certificate .details {
+.certificate .dimension-description {
   margin-bottom:2em;
 }
 

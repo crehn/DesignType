@@ -52,28 +52,28 @@ function Type(value1, value2, value3, value4) {
     function createLegend(topelement, typeabbreviation) {
     	topelement.find(".simple").append("<td><img src='img/dimensions/simple.png' height='50' alt='simple' title='" 
     			+ dimensionsData["simple"].icondescription + "' /></td><td><b>" + attribute("simple") 
-    			+ ": </b> " + dimensionsData["simple"].shortdescription + "</td>");
+    			+ ": </b> " + dimensionsData["simple"].description + "</td>");
     	topelement.find(".powerful").append("<td><img src='img/dimensions/powerful.png' height='50' alt='powerful' title='" 
     			+ dimensionsData["powerful"].icondescription + "' /></td><td><b>" + attribute("powerful") 
-    			+ ": </b>" + dimensionsData["powerful"].shortdescription + "</td>");
+    			+ ": </b>" + dimensionsData["powerful"].description + "</td>");
     	topelement.find(".abstract").append("<td><img src='img/dimensions/abstract.png' height='50' alt='abstract' title='" 
     			+ dimensionsData["abstract"].icondescription + "' /></td><td><b>" + attribute("abstract") 
-    			+ ": </b> " + dimensionsData["abstract"].shortdescription + "</td>");
+    			+ ": </b> " + dimensionsData["abstract"].description + "</td>");
     	topelement.find(".concrete").append("<td><img src='img/dimensions/concrete.png' height='50' alt='concrete' title='" 
     			+ dimensionsData["concrete"].icondescription + "' /></td><td><b>" + attribute("concrete") 
-    			+ ": </b> " + dimensionsData["concrete"].shortdescription + "</td>");
+    			+ ": </b> " + dimensionsData["concrete"].description + "</td>");
     	topelement.find(".pragmatic").append("<td><img src='img/dimensions/pragmatic.png' height='50' alt='pragmatic' title='" 
     			+ dimensionsData["pragmatic"].icondescription + "' /></td><td><b>" + attribute("pragmatic") 
-    			+ ": </b> " + dimensionsData["pragmatic"].shortdescription + "</td>");
+    			+ ": </b> " + dimensionsData["pragmatic"].description + "</td>");
     	topelement.find(".idealistic").append("<td><img src='img/dimensions/idealistic.png' height='50' alt='idealistic' title='" 
     			+ dimensionsData["idealistic"].icondescription + "' /></td><td><b>" + attribute("idealistic") 
-    			+ ": </b> " + dimensionsData["idealistic"].shortdescription + "</td>");
+    			+ ": </b> " + dimensionsData["idealistic"].description + "</td>");
     	topelement.find(".robust").append("<td><img src='img/dimensions/robust.png' height='50' alt='robust' title='" 
     			+ dimensionsData["robust"].icondescription + "' /></td><td><b>" + attribute("robust") 
-    			+ ": </b> " + dimensionsData["robust"].shortdescription + "</td>");
+    			+ ": </b> " + dimensionsData["robust"].description + "</td>");
     	topelement.find(".technologic").append("<td><img src='img/dimensions/technologic.png' height='50' alt='technologic' title='" 
     			+ dimensionsData["technologic"].icondescription + "' /></td><td><b>" + attribute("technologic") 
-    			+ ": </b> " + dimensionsData["technologic"].shortdescription + "</td>");
+    			+ ": </b> " + dimensionsData["technologic"].description + "</td>");
     	
     	if (typeabbreviation.charAt(0) == 's') {
     		topelement.find(".powerful").hide();
