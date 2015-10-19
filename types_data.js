@@ -27,7 +27,7 @@ sapr: {
     name: 'The Construction Manager',
     description: "The Construction Manager loves to work like on a construction site. There is a plan and everybody works hand in hand to reach the aimed goal. He focuses on working solutions that are built on proven technologies. This ensures that the result will stand the test of time. The most matching motto is: Getting things done. He rather implements by himself than choosing the wrong and maybe unstable framework. He knows very well about his abilities and has reservations about foreign technologies that did not proof their maturity over a certain period of time. He also focuses more on the interaction of particular modules instead of having too many sophisticated and complex constructs in his design. He prefers simple craftsmanship which tells him not to finish before a certain level of robustness has been shown by manual or automated tests.",
     designs: 'Stable and reasonably planned without unnecessary complexity',
-    programming: 'Like managing a construction site. Somethiong has to be built.',
+    programming: 'Like managing a construction site. Something has to be built.',
     principlesLiked: [principle('KISS', 'keep_it_simple_stupid'),
         principle('MIMC', 'more_is_more_complex'),
         principle('RoE', 'rule_of_explicitness'),
@@ -320,7 +320,7 @@ pcir: {
 
 var dimensionsData = {
     simple: {
-        description: "This means you prefer simple, streight-forward solutions",
+        description: "This means you prefer simple, straight-forward solutions",
         icondescription: 'A pike is very simple, yet effective weapon',
     },
     powerful: {

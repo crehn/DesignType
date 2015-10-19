@@ -183,7 +183,10 @@ function Types() {
 
     function showDesignType(type) {
     	console.log("show type: " + type);
-        $("#resultString").html("<strong>Result:</strong> Your design type is <strong>" + typesData[type.toLowerCase()].name +" (" + type + ")</strong>.");
+    	
+    	//var permlinkVal = "http://design-types.net/result.html?type="+type+"&ukey="+getParameterByName("ukey");
+    	var permlinkVal = window.location.href;
+        $("#resultString").html("<strong>Result:</strong> Your design type is <strong>" + typesData[type.toLowerCase()].name +" (" + type + ")</strong>. <span style='float:right;'>Permlink: <input type='text' size='"+(permlinkVal.length+5)+"' name='permlink' value='"+permlinkVal+"' readonly></span>");
         
         if ($("#" + type.toLowerCase()).visible) {
             $("#types").accordion("option", "active", typeToIndex(type));

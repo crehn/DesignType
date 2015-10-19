@@ -237,11 +237,22 @@ footer {
   margin-top: 1em;
   padding: 2cm;
   width: 21cm;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  border-radius: 40px;
 }
 
 #coat-of-arms {
-  margin-bottom:2em;
+  margin-bottom: 2em;
   text-align: center;
+}
+
+.certheader {
+  text-align: center;
+  font-size: 1.5em; 
+  font-weight: bold;
+  margin-top: 0.5em;
+  margin-bottom: 1em;
 }
 
 .certificate .dimension-description {
@@ -249,9 +260,9 @@ footer {
 }
 
 .certificate .qr {
-  margin-top:6em;
-  text-align:right;
+  margin-top: 6em;
+  text-align: right;
   font-size: 14pt;
-  vertical-align:bottom;
+  vertical-align: bottom;
 }
 
