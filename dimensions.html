@@ -78,7 +78,7 @@
         <h2 id="simple">Simple</h2>
         <div>
             <p>
-                Developers with this attitude prefer simple solutions which are easy to write and maintain.
+                Developers with this attitude prefer simple solutions which are easy to write and to maintain.
             </p>
             <p>
                 The main idea is avoiding complexity. To prefer simple solutions means to implement only necessary and requested things without any frills. Simple code is easier to read, better to maintain, and cointains fewer bugs. Typical followers know about the power of simplicity. The key to handling complexity is not to master it but rather to avoid it. They prefer small and clear modules with few dependencies. They use libraries and frameworks if this makes the code easier to read and write and they don't use them if this only means that the reader of the code needs to know how all these libraries work. Explicit solutions are preferred to indirect, declaratrive ones. This means that simple solutions are not overly generic but they communicate the intent well.
@@ -162,7 +162,7 @@
                 Developers with this attitude directly think in terms of code.
             </p>
             <p>
-                Concrete developers directly transfer requirements to code. They are also good at working with and even refactoring legacy code that they do not completely understand. They don't have to understand the whole system in all its details and they know that thsi attitude wouldn't scale either. As soon as a system has a certain level of complexity, one mind cannot understand it fully. Nevertheless a concrete developer can work quite well with such a system. When they refactor they heavyly rely on the boyscout rule. They improve code bottom-up rather than planning it top-down.
+                Concrete developers directly transfer requirements into code. They are also good at working with and refactoring legacy code that they do not understand completely. They don't have to understand the whole system in all its details and they know that this attitude wouldn't scale either. As soon as a system has a certain level of complexity, one mind cannot understand it fully. Nevertheless a concrete developer can work quite well with such a system. When they refactor they heavyly rely on the boyscout rule. They improve code bottom-up rather than planning it top-down.
             </p>
             <p>
                 On the other hand concrete developers may overoptimize unnecessary details and tend to loose sight of the big picture. They may violate achitectural constraints and weaken the overall structure because thinking in terms of packages, layers and dependencies is not in their focus.
@@ -189,16 +189,31 @@
                 Developers with this attitude focus on time to market.
             </p>
             <p>
-                The main motivation of this dimension is to fulfill requested requirements as soon as possible. The end justifies the means implies that only those things will be used that guarantee a certain value. Unnecessary ones will be omitted. This approach prevents complexity and confusing situations in the first place. Followers do not like to invent the wheel and use templates, code snippets, etc. to avoid implementing everything by their own. This normally leads to faster solutions and success. Freed from technical or structural sensitivities followers of this dimension adapt very fast to any new environment, rules or specifications for example to a new team. They are also able to bring others back to earth and redirect them to the origin goal.
+                The main motivation of such developers is to fulfill the requested requirements as soon as possible. It's the result that counts so tasks are only done if there is a valuable benefit. This approach prevents complexity and overengineering. Furthermore they can use the saved time to implement even more features and deliver benefit to the customer even faster. Followers do not like to reinvent the wheel and use templates, code snippets, etc. to avoid implementing everything by their own. This normally leads to faster solutions and success. Freed from technical or structural sensitivities followers of this dimension adapt very fast to any new environment, rules or specifications for example to a new team. They are also able to bring others down to earth and redirect them to the primary goal.
             </p>
             <p>
-                Downside of this dimension is that followers accept incompleteness. This means for example that quality, structure, symmetry or anything else can be affected negatively. Shortcomings in structure can violate the architecture; shortcomings in symmetry can lead to uncertain terminology and for this to less understandable Code. Shortcomings in code style normally leads to less maintainable code, etc. Besides this usage of code snippets can contain risks especially if its contents have not been understood totally or mandatory context knowledge is missing. The lack of detailed knowledge can also lead to onions by adding layers surround existing code instead of refactoring the design. Often used copy and paste parts can raise one bug several times. All in all sustainability is often sacrificed for quick results.
+                On the other hand pragmatic developers tend to neglect code quality. So while pragamtic developers are really fast at the beginning, they may be slower in the long run as maintainability decreases, bugs show up more often and the code gets less readable.
             </p>
             <p>
-                Typical applied principles for dimension pragmatic are: YAGNI, RoE, KISS, MIMC 
+                Pragmatic developers typically follow the following principles: 
+                <a href="http://www.principles-wiki.net/principles:you_ain_t_gonna_need_it">YAGNI</a>, 
+                <a href="http://www.principles-wiki.net/principles:rule_of_explicitness">RoE</a>,
+                <a href="http://www.principles-wiki.net/principles:keep_it_simple_stupid">KISS</a>, 
+                and <a href="http://www.principles-wiki.net/principles:more_is_more_complex">MIMC</a>, 
             </p>
             <p>
-                Irrelevant principles for this dimension are (maybe also interesting to have an eye on it): UP, GP, MP, LSP, IH/E, DIP, LC, HC, TdA/IE, EUHM, IAP
+                Rather disregarded principles for these developers are: 
+                <a href="http://www.principles-wiki.net/principles:uniformity_principle">UP</a>, 
+                <a href="http://www.principles-wiki.net/principles:generalization_principle">GP</a>,
+                <a href="http://www.principles-wiki.net/principles:model_principle">MP</a>, 
+                <a href="http://www.principles-wiki.net/principles:liskov_substitution_principle">LSP</a>, 
+                <a href="http://www.principles-wiki.net/principles:information_hiding_encapsulation">IH/E</a>, 
+                <a href="http://www.principles-wiki.net/principles:dependency_inversion_principle">DIP</a>, 
+                <a href="http://www.principles-wiki.net/principles:low_coupling">LC</a>, 
+                <a href="http://www.principles-wiki.net/principles:high_cohesion">HC</a>, 
+                <a href="http://www.principles-wiki.net/principles:tell_don_t_ask_information_expert">TdA/IE</a>, 
+                <a href="http://www.principles-wiki.net/principles:easy_to_use_and_hard_to_misuse">EUHM</a>, 
+                and <a href="http://www.principles-wiki.net/principles:invariant_avoidance_principle">IAP</a>
             </p>
         </div>
         <h2 id="idealistic">Idealistic</h2>
