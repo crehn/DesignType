@@ -28,39 +28,43 @@
     <section id="coat-of-arms">
         <img src="" alt="" width="250">
     </section>
-    <section id="dimension-description" class="row">
+    <section id="dimension-description">
         <div id="type" class="certheader">Your Design Type: </div>
-        <div class="col-xs-6">
-            <dl>
-                <dt class="simple"><img src="img/dimensions/simple.png" width="20"> Simple</dt>
-                <dd class="simple"></dd>
-                <dt class="powerful"><img src="img/dimensions/powerful.png" width="20"> Powerful</dt>
-                <dd class="powerful"></dd>
-            </dl>
+        <div class="row">
+            <div class="col-xs-6">
+                <dl>
+                    <dt class="simple"><img src="img/dimensions/simple.png" width="20" alt=""> Simple</dt>
+                    <dd class="simple"></dd>
+                    <dt class="powerful"><img src="img/dimensions/powerful.png" width="20" alt=""> Powerful</dt>
+                    <dd class="powerful"></dd>
+                </dl>
+            </div>
+            <div class="col-xs-6">
+                <dl>
+                    <dt class="abstract"><img src="img/dimensions/abstract.png" width="20" alt=""> Abstract</dt>
+                    <dd class="abstract"></dd>
+                    <dt class="concrete"><img src="img/dimensions/concrete.png" width="20" alt=""> Concrete</dt>
+                    <dd class="concrete"></dd>
+                </dl>
+            </div>
         </div>
-        <div class="col-xs-6">
-            <dl>
-                <dt class="abstract"><img src="img/dimensions/abstract.png" width="20"> Abstract</dt>
-                <dd class="abstract"></dd>
-                <dt class="concrete"><img src="img/dimensions/concrete.png" width="20"> Concrete</dt>
-                <dd class="concrete"></dd>
-            </dl>
-        </div>
-        <div class="col-xs-6">
-            <dl>
-                <dt class="pragmatic"><img src="img/dimensions/pragmatic.png" width="20"> Pragmatic</td>
-                <dd class="pragmatic"></dd>
-                <dt class="idealistic"><img src="img/dimensions/idealistic.png" width="20"> Idealistic</td>
-                <dd class="idealistic"></dd>
-            </dl>
-        </div>
-        <div class="col-xs-6">
-            <dl>
-                <dt class="robust"><img src="img/dimensions/robust.png" width="20"> Robust</dt>
-                <dd class="robust"></dd>
-                <dt class="technologic"><img src="img/dimensions/technologic.png" width="20"> Technologic</dt>
-                <dd class="technologic"></dd>
-            </dl>
+        <div class="row">
+            <div class="col-xs-6">
+                <dl>
+                    <dt class="pragmatic"><img src="img/dimensions/pragmatic.png" width="20" alt=""> Pragmatic</dt>
+                    <dd class="pragmatic"></dd>
+                    <dt class="idealistic"><img src="img/dimensions/idealistic.png" width="20" alt=""> Idealistic</dt>
+                    <dd class="idealistic"></dd>
+                </dl>
+            </div>
+            <div class="col-xs-6">
+                <dl>
+                    <dt class="robust"><img src="img/dimensions/robust.png" width="20" alt=""> Robust</dt>
+                    <dd class="robust"></dd>
+                    <dt class="technologic"><img src="img/dimensions/technologic.png" width="20" alt=""> Technologic</dt>
+                    <dd class="technologic"></dd>
+                </dl>
+            </div>
         </div>
     </section>
     <section id="type-description" class="row">
@@ -79,19 +83,25 @@
     </section>
     <section class="typediagnostic row">
         <div class="col-xs-6">
-            <p><b>Dimension overlap:</b><br>How your result overlaps the dimension parts.</p>
-            <div class="text-center" id="box1">
-            </div>
+            <dl>
+                <dt>Dimension overlap</dt>
+                <dd>
+                    <div class="text-center" id="dimension-overlap-chart"></div>
+                </dd>
+            </dl>
         </div>
         <div class="col-xs-6">
-            <p><b>Type overlap:</b><br>How your result overlaps to other types.</p>
-            <div class="text-center" id="box2">
-            </div>
+            <dl>
+                <dt>Type overlap</dt>
+                <dd>
+                    <div class="text-center" id="type-overlap-chart"></div>
+                </dd>
+            </dl>
         </div>
     </section>
-    <section class="qr">
+    <div class="qr">
         design-types.net&nbsp;<img width="75" src="img/qr.png" alt="" title="http://design-types.net/">
-    </section>
+    </div>
 </div>
 
 <script src="bower_components/jquery/dist/jquery.min.js"></script>

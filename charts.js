@@ -92,7 +92,7 @@ function DimensionOverlapChart(details, size) {
     }
 
     function draw() {
-      var svg = d3.select("#box1").append("svg")
+      var svg = d3.select("#dimension-overlap-chart").append("svg")
                     .attr("width", settings.width)
                     .attr("height", settings.height);
 
@@ -197,7 +197,7 @@ function TypeOverlapChart(designType, details, ukey, size) {
     
     this.draw = function() {
         preparePolygonImage();
-        var svg = d3.select("#box2").append("svg")
+        var svg = d3.select("#type-overlap-chart").append("svg")
             .attr("width", settings.width)
             .attr("height", settings.height);
       
