@@ -19,7 +19,7 @@ function dimensionToIndex(dimension) {
         return 0;
 
     var dimensions = ['simple', 'powerful', 'abstract', 'concrete', 'pragmatic', 'idealistic', 'technologic', 'robust'];
-    return dimensions.indexOf(dimension);
+    return Math.floor(dimensions.indexOf(dimension) / 2);
 }
 
 $(document).ready(function() {
