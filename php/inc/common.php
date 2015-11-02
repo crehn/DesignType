@@ -16,7 +16,7 @@ function error400($detail) {
     error(400, 'Bad Request', $detail);
 }
 
-function error($status, $description, $detail) {
+function error($status, $description, $detail, $type = null) {
     global $log;
     header("HTTP/1.0 $status $description");
     
@@ -27,7 +27,17 @@ function error($status, $description, $detail) {
         'requestId' => $log->getRequestId()
     );
     
-    die(json_encode($errorDetails));
+    if ($type != null) {
+        $errorDetails['type'] = $type;
+    }
+  
+    die(json_encode($errorDetails, JSON_UNESCAPED_SLASHES));
+}
+
+function error409($type, $detail) {
+    global $log;
+    $log->warn("conflict: $detail");
+    error(409, 'Conflict', $detail, $type);
 }
 
 function error500($logmessage) {

@@ -74,6 +74,11 @@ h1.main-title {
     padding: 0;
 }
 
+.dimension label {
+    font-weight:normal;
+    display:inline;
+}
+
 .result .ui-accordion-header.marked {
     border: 2px solid #f6a828;
 }

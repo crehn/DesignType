@@ -45,7 +45,10 @@ function Dimension(leftValue, rightValue, statements, number) {
                 type: "checkbox"
             }));
             li.append(" ");
-            li.append(statements[statement]);
+            li.append($('<label/>', {
+                'for': "stmt_" + value + statement,
+                text: statements[statement]
+            }));
             panel.find("ul").append(li);
         }
     }
@@ -198,7 +201,7 @@ function Dimension(leftValue, rightValue, statements, number) {
     }
 };
 
-function Overlay() {
+function Overlay(questionaire) {
     this.show = function() {
         $("#cover").show();
         $("#overlay").show('fast');
@@ -223,7 +226,7 @@ function Overlay() {
     }
     
     $("#overlay .continue-submitting").click(function() {
-        continueSubmitting();
+        questionaire.continueSubmitting();
     });
     
     function continueSubmitting() {
@@ -292,10 +295,26 @@ function Questionaire(prefix) {
         if (prefix === 'you' && localStorage['you.ukey'] != null) {
             overlay.show();
         } else {
-            window.location.href='submit.html?type='+questionaire.getDesignType();
+            continueSubmitting();
         }
     }
     
+    this.continueSubmitting = function() {
+        continueSubmitting();
+    }
+    
+    function continueSubmitting() {
+        window.location.href='submit.html?type='+questionaire.getDesignType() + '&ukey=' + uniqid();
+    }
+        
+    function uniqid() {
+        var timeBasedPart = Math.floor((new Date()).getTime() / 1000).toString(16);
+        var minRandomValue = Math.pow(16,4);
+        var maxRandomValue = Math.pow(16,5) - Math.pow(16,4);
+        var randomPart = Math.floor(Math.random() * maxRandomValue + minRandomValue).toString(16);
+        return timeBasedPart + randomPart;
+    }
+
     this.reveal = function() {
         for (dim in dimensions) {
             dimensions[dim].reveal();
@@ -330,7 +349,7 @@ function Questionaire(prefix) {
     }
     
     if (prefix === 'you') {
-        var overlay = new Overlay();
+        var overlay = new Overlay(this);
     }
 }
 

@@ -11,15 +11,50 @@ if (DEBUG) {
 function storeData() {
     global $log;
     try {
-        $ukey = uniqid();
+        $ukey = getData('ukey');
         $log->info("store data for ukey [$ukey]");
         $mysqli = connectToDb();
+        if (ukeyAlreadyExists($mysqli, $ukey)) {
+            error409('http://design-types.net/problems/ukey-already-exists', "ukey $ukey already exists in database; it will not be stored again");
+        }
         $resultTypeFk = insertResultType($mysqli, $ukey);
         insertChosenStatements($mysqli, $resultTypeFk);
         echo json_encode($ukey);
         $log->info("finished storing data for ukey [$ukey]");
     } finally {
         $mysqli->close();
+    }
+}
+
+function getData($key) {
+    //TODO: add proper sanitization
+    $result = $_POST[$key];
+    if ($result == null) {
+        error400("missing POST data: $key");
+    }    
+    return $result;
+}
+
+function ukeyAlreadyExists($mysqli, $ukey) {
+    global $log;
+    $tablenameRT = DB_TABLEPREFIX . "ResultType";
+    $query = "SELECT * FROM $tablenameRT WHERE userkey = ?";
+    $log->debug($query);
+    try {
+        if (!($stmt = $mysqli->prepare($query))) {
+            error500("Prepare for select failed: ({$mysqli->errno}) {$mysqli->error}");
+        }
+        if (!$stmt->bind_param("s", $ukey)) {
+            error500("Binding parameters failed: ({$mysqli->errno}) {$mysqli->error}");
+        }
+        if (!$stmt->execute()) {
+            error500("Execute failed: ({$mysqli->errno}) {$mysqli->error}");
+        }
+        $result = $stmt->get_result();
+        $log->debug("query returned {$result->num_rows} rows");
+        return $result->num_rows;
+    } finally {
+        $stmt->close();    
     }
 }
 
@@ -71,11 +106,6 @@ function insertResultType($mysqli, $ukey) {
     } finally {
         $stmt->close();
     }
-}
-
-function getData($key) {
-    //TODO: add proper sanitization
-    return $_POST[$key];
 }
 
 function insertChosenStatements($mysqli, $resultTypeFk) {
@@ -175,7 +205,7 @@ function &statementAsInt($statementKey) {
     // this is OK here, as we only do an INSERT and the alternative would be plenty of unnecessary variables
     static $zero = 0;
     static $one = 1;
-    return ($_POST[$statementKey] === "true") ? $one : $zero;
+    return (getData($statementKey) === "true") ? $one : $zero;
 }
 
 storeData();
