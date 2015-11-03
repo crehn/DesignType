@@ -200,7 +200,7 @@ function Dimension(leftValue, rightValue, statements, number) {
     }
 };
 
-function Overlay(questionaire) {
+function Overlay(questionnaire) {
     this.show = function() {
         $("#cover").show();
         $("#overlay").show('fast');
@@ -225,11 +225,11 @@ function Overlay(questionaire) {
     }
     
     $("#overlay .continue-submitting").click(function() {
-        questionaire.continueSubmitting();
+        questionnaire.continueSubmitting();
     });
     
     function continueSubmitting() {
-        window.location.href='submit.html?type=' + window.questionaire.getDesignType();
+        window.location.href='submit.html?type=' + window.questionnaire.getDesignType();
     }
     
     $("#overlay .show-result").click(function() {
@@ -237,11 +237,11 @@ function Overlay(questionaire) {
     });
     
     function showResult() {
-        window.location.href='result.html?type=' + window.questionaire.getDesignType() + "&ukey=" + localStorage['you.ukey'];
+        window.location.href='result.html?type=' + window.questionnaire.getDesignType() + "&ukey=" + localStorage['you.ukey'];
     }
 }
 
-function Questionaire(prefix) {
+function Questionnaire(prefix) {
     var SUPPLY_CORRECT_NUMBER_OF_STATEMENTS = "Check exactly five stametements in each group!";
     var RESULT_STRING = '<strong>Result:</strong> The resulting design type is <a href="types.html?type=${type}"><strong>${type}</strong>.';
 
@@ -303,7 +303,7 @@ function Questionaire(prefix) {
     }
     
     function continueSubmitting() {
-        window.location.href='submit.html?type='+questionaire.getDesignType() + '&ukey=' + uniqid();
+        window.location.href='submit.html?type='+questionnaire.getDesignType() + '&ukey=' + uniqid();
     }
         
     function uniqid() {
@@ -352,30 +352,30 @@ function Questionaire(prefix) {
 }
 
 $(document).ready(function() {
-    window.questionaire = new Questionaire(prefix);
+    window.questionnaire = new Questionnaire(prefix);
     $("#template").hide();
 
     $(".dimension :checkbox").click(function() {
-        questionaire.update();
-        questionaire.save();
+        questionnaire.update();
+        questionnaire.save();
     });
     
     $("#continue").on('click', function() {
-        questionaire.finish();
+        questionnaire.finish();
     });
     
     $("#load").click(function() {
-        questionaire.load();
+        questionnaire.load();
     });
     
     $("#clear").click(function() {
-        questionaire.clear();
+        questionnaire.clear();
     });
     
     if (window.location.search === "?revealed") {
-        questionaire.reveal();
+        questionnaire.reveal();
     }
     
-    questionaire.load();
+    questionnaire.load();
 });
 

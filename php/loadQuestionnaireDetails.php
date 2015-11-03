@@ -12,18 +12,18 @@ function main() {
     if (!array_key_exists('ukey', $_GET)) {
         error400("Query parameter missing: ukey");
     }
-    loadQuestionaioreDetails($_GET['ukey']);
+    loadQuestionnaireDetails($_GET['ukey']);
 }
 
-function loadQuestionaioreDetails($ukey) {
+function loadQuestionnaireDetails($ukey) {
     global $log;
     try {
-        $log->info("load questionaire details for ukey [$ukey]");
+        $log->info("load questionnaire details for ukey [$ukey]");
         $mysqli = connectToDb();
         $stmt = executeSelect($mysqli, $ukey);
         $result = constructResult($stmt);
         echo json_encode($result);
-        $log->info("finished loading questionaire details for ukey [$ukey]");
+        $log->info("finished loading questionnaire details for ukey [$ukey]");
     } finally {
         $stmt->close();
         $mysqli->close();
