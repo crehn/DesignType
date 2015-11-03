@@ -321,7 +321,6 @@ function Questionaire(prefix) {
         }
         $("#result").show();
         $("#controls").hide();
-        this.load();
     }
     
     this.save = function() {
@@ -377,5 +376,7 @@ $(document).ready(function() {
     if (window.location.search === "?revealed") {
         questionaire.reveal();
     }
+    
+    questionaire.load();
 });
 
