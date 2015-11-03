@@ -12,7 +12,7 @@ The HTML5 Shiv enables use of HTML5 sectioning elements in legacy Internet Explo
 
 ### Who can I get mad at now?
 
-HTML5 Shiv is maintained by [Alexander Farkas](https://github.com/aFarkas/), [Jonathan Neal](https://twitter.com/jon_neal) and [Paul Irish](https://twitter.com/paul_irish), with many contributions from [John-David Dalton](https://twitter.com/jdalton). It is also distributed with [Modernizr](http://modernizr.com/), and the two google code projects, [html5shiv](https://code.google.com/p/html5shiv/) and [html5shim](https://code.google.com/p/html5shim/), maintained by [Remy Sharp](https://twitter.com/rem).
+HTML5 Shiv is maintained by [Alexander Farkas](https://github.com/aFarkas/), [Jonathan Neal](https://twitter.com/jon_neal) and [Paul Irish](https://twitter.com/paul_irish), with many contributions from [John-David Dalton](https://twitter.com/jdalton). It is also distributed with [Modernizr](http://modernizr.com/).
 
 If you have any issues in these implementations, you can report them here! :)
 
@@ -24,13 +24,13 @@ For the full story of HTML5 Shiv and all of the people involved in making it, re
 
 `bower install html5shiv --save-dev`
 
-This will clone the latest version of the HTML5 shiv into the `components` directory at the root of your project and also create or update the file `bower.json` which specifies your projects dependencies.
+This will clone the latest version of the HTML5 shiv into the `bower_components` directory at the root of your project and also create or update the file `bower.json` which specifies your projects dependencies.
 
 Include the HTML5 shiv in the `<head>` of your page in a conditional comment and after any stylesheets.
 
 ```html
 <!--[if lt IE 9]>
-	<script src="components/html5shiv/html5shiv.js"></script>
+	<script src="bower_components/html5shiv/dist/html5shiv.js"></script>
 <![endif]-->
 ```
 
@@ -44,7 +44,7 @@ HTML5 Shiv works as a simple drop-in solution. In most cases there is no need to
 
 ### `html5.elements` option
 
-The `elements` option is a space separated string or array, which describes the **full** list of the elements to shiv. 
+The `elements` option is a space separated string or array, which describes the **full** list of the elements to shiv. see also `addElements`.
 
 **Configuring `elements` before `html5shiv.js` is included.**
 
@@ -80,7 +80,7 @@ window.html5 = {
 
 If the `shivMethods` option is set to `true` (by default) HTML5 Shiv will override `document.createElement`/`document.createDocumentFragment` in Internet Explorer 6-8 to allow dynamic DOM creation of HTML5 elements. 
 
-Known issue: If an element is created using the overridden `createElement` method this element returns a document fragment as its `parentNode`, but should be normally `null`. If a script relays on this behavior, `shivMethods`should be set to `false`.
+Known issue: If an element is created using the overridden `createElement` method this element returns a document fragment as its `parentNode`, but should be normally `null`. If a script relies on this behavior, `shivMethods`should be set to `false`.
 Note: jQuery 1.7+ has implemented his own HTML5 DOM creation fix for Internet Explorer 6-8. If all your scripts (including Third party scripts) are using jQuery's manipulation and DOM creation methods, you might want to set this option to `false`.
 
 **Configuring `shivMethods` before `html5shiv.js` is included.**
@@ -96,6 +96,15 @@ window.html5 = {
 ```js
 //change the html5shiv options object 
 window.html5.shivMethods = false;
+```
+
+### `html5.addElements( newElements [, document] )`
+
+The `html5.addElements` method extends the list of elements to shiv. The newElements argument can be a whitespace separated list or an array.
+
+```js
+//extend list of elements to shiv
+html5.addElements('element content');
 ```
 
 ### `html5.createElement( nodeName [, document] )`
@@ -140,4 +149,4 @@ A [detailed changelog of html5shiv](https://github.com/aFarkas/html5shiv/wiki) i
 
 ### Why is it called a *shiv*?
 
-The term **shiv** [originates](http://ejohn.org/blog/html5-shiv/) from [John Resig](https://github.com/jeresig), who was thought to have used the word for its slang meaning, *a sharp object used as a knife-like weapon*, intended for Internet Explorer. Truth be known, John probably intended to use the word [shim](http://en.wikipedia.org/wiki/Shim_(computing\)), which in computing means *an application compatibility workaround*. Rather than correct his mispelling, most developers familiar with Internet Explorer appreciated the visual imagery. And that, [kids](http://html5homi.es/), is [etymology](https://en.wikipedia.org/wiki/Etymology).
+The term **shiv** [originates](http://ejohn.org/blog/html5-shiv/) from [John Resig](https://github.com/jeresig), who was thought to have used the word for its slang meaning, *a sharp object used as a knife-like weapon*, intended for Internet Explorer. Truth be known, John probably intended to use the word [shim](http://en.wikipedia.org/wiki/Shim_(computing)), which in computing means *an application compatibility workaround*. Rather than correct his mispelling, most developers familiar with Internet Explorer appreciated the visual imagery. And that, [kids](http://html5homi.es/), is [etymology](https://en.wikipedia.org/wiki/Etymology).
