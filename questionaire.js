@@ -40,15 +40,14 @@ function Dimension(leftValue, rightValue, statements, number) {
         panel.find(".panel-heading").text(value);
         for (statement in statements) {
             var li = $("<li/>");
-            li.append($("<input/>", {
+            var label = $('<label/>', {
+                html: ' ' + statements[statement]
+            });
+            label.prepend($("<input/>", {
                 id: "stmt_" + value + statement,
                 type: "checkbox"
             }));
-            li.append(" ");
-            li.append($('<label/>', {
-                'for': "stmt_" + value + statement,
-                html: statements[statement]
-            }));
+            li.append(label);
             panel.find("ul").append(li);
         }
     }
