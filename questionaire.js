@@ -47,7 +47,7 @@ function Dimension(leftValue, rightValue, statements, number) {
             li.append(" ");
             li.append($('<label/>', {
                 'for': "stmt_" + value + statement,
-                text: statements[statement]
+                html: statements[statement]
             }));
             panel.find("ul").append(li);
         }

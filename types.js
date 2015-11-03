@@ -50,51 +50,51 @@ function Type(value1, value2, value3, value4) {
     }
     
     function createLegend(topelement, typeabbreviation) {
-    	topelement.find(".simple").append("<td><img src='img/dimensions/simple.png' height='50' alt='simple' title='" 
-    			+ dimensionsData["simple"].icondescription + "' /></td><td><b>" + attribute("simple") 
-    			+ ": </b> " + dimensionsData["simple"].description + "</td>");
-    	topelement.find(".powerful").append("<td><img src='img/dimensions/powerful.png' height='50' alt='powerful' title='" 
-    			+ dimensionsData["powerful"].icondescription + "' /></td><td><b>" + attribute("powerful") 
-    			+ ": </b>" + dimensionsData["powerful"].description + "</td>");
-    	topelement.find(".abstract").append("<td><img src='img/dimensions/abstract.png' height='50' alt='abstract' title='" 
-    			+ dimensionsData["abstract"].icondescription + "' /></td><td><b>" + attribute("abstract") 
-    			+ ": </b> " + dimensionsData["abstract"].description + "</td>");
-    	topelement.find(".concrete").append("<td><img src='img/dimensions/concrete.png' height='50' alt='concrete' title='" 
-    			+ dimensionsData["concrete"].icondescription + "' /></td><td><b>" + attribute("concrete") 
-    			+ ": </b> " + dimensionsData["concrete"].description + "</td>");
-    	topelement.find(".pragmatic").append("<td><img src='img/dimensions/pragmatic.png' height='50' alt='pragmatic' title='" 
-    			+ dimensionsData["pragmatic"].icondescription + "' /></td><td><b>" + attribute("pragmatic") 
-    			+ ": </b> " + dimensionsData["pragmatic"].description + "</td>");
-    	topelement.find(".idealistic").append("<td><img src='img/dimensions/idealistic.png' height='50' alt='idealistic' title='" 
-    			+ dimensionsData["idealistic"].icondescription + "' /></td><td><b>" + attribute("idealistic") 
-    			+ ": </b> " + dimensionsData["idealistic"].description + "</td>");
-    	topelement.find(".robust").append("<td><img src='img/dimensions/robust.png' height='50' alt='robust' title='" 
-    			+ dimensionsData["robust"].icondescription + "' /></td><td><b>" + attribute("robust") 
-    			+ ": </b> " + dimensionsData["robust"].description + "</td>");
-    	topelement.find(".technologic").append("<td><img src='img/dimensions/technologic.png' height='50' alt='technologic' title='" 
-    			+ dimensionsData["technologic"].icondescription + "' /></td><td><b>" + attribute("technologic") 
-    			+ ": </b> " + dimensionsData["technologic"].description + "</td>");
-    	
-    	if (typeabbreviation.charAt(0) == 's') {
-    		topelement.find(".powerful").hide();
-    	} else {
-    		topelement.find(".simple").hide();
-    	}
-    	if (typeabbreviation.charAt(1) == 'a') {
-    		topelement.find(".concrete").hide();
-    	} else {
-    		topelement.find(".abstract").hide();
-    	}
-    	if (typeabbreviation.charAt(2) == 'p') {
-    		topelement.find(".idealistic").hide();
-    	} else {
-    		topelement.find(".pragmatic").hide();
-    	}
-    	if (typeabbreviation.charAt(3) == 'r') {
-    		topelement.find(".technologic").hide();
-    	} else {
-    		topelement.find(".robust").hide();
-    	}
+        topelement.find(".simple").append("<td><img src='img/dimensions/simple.png' height='50' alt='simple' title='" 
+                + dimensionsData["simple"].icondescription + "' /></td><td><b>" + attribute("simple") 
+                + ": </b> " + dimensionsData["simple"].description + "</td>");
+        topelement.find(".powerful").append("<td><img src='img/dimensions/powerful.png' height='50' alt='powerful' title='" 
+                + dimensionsData["powerful"].icondescription + "' /></td><td><b>" + attribute("powerful") 
+                + ": </b>" + dimensionsData["powerful"].description + "</td>");
+        topelement.find(".abstract").append("<td><img src='img/dimensions/abstract.png' height='50' alt='abstract' title='" 
+                + dimensionsData["abstract"].icondescription + "' /></td><td><b>" + attribute("abstract") 
+                + ": </b> " + dimensionsData["abstract"].description + "</td>");
+        topelement.find(".concrete").append("<td><img src='img/dimensions/concrete.png' height='50' alt='concrete' title='" 
+                + dimensionsData["concrete"].icondescription + "' /></td><td><b>" + attribute("concrete") 
+                + ": </b> " + dimensionsData["concrete"].description + "</td>");
+        topelement.find(".pragmatic").append("<td><img src='img/dimensions/pragmatic.png' height='50' alt='pragmatic' title='" 
+                + dimensionsData["pragmatic"].icondescription + "' /></td><td><b>" + attribute("pragmatic") 
+                + ": </b> " + dimensionsData["pragmatic"].description + "</td>");
+        topelement.find(".idealistic").append("<td><img src='img/dimensions/idealistic.png' height='50' alt='idealistic' title='" 
+                + dimensionsData["idealistic"].icondescription + "' /></td><td><b>" + attribute("idealistic") 
+                + ": </b> " + dimensionsData["idealistic"].description + "</td>");
+        topelement.find(".robust").append("<td><img src='img/dimensions/robust.png' height='50' alt='robust' title='" 
+                + dimensionsData["robust"].icondescription + "' /></td><td><b>" + attribute("robust") 
+                + ": </b> " + dimensionsData["robust"].description + "</td>");
+        topelement.find(".technologic").append("<td><img src='img/dimensions/technologic.png' height='50' alt='technologic' title='" 
+                + dimensionsData["technologic"].icondescription + "' /></td><td><b>" + attribute("technologic") 
+                + ": </b> " + dimensionsData["technologic"].description + "</td>");
+        
+        if (typeabbreviation.charAt(0) == 's') {
+            topelement.find(".powerful").hide();
+        } else {
+            topelement.find(".simple").hide();
+        }
+        if (typeabbreviation.charAt(1) == 'a') {
+            topelement.find(".concrete").hide();
+        } else {
+            topelement.find(".abstract").hide();
+        }
+        if (typeabbreviation.charAt(2) == 'p') {
+            topelement.find(".idealistic").hide();
+        } else {
+            topelement.find(".pragmatic").hide();
+        }
+        if (typeabbreviation.charAt(3) == 'r') {
+            topelement.find(".technologic").hide();
+        } else {
+            topelement.find(".robust").hide();
+        }
     }
     
     function displayFurtherReading(panel) {
@@ -182,10 +182,14 @@ function Types() {
     }
 
     function showDesignType(type) {
-    	console.log("show type: " + type);
-    	
-    	//var permlinkVal = "http://design-types.net/result.html?type="+type+"&ukey="+getParameterByName("ukey");
-    	var permlinkVal = window.location.href;
+        console.log("show type: " + type);
+        
+        if (typesData[type.toLowerCase()] == null) {
+            console.log("design type incomplete or cannot be found; don't highlight anything");
+            return;
+        }
+        
+        var permlinkVal = window.location.href;
         $("#resultString").html("<strong>Result:</strong> Your design type is <strong>" + typesData[type.toLowerCase()].name +" (" + type + ")</strong>. <span style='float:right;'>Permlink: <input type='text' size='"+(permlinkVal.length+5)+"' name='permlink' value='"+permlinkVal+"' readonly></span>");
         
         if ($("#" + type.toLowerCase()).visible) {

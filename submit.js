@@ -88,7 +88,7 @@ function storeData() {
         robust5: localStorage["you.stmt_robust4"],
         robust6: localStorage["you.stmt_robust5"]
     }, function(data, status) {
-        localStorage['you.ukey'] = userKey;
+        localStorage['you.ukey'] = ukey;
         continueToResultPage(ukey, resulttype);
     }).fail(function(err) {
         console.log(err.responseText);
