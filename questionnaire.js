@@ -227,11 +227,7 @@ function Overlay(questionnaire) {
     $("#overlay .continue-submitting").click(function() {
         questionnaire.continueSubmitting();
     });
-    
-    function continueSubmitting() {
-        window.location.href='submit.html?type=' + window.questionnaire.getDesignType();
-    }
-    
+
     $("#overlay .show-result").click(function() {
         showResult();
     });
