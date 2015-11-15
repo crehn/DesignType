@@ -29,5 +29,6 @@ $(document).ready(function(){
     }
     
     drawTypesBarChart(resultType);
+
 });
 

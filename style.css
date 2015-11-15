@@ -244,6 +244,8 @@ footer {
   -webkit-border-radius: 40px;
   -moz-border-radius: 40px;
   border-radius: 40px;
+  border: 25px solid #F6A828 !important;
+  box-shadow: 0px 0px 25px #888888 !important;
 }
 
 #coat-of-arms {
