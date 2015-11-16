@@ -111,7 +111,7 @@ function Type(value1, value2, value3, value4) {
     }
     
     function attribute(value) {
-        return '<a class="dont-print-url" id="tt_' + value + '" href="dimensions.html?dimension=' + value + '">' + value.capitalize() + '</a> ';
+        return '<a class="dont-print-url" href="dimensions.html?dimension=' + value + '">' + value.capitalize() + '</a> ';
     }
     
     function arrayToUl(array) {
