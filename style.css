@@ -178,97 +178,115 @@ footer {
 
 /* diagnostic boxes */
 .box {
-  fill: steelblue;
-  stroke: black;
-  stroke-width: 3;
+    fill: steelblue;
+    stroke: black;
+    stroke-width: 3;
 }
 
 .txt {
-  color: white;
-  stroke: white;
-  text-anchor: middle; 
-  font-size: 1.5em; 
-  font-family: Arial;
+    color: white;
+    stroke: white;
+    text-anchor: middle; 
+    font-size: 1.5em; 
+    font-family: Arial;
 }
 
 /* Result statistics */
 .bar {
-  fill: steelblue;
+    fill: steelblue;
 }
 
 .baractive {
-  fill: brown;
+    fill: brown;
 }
 
 .axis {
-  font: 10px sans-serif;
+    font: 10px sans-serif;
 }
 
 .axis path,
 .axis line {
-  fill: none;
-  stroke: #000;
-  shape-rendering: crispEdges;
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
 }
 
 .line {
-  fill: none;
-  stroke: steelblue;
-  stroke-width: 1.5px;
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 1.5px;
 }
 
 .x.axis path {
-  display: none;
+    display: none;
 }
 
 .typeicon {
-  margin-bottom: 2em;
+    margin-bottom: 2em;
 }
 
 .typelegend {
-  margin-top: 2em;
+    margin-top: 2em;
 }
 
 .legendicon {
-  margin-top: .3em;	
+    margin-top: .3em;	
 }
 
 .legendicon td {
-  padding: 10px 0px 0px 5px;
+    padding: 10px 0px 0px 5px;
 }
 
 .certificate {
-  margin-top: 1em;
-  padding: 2cm;
-  width: 21cm;
-  -webkit-border-radius: 40px;
-  -moz-border-radius: 40px;
-  border-radius: 40px;
-  border: 25px solid #F6A828 !important;
-  box-shadow: 0px 0px 25px #888888 !important;
+    font-size: 10pt;
+    width: 18cm;
+    border: 0.5cm solid #F6A828 !important;
+    border-radius: 1cm;
+    -webkit-border-radius: 1cm;
+    -moz-border-radius: 1cm;
+    padding: 1cm;
+}
+
+.certificate dl {
+    margin: 10px;
 }
 
 #coat-of-arms {
-  margin-bottom: 2em;
-  text-align: center;
+    text-align: center;
+    margin-bottom: 2em;
 }
 
 .certheader {
-  text-align: center;
-  font-size: 1.5em; 
-  font-weight: bold;
-  margin-top: 0.5em;
-  margin-bottom: 1em;
+    text-align: center;
+    font-size: 1.5em; 
+    font-weight: bold;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
 }
 
 .certificate .dimension-description {
-  margin-bottom:2em;
+    margin-bottom:2em;
 }
 
 .certificate .qr {
-  margin-top: 6em;
-  text-align: right;
-  font-size: 14pt;
-  vertical-align: bottom;
+    margin-top: 1cm;
+    text-align: right;
+    font-size: 14pt;
+    vertical-align: bottom;
+}
+
+@page {
+    margin: 1.5cm;
+}
+
+/* TODO: does not work properly */
+/* less than A4 = US Letter, P4, etc. */
+@media print and (max-height:22cm) {
+    .certificate {
+        padding-bottom: 0.5em;
+    }
+    .certificate .qr {
+        margin-top: 0cm;
+    }
 }
 
