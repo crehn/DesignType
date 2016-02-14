@@ -205,7 +205,10 @@ function &statementAsInt($statementKey) {
     // this is OK here, as we only do an INSERT and the alternative would be plenty of unnecessary variables
     static $zero = 0;
     static $one = 1;
-    return (getData($statementKey) === "true") ? $one : $zero;
+    if (getHttpPostData($statementKey) === "true")
+        return $one;
+    else 
+        return $zero;
 }
 
 storeData();
