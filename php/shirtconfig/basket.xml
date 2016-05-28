@@ -1,0 +1,9 @@
+<basket xmlns:xlink="http://www.w3.org/1999/xlink"
+xmlns="http://api.spreadshirt.net">
+    <!--optional in case shop checkout shall be used-->
+    <!-- 
+    <user id="42" xlink:href="http://api.spreadshirt.net/v1/users/42"/>
+    <shop id="1111559" />
+     -->
+     <shop id="1111559" />
+</basket>

@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="bower_components/jquery-ui/themes/ui-lightness/jquery-ui.min.css">
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="comments.css" />
-    <link rel="stylesheet" href="spreadshirt.css" />
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -27,7 +26,7 @@
 
     <title>How Do You Design Software?</title>
 </head>
-<body id="wholebody">
+<body>
 <div class="container page">
     <nav class="navbar navbar-inverse navbar-default" role="navigation">
         <div class="container">
@@ -132,296 +131,6 @@
         </div>
     </section>   
     <section>
-        <h1>Print your result!</h1>
-        <div class="text-center">
-            <p>Print out your result and put it on the office wall or on your door</p>
-            <a href="" class="certificate-link">
-                <img src="img/certificate.png" alt="print it">
-            </a>
-        </div>
-    </section>     
-    <section>
-        <h1>Print your individual shirt!</h1>
-        <div class="container container-box">
-            <div class="col-sm-6">
-	            <p>Print a shirt using your individual result.</p>
-	            <div id="shirt_display" class="shirt_bg shirt_bg_4">
-	               <img src="./php/shirtorders/test.png" width="99" height="143" class="overlay-img">
-	            </div>
-	        </div>
-	        <div class="col-sm-6">
-	            <p>Choose color and size and press checkout (shirt is normally below 20 &euro;).</p>
-					<div id="choose-product-color" class="loaded">
-						<div id="color_white" class="btn btn-rect square btn-clr-select color-img">
-							<img
-								src="//image.spreadshirtmedia.net/image-server/v1/appearances/1,width=40.jpg"
-								alt="white" title="white" class="small">
-						</div>
-						<div id="color_black" class="btn btn-rect square btn-clr-select color-img">
-							<img
-								src="//image.spreadshirtmedia.net/image-server/v1/appearances/2,width=40.jpg"
-								alt="black" title="black" class="small">
-						</div>
-						<div id="color_royalblue" class="btn btn-rect square btn-clr-select color-img">
-							<img
-								src="//image.spreadshirtmedia.net/image-server/v1/appearances/17,width=40.jpg"
-								alt="royal blue" title="royal blue" class="small">
-						</div>
-						<div id="color_navy" class="btn btn-rect square btn-clr-select color-img">
-							<img
-								src="//image.spreadshirtmedia.net/image-server/v1/appearances/4,width=40.jpg"
-								alt="navy" title="navy" class="small">
-						</div>
-						<div id="color_divablue" class="btn btn-rect square btn-clr-select color-img">
-							<img
-								src="//image.spreadshirtmedia.net/image-server/v1/appearances/388,width=40.jpg"
-								alt="diva blue" title="diva blue" class="small">
-						</div>
-						<div id="color_deepmint" class="btn btn-rect square btn-clr-select color-img">
-							<img
-								src="//image.spreadshirtmedia.net/image-server/v1/appearances/594,width=40.jpg"
-								alt="deep mint" title="deep mint" class="small">
-						</div>
-						<div id="color_kellygreen" class="btn btn-rect square btn-clr-select color-img">
-							<img
-								src="//image.spreadshirtmedia.net/image-server/v1/appearances/92,width=40.jpg"
-								alt="kelly green" title="kelly green" class="small">
-						</div>
-						<div id="color_red" class="btn btn-rect square btn-clr-select color-img">
-							<img
-								src="//image.spreadshirtmedia.net/image-server/v1/appearances/5,width=40.jpg"
-								alt="red" title="red" class="small">
-						</div>
-					</div>
-					<div id="choose-product-size" class="span6 loaded">
-						<div class="sizes-wrapper relative">
-							<div class="overlay-partial-above left horizontal">
-								<div>
-									<div id="size_s" class="btn btn-rect btn-size-select">S</div>
-									<div id="size_m" class="btn btn-rect btn-size-select">M</div>
-									<div id="size_l" class="btn btn-rect btn-size-select">L</div>
-									<div id="size_xl" class="btn btn-rect btn-size-select">XL</div>
-									<div id="size_xxl" class="btn btn-rect btn-size-select">XXL</div>
-									<div id="size_3xl" class="btn btn-rect btn-size-select">3XL</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- 
-					<div id="choose-country" class="loaded">
-						<select id="shipping_country" name="shipping_country">
-							<option value="AF">Afghanistan</option>
-							<option value="AX">Åland Islands</option>
-							<option value="AL">Albania</option>
-							<option value="DZ">Algeria</option>
-							<option value="AD">Andorra</option>
-							<option value="AO">Angola</option>
-							<option value="AI">Anguilla</option>
-							<option value="AG">Antigua and Barbuda</option>
-							<option value="AM">Armenia</option>
-							<option value="AW">Aruba</option>
-							<option value="AU">Australia</option>
-							<option value="AT">Austria</option>
-							<option value="AZ">Azerbaijan</option>
-							<option value="BS">Bahamas</option>
-							<option value="BH">Bahrain</option>
-							<option value="BD">Bangladesh</option>
-							<option value="BB">Barbados</option>
-							<option value="BY">Belarus</option>
-							<option value="BE">Belgium</option>
-							<option value="BJ">Benin</option>
-							<option value="BM">Bermuda</option>
-							<option value="BT">Bhutan</option>
-							<option value="BO">Bolivia</option>
-							<option value="BA">Bosnia and Herzegovina</option>
-							<option value="BW">Botswana</option>
-							<option value="BR">Brasil</option>
-							<option value="VG">British Virgin Islands</option>
-							<option value="BN">Brunei Darussalam</option>
-							<option value="BG">Bulgaria</option>
-							<option value="BF">Burkina Faso</option>
-							<option value="BI">Burundi</option>
-							<option value="KH">Cambodia</option>
-							<option value="CM">Cameroon</option>
-							<option value="CA">Canada</option>
-							<option value="CV">Cape Verde</option>
-							<option value="KY">Cayman Islands</option>
-							<option value="CF">Central African Republic</option>
-							<option value="TD">Chad</option>
-							<option value="CL">Chile</option>
-							<option value="CN">China</option>
-							<option value="CO">Colombia</option>
-							<option value="KM">Comoros</option>
-							<option value="CG">Congo</option>
-							<option value="CK">Cook Islands</option>
-							<option value="CR">Costa Rica</option>
-							<option value="HR">Croatia</option>
-							<option value="CY">Cyprus</option>
-							<option value="CZ">Czech Republic</option>
-							<option value="CD">Democratic Republic of the Congo</option>
-							<option value="DK">Denmark</option>
-							<option value="DM">Dominica</option>
-							<option value="EC">Ecuador</option>
-							<option value="EG">Egypt</option>
-							<option value="GQ">Equatorial Guinea</option>
-							<option value="ER">Eritrea</option>
-							<option value="EE">Estonia</option>
-							<option value="ET">Ethiopia</option>
-							<option value="FK">Falkland Islands</option>
-							<option value="FO">Faroe Islands</option>
-							<option value="FJ">Fiji</option>
-							<option value="FI">Finland</option>
-							<option value="FR">France</option>
-							<option value="GF">French Guiana</option>
-							<option value="PF">French Polynesia</option>
-							<option value="GA">Gabon</option>
-							<option value="GM">Gambia</option>
-							<option value="GE">Georgia</option>
-							<option value="DE">Germany</option>
-							<option value="GH">Ghana</option>
-							<option value="GI">Gibraltar</option>
-							<option value="GR">Greece</option>
-							<option value="GL">Greenland</option>
-							<option value="GD">Grenada</option>
-							<option value="GP">Guadeloupe</option>
-							<option value="GU">Guam</option>
-							<option value="GG">Guernsey</option>
-							<option value="GN">Guinea</option>
-							<option value="GW">Guinea-Bissau</option>
-							<option value="GY">Guyana</option>
-							<option value="HT">Haiti</option>
-							<option value="HN">Honduras</option>
-							<option value="HK">Hong Kong</option>
-							<option value="HU">Hungary</option>
-							<option value="IS">Iceland</option>
-							<option value="IN">India</option>
-							<option value="ID">Indonesia</option>
-							<option value="IE">Ireland</option>
-							<option value="IL">Israel</option>
-							<option value="IT">Italy</option>
-							<option value="CI">Ivory Coast</option>
-							<option value="JM">Jamaica</option>
-							<option value="JP">Japan</option>
-							<option value="JE">Jersey</option>
-							<option value="KZ">Kazakhstan</option>
-							<option value="KE">Kenya</option>
-							<option value="KI">Kiribati</option>
-							<option value="KR">Korea, Republic (South)</option>
-							<option value="KW">Kuwait</option>
-							<option value="LA">Laos</option>
-							<option value="LV">Latvia</option>
-							<option value="LS">Lesotho</option>
-							<option value="LI">Liechtenstein</option>
-							<option value="LT">Lithuania</option>
-							<option value="LU">Luxembourg</option>
-							<option value="MO">Macao</option>
-							<option value="MK">Macedonia, Republic</option>
-							<option value="MG">Madagascar</option>
-							<option value="MW">Malawi</option>
-							<option value="MY">Malaysia</option>
-							<option value="MV">Maldives</option>
-							<option value="ML">Mali</option>
-							<option value="MT">Malta</option>
-							<option value="MQ">Martinique</option>
-							<option value="MR">Mauritania</option>
-							<option value="MU">Mauritius</option>
-							<option value="YT">Mayotte</option>
-							<option value="MX">Mexico</option>
-							<option value="MD">Moldova</option>
-							<option value="MC">Monaco</option>
-							<option value="MN">Mongolia</option>
-							<option value="ME">Montenegro</option>
-							<option value="MS">Montserrat</option>
-							<option value="MA">Morocco</option>
-							<option value="MZ">Mosambique</option>
-							<option value="MM">Myanmar/Burma</option>
-							<option value="NA">Namibia</option>
-							<option value="NR">Nauru</option>
-							<option value="NP">Nepal</option>
-							<option value="NL">Netherlands</option>
-							<option value="AN">Netherlands Antilles</option>
-							<option value="NC">New Caledonia</option>
-							<option value="NZ">New Zealand</option>
-							<option value="NI">Nicaragua</option>
-							<option value="NE">Niger</option>
-							<option value="NG">Nigeria</option>
-							<option value="NO">Norway</option>
-							<option value="OM">Oman</option>
-							<option value="PK">Pakistan</option>
-							<option value="PW">Palau</option>
-							<option value="PA">Panama</option>
-							<option value="PG">Papua New Guinea</option>
-							<option value="PY">Paraguay</option>
-							<option value="PE">Peru</option>
-							<option value="PH">Philippines</option>
-							<option value="PL">Poland</option>
-							<option value="PT">Portugal</option>
-							<option value="PR">Puerto Rico</option>
-							<option value="QA">Qatar</option>
-							<option value="RE">Réunion</option>
-							<option value="RO">Romania</option>
-							<option value="RU">Russia</option>
-							<option value="RW">Rwanda</option>
-							<option value="KN">Saint Kitts and Nevis/St. Christopher</option>
-							<option value="LC">Saint Lucia</option>
-							<option value="MF">Saint Martin</option>
-							<option value="PM">Saint Pierre and Miquelon</option>
-							<option value="VC">Saint Vincent and the Grenadines</option>
-							<option value="SM">San Marino</option>
-							<option value="ST">São Tomé and Príncipe</option>
-							<option value="SA">Saudi Arabia</option>
-							<option value="SN">Senegal</option>
-							<option value="RS">Serbia</option>
-							<option value="SC">Seychelles</option>
-							<option value="SL">Sierra Leone</option>
-							<option value="SG">Singapore</option>
-							<option value="SK">Slovakia</option>
-							<option value="SI">Slovenia</option>
-							<option value="SB">Solomon Islands</option>
-							<option value="ZA">South Africa</option>
-							<option value="ES">Spain</option>
-							<option value="LK">Sri Lanka</option>
-							<option value="SH">St. Helena</option>
-							<option value="SR">Suriname</option>
-							<option value="SZ">Swaziland</option>
-							<option value="SE">Sweden</option>
-							<option value="CH">Switzerland</option>
-							<option value="TW">Taiwan</option>
-							<option value="TJ">Tajikistan</option>
-							<option value="TZ">Tanzania</option>
-							<option value="TH">Thailand</option>
-							<option value="TL">Timor-Leste</option>
-							<option value="TG">Togo</option>
-							<option value="TO">Tonga</option>
-							<option value="TT">Trinidad and Tobago</option>
-							<option value="TN">Tunisia</option>
-							<option value="TR">Turkey</option>
-							<option value="TM">Turkmenistan</option>
-							<option value="TC">Turks And Caicos Islands</option>
-							<option value="TV">Tuvalu</option>
-							<option value="UG">Uganda</option>
-							<option value="UA">Ukraine</option>
-							<option value="AE">United Arab Emirates</option>
-							<option value="GB">United Kingdom</option>
-							<option value="US">United States</option>
-							<option value="UZ">Usbekistan</option>
-							<option value="VU">Vanuatu</option>
-							<option value="VA">Vatican City</option>
-							<option value="VE">Venezuela</option>
-							<option value="VN">Vietnam</option>
-							<option value="WF">Wallis and Futuna</option>
-							<option value="ZM">Zambia</option>
-							<option value="ZW">Zimbabwe</option>
-						</select>
-					</div>
-					 -->
-	                <div id="checkout_area" class="loaded">
-	                   <input type="button" id="checkout" value="Checkout" class="btn btn-lg btn-primary btn_checkout" />
-	                </div>			
-				</div>
-			</div>
-	</section>      
-    <section>
         <h1>Statistics</h1>
         <div class="row">
             <div class="col-sm-12">
@@ -430,7 +139,16 @@
                 </div>
             </div>
         </div>
-    </section> 
+    </section>  
+    <section>
+        <h1>Print it!</h1>
+        <div class="text-center">
+            <p>Print out your result and put it on the office wall or on your door</p>
+            <a href="" class="certificate-link">
+                <img src="img/certificate.png" alt="print it">
+            </a>
+        </div>
+    </section>     
     <section>
         <h1>What's Next</h1>
         <ul>
@@ -439,7 +157,7 @@
             <li>Explore the other <a href="types.html">design types</a></li>
             <li>Learn more about the four <a href="dimensions.html">dimensions</a>: simple-vs-powerful, abstract-vs-concrete, pragmatic-vs-idealistic, and technologic-vs-robust</li>
             <li>Read more about the whole <a href="about.html">idea</a></li>
-            <li>Please give us <a class="feedback">feedback</a> on design types, the questionnaire and your result</li>
+            <li>Please give us <a href="mailto:email@design-types.net">feedback</a> on design types, the questionnaire and your result</li>
         </ul>
     </section>
     <section class="clearfix">
@@ -472,22 +190,17 @@
 		</div>  
     </section>  
     <footer>
-        Please give us <a class="feedback">Feedback</a> or discuss with us at <a href="https://www.xing.com/communities/groups/design-principles-patterns-types-08d2-1080100" target="_blank"><img src="./img/xing_logo2.png" alt="XING" height="25" width="25" /></a>
+        Please give us <a href="mailto:email@design-types.net">Feedback</a> or discuss with us at <a href="https://www.xing.com/communities/groups/design-principles-patterns-types-08d2-1080100" target="_blank"><img src="./img/xing_logo2.png" alt="XING" height="25" width="25" /></a>
     </footer>
 </div>
 
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
-<script>
-    var a = 'esign-';var b = 'ma';var c = 'es.net';var d = 'typ';var e = 'il@d';var f = 'ilto:ema';
-    $("a.feedback").attr('href', b+f+e+a+d+c);
-</script>
 <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="bower_components/d3/d3.min.js"></script>
 <script src="types_data.js"></script>
 <script src="types.js"></script>
 <script src="charts.js"></script>
-<script src="spreadshirt.js"></script>
 <script src="result.js"></script>
 <script src="comments.js"></script>
 

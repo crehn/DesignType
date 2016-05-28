@@ -1,0 +1,5088 @@
+/*Source from gridhelper980_47b5388bb8b535825cd967c53424a4c4_compressed*/
+@font-face {
+	font-family: MuseoSlab-300;
+	src: url("/Public/Media/fonts/Museo_Slab_300.eot");
+	src: url("/Public/Media/fonts/Museo_Slab_300.eot?#iefix")
+		format('embedded-opentype'),
+		url("/Public/Media/fonts/Museo_Slab_300.woff") format('woff'),
+		url("/Public/Media/fonts/Museo_Slab_300.ttf") format('truetype'),
+		url("/Public/Media/fonts/Museo_Slab_300.svg#svgFontName")
+		format('svg')
+}
+
+@font-face {
+	font-family: MuseoSlab-500;
+	src: url("/Public/Media/fonts/Museo_Slab_500.eot");
+	src: url("/Public/Media/fonts/Museo_Slab_500.eot?#iefix")
+		format('embedded-opentype'),
+		url("/Public/Media/fonts/Museo_Slab_500.woff") format('woff'),
+		url("/Public/Media/fonts/Museo_Slab_500.ttf") format('truetype'),
+		url("/Public/Media/fonts/Museo_Slab_500.svg#svgFontName")
+		format('svg')
+}
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,hr,pre,form,fieldset,legend,input,textarea button,p,blockquote,table,th,td
+	{
+	margin: 0;
+	padding: 0
+}
+
+* html body {
+	behavior:
+		url("//image.spreadshirtmedia.net/Public/Common/Js/csshover3.htc")
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0
+}
+
+fieldset,img,button {
+	border: 0
+}
+
+ul {
+	list-style: none
+}
+
+ol {
+	padding: 2.3em
+}
+
+embed,object {
+	outline: 0 none
+}
+
+body {
+	font-family: "Helvetica Neue", Arial, Helvetica, Corbel, Calibri,
+		"Trebuchet MS", sans-serif;
+	font-size: 14px;
+	line-height: 1.5em;
+	color: #404040
+}
+
+body.popup {
+	background: #FFF
+}
+
+body.popup>.container-box {
+	background: #fff;
+	-mox-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	padding: 20px 20px 0;
+	width: 650px
+}
+
+p,di {
+	margin-bottom: 1em
+}
+
+h1 {
+	font-family: MuseoSlab-500, Georgia, "Times New Roman", Times, serif;
+	font-size: 20px;
+	font-weight: normal;
+	line-height: 1.2em;
+	margin-bottom: 11px;
+	color: #413231
+}
+
+h2 {
+	display: block;
+	font-family: MuseoSlab-300, Georgia, "Times New Roman", Times, serif;
+	margin-bottom: 10px;
+	font-size: 18px;
+	font-weight: normal;
+	color: #5e5e5e;
+	line-height: 1.2em
+}
+
+h3 {
+	margin-bottom: 8px;
+	font-size: 16px;
+	font-weight: normal;
+	color: #404040
+}
+
+h4 {
+	display: inline;
+	font-size: 11px;
+	font-weight: normal;
+	line-height: 1.42em;
+	color: #413231
+}
+
+pre,code {
+	font-family: Consolas, "Courier New", Courier, fixed
+}
+
+strong {
+	font-weight: bold
+}
+
+em {
+	font-style: italic
+}
+
+del {
+	text-decoration: line-through
+}
+
+hr {
+	clear: both;
+	height: 0;
+	width: 100%;
+	background: #fff;
+	border: 0;
+	border-bottom: 1px solid #cac2be;
+	color: #cac3bf;
+	margin: 15px 0
+}
+
+td,th {
+	padding: 2px 4px;
+	vertical-align: top;
+	text-align: left
+}
+
+thead th {
+	background: #f2f2f2;
+	border-bottom: 2px solid #cbc4c0
+}
+
+label {
+	font-weight: bold;
+	vertical-align: middle
+}
+
+dt label {
+	font-weight: normal
+}
+
+input,textarea {
+	border: 1px solid #cac3bf;
+	color: #222;
+	background: #fff
+}
+
+input {
+	padding: 2px 0
+}
+
+input.checkbox,input.radio {
+	padding: 0;
+	border: 0;
+	background: transparent;
+	vertical-align: middle
+}
+
+input[type="text"],input[type="password"] {
+	height: 18px;
+	text-indent: 4px
+}
+
+input:hover,input:focus,input:active,textarea:hover,textarea:focus {
+	border-color: #9e948d
+}
+
+input,textarea,select,button {
+	font-family: "Helvetica Neue", Arial, Helvetica, Corbel, Calibri,
+		"Trebuchet MS", sans-serif;
+	font-size: 11px
+}
+
+fieldset select {
+	margin-top: 4px
+}
+
+a {
+	text-decoration: none;
+	outline: 0;
+	cursor: pointer;
+	color: #007f76
+}
+
+a:hover {
+	text-decoration: underline
+}
+
+a:focus,a:active {
+	color: #00b2a5
+}
+
+a.button:hover {
+	text-decoration: none
+}
+
+abbr,acronym,dfn {
+	font-style: normal;
+	border-bottom: 1px dotted #222;
+	cursor: help
+}
+
+abbr:hover,acronym:hover,dfn:hover {
+	color: #00b2a5
+}
+
+.container_10 {
+	clear: both;
+	margin: auto;
+	width: 1000px;
+	text-align: left
+}
+
+.container_10 .grid_1 {
+	width: 80px
+}
+
+.container_10 .grid_2 {
+	width: 180px
+}
+
+.container_10 .grid_3 {
+	width: 280px
+}
+
+.container_10 .grid_4 {
+	width: 380px
+}
+
+.container_10 .grid_5 {
+	width: 480px
+}
+
+.container_10 .grid_6 {
+	width: 580px
+}
+
+.container_10 .grid_7 {
+	width: 680px
+}
+
+.container_10 .grid_8 {
+	width: 780px
+}
+
+.container_10 .grid_9 {
+	width: 880px
+}
+
+.container_10 .grid_10 {
+	width: 980px
+}
+
+.container_10 .prefix_1 {
+	padding-left: 100px
+}
+
+.container_10 .prefix_2 {
+	padding-left: 200px
+}
+
+.container_10 .prefix_3 {
+	padding-left: 300px
+}
+
+.container_10 .prefix_4 {
+	padding-left: 400px
+}
+
+.container_10 .prefix_5 {
+	padding-left: 500px
+}
+
+.container_10 .prefix_6 {
+	padding-left: 600px
+}
+
+.container_10 .prefix_7 {
+	padding-left: 700px
+}
+
+.container_10 .prefix_8 {
+	padding-left: 800px
+}
+
+.container_10 .prefix_9 {
+	padding-left: 900px
+}
+
+.container_10 .suffix_1 {
+	padding-right: 100px
+}
+
+.container_10 .suffix_2 {
+	padding-right: 200px
+}
+
+.container_10 .suffix_3 {
+	padding-right: 300px
+}
+
+.container_10 .suffix_4 {
+	padding-right: 400px
+}
+
+.container_10 .suffix_5 {
+	padding-right: 500px
+}
+
+.container_10 .suffix_6 {
+	padding-right: 600px
+}
+
+.container_10 .suffix_7 {
+	padding-right: 700px
+}
+
+.container_10 .suffix_8 {
+	padding-right: 800px
+}
+
+.container_10 .suffix_9 {
+	padding-right: 900px
+}
+
+.container_10 .push_1 {
+	left: 100px
+}
+
+.container_10 .push_2 {
+	left: 200px
+}
+
+.container_10 .push_3 {
+	left: 300px
+}
+
+.container_10 .push_4 {
+	left: 400px
+}
+
+.container_10 .push_5 {
+	left: 500px
+}
+
+.container_10 .push_6 {
+	left: 600px
+}
+
+.container_10 .push_7 {
+	left: 700px
+}
+
+.container_10 .push_8 {
+	left: 800px
+}
+
+.container_10 .push_9 {
+	left: 900px
+}
+
+.container_10 .pull_1 {
+	left: -100px
+}
+
+.container_10 .pull_2 {
+	left: -200px
+}
+
+.container_10 .pull_3 {
+	left: -300px
+}
+
+.container_10 .pull_4 {
+	left: -400px
+}
+
+.container_10 .pull_5 {
+	left: -500px
+}
+
+.container_10 .pull_6 {
+	left: -600px
+}
+
+.container_10 .pull_7 {
+	left: -700px
+}
+
+.container_10 .pull_8 {
+	left: -800px
+}
+
+.container_10 .pull_9 {
+	left: -900px
+}
+
+.popup .container_10,.popup .container_10 .grid_10 {
+	width: 650px
+}
+
+.popup .container_10 {
+	padding: 20px 20px 0 20px
+}
+
+.popup .container_10 .grid_1 {
+	width: 56px
+}
+
+.popup .container_10 .grid_2 {
+	width: 122px
+}
+
+.popup .container_10 .grid_3 {
+	width: 188px
+}
+
+.popup .container_10 .grid_4 {
+	width: 254px
+}
+
+.popup .container_10 .grid_5 {
+	width: 320px
+}
+
+.popup .container_10 .grid_6 {
+	width: 386px
+}
+
+.popup .container_10 .grid_7 {
+	width: 452px
+}
+
+.popup .container_10 .grid_8 {
+	width: 518px
+}
+
+.popup .container_10 .grid_9 {
+	width: 584px
+}
+
+.grid_1,.grid_2,.grid_3,.grid_4,.grid_5,.grid_6,.grid_7,.grid_8,.grid_9,.grid_10
+	{
+	float: left;
+	position: relative;
+	margin-left: 10px;
+	margin-right: 10px
+}
+
+* html .grid_1,* html .grid_2,* html .grid_3,* html .grid_4,* html .grid_5,* html .grid_6,* html .grid_7,* html .grid_8,* html .grid_9,* html .grid_10
+	{
+	overflow: hidden
+}
+
+.alpha {
+	margin-left: 0
+}
+
+.omega {
+	margin-right: 0
+}
+
+.grid_1_width {
+	width: 80px
+}
+
+.grid_2_width {
+	width: 180px
+}
+
+.grid_3_width {
+	width: 280px
+}
+
+.grid_4_width {
+	width: 380px
+}
+
+.grid_5_width {
+	width: 480px
+}
+
+.grid_6_width {
+	width: 580px
+}
+
+.grid_7_width {
+	width: 680px
+}
+
+.grid_8_width {
+	width: 780px
+}
+
+.grid_9_width {
+	width: 880px
+}
+
+.grid_10_width {
+	width: 980px
+}
+
+* html #sidebar,* html #content,* html .grid_10 {
+	overflow: hidden;
+	margin-left: 6px
+}
+
+#content {
+	position: relative;
+	z-index: 1
+}
+
+.clear {
+	clear: both
+}
+
+.clearfix:after {
+	clear: both;
+	content: ' ';
+	display: block;
+	font-size: 0;
+	line-height: 0;
+	visibility: hidden;
+	width: 0;
+	height: 0
+}
+
+.clearfix {
+	display: block
+}
+
+* html .clearfix {
+	height: 1%
+}
+
+.footerWrapper .mobile-only {
+	display: none
+}
+
+.is-mobile .footerWrapper .mobile-only {
+	display: block
+}
+
+body>.container-box {
+	padding-top: 32px
+}
+
+#tpl_home {
+	position: relative;
+	z-index: 1
+}
+
+#pageNavigation {
+	margin-bottom: 0;
+	width: auto
+}
+
+#navi-level-3 {
+	margin: auto;
+	line-height: 25px;
+	background: #eee;
+	box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.5);
+	position: relative;
+	z-index: 100
+}
+
+#navi-level-3 li {
+	float: left;
+	border-bottom: 0;
+	padding: 10px 0
+}
+
+#navi-level-3 li.current {
+	color: #007f76;
+	background: #fff;
+	border-bottom: 0
+}
+
+#navi-level-3 a {
+	display: block;
+	color: #431213;
+	font-size: 13px;
+	padding: 0 10px
+}
+
+.top-navi-list {
+	width: 1000px;
+	margin: auto
+}
+
+#navi-level-3 li a:active,#navi-level-3 a:hover,#navi-level-3 li.current a
+	{
+	color: #007f76
+}
+
+.navi-level-4.box_2,.tpl_knowledgebaseBoxLinks.box_3 {
+	border-right: 1px solid #f5f5f5;
+	margin-bottom: 0;
+	padding-bottom: 20px;
+	padding-left: 0
+}
+
+.tpl_knowledgebaseBoxLinks.box_3 {
+	padding-right: 10px
+}
+
+.navi-level-4 .box a,.navi-level-4 .box span {
+	display: block;
+	padding: 6px 8px 6px 12px
+}
+
+.navi-level-4 .box a.hide,.navi-level-4 .box span.hide {
+	display: none
+}
+
+.navi-level-4 .box li.disabled span {
+	background-image: none;
+	color: #BBB
+}
+
+.navi-level-4 li.current a {
+	color: #fff;
+	background: #00b2a5
+}
+
+.navi-level-4 li.current ul {
+	padding-left: 5px
+}
+
+.navi-level-4 li.current ul>li {
+	font-size: 12px
+}
+
+.navi-level-4 li.current li a {
+	color: #007f76;
+	font-weight: normal;
+	background: #fff
+}
+
+.navi-level-4 li.current li a.active {
+	background: #ededed;
+	background-image: none;
+	color: black
+}
+
+.navi-level-4 li.current li.current li a {
+	color: #007f76;
+	padding-left: 33px;
+	background: #fff
+		url("//image.spreadshirtmedia.net/Public/Common/images/arrow_right.png")
+		no-repeat 24px center
+}
+
+.navi-level-4 li.current li.current li a.active {
+	background: #00b2a5
+		url("//image.spreadshirtmedia.net/Public/Common/images/arrow_right_white.png")
+		no-repeat 24px center;
+	color: #fff
+}
+
+.navi-level-4 li.current li.current li.current li a {
+	padding-left: 44px;
+	background:
+		url("//image.spreadshirtmedia.net/Public/Common/images/menu_left_open_bg.gif")
+		no-repeat 36px center
+}
+
+.navi-level-4 li.current li.current li.current li.active a.active {
+	background: #00b2a5
+		url("//image.spreadshirtmedia.net/Public/Common/images/arrow_down_white.png")
+		no-repeat 34px center;
+	color: #fff
+}
+
+.navi-level-4 li a.active,.navi-level-4 li.active>a {
+	background: #ededed;
+	background-image: none;
+	color: black
+}
+
+.navi-level-4 li.active a.active,.navi-level-4 li.current a.active {
+	background: #ededed;
+	background-image: none;
+	color: black
+}
+
+.navi-level-4 li.current li.active a.active,.navi-level-4 li.current li.active>a
+	{
+	background: #ededed;
+	background-image: none;
+	color: black
+}
+
+.navi-level-4 li.current li.current li.active a.active,.navi-level-4 li.current li.current li.active>a
+	{
+	background: #00b2a5
+		url("//image.spreadshirtmedia.net/Public/Common/images/arrow_down_white.png")
+		no-repeat 22px center;
+	color: #fff
+}
+
+.navi-level-4 li.current li.current li.current li a.active,.navi-level-4 li.current li.current li.current li.active>a
+	{
+	padding-left: 44px;
+	color: #fff;
+	background: #00b2a5
+		url("//image.spreadshirtmedia.net/Public/Common/images/menu_left_current_bg.gif")
+		no-repeat 36px center
+}
+
+#navigation-path {
+	width: 980px;
+	margin: auto;
+	line-height: 28px
+}
+
+#country_selection:hover {
+	cursor: pointer
+}
+
+#country_selection .country {
+	background-repeat: no-repeat
+}
+
+#country_selection .country-header {
+	color: #b3b3b3;
+	font-size: 12px;
+	font-weight: bold;
+	margin: 0;
+	padding: 5px;
+	text-transform: uppercase
+}
+
+.country {
+	display: inline-block;
+	width: 25px;
+	height: 15px;
+	background:
+		url("//image.spreadshirtmedia.net/Public/Common/images/Icons/Flags/20/flags.png")
+		no-repeat
+}
+
+.country span {
+	display: none
+}
+
+.country.BE_nl {
+	background-position: 0 -20px !important
+}
+
+.country.BE_fr {
+	background-position: 0 -20px !important
+}
+
+.country.DK_dk {
+	background-position: 0 -60px !important
+}
+
+.country.DE_de {
+	background-position: 0 -140px !important
+}
+
+.country.ES_es {
+	background-position: 0 -260px !important
+}
+
+.country.EU_en {
+	background-position: 0 -80px !important
+}
+
+.country.FR_fr {
+	background-position: 0 -120px !important
+}
+
+.country.IE_en {
+	background-position: 0 -160px !important
+}
+
+.country.IT_it {
+	background-position: 0 -180px !important
+}
+
+.country.NL_nl {
+	background-position: 0 -200px !important
+}
+
+.country.NO_no {
+	background-position: 0 -220px !important
+}
+
+.country.PL_pl {
+	background-position: 0 -240px !important
+}
+
+.country.FI_fi {
+	background-position: 0 -100px !important
+}
+
+.country.SE_se {
+	background-position: 0 -280px !important
+}
+
+.country.GB_en {
+	background-position: 0 -300px !important
+}
+
+.country.AT_de {
+	background-position: 0 0 !important
+}
+
+.country.CA_us,.country.CA_fr {
+	background-position: 0 -40px !important
+}
+
+.country.US_us,.country.US_fr {
+	background-position: 0 -320px !important
+}
+
+.country.AU_en,.country.AU_us {
+	background-position: 0 -340px !important
+}
+
+.country.CH_de,.country.CH_it,.country.CH_fr {
+	background-position: 0 -360px !important
+}
+
+.country.BR_pt {
+	background-position: 0 -380px !important
+}
+
+#bottom {
+	background: #f5f5f5;
+	background: -moz-linear-gradient(top, #f5f5f5 0, #fff 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f5f5f5),
+		color-stop(100%, #fff) );
+	background: -webkit-linear-gradient(top, #f5f5f5 0, #fff 100%);
+	background: -o-linear-gradient(top, #f5f5f5 0, #fff 100%);
+	background: -ms-linear-gradient(top, #f5f5f5 0, #fff 100%);
+	background: linear-gradient(top, #f5f5f5 0, #fff 100%);
+	margin-top: 48px;
+	padding: 32px 0 25px;
+	position: relative;
+	z-index: 1
+}
+
+.full-onsite-text-box {
+	bottom: 18px;
+	color: #83766d;
+	height: 104px;
+	left: 50%;
+	margin-left: -414px;
+	position: absolute;
+	z-index: 100
+}
+
+.full-onsite-text-box a {
+	color: #463324 !important
+}
+
+.full-onsite-text-box a:hover {
+	text-decoration: underline
+}
+
+#footer,#group-bottom,#group-bottom,.full-footer-box,.full-onsite-text-box
+	{
+	width: 828px
+}
+
+.full-footer-box {
+	color: #83766d
+}
+
+#group-bottom {
+	margin: 0 auto
+}
+
+#footer {
+	clear: left
+}
+
+#footer li {
+	display: inline
+}
+
+#footer ul li {
+	border-right: 1px solid #cac3bf;
+	float: left;
+	line-height: 1.7em;
+	margin-right: 1em;
+	padding-right: 1em
+}
+
+#bottom-navi h2 {
+	color: #493829
+}
+
+#bottom-navi .last {
+	margin-right: 0
+}
+
+#bottom-navi li li {
+	float: none
+}
+
+#bottom-navi ul li a {
+	color: #4d3c2e;
+	line-height: 1.9em
+}
+
+#bottom-navi ul li a:hover {
+	color: #8f7c6d
+}
+
+#bottom-navi .external {
+	background:
+		url("//image.spreadshirtmedia.net/Public/Common/img/icons/icon_external-link-footer.png")
+		no-repeat right 45%;
+	padding-right: 12px
+}
+
+.single-col-box,.single-col-box hr,#bottom-navi li {
+	margin-right: 10px;
+	width: 196px;
+	overflow: hidden
+}
+
+#header .section,#bottom .section,.section-low-bottom,.single-col-box,.single-col-box hr,#bottom-navi li,.newsletter-sign-up-form input,.sign-up-link,.bookmarks-col-box
+	{
+	float: left
+}
+
+.newsletter-sign-up-form input {
+	height: 16px;
+	margin-right: 6px;
+	padding: 1px;
+	width: 146px
+}
+
+.sign-up-link {
+	float: left;
+	height: 20px;
+	width: 24px;
+	text-indent: -1000px
+}
+
+.sign-up-link a:link,.sign-up-link a:active,.sign-up-link a:visited,.sign-up-link a:hover
+	{
+	background:
+		url("//image.spreadshirtmedia.net/Public/Common/img/go-button-2.png")
+		no-repeat;
+	float: left;
+	height: 20px;
+	text-indent: -1000px;
+	width: 24px
+}
+
+.system-error,.system-message {
+	display: block;
+	font-size: 1.1em;
+	line-height: 1.42;
+	margin-bottom: 16px;
+	padding: 10px 8px 10px 28px
+}
+
+.system-error {
+	background:
+		url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAABAlBMVEX/7e3YOzvqQEDhPT3uQUHzQkLlPz/dPDzROTn6RUX3RETUOjq2REbNz9rP3enSOTnpPz/gPT20NTXePT3tQUHMODjNODjKvce1Ozy8a2/FNTXiPj7Kwcz0Q0PTOjrBNDTHrbbZPDy3S028Zmq+cnezMjLN0d27YGPZOzvGqLHEmKDJNjbJuMLMyta5MjLfPDzGpq+2MTHP4e7kPj7oPz/ANDTR6PXO2ufAf4XR7PrnPz+6XWG6W160OTq6MjL4RETDNTW1Pj/kPz/Ci5HCjZTQODi3MTHbOzvpQEDCNDTUOTnFn6e7MjK4MjLzQ0PS7/3MNze4UlXDlJu+MzPKNzfS8f8e3YyhAAAAVnRSTlP/////////////////////////////////////////////////////////////////////////////////////////////////////////////////AEpNbNkAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAAyklEQVQoz12Px1YCURBEqyczkZyzZBWMoIICZjKi7/9/hR5HWVCLvn3uqgriKPDP/aJWnZ68uv/C+fKu1fFNK10ORD6qh37zuX3xRd+OmGYhHi+Y5jqbYtF5U1U1DIQZvSaLYURRlByQYyhdF+LxQZKkGBBjSKU8RP1Z07QKUGFoszOI6ocsywQQQ146EHenuq5TMkmMub2BGKQNoiJQJKJS2y92cWtYXiLhWdYkE1TfRbMG5+c7c/U3zhldrp7e7fJhrRDueaoRfHsCDyn/LdA+UgAAAABJRU5ErkJggg==")
+		no-repeat scroll 8px 9px #ffeae4;
+	border: 3px solid #ff4646;
+	color: #ff4646
+}
+
+.system-message {
+	background:
+		url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAdlJREFUeNqkUzlLA1EQ/jaJ8UpUFA+MV2ElBAQrIWAhWPoDLARBBG0FURTUTvAHiIVgY3ottbRTbCxE0iiRIB7E6Hplj6zf7GaTF03ng29n9r2Zb443T3McB/9Zod8b2tRmmGKOSBAjRCtxRlwQO05yPVNhr2ZA5zjFATr644jQr7EZCNYAHzng8xXIpPjBAkmSfwjoPEZxjN6hMNp7q+f7/gI83wHZ+y2SrJQI6Byhfo2BeAwtnZ5xoQDYhqcHWVUg4Om2BdxeAnp2giQnxV3MM2oM0TbPQGDloS+PuxC9tC+rtVu+q2oGp4yeQENTObr5TUdmoDFGbQOz+NXv1Lmc9/i7w6ipLUeg1DcmS7bR9cO//QjXCcGgX0I9HJuOpgfq0eVk2dgtwayEpslJxCe4wfdXuU61XllGsRz1zMzLSdonOMF7Vjk0oG9Pl/xd3VQIvnQhlYG68pvYx59LdPQ1u71w2ETL8qTbasYJhTwp6+WBg/U2w2vcd3eopCkWoXNQjLx3C3Lv0nmB6O5ckPT1SZyPxFl8/RKEZI+preEpbeCDE1uwK5H/BHKPnMbcEc1nq74F5T3sIhAcdSNL2kJgW1LzkvoOqhIoRDGKruJrzNDxqprdjwADALIk+B0Brqb+AAAAAElFTkSuQmCC")
+		no-repeat scroll 8px 9px #d2f1ff;
+	border: 3px solid #0060a1;
+	color: #0060a1
+}
+
+#check-js {
+	width: 100%;
+	padding: 0;
+	margin: 0 0 8px;
+	background-color: #ffeae4;
+	height: 76px;
+	border-bottom: 1px solid #cac3bf
+}
+
+#check-js a {
+	color: #ff4646;
+	font-size: .7em;
+	font-weight: normal;
+	text-decoration: underline
+}
+
+#check-js a:hover {
+	color: #ff7b7b;
+	text-decoration: underline
+}
+
+#check-js .js-error {
+	margin: 0 auto;
+	position: relative;
+	text-align: left;
+	padding-top: 8px;
+	width: 980px
+}
+
+#check-js .js-error p {
+	background:
+		url("//image.spreadshirtmedia.net/Public/Common/images/Icons/icon_exclamation.png")
+		no-repeat scroll 0 9px;
+	padding: 10px 8px 10px 24px;
+	font-size: 1.5em;
+	font-weight: bold;
+	color: #ff4646
+}
+
+dl#payments-icons dt,dl#awards-icons dt,dl#social-bookmarks dt,.full-footer-box p strong
+	{
+	color: #493829;
+	font-weight: bold;
+	font-size: 13px
+}
+
+dl#payments-icons dd {
+	float: left;
+	margin: 6px 2px 0 0
+}
+
+dl#awards-icons dd,dl#social-bookmarks dd {
+	float: left;
+	margin: 6px 7px 0 0
+}
+
+dl#awards-icons dd.last a {
+	background:
+		url("//image.spreadshirtmedia.net/Public/Common/img/more-arrow.png")
+		no-repeat left 4px;
+	color: #493829;
+	padding-left: 8px;
+	font-weight: bold
+}
+
+.awards-col-box {
+	display: inline;
+	float: left;
+	margin-right: 36px
+}
+
+.payments-col-box {
+	display: inline;
+	float: left;
+	width: 246px
+}
+
+.bookmarks-col-box {
+	width: 160px;
+	display: inline;
+	float: left;
+	margin-right: 0
+}
+
+.bbb-logo-col-box {
+	width: 60px;
+	display: inline;
+	float: right;
+	margin-right: 0
+}
+
+#bottom-navi,.section.full-footer-box {
+	background:
+		url("//image.spreadshirtmedia.net/Public/Common/img/dashed-horizontal.png")
+		repeat-x left bottom;
+	padding-bottom: 1.5em;
+	margin-bottom: 1.5em
+}
+
+.red_herring,.deutsch_grundprice,.deutscher_internetpreis,.hp_business_innovation
+	{
+	float: left;
+	width: 21px;
+	height: 21px;
+	border: 1px solid #cac3bf
+}
+
+.red_herring {
+	background:
+		url("//image.spreadshirtmedia.net/Public/Common/images/sprites_externalIcons.png")
+		no-repeat 0 0
+}
+
+.deutsch_grundprice {
+	background:
+		url("//image.spreadshirtmedia.net/Public/Common/images/sprites_externalIcons.png")
+		no-repeat -21px 0
+}
+
+.deutscher_internetpreis {
+	background:
+		url("//image.spreadshirtmedia.net/Public/Common/images/sprites_externalIcons.png")
+		no-repeat -42px 0
+}
+
+.hp_business_innovation {
+	background:
+		url("//image.spreadshirtmedia.net/Public/Common/images/sprites_externalIcons.png")
+		no-repeat -63px 0
+}
+
+.icon_delicious,.stumbleupon,.myweb,.furl,.mister_wong {
+	float: left;
+	width: 16px;
+	height: 16px;
+	border: 1px solid #cac3bf;
+	cursor: pointer
+}
+
+.icon_delicious {
+	background:
+		url("//image.spreadshirtmedia.net/Public/Common/images/sprites_externalIcons.png")
+		no-repeat -134px 0
+}
+
+.stumbleupon {
+	background:
+		url("//image.spreadshirtmedia.net/Public/Common/images/sprites_externalIcons.png")
+		no-repeat -153px 0
+}
+
+.myweb {
+	background:
+		url("//image.spreadshirtmedia.net/Public/Common/images/sprites_externalIcons.png")
+		no-repeat -172px 0
+}
+
+.furl {
+	background:
+		url("//image.spreadshirtmedia.net/Public/Common/images/sprites_externalIcons.png")
+		no-repeat -191px 0
+}
+
+.mister_wong {
+	background:
+		url("//image.spreadshirtmedia.net/Public/Common/images/sprites_externalIcons.png")
+		no-repeat -210px 0
+}
+
+#ibox_w {
+	background-color: transparent;
+	height: 100%;
+	left: 0;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 100
+}
+
+#ibox_progress {
+	background:
+		url("data:image/gif;base64,R0lGODlhNgA3APMAAP///8rDv+Le3M/JxczGwvb19NvW0/f29fLw79jT0Obj4QAAAAAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/h1CdWlsdCB3aXRoIEdJRiBNb3ZpZSBHZWFyIDQuMAAh/hVNYWRlIGJ5IEFqYXhMb2FkLmluZm8AIfkECQoAAAAsAAAAADYANwAABMwQyEmrvTjrzbv/YCiOZGmeJZIQRIKgp8LOhAKTCE2/d7jqrEQvBKQNQcXZ8fMDCpedXJF3LBhYhgJGprMtCwPaQHtRBakWwWAgGF11BpOA1iYWTeHZQJTEi0VvNHElczN1IAd5LAMHJ2psJAdvBo1QlpeYmZqbnJ2eHI+HlqEahSyiR6YEqBSKBHuWrrAXspe1GKqsPbmla7pDpJ/Cw8TFxsfIm8GOviS8cnQjtyXTINXSfyLPhNEjy3LNyZ7fxdvF18Powubl4eLvPREAIfkECQoAAAAsAAAAADYANwAABM4QyEmrvTjrzbv/YCiOZGmeaKoWBkEYhVoWg+sOsSy2tmvool4PGBLaiCBe74f0HGq2weGCSLgSiKbkwDNMLQqjYiQYDAQmhNGVBQl6aJJ1nQhBb6X1EXQnDPJ6BCFvNnEjc0Z1g2aGI2prbVoaYUJjkhxVV5GXnJ2en6ChboyXZWcahC6NQKkEqxR9f02xGbSzPbIXra8yu6ikkqa8osTFxsfIyconwinNZHDM0SK2JdV8uCfXH74m3SLPzMDLnuHH38bbxOqi6Mbm5PEnEQAh+QQJCgAAACwAAAAANgA3AAAEzhDISau9OOvNu/9gKI5kaZ5oqq6sMAwCWwpETcSyONjEkOs83w9Es+GGHxcMmSsYaoYCSXkkFXa2gTRUrFVFTx7BAMyaxLZyTUhC10TdmynMI8NfX9EBuz4wOwdhBn5/hYaHiImKEggJNQkIixUKaAoZVEMIbgSRFnF5KY5uCRd8PT+bbxambCypBBefP6JopLF4mZudkpRilpITjY+7wMXGx8jJE5gozHA8oETQI6wn1WqnJtdc0yayI87euMqI4cXfxtvF6sDoxubk8SYRACH5BAkKAAAALAAAAAA2ADcAAATNEMhJq7046827/2AojmRpnmiqrqwwDAJbCkRNxLI42MSQ6zzfD0Sz4YYfFwzJNCmPzheUyJuKijVrZ2cTlrg1LwjcO5HFyeoJeyM9U++mfE6v2+/4vKpgqBkKGnE/BWeAF2xaKX08BAYYZ0OMNo9BkZIEGIhDizyOmVJIB2cHehMHiwakpausra4nCAk1CQisCpIKI4IjCJcEtVRGJbKXCSGQJL41x5XJyiGaJMSSxtCgJb2XwHm3jLlIuxWxs9s/0avI6M2r5+zXr/ArEQAh+QQJCgAAACwAAAAANgA3AAAEyxDISau9OOvNu/9gKI5kaZ5oqq6sMAwCWwpETcSyONjEkOs83w9Es+GGHxcMyTQpj84XlMibioo1a2dnE5a4NS8I3DuRxcnqCXsjPVPvpnxOr9vv+Dw+juRf2FoqgBlnSIUYhz+JFoNDjRh+P5F6lJWWl5iZTAUGNQYFblInBWegIY8jnTwEBkBdJqs2rmGwsQRXaiWqPK1XohkICTUJCBcHZwdDCrEKxqoGyT8ItgTFecK2CXrUNdvcetix2nnTttZ5y6vNlcHD5yIRACH5BAkKAAAALAAAAAA2ADcAAATMEMhJq7046827/2AojmRpnmiqrqwwDAJbCkRNxLI42MSQ6zzfD0Sz4YYfFwzJNCmPzheUyJuKijVrZ2cTlrg1LwjcO5HFyeoJeyM9U++mfE6v2+/4PD6O5F/YWiqAGWdIhRiHP4kWg0ONGH4/kXqUlZaXmAAICTUJCJYKPDUKlAiiNp8zUiKcpwQJM2ogrjZfQSG0NbZdIa2nsG6yH6auqW6rIqGipBcFBjUGBUibncYVBWfSlM+iBpW0366V3DzelAdnB5YH3AbqmSgRACH5BAkKAAAALAAAAAA2ADcAAATMEMhJq7046827/2AojmRpnmiqrqwwDAJbCkRNxLI42MSQ6zzfD0Sz4YYfFwzJNCmPzheUyJuKijVrZ2cTlrg1LwjcO5HFyeoJeyM9U++mfE6v2+8iRKKWQOArCjw1Cn8SCII2fj9xFnuIBAmLahaPNj9nF5U1l0EXjoiROWxah4+KolIZgYKEhYaOfa6ys7S1TAUGNQYFswVnvFFLIrmCBk6TIJUmmCHKX50hxDzGM8gfB2cHa6kjB8QG2rYdjLKjtMyy6K7mtOTi7ycRACH5BAkKAAAALAAAAAA2ADcAAATMEMhJq7046827/2AojmRpnmiqrqwwDAJbCkRNxLI42MSQ6zzfD0Sz4X6IRC2B0LhgQ4CCV1NEOQiqrTl7HT9KLSEx4307YltpZxN+0rV1MBTWkknF2hmb5uK9I1NUVldYYUyFiYqLjI1XBQY1BgWOFgVsNQOUQ097E5FUBpxmGGlDmD2lYqdzF6A8oj95NxgHqAMHUZ0aB6AGuZXBwsPExcbHHbsoyiKznkSkQG0ntyPVJtchzifbI8wm38iJ4cLdxNnD6OXRxeTi7yURADsAAAAAAAAAAAA=")
+		no-repeat scroll 50% 45% #fff;
+	border: 1px solid #cac3bf;
+	height: 120px;
+	position: absolute;
+	width: 120px;
+	z-index: 105
+}
+
+#ibox_wrapper {
+	background: none repeat scroll 0 0 #f2f2f2;
+	border: 1px solid #cac3bf;
+	left: 0;
+	padding: 12px;
+	position: absolute;
+	text-align: left;
+	top: 0;
+	z-index: 1000
+}
+
+#ibox_content {
+	background-color: #fff;
+	height: 100%;
+	left: 0;
+	position: relative;
+	top: 0;
+	width: 100%
+}
+
+#ibox_close {
+	cursor: pointer;
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 3000
+}
+
+#ibox_close a {
+	background:
+		url("//image.spreadshirtmedia.net/Public/Common/images/Icons/icon_close.png")
+		no-repeat scroll 50% 50% transparent;
+	display: block;
+	height: 24px;
+	margin: 18px 18px 0 0;
+	text-indent: -999em;
+	width: 24px
+}
+
+#i_con {
+	left: 0;
+	padding: 24px;
+	position: relative;
+	top: 0
+}
+
+.ibox_content {
+	float: left;
+	width: 209px
+}
+
+.font_size_1 {
+	font-size: 10px
+}
+
+.font_size_2 {
+	font-size: 11px
+}
+
+.font_size_3 {
+	font-size: 12px
+}
+
+.font_size_4 {
+	font-size: 14px
+}
+
+.font_size_5 {
+	font-size: 18px
+}
+
+.font_size_6 {
+	font-size: 20px
+}
+
+.font_size_7 {
+	font-size: 22px
+}
+
+.line_height_1 {
+	line-height: 1.4em
+}
+
+.line_height_2 {
+	line-height: 1.42em
+}
+
+.relative {
+	position: relative
+}
+
+.absolute {
+	position: absolute
+}
+
+.position_bottom_right {
+	position: absolute;
+	bottom: 0;
+	right: 0
+}
+
+.position_top_left {
+	position: absolute;
+	top: 0;
+	left: 0
+}
+
+.position_bottom_left {
+	position: absolute;
+	bottom: 0;
+	left: 0
+}
+
+.position_top_right {
+	position: absolute;
+	top: 0;
+	right: 0
+}
+
+.button {
+	font-size: 14px;
+	font-weight: normal;
+	border-radius: 2px;
+	padding: 6px 18px;
+	display: inline-block;
+	color: white;
+	text-align: center;
+	cursor: pointer;
+	letter-spacing: .025em;
+	background: #eee
+}
+
+.button a,.button a:active,.button a:hover,.button a:focus {
+	text-align: center;
+	font-weight: bold;
+	color: #FFF !important
+}
+
+.no-cssgradients .button {
+	background: #c8c1bd
+}
+
+.no-cssgradients .button.prio3 {
+	background: #fff
+		url("//image.spreadshirtmedia.net/Public/Common/images/button_lightgrey.png")
+		repeat-x left center
+}
+
+.no-cssgradients .button.prio4 {
+	background: #fff
+		url("//image.spreadshirtmedia.net/Public/Common/images/button_lightgrey.png")
+		repeat-x left center
+}
+
+.no-cssgradients .button.inactive {
+	background: #ddd
+		url("//image.spreadshirtmedia.net/Public/Common/img/button_inactive.png")
+		repeat-x 0 50%
+}
+
+.no-cssgradients .button_push {
+	background: #437a31
+		url("//image.spreadshirtmedia.net/Public/Common/images/button_lightgrey.png")
+		repeat-x left center
+}
+
+.no-cssgradients .gradient {
+	background:
+		url("//image.spreadshirtmedia.net/Public/Common/img/bg_fadeout.png")
+		top right repeat-y
+}
+
+.button.large {
+	font-size: 16px;
+	padding: 6px 24px
+}
+
+.button.xlarge {
+	font-size: 14px;
+	letter-spacing: 0
+}
+
+input.button {
+	border: 0;
+	padding: 6px 18px
+}
+
+input.button.large {
+	padding: 9px 24px
+}
+
+input.button.xlarge {
+	letter-spacing: 0;
+	padding: 4px 11px 6px;
+	*padding: 4px 11px 6px 5px
+}
+
+:root input.button.xlarge {
+	padding: 4px 11px 6px 8px
+}
+
+*+html input.button {
+	padding: 0 1px;
+	border: 0;
+	height: 2em
+}
+
+*+html input.button.large {
+	margin-bottom: -2px
+}
+
+*+html input.button.xlarge {
+	border: 0;
+	height: 2.2em
+}
+
+* html input.button {
+	padding: 0 1px;
+	border: 0
+}
+
+.button.prio1 {
+	color: #fff;
+	background: #3aa99d;
+	border: 0
+}
+
+.button.prio1:hover,.button.prio1:focus,.button.prio1:active {
+	background: #41c0b0
+}
+
+.button.prio2 {
+	color: #fff;
+	background: #3aa99d
+}
+
+.button.prio2:hover,.button.prio2:focus,.button.prio2:active {
+	background: #41c0b0
+}
+
+.button.prio3 {
+	background: #ddd8d6;
+	color: #222 !important;
+	vertical-align: middle;
+	border: 1px solid #bbb;
+	font-size: 12px;
+	padding: 4px 20px
+}
+
+.button.prio3:hover {
+	background: #ccc
+}
+
+.button.prio4 {
+	background: #ddd8d6;
+	color: #222 !important;
+	vertical-align: middle;
+	border: 1px solid #bbb;
+	font-size: 12px;
+	padding: 4px 20px
+}
+
+.button.prio4:hover {
+	background: #ccc
+}
+
+.button.inactive,.button.inactive:hover {
+	border: 1px solid #d0d0d0;
+	background: #ddd;
+	background: -moz-linear-gradient(top, #e8e8e8 0, #dbdbdb 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e8e8e8),
+		color-stop(100%, #dbdbdb) );
+	background: -webkit-linear-gradient(top, #e8e8e8 0, #dbdbdb 100%);
+	background: -o-linear-gradient(top, #e8e8e8 0, #dbdbdb 100%);
+	background: -ms-linear-gradient(top, #e8e8e8 0, #dbdbdb 100%);
+	background: linear-gradient(top, #e8e8e8 0, #dbdbdb 100%);
+	cursor: default
+}
+
+.button_arrow {
+	background-image:
+		url("//image.spreadshirtmedia.net/Public/Common/images/go-button-2.png");
+	width: 24px;
+	height: 20px
+}
+
+.button_push {
+	background: #00b2a5;
+	background: -moz-linear-gradient(top, #f6f6f6 0, #ddd8d6 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f6f6f6),
+		color-stop(100%, #ddd8d6) );
+	background: -webkit-linear-gradient(top, #f6f6f6 0, #ddd8d6 100%);
+	background: -o-linear-gradient(top, #f6f6f6 0, #ddd8d6 100%);
+	background: -ms-linear-gradient(top, #f6f6f6 0, #ddd8d6 100%);
+	background: linear-gradient(top, #f6f6f6 0, #ddd8d6 100%);
+	border: 1px solid #cac3bf;
+	color: #222;
+	font-weight: bold;
+	height: 18px;
+	margin: 0 4px 0 0;
+	padding: 1px 0 0;
+	text-align: center;
+	width: 35px
+}
+
+.button_push a {
+	color: #222
+}
+
+.button_push:hover {
+	border-color: #9e948d;
+	color: #222
+}
+
+.button_push.selected,.button_push:hover,.button_push:active {
+	background: #f2f2f2;
+	background: -moz-linear-gradient(top, #00ad91 0, #00b2a5 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #00ad91),
+		color-stop(100%, #00b2a5) );
+	background: -webkit-linear-gradient(top, #00ad91 0, #00b2a5 100%);
+	background: -o-linear-gradient(top, #00ad91 0, #00b2a5 100%);
+	background: -ms-linear-gradient(top, #00ad91 0, #00b2a5 100%);
+	background: linear-gradient(top, #00ad91 0, #00b2a5 100%);
+	color: #fff
+}
+
+.button_push.selected a,.button_push a:hover,.button_push:focus a,.button_push:hover a,.button_push:active
+	{
+	color: #FFF
+}
+
+.no-cssgradients .button_push_hover,.no-cssgradients .button_push.selected,.no-cssgradients .button_push:hover,.no-cssgradients .button_push:active
+	{
+	background: #f2f2f2
+		url("//image.spreadshirtmedia.net/Public/Common/images/button_green.png")
+		repeat-x left center
+}
+
+.button_push.disabled {
+	background-image:
+		url("//image.spreadshirtmedia.net/Public/Common/img/size_na.png");
+	background-color: #f8f8f8;
+	border: 1px solid #d0d0d0;
+	color: #cac3bf
+}
+
+.button_push.disabled:hover {
+	border-color: #cac3bf;
+	cursor: default
+}
+
+input.file-upload {
+	border: 0;
+	margin: 24px 24px 32px 24px
+}
+
+.filter {
+	background: #f2f2f2;
+	border-top: 1px solid #cac3bf;
+	border-bottom: 1px solid #cac3bf;
+	padding: 10px;
+	margin-bottom: 15px
+}
+
+input.error,select.error {
+	border-color: #ff4646;
+	color: #222
+}
+
+input[disabled],select[disabled] {
+	background: #efefef;
+	color: #888
+}
+
+label.radio,label.checkbox {
+	display: block;
+	margin-left: 35px
+}
+
+label.inline {
+	display: inline-block;
+	font-weight: inherit
+}
+
+tr.odd {
+	background: #fff
+}
+
+tr.even,tr.summary {
+	background: #f2f2f2
+}
+
+tr.summary td {
+	font-weight: bold;
+	border-top: double #cbc4c0
+}
+
+th.middle,td.middle {
+	vertical-align: middle
+}
+
+th.bottom,td.bottom {
+	vertical-align: bottom
+}
+
+td.message {
+	border-width: 0
+}
+
+.padded td,.padded th {
+	padding: 10px 5px
+}
+
+.navi_tabs {
+	border-bottom: 1px solid #cac3bf;
+	margin-bottom: 20px
+}
+
+.navi_tabs li {
+	float: left;
+	border: 1px solid #cac3bf;
+	border-bottom: 0;
+	margin-left: 6px;
+	background: #fff
+}
+
+.navi_tabs li a {
+	display: block;
+	line-height: 27px;
+	padding: 0 8px
+}
+
+.navi_tabs li.current {
+	padding-bottom: 1px;
+	margin-bottom: -1px
+}
+
+.navi_tabs li.current a {
+	color: #00b2a5;
+	font-weight: bold
+}
+
+ul.bullets li {
+	background-position: 0 8px;
+	background-repeat: no-repeat;
+	padding-left: 10px
+}
+
+ul.bullets li>a {
+	font-size: 12px;
+	line-height: 1.2em
+}
+
+a.listMCE,li.listMCE,ul.listMCE li {
+	background-position: 0 .6em;
+	background-repeat: no-repeat;
+	background-image:
+		url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAMAAADXEh96AAAAaVBMVEX/yI3/zJP/4bz/8uX/3rbhqn/jqn//wHX/2Kz/vXv37OX7vX//9Oj/zJT/w4X/wH7/vG7/xof/nDf/4b3/oT7/xoz+8uXgfir/tW//xYjqhir3uX//oj3/oDr/y4b/wYLkgSr/wXfviSr6ee5zAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADJJREFUGNNj4GEQkeVjZmAQFWbh52aQYZJj51ViEOJQFJBUYJDnZBSUYGMQk5YSZ+UCAC2jAlRTXgb9AAAAAElFTkSuQmCC");
+	padding: .2em 0 .2em 14px
+}
+
+a.checklist,li.checklist,ul.checklist li {
+	background-repeat: no-repeat;
+	background-position: 0 .2em;
+	background-image:
+		url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAA9lBMVEX5+/lgpldpr1/4+/j5+/ifypqJzn6eyZmNzoCHzXyLz39ts2NqsmBqsGA/gzlZoFFaolJorl76/PmCy3j5/PiCyndAhTlco1SBynZkrFtnrVzW7NOFy3n4+veByXZaplFfpVapy6WixJ86fjTD4r5co1NRmkl2vWxjsFl5wG09gzfc79lhp1g8gDaGzHyKzn/Y7dWP0YJ+yHSNz4GDyXipzqWJzX33+vdcp1NXn0+FyHpHjkA9gTe527U6fTQ+gjg5fTNttWOeyJldpFRssmKgyZydyJm11rJttGN2vWudx5iQ0oSHzHt1vWyFyXqGyXk7fzX///+B4ek2AAAAUnRSTlP///////////////////////////////////////////////////////////////////////////////////////////////////////////8ArS0McQAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAACMSURBVCjPYwhEAwx4BVhNUQVYuZkUkQXYXQytGJUQAk68xlw6YgxAAQMVEN+NSZ+NkY8BqEXbV9M2MNBL0IxTwR4ozSCt7s9h4e4qpSfjbAPSzyCk4entx+NhIqyqywBxh4i8I5uPhJxAAAPMYcxqkqJG/MosCJcyW4tbOrAgO11Wy44B1S/mDLh9CwCU7kAAUIyKqwAAAABJRU5ErkJggg==");
+	padding: .2em 0 .2em 23px
+}
+
+li.more,ul.more li {
+	background-repeat: no-repeat;
+	background-position: left .55em;
+	background-image:
+		url("//image.spreadshirtmedia.net/Public/Common/img/arrow_link_more.gif");
+	padding: .2em 0 .2em 10px;
+	line-height: 1.4em
+}
+
+a.more,.link_more,.link_more.active {
+	background-repeat: no-repeat;
+	background-position: left 45%;
+	background-image:
+		url("data:image/gif;base64,R0lGODlhBAAHAJEAAAAAAP///56Ujf///yH5BAEAAAMALAAAAAAEAAcAAAII1C42aeyr1CgAOw==");
+	padding: 0 0 0 10px;
+	line-height: 1.4em;
+	display: inline-block;
+	font-weight: bold
+}
+
+a.more_less,.link_more_less,.link_more_less.active {
+	font-weight: normal
+}
+
+a.more.previous {
+	background-image:
+		url("//image.spreadshirtmedia.net/Public/Common/img/arrow_link_previous.gif")
+}
+
+.external {
+	background:
+		url("//image.spreadshirtmedia.net/Public/Common/img/icons/icon_external-link.png")
+		no-repeat 100% 45%;
+	padding-right: 12px
+}
+
+[class^="icon_"],[class*=" icon_"] {
+	background-repeat: no-repeat;
+	display: inline-block;
+	height: 19px;
+	line-height: 19px;
+	vertical-align: text-top;
+	width: 19px
+}
+
+.icon_search {
+	background-image:
+		url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAMAAAAMCGV4AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAFFQTFRFQTIxRTc2+/r6UUNC3dvb6+npr6io7+7uY1ZVpp+erKalbmJhcGVkZVlY/f39a2BfqqOj7ezso5ychHp6qKGgn5eXSjw7kYmI2dbW5uTk////9vmlvQAAABt0Uk5T//////////////////////////////////8AJzQLNQAAAHdJREFUeNpcjtkSgyAQBAcEVMQz5nD//0PdQRI189ZdXbULERuSMSlY4SC+R17vM9sGZQ0LBMAs3i8GCOQOaBm2QEdWX5Nr7f74RR5LvwIjOWo3zfOkXbzfw+f45ycqRxYbk956VllAvnMU28kUj+HC4t6D7AIMAOHlC4UVoeu7AAAAAElFTkSuQmCC");
+	height: 15px;
+	width: 15px
+}
+
+.icon_user {
+	background-image:
+		url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAXCAIAAABvSEP3AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAPVJREFUeNrMVdsORDAU1FLX8EE+3qOfkQhK3NkJm10p3WxXH3YSD4ZOz5zOgSRJYtyGhSuO4zsSaZpSQwf+ScWSPVjXlXPetu08z4wx3/c9z6OUKtQCiSzL6rqGBG7HcSzLMs9zNUdYNk3TmVRTQS0aumuapgaVs529wEteqiI7C5nT67dxtI7jCKTruuAVVAghQRAIZBiGytm1bfvoi21QVhmGYVmWY1i6rlNQQV6R/aIoBB4M+D3Nn+ao7/umaWR7ojS+AW1G147tf6pg6qqqutznjG4DkhlFEUb07QjVfilxNP5yTX8bHGGVnq8U0fIPeAgwAPqpj11CsmynAAAAAElFTkSuQmCC");
+	height: 23px;
+	width: 23px
+}
+
+.icon_edit {
+	background-image:
+		url("//image.spreadshirtmedia.net/Public/Common/img/icons/icon_edit.png")
+}
+
+.icon_edit:hover {
+	background-image:
+		url("//image.spreadshirtmedia.net/Public/Common/img/icons/icon_edit_h.png")
+}
+
+.icon_delete {
+	background-image:
+		url("//image.spreadshirtmedia.net/Public/Common/img/icons/icon_remove.png")
+}
+
+.icon_delete:hover {
+	background-image:
+		url("//image.spreadshirtmedia.net/Public/Common/img/icons/icon_remove_h.png")
+}
+
+.icon_zoom {
+	background-image:
+		url("//image.spreadshirtmedia.net/Public/Common/img/icons/icon_zoom.png")
+}
+
+.icon_zoom:hover,.icon_zoom.hover,*:hover>.icon_zoom,*.active>.icon_zoom
+	{
+	background-image:
+		url("//image.spreadshirtmedia.net/Public/Common/img/icons/icon_zoom_h.png")
+}
+
+.icon_designer {
+	background-image:
+		url("//image.spreadshirtmedia.net/Public/Common/img/icons/icon_confo.png")
+}
+
+.icon_designer:hover,*:hover>.icon_designer,*.selected>.icon_designer {
+	background-image:
+		url("//image.spreadshirtmedia.net/Public/Common/img/icons/icon_confo_h.png")
+}
+
+.icon_basket {
+	background-image:
+		url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAYCAYAAAD6S912AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAadJREFUeNqslTtLA0EUhWfHdTdmfWtE0UJ8FML2/gEbwdp/IFhrYZfORvSH+MBWGytBsFO2C4qFb2LjozCah2fCWZiMEx/ZPfBlNsPOufdObmacMAyFoSnwBoZAjuMEGAX9oAs4wOdzPoqiw3ixA8MZjPPgnnPqxTyogk9QASVQAx+ca+P3VwZ/Bxmw4eJjFmzRbBVE4JgLawzgc0EAesAws80a1e27dBeMNE5zlYkn/q+KZGTBbAb5/BezB3BrzPmS5QhudImlxnoCp00MT8C2MZdRhu2aYZxpLPXD7BpzsTq0NbE8vWRhMVQt0wcOLIbnbLFvGeolO5ZsFsEeOGILFcEmt2bB3EPXMKyxTF3TYAXsgDN2hSp3zVJy3TAwMrQpJEX2YbMuCFytOWWTDHXlfmmlQFq6vSpaV4OhFMmVldoeyhQy7NT7UGonTKuq96GX4h56pqEyK6dpmDRD32ZYTrvkJBmOKcNJw7CSwPBS/fXWwTIYACOg+4cFL2oRuAY3PLHvOF6oZ4fXqDJZAr1gjr14xZtQvVgAjzz2n/UIuEIbIn4JMACKQV+Fx/WhiwAAAABJRU5ErkJggg==");
+	vertical-align: middle;
+	width: 21px;
+	height: 25px
+}
+
+.icon_basket_big {
+	background-image:
+		url("//image.spreadshirtmedia.net/Public/Common/images/basket-empty-bg.png")
+}
+
+.icon_basket_big_active {
+	background-image:
+		url("//image.spreadshirtmedia.net/Public/Common/images/basket-not-empty-bg.png")
+}
+
+.icon_close_circle {
+	cursor: pointer;
+	background-image:
+		url("//image.spreadshirtmedia.net/Public/Common/images/Icons/im-icon-close-circle.png")
+}
+
+.icon_close_circle.white {
+	cursor: pointer;
+	background-image:
+		url("//image.spreadshirtmedia.net/Public/Common/images/Icons/im-icon-close-circle-white.png")
+}
+
+.link_list a {
+	padding: 4px 0 4px 23px
+}
+
+.link_list a .icon {
+	margin-right: 0;
+	margin-left: -23px
+}
+
+.rss {
+	background:
+		url("//image.spreadshirtmedia.net/Public/Common/images/Icons/icon_rss.png")
+		no-repeat scroll 0 45% transparent;
+	line-height: 1.6em;
+	padding: 2px 0 2px 22px
+}
+
+.icon {
+	background:
+		url("//image.spreadshirtmedia.net/Public/Common/images/sprites_icons.png")
+		30px 0 no-repeat;
+	border: 0;
+	float: left;
+	height: 16px;
+	margin-right: 1ex;
+	width: 16px
+}
+
+.save-as-pdf,.print-it {
+	float: left;
+	padding-right: 20px
+}
+
+.print,.print-it a,.top-link a,.save-as-pdf a {
+	background:
+		url("//image.spreadshirtmedia.net/Public/Common/images/Icons/printer.png")
+		no-repeat scroll 0 45% transparent;
+	padding: 2px 0 2px 22px
+}
+
+.top-link {
+	float: right
+}
+
+.top-link a {
+	background:
+		url("//image.spreadshirtmedia.net/Public/Common/images/Icons/icon_top.png")
+		no-repeat 0 45%
+}
+
+.save-as-pdf a {
+	background:
+		url("//image.spreadshirtmedia.net/Public/Common/images/Icons/save_as_pdf.png")
+		no-repeat 0 45%
+}
+
+.id {
+	background-position: 0 -20px;
+	width: 19px
+}
+
+.blog_this {
+	background-position: 0 -60px
+}
+
+.mailto_friend {
+	background-position: 0 -100px
+}
+
+.active {
+	background-position: 0 -140px
+}
+
+.create_product {
+	background-position: 0 -160px
+}
+
+.upload_design {
+	background-position: 0 -200px
+}
+
+.no_mail,.not_sent {
+	background-position: 0 -217px
+}
+
+.add_design {
+	background-position: 0 -200px
+}
+
+.sort_top {
+	background-position: 0 -240px
+}
+
+.pager_first {
+	background-position: 0 -320px
+}
+
+.textedit {
+	background-position: -20px -20px
+}
+
+.blog_this_inactive {
+	background-position: -20px -60px
+}
+
+.mailto_friend_inactive {
+	background-position: -20px -100px
+}
+
+.accept {
+	background-position: -20px -120px
+}
+
+.deactivated {
+	background-position: -20px -140px
+}
+
+.pager_first_inactive {
+	background-position: -20px -320px
+}
+
+.download {
+	background-position: -40px -80px
+}
+
+.users {
+	background-position: -40px -100px
+}
+
+.help {
+	background-position: -40px -120px
+}
+
+.status_1 {
+	background-position: -40px -140px
+}
+
+.status_2 {
+	background-position: -60px -140px
+}
+
+.status_3 {
+	background-position: -80px -140px
+}
+
+.product_edit {
+	background-position: -40px -160px
+}
+
+.add_to_shop {
+	background-position: -40px -180px
+}
+
+.send_mail {
+	background-position: -40px -220px
+}
+
+.sort_up {
+	background-position: -40px -240px
+}
+
+.pager_back {
+	background-position: -40px -320px
+}
+
+.pay {
+	background-position: -60px -20px
+}
+
+.grab {
+	background-position: -60px -40px
+}
+
+.pager_back_inactive {
+	background-position: -60px -320px
+}
+
+.price {
+	background-position: -80px -20px
+}
+
+.zoom {
+	background-position: -80px -60px
+}
+
+.buy {
+	background-position: -80px -80px
+}
+
+.edit_profile {
+	background-position: -80px -100px
+}
+
+.public_profile {
+	background-position: -80px -100px
+}
+
+.product_clone {
+	background-position: -80px -160px
+}
+
+.shops_overview {
+	background-position: -80px -180px
+}
+
+.bulk {
+	background-position: -80px -260px
+}
+
+.pager_next {
+	background-position: -80px -320px
+}
+
+.checkbox {
+	background-position: -100px -39px
+}
+
+.info {
+	background-position: -100px -120px
+}
+
+.pager_next_inactive {
+	background-position: -100px -320px
+}
+
+.blame {
+	background-position: -120px -20px
+}
+
+.delete {
+	background-position: -120px -80px
+}
+
+.cancel_off {
+	background-position: -120px -120px
+}
+
+.product_open {
+	background-position: -120px -160px
+}
+
+.designs {
+	background-position: -120px -200px
+}
+
+.mail_timer,.last_autmatic_sent {
+	background-position: -120px -219px
+}
+
+.pager_last {
+	background-position: -120px -320px
+}
+
+.function {
+	background-position: -140px -40px
+}
+
+.delete_inactive {
+	background-position: -140px -80px
+}
+
+.cancel,.cancel_off:hover {
+	background-position: -140px -120px
+}
+
+.shop_orders {
+	background-position: -140px -140px
+}
+
+.add_to_marketplace {
+	background-position: -140px -160px
+}
+
+.pager_last_inactive {
+	background-position: -140px -320px
+}
+
+.marketplace_designs {
+	background-position: -160px -160px
+}
+
+.design_download {
+	background-position: -160px -200px
+}
+
+.sort_bottom {
+	background-position: -160px -240px
+}
+
+.enlarge {
+	background-position: -180px -20px
+}
+
+.finance_overview {
+	background-position: -180px -100px
+}
+
+.shop_newsletter {
+	background-position: -180px -220px
+}
+
+.embedd {
+	background-position: -200px -40px
+}
+
+.galleryimg_add {
+	background-position: -200px -60px
+}
+
+.preview {
+	background-position: -200px -80px
+}
+
+.my_orders {
+	background-position: -200px -160px
+}
+
+.create_shop {
+	background-position: -200px -180px
+}
+
+.recommend_mail {
+	background-position: -200px -220px
+}
+
+.sort_down {
+	background-position: -200px -240px
+}
+
+.galleryimg_add_inactive {
+	background-position: -220px -60px
+}
+
+.customize_create {
+	background-position: -139px 0
+}
+
+.payment {
+	background:
+		url("//image.spreadshirtmedia.net/Public/Common/images/sprites_paymentMethods.png")
+		repeat scroll 0 0 transparent;
+	display: block;
+	float: left;
+	height: 18px;
+	margin: 0 2px 2px 0;
+	width: 30px;
+	border: 1px solid #cac3bf;
+	text-indent: -8000px
+}
+
+.ec {
+	background-position: 0 0
+}
+
+.visa {
+	background-position: -30px 0
+}
+
+.mastercard {
+	background-position: -60px 0
+}
+
+.amex {
+	background-position: -90px 0
+}
+
+.diners {
+	background-position: -120px 0
+}
+
+.jbc {
+	background-position: -150px 0
+}
+
+.bleu {
+	background-position: -180px 0
+}
+
+.ideal {
+	background-position: -210px 0
+}
+
+.solo {
+	background-position: -240px 0
+}
+
+.laser {
+	background-position: -270px 0
+}
+
+.prepayment {
+	background-position: -300px 0
+}
+
+.transfer {
+	background-position: -330px 0
+}
+
+.elba {
+	background-position: -360px 0
+}
+
+.netpay {
+	background-position: -390px 0
+}
+
+.check {
+	background-position: -420px 0
+}
+
+.paypal {
+	background-position: -452px 0;
+	width: 57px
+}
+
+.maestro {
+	background-position: -510px 0
+}
+
+.direct {
+	background-position: -540px 0
+}
+
+.ideal_banks {
+	background-position: -570px 0;
+	border: 0;
+	width: 100px
+}
+
+.visa_electron {
+	background-position: -670px 0
+}
+
+.pager {
+	margin: 20px 0
+}
+
+.pager a {
+	padding: 0 2px;
+	font-size: 13px
+}
+
+.pager a.current {
+	color: #00b2a5
+}
+
+.pager .left a,.pager .right a,.sort_top,.sort_up,.sort_down,.sort_bottom
+	{
+	text-indent: -5000em
+}
+
+.imageWrapper img {
+	float: left
+}
+
+.imageWrapper .zoom {
+	background-color: #fff;
+	right: -1px;
+	bottom: -1px;
+	margin-right: 0;
+	padding: 2px;
+	background-position: -78px -58px
+}
+
+.rating-list {
+	position: relative;
+	overflow: hidden;
+	width: 100px;
+	height: 16px;
+	background:
+		url("//image.spreadshirtmedia.net/Public/Common/img/rating-stars.png")
+		repeat-x left top;
+	list-style: none
+}
+
+.rating-list li {
+	float: left
+}
+
+.rating-list li a:hover {
+	background:
+		url("//image.spreadshirtmedia.net/Public/Common/img/rating-stars.png")
+		repeat-x left -20px;
+	z-index: 1;
+	left: 0
+}
+
+.rating-list li.current-rating {
+	display: block;
+	position: absolute;
+	z-index: 1;
+	height: 16px;
+	text-indent: -999em;
+	background:
+		url("//image.spreadshirtmedia.net/Public/Common/img/rating-stars.png")
+		repeat-x left -40px
+}
+
+.rating-list .one-star {
+	left: 0
+}
+
+.rating-list a.one-star:hover {
+	width: 20px
+}
+
+.rating-list .two-stars {
+	left: 20px
+}
+
+.rating-list a.two-stars:hover {
+	width: 40px
+}
+
+.rating-list .three-stars {
+	left: 40px
+}
+
+.rating-list a.three-stars:hover {
+	width: 60px
+}
+
+.rating-list .four-stars {
+	left: 60px
+}
+
+.rating-list a.four-stars:hover {
+	width: 80px
+}
+
+.rating-list .five-stars {
+	left: 80px
+}
+
+.rating-list a.five-stars:hover {
+	width: 100px
+}
+
+.rating-list li a,.rating-list li span {
+	display: block;
+	position: absolute;
+	width: 20px;
+	height: 16px;
+	text-decoration: none;
+	text-indent: -999em;
+	z-index: 20
+}
+
+.message {
+	margin-bottom: 20px;
+	padding: 10px 16px 10px 16px;
+	border: 1px solid #d6d1ce
+}
+
+.message a {
+	text-decoration: underline
+}
+
+.message.error {
+	background-color: #ffeae4;
+	border-color: #ff4646
+}
+
+.message.error,.message.error * {
+	color: #ff4646
+}
+
+.message.info {
+	background-color: #d2f1ff;
+	border-color: #0060a1
+}
+
+.message.info,.message.info * {
+	color: #0060a1
+}
+
+.message.success {
+	background-color: #e0fcf7;
+	border-color: #00806a
+}
+
+.message.success,.message.success * {
+	color: #00806a
+}
+
+.message.info_error {
+	border: 0;
+	margin: 0;
+	overflow: hidden;
+	padding: 0 9px 0 0
+}
+
+.message.info_error p {
+	background: #ffe8dc;
+	border: 2px solid #eb5f1f;
+	border-right: 0 none;
+	color: #000;
+	min-height: 18px;
+	padding: 10px
+}
+
+.box_1 {
+	margin-bottom: 20px
+}
+
+.box_1 h2 {
+	font-family: inherit;
+	color: #4d3c2e;
+	background: #e5e2e0
+		url("//image.spreadshirtmedia.net/Public/Common/img/bg_box_1_header.png")
+		left top;
+	line-height: 19px;
+	font-size: 13px;
+	margin-bottom: 0
+}
+
+.box_1 h2 span {
+	display: block;
+	background: #e5e2e0
+		url("//image.spreadshirtmedia.net/Public/Common/img/bg_box_1_header.png")
+		right top;
+	margin-left: 12px;
+	padding: 3px 0 5px
+}
+
+.box_1 .box {
+	border: 1px solid #d6d1ce;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	-moz-border-radius-bottomleft: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-khtml-border-radius-bottomleft: 5px;
+	-moz-border-radius-bottomright: 5px;
+	-webkit-border-bottom-right-radius: 5px
+}
+
+.box_1 .content,.box_2 .content {
+	padding-right: 10px;
+	padding-left: 10px
+}
+
+.box_2,.box_3 {
+	margin-bottom: 20px;
+	padding-left: 10px
+}
+
+.box_2 h3,.box_2 h3 span,.box_3 h3 {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	background: 0;
+	border: 0;
+	color: black
+}
+
+.box_2 .box {
+	border-top: 0
+}
+
+.box_3 h2 {
+	color: #4d3c2e;
+	font-size: 13px
+}
+
+.box_5 {
+	border: 1px solid #ffe4a1;
+	background: #fffac8
+		url("//image.spreadshirtmedia.net/Public/Common/img/bg_box_5_footer.png")
+		bottom repeat-x
+}
+
+.box_5 h2 {
+	color: #eb5f1f;
+	font-size: 13px
+}
+
+.box_5 .content {
+	padding: 10px
+}
+
+.gap_down_xsmall {
+	margin-bottom: 3px
+}
+
+.gap_down_small {
+	margin-bottom: 5px
+}
+
+.gap_down_medium {
+	margin-bottom: 10px
+}
+
+.gap_down {
+	margin-bottom: 15px
+}
+
+.gap_down_large {
+	margin-bottom: 20px
+}
+
+.gap_down_xlarge {
+	margin-bottom: 25px
+}
+
+.gap_down_xxlarge {
+	margin-bottom: 30px
+}
+
+.buffer_down_xsmall {
+	padding-bottom: 5px
+}
+
+.buffer_down_small {
+	padding-bottom: 5px
+}
+
+.buffer_down_medium {
+	padding-bottom: 10px
+}
+
+.buffer_down {
+	padding-bottom: 15px
+}
+
+.buffer_down_large {
+	padding-bottom: 20px
+}
+
+.buffer_down_xlarge {
+	padding-bottom: 25px
+}
+
+.buffer_box_medium {
+	padding: 10px
+}
+
+.offset_right_xsmall {
+	margin-right: 3px
+}
+
+.offset_right_small {
+	margin-right: 5px
+}
+
+.offset_right_medium {
+	margin-right: 10px
+}
+
+.offset_right {
+	margin-right: 15px
+}
+
+.offset_right_large {
+	margin-right: 20px
+}
+
+.offset_right_xlarge {
+	margin-right: 25px
+}
+
+.offset_left_xlarge {
+	margin-left: 25px
+}
+
+.dashed_bottom {
+	border-bottom: 1px dashed #cac2be
+}
+
+.dashed_right {
+	background:
+		url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAMCAMAAACUVSdlAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAJUExURf////Hv7p6UjU0SIJ0AAAAUSURBVHjaYmBiAEEIgLAZQRAgwAAA1QAQ+MWQ6AAAAABJRU5ErkJggg==")
+		repeat-y right top
+}
+
+.border_solid {
+	border: 1px solid #cac3bf
+}
+
+.border_solid .content {
+	padding: 10px
+}
+
+a.border_solid:hover,a.border_solid:active,a.border_solid:focus,a:active img.border_solid,a:hover img.border_solid,a:focus img.border_solid
+	{
+	border-color: #9e948d
+}
+
+.border_dashed_bottom {
+	background:
+		url("//image.spreadshirtmedia.net/Public/Common/img/dashed-horizontal.png")
+		repeat-x left bottom
+}
+
+.rounded {
+	-moz-border-radius: 5px;
+	-webkit-border: 5px;
+	-khtml-border-radius: 5px
+}
+
+.text_right {
+	text-align: right
+}
+
+.text_center {
+	text-align: center
+}
+
+.line_top {
+	line-height: 1em
+}
+
+.no_text {
+	text-indent: -8000px
+}
+
+.left {
+	float: left
+}
+
+.right {
+	float: right
+}
+
+.block {
+	display: block
+}
+
+.inline {
+	display: inline
+}
+
+.full_width {
+	width: 100%
+}
+
+.hidden {
+	display: none
+}
+
+.overflow_hidden {
+	overflow: hidden
+}
+
+.vertical_middle {
+	vertical-align: middle
+}
+
+.bold {
+	font-weight: bold
+}
+
+.box-sized {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box
+}
+
+input.box-sized {
+	height: 22px
+}
+
+.metatext,.inactive {
+	color: #9e948d;
+	font-weight: normal
+}
+
+.metatext {
+	font-size: 12px;
+	line-height: 1.3em;
+	padding: 4px 0 4px 0
+}
+
+.inactive {
+	font-size: 11px;
+	line-height: 1em
+}
+
+.code {
+	color: #333;
+	font-family: Consolas, "Courier New", Courier, fixed
+}
+
+.price_total {
+	color: #f2632b;
+	font-size: 16px;
+	font-weight: bold
+}
+
+.move_me {
+	cursor: move
+}
+
+.admin_only {
+	background: #fffac8;
+	border: 1px solid #cac3bf;
+	padding: 10px;
+	margin: 20px 0
+}
+
+.fade_out {
+	white-space: nowrap;
+	overflow: hidden;
+	position: relative
+}
+
+.gradient {
+	background: -moz-linear-gradient(left, rgba(255, 255, 255, 0) 0, #fff
+		100% );
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255,
+		255, 255, 0) ), color-stop(100%, #fff) );
+	background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0, #fff
+		100% );
+	background: -o-linear-gradient(left, rgba(255, 255, 255, 0) 0, #fff 100%
+		);
+	background: -ms-linear-gradient(left, rgba(255, 255, 255, 0) 0, #fff
+		100% );
+	background: linear-gradient(left, rgba(255, 255, 255, 0) 0, #fff 100% );
+	width: 42px;
+	position: absolute;
+	right: 0;
+	top: 0
+}
+
+.status {
+	background:
+		url("//image.spreadshirtmedia.net/Public/Common/img/status_sprite.png")
+		no-repeat;
+	padding-left: 12px;
+	font-weight: bold
+}
+
+.status.new {
+	background-position: 0 1px
+}
+
+.status.in_process {
+	background-position: 0 -19px
+}
+
+.status.waiting {
+	background-position: 0 -39px
+}
+
+.status.shipped {
+	background-position: 0 -59px
+}
+
+.status.shippedandpaid {
+	background-position: 0 -79px
+}
+
+.status.commission_cred {
+	background-position: 0 -99px
+}
+
+.status.canceled {
+	background-position: 0 -119px
+}
+
+.status.returned {
+	background-position: 0 -139px
+}
+
+.status.non_payment {
+	background-position: 0 -160px
+}
+
+.status.all {
+	background-position: 0 -179px
+}
+
+.blue_light,.color_1 {
+	color: #00a0e2
+}
+
+.color_2 {
+	color: #00ab8d
+}
+
+.color_3 {
+	color: #cc593e
+}
+
+.color_4 {
+	color: #83766d
+}
+
+.black {
+	color: #000
+}
+
+.white {
+	color: #FFF
+}
+
+.bg_1 {
+	background-color: #f2f2f2
+}
+
+.cssanimations .spin_circle {
+	background: transparent
+		url("//image.spreadshirtmedia.net/Public/Common/images/confo_load.png")
+		center no-repeat;
+	color: transparent !important;
+	width: 34px;
+	height: 34px
+}
+
+.cssanimations .spin_circle * {
+	color: transparent !important
+}
+
+.cssanimations .spin_circle_small {
+	background: transparent
+		url("//image.spreadshirtmedia.net/Public/Common/images/confo_load_small.png")
+		center no-repeat;
+	width: 19px;
+	height: 19px
+}
+
+#country_message {
+	background-color: #ffc;
+	border-bottom: solid 1px #fc9;
+	border-top: solid 1px #fc9;
+	color: #eb5f1f;
+	font-size: 14px;
+	padding: 10px;
+	position: relative;
+	text-align: center
+}
+
+#country_message a {
+	color: #eb5f1f;
+	text-decoration: underline
+}
+
+#country_message a:hover {
+	color: #f60
+}
+
+#country_message span#close {
+	cursor: pointer;
+	position: absolute;
+	right: 10px;
+	text-decoration: underline;
+	top: 4px
+}
+
+#tagcloud li {
+	display: inline
+}
+
+#dashboard #account table {
+	width: 212px;
+	margin-left: 12px
+}
+
+.color_field {
+	border: 1px solid #cac3bf;
+	cursor: pointer;
+	display: inline-block;
+	height: 18px;
+	text-indent: -999em;
+	width: 18px;
+	margin-top: -1px
+}
+
+#choose_buttons_navigation a {
+	padding: 0 2px;
+	margin-top: 4px;
+	position: relative;
+	top: 4px
+}
+
+#choose_buttons_navigation li {
+	padding: 3px 0
+}
+
+#choose_buttons_actions a {
+	color: #fff;
+	margin: 3px;
+	display: inline-block;
+	font-size: 13px;
+	font-weight: bold;
+	line-height: 22px;
+	padding: 0 1em
+}
+
+#choose_buttons_actions a.main-1 {
+	background: #fd7739;
+	background: -moz-linear-gradient(top, #fd7739 0, #e04a17 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fd7739),
+		color-stop(100%, #e04a17) );
+	background: -webkit-linear-gradient(top, #fd7739 0, #e04a17 100%);
+	background: -o-linear-gradient(top, #fd7739 0, #e04a17 100%);
+	background: -ms-linear-gradient(top, #fd7739 0, #e04a17 100%);
+	background: linear-gradient(left, #fd7739 0, #e04a17 100%);
+	border: 1px solid #fd7739
+}
+
+#choose_buttons_actions a.main-1:hover {
+	color: #ffdbca
+}
+
+#choose_buttons_actions a.main-2 {
+	background: #193fdb;
+	background: -moz-linear-gradient(top, #1863fe 0, #0145c9 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #1863fe),
+		color-stop(100%, #0145c9) );
+	background: -webkit-linear-gradient(top, #1863fe 0, #0145c9 100%);
+	background: -o-linear-gradient(top, #1863fe 0, #0145c9 100%);
+	background: -ms-linear-gradient(top, #1863fe 0, #0145c9 100%);
+	background: linear-gradient(top, #1863fe 0, #0145c9 100%);
+	border: 1px solid #193fdb
+}
+
+#choose_buttons_actions a.main-2:hover {
+	color: #bac7ff
+}
+
+#choose_buttons_actions a.main-3 {
+	background: #cb0de1;
+	background: -moz-linear-gradient(top, #ca0ddf 0, #9209a2 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ca0ddf),
+		color-stop(100%, #9209a2) );
+	background: -webkit-linear-gradient(top, #ca0ddf 0, #9209a2 100%);
+	background: -o-linear-gradient(top, #ca0ddf 0, #9209a2 100%);
+	background: -ms-linear-gradient(top, #ca0ddf 0, #9209a2 100%);
+	background: linear-gradient(top, #ca0ddf 0, #9209a2 100%);
+	border: 1px solid #cb0de1
+}
+
+#choose_buttons_actions a.main-3:hover {
+	color: #f8bbff
+}
+
+#choose_buttons_actions a.main-4 {
+	background: #d30d0d;
+	background: -moz-linear-gradient(top, #f82626 0, #bd2323 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f82626),
+		color-stop(100%, #bd2323) );
+	background: -webkit-linear-gradient(top, #f82626 0, #bd2323 100%);
+	background: -o-linear-gradient(top, #f82626 0, #bd2323 100%);
+	background: -ms-linear-gradient(top, #f82626 0, #bd2323 100%);
+	background: linear-gradient(top, #f82626 0, #bd2323 100%);
+	border: 1px solid #d30d0d
+}
+
+#choose_buttons_actions a.main-4:hover {
+	color: #ffb7b7
+}
+
+#choose_buttons_actions a.main-5 {
+	background: #aba29c;
+	background: -moz-linear-gradient(top, #bbb4ae 0, #a19992 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #bbb4ae),
+		color-stop(100%, #a19992) );
+	background: -webkit-linear-gradient(top, #bbb4ae 0, #a19992 100%);
+	background: -o-linear-gradient(top, #bbb4ae 0, #a19992 100%);
+	background: -ms-linear-gradient(top, #bbb4ae 0, #a19992 100%);
+	background: linear-gradient(top, #bbb4ae 0, #a19992 100%);
+	border: 1px solid #aba29c
+}
+
+#choose_buttons_actions a.main-5:hover {
+	color: #dddbda
+}
+
+#choose_buttons_actions a.main-6 {
+	color: #333;
+	border: 1px solid #666;
+	background: #fff
+}
+
+#choose_buttons_actions a.main-6:hover {
+	color: #8e8e8e
+}
+
+#choose_buttons_actions a.main-7 {
+	background: #198b01;
+	background: -moz-linear-gradient(top, #26b101 0, #0a5f00 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #26b101),
+		color-stop(100%, #0a5f00) );
+	background: -webkit-linear-gradient(top, #26b101 0, #0a5f00 100%);
+	background: -o-linear-gradient(top, #26b101 0, #0a5f00 100%);
+	background: -ms-linear-gradient(top, #26b101 0, #0a5f00 100%);
+	background: linear-gradient(top, #26b101 0, #0a5f00 100%);
+	border: 1px solid #198b01
+}
+
+#choose_buttons_actions a.main-7:hover {
+	color: #c6ffb6
+}
+
+#choose_buttons_actions a.main-8 {
+	background: #3b3b3b;
+	background: -moz-linear-gradient(top, #616161 0, #050505 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #616161),
+		color-stop(100%, #050505) );
+	background: -webkit-linear-gradient(top, #616161 0, #050505 100%);
+	background: -o-linear-gradient(top, #616161 0, #050505 100%);
+	background: -ms-linear-gradient(top, #616161 0, #050505 100%);
+	background: linear-gradient(top, #616161 0, #050505 100%);
+	border: 1px solid #3b3b3b;
+	color: #fff;
+	margin: 3px
+}
+
+#choose_buttons_actions a.main-8:hover {
+	color: #dbdbdb
+}
+
+#choose_buttons_actions a.main-9 {
+	background: #f6d02c;
+	background: -moz-linear-gradient(top, #ffec55 0, #eeb504 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffec55),
+		color-stop(100%, #eeb504) );
+	background: -webkit-linear-gradient(top, #ffec55 0, #eeb504 100%);
+	background: -o-linear-gradient(top, #ffec55 0, #eeb504 100%);
+	background: -ms-linear-gradient(top, #ffec55 0, #eeb504 100%);
+	background: linear-gradient(top, #ffec55 0, #eeb504 100%);
+	border: 1px solid #f6d02c
+}
+
+#choose_buttons_actions a.main-9:hover {
+	color: #5b5b5b
+}
+
+.no-cssgradients #choose_buttons_actions a.main-1 {
+	background: #fd7739
+		url("//image.spreadshirtmedia.net/Public/Shop/Images/ButtonSets/1/button-bg-main.png")
+		bottom left repeat-x
+}
+
+.no-cssgradients #choose_buttons_actions a.main-2 {
+	background: #193fdb
+		url("//image.spreadshirtmedia.net/Public/Shop/Images/ButtonSets/2/button-bg-main.png")
+		bottom left repeat-x
+}
+
+.no-cssgradients #choose_buttons_actions a.main-3 {
+	background: #cb0de1
+		url("//image.spreadshirtmedia.net/Public/Shop/Images/ButtonSets/3/button-bg-main.png")
+		bottom left repeat-x
+}
+
+.no-cssgradients #choose_buttons_actions a.main-4 {
+	background: #d30d0d
+		url("//image.spreadshirtmedia.net/Public/Shop/Images/ButtonSets/4/button-bg-main.png")
+		bottom left repeat-x
+}
+
+.no-cssgradients #choose_buttons_actions a.main-5 {
+	background: #aba29c
+		url("//image.spreadshirtmedia.net/Public/Shop/Images/ButtonSets/5/button-bg-main.png")
+		bottom left repeat-x
+}
+
+.no-cssgradients #choose_buttons_actions a.main-7 {
+	background: #198b01
+		url("//image.spreadshirtmedia.net/Public/Shop/Images/ButtonSets/7/button-bg-main.png")
+		bottom left repeat-x
+}
+
+.no-cssgradients #choose_buttons_actions a.main-8 {
+	background: #3b3b3b
+		url("//image.spreadshirtmedia.net/Public/Shop/Images/ButtonSets/8/button-bg-main.png")
+		bottom left repeat-x
+}
+
+.no-cssgradients #choose_buttons_actions a.main-9 {
+	background: #f6d02c
+		url("//image.spreadshirtmedia.net/Public/Shop/Images/ButtonSets/9/button-bg-main.png")
+		bottom left repeat-x
+}
+
+.no-cssgradients #shopselect h4 {
+	background: #e5e2e0
+		url("//image.spreadshirtmedia.net/Public/Common/img/bg_shopfocus_header.jpg")
+		repeat-x
+}
+
+.no-cssgradients #shopselect #shoplist {
+	background: #ebe8e6
+		url("//image.spreadshirtmedia.net/Public/Common/img/bg_box_3_footer.png")
+		repeat-x
+}
+
+.fakefile {
+	position: relative;
+	width: 132px;
+	height: 40px
+}
+
+.fakefile a.button {
+	position: absolute;
+	right: 0
+}
+
+.fakefile #uploadfile-button {
+	opacity: 0;
+	cursor: pointer;
+	filter: alpha(opacity = 0);
+	moz-opacity: 0;
+	position: absolute;
+	right: 0
+}
+
+.fakefile input[type="file"] {
+	width: 132px
+}
+
+#upload-banner-image {
+	margin-top: 5px
+}
+
+.delete-file {
+	float: left;
+	margin-left: 5px;
+	line-height: 16px;
+	height: 18px;
+	width: 20px;
+	padding: 0;
+	position: relative;
+	background-image:
+		url("//image.spreadshirtmedia.net/Public/Common/img/icons/icon_remove.png");
+	text-indent: -9999px
+}
+
+.myOrderArticleView {
+	min-height: 130px;
+	width: 130px;
+	padding: 5px
+}
+
+#shopselect {
+	background: none repeat scroll 0 0 #fff;
+	margin: 0 auto;
+	padding: 12px 10px;
+	position: relative;
+	z-index: 1;
+	width: 980px
+}
+
+#shopselect .grid_10 {
+	margin: 0
+}
+
+#shopselect select {
+	line-height: normal
+}
+
+#shopselect h4 {
+	background: #f2f2f2;
+	background: -moz-linear-gradient(top, #f2f2f2 0, #e6e2e1 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f2f2f2),
+		color-stop(100%, #e6e2e1) );
+	background: -webkit-linear-gradient(top, #f2f2f2 0, #e6e2e1 100%);
+	background: -o-linear-gradient(top, #f2f2f2 0, #e6e2e1 100%);
+	background: -ms-linear-gradient(top, #f2f2f2 0, #e6e2e1 100%);
+	background: linear-gradient(top, #f2f2f2 0, #e6e2e1 100%);
+	border-right: 1px solid #cac3bf;
+	text-indent: 10px;
+	width: 178px
+}
+
+#shopselect #shoplist {
+	padding: 0 20px;
+	background: #ebe8e6;
+	background: -moz-linear-gradient(top, #fff 0, #e4e1df 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fff),
+		color-stop(100%, #e4e1df) );
+	background: -webkit-linear-gradient(top, #fff 0, #e4e1df 100%);
+	background: -o-linear-gradient(top, #fff 0, #e4e1df 100%);
+	background: -ms-linear-gradient(top, #fff 0, #e4e1df 100%);
+	background: linear-gradient(top, #fff 0, #e4e1df 100%)
+}
+
+#shopselect,#shopselect * {
+	line-height: 30px
+}
+
+#shopselect li a,#shopselect li span {
+	display: block;
+	border-right: 1px dashed #cac3bf;
+	padding: 0 20px;
+	white-space: nowrap
+}
+
+#shopselect #shoplist.selected,#shopselect li.selected a,#shopselect li a:hover
+	{
+	background: #00b2a5 !important;
+	border-right: 1px solid #cac3bf;
+	border-left: 1px solid #cac3bf;
+	margin-left: -1px;
+	color: #fff
+}
+
+#shopselect li li a:hover,#shopselect li li a.selected {
+	border-right: 0;
+	border-left: 0;
+	margin-left: 0
+}
+
+#gotoShopLink {
+	position: absolute;
+	bottom: -45px;
+	right: 0;
+	float: right;
+	z-index: 10
+}
+
+#gotoShopLink .icon {
+	position: relative;
+	top: 8px
+}
+
+#addItmesToManualNL .scroll {
+	height: 400px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	padding-right: 12px;
+	width: 675px
+}
+
+#Confomat {
+	margin-top: -13px
+}
+
+* html #Confomat {
+	margin-top: 0
+}
+
+* html .prev-button {
+	background:
+		url("//image.spreadshirtmedia.net/Public/Common/images/prev-button-ie6.png")
+		no-repeat scroll 0 center transparent;
+	left: -1px
+}
+
+* html .next-button {
+	background:
+		url("//image.spreadshirtmedia.net/Public/Common/images/next-button-ie6.png")
+		no-repeat scroll 6px center transparent;
+	right: -1px
+}
+
+#producttypeDetailsImages {
+	width: 280px;
+	overflow: hidden
+}
+
+#producttypeDetailsImages_2 {
+	margin-left: -280px;
+	margin-top: -1px
+}
+
+#producttypeDetailsDescriptionAndSizing {
+	margin-left: 297px
+}
+
+#producttypeDetailsSizingTable table {
+	width: 468px
+}
+
+*+html #bulkEdit textarea.grid_3_width {
+	width: 278px
+}
+
+*+html #addToBasketLink input {
+	text-indent: 29px
+}
+
+.tpl_PaginationControl {
+	background: #f2f2f2;
+	padding: 4px 0;
+	margin-top: 0
+}
+
+.tpl_PaginationControl li {
+	display: inline;
+	font-size: 13px
+}
+
+.tpl_PaginationControl li .current {
+	color: #00b2a5
+}
+
+.tpl_PaginationControl .icon {
+	float: none;
+	margin: 0 0 -3px
+}
+
+.tpl_PaginationControl .listView {
+	padding: 0 4px 0 0
+}
+
+.tpl_PaginationControl .button_push {
+	font-size: 11px;
+	font-weight: bold;
+	padding: 1px 8px
+}
+
+.tpl_PaginationControl .results,.tpl_PaginationControl .select {
+	padding: 0 4px
+}
+
+.design_image,.designer_image {
+	border: 1px solid #d6d1ce;
+	margin: 0 20px 8px 8px
+}
+
+#tpl_list .headline {
+	font-size: 21px;
+	margin-bottom: .71em
+}
+
+#tpl_list .headline h1 {
+	display: inline
+}
+
+#tpl_list .headline p {
+	color: #493829;
+	display: inline;
+	font-weight: bold
+}
+
+#tpl_list .button_push {
+	height: auto;
+	margin: 0 0 0 4px;
+	padding: 0 8px;
+	width: auto
+}
+
+.box_listinghead {
+	background:
+		url("//image.spreadshirtmedia.net/Public/Common/img/bg_box_listinghead.png")
+		no-repeat scroll center bottom #e8e8e8;
+	padding: 4px 0 8px 0
+}
+
+.box_listinghead .ungrid_col_1 {
+	display: block;
+	float: left;
+	margin-left: 8px;
+	margin-right: 10px;
+	padding: 0;
+	line-height: .1em;
+	width: 132px
+}
+
+.box_listinghead .ungrid_col_2 {
+	display: block;
+	float: left;
+	margin: 10px 0 0 10px;
+	width: 420px
+}
+
+.box_listinghead .ungrid_col_3 {
+	display: block;
+	float: left;
+	margin: 10px 10px 0 10px;
+	width: 608px
+}
+
+.box_listinghead_top {
+	background: #e8e8e8
+		url("//image.spreadshirtmedia.net/Public/Common/img/top_box_listinghead.png")
+		no-repeat scroll center bottom;
+	height: 4px
+}
+
+.ungrid_col_3 .col_1 {
+	float: left;
+	width: 320px
+}
+
+.ungrid_col_3 .col_2 {
+	float: left;
+	width: 270px
+}
+
+.ungrid_col_3 dt {
+	clear: both;
+	width: 100px
+}
+
+.ungrid_col_3 dd {
+	padding-right: 5px;
+	width: 215px
+}
+
+.ungrid_col_3 dt,.ungrid_col_3 dd {
+	float: left;
+	margin: 2px 0
+}
+
+.addthis_custom_marginfix {
+	margin-top: 2px
+}
+
+.addthis_custom_marginfix_plusone {
+	margin-left: 15px;
+	margin-top: 3px
+}
+
+.addthis_custom_button_mail {
+	background-repeat: no-repeat;
+	background-image:
+		url("//image.spreadshirtmedia.net/Public/Common/images/Icons/icon_mail.png");
+	border: 0;
+	height: 20px;
+	margin: 2px 0 0 2px;
+	width: 20px
+}
+
+#designerLinks dd {
+	width: 165px
+}
+
+#listinghead_create {
+	width: 172px;
+	margin-top: 12px
+}
+
+.article_image {
+	margin: -10px 0 0 -10px;
+	width: 178px;
+	height: 178px
+}
+
+.article_wrapper {
+	overflow: hidden;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	-khtml-border-radius: 0
+}
+
+.article_wrapper .price_total {
+	font-size: 13px;
+	color: #222
+}
+
+.collapsed {
+	display: none
+}
+
+#designerLinksExpand,#designerLinksCollapse {
+	margin-left: 100px;
+	padding-right: 12px
+}
+
+.toggleDown,.toggleDown.active {
+	padding: 0 12px 0 0
+}
+
+#designerLinksExpand,.toggleDown,.toggleDown.active {
+	background-repeat: no-repeat;
+	background-position: right center;
+	background-image:
+		url("//image.spreadshirtmedia.net/Public/Common/images/arrow_down_blue.gif");
+	display: inline
+}
+
+#designerLinksCollapse,.toggleUp,.toggleUp.active {
+	background-repeat: no-repeat;
+	background-position: right center;
+	background-image:
+		url("//image.spreadshirtmedia.net/Public/Common/images/arrow_up_blue.gif")
+}
+
+#marketplace-product-description {
+	min-height: 365px
+}
+
+#marketplace-product-description .heightfix {
+	min-height: 310px
+}
+
+#choose-product-color a.currentSelection span img,#choose-product-color a:hover span img,#choose-product-color a:focus span img
+	{
+	border: 2px solid #00b2a5;
+	margin: -1px;
+	*margin: -1px -2px
+}
+
+#customizeHint {
+	background:
+		url("//image.spreadshirtmedia.net/Public/Common/img/bubble.gif")
+		no-repeat;
+	width: 264px;
+	height: 255px;
+	padding: 5px 20px 40px 40px;
+	position: absolute;
+	left: 367px;
+	top: 91px
+}
+
+#customize-it {
+	background: #fffac7
+		url("//image.spreadshirtmedia.net/Public/Common/img/bg_customize.gif")
+		no-repeat bottom;
+	cursor: pointer
+}
+
+#customize-it h2,#customizeHint h2 {
+	line-height: 2.4em;
+	margin-bottom: 0
+}
+
+#customizeHint,#marketplace_product_images {
+	z-index: 999
+}
+
+#marketplace_product_images ul li.current_selected_thumb {
+	margin: -1px 4px 0 -1px;
+	border: 2px solid #00b2a5
+}
+
+#choose-product-size #SizesButtons.button_bar_horizontal li {
+	display: inline;
+	height: 20px;
+	width: 41px
+}
+
+#choose-product-size #SizesButtons.button_bar_horizontal li a {
+	float: left
+}
+
+#choose-size label,#detail .price_total {
+	line-height: 1em
+}
+
+#basketAddForm .price_total {
+	font-size: 16px;
+	color: #222;
+	font-weight: normal
+}
+
+#basketAddForm .faq_links {
+	font-size: 10px;
+	line-height: 12px;
+	margin-top: 7px
+}
+
+#similar-design-products-list .price_total {
+	font-size: 13px
+}
+
+#addToBasketLink img {
+	margin: 5px 0 0 5px
+}
+
+#addToBasketLink input {
+	text-indent: 20px
+}
+
+#user_info {
+	width: 233px
+}
+
+.text_nowrap {
+	white-space: nowrap
+}
+
+#detail #size_error {
+	left: -154px;
+	top: -3px
+}
+
+#detail #size_error p {
+	margin: 0;
+	width: 120px
+}
+
+#choose-product-size.info_error {
+	background: #ffe8dc;
+	border: 0 none;
+	padding: 5px;
+	margin: -5px
+}
+
+#choose-product-size.info_error a {
+	text-decoration: none
+}
+
+ul.MenuBarSizes li {
+	float: left;
+	width: 40px;
+	border: 1px solid #cac3bf;
+	text-align: center;
+	padding: 2px 0;
+	margin-right: 4px;
+	background:
+		url("//image.spreadshirtmedia.net/Public/Common/img/spryMenubarActive.png")
+		scroll left top #ece9e7;
+	font-weight: bold;
+	cursor: pointer
+}
+
+ul.MenuBarSizes li.selected {
+	background:
+		url("//image.spreadshirtmedia.net/Public/Common/img/SpryMenuBarDownHover.gif")
+		scroll left top #ece9e7;
+	color: #fff
+}
+
+.border_solid.selected {
+	border: 2px solid #00b2a5;
+	margin-top: -1px
+}
+
+.autocomplete {
+	margin-top: -2px;
+	background: #fff;
+	position: relative;
+	z-index: 9999
+}
+
+.autocomplete ul {
+	border: 1px solid #cac3bf
+}
+
+.autocomplete ul li.selected {
+	background-color: #ffb
+}
+
+.autocomplete ul li {
+	padding: 2px 4px;
+	cursor: pointer
+}
+
+#p_keywordsWrapper {
+	position: relative;
+	z-index: 9998
+}
+
+.tax-option:disabled {
+	color: gray
+}
+
+.facets .facet_group {
+	display: block;
+	font-size: 13px;
+	padding-left: 10px
+}
+
+.facets .facet_entry_child>a {
+	padding: 0 30px;
+	*padding: 0;
+	*margin-left: 30px
+}
+
+.facets li.facet_entry_unselected a {
+	background-repeat: no-repeat;
+	background-position: 10px .5em;
+	background-image:
+		url("//image.spreadshirtmedia.net/Public/Common/images/arrow_right.png")
+}
+
+.facets li.current_parent:hover a.current_parent {
+	background-color: #f2f2f2
+}
+
+.facets .purple {
+	background-color: #6b3f7f
+}
+
+.facets .pink {
+	background-color: #fb4e81
+}
+
+.facets .red {
+	background-color: #b91816
+}
+
+.facets .orange {
+	background-color: #fa7a03
+}
+
+.facets .yellow {
+	background-color: #f7ef00
+}
+
+.facets .blue {
+	background-color: #32409a
+}
+
+.facets .turquoise {
+	background-color: #00ae9c
+}
+
+.facets .green {
+	background-color: #009a00
+}
+
+.facets .brown {
+	background-color: #664b2f
+}
+
+.facets .beige {
+	background-color: #efe4b3
+}
+
+.facets .white {
+	background-color: #fff
+}
+
+.facets .grey {
+	background-color: #e1e1e5
+}
+
+.facets .black {
+	background-color: #000
+}
+
+.facets .facet_entry>a,.facets .facet_entry_unselected>a,.facets .facet_entry_child>a
+	{
+	clear: both;
+	display: block;
+	line-height: 20px;
+	padding: 0 20px
+}
+
+.facets li.facet_entry_unselected:hover a,.facets li.facet_entry_child:hover a
+	{
+	background-color: #f2f2f2
+}
+
+.facets li.current a.current,.facets li.current_nested a.current_nested,.facets li.current:hover a.current,.facets li.current_nested:hover a.current_nested
+	{
+	background-repeat: no-repeat;
+	background-position: 9px .7em;
+	background-color: #00b2a5;
+	background-image:
+		url("//image.spreadshirtmedia.net/Public/Common/images/arrow_down_white_menu.png");
+	color: #fff
+}
+
+.facets li.current a.current,.facets li.current:hover a.current {
+	background-repeat: no-repeat;
+	background-position: 10px .5em;
+	background-color: #00b2a5;
+	background-image:
+		url("//image.spreadshirtmedia.net/Public/Common/images/arrow_right_white.png")
+}
+
+.facets li.current_parent a.current_parent,.facets li.current_parent:hover a.current_parent
+	{
+	background-repeat: no-repeat;
+	background-position: 7px .6em;
+	background-image:
+		url("//image.spreadshirtmedia.net/Public/Common/images/arrow_left.png")
+}
+
+*+HTML .facets li.current_child,*+HTML .facets li.current_child:hover {
+	*background: #00b2a5
+}
+
+.facets li.current_child a,.facets li.current_child:hover a {
+	background: #00b2a5;
+	color: #fff
+}
+
+.facet_reset {
+	clear: both;
+	float: right;
+	font-weight: bold;
+	line-height: 14px;
+	margin: 12px 8px 0 0
+}
+
+.facet_reset .icon {
+	margin-right: .5ex
+}
+
+.facet_reset a:hover .cancel_off {
+	background-position: -140px -120px
+}
+
+.facet_reset.cosy {
+	margin: 8px 8px 8px 0
+}
+
+#facet_colors {
+	padding-left: 8px
+}
+
+#facet_colors li {
+	display: block;
+	float: left;
+	margin: 0 3px 3px 0
+}
+
+#facet_colors li a {
+	background-color: transparent;
+	background-image: none;
+	border: 1px solid #cac3bf;
+	display: block;
+	float: left;
+	height: 16px;
+	padding: 0;
+	text-indent: -1000px;
+	width: 36px;
+	width: 28px
+}
+
+#facet_colors li a:hover {
+	border-color: #9e948d
+}
+
+#facet_colors li.current {
+	border: 1px solid #00b2a5
+}
+
+#facet_colors li.current a {
+	border-color: #fff
+}
+
+.ie_hack_to_align_dl {
+	width: 100%;
+	clear: left;
+	color: #fff;
+	border-color: #fff;
+	height: 0
+}
+
+.related_content {
+	padding-top: 3px
+}
+
+.related_content div {
+	margin-top: 5px
+}
+
+.related_content h5 {
+	color: #83766d;
+	font-size: 11px;
+	padding-right: 3px
+}
+
+.related_content ul li {
+	padding-right: 3px
+}
+
+.related_content ul li a {
+	color: #222;
+	text-decoration: none
+}
+
+.related_content ul,.related_content ul li,.related_content h5 {
+	display: inline
+}
+
+.related_content ul li,.related_content ul li a:active,.related_content ul li a:hover
+	{
+	color: #83766d
+}
+
+.small-elements li {
+	*height: 15px;
+	*padding-bottom: 5px
+}
+
+.assort_sizes th {
+	background: 0;
+	border: 0
+}
+
+.model_container {
+	height: 192px;
+	width: 192px
+}
+
+.zoom_in_image {
+	background:
+		url("//image.spreadshirtmedia.net/Public/Common/images/Icons/icon_zoom.png")
+		no-repeat scroll 50% 50% #fff;
+	border-color: #cac3bf;
+	border-style: solid;
+	border-width: 1px 0 0 1px;
+	bottom: -1px;
+	display: block;
+	height: 20px;
+	position: absolute;
+	right: -1px;
+	text-indent: -999em;
+	width: 20px
+}
+
+.zoom_in_image:hover {
+	border: 1px solid #9e948d;
+	bottom: -2px;
+	right: -2px
+}
+
+.prev-button,.next-button {
+	border: medium none !important;
+	cursor: pointer;
+	height: 32px;
+	position: absolute;
+	text-indent: -1000000px;
+	top: 157px;
+	width: 36px;
+	z-index: 1000
+}
+
+.prev-button {
+	background:
+		url("//image.spreadshirtmedia.net/Public/Common/images/prev-button.png")
+		no-repeat scroll 0 center transparent;
+	left: -1px
+}
+
+.next-button {
+	background:
+		url("//image.spreadshirtmedia.net/Public/Common/images/next-button.png")
+		no-repeat scroll 6px center transparent;
+	right: -1px
+}
+
+.prev-button:hover {
+	background:
+		url("//image.spreadshirtmedia.net/Public/Common/images/prev-button-hover.png")
+		no-repeat scroll 0 center transparent;
+	left: -1px
+}
+
+.next-button:hover {
+	background:
+		url("//image.spreadshirtmedia.net/Public/Common/images/next-button-hover.png")
+		no-repeat scroll 6px center transparent;
+	right: -1px
+}
+
+.product-image-zoom .prev-button,.product-image-zoom .next-button {
+	top: 428px
+}
+
+.product-image-zoom .prev-button {
+	background:
+		url("//image.spreadshirtmedia.net/Public/Common/images/prev-button.png")
+		no-repeat scroll 0 center transparent;
+	left: 12px
+}
+
+.product-image-zoom .next-button {
+	background:
+		url("//image.spreadshirtmedia.net/Public/Common/images/next-button.png")
+		no-repeat scroll 6px center transparent;
+	right: 14px
+}
+
+.product-image-zoom .prev-button:hover {
+	background-image:
+		url("//image.spreadshirtmedia.net/Public/Common/images/prev-button-hover.png")
+}
+
+.product-image-zoom .next-button:hover {
+	background-image:
+		url("//image.spreadshirtmedia.net/Public/Common/images/next-button-hover.png")
+}
+
+.pt_sizes_thumb_slider {
+	clear: both;
+	float: left;
+	padding: 6px 0 6px 26px;
+	width: 324px
+}
+
+.pt_sizes_thumb_slider span {
+	float: left;
+	margin: 0 4px 0 0;
+	text-align: center
+}
+
+.pt_sizes_thumb_slider span img {
+	cursor: pointer
+}
+
+.pt_sizes_thumb_slider span,.pt_sizes_thumb_slider span a:link,.pt_sizes_thumb_slider span a:active,.pt_sizes_thumb_slider span a:visited,.pt_sizes_thumb_slider span a:hover
+	{
+	color: #3d332a;
+	font-size: 1.0em;
+	font-weight: bold
+}
+
+.popup .model_container {
+	width: 152px
+}
+
+.popup .model_container .zoom_in_image {
+	right: -41px
+}
+
+.popup .popup-dim-fix img {
+	height: 120px;
+	width: 120px
+}
+
+.create-a-shop-wizard {
+	padding: 10px 0 15px !important;
+	position: relative
+}
+
+.create-a-shop-wizard #steps {
+	font-size: 1.4em
+}
+
+.create-a-shop-wizard #close-wizz {
+	background: none repeat scroll 0 0 #f2f2f2;
+	border-bottom: 1px dashed #cac2be;
+	clear: both;
+	font-size: 1.2em;
+	margin: 0 auto 10px auto;
+	text-align: left;
+	padding: 5px 13px
+}
+
+.create-a-shop-wizard #close-wizz h2 {
+	display: inline;
+	font-size: 1.0em;
+	margin-bottom: 0
+}
+
+.create-a-shop-wizard #close-wizz a {
+	display: block;
+	float: right;
+	font-weight: bold;
+	line-height: 2em;
+	background:
+		url("//image.spreadshirtmedia.net/Public/Common/img/icons_sprite.png")
+		no-repeat scroll 30px 0 transparent;
+	border: 0 none
+}
+
+.create-a-shop-wizard #close-wizz a.close {
+	background-position: -120px -120px;
+	height: 16px;
+	width: 16px;
+	margin: .1em .4em;
+	text-align: left;
+	text-indent: -999em
+}
+
+.create-a-shop-wizard #close-wizz a.help-wizard {
+	background-position: -40px -120px;
+	height: 16px;
+	width: 16px;
+	margin: .1em .4em;
+	text-align: left;
+	text-indent: -999em
+}
+
+.create-a-shop-wizard ol {
+	border-bottom: 1px dashed #cac2be;
+	font-size: 12px;
+	height: 45px;
+	margin: 0 auto;
+	padding: 0 40px !important;
+	text-align: left;
+	list-style: none outside none
+}
+
+.create-a-shop-wizard ol li {
+	float: left;
+	height: 100%;
+	padding: 0;
+	width: 300px;
+	text-align: center
+}
+
+.create-a-shop-wizard ol li strong {
+	font-size: .9em;
+	margin-right: 5px
+}
+
+.create-a-shop-wizard ol li a:hover {
+	color: #cc593e
+}
+
+.create-a-shop-wizard ol li.current a {
+	color: #cc593e;
+	font-weight: bold
+}
+
+.create-a-shop-wizard ol li.done a {
+	color: #3aa99d;
+	background:
+		url("//image.spreadshirtmedia.net/Public/User/images/checked.gif")
+		no-repeat scroll 100% 25% #fff;
+	text-decoration: none;
+	font-weight: bold
+}
+
+.create-a-shop-wizard+.container-box {
+	padding-top: 0
+}
+
+.create-a-shop-wizard ol li a,.create-a-shop-wizard ol li span {
+	display: block;
+	height: 70%;
+	padding: 2% 30px 2% 5% !important
+}
+
+.create-shop-wizard {
+	width: 60%;
+	margin: 0 auto
+}
+
+.create-shop-wizard .large-prio-1-button {
+	font-size: 14px;
+	font-weight: normal;
+	border-radius: 2px;
+	padding: 4px 18px;
+	display: inline-block;
+	text-align: center;
+	cursor: pointer;
+	letter-spacing: .025em;
+	color: #fff;
+	background: #3aa99d;
+	border: 0;
+	float: right
+}
+
+.create-shop-wizard #addressForm {
+	position: relative
+}
+
+.create-shop-wizard #colorSelector {
+	background: none repeat scroll 0 0 #f2f2f2;
+	display: block;
+	float: left;
+	margin-right: 10%;
+	min-height: 170px;
+	padding: 10px 0 6px 15px;
+	width: 22%
+}
+
+.create-shop-wizard fieldset.pasteMe {
+	float: left;
+	margin-right: 10%
+}
+
+.create-shop-wizard input[name="terms"] {
+	float: left;
+	margin: 0 5px 0 0
+}
+
+.create-shop-wizard .layoutSelector {
+	display: block;
+	background: #f2f2f2;
+	padding: 10px 0 10px 10px;
+	width: 172px;
+	margin-top: 0
+}
+
+.create-shop-wizard .changeLayout label#detailedlabel {
+	display: block;
+	width: 79%;
+	float: left;
+	padding: 5px 0 5px 30px
+}
+
+.create-shop-wizard img.unselectedLayout {
+	border: solid 1px #f2f2f2;
+	cursor: pointer
+}
+
+.create-shop-wizard img.selectedLayout {
+	border: 1px solid #FFF;
+	background: #5e923b;
+	cursor: pointer
+}
+
+.create-shop-wizard label {
+	color: #493829;
+	font-size: .9em;
+	font-weight: bold;
+	line-height: 1.8em;
+	margin: 0 10px 0 0;
+	float: left
+}
+
+.create-shop-wizard .style-and-view-go {
+	border-top: 1px dashed #cac2be;
+	display: block;
+	float: left;
+	margin-top: 15px;
+	padding-top: 15px;
+	text-align: right;
+	width: 100%
+}
+
+.create-shop-wizard .full-width-box {
+	display: block;
+	float: left;
+	width: 100%;
+	border: 0 none !important
+}
+
+.create-shop-wizard #threeFourthContainer {
+	float: left;
+	width: 70%
+}
+
+.create-shop-wizard #threeFourthContainer div:first-child {
+	border-top: 0 !important;
+	margin-top: 0 !important;
+	padding-top: 0 !important;
+	border-top: 0 !important
+}
+
+.create-shop-wizard .triple-col-box {
+	border-top: 1px dashed #cac2be;
+	margin-top: 15px;
+	padding-top: 15px
+}
+
+.create-shop-wizard dl.single-double-col dt {
+	clear: left;
+	float: left;
+	line-height: 2em;
+	width: 30%
+}
+
+.create-shop-wizard dl.single-double-col dd {
+	margin-bottom: 20px
+}
+
+.create-shop-wizard dl dt {
+	color: #493829;
+	font-weight: bold
+}
+
+.create-shop-wizard form .double-col.shop-url {
+	width: 100%
+}
+
+.create-shop-wizard #shopURL {
+	width: 122px
+}
+
+.create-shop-wizard #oneFourthContainer {
+	float: left;
+	width: 30%
+}
+
+.create-shop-wizard #oneFourthContainer #boxOne {
+	margin-top: 0 !important
+}
+
+.create-shop-wizard .helpBox {
+	margin: 0 -95% 20px 30px;
+	border: 1px solid #d6d1ce
+}
+
+.create-shop-wizard .helpBox h3 {
+	border: 0 none;
+	border-bottom: 1px solid #d6d1ce;
+	font-size: 13px;
+	line-height: 19px;
+	margin: 0;
+	padding: 5px 0 5px 12px
+}
+
+.create-shop-wizard .boxed {
+	padding: 15px;
+	margin-bottom: 20px
+}
+
+.create-shop-wizard .light-col {
+	border-top: 1px dashed #cac2be;
+	margin-top: 15px;
+	padding-top: 15px
+}
+
+.create-shop-wizard .large-prio-1-button:hover,.large-prio-1-button:focus
+	{
+	cursor: pointer
+}
+
+.create-shop-wizard input,.create-shop-wizard select {
+	border: 1px solid #cac3bf;
+	color: #222;
+	height: auto;
+	padding: .5em
+}
+
+.create-shop-wizard div label #isCompanyYes,.create-shop-wizard div label #isCompanyNo
+	{
+	border: medium none !important;
+	float: left;
+	margin: 0 !important;
+	padding: 0 !important
+}
+
+.create-shop-wizard input,.create-shop-wizard textarea,.create-shop-wizard select,.create-shop-wizard button
+	{
+	font-size: .9em
+}
+
+.create-shop-wizard input.checkbox,.create-shop-wizard input.radio {
+	border: medium none;
+	padding: 0;
+	vertical-align: middle
+}
+
+.create-shop-wizard label.radio,.create-shop-wizard label.checkbox {
+	display: block;
+	margin-left: 0 !important
+}
+
+.create-shop-wizard .changeLayoutImg input.radio,.create-shop-wizard .changeLayout input.radio
+	{
+	float: left;
+	display: none
+}
+
+.create-shop-wizard .changeLayoutImg label.radio,.create-shop-wizard .changeLayout label.radio
+	{
+	display: block;
+	width: 79%;
+	float: left;
+	padding: 5px 0 5px 30px;
+	color: #999;
+	text-decoration: underline
+}
+
+.create-shop-wizard .changeLayout label#detailedlabel:hover,.create-shop-wizard .changeLayoutImg label.radio:hover,.create-shop-wizard .changeLayout label.radio:hover
+	{
+	cursor: pointer;
+	color: #323234
+}
+
+.create-shop-wizard .changeLayoutImg label.radio.checked,.create-shop-wizard .changeLayout label.radio.checked
+	{
+	background: #FFF
+		url("//image.spreadshirtmedia.net/Public/User/images/checked.gif") 3px
+		6px no-repeat;
+	color: #333;
+	text-decoration: none
+}
+
+.create-shop-wizard .section,.create-shop-wizard .section-low-bottom {
+	border: 0
+}
+
+.create-shop-wizard form .double-col,.create-shop-wizard textarea.double-col,.create-shop-wizard select.dynHelp
+	{
+	width: 69%
+}
+
+.create-shop-wizard a.preview-button:link,.create-shop-wizard a.preview-button:active,.create-shop-wizard a.preview-button:visited
+	{
+	color: #0160a1;
+	font-size: 1.1em;
+	font-weight: bold
+}
+
+.create-shop-wizard-confomat #Confomat {
+	margin-top: .71em !important
+}
+
+.back_confomat_small {
+	background: none repeat scroll 0 0 #fff;
+	bottom: 25px;
+	font-weight: lighter;
+	left: 10px;
+	padding: 5px 7px;
+	position: absolute;
+	z-index: 1100
+}
+
+#footer_socialmedia a,#footer_payment_methods div,.footer_sprite_all {
+	background-image:
+		url("//image.spreadshirtmedia.net/Public/Common/images/footer_sprite_all.png");
+	background-repeat: no-repeat
+}
+
+#footer_payment_methods .visa {
+	background-position: -42px 0 !important
+}
+
+#footer_payment_methods .paypal {
+	background-position: -546px 0 !important
+}
+
+#footer_payment_methods .amex {
+	background-position: -126px 0 !important
+}
+
+#footer_payment_methods .mastercard {
+	background-position: -84px 0 !important
+}
+
+#footer_payment_methods .netpay {
+	background-position: -462px 0 !important
+}
+
+#footer_payment_methods .elba {
+	background-position: -420px 0 !important
+}
+
+#footer_payment_methods .maestro {
+	background-position: -588px 0 !important
+}
+
+#footer_payment_methods .visa_electron {
+	background-position: -730px 0 !important
+}
+
+#footer_payment_methods .diners {
+	background-position: -168px 0 !important
+}
+
+#footer_payment_methods .bleu {
+	background-position: -210px 0 !important
+}
+
+#footer_payment_methods .ideal {
+	background-position: -294px 0 !important
+}
+
+#footer_payment_methods .ideal_banks {
+	background-position: -630px 0 !important;
+	width: 100px
+}
+
+#footer_socialmedia .twitter {
+	background-position: -800px 0
+}
+
+#footer_socialmedia .facebook {
+	background-position: -828px 0
+}
+
+#footer_socialmedia .flickr {
+	background-position: -856px 0
+}
+
+#footer_socialmedia .youtube {
+	background-position: -884px 0
+}
+
+.header-cta {
+	position: absolute;
+	right: 40px;
+	bottom: 20px;
+	line-height: 2em;
+	padding: 0 24px;
+	border: 0 none;
+	font-weight: bold;
+	color: #fff;
+	text-transform: uppercase;
+	text-align: center;
+	z-index: 100;
+	font-size: 16px;
+	background: none repeat scroll 0 0 #ef7741;
+	border-radius: 2px;
+	cursor: pointer;
+	display: inline-block;
+	letter-spacing: .025em;
+	font-family: "Helvetica Neue", Arial, Helvetica, Corbel, Calibri,
+		"Trebuchet MS", sans-serif
+}
+
+.header-cta:hover,.header-cta:focus,.header-cta:active {
+	background: none repeat scroll 0 0 #ff9c5d;
+	text-decoration: none
+}
+
+#nav-mega .dd_slides {
+	position: relative;
+	height: 300px
+}
+
+#nav-mega .icon_arrow_dd {
+	background-image:
+		url("//image.spreadshirtmedia.net/Public/Common/images/arrow_dropdown.png")
+}
+
+#nav-mega .dd-cyo-cta {
+	position: absolute;
+	right: 20px;
+	bottom: 15px;
+	text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.85)
+}
+
+#nav-mega #dd_browse_shop .span6.gap-xs .span1 img {
+	height: 80px
+}
+
+#nav-mega #dd_sell .dd_sell_design {
+	left: 105px
+}
+
+#nav-mega #dd_sell .dd_sell_upload {
+	left: 380px
+}
+
+#nav-mega #dd_sell .dd_sell_money {
+	left: 655px
+}
+
+#nav-mega .dd_sell_cta {
+	position: absolute;
+	bottom: 25px;
+	right: 25px
+}
+
+#nav-mega #dd_sell .dd_sell_design,#nav-mega #dd_sell .dd_sell_upload,#nav-mega #dd_sell .dd_sell_money
+	{
+	position: absolute;
+	top: 195px;
+	width: 230px;
+	max-width: 230px
+}
+
+#dd_sell img {
+	display: block !important
+}
+
+body>.container-box {
+	padding-bottom: 60px;
+	margin-bottom: 0
+}
+
+.footerWrapper {
+	background: 0;
+	padding: 0;
+	margin-top: 0;
+	position: relative;
+	z-index: 500
+}
+
+.footerWrapper .container_10 {
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+	margin-top: 0 !important;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+	position: relative;
+	width: auto
+}
+
+#eKomiWidget_default a img {
+	width: 170px !important
+}
+
+#ft {
+	background: #e9e9e9;
+	text-align: center;
+	font-size: 17px;
+	position: relative
+}
+
+#ft img {
+	max-width: 100%;
+	height: auto;
+	box-sizing: border-box
+}
+
+#ft .ft-delivery,#ft .ft-payment {
+	float: left;
+	padding-top: 20px
+}
+
+#ft .ft-siteservice a:link,#ft .ft-siteservice a:active,#ft .ft-siteservice a:visited
+	{
+	color: #DDD;
+	padding: 0 2px
+}
+
+.ft-logo {
+	height: 36px;
+	padding: 20px 0
+}
+
+.ft-promise span {
+	font-size: 27px;
+	display: block
+}
+
+.ft-promise a {
+	color: #404040;
+	text-decoration: underline;
+	line-height: 1.8em
+}
+
+.ft-nl {
+	padding: 20px 0 45px
+}
+
+.ft-nl>span {
+	line-height: 2.8em;
+	font-size: 15px;
+	display: block
+}
+
+.ft-promise,.ft-help,.ft-social,.ft-nl>span,#newsletter-sign-up-form input
+	{
+	font-family: 'MuseoSlab-300', Georgia, "Times New Roman", Times, serif
+}
+
+.ft-nl-benefit h3 {
+	font-size: 24px;
+	font-family: 'MuseoSlab-500', Georgia, "Times New Roman", Times, serif;
+	margin-bottom: 14px
+}
+
+.ft-nl-benefit ul {
+	list-style: disc;
+	margin: 0 0 10px 15px
+}
+
+.ft-nl-benefit a {
+	text-decoration: underline
+}
+
+.ft-help {
+	margin: 0;
+	background: #d7d7d7;
+	padding: 0;
+	position: relative
+}
+
+.ft-help span,.ft-help i,.ft-help a {
+	font-family: 'MuseoSlab-500', Georgia, "Times New Roman", Times, serif;
+	color: #555;
+	vertical-align: middle;
+	display: inline-block
+}
+
+.ft-help span,.ft-help a {
+	position: relative
+}
+
+.ft-help a {
+	text-decoration: underline;
+	padding-left: 32px
+}
+
+.ft-help i {
+	left: 3px;
+	margin-right: 0;
+	position: absolute;
+	top: -2px
+}
+
+.ft-help .ft-wrap {
+	padding: 25px;
+	box-sizing: border-box;
+	background: #d7d7d7
+}
+
+.ft-help .ft-wrap a {
+	white-space: nowrap
+}
+
+.ft-help .ft-wrap>span {
+	margin: 0;
+	width: 20%;
+	box-sizing: border-box;
+	float: left
+}
+
+.ft-help .ft-wrap>span:first-child,.ft-help .ft-wrap>span:last-child {
+	width: 30%
+}
+
+.ft-help .ft-wrap:after {
+	content: "";
+	display: table;
+	clear: both
+}
+
+.ft-help .servicetime {
+	color: #888;
+	display: block;
+	font-size: 12px;
+	left: 32px;
+	line-height: 1.2em;
+	margin: 0;
+	position: absolute;
+	top: 19px;
+	white-space: nowrap
+}
+
+.ft-help .ft-phone {
+	width: 24px;
+	height: 29px;
+	background-position: -60px -1px
+}
+
+.ft-help .ft-contact {
+	width: 23px;
+	height: 20px;
+	background-position: 0 4px
+}
+
+.ft-help .ft-visit-help {
+	width: 23px;
+	height: 23px;
+	background-position: -161px 0
+}
+
+.ft-help .ft-your-orders {
+	width: 28px;
+	height: 23px;
+	background-position: -29px 1px;
+	left: 0
+}
+
+.ft-row {
+	margin-left: -15px;
+	margin-right: -15px;
+	box-sizing: border-box
+}
+
+.ft-row>div {
+	box-sizing: border-box;
+	padding-left: 15px;
+	padding-right: 15px;
+	float: left
+}
+
+.ft-row:after {
+	clear: both;
+	display: table;
+	content: ""
+}
+
+.ft-row:before {
+	clear: both;
+	display: table;
+	content: ""
+}
+
+.ft-trust {
+	display: block;
+	padding: 30px 60px;
+	font-size: 15px;
+	margin: 0
+}
+
+.ft-trust a {
+	line-height: 3em;
+	font-weight: 300
+}
+
+.ft-trust a:hover {
+	color: #00b2a5;
+	text-decoration: none
+}
+
+.ft-trust a:hover .ft-arrow {
+	background-position: -245px 0
+}
+
+.ft-trust>div {
+	box-sizing: border-box
+}
+
+.ft-trust>div>div>div {
+	text-align: center
+}
+
+.ft-trust>div>div:first-child>div {
+	border-right: 1px solid #CCC
+}
+
+.ft-trust .ft-icons {
+	margin-right: 5px
+}
+
+.ft-trust img {
+	display: block;
+	margin: 0 auto
+}
+
+.ft-trust .ft-delivery-payment {
+	width: 80%
+}
+
+.ft-trust .ft-delivery-payment>div>div:first-child {
+	width: 57.80730897009967%
+}
+
+.ft-trust .ft-delivery-payment>div>div:last-child {
+	width: 42.19269102990033%
+}
+
+.ft-trust .ft-ekomi {
+	width: 20%
+}
+
+.ft-social {
+	padding: 10px 0;
+	border-top: #CCC 1px solid;
+	margin: 0 87px
+}
+
+.ft-social>a {
+	padding: 8px 15px;
+	color: #777;
+	font-size: 15px;
+	display: inline-block
+}
+
+.ft-siteservice {
+	background: #443634;
+	text-align: center;
+	font-size: 13px;
+	color: #DDD;
+	font-family: "Helvetica Neue", Arial, Helvetica, Corbel, Calibri,
+		"Trebuchet MS", sans-serif
+}
+
+.ft-siteservice .ft-wrap {
+	padding: 10px 0;
+	background: #443634
+}
+
+.ft-icons {
+	background:
+		url("//image.spreadshirtmedia.net/Public/Media/footer/footerSprite.png")
+		no-repeat 0 0;
+	display: inline-block
+}
+
+.ft-lovetab {
+	width: 45px;
+	height: 36px;
+	background-position: -107px 0
+}
+
+.ft-fedex {
+	width: 61px;
+	height: 26px;
+	background-position: -160px 0
+}
+
+.ft-visa {
+	width: 57px;
+	height: 18px;
+	background-position: -294px 0
+}
+
+.ft-paypal {
+	width: 60px;
+	height: 16px;
+	background-position: -226px 0
+}
+
+.ft-ups {
+	width: 34px;
+	height: 40px;
+	background-position: 0 -48px
+}
+
+.ft-mastercard {
+	width: 53px;
+	height: 31px;
+	background-position: -45px -49px
+}
+
+.ft-amex {
+	width: 50px;
+	height: 50px;
+	background-position: -114px -49px
+}
+
+.ft-arrow {
+	width: 6px;
+	height: 12px;
+	background-position: -245px -12px
+}
+
+.ft-hiring-note,.ft-hiring-note-en {
+	width: 97px;
+	height: 79px;
+	background-position: -288px -37px;
+	position: absolute;
+	top: 0;
+	right: 15px;
+	z-index: 100;
+	font-size: .001em;
+	color: #e9e9e9
+}
+
+.ft-hiring-note-en {
+	background-position: -177px -37px
+}
+
+.ft-blend {
+	width: 100%;
+	height: 15px;
+	background: #FFF;
+	position: absolute;
+	top: -10px;
+	left: 0;
+	z-index: 110
+}
+
+.ft-wrap {
+	width: 1000px;
+	margin: 0 auto;
+	background: #e9e9e9;
+	position: relative
+}
+
+#newsletter-sign-up-form input {
+	background-color: #f7f7f7;
+	border-radius: 2px 0 0 2px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08) inset, 0 1px 0
+		rgba(255, 255, 255, 0.15);
+	color: #222;
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 14px;
+	height: 18px;
+	line-height: 20px;
+	padding: 4px 5px;
+	width: 320px !important;
+	border: 1px solid #c8c8c8;
+	margin-bottom: 0
+}
+
+#newsletter-sign-up-form>a {
+	background-color: #08b4a9;
+	display: inline-block;
+	border-radius: 0 2px 2px 0;
+	color: #FFF;
+	text-decoration: none;
+	font-size: 14px;
+	margin-left: -7px;
+	padding: 3px 8px 4px;
+	vertical-align: middle
+}
+
+#newsletter-sign-up-form>a:hover {
+	background-color: #0dc
+}
+
+#newsletter-sign-up-form .infoBox {
+	display: inline-block;
+	margin-bottom: 0;
+	vertical-align: middle;
+	padding-left: 5px;
+	position: relative;
+	margin-left: 5px
+}
+
+#newsletter-sign-up-form .infoBox .icon-info {
+	background-color: transparent;
+	background-position: -192px 0;
+	display: inline-block;
+	height: 21px;
+	padding: 0;
+	vertical-align: inherit;
+	width: 20px;
+	cursor: pointer
+}
+
+#newsletter-sign-up-form .infoBox .icon-info:hover {
+	background-position: -217px 0
+}
+
+#newsletter-sign-up-form .infoBox .popoverInfo {
+	font-size: 12px;
+	background-clip: padding-box;
+	background: #FFF;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	border-radius: 6px;
+	-webkit-box-shadow: 1px 1px 5px 0 rgba(60, 60, 60, 0.75);
+	-moz-box-shadow: 1px 1px 5px 0 rgba(60, 60, 60, 0.75);
+	box-shadow: 1px 1px 5px 0 rgba(60, 60, 60, 0.75);
+	display: none;
+	width: 460px;
+	left: -433px;
+	padding: 5px;
+	position: absolute;
+	text-align: left;
+	top: 33px;
+	white-space: normal;
+	z-index: 1010;
+	opacity: 0;
+	line-height: 1.5em
+}
+
+#newsletter-sign-up-form .infoBox .popoverInfo .popoverArrow,#newsletter-sign-up-form .infoBox .popoverInfo .popoverArrow:after
+	{
+	border-color: transparent;
+	border-style: solid;
+	display: block;
+	height: 0;
+	position: absolute;
+	width: 0
+}
+
+#newsletter-sign-up-form .infoBox .popoverInfo .popoverArrow {
+	border-bottom-color: rgba(0, 0, 0, 0.2);
+	border-width: 11px;
+	border-top-width: 0;
+	right: 13px;
+	margin-top: -16px
+}
+
+#newsletter-sign-up-form .infoBox .popoverInfo .popoverArrow:after {
+	content: "";
+	border-bottom-color: #fff;
+	border-width: 10px;
+	border-top-width: 0;
+	bottom: -11px;
+	left: -10px
+}
+
+#newsletter-sign-up-form .infoBox .popoverinfoBox {
+	overflow: hidden
+}
+
+#newsletter-sign-up-form .infoBox .popoverInfo-content {
+	padding: 9px 14px
+}
+
+.ft-nl-msg {
+	margin: 0 10px
+}
+
+.ft-nl-msg .system-error,.ft-nl-msg .system-message {
+	font-size: 13px;
+	line-height: 1.2em;
+	margin: 25px 0 0
+}
+
+#eKomiWidget_default a img,.bbb-rating a img {
+	width: auto;
+	border: 0
+}
+
+html[lang^="dk"] .eu .ft-help a,html[lang^="fi"] .eu .ft-help a,html[lang^="it"] .eu .ft-help a,html[lang^="nl"] .eu .ft-help a,html[lang^="no"] .eu .ft-help a,html[lang^="pl"] .eu .ft-help a,html[lang^="se"] .eu .ft-help a,html[lang^="fr"] .us .ft-help a
+	{
+	margin-top: -10px
+}
+
+html[lang^="dk"] .eu .ft-help .ft-wrap,html[lang^="fi"] .eu .ft-help .ft-wrap,html[lang^="it"] .eu .ft-help .ft-wrap,html[lang^="nl"] .eu .ft-help .ft-wrap,html[lang^="no"] .eu .ft-help .ft-wrap,html[lang^="pl"] .eu .ft-help .ft-wrap,html[lang^="se"] .eu .ft-help .ft-wrap,html[lang^="fr"] .us .ft-help .ft-wrap
+	{
+	padding-top: 35px;
+	padding-bottom: 35px
+}
+/*Source from grid980/grid980_states_compressed*/
+@
+keyframes rotate {
+	from {transform: rotate(0deg)
+}
+
+to {
+	transform: rotate(360deg)
+}
+
+}
+@
+-moz-keyframes rotate {
+	from {-moz-transform: rotate(0deg)
+}
+
+to {
+	-moz-transform: rotate(360deg)
+}
+
+}
+@
+-webkit-keyframes rotate {
+	from {-webkit-transform: rotate(0deg);
+	-webkit-backface-visibility: hidden
+}
+
+to {
+	-webkit-transform: rotate(360deg);
+	-webkit-backface-visibility: hidden
+}
+
+}
+.cssanimations [class^="spin_"],.cssanimations [class*=" spin_"] {
+	animation-name: rotate;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	-moz-animation-name: rotate;
+	-moz-animation-duration: 1s;
+	-moz-animation-iteration-count: infinite;
+	-moz-animation-timing-function: linear;
+	-webkit-animation-name: rotate;
+	-webkit-animation-duration: 1s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear
+}

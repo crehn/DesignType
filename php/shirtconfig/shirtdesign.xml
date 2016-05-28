@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<design xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://api.spreadshirt.net">
+	<name>Design-Types result image</name>
+	<description>This is your individual result image of design-types.net
+	</description>
+	<tags>design-types</tags>
+	<restrictions>
+		<fixedColors>true</fixedColors>
+		<ownText>false</ownText>
+<!-- 		<colorCount>9</colorCount> -->
+		<obligatory>true</obligatory>
+		<movable>false</movable>
+		<targetView>0</targetView>
+<!-- 		<minimumScale>70</minimumScale> -->
+		<visible>true</visible>
+		<inverted>false</inverted>
+		<denyOtherText>no</denyOtherText>
+		<denyOtherDesigns>no</denyOtherDesigns>
+<!-- 		<allowScale>false</allowScale> -->
+		<allowFlip>false</allowFlip>
+		<allowRotate>false</allowRotate>
+	</restrictions>
+	
+    <size unit="mm">
+        <width>261.937</width>
+        <height>378.354</height>
+    </size>	
+<!-- 	<size unit="px"> -->
+<!-- 		<width>990</width> -->
+<!-- 		<height>1430</height> -->
+<!-- 	</size> -->
+	<price>
+		<vatExcluded>1.00</vatExcluded>
+		<vatIncluded>1.00</vatIncluded>
+		<vat>19.00</vat>
+		<currency xlink:href="http://api.spreadshirt.net/api/v1/currencies/1" id="1" />
+	</price>
+</design>

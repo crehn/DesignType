@@ -14,18 +14,13 @@ function storeData() {
         $ukey = getData('ukey');
         $log->info("store data for ukey [$ukey]");
         $mysqli = connectToDb();
-        $mysqli->begin_transaction();
         if (ukeyAlreadyExists($mysqli, $ukey)) {
             error409('http://design-types.net/problems/ukey-already-exists', "ukey $ukey already exists in database; it will not be stored again");
         }
         $resultTypeFk = insertResultType($mysqli, $ukey);
         insertChosenStatements($mysqli, $resultTypeFk);
-        $mysqli->commit();
         echo json_encode($ukey);
         $log->info("finished storing data for ukey [$ukey]");
-    } catch (Exception $e) {
-        $log->warn('rollback transaction');
-        $mysqli->rollback();
     } finally {
         $mysqli->close();
     }
@@ -210,10 +205,7 @@ function &statementAsInt($statementKey) {
     // this is OK here, as we only do an INSERT and the alternative would be plenty of unnecessary variables
     static $zero = 0;
     static $one = 1;
-    if (getHttpPostData($statementKey) === "true")
-        return $one;
-    else 
-        return $zero;
+    return (getData($statementKey) === "true") ? $one : $zero;
 }
 
 storeData();
