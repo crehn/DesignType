@@ -8,4 +8,7 @@ const DB_TABLEPREFIX = "qa_";
 const MAILRECIPIENTS = "...";
 
 const DEBUG = true;
+
+const SHOP_API_KEY = "...";
+const SHOP_PWD = "...";
 ?>

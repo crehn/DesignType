@@ -29,6 +29,7 @@ $(document).ready(function(){
     }
     
     drawTypesBarChart(resultType);
-
+    
+    initSpreadshirtFunctions(resultType, userkey);
 });
 

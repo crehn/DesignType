@@ -10,6 +10,15 @@ function connectToDb() {
     return $mysqli;
 }
 
+function getHttpPostData($key) {
+    //TODO: add proper sanitization
+    $result = $_POST[$key];
+    if ($result == null) {
+        error400("missing POST data: $key");
+    }    
+    return $result;
+}
+
 function error400($detail) {
     global $log;
     $log->warn("bad request: $detail");

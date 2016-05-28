@@ -37,7 +37,7 @@ function DimensionOverlapChart(details, size) {
        this.width = border + (2 * space) + (2 * boxWidth) + border;
        this.height = border + (3 * space) + (4 * boxHeight) + border;
        this.xBarIncr = (boxWidth + 2*space + boxWidth) / 10;
-       this.yMarginBarTotal = 10;
+       this.yMarginBarTotal = yMarginBarTotal;
        this.barLength = 5 * this.xBarIncr;
        this.barHeight = boxHeight - yMarginBarTotal;
     }
