@@ -62,6 +62,7 @@ function checkoutShirt(userkey) {
 		  console.log("checkoutShirt - status: " + status + "; with url to checkout: " + data['0']);
 		  // relocate to checkout page
 		  $(location).attr('href', data['0']);
+		  //window.open(data['0']);
 	  })
 	  .fail(function(err) {
 	      console.log("error creating spreadshirt basket item: " + err.responseText);
