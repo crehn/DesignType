@@ -11,12 +11,24 @@ function changeShirtSize(newSize) {
 	console.log("new shirt size: " + shirtSize);
 }
 
+function activateShirtSizeBtn(activeElementId) {
+	$(".btn-size-select").removeClass("btn-size-active");
+  $(activeElementId).addClass("btn-size-active");
+	console.log("activated shirt size btn element with id: " + activeElementId);
+}
+
 function changeShirtColor(newColor) {
 	shirtColor = newColor;
 	console.log("new shirt color: " + newColor);
 	// change bg color of shirt
 	var newClazz = "shirt_bg shirt_bg_" + newColor;
 	$("#shirt_display").attr('class', newClazz);
+}
+
+function activateShirtColorBtn(activeElementId) {
+	$(".btn-clr-select").removeClass("btn-clr-select-active");
+  $(activeElementId).addClass("btn-clr-select-active");
+	console.log("activated shirt color btn element with id: " + activeElementId);
 }
 
 function changeHomeCountry(newCountry) {
@@ -64,23 +76,29 @@ function initSpreadshirtFunctions(resultType, userkey) {
 	
 	// size buttons
 	// 2=S, 3=M, 4=L, 5=XL, 6=XXL, 38=3XL
-	$("#size_s").click(function() {
+  	$("#size_s").click(function() {
     	changeShirtSize(2);
+      activateShirtSizeBtn("#size_s");
      });
     $("#size_m").click(function() {
     	changeShirtSize(3);
+      activateShirtSizeBtn("#size_m");
      });
     $("#size_l").click(function() {
     	changeShirtSize(4);
+      activateShirtSizeBtn("#size_l");
      });
     $("#size_xl").click(function() {
     	changeShirtSize(5);
+      activateShirtSizeBtn("#size_xl");
      });
     $("#size_xxl").click(function() {
     	changeShirtSize(6);
+      activateShirtSizeBtn("#size_xxl");
      });
     $("#size_3xl").click(function() {
     	changeShirtSize(38);
+      activateShirtSizeBtn("#size_3xl");
      });
     
     // shirt color buttons
@@ -89,27 +107,35 @@ function initSpreadshirtFunctions(resultType, userkey) {
  // 121=grey, 277=purple, 15=lime, 219, deep mint
     $("#color_white").click(function() {
     	changeShirtColor(1);
+      activateShirtColorBtn("#color_white");
      });
     $("#color_black").click(function() {
     	changeShirtColor(2);
+      activateShirtColorBtn("#color_black");
      });
     $("#color_royalblue").click(function() {
     	changeShirtColor(17);
+      activateShirtColorBtn("#color_royalblue");
      });
     $("#color_navy").click(function() {
     	changeShirtColor(4);
+      activateShirtColorBtn("#color_navy");
      });
     $("#color_divablue").click(function() {
     	changeShirtColor(388);
+      activateShirtColorBtn("#color_divablue");
      });
     $("#color_deepmint").click(function() {
     	changeShirtColor(594);
+      activateShirtColorBtn("#color_deepmint");
      });
     $("#color_kellygreen").click(function() {
     	changeShirtColor(92);
+      activateShirtColorBtn("#color_kellygreen");
      });
     $("#color_red").click(function() {
     	changeShirtColor(5);
+      activateShirtColorBtn("#color_red");
      });
     
     // checkout button
@@ -117,9 +143,4 @@ function initSpreadshirtFunctions(resultType, userkey) {
     	checkoutShirt(userkey);
     });
     
-    /*
-    $(".btn-size-select").click(function() {
-    	$(this).toggleClass('btn-size-active');
-    });
-    */
 }

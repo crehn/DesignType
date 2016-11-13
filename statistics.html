@@ -21,7 +21,7 @@
     <![endif]-->
     
     <script type="text/javascript">
-       var pageIdComments = 4;
+       var pageIdComments = 4;/* dimensions.html: 1, types.hmtl: 2, result.html: 3, statistics.html: 4, info.html (learn more): 5 */
     </script>
 
     <title>How Do You Design Software?</title>
@@ -60,10 +60,21 @@
             Some statistics.
         </p>
     </div>
-   
-    <section>
+ 
+     <section>
         <a id="statistics"></a>
         <h1>Statistics</h1>
+        <div id="statisticsummary">
+            <div class="row">
+                <div class="col-sm-12">
+                    <p>This page contains some statistical charts based on all <span id="amount_survey_participants">0</span> participants who took part in the survey.</p>
+                </div>
+            </div>
+        </div>
+    </section>    
+    <section>
+        <a id="typedistribution"></a>
+        <h2>Type distribution</h2>
         <div id="statisticsummary">
             <div class="row">
                 <div class="col-sm-12">
@@ -75,7 +86,20 @@
         </div>
     </section>
     <section>
+         <h2>Make a donation</h2>
+         <div class="donation_row">
+            <p>Design-types.net is a non profit initiative. Please support us by making a donation (e.g. for motivating us to provide further charts).</p>
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="XXAD9MAS7AVTN">
+            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+            <img alt="" border="0" src="https://www.paypalobjects.com/de_DE/i/scr/pixel.gif" width="1" height="1">
+            </form>
+          </div>    
+    </section>      
+    <section>
         <a id="allstatements"></a>
+        <h2>Frequency of statement selection</h2>
         <div id="allstats">
             <div class="row">
                 <div class="col-sm-12">
@@ -87,6 +111,7 @@
     </section> 
     <section>
         <a id="dimensionswithexp"></a>
+        <h2>Dimension variation by years of experience</h2>
         <div id="dimexp">
             <div class="row">
                 <div class="col-sm-12">
@@ -105,6 +130,7 @@
         </div>
     </section> 
     <section>
+        <h2>Feedback and comments</h2>
         <p>Do you like to see more graphs? Any ideas, thoughts, or questions? Write a comment.</p>
     </section>             
     <section id="comments">

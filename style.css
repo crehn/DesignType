@@ -31,6 +31,16 @@ h1.main-title {
     margin-bottom: 0.3em;
 }
 
+h2 {
+    text-align: center;
+    font-size: 20px;
+}
+
+#amount_survey_participants {
+	font-size: 120%;
+	font-weight: bold;
+}
+
 .entry-point-col {
     text-align: center;
     margin-bottom: 1.5em;
@@ -273,6 +283,16 @@ footer {
     text-align: right;
     font-size: 14pt;
     vertical-align: bottom;
+}
+
+.spreadshirt_disclaimer {
+	margin-top: 10px;
+	font-size: 0.8em;
+	color: darkgray;
+}
+
+.donation_row {
+    text-align: center;
 }
 
 @page {

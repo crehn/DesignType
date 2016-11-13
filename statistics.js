@@ -322,6 +322,13 @@ function debuglog(msg) {
 
 //###################
 
+function loadCountSurveyParticipants() {
+    $.get("./php/loadCountSurveyParticipants.php", function(data, status) {
+        debuglog("loadCountSurveyParticipants - status: " + status + ", data: " + data);
+        $("#amount_survey_participants").html(data);
+     });
+} 
+
 function loadCountPerResultType() {
     var dataForBars;
     $.when( 
@@ -362,7 +369,8 @@ function loadDimensionsByExperience() {
 }
 
 $(document).ready(function(){
-    
+	loadCountSurveyParticipants();
+	
     loadCountPerResultType();
     
     loadTopsAndFlops();

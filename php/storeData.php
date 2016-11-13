@@ -11,7 +11,7 @@ if (DEBUG) {
 function storeData() {
     global $log;
     try {
-        $ukey = getData('ukey');
+        $ukey = getHttpPostData('ukey');
         $log->info("store data for ukey [$ukey]");
         $mysqli = connectToDb();
         $mysqli->begin_transaction();
@@ -29,15 +29,6 @@ function storeData() {
     } finally {
         $mysqli->close();
     }
-}
-
-function getData($key) {
-    //TODO: add proper sanitization
-    $result = $_POST[$key];
-    if ($result == null) {
-        error400("missing POST data: $key");
-    }    
-    return $result;
 }
 
 function ukeyAlreadyExists($mysqli, $ukey) {
@@ -77,19 +68,19 @@ function insertResultType($mysqli, $ukey) {
             error500("Prepare for insert failed: ({$mysqli->errno}) {$mysqli->error}");
         }
 
-        $designType = getData('designType');
-        $gender = getData('gender');
-        $age = getData('age');
-        $professionalYears = getData('professionalYears');
-        $educationLevel = getData('educationLevel');
-        $educationBackground = getData('educationBackground');
-        $role = getData('role');
-        $programmingLanguage = getData('programmingLanguage');
-        $methodology = getData('methodology');
-        $companySize = getData('companySize');
-        $industrySector = getData('industrySector');
-        $latitude = getData('latitude');
-        $longitude = getData('longitude');
+        $designType = getHttpPostData('designType');
+        $gender = getHttpPostData('gender');
+        $age = getHttpPostData('age');
+        $professionalYears = getHttpPostData('professionalYears');
+        $educationLevel = getHttpPostData('educationLevel');
+        $educationBackground = getHttpPostData('educationBackground');
+        $role = getHttpPostData('role');
+        $programmingLanguage = getHttpPostData('programmingLanguage');
+        $methodology = getHttpPostData('methodology');
+        $companySize = getHttpPostData('companySize');
+        $industrySector = getHttpPostData('industrySector');
+        $latitude = getHttpPostData('latitude');
+        $longitude = getHttpPostData('longitude');
 
         $log->info("ukey=$ukey, designType=$designType, gender=$gender, age=$age, professionalYears=$professionalYears, "
              . "educationLevel=$educationLevel, educationBackground=$educationBackground, role=$role, "

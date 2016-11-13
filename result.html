@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="bower_components/jquery-ui/themes/ui-lightness/jquery-ui.min.css">
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="comments.css" />
+    <link rel="stylesheet" href="spreadshirt.css" />
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -21,7 +22,7 @@
     <![endif]-->
     
     <script type="text/javascript">
-       var pageIdComments = 3;
+       var pageIdComments = 3;/* dimensions.html: 1, types.hmtl: 2, result.html: 3, statistics.html: 4, info.html (learn more): 5 */
     </script>
 
     <title>How Do You Design Software?</title>
@@ -129,7 +130,74 @@
                 </div>
             </div>
         </div>
-    </section>   
+    </section>  
+    <section>
+        <h1>Print your result!</h1>
+        <div class="text-center">
+            <p>Print out your result and put it on the office wall or on your door</p>
+            <a href="" class="certificate-link">
+                <img src="img/certificate.png" alt="print it">
+            </a>
+        </div>
+    </section>     
+    <section>
+        <h1>Print your individual shirt!*</h1>
+        <div class="container container-box">
+            <div class="col-sm-6">
+                <p>Print a shirt using your individual result.</p>
+                <div id="shirt_display" class="shirt_bg shirt_bg_4">
+                   <img src="./php/shirtorders/test.png" class="overlay-img" height="143" width="99">
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <p>Choose color and size and press checkout (shirt is normally below 20 &euro;).</p>
+                    <div id="choose-product-color" class="loaded">
+                        <div id="color_white" class="btn btn-rect btn-clr-select color-img">
+                            <img src="//image.spreadshirtmedia.net/image-server/v1/appearances/1,width=40.jpg" alt="white" title="white" class="small">
+                        </div>
+                        <div id="color_black" class="btn btn-rect btn-clr-select color-img">
+                            <img src="//image.spreadshirtmedia.net/image-server/v1/appearances/2,width=40.jpg" alt="black" title="black" class="small">
+                        </div>
+                        <div id="color_royalblue" class="btn btn-rect btn-clr-select color-img">
+                            <img src="//image.spreadshirtmedia.net/image-server/v1/appearances/17,width=40.jpg" alt="royal blue" title="royal blue" class="small">
+                        </div>
+                        <div id="color_navy" class="btn btn-rect btn-clr-select color-img btn-clr-select-active">
+                            <img src="//image.spreadshirtmedia.net/image-server/v1/appearances/4,width=40.jpg" alt="navy" title="navy" class="small">
+                        </div>
+                        <div id="color_divablue" class="btn btn-rect btn-clr-select color-img">
+                            <img src="//image.spreadshirtmedia.net/image-server/v1/appearances/388,width=40.jpg" alt="diva blue" title="diva blue" class="small">
+                        </div>
+                        <div id="color_deepmint" class="btn btn-rect btn-clr-select color-img">
+                            <img src="//image.spreadshirtmedia.net/image-server/v1/appearances/594,width=40.jpg" alt="deep mint" title="deep mint" class="small">
+                        </div>
+                        <div id="color_kellygreen" class="btn btn-rect btn-clr-select color-img">
+                            <img src="//image.spreadshirtmedia.net/image-server/v1/appearances/92,width=40.jpg" alt="kelly green" title="kelly green" class="small">
+                        </div>
+                        <div id="color_red" class="btn btn-rect btn-clr-select color-img">
+                            <img src="//image.spreadshirtmedia.net/image-server/v1/appearances/5,width=40.jpg" alt="red" title="red" class="small">
+                        </div>
+                    </div>
+                    <div id="choose-product-size" class="span6 loaded">
+                        <div class="sizes-wrapper relative">
+                            <div class="overlay-partial-above left horizontal">
+                                <div>
+                                    <div id="size_s" class="btn btn-rect btn-size-select">S</div>
+                                    <div id="size_m" class="btn btn-rect btn-size-select">M</div>
+                                    <div id="size_l" class="btn btn-rect btn-size-select btn-size-active">L</div>
+                                    <div id="size_xl" class="btn btn-rect btn-size-select">XL</div>
+                                    <div id="size_xxl" class="btn btn-rect btn-size-select">XXL</div>
+                                    <div id="size_3xl" class="btn btn-rect btn-size-select">3XL</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="checkout_area" class="loaded">
+                       <input id="checkout" value="Checkout" class="btn btn-lg btn-primary btn_checkout" type="button">
+                    </div>    
+                    <p class="spreadshirt_disclaimer">* Shirts are provided by <a href="https://www.spreadshirt.de">Spreadshirt</a> (sprd.net AG). If you order a shirt this company will be in charge of fulfilling your request. There will be no contract with design-types.net nor any warranty (we even do not draw any commission).</p>      
+                </div>
+            </div>
+    </section>     
     <section>
         <h1>Statistics</h1>
         <div class="row">
@@ -139,16 +207,7 @@
                 </div>
             </div>
         </div>
-    </section>  
-    <section>
-        <h1>Print it!</h1>
-        <div class="text-center">
-            <p>Print out your result and put it on the office wall or on your door</p>
-            <a href="" class="certificate-link">
-                <img src="img/certificate.png" alt="print it">
-            </a>
-        </div>
-    </section>     
+    </section> 
     <section>
         <h1>What's Next</h1>
         <ul>
@@ -159,6 +218,18 @@
             <li>Read more about the whole <a href="about.html">idea</a></li>
             <li>Please give us <a class="feedback">feedback</a> on design types, the questionnaire and your result</li>
         </ul>
+    </section>
+    <section>
+         <h1>Make a donation</h1>
+         <div class="donation_row">
+            <p>Design-types.net is a non profit initiative. Please support us by making a donation.</p>
+			<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+			<input type="hidden" name="cmd" value="_s-xclick">
+			<input type="hidden" name="hosted_button_id" value="XXAD9MAS7AVTN">
+			<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+			<img alt="" border="0" src="https://www.paypalobjects.com/de_DE/i/scr/pixel.gif" width="1" height="1">
+			</form>
+	      </div>    
     </section>
     <section class="clearfix">
         <h1>Final Remarks</h1>
@@ -205,6 +276,7 @@
 <script src="types_data.js"></script>
 <script src="types.js"></script>
 <script src="charts.js"></script>
+<script src="spreadshirt.js"></script>
 <script src="result.js"></script>
 <script src="comments.js"></script>
 
