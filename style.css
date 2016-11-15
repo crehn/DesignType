@@ -106,12 +106,18 @@ h2 {
 }
 
 .about-authors {
-	text-align: center	
+	text-align: center;
+}
+
+#legaldisclosure {
+	cursor: pointer;
+	color: blue;
+	text-decoration: underline;
 }
 
 footer {
-    border-top:1px solid gray; 
-    text-align:center; 
+    border-top: 1px solid gray; 
+    text-align: center; 
     color: gray; 
     padding-top: 2em; 
     padding-bottom: 2em;
