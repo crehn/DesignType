@@ -1,4 +1,3 @@
-var prefix = "colleagues";
 var statements = {}
 statements.simple = [
     "Your colleague writes many but small classes and methods.",

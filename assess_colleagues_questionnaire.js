@@ -3,8 +3,7 @@ String.prototype.capitalize = function() {
 }
 
 function Dimension(leftValue, rightValue, statements, number) {
-    var NUMBER_OF_STATEMENTS_NEEDED = 5;
-    var SUPPLY_CORRECT_NUMBER_OF_STATEMENTS = "Check exactly five stametements!";
+    var ERROR_MSG = "One side should have more checks than the other one!";
 
     var wasOnceComplete = false;
     var score1 = 0;
@@ -55,7 +54,7 @@ function Dimension(leftValue, rightValue, statements, number) {
     function createErrorBox() {
         var box = $("<div/>", {
             "class": "alert alert-danger",
-            html: "<strong>Hint:</strong> " + SUPPLY_CORRECT_NUMBER_OF_STATEMENTS,
+            html: "<strong>Hint:</strong> " + ERROR_MSG,
             style: "display:none; margin:1em;"});
         $(".dimension#" + id()).append(box);
         return box;
@@ -106,11 +105,11 @@ function Dimension(leftValue, rightValue, statements, number) {
     };
         
     function isComplete() {
-        return (score1 + score2) == NUMBER_OF_STATEMENTS_NEEDED;
+        return (score1 + score2) > 0 && score1 != score2;
     }
     
     function isError() {
-        return score1 + score2 > NUMBER_OF_STATEMENTS_NEEDED
+        return ((score1 + score2) > 0 && score1 == score2)
             || (wasOnceComplete && !isComplete());
     }
     
@@ -200,45 +199,8 @@ function Dimension(leftValue, rightValue, statements, number) {
     }
 };
 
-function Overlay(questionnaire) {
-    this.show = function() {
-        $("#cover").show();
-        $("#overlay").show('fast');
-    }
-    
-    $("#overlay .cancel").click(function() {
-        hide();
-    });
-    
-    function hide() {
-        $("#overlay").hide('fast', function() {
-            $("#cover").hide();
-        });
-    }
-    
-    $("#overlay .play-around").click(function() {
-        reveal();
-    });
-    
-    function reveal() {
-        window.location.href='?revealed';
-    }
-    
-    $("#overlay .continue-submitting").click(function() {
-        questionnaire.continueSubmitting();
-    });
-
-    $("#overlay .show-result").click(function() {
-        showResult();
-    });
-    
-    function showResult() {
-        window.location.href='result.html?type=' + window.questionnaire.getDesignType() + "&ukey=" + localStorage['you.ukey'];
-    }
-}
-
-function Questionnaire(prefix) {
-    var SUPPLY_CORRECT_NUMBER_OF_STATEMENTS = "Check exactly five stametements in each group!";
+function Questionnaire() {
+    var SUPPLY_CORRECT_NUMBER_OF_STATEMENTS = "Please check alle dimensions: one side should have more checks than the other one!";
     var RESULT_STRING = '<strong>Result:</strong> The resulting design type is <a href="types.html?type=${type}"><strong>${type}</strong>.';
 
     var dimensions = [
@@ -277,39 +239,6 @@ function Questionnaire(prefix) {
         return true;
     }
     
-    this.finish = function() {
-        if (! isComplete()) {
-            $("#globalErrorBox").show("slow");
-        } else {
-            $("#globalErrorBox").hide();
-            continueToNextPage();
-        }
-    }
-    
-    function continueToNextPage() {
-        if (prefix === 'you' && localStorage['you.ukey'] != null) {
-            overlay.show();
-        } else {
-            continueSubmitting();
-        }
-    }
-    
-    this.continueSubmitting = function() {
-        continueSubmitting();
-    }
-    
-    function continueSubmitting() {
-        window.location.href='submit.html?type='+questionnaire.getDesignType() + '&ukey=' + uniqid();
-    }
-        
-    function uniqid() {
-        var timeBasedPart = Math.floor((new Date()).getTime() / 1000).toString(16);
-        var minRandomValue = Math.pow(16,4);
-        var maxRandomValue = Math.pow(16,5) - Math.pow(16,4);
-        var randomPart = Math.floor(Math.random() * maxRandomValue + minRandomValue).toString(16);
-        return timeBasedPart + randomPart;
-    }
-
     this.reveal = function() {
         for (dim in dimensions) {
             dimensions[dim].reveal();
@@ -317,61 +246,19 @@ function Questionnaire(prefix) {
         $("#result").show();
         $("#controls").hide();
     }
-    
-    this.save = function() {
-        var checkboxes = $(":checkbox");
-        for (cb in checkboxes) {
-            localStorage[prefix + "." + checkboxes[cb].id] = checkboxes[cb].checked;
-        }
-    }
-    
-    this.load = function() {
-        var checkboxes = $(":checkbox");
-        for (cb in checkboxes) {
-            checkboxes[cb].checked = (localStorage[prefix + "." + checkboxes[cb].id] === "true");
-        }
-        this.update();
-    }
-    
-    this.clear = function() {
-        var checkboxes = $(":checkbox");
-        for (cb in checkboxes) {
-            checkboxes[cb].checked = false;
-        }
-        localStorage.clear();
-        this.update();
-    }
-    
-    if (prefix === 'you') {
-        var overlay = new Overlay(this);
-    }
 }
 
 $(document).ready(function() {
-    window.questionnaire = new Questionnaire(prefix);
+    window.questionnaire = new Questionnaire();
+
     $("#template").hide();
 
     $(".dimension :checkbox").click(function() {
         questionnaire.update();
-        questionnaire.save();
-    });
-    
-    $("#continue").on('click', function() {
-        questionnaire.finish();
-    });
-    
-    $("#load").click(function() {
-        questionnaire.load();
-    });
-    
-    $("#clear").click(function() {
-        questionnaire.clear();
     });
     
     if (window.location.search === "?revealed") {
         questionnaire.reveal();
     }
-    
-    questionnaire.load();
 });
 
