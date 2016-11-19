@@ -51,6 +51,7 @@ small, .small {
 
 .btn_checkout {
     margin-top: 5px;
+    /*border: 1px solid transparent*/ /*does not work, seems that it does not overwrite .btn*/
 }
     
 .btn {
@@ -63,12 +64,12 @@ small, .small {
     font-size: 14px;
     line-height: 20px;
     *line-height: 20px;
-    color: #333;
     text-align: center;
     vertical-align: middle;
     cursor: pointer;
-    color: #333;
     text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+    /*
+    color: #333;
     background-color: #f2f2f2;
     background-image: -moz-linear-gradient(top, #fafafa, #e6e6e6);
     background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fafafa),
@@ -76,14 +77,17 @@ small, .small {
     background-image: -webkit-linear-gradient(top, #fafafa, #e6e6e6);
     background-image: -o-linear-gradient(top, #fafafa, #e6e6e6);
     background-image: linear-gradient(to bottom, #fafafa, #e6e6e6);
+    */
     background-repeat: repeat-x;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff9f9f9',
         endColorstr='#ffe5e5e5', GradientType=0 );
+    border: 1px solid #ccc;
+    /*
     border-color: #e6e6e6 #e6e6e6 #bfbfbf;
     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    */
     *background-color: #e6e6e6;
     filter: progid:DXImageTransform.Microsoft.gradient(enabled=  false );
-    border: 1px solid #ccc;
     *border: 0;
     border-bottom-color: #b3b3b3;
     -webkit-border-radius: 2px;
