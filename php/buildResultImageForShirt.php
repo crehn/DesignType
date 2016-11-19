@@ -16,7 +16,8 @@ function createResultImage() {
     $log->debug("print shirt image for type: " . $type . " and ukey: " . $ukey);
     
     $resultImg = imagecreatefrompng("../img/shirt/shirt_bg.png");
-    $fontArial = '../fonts/arial.ttf';
+    //$fontArial = '../fonts/arial.ttf';
+    $fontArial = '../fonts/LiberationSans-Regular.ttf';
     
     // just for help  
     //imageline ($resultImg, (imagesx($resultImg) / 2), 0, (imagesx($resultImg) / 2), imagesy($resultImg), $txtHeaderColor);
