@@ -98,6 +98,8 @@ function writeComment(name, avatarUrl, timestamp, text) {
 
 $(document).ready(function() {
     $('#comment-template').hide();
+    //disable post btn at beginning
+    $('#comments .post-button').attr('disabled', true); 
     initializeCommentFeature();  
     loadComments(pageIdComments);
 });

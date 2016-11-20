@@ -109,6 +109,8 @@ function continueToResultPage(ukey, resulttype) {
 }
 
 $(document).ready(function() {
+	//disable result btn at beginning
+	$('#result').attr('disabled', true); 
     $("#designType").attr('value', getDesignType());
     $("select").change(function() {
         if (everythingFilledOut())
