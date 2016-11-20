@@ -110,7 +110,7 @@
 			Goethestr. 23<br />
 			76474 Au am Rhein<br />
 			<h2>Contact</h2>
-			Telephone: 01739557879<br />
+			Telephone: <span id="telephone">todo</span><br />
 			E-Mail: <a class="feedback">Send us a mail</a><br />
 			Internetadresse: <a href="http://www.design-types.net" target="_blank">www.design-types.net</a><br />
 			<h2>Person responsible for content in accordance with 55 Abs. 2 RStV</h2>
@@ -156,6 +156,9 @@
     var a = 'esign-';var b = 'ma';var c = 'es.net';var d = 'typ';var e = 'il@d';var f = 'ilto:ema';
     $("a.feedback").attr('href', b+f+e+a+d+c);
     $("a.feedback").first().html("ema"+e+a+d+c);
+    
+    var z = '0'; var y = '7879'; var x = '955'; var w = '173';
+    $("#telephone").html(z+w+x+y);
     
     var imprintHidden = true;
     $(document).ready(function() {

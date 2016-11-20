@@ -133,7 +133,7 @@ function Types() {
         new Dimension("simple", "powerful"),
         new Dimension("abstract", "concrete"),
         new Dimension("pragmatic", "idealistic"),
-        new Dimension("technologic", "robust")
+        new Dimension("robust", "technologic")
     ];
     
     var types = buildTypes();
@@ -200,6 +200,15 @@ function Types() {
             $("#" + type.toLowerCase()).show();
             $("#" + type.toLowerCase()).next().show();
         }
+        
+        // scroll to type but not at result page
+        var userkey = getHttpParameter("ukey");
+        if (userkey != null && userkey !== undefined) {
+        	console.log("no scrolling at result page!");
+        } else {
+        	console.log("scroll to type: " + type.toLowerCase());
+        	$("html, body").animate({scrollTop:$("#"+type.toLowerCase()).offset().top}, "slow");
+        }
     }
 
     function typeToIndex(type) {
@@ -222,7 +231,7 @@ $(document).ready(function() {
 
     $("#types").accordion({ 
         collapsible: true,
-        active: false ,
+        active: false,
         heightStyle: "content"
     });
     
