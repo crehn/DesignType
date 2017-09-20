@@ -2,7 +2,7 @@ var statements = {}
 statements.simple = [
     "Your colleague writes many but small classes and methods.",
     "In discussions about which solution will fit best, your colleague argues for implementing only the well known requirements instead of thinking too long about potentially upcoming requirements.",
-    "You colleague doesn't document very much. In his defense, his codes doesn't need much of it anyway.",
+    "Your colleague doesn't document very much. In his defense, his codes doesn't need much of it anyway.",
     "Your colleague avoids dependencies, libraries and complex language constructs.",
     "Your colleague's solutions are simple and straight-forward but sometimes a bit nearsighted."
 ];
@@ -45,8 +45,8 @@ statements.robust = [
     "You find much functionality in your colleagues code concerning with parameter verification, logging, and exception handling (normally with homemade exception classes).",
     "When you want to introduce a new technology, framework, or library, you have to convince your colleague that there are substantial benefits. He seems to stick with &quot;old&quot; technology.",
     "Your colleague often thinks about the consequences each change can imply.",
-    "You colleague is very wary of using reflection, aspect orientation, and other forms of &quot;magic&quot;.",
-    "You colleague is eager to standardize everything: technology, architectures, coding styles, release procedures, etc. Once these standards are established, your colleague insists on following them."
+    "Your colleague is very wary of using reflection, aspect orientation, and other forms of &quot;magic&quot;.",
+    "Your colleague is eager to standardize everything: technology, architectures, coding styles, release procedures, etc. Once these standards are established, your colleague insists on following them."
 ];
 statements.technologic = [
     "Your colleague constantly pushes towards adopting new technology. ",
