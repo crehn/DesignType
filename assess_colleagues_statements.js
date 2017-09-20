@@ -39,7 +39,7 @@ statements.idealistic = [
     "Your colleague strives to produce high-quality code under all circumstances.",
     "Your colleague doesn't like compromises. Misusing certain frameworks, patterns, or concepts is a nightmare to him.",
     "Discussing with your colleague can be exhausting sometimes.",
-    "You sometimes get the feeling that your colleague handles newbies a bit condescending."
+    "You sometimes get the feeling that your colleague handles newbies in a slightly condescending way."
 ];
 statements.robust = [
     "You find much functionality in your colleagues code concerning with parameter verification, logging, and exception handling (normally with homemade exception classes).",
