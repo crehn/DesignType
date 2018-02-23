@@ -20,7 +20,7 @@ function everythingFilledOut() {
 }
 
 function storeData() {
-    console.log("storeData - send data...");
+    debuglog("storeData - send data...");
     var resulttype = $("#designType").val();
     var ukey = getParameterByName('ukey');
 
@@ -91,10 +91,10 @@ function storeData() {
         localStorage['you.ukey'] = ukey;
         continueToResultPage(ukey, resulttype);
     }).fail(function (err) {
-        console.log(err.responseText);
+        debuglog(err.responseText);
         var problem = JSON.parse(err.responseText);
         if (problem.type == 'http://design-types.net/problems/ukey-already-exists') {
-            console.log('ukey already exists; nothing is stored as the data is already in the db; continue with saved result');
+            debuglog('ukey already exists; nothing is stored as the data is already in the db; continue with saved result');
             continueToResultPage(ukey, resulttype);
         } else {
             $('pre.error-details').text(err.responseText);
@@ -104,7 +104,7 @@ function storeData() {
 }
 
 function continueToResultPage(ukey, resulttype) {
-    console.log("redirect to result page with user key: " + ukey);
+    debuglog("redirect to result page with user key: " + ukey);
     $(location).attr('href', 'result.html?type=' + resulttype + '&ukey=' + ukey);
 }
 

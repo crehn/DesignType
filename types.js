@@ -142,7 +142,7 @@ function Types() {
         var result = {};
         for (i = 0; i < 16; i++) {
             result[i] = indexToType(i);
-            console.log("built type number " + i + ": " + result[i].abbreviation());
+            debuglog("built type number " + i + ": " + result[i].abbreviation());
         }
         return result;
     }
@@ -182,10 +182,10 @@ function Types() {
     }
 
     function showDesignType(type) {
-        console.log("show type: " + type);
+        debuglog("show type: " + type);
 
         if (typesData[type.toLowerCase()] == null) {
-            console.log("design type incomplete or cannot be found; don't highlight anything");
+            debuglog("design type incomplete or cannot be found; don't highlight anything");
             return;
         }
 
@@ -204,9 +204,9 @@ function Types() {
         // scroll to type but not at result page
         var userkey = getHttpParameter("ukey");
         if (userkey != null && userkey !== undefined) {
-            console.log("no scrolling at result page!");
+            debuglog("no scrolling at result page!");
         } else {
-            console.log("scroll to type: " + type.toLowerCase());
+            debuglog("scroll to type: " + type.toLowerCase());
             $("html, body").animate({ scrollTop: $("#" + type.toLowerCase()).offset().top }, "slow");
         }
     }

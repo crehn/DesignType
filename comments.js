@@ -21,7 +21,7 @@ function initializeCommentFeature() {
 }
 
 function showNewCommentForm() {
-    console.log("show new comment form");
+    debuglog("show new comment form");
     $("#comments .new-button").hide();
     $('#comments .new-form').show();
     $('#new-comment-name').trigger("focus");
@@ -36,7 +36,7 @@ function activatePostButtonIffThereIsText() {
 }
 
 function postComment() {
-    console.log("post comment");
+    debuglog("post comment");
     $.ajax({
         method: "POST",
         url: "php/addComment.php?pageId=" + pageIdComments,
@@ -47,7 +47,7 @@ function postComment() {
             text: $('#new-comment-text').val().replace(/(\r\n|\n|\r)/gm, "[br]")
         }),
         success: function (resultingComment) {
-            console.log("comment successfully posted");
+            debuglog("comment successfully posted");
             $('#new-comment-text').val('');
             hideNewCommentForm(function () {
                 writeComment(resultingComment['name'], resultingComment['avatar'], resultingComment['timestamp'], resultingComment['text']);
@@ -64,16 +64,16 @@ function hideNewCommentForm(doAfter) {
 }
 
 function cancelComment() {
-    console.log("cancel comment");
+    debuglog("cancel comment");
     $('#comments .new-form').fadeOut('fast', function () {
         $('#comments .new-button').fadeIn('fast');
     });
 }
 
 function loadComments(pageId) {
-    console.log("loadComments for pageId " + pageId);
+    debuglog("loadComments for pageId " + pageId);
     $.get("php/loadComments.php?pageId=" + pageId, function (comments, status) {
-        console.log("loadComments - status: " + status + ", data: " + comments);
+        debuglog("loadComments - status: " + status + ", data: " + comments);
         if (comments != null) {
             for (var i = 0; i < comments.length; i++) {
                 writeComment(comments[i]['name'], comments[i]['avatar'], comments[i]['timestamp'], comments[i]['text']);
@@ -83,7 +83,7 @@ function loadComments(pageId) {
 }
 
 function writeComment(name, avatarUrl, timestamp, text) {
-    console.log("write comment by " + name + " at " + timestamp);
+    debuglog("write comment by " + name + " at " + timestamp);
     var result = $("#comment-template").clone();
     result.find(".avatar").attr("src", avatarUrl);
     result.find(".name").html(name);

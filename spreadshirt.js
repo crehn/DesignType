@@ -8,18 +8,18 @@ var country = 1;
 
 function changeShirtSize(newSize) {
     shirtSize = newSize;
-    console.log("new shirt size: " + shirtSize);
+    debuglog("new shirt size: " + shirtSize);
 }
 
 function activateShirtSizeBtn(activeElementId) {
     $(".btn-size-select").removeClass("btn-size-active");
     $(activeElementId).addClass("btn-size-active");
-    console.log("activated shirt size btn element with id: " + activeElementId);
+    debuglog("activated shirt size btn element with id: " + activeElementId);
 }
 
 function changeShirtColor(newColor) {
     shirtColor = newColor;
-    console.log("new shirt color: " + newColor);
+    debuglog("new shirt color: " + newColor);
     // change bg color of shirt
     var newClazz = "shirt_bg shirt_bg_" + newColor;
     $("#shirt_display").attr('class', newClazz);
@@ -28,44 +28,44 @@ function changeShirtColor(newColor) {
 function activateShirtColorBtn(activeElementId) {
     $(".btn-clr-select").removeClass("btn-clr-select-active");
     $(activeElementId).addClass("btn-clr-select-active");
-    console.log("activated shirt color btn element with id: " + activeElementId);
+    debuglog("activated shirt color btn element with id: " + activeElementId);
 }
 
 function changeHomeCountry(newCountry) {
     country = newCountry;
-    console.log("new country: " + newCountry);
+    debuglog("new country: " + newCountry);
 }
 
 function createShirtImage(resultType, userkey) {
-    console.log("createShirtImage for: " + userkey);
+    debuglog("createShirtImage for: " + userkey);
     $.post("./php/buildResultImageForShirt.php", { ukey: userkey, restype: resultType })
         .done(function (data, status) {
-            console.log("createShirtImage - status: " + status + "; with result path to image: " + data);
+            debuglog("createShirtImage - status: " + status + "; with result path to image: " + data);
             // change the overlay image by current created one
             var newImgSrc = "./php/shirtorders/" + userkey + ".png";
             $(".overlay-img").attr('src', newImgSrc);
-            console.log("set new img src: " + newImgSrc);
+            debuglog("set new img src: " + newImgSrc);
         })
         .fail(function (err) {
-            console.log("error creating spreadshirt image: " + err.responseText);
+            debuglog("error creating spreadshirt image: " + err.responseText);
         });
 }
 
 function checkoutShirt(userkey) {
-    console.log("checkoutShirt for: " + userkey);
+    debuglog("checkoutShirt for: " + userkey);
     $('#wholebody').css('cursor', 'wait');
     $('#checkout').css('cursor', 'wait');
     var shipCountry = $('#shipping_country').val();
-    console.log("ship country: " + shipCountry);
+    debuglog("ship country: " + shipCountry);
     $.post("./php/buildShirtBasketItemInShop.php", { ukey: userkey, shirt_size: shirtSize, shirt_color: shirtColor, ship_country: shipCountry })
         .done(function (data, status) {
-            console.log("checkoutShirt - status: " + status + "; with url to checkout: " + data['0']);
+            debuglog("checkoutShirt - status: " + status + "; with url to checkout: " + data['0']);
             // relocate to checkout page
             $(location).attr('href', data['0']);
             //window.open(data['0']);
         })
         .fail(function (err) {
-            console.log("error creating spreadshirt basket item: " + err.responseText);
+            debuglog("error creating spreadshirt basket item: " + err.responseText);
             $('#wholebody').css('cursor', 'auto');
             $('#checkout').css('cursor', 'auto');
         });
