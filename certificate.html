@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,109 +8,112 @@
 
     <link rel="icon" type="image/png" href="./favicon.png">
     <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="./favicon.png">
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="bower_components/jquery-ui/themes/ui-lightness/jquery-ui.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="comments.css" />
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="bower_components/html5shiv/dist/html5shiv.js"></script>
-      <script src="bower_components/respond.js/dest/respond.min.js"></script>
-    <![endif]-->
-
     <title>Your Design Type</title>
 </head>
+
 <body>
-<div class="container page certificate">
+    <div class="container page certificate">
 
-    <section id="coat-of-arms">
-        <img src="" alt="" width="250">
-    </section>
-    <section id="dimension-description">
-        <div id="type" class="certheader">Your Design Type: </div>
-        <div class="row">
-            <div class="col-xs-6">
+        <section id="coat-of-arms">
+            <img src="" alt="" width="250">
+        </section>
+        <section id="dimension-description">
+            <div id="type" class="certheader">Your Design Type: </div>
+            <div class="row">
+                <div class="col-6">
+                    <dl>
+                        <dt class="simple">
+                            <img src="img/dimensions/simple.png" width="20" alt=""> Simple</dt>
+                        <dd class="simple"></dd>
+                        <dt class="powerful">
+                            <img src="img/dimensions/powerful.png" width="20" alt=""> Powerful</dt>
+                        <dd class="powerful"></dd>
+                    </dl>
+                </div>
+                <div class="col-6">
+                    <dl>
+                        <dt class="abstract">
+                            <img src="img/dimensions/abstract.png" width="20" alt=""> Abstract</dt>
+                        <dd class="abstract"></dd>
+                        <dt class="concrete">
+                            <img src="img/dimensions/concrete.png" width="20" alt=""> Concrete</dt>
+                        <dd class="concrete"></dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <dl>
+                        <dt class="pragmatic">
+                            <img src="img/dimensions/pragmatic.png" width="20" alt=""> Pragmatic</dt>
+                        <dd class="pragmatic"></dd>
+                        <dt class="idealistic">
+                            <img src="img/dimensions/idealistic.png" width="20" alt=""> Idealistic</dt>
+                        <dd class="idealistic"></dd>
+                    </dl>
+                </div>
+                <div class="col-6">
+                    <dl>
+                        <dt class="robust">
+                            <img src="img/dimensions/robust.png" width="20" alt=""> Robust</dt>
+                        <dd class="robust"></dd>
+                        <dt class="technologic">
+                            <img src="img/dimensions/technologic.png" width="20" alt=""> Technologic</dt>
+                        <dd class="technologic"></dd>
+                    </dl>
+                </div>
+            </div>
+        </section>
+        <section id="type-description" class="row">
+            <div class="col-6">
                 <dl>
-                    <dt class="simple"><img src="img/dimensions/simple.png" width="20" alt=""> Simple</dt>
-                    <dd class="simple"></dd>
-                    <dt class="powerful"><img src="img/dimensions/powerful.png" width="20" alt=""> Powerful</dt>
-                    <dd class="powerful"></dd>
+                    <dt>Your designs are:</dt>
+                    <dd class="your-designs-are"></dd>
                 </dl>
             </div>
-            <div class="col-xs-6">
+            <div class="col-6">
                 <dl>
-                    <dt class="abstract"><img src="img/dimensions/abstract.png" width="20" alt=""> Abstract</dt>
-                    <dd class="abstract"></dd>
-                    <dt class="concrete"><img src="img/dimensions/concrete.png" width="20" alt=""> Concrete</dt>
-                    <dd class="concrete"></dd>
+                    <dt>Programming is to you:</dt>
+                    <dd class="programming-is"></dd>
                 </dl>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-6">
+        </section>
+        <section class="typediagnostic row">
+            <div class="col-6">
                 <dl>
-                    <dt class="pragmatic"><img src="img/dimensions/pragmatic.png" width="20" alt=""> Pragmatic</dt>
-                    <dd class="pragmatic"></dd>
-                    <dt class="idealistic"><img src="img/dimensions/idealistic.png" width="20" alt=""> Idealistic</dt>
-                    <dd class="idealistic"></dd>
+                    <dt>Dimension overlap</dt>
+                    <dd>
+                        <div class="text-center" id="dimension-overlap-chart"></div>
+                    </dd>
                 </dl>
             </div>
-            <div class="col-xs-6">
+            <div class="col-6">
                 <dl>
-                    <dt class="robust"><img src="img/dimensions/robust.png" width="20" alt=""> Robust</dt>
-                    <dd class="robust"></dd>
-                    <dt class="technologic"><img src="img/dimensions/technologic.png" width="20" alt=""> Technologic</dt>
-                    <dd class="technologic"></dd>
+                    <dt>Type overlap</dt>
+                    <dd>
+                        <div class="text-center" id="type-overlap-chart"></div>
+                    </dd>
                 </dl>
             </div>
+        </section>
+        <div class="qr">
+            design-types.net&nbsp;
+            <img width="75" src="img/qr.png" alt="" title="http://design-types.net/">
         </div>
-    </section>
-    <section id="type-description" class="row">
-        <div class="col-xs-6">
-            <dl>
-                <dt>Your designs are:</dt>
-                <dd class="your-designs-are"></dd>
-            </dl>
-        </div>
-        <div class="col-xs-6">
-            <dl>
-                <dt>Programming is to you:</dt>
-                <dd class="programming-is"></dd>
-            </dl>
-        </div>
-    </section>
-    <section class="typediagnostic row">
-        <div class="col-xs-6">
-            <dl>
-                <dt>Dimension overlap</dt>
-                <dd>
-                    <div class="text-center" id="dimension-overlap-chart"></div>
-                </dd>
-            </dl>
-        </div>
-        <div class="col-xs-6">
-            <dl>
-                <dt>Type overlap</dt>
-                <dd>
-                    <div class="text-center" id="type-overlap-chart"></div>
-                </dd>
-            </dl>
-        </div>
-    </section>
-    <div class="qr">
-        design-types.net&nbsp;<img width="75" src="img/qr.png" alt="" title="http://design-types.net/">
     </div>
-</div>
 
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
-<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="bower_components/d3/d3.min.js"></script>
-<script src="utils.js"></script>
-<script src="types_data.js"></script>
-<script src="charts.js"></script>
-<script src="certificate.js"></script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/d3/build/d3.min.js"></script>
+    <script src="utils.js"></script>
+    <script src="types_data.js"></script>
+    <script src="charts.js"></script>
+    <script src="certificate.js"></script>
 </body>
+
 </html>
