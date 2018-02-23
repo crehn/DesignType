@@ -1,177 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="icon" type="image/png" href="./favicon.png">
     <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="./favicon.png">
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="bower_components/jquery-ui/themes/ui-lightness/jquery-ui.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="comments.css" />
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="bower_components/html5shiv/dist/html5shiv.js"></script>
-      <script src="bower_components/respond.js/dest/respond.min.js"></script>
-    <![endif]-->
-    
     <script type="text/javascript">
-       var pageIdComments = 4;/* dimensions.html: 1, types.hmtl: 2, result.html: 3, statistics.html: 4, info.html (learn more): 5 */
+        var pageIdComments = 4; /* dimensions.html: 1, types.hmtl: 2, result.html: 3, statistics.html: 4, info.html (learn more): 5 */
     </script>
 
     <title>How Do You Design Software?</title>
 </head>
-<body>
-<div class="container page">
-    <nav class="navbar navbar-inverse navbar-default" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html">Design Types</a>
-            </div>
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="test_yourself.html">Test Yourself</a></li>
-                    <li><a href="assess_colleagues.html?revealed">Assess Colleagues</a></li>
-                    <li><a href="info.html">Learn More</a></li>
-                    <li class="active"><a href="statistics.html">Statistics</a></li>
-                    <li><a href="about.html">About</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="http://www.principles-wiki.net">principles-wiki.net</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
 
-    <div class="jumbotron">
-        <h1>How Do You Design Software?</h1>
-        <p>
-            Some statistics.
-        </p>
-    </div>
- 
-     <section>
-        <a id="statistics"></a>
-        <h1>Statistics</h1>
-        <div id="statisticsummary">
-            <div class="row">
-                <div class="col-sm-12">
-                    <p>This page contains some statistical charts based on all <span id="amount_survey_participants">0</span> participants who took part in the survey.</p>
-                </div>
+<body>
+
+    <main role="main" class="container page">
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" role="navigation">
+            <a class="navbar-brand" href="index.html">Design Types</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="nav navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="test_yourself.html">Test Yourself</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="assess_colleagues.html?revealed">Assess Colleagues</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="info.html">Learn More</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="statistics.html">Statistics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a class="nav-link" href="http://www.principles-wiki.net">principles-wiki.net</a>
+                    </li>
+                </ul>
             </div>
+        </nav>
+
+        <div class="jumbotron">
+            <h1>How Do You Design Software?</h1>
+            <p>
+                Some statistics.
+            </p>
         </div>
-    </section>    
-    <section>
-        <a id="typedistribution"></a>
-        <h2>Type distribution</h2>
-        <div id="typedistributions">
-            <div class="row">
-                <div class="col-sm-12">
-                    <p>This is how the design types are distributed among those who already took part in the survey:</p>
-                    <div class="text-center" id="statsbox">
+
+        <section>
+            <a id="statistics"></a>
+            <h1>Statistics</h1>
+            <div id="statisticsummary">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p>This page contains some statistical charts based on all
+                            <span id="amount_survey_participants">0</span> participants who took part in the survey.</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <section>
-         <h2>Make a donation</h2>
-         <div class="donation_row">
-            <p>Design-types.net is a non profit initiative. Please support us by making a donation (e.g. for motivating us to provide further charts).</p>
-            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-            <input type="hidden" name="cmd" value="_s-xclick">
-            <input type="hidden" name="hosted_button_id" value="XXAD9MAS7AVTN">
-            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" name="submit" alt="PayPal - The safer, easier way to pay online!">
-            <img alt="donate" src="https://www.paypalobjects.com/de_DE/i/scr/pixel.gif" width="1" height="1">
-            </form>
-          </div>    
-    </section>      
-    <section>
-        <a id="allstatements"></a>
-        <h2>Frequency of statement selection</h2>
-        <div id="allstats">
-            <div class="row">
-                <div class="col-sm-12">
-                    <p>This is how often the particular statements have been chosen:</p>
-                    <div class="text-center" id="statementsbox"></div>
+        </section>
+        <section>
+            <a id="typedistribution"></a>
+            <h2>Type distribution</h2>
+            <div id="typedistributions">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p>This is how the design types are distributed among those who already took part in the survey:</p>
+                        <div class="text-center" id="statsbox">
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section> 
-    <section>
-        <a id="dimensionswithexp"></a>
-        <h2>Dimension variation by years of experience</h2>
-        <div id="dimexp">
-            <div class="row">
-                <div class="col-sm-12">
-                    <p>This chart shows how the design type changes as one gains more work experience. For each dimension, e.g. simple-vs.powerful, the ratio of the two sides is shown. If, for example, the graph shows a ratio of 60% simple for those with 1-3 years work experience, this means that out of those 60% are simple and 40% are rather powerful.</p>
-                    <div class="text-center" id="dimensionsexpbox"></div>
-                    <p>Our observations:</p>
-                    <ul>
-                        <li>You can see that most people who took part in the survey are technologic. To a certain extent this might be the case because those people like trying out new stuff such as this questionnaire.</li>
-                        <li>Those with no work experience seem to be not that determined to a certain type or dimension. The curves start around 50% which means those people don't tends towards the one or the other side. After a few years a clear tendency is visible.</li>
-                        <li>pragmatic-vs-idealistic seems to be an exception to this rule. People with no work experience tend to be pragmatic. As time goes by the number of pragmatists decreases.</li>
-                        <li>After a while there is a clear tendency towards abstract and technologic.</li>
-                        <li>For more deductions the numbers are not significant enough, yet. The graphs change each day. As more and more people take part, we will get more insights.</li>
-                    </ul>
+        </section>
+        <section>
+            <h2>Make a donation</h2>
+            <div class="donation_row">
+                <p>Design-types.net is a non profit initiative. Please support us by making a donation (e.g. for motivating
+                    us to provide further charts).</p>
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                    <input type="hidden" name="cmd" value="_s-xclick">
+                    <input type="hidden" name="hosted_button_id" value="XXAD9MAS7AVTN">
+                    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                    <img alt="donate" src="https://www.paypalobjects.com/de_DE/i/scr/pixel.gif" width="1" height="1">
+                </form>
+            </div>
+        </section>
+        <section>
+            <a id="allstatements"></a>
+            <h2>Frequency of statement selection</h2>
+            <div id="allstats">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p>This is how often the particular statements have been chosen:</p>
+                        <div class="text-center" id="statementsbox"></div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section> 
-    <section>
-        <h2>Feedback and comments</h2>
-        <p>Do you like to see more graphs? Any ideas, thoughts, or questions? Write a comment.</p>
-    </section>             
-    <section id="comments">
-		<div id="comment-template" class="comment">
-		    <img src="todo_dyn" alt="" class="avatar">
-		    <div>
-		        <h5 class="name">Template name</h5><span class="date">Template date</span><br>
-		        <p class="text">Template comment</p>
-		    </div>
-		</div>
-		
-		<div class="comment-container">
-		    <div class="new-button">
-		        <span>Write a comment ...</span>
-		    </div>
-		    <div class="new-form">
-		        <input type="text" id="new-comment-name" value="" placeholder="Your name">
-		        <input type="text" id="new-comment-email" value="" placeholder="Your e-mail address">
-		        <textarea id="new-comment-text"></textarea>
-		        <div class="btn btn-primary post-button">Post comment</div>
-		        <div class="btn btn-default cancel-button">Cancel</div>
-		    </div>
-		    <div class="clear"></div>
-		</div>  
-    </section>  
-    <footer>
-        Please give us <a class="feedback">Feedback</a> or discuss with us at <a href="https://www.xing.com/communities/groups/design-principles-patterns-types-08d2-1080100" target="_blank"><img src="./img/xing_logo2.png" alt="XING" height="25" width="25" /></a>
-    </footer>
-</div>
+        </section>
+        <section>
+            <a id="dimensionswithexp"></a>
+            <h2>Dimension variation by years of experience</h2>
+            <div id="dimexp">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p>This chart shows how the design type changes as one gains more work experience. For each dimension,
+                            e.g. simple-vs.powerful, the ratio of the two sides is shown. If, for example, the graph shows
+                            a ratio of 60% simple for those with 4-6 years work experience, this means that out of those
+                            60% are simple and 40% are rather powerful.</p>
+                        <div class="text-center" id="dimensionsexpbox"></div>
+                        <p>Our observations:</p>
+                        <ul>
+                            <li>You can see that most people who took part in the survey are technologic. To a certain extent
+                                this might be the case because those people like trying out new stuff such as this questionnaire.</li>
+                            <li>Those with no work experience seem to be less determined to a certain type or dimension. The
+                                curves start around 50% which means those people don't tends towards the one or the other
+                                side. After a few years a clear tendency is visible.</li>
+                            <li>After a while there is a clear tendency towards abstract and technologic.</li>
+                            <li>Few people have more than 25 years of experience. This is why individual results distort the
+                                graphs there.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h2>Feedback and comments</h2>
+            <p>Do you like to see more graphs? Any ideas, thoughts, or questions? Write a comment.</p>
+        </section>
+        <section id="comments">
+            <div id="comment-template" class="comment">
+                <img src="todo_dyn" alt="" class="avatar">
+                <div>
+                    <h5 class="name">Template name</h5>
+                    <span class="date">Template date</span>
+                    <br>
+                    <p class="text">Template comment</p>
+                </div>
+            </div>
 
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
-<script>
-    var a = 'esign-';var b = 'ma';var c = 'es.net';var d = 'typ';var e = 'il@d';var f = 'ilto:ema';
-    $("a.feedback").attr('href', b+f+e+a+d+c);
-</script>
-<script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
-<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="bower_components/d3/d3.min.js"></script>
-<script src="types_data.js"></script>
-<script src="test_yourself_statements.js"></script>
-<script src="statistics.js"></script>
-<script src="comments.js"></script>
+            <div class="comment-container">
+                <div class="new-button">
+                    <span>Write a comment ...</span>
+                </div>
+                <div class="new-form">
+                    <input type="text" id="new-comment-name" value="" placeholder="Your name">
+                    <input type="text" id="new-comment-email" value="" placeholder="Your e-mail address">
+                    <textarea id="new-comment-text"></textarea>
+                    <div class="btn btn-primary post-button">Post comment</div>
+                    <div class="btn btn-default cancel-button">Cancel</div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </section>
+        <footer>
+            Please give us
+            <a class="feedback">Feedback</a> or discuss with us at
+            <a href="https://www.xing.com/communities/groups/design-principles-patterns-types-08d2-1080100" target="_blank">
+                <img src="./img/xing_logo2.png" alt="XING" height="25" width="25" />
+            </a>
+        </footer>
+    </main>
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <script>
+        var a = 'esign-'; var b = 'ma'; var c = 'es.net'; var d = 'typ'; var e = 'il@d'; var f = 'ilto:ema';
+        $("a.feedback").attr('href', b + f + e + a + d + c);
+    </script>
+    <script src="node_modules/d3/build/d3.min.js"></script>
+    <script src="types_data.js"></script>
+    <script src="test_yourself_statements.js"></script>
+    <script src="statistics.js"></script>
+    <script src="comments.js"></script>
 </body>
+
 </html>
