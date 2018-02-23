@@ -1,0 +1,22 @@
+{
+    "name": "designtypes",
+    "version": "0.0.0",
+    "description": "A questionnaire for finding out how you think about software design",
+    "scripts": {},
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crehn/DesignType.git"
+    },
+    "author": "Matthias Wittum and Christian Rehn",
+    "bugs": {
+        "url": "https://github.com/crehn/DesignType/issues"
+    },
+    "homepage": "http://design-types.net",
+    "dependencies": {
+        "bootstrap": "^4.0.0",
+        "d3": "^4.13.0",
+        "jquery": "^3.3.1",
+        "jquery-ui": "^1.12.1",
+        "popper.js": "^1.12.9"
+    }
+}
