@@ -1,3 +1,12 @@
+@font-face {
+    font-family: 'Metamorphous';
+    src: url('fonts/Metamorphous-Regular.ttf') format('truetype');
+}
+
+h1, h2, h3, .card-header, .btn, .navbar {
+    font-family: 'Metamorphous';
+}
+
 body {
     background-color: #F5F5FF;
     margin-bottom: 1em;
