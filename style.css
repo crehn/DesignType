@@ -3,12 +3,12 @@ body {
     margin-bottom: 1em;
 }
 
-div.page {
+.page {
     background-color: white;
     box-shadow: 0 0 0.5em #999999;
 }
 
-div.page .navbar {
+.page .navbar {
     margin: 0 -15px;
 }
 
@@ -16,6 +16,20 @@ div.page .navbar {
     background-color: #f6a828;
     color: white;
     margin: 15px -15px;
+}
+
+.jumbotron p {
+    font-size: 21px;
+}
+
+.jumbotron h1 {
+    font-size: 36px;
+}
+
+@media screen and (min-width: 768px) {
+        .jumbotron h1 {
+        font-size: 63px;
+    }
 }
 
 .only-revealed {
