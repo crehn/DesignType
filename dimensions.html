@@ -1,351 +1,463 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="icon" type="image/png" href="./favicon.png">
     <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="./favicon.png">
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="bower_components/jquery-ui/themes/ui-lightness/jquery-ui.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/components-jqueryui/themes/ui-lightness/jquery-ui.min.css">
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="comments.css" />
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="bower_components/html5shiv/dist/html5shiv.js"></script>
-      <script src="bower_components/respond.js/dest/respond.min.js"></script>
-    <![endif]-->
-    
     <script type="text/javascript">
-       var pageIdComments = 1;/* dimensions.html: 1, types.hmtl: 2, result.html: 3, statistics.html: 4, info.html (learn more): 5 */
+        var pageIdComments = 1; /* dimensions.html: 1, types.hmtl: 2, result.html: 3, statistics.html: 4, info.html (learn more): 5 */
     </script>
 
     <title>How Do You Design Software?</title>
 </head>
+
 <body>
-<div class="container page">
-    <nav class="navbar navbar-inverse navbar-default" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
+
+    <main role="main" class="container page">
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" role="navigation">
+            <div class="container">
                 <a class="navbar-brand" href="index.html">Design Types</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="nav navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="test_yourself.html">Test Yourself</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="assess_colleagues.html?revealed">Assess Colleagues</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="info.html">Learn More</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="statistics.html">Statistics</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a class="nav-link" href="http://www.principles-wiki.net">principles-wiki.net</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="test_yourself.html">Test Yourself</a></li>
-                    <li><a href="assess_colleagues.html?revealed">Assess Colleagues</a></li>
-                    <li class="active"><a href="info.html">Learn More</a></li>
-                    <li><a href="statistics.html">Statistics</a></li>
-                    <li><a href="about.html">About</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="http://www.principles-wiki.net">principles-wiki.net</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+        </nav>
 
-    <div class="jumbotron">
-        <h1>How Do You Design Software?</h1>
-        <p>
-            Read about the dimensions.
-        </p>
-    </div>
-
-    <section>
-        <h1>Introduction</h1>
+        <div class="jumbotron">
+            <h1>How Do You Design Software?</h1>
             <p>
-            In order to distinguish how developers think when making design decisions, one can distinguish four dimensions: 
+                Read about the dimensions.
+            </p>
+        </div>
+
+        <section>
+            <h1>Introduction</h1>
+            <p>
+                In order to distinguish how developers think when making design decisions, one can distinguish four dimensions:
             </p>
             <ul>
-              <li><b>simple-vs-powerful</b></li>
-              <li><b>abstract-vs-concrete</b></li>
-              <li><b>pragmatic-vs-idealistic</b></li>
-              <li><b>technologic-vs-robust</b></li>
+                <li>
+                    <b>simple-vs-powerful</b>
+                </li>
+                <li>
+                    <b>abstract-vs-concrete</b>
+                </li>
+                <li>
+                    <b>pragmatic-vs-idealistic</b>
+                </li>
+                <li>
+                    <b>technologic-vs-robust</b>
+                </li>
             </ul>
             <p>
-            These dimensions are described here:
+                These dimensions are described here:
             </p>
-    </section>
-    <section id="dimensions">
-        <h2 id="simple-vs-powerful">Simple vs. Powerful</h2>
-        <div class="row">
-            <div class="col-md-6">
-                <h3>Simple</h3>
-                <p>
-                    Developers with this attitude prefer simple solutions which are easy to write and to maintain.
-                </p>
-                <p>
-                    The main idea is avoiding complexity. To prefer simple solutions means to implement only necessary and requested things without any frills. Simple code is easier to read, better to maintain, and cointains fewer bugs. Typical followers know about the power of simplicity. The key to handling complexity is not to master it but rather to avoid it. They prefer small and clear modules with few dependencies. They use libraries and frameworks if this makes the code easier to read and write and they don't use them if this only means that the reader of the code needs to know how all these libraries work. Explicit solutions are preferred to indirect, declaratrive ones. This means that simple solutions are not overly generic but they communicate the intent well.
-                </p>
-                <p>
-                    On the other hand simple design tends to be less foresighted. This makes frequent changes and refactorings necessary. While this is not a problem for a single class, it may become one when interfaces to other teams are affected. Simple and explicit solutions often tend to be tightly coupled to requirements, used libraries and external dependencies. Decoupling introduces complexity (additional abstraction layers, indirect calls, etc.) but it also provides flexibility. This flexibility is sometimes underused by simple developers.
-                </p>
-                <p>
-                    Simple developers typically follow the following principles:
-                    <a href="http://www.principles-wiki.net/principles:keep_it_simple_stupid">KISS</a>, 
-                    <a href="http://www.principles-wiki.net/principles:more_is_more_complex">MIMC</a>, 
-                    <a href="http://www.principles-wiki.net/principles:you_ain_t_gonna_need_it">YAGNI</a>, 
-                    <a href="http://www.principles-wiki.net/principles:rule_of_explicitness">RoE</a>, 
-                    and <a href="http://www.principles-wiki.net/principles:principle_of_least_surprise">PLS</a> 
-                </p>
-                <p>
-                    Rather disregarded principles for these developers are: 
-                    <a href="http://www.principles-wiki.net/principles:generalization_principle">GP</a>
-                    and <a href="http://www.principles-wiki.net/principles:low_coupling">LC</a>
-                </p>
+        </section>
+        <section id="dimensions">
+            <h2 id="simple-vs-powerful">Simple vs. Powerful</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Simple</h3>
+                    <p>
+                        Developers with this attitude prefer simple solutions which are easy to write and to maintain.
+                    </p>
+                    <p>
+                        The main idea is avoiding complexity. To prefer simple solutions means to implement only necessary and requested things without
+                        any frills. Simple code is easier to read, better to maintain, and cointains fewer bugs. Typical
+                        followers know about the power of simplicity. The key to handling complexity is not to master it
+                        but rather to avoid it. They prefer small and clear modules with few dependencies. They use libraries
+                        and frameworks if this makes the code easier to read and write and they don't use them if this only
+                        means that the reader of the code needs to know how all these libraries work. Explicit solutions
+                        are preferred to indirect, declaratrive ones. This means that simple solutions are not overly generic
+                        but they communicate the intent well.
+                    </p>
+                    <p>
+                        On the other hand simple design tends to be less foresighted. This makes frequent changes and refactorings necessary. While
+                        this is not a problem for a single class, it may become one when interfaces to other teams are affected.
+                        Simple and explicit solutions often tend to be tightly coupled to requirements, used libraries and
+                        external dependencies. Decoupling introduces complexity (additional abstraction layers, indirect
+                        calls, etc.) but it also provides flexibility. This flexibility is sometimes underused by simple
+                        developers.
+                    </p>
+                    <p>
+                        Simple developers typically follow the following principles:
+                        <a href="http://www.principles-wiki.net/principles:keep_it_simple_stupid">KISS</a>,
+                        <a href="http://www.principles-wiki.net/principles:more_is_more_complex">MIMC</a>,
+                        <a href="http://www.principles-wiki.net/principles:you_ain_t_gonna_need_it">YAGNI</a>,
+                        <a href="http://www.principles-wiki.net/principles:rule_of_explicitness">RoE</a>, and
+                        <a href="http://www.principles-wiki.net/principles:principle_of_least_surprise">PLS</a>
+                    </p>
+                    <p>
+                        Rather disregarded principles for these developers are:
+                        <a href="http://www.principles-wiki.net/principles:generalization_principle">GP</a>
+                        and
+                        <a href="http://www.principles-wiki.net/principles:low_coupling">LC</a>
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <h3>Powerful</h3>
+                    <p>
+                        Developers with this attitude prefer powerful, flexible, and foresighted solutions.
+                    </p>
+                    <p>
+                        The main idea is to create flexible and foresightes solutions. Generalized solutions can be applied for several use cases
+                        by just customizing or configuring them. Followers typically include flexibility and extensibility
+                        naturally into software design. Powerful developers like runtime configurability, powerful frameworks,
+                        decoupling, and the use of many design patterns. They think ahead and include thoughts on extensibility,
+                        performance, and portability into their design process. This keeps structures and interfaces stable
+                        and helps reducing effort imposed by changing requirements inthe future.
+                    </p>
+                    <p>
+                        On the other hand powerful solutions take much time especially for their initial creation. Some of the flexibility might
+                        never be used so one could argure that introducing it was unnecessary effort. Powerful developers
+                        may tend also to get lost in providing flexibility instead of fulfilling requirements. Powerful code
+                        is flexible and foresighted but it is also hard to read and to understand. Furthermore complex and
+                        powerful solutions are more error-prone than simple ones.
+                    </p>
+                    <p>
+                        Powerful developers typically follow the following principles:
+                        <a href="http://www.principles-wiki.net/principles:generalization_principle">GP</a>,
+                        <a href="http://www.principles-wiki.net/principles:encapsulate_the_concept_that_varies">ECV</a>,
+                        <a href="http://www.principles-wiki.net/principles:information_hiding_encapsulation">IH/E</a>,
+                        <a href="http://www.principles-wiki.net/principles:dependency_inversion_principle">DIP</a>, and
+                        <a href="http://www.principles-wiki.net/principles:low_coupling">LC</a>
+                    </p>
+                    <p>
+                        Rather disregarded principles for these developers are:
+                        <a href="http://www.principles-wiki.net/principles:keep_it_simple_stupid">KISS</a>,
+                        <a href="http://www.principles-wiki.net/principles:more_is_more_complex">MIMC</a>,
+                        <a href="http://www.principles-wiki.net/principles:you_ain_t_gonna_need_it">YAGNI</a>, and
+                        <a href="http://www.principles-wiki.net/principles:rule_of_explicitness">RoE</a>
+                    </p>
+                </div>
             </div>
-            <div class="col-md-6">
-                <h3>Powerful</h3>
-                <p>
-                    Developers with this attitude prefer powerful, flexible, and foresighted solutions.
-                </p>
-                <p>
-                    The main idea is to create flexible and foresightes solutions. Generalized solutions can be applied for several use cases by just customizing or configuring them. Followers typically include flexibility and extensibility naturally into software design. Powerful developers like runtime configurability, powerful frameworks, decoupling, and the use of many design patterns. They think ahead and include thoughts on extensibility, performance, and portability into their design process. This keeps structures and interfaces stable and helps reducing effort imposed by changing requirements inthe future.
-                </p>
-                <p>
-                    On the other hand powerful solutions take much time especially for their initial creation. Some of the flexibility might never be used so one could argure that introducing it was unnecessary effort. Powerful developers may tend also to get lost in providing flexibility instead of fulfilling requirements. Powerful code is flexible and foresighted but it is also hard to read and to understand. Furthermore complex and powerful solutions are more error-prone than simple ones.
-                </p>
-                <p>
-                    Powerful developers typically follow the following principles:
-                    <a href="http://www.principles-wiki.net/principles:generalization_principle">GP</a>,
-                    <a href="http://www.principles-wiki.net/principles:encapsulate_the_concept_that_varies">ECV</a>,
-                    <a href="http://www.principles-wiki.net/principles:information_hiding_encapsulation">IH/E</a>,
-                    <a href="http://www.principles-wiki.net/principles:dependency_inversion_principle">DIP</a>, 
-                    and <a href="http://www.principles-wiki.net/principles:low_coupling">LC</a>
-                </p>
-                <p>
-                    Rather disregarded principles for these developers are: 
-                    <a href="http://www.principles-wiki.net/principles:keep_it_simple_stupid">KISS</a>, 
-                    <a href="http://www.principles-wiki.net/principles:more_is_more_complex">MIMC</a>, 
-                    <a href="http://www.principles-wiki.net/principles:you_ain_t_gonna_need_it">YAGNI</a>, 
-                    and <a href="http://www.principles-wiki.net/principles:rule_of_explicitness">RoE</a>
-                </p>
+            <h2 id="abstract-vs-concrete">Abstract vs. Concrete</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Abstract</h3>
+                    <p>
+                        Developers with this attitude think in terms of abstractions and concepts.
+                    </p>
+                    <p>
+                        Abstract developers always have the big picture in mind. They think in terms of abstraction layers, patterns, package dependencies,
+                        architectural constraints, etc. Structure is very important and abstract developery keep the structure
+                        clean and clearly arranged. Single lines of code are not impotent. You shouldn't look at a software
+                        system with a magnifying glass. It has to work as a whole and it can be understood as a whole. Abstract
+                        solutions follow clear concepts that are easy to understand and fundamental to the whole system.
+                        Followers have a very good overview over the whole system. Furthermore they are also able to give
+                        advice on consequences of particular changes. Often abstract developers also like having natural,
+                        requirements-based object-designs where the software structure mimics the real-world concepts. This
+                        can make understanding the code even easier and may lead to fewer code changes when requirements
+                        change.
+                    </p>
+                    <p>
+                        On the other hand abstract developers typically don't like working with legacy code that has bad structure. They feel the
+                        need to understand the system as a whole and will try to refactor the code such that there is a clear
+                        structure. If there is time for that and the system will be maintained further, this is a good thing.
+                        In the other cases an abstract developer will feel lost and will be unhappy with making changes to
+                        that code which he doesn't quite understand.
+                    </p>
+                    <p>
+                        Abstract developers typically follow the following principles:
+                        <a href="http://www.principles-wiki.net/principles:low_coupling">LC</a>,
+                        <a href="http://www.principles-wiki.net/principles:tell_don_t_ask_information_expert">TdA/IE</a>,
+                        <a href="http://www.principles-wiki.net/principles:principle_of_separate_understandability">PSU</a>,
+                        <a href="http://www.principles-wiki.net/principles:information_hiding_encapsulation">IH/E</a>,
+                        <a href="http://www.principles-wiki.net/principles:single_level_of_abstraction">SLA</a>,
+                        <a href="http://www.principles-wiki.net/principles:model_principle">MP</a>, and
+                        <a href="http://www.principles-wiki.net/principles:uniformity_principle">UP</a>
+                    </p>
+                    <p>
+                        Rather disregarded principles for these developers are:
+                        <a href="http://www.principles-wiki.net/principles:rule_of_explicitness">RoE</a>,
+                        <a href="http://www.principles-wiki.net/principles:encapsulate_the_concept_that_varies">ECV</a>, and
+                        <a href="http://www.principles-wiki.net/principles:you_ain_t_gonna_need_it">YAGNI</a>
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <h3>Concrete</h3>
+                    <p>
+                        Developers with this attitude directly think in terms of code.
+                    </p>
+                    <p>
+                        Concrete developers directly transfer requirements into code. They are also good at working with and refactoring legacy code
+                        that they do not understand completely. They don't have to understand the whole system in all its
+                        details and they know that this attitude wouldn't scale either. As soon as a system has a certain
+                        level of complexity, one mind cannot understand it fully. Nevertheless a concrete developer can work
+                        quite well with such a system. When they refactor they heavyly rely on the boyscout rule. They improve
+                        code bottom-up rather than planning it top-down.
+                    </p>
+                    <p>
+                        On the other hand concrete developers may overoptimize unnecessary details and tend to loose sight of the big picture. They
+                        may violate achitectural constraints and weaken the overall structure because thinking in terms of
+                        packages, layers and dependencies is not in their focus.
+                    </p>
+                    <p>
+                        Concrete developers typically follow the following principles:
+                        <a href="http://www.principles-wiki.net/principles:don_t_repeat_yourself">DRY</a>,
+                        <a href="http://www.principles-wiki.net/principles:high_cohesion">HC</a>,
+                        <a href="http://www.principles-wiki.net/principles:single_responsibility_principle">SRP</a>,
+                        <a href="http://www.principles-wiki.net/principles:encapsulate_the_concept_that_varies">ECV</a>, and
+                        <a href="http://www.principles-wiki.net/principles:open-closed_principle">OCP</a>
+                    </p>
+                    <p>
+                        Rather disregarded principles for these developers are:
+                        <a href="http://www.principles-wiki.net/principles:model_principle">MP</a>,
+                        <a href="http://www.principles-wiki.net/principles:tell_don_t_ask_information_expert">TdA/IE</a>,
+                        <a href="http://www.principles-wiki.net/principles:principle_of_separate_understandability">PSU</a>, and
+                        <a href="http://www.principles-wiki.net/principles:liskov_substitution_principle">LSP</a>
+                    </p>
+                </div>
             </div>
-        </div>
-        <h2 id="abstract-vs-concrete">Abstract vs. Concrete</h2>
-        <div class="row">
-            <div class="col-md-6">
-                <h3>Abstract</h3>
-                <p>
-                    Developers with this attitude think in terms of abstractions and concepts.
-                </p>
-                <p>
-                    Abstract developers always have the big picture in mind. They think in terms of abstraction layers, patterns, package dependencies, architectural constraints, etc. Structure is very important and abstract developery keep the structure clean and clearly arranged. Single lines of code are not impotent. You shouldn't look at a software system with a magnifying glass. It has to work as a whole and it can be understood as a whole. Abstract solutions follow clear concepts that are easy to understand and fundamental to the whole system. Followers have a very good overview over the whole system. Furthermore they are also able to give advice on consequences of particular changes. Often abstract developers also like having natural, requirements-based object-designs where the software structure mimics the real-world concepts. This can make understanding the code even easier and may lead to fewer code changes when requirements change.
-                </p>
-                <p>
-                    On the other hand abstract developers typically don't like working with legacy code that has bad structure. They feel the need to understand the system as a whole and will try to refactor the code such that there is a clear structure. If there is time for that and the system will be maintained further, this is a good thing. In the other cases an abstract developer will feel lost and will be unhappy with making changes to that code which he doesn't quite understand.
-                </p>
-                <p>
-                    Abstract developers typically follow the following principles: 
-                    <a href="http://www.principles-wiki.net/principles:low_coupling">LC</a>,
-                    <a href="http://www.principles-wiki.net/principles:tell_don_t_ask_information_expert">TdA/IE</a>, 
-                    <a href="http://www.principles-wiki.net/principles:principle_of_separate_understandability">PSU</a>,
-                    <a href="http://www.principles-wiki.net/principles:information_hiding_encapsulation">IH/E</a>,
-                    <a href="http://www.principles-wiki.net/principles:single_level_of_abstraction">SLA</a>, 
-                    <a href="http://www.principles-wiki.net/principles:model_principle">MP</a>,
-                    and <a href="http://www.principles-wiki.net/principles:uniformity_principle">UP</a>
-                </p>
-                <p>
-                    Rather disregarded principles for these developers are: 
-                    <a href="http://www.principles-wiki.net/principles:rule_of_explicitness">RoE</a>,
-                    <a href="http://www.principles-wiki.net/principles:encapsulate_the_concept_that_varies">ECV</a>,
-                    and <a href="http://www.principles-wiki.net/principles:you_ain_t_gonna_need_it">YAGNI</a>
-                </p>
+            <h2 id="pragmatic-vs-idealistic">Pragmatic vs. Idealistic</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Pragmatic</h3>
+                    <p>
+                        Developers with this attitude focus on time to market.
+                    </p>
+                    <p>
+                        The main motivation of such developers is to fulfill the requested requirements as soon as possible. It's the result that
+                        counts so tasks are only done if there is a valuable benefit. This approach prevents complexity and
+                        overengineering. Furthermore they can use the saved time to implement even more features and deliver
+                        benefit to the customer even faster. Followers do not like to reinvent the wheel and use templates,
+                        code snippets, etc. to avoid implementing everything by their own. This normally leads to faster
+                        solutions and success. Freed from technical or structural sensitivities followers of this dimension
+                        adapt very fast to any new environment, rules or specifications for example to a new team. They are
+                        also able to bring others down to earth and redirect them to the primary goal.
+                    </p>
+                    <p>
+                        On the other hand pragmatic developers tend to neglect code quality. So while pragamtic developers are really fast at the
+                        beginning, they may be slower in the long run as maintainability decreases, bugs show up more often
+                        and the code gets less readable.
+                    </p>
+                    <p>
+                        Pragmatic developers typically follow the following principles:
+                        <a href="http://www.principles-wiki.net/principles:you_ain_t_gonna_need_it">YAGNI</a>,
+                        <a href="http://www.principles-wiki.net/principles:rule_of_explicitness">RoE</a>,
+                        <a href="http://www.principles-wiki.net/principles:keep_it_simple_stupid">KISS</a>, and
+                        <a href="http://www.principles-wiki.net/principles:more_is_more_complex">MIMC</a>
+                    </p>
+                    <p>
+                        Rather disregarded principles for these developers are:
+                        <a href="http://www.principles-wiki.net/principles:uniformity_principle">UP</a>,
+                        <a href="http://www.principles-wiki.net/principles:generalization_principle">GP</a>,
+                        <a href="http://www.principles-wiki.net/principles:model_principle">MP</a>,
+                        <a href="http://www.principles-wiki.net/principles:liskov_substitution_principle">LSP</a>,
+                        <a href="http://www.principles-wiki.net/principles:information_hiding_encapsulation">IH/E</a>,
+                        <a href="http://www.principles-wiki.net/principles:dependency_inversion_principle">DIP</a>,
+                        <a href="http://www.principles-wiki.net/principles:low_coupling">LC</a>,
+                        <a href="http://www.principles-wiki.net/principles:high_cohesion">HC</a>,
+                        <a href="http://www.principles-wiki.net/principles:tell_don_t_ask_information_expert">TdA/IE</a>,
+                        <a href="http://www.principles-wiki.net/principles:easy_to_use_and_hard_to_misuse">EUHM</a>, and
+                        <a href="http://www.principles-wiki.net/principles:invariant_avoidance_principle">IAP</a>
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <h3>Idealistic</h3>
+                    <p>
+                        Developers with this attitude prefer clean solutions.
+                    </p>
+                    <p>
+                        The main motivation of these developers is the observation that while bad quality can be ignored for a short period of time,
+                        it is a serious threat in the long run. So idealistic developers like doing things either right or
+                        not at all. Idealistic developers care for the software they write and fight for it with all their
+                        expertise and professionalism. It is their job to fight this fight against the odds of deadlines,
+                        management, and project schedules. It is not enough to finish a project on-time. If the software
+                        dies shortly after the "successful" completion of the project, it is still a failure. Idealistic
+                        developers know that and will produce high-quality software that works even after the project managers
+                        have left for another project.
+                    </p>
+                    <p>
+                        On the other hand idealsitic developers sometimes lose focus on the real requirements and on economical aspects. Software
+                        needs to be maintainable but in most cases it doesn't need to be perfect. Idealistic developers sometimes
+                        spend too much time on perfection. Furthermore discussions with idealistic developers sometimes can
+                        be exhausting and are not always productive. Idealsitic developers work well with others who think
+                        similarly but working with other developers who are also idealistic but rather different in in the
+                        other dimensions can become quite difficult.
+                    </p>
+                    <p>
+                        A unique property of idealictic developers is that their idealism increases the advantages and disadvantages of the other
+                        attributes. So a simple idealistic developer will strive for perfection in simplicity and a powerful
+                        idealistic developer will create even more powerful software, etc.
+                    </p>
+                    <p>
+                        Idealistic developers typically follow the following principles:
+                        <a href="http://www.principles-wiki.net/principles:uniformity_principle">UP</a>,
+                        <a href="http://principles-wiki.net/principles:principle_of_separate_understandability">PSU</a>,
+                        <a href="http://www.principles-wiki.net/principles:don_t_repeat_yourself">DRY</a>,
+                        <a href="http://www.principles-wiki.net/principles:information_hiding_encapsulation">IH/E</a>, furthermore being idealistic adds even more weight on the principles you favor because
+                        of the other dimensions
+                    </p>
+                    <p>
+                        Rather disregarded principles for these developers are:
+                        <a href="http://www.principles-wiki.net/principles:you_ain_t_gonna_need_it">YAGNI</a>, and
+                        <a href="http://www.principles-wiki.net/principles:rule_of_explicitness">RoE</a>
+                        although this heavyly depends on the other dimensions
+                    </p>
+                </div>
             </div>
-            <div class="col-md-6">
-                <h3>Concrete</h3>
-                <p>
-                    Developers with this attitude directly think in terms of code.
-                </p>
-                <p>
-                    Concrete developers directly transfer requirements into code. They are also good at working with and refactoring legacy code that they do not understand completely. They don't have to understand the whole system in all its details and they know that this attitude wouldn't scale either. As soon as a system has a certain level of complexity, one mind cannot understand it fully. Nevertheless a concrete developer can work quite well with such a system. When they refactor they heavyly rely on the boyscout rule. They improve code bottom-up rather than planning it top-down.
-                </p>
-                <p>
-                    On the other hand concrete developers may overoptimize unnecessary details and tend to loose sight of the big picture. They may violate achitectural constraints and weaken the overall structure because thinking in terms of packages, layers and dependencies is not in their focus.
-                </p>
-                <p>
-                    Concrete developers typically follow the following principles: 
-                    <a href="http://www.principles-wiki.net/principles:don_t_repeat_yourself">DRY</a>,
-                    <a href="http://www.principles-wiki.net/principles:high_cohesion">HC</a>,
-                    <a href="http://www.principles-wiki.net/principles:single_responsibility_principle">SRP</a>,
-                    <a href="http://www.principles-wiki.net/principles:encapsulate_the_concept_that_varies">ECV</a>,
-                    and <a href="http://www.principles-wiki.net/principles:open-closed_principle">OCP</a> 
-                </p>
-                <p>
-                    Rather disregarded principles for these developers are:
-                    <a href="http://www.principles-wiki.net/principles:model_principle">MP</a>,
-                    <a href="http://www.principles-wiki.net/principles:tell_don_t_ask_information_expert">TdA/IE</a>,
-                    <a href="http://www.principles-wiki.net/principles:principle_of_separate_understandability">PSU</a>,
-                    and <a href="http://www.principles-wiki.net/principles:liskov_substitution_principle">LSP</a>
-                </p>
+            <h2 id="robust-vs-technologic">Robust vs. Technologic</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Robust</h3>
+                    <p>
+                        Developers with this attitude prefer stabe solutions which stood the test of time.
+                    </p>
+                    <p>
+                        Software needs to be stable, maintainable, and robust. It's the responsibility of the software developer to ensure that the
+                        software has this qualities. Technologies come and go. Most of them are just hypes, just another
+                        magic cure for an illness which almost nobody really has, or just a variation of an old idea. Some
+                        of them are valuable and some of them aren't. When they arise it is very difficult to tell that apart.
+                        But sooner or later time will show what will survive, what can be safely adapted and what isn't even
+                        worth a try. New technology may be fancy and fun but often ist's not wise to adapt them too early.
+                        Even if they prove to be a good idea, in the beginning they will be volatile, badly documented and
+                        not well understood. Robust developers know about that, they are patient and only adapt those technologies
+                        which are worthwhile. This saves them time as they don't have to relearn everything every now and
+                        then and as the experiments are done by other people. This free time can be used to harden the software,
+                        to implement decent logging, monitoring, and exception handling. Robust developers program defensively,
+                        document wisely, and strive for homogeneous, standardized solutions.
+                    </p>
+                    <p>
+                        On the other hand robust developers easily get left behind. They fear the future and rather stick to old and outdated technology.
+                        Thus they don't profit from what others already have achieved and do their own thing just as they've
+                        always done it. They don't like changing their ways of thinking and it takes considerable time for
+                        them to adapt to new working environments. Furthermore always thinking about what could go wrong,
+                        all the defensive programming, parameter checking, and exception handling take their time to implement
+                        and impose a considerable amount of complexity. To others they seem like the ones who don't evolve
+                        and slow down everything.
+                    </p>
+                    <p>
+                        Robust developers typically follow the following principles:
+                        <a href="http://principles-wiki.net/principles:murphy_s_law">ML</a>,
+                        <a href="http://www.principles-wiki.net/principles:easy_to_use_and_hard_to_misuse">EUHM</a>,
+                        <a href="http://www.principles-wiki.net/principles:uniformity_principle">UP</a>,
+                        <a href="http://www.principles-wiki.net/principles:rule_of_explicitness">RoE</a>, and
+                        <a href="http://www.principles-wiki.net/principles:information_hiding_encapsulation">IH/E</a>
+                    </p>
+                    <p>
+                        Rather disregarded principles for these developers are:
+                        <a href="http://www.principles-wiki.net/principles:keep_it_simple_stupid">KISS</a>
+                        and
+                        <a href="http://www.principles-wiki.net/principles:low_coupling">LC</a>
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <h3>Technologic</h3>
+                    <p>
+                        Developers with this attitude prefer technically advanced solutions.
+                    </p>
+                    <p>
+                        Technologic developers embrace the fact that lifelong learning is an essential part of their job. Technology evolves faster
+                        and faster, new technologies arise, new methodologies become popular, and bad habits slowly die out.
+                        New technology can make you more productive and enable you to do things that weren't possible before.
+                        They can be your key advantage over your competitor. Technologic developers are open-minded for technological
+                        improvement and new ideas. Likewise they continuously try to improve themselves just like they try
+                        to improve their code.
+                    </p>
+                    <p>
+                        On the other hand technologic developers risk riding the wrong horse. Sometimes they experiment too much, invest too much
+                        time in learning the wrong technologies and risk the stability and maintainability of their code.
+                        Although they are very creative, this ceativity may lead to unnecessarily complex solutions and especially
+                        to ones which are hardly understandable by those who don't know all the technologies used. Technologic
+                        developers need to play around and feel uncomfortable when they don't get enough freedom. They don't
+                        play it safe, they take risks. Sometimes they win and sometimes they lose.
+                    </p>
+                    <p>
+                        Technologic developers typically follow the following principles:
+                        <a href="http://www.principles-wiki.net/principles:generalization_principle">GP</a>,
+                        <a href="http://www.principles-wiki.net/principles:low_coupling">LC</a>,
+                        <a href="http://principles-wiki.net/principles:murphy_s_law">ML</a>, and
+                        <a href="http://www.principles-wiki.net/principles:don_t_repeat_yourself">DRY</a>
+                    </p>
+                    <p>
+                        Rather disregarded principles for these developers are:
+                        <a href="http://www.principles-wiki.net/principles:rule_of_explicitness">RoE</a>,
+                        <a href="http://www.principles-wiki.net/principles:uniformity_principle">UP</a>, and
+                        <a href="http://www.principles-wiki.net/principles:more_is_more_complex">MIMC</a>
+                    </p>
+                </div>
             </div>
-        </div>
-        <h2 id="pragmatic-vs-idealistic">Pragmatic vs. Idealistic</h2>
-        <div class="row">
-            <div class="col-md-6">
-                <h3>Pragmatic</h3>
-                <p>
-                    Developers with this attitude focus on time to market.
-                </p>
-                <p>
-                    The main motivation of such developers is to fulfill the requested requirements as soon as possible. It's the result that counts so tasks are only done if there is a valuable benefit. This approach prevents complexity and overengineering. Furthermore they can use the saved time to implement even more features and deliver benefit to the customer even faster. Followers do not like to reinvent the wheel and use templates, code snippets, etc. to avoid implementing everything by their own. This normally leads to faster solutions and success. Freed from technical or structural sensitivities followers of this dimension adapt very fast to any new environment, rules or specifications for example to a new team. They are also able to bring others down to earth and redirect them to the primary goal.
-                </p>
-                <p>
-                    On the other hand pragmatic developers tend to neglect code quality. So while pragamtic developers are really fast at the beginning, they may be slower in the long run as maintainability decreases, bugs show up more often and the code gets less readable.
-                </p>
-                <p>
-                    Pragmatic developers typically follow the following principles: 
-                    <a href="http://www.principles-wiki.net/principles:you_ain_t_gonna_need_it">YAGNI</a>, 
-                    <a href="http://www.principles-wiki.net/principles:rule_of_explicitness">RoE</a>,
-                    <a href="http://www.principles-wiki.net/principles:keep_it_simple_stupid">KISS</a>, 
-                    and <a href="http://www.principles-wiki.net/principles:more_is_more_complex">MIMC</a>
-                </p>
-                <p>
-                    Rather disregarded principles for these developers are: 
-                    <a href="http://www.principles-wiki.net/principles:uniformity_principle">UP</a>, 
-                    <a href="http://www.principles-wiki.net/principles:generalization_principle">GP</a>,
-                    <a href="http://www.principles-wiki.net/principles:model_principle">MP</a>, 
-                    <a href="http://www.principles-wiki.net/principles:liskov_substitution_principle">LSP</a>, 
-                    <a href="http://www.principles-wiki.net/principles:information_hiding_encapsulation">IH/E</a>, 
-                    <a href="http://www.principles-wiki.net/principles:dependency_inversion_principle">DIP</a>, 
-                    <a href="http://www.principles-wiki.net/principles:low_coupling">LC</a>, 
-                    <a href="http://www.principles-wiki.net/principles:high_cohesion">HC</a>, 
-                    <a href="http://www.principles-wiki.net/principles:tell_don_t_ask_information_expert">TdA/IE</a>, 
-                    <a href="http://www.principles-wiki.net/principles:easy_to_use_and_hard_to_misuse">EUHM</a>, 
-                    and <a href="http://www.principles-wiki.net/principles:invariant_avoidance_principle">IAP</a>
-                </p>
+        </section>
+        <section id="comments">
+            <div id="comment-template" class="comment">
+                <img src="todo_dyn" alt="" class="avatar">
+                <div>
+                    <h5 class="name">Template name</h5>
+                    <span class="date">Template date</span>
+                    <br>
+                    <p class="text">Template comment</p>
+                </div>
             </div>
-            <div class="col-md-6">        
-                <h3>Idealistic</h3>
-                <p>
-                    Developers with this attitude prefer clean solutions.
-                </p>
-                <p>
-                    The main motivation of these developers is the observation that while bad quality can be ignored for a short period of time, it is a serious threat in the long run. So idealistic developers like doing things either right or not at all. Idealistic developers care for the software they write and fight for it with all their expertise and professionalism. It is their job to fight this fight against the odds of deadlines, management, and project schedules. It is not enough to finish a project on-time. If the software dies shortly after the "successful" completion of the project, it is still a failure. Idealistic developers know that and will produce high-quality software that works even after the project managers have left for another project.
-                </p>
-                <p>
-                    On the other hand idealsitic developers sometimes lose focus on the real requirements and on economical aspects. Software needs to be maintainable but in most cases it doesn't need to be perfect. Idealistic developers sometimes spend too much time on perfection. Furthermore discussions with idealistic developers sometimes can be exhausting and are not always productive. Idealsitic developers work well with others who think similarly but working with other developers who are also idealistic but rather different in in the other dimensions can become quite difficult.
-                </p>
-                <p>
-                    A unique property of idealictic developers is that their idealism increases the advantages and disadvantages of the other attributes. So a simple idealistic developer will strive for perfection in simplicity and a powerful idealistic developer will create even more powerful software, etc.
-                </p>
-                <p>
-                    Idealistic developers typically follow the following principles: 
-                    <a href="http://www.principles-wiki.net/principles:uniformity_principle">UP</a>, 
-                    <a href="http://principles-wiki.net/principles:principle_of_separate_understandability">PSU</a>, 
-                    <a href="http://www.principles-wiki.net/principles:don_t_repeat_yourself">DRY</a>,
-                    <a href="http://www.principles-wiki.net/principles:information_hiding_encapsulation">IH/E</a>, 
-                    furthermore being idealistic adds even more weight on the principles you favor because of the other dimensions 
-                </p>
-                <p>
-                    Rather disregarded principles for these developers are: 
-                    <a href="http://www.principles-wiki.net/principles:you_ain_t_gonna_need_it">YAGNI</a>, 
-                    and <a href="http://www.principles-wiki.net/principles:rule_of_explicitness">RoE</a>
-                    although this heavyly depends on the other dimensions
-                </p>
-            </div>
-        </div>
-        <h2 id="robust-vs-technologic">Robust vs. Technologic</h2>
-        <div class="row">
-            <div class="col-md-6">
-                <h3>Robust</h3>
-                <p>
-                    Developers with this attitude prefer stabe solutions which stood the test of time.
-                </p>
-                <p>
-                    Software needs to be stable, maintainable, and robust. It's the responsibility of the software developer to ensure that the software has this qualities. Technologies come and go. Most of them are just hypes, just another magic cure for an illness which almost nobody really has, or just a variation of an old idea. Some of them are valuable and some of them aren't. When they arise it is very difficult to tell that apart. But sooner or later time will show what will survive, what can be safely adapted and what isn't even worth a try. New technology may be fancy and fun but often ist's not wise to adapt them too early. Even if they prove to be a good idea, in the beginning they will be volatile, badly documented and not well understood. Robust developers know about that, they are patient and only adapt those technologies which are worthwhile. This saves them time as they don't have to relearn everything every now and then and as the experiments are done by other people. This free time can be used to harden the software, to implement decent logging, monitoring, and exception handling. Robust developers program defensively, document wisely, and strive for homogeneous, standardized solutions.
-                </p>
-                <p>
-                    On the other hand robust developers easily get left behind. They fear the future and rather stick to old and outdated technology. Thus they don't profit from what others already have achieved and do their own thing just as they've always done it. They don't like changing their ways of thinking and it takes considerable time for them to adapt to new working environments. Furthermore always thinking about what could go wrong, all the defensive programming, parameter checking, and exception handling take their time to implement and impose a considerable amount of complexity. To others they seem like the ones who don't evolve and slow down everything. 
-                </p>
-                <p>
-                    Robust developers typically follow the following principles: 
-                    <a href="http://principles-wiki.net/principles:murphy_s_law">ML</a>,
-                    <a href="http://www.principles-wiki.net/principles:easy_to_use_and_hard_to_misuse">EUHM</a>, 
-                    <a href="http://www.principles-wiki.net/principles:uniformity_principle">UP</a>, 
-                    <a href="http://www.principles-wiki.net/principles:rule_of_explicitness">RoE</a>,
-                    and <a href="http://www.principles-wiki.net/principles:information_hiding_encapsulation">IH/E</a>
-                </p>
-                <p>
-                    Rather disregarded principles for these developers are: 
-                    <a href="http://www.principles-wiki.net/principles:keep_it_simple_stupid">KISS</a>
-                    and <a href="http://www.principles-wiki.net/principles:low_coupling">LC</a>
-                </p>
-            </div>
-            <div class="col-md-6">
-                <h3>Technologic</h3>
-                <p>
-                    Developers with this attitude prefer technically advanced solutions.
-                </p>
-                <p>
-                    Technologic developers embrace the fact that lifelong learning is an essential part of their job. Technology evolves faster and faster, new technologies arise, new methodologies become popular, and bad habits slowly die out. New technology can make you more productive and enable you to do things that weren't possible before. They can be your key advantage over your competitor. Technologic developers are open-minded for technological improvement and new ideas. Likewise they continuously try to improve themselves just like they try to improve their code.
-                </p>
-                <p>
-                    On the other hand technologic developers risk riding the wrong horse. Sometimes they experiment too much, invest too much time in learning the wrong technologies and risk the stability and maintainability of their code. Although they are very creative, this ceativity may lead to unnecessarily complex solutions and especially to ones which are hardly understandable by those who don't know all the technologies used. Technologic developers need to play around and feel uncomfortable when they don't get enough freedom. They don't play it safe, they take risks. Sometimes they win and sometimes they lose.
-                </p>
-                <p>
-                    Technologic developers typically follow the following principles: 
-                    <a href="http://www.principles-wiki.net/principles:generalization_principle">GP</a>,
-                    <a href="http://www.principles-wiki.net/principles:low_coupling">LC</a>,
-                    <a href="http://principles-wiki.net/principles:murphy_s_law">ML</a>,
-                    and <a href="http://www.principles-wiki.net/principles:don_t_repeat_yourself">DRY</a>
-                </p>
-                <p>
-                    Rather disregarded principles for these developers are: 
-                    <a href="http://www.principles-wiki.net/principles:rule_of_explicitness">RoE</a>,
-                    <a href="http://www.principles-wiki.net/principles:uniformity_principle">UP</a>, 
-                    and <a href="http://www.principles-wiki.net/principles:more_is_more_complex">MIMC</a>
-                </p>
-            </div>
-        </div>
-    </section>
-    <section id="comments">
-		<div id="comment-template" class="comment">
-		    <img src="todo_dyn" alt="" class="avatar">
-		    <div>
-		        <h5 class="name">Template name</h5><span class="date">Template date</span><br>
-		        <p class="text">Template comment</p>
-		    </div>
-		</div>
-		
-		<div class="comment-container">
-		    <div class="new-button">
-		        <span>Write a comment ...</span>
-		    </div>
-		    <div class="new-form">
-		        <input type="text" id="new-comment-name" value="" placeholder="Your name">
-		        <input type="text" id="new-comment-email" value="" placeholder="Your e-mail address">
-		        <textarea id="new-comment-text"></textarea>
-		        <div class="btn btn-primary post-button">Post comment</div>
-		        <div class="btn btn-default cancel-button">Cancel</div>
-		    </div>
-		    <div class="clear"></div>
-		</div>  
-    </section>
-    <footer>
-        Please give us <a class="feedback">Feedback</a> or discuss with us at <a href="https://www.xing.com/communities/groups/design-principles-patterns-types-08d2-1080100" target="_blank"><img src="./img/xing_logo2.png" alt="XING" height="25" width="25" /></a>
-    </footer>
-</div>
 
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
-<script>
-    var a = 'esign-';var b = 'ma';var c = 'es.net';var d = 'typ';var e = 'il@d';var f = 'ilto:ema';
-    $("a.feedback").attr('href', b+f+e+a+d+c);
-</script>
-<script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
-<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="utils.js"></script>
-<script src="dimensions.js"></script>
-<script src="comments.js"></script>
+            <div class="comment-container">
+                <div class="new-button">
+                    <span>Write a comment ...</span>
+                </div>
+                <div class="new-form">
+                    <input type="text" id="new-comment-name" value="" placeholder="Your name">
+                    <input type="text" id="new-comment-email" value="" placeholder="Your e-mail address">
+                    <textarea id="new-comment-text"></textarea>
+                    <div class="btn btn-primary post-button">Post comment</div>
+                    <div class="btn btn-default cancel-button">Cancel</div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </section>
+        <footer>
+            Please give us
+            <a class="feedback">Feedback</a> or discuss with us at
+            <a href="https://www.xing.com/communities/groups/design-principles-patterns-types-08d2-1080100" target="_blank">
+                <img src="./img/xing_logo2.png" alt="XING" height="25" width="25" />
+            </a>
+        </footer>
+    </main>
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script>
+        var a = 'esign-'; var b = 'ma'; var c = 'es.net'; var d = 'typ'; var e = 'il@d'; var f = 'ilto:ema';
+        $("a.feedback").attr('href', b + f + e + a + d + c);
+    </script>
+    <script src="node_modules/components-jqueryui/jquery-ui.min.js"></script>
+    <script src="utils.js"></script>
+    <script src="dimensions.js"></script>
+    <script src="comments.js"></script>
 </body>
+
 </html>
