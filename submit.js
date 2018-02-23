@@ -20,10 +20,10 @@ function everythingFilledOut() {
 }
 
 function storeData() {
-    console.log("storeData - send data..."); 
+    console.log("storeData - send data...");
     var resulttype = $("#designType").val();
     var ukey = getParameterByName('ukey');
-    
+
     $.post("./php/storeData.php", {
         ukey: ukey,
         designType: resulttype,
@@ -37,8 +37,8 @@ function storeData() {
         methodology: $("#methodology").val(),
         companySize: $("#companySize").val(),
         industrySector: $("#industrySector").val(),
-        latitude: "2", 
-        longitude: "2", 
+        latitude: "2",
+        longitude: "2",
         simple1: localStorage["you.stmt_simple0"],
         simple2: localStorage["you.stmt_simple1"],
         simple3: localStorage["you.stmt_simple2"],
@@ -87,12 +87,12 @@ function storeData() {
         robust4: localStorage["you.stmt_robust3"],
         robust5: localStorage["you.stmt_robust4"],
         robust6: localStorage["you.stmt_robust5"]
-    }, function(data, status) {
+    }, function (data, status) {
         localStorage['you.ukey'] = ukey;
         continueToResultPage(ukey, resulttype);
-    }).fail(function(err) {
+    }).fail(function (err) {
         console.log(err.responseText);
-        var problem = jQuery.parseJSON(err.responseText);
+        var problem = JSON.parse(err.responseText);
         if (problem.type == 'http://design-types.net/problems/ukey-already-exists') {
             console.log('ukey already exists; nothing is stored as the data is already in the db; continue with saved result');
             continueToResultPage(ukey, resulttype);
@@ -105,22 +105,22 @@ function storeData() {
 
 function continueToResultPage(ukey, resulttype) {
     console.log("redirect to result page with user key: " + ukey);
-    $(location).attr('href','result.html?type=' + resulttype + '&ukey=' + ukey);
+    $(location).attr('href', 'result.html?type=' + resulttype + '&ukey=' + ukey);
 }
 
-$(document).ready(function() {
-	//disable result btn at beginning
-	$('#result').attr('disabled', true); 
+$(document).ready(function () {
+    //disable result btn at beginning
+    $('#result').attr('disabled', true);
     $("#designType").attr('value', getDesignType());
-    $("select").change(function() {
+    $("select").on('change', function () {
         if (everythingFilledOut())
             $("#result").attr("disabled", false);
         else
             $("#result").attr("disabled", true);
     });
-    
-    $("#result").click(function() {
+
+    $("#result").on('click', function () {
         storeData();
-    }); 
+    });
 });
 

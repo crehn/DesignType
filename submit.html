@@ -1,70 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="icon" type="image/png" href="./favicon.png">
     <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="./favicon.png">
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css" />
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="bower_components/html5shiv/dist/html5shiv.js"></script>
-      <script src="bower_components/respond.js/dest/respond.min.js"></script>
-    <![endif]-->
 
     <title>How Do You Design Software?</title>
 </head>
+
 <body>
-<div class="container page">
-    <nav class="navbar navbar-inverse navbar-default" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
+
+    <main role="main" class="container page">
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" role="navigation">
+            <div class="container">
                 <a class="navbar-brand" href="index.html">Design Types</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-targepanelt="#navbarCollapse" aria-controls="navbarCollapse"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="nav navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="test_yourself.html">Test Yourself</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="assess_colleagues.html?revealed">Assess Colleagues</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="info.html">Learn More</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="statistics.html">Statistics</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a class="nav-link" href="http://www.principles-wiki.net">principles-wiki.net</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="test_yourself.html">Test Yourself</a></li>
-                    <li><a href="assess_colleagues.html?revealed">Assess Colleagues</a></li>
-                    <li><a href="info.html">Learn More</a></li>
-                    <li><a href="statistics.html">Statistics</a></li>
-                    <li><a href="about.html">About</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="http://www.principles-wiki.net">principles-wiki.net</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+        </nav>
 
-    <div class="jumbotron">
-        <h1>How Do You Design Software?</h1>
-        <p>
-            Take part in the statistical analysis.
-        </p>
-    </div>
-    
-    <noscript>
-        <div class="alert alert-danger">
-            This questionnaire needs JavaScript in order to work.
-        </div>
-    </noscript>
-
-    <section>
-        <h1>Take Part in the Statistical Analysis</h1>
+        <div class="jumbotron">
+            <h1>How Do You Design Software?</h1>
             <p>
-            Take part in the statistical analysis by submitting the result. As soon as we have enough statistical data we will present our results here. Our goal is to understand design types better and to correlate design types with experience and working background. Questions we want to answer are:
+                Take part in the statistical analysis.
+            </p>
+        </div>
+
+        <noscript>
+            <div class="alert alert-danger">
+                This questionnaire needs JavaScript in order to work.
+            </div>
+        </noscript>
+
+        <section>
+            <h1>Take Part in the Statistical Analysis</h1>
+            <p>
+                Take part in the statistical analysis by submitting the result. As soon as we have enough statistical data we will present
+                our results here. Our goal is to understand design types better and to correlate design types with experience
+                and working background. Questions we want to answer are:
             </p>
             <ul>
                 <li>Which are the predominant design types per age, education, and experience level?</li>
@@ -73,175 +78,192 @@
                 <li>Which are the predominant design types in certain job positions?</li>
                 <li>...</li>
             </ul>
-    </section>
-    <section>
-        <h1>Statistical Questions</h1>
-        <form action="submit.php" method="post">
-            <input type="hidden" id="designType" name="designType" />
-            
-            <h2>You</h2>
-            
-            <label for="gender">Gender:</label>
-            <select id="gender" name="gender" size="1">
-                <option label="empty"></option>
-                <option>male</option>
-                <option>female</option>
-            </select><br />
-            
-            <label for="age">Age:</label>
-            <select id="age" name="age" size="1">
-                <option label="empty"></option>
-                <option value="till_18">till 18</option>
-                <option>19-27</option>
-                <option>28-36</option>
-                <option>37-45</option>
-                <option>46-54</option>
-                <option>55-63</option>
-                <option value="over_63">64 and above</option>
-            </select><br />
-            
-            <label for="professionalYears">I've been working professionally in the software business for:</label>
-            <select id="professionalYears" name="professionalYears" size="1">
-                <option label="empty"></option>
-                <option value="none">I'm not working, yet</option>
-                <option value="1-3">1-3 years</option>
-                <option value="4-6">4-6 years</option>
-                <option value="7-9">7-9 years</option>
-                <option value="10-12">10-12 years</option>
-                <option value="13-15">13-15 years</option>
-                <option value="16-25">16-25 years</option>
-                <option value="26-35">26-35 years</option>
-                <option value="36-45">36-45 years</option>
-                <option value="over_45">&gt; 45 years</option>
-            </select>
-            
-            
-            <h2>Education</h2>
-            
-            <label for="educationLevel">Professional education:</label>
-            <select id="educationLevel" name="educationLevel" size="1">
-                <option label="empty"></option>
-                <option value="No">No professional education, yet</option>
-                <option>Self-taught</option>
-                <option value="Training">Professional training/college</option>
-                <option value="Academic">University degree or similar</option>
-                <option>PhD</option>
-                <option>Prof</option>
-            </select><br />
-            
-            <label for="educationBackground">Educational background:</label>
-            <select id="educationBackground" name="educationBackground" size="1">
-                <option label="empty"></option>
-                <option>Programming/computer science</option>
-                <option>Mathematics</option>
-                <option>Physics</option>
-                <option>Chemistry/pharmacy</option>
-                <option>Biology</option>
-                <option>Other science</option>
-                <option>Electrical engineering</option>
-                <option>Chemical engineering</option>
-                <option>Other engineering</option>
-                <option>Economics</option>
-                <option>Something different</option>
-            </select>
-            
-            
-            <h2>Working Background</h2>
-            
-            <label for="companySize">Company size:</label>
-            <select id="companySize" name="companySize" size="1">
-                <option label="empty"></option>
-                <option value="0">I don't work</option>
-                <option value="1">Self-employed</option>
-                <option value="2-10">&lt; 10 employees</option>
-                <option value="10-50">10-50 employees</option>
-                <option value="50-100">50-100 employees</option>
-                <option value="100-250">100-250 employees</option>
-                <option value="250-1000">250-1000 employees</option>
-                <option value="1000-5000">1000-5000 employees</option>
-                <option value="5000-15000">5000-15 000 employees</option>
-                <option value="15000-50000">15 000-50 000 employees</option>
-                <option value="over_50000">&gt; 50 000 employees</option>
-            </select><br />
-            
-            <label for="industrySector">Industry Sector:</label>
-            <select id="industrySector" name="industrySector" size="1">
-                <option label="empty"></option>
-                <option value="n/a">I don't work</option>
-                <option value="Software">Pure software development</option>
-                <option>Telecommunication</option>
-                <option>Media</option>
-                <option>Consumer products</option>
-                <option>Automotive</option>
-                <option>Aviation</option>
-                <option>Other engineering</option>
-                <option>Chemistry</option>
-                <option>Finance</option>
-                <option>Insurance</option>
-                <option>Commerce</option>
-                <option>Medical</option>
-                <option>Other</option>
-            </select><br />
-            
-            <label for="role">Role:</label>
-            <select id="role" name="role" size="1">
-                <option label="empty"></option>
-                <option value="n/a">I don't work</option>
-                <option>Student</option>                
-                <option>Software developer</option>
-                <option>Lead developer</option>
-                <option value="Architect">Software architect/designer</option>
-                <option>Consultant</option>
-                <option>Manager</option>
-                <option>Other</option>
-            </select><br />
-            
-            <label for="programmingLanguage">I mainly use:</label>
-            <select id="programmingLanguage" name="programmingLanguage" size="1">
-                <option label="empty"></option>
-                <option value="Web">HTML/JavaScript, etc.</option>
-                <option value="Dynamic">Dynamically typed languages (PHP, Ruby, Phython, ...)</option>
-                <option value="Static">Statically typed languages (Java, C#, C, C++, Delphi, ...)</option>
-                <option value="Other">Other programming languages</option>
-                <option value="Diagrams">UML or other diagrams</option>
-                <option>Neither</option>
-            </select><br />
-            
-            <label for="methodology">Software development process:</label>
-            <select id="methodology" name="methodology" size="1">
-                <option label="empty"></option>
-                <option value="Traditional">Plan-driven (waterfall, v-model, ...)</option>
-                <option value="Agile">Agile (Scrum, kanban, XP, ...)</option>
-                <option>Neither</option>
-            </select><br />
-            
-            <div class="well">
-                <input type="button" id="result" value="Result" class="btn btn-lg btn-primary pull-right" />
-                <div class="clearfix">
-                    <p>
-                        Click "Result" to see your result.
-                    </p>
-                </div>
-            </div>
-            <div class="alert alert-danger error-box" style="display:none">
-                <p>
-                    Sorry, something went wrong. We couldn't process your input. In order to work properly, your browser must support and allow local storage and ajax requests. Maybe you have very restrictive browser settings. Please get in touch with us. We'd like to learn about what causes this problem: <a class="feedback">Write us an email.</a>
-                </p>
-                <pre class="error-details"></pre>
-            </div>
-        </form>
-    </section>
-    <footer>
-        Please give us <a class="feedback">Feedback</a> or discuss with us at <a href="https://www.xing.com/communities/groups/design-principles-patterns-types-08d2-1080100" target="_blank"><img src="./img/xing_logo2.png" alt="XING" height="25" width="25" /></a>
-    </footer>
-</div>
+        </section>
+        <section>
+            <h1>Statistical Questions</h1>
+            <form action="submit.php" method="post">
+                <input type="hidden" id="designType" name="designType" />
 
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
-<script>
-    var a = 'esign-';var b = 'ma';var c = 'es.net';var d = 'typ';var e = 'il@d';var f = 'ilto:ema';
-    $("a.feedback").attr('href', b+f+e+a+d+c);
-</script>
-<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="submit.js"></script>
+                <h2>You</h2>
+
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" size="1">
+                    <option label="empty"></option>
+                    <option>male</option>
+                    <option>female</option>
+                </select>
+                <br />
+
+                <label for="age">Age:</label>
+                <select id="age" name="age" size="1">
+                    <option label="empty"></option>
+                    <option value="till_18">till 18</option>
+                    <option>19-27</option>
+                    <option>28-36</option>
+                    <option>37-45</option>
+                    <option>46-54</option>
+                    <option>55-63</option>
+                    <option value="over_63">64 and above</option>
+                </select>
+                <br />
+
+                <label for="professionalYears">I've been working professionally in the software business for:</label>
+                <select id="professionalYears" name="professionalYears" size="1">
+                    <option label="empty"></option>
+                    <option value="none">I'm not working, yet</option>
+                    <option value="1-3">1-3 years</option>
+                    <option value="4-6">4-6 years</option>
+                    <option value="7-9">7-9 years</option>
+                    <option value="10-12">10-12 years</option>
+                    <option value="13-15">13-15 years</option>
+                    <option value="16-25">16-25 years</option>
+                    <option value="26-35">26-35 years</option>
+                    <option value="36-45">36-45 years</option>
+                    <option value="over_45">&gt; 45 years</option>
+                </select>
+
+
+                <h2>Education</h2>
+
+                <label for="educationLevel">Professional education:</label>
+                <select id="educationLevel" name="educationLevel" size="1">
+                    <option label="empty"></option>
+                    <option value="No">No professional education, yet</option>
+                    <option>Self-taught</option>
+                    <option value="Training">Professional training/college</option>
+                    <option value="Academic">University degree or similar</option>
+                    <option>PhD</option>
+                    <option>Prof</option>
+                </select>
+                <br />
+
+                <label for="educationBackground">Educational background:</label>
+                <select id="educationBackground" name="educationBackground" size="1">
+                    <option label="empty"></option>
+                    <option>Programming/computer science</option>
+                    <option>Mathematics</option>
+                    <option>Physics</option>
+                    <option>Chemistry/pharmacy</option>
+                    <option>Biology</option>
+                    <option>Other science</option>
+                    <option>Electrical engineering</option>
+                    <option>Chemical engineering</option>
+                    <option>Other engineering</option>
+                    <option>Economics</option>
+                    <option>Something different</option>
+                </select>
+
+
+                <h2>Working Background</h2>
+
+                <label for="companySize">Company size:</label>
+                <select id="companySize" name="companySize" size="1">
+                    <option label="empty"></option>
+                    <option value="0">I don't work</option>
+                    <option value="1">Self-employed</option>
+                    <option value="2-10">&lt; 10 employees</option>
+                    <option value="10-50">10-50 employees</option>
+                    <option value="50-100">50-100 employees</option>
+                    <option value="100-250">100-250 employees</option>
+                    <option value="250-1000">250-1000 employees</option>
+                    <option value="1000-5000">1000-5000 employees</option>
+                    <option value="5000-15000">5000-15 000 employees</option>
+                    <option value="15000-50000">15 000-50 000 employees</option>
+                    <option value="over_50000">&gt; 50 000 employees</option>
+                </select>
+                <br />
+
+                <label for="industrySector">Industry Sector:</label>
+                <select id="industrySector" name="industrySector" size="1">
+                    <option label="empty"></option>
+                    <option value="n/a">I don't work</option>
+                    <option value="Software">Pure software development</option>
+                    <option>Telecommunication</option>
+                    <option>Media</option>
+                    <option>Consumer products</option>
+                    <option>Automotive</option>
+                    <option>Aviation</option>
+                    <option>Other engineering</option>
+                    <option>Chemistry</option>
+                    <option>Finance</option>
+                    <option>Insurance</option>
+                    <option>Commerce</option>
+                    <option>Medical</option>
+                    <option>Other</option>
+                </select>
+                <br />
+
+                <label for="role">Role:</label>
+                <select id="role" name="role" size="1">
+                    <option label="empty"></option>
+                    <option value="n/a">I don't work</option>
+                    <option>Student</option>
+                    <option>Software developer</option>
+                    <option>Lead developer</option>
+                    <option value="Architect">Software architect/designer</option>
+                    <option>Consultant</option>
+                    <option>Manager</option>
+                    <option>Other</option>
+                </select>
+                <br />
+
+                <label for="programmingLanguage">I mainly use:</label>
+                <select id="programmingLanguage" name="programmingLanguage" size="1">
+                    <option label="empty"></option>
+                    <option value="Web">HTML/JavaScript, etc.</option>
+                    <option value="Dynamic">Dynamically typed languages (PHP, Ruby, Phython, ...)</option>
+                    <option value="Static">Statically typed languages (Java, C#, C, C++, Delphi, ...)</option>
+                    <option value="Other">Other programming languages</option>
+                    <option value="Diagrams">UML or other diagrams</option>
+                    <option>Neither</option>
+                </select>
+                <br />
+
+                <label for="methodology">Software development process:</label>
+                <select id="methodology" name="methodology" size="1">
+                    <option label="empty"></option>
+                    <option value="Traditional">Plan-driven (waterfall, v-model, ...)</option>
+                    <option value="Agile">Agile (Scrum, kanban, XP, ...)</option>
+                    <option>Neither</option>
+                </select>
+                <br />
+
+                <div class="alert alert-secondary">
+                    <input type="button" id="result" value="Result" class="btn btn-lg btn-primary float-right" />
+                    <div class="clearfix">
+                        <p>
+                            Click "Result" to see your result.
+                        </p>
+                    </div>
+                </div>
+                <div class="alert alert-danger error-box" style="display:none">
+                    <p>
+                        Sorry, something went wrong. We couldn't process your input. In order to work properly, your browser must support and allow
+                        local storage and ajax requests. Maybe you have very restrictive browser settings. Please get in
+                        touch with us. We'd like to learn about what causes this problem:
+                        <a class="feedback">Write us an email.</a>
+                    </p>
+                    <pre class="error-details"></pre>
+                </div>
+            </form>
+        </section>
+        <footer>
+            Please give us
+            <a class="feedback">Feedback</a> or discuss with us at
+            <a href="https://www.xing.com/communities/groups/design-principles-patterns-types-08d2-1080100" target="_blank">
+                <img src="./img/xing_logo2.png" alt="XING" height="25" width="25" />
+            </a>
+        </footer>
+    </main>
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script>
+        var a = 'esign-'; var b = 'ma'; var c = 'es.net'; var d = 'typ'; var e = 'il@d'; var f = 'ilto:ema';
+        $("a.feedback").attr('href', b + f + e + a + d + c);
+    </script>
+    <script src="submit.js"></script>
 </body>
+
 </html>
