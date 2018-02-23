@@ -1,4 +1,4 @@
-String.prototype.capitalize = function() {
+String.prototype.capitalize = function () {
     return this.charAt(0).toUpperCase() + this.slice(1);
 }
 
@@ -8,17 +8,17 @@ function Dimension(leftValue, rightValue, statements, number) {
     var wasOnceComplete = false;
     var score1 = 0;
     var score2 = 0;
-    
+
     this.leftValue = leftValue;
     this.rightValue = rightValue;
-    
+
     var group = createGroup();
     var groupName = group.find(".group-name");
     var groupNumber = group.find(".group-number");
     var panel1 = $(".dimension #" + leftValue);
     var panel2 = $(".dimension #" + rightValue);
     var errorBox = createErrorBox();
-    
+
     function createGroup() {
         var group = $("#template").clone();
         group.attr("id", id());
@@ -29,14 +29,14 @@ function Dimension(leftValue, rightValue, statements, number) {
         $("#dimensions").append(group);
         return group;
     }
-    
+
     function id() {
         return leftValue + "-vs-" + rightValue;
     };
-    
+
     function fillPanel(panel, value, statements) {
         panel.attr("id", value);
-        panel.find(".panel-heading").text(value);
+        panel.find(".card-header").text(value);
         for (statement in statements) {
             var li = $("<li/>");
             var label = $('<label/>', {
@@ -50,32 +50,33 @@ function Dimension(leftValue, rightValue, statements, number) {
             panel.find("ul").append(li);
         }
     }
-    
+
     function createErrorBox() {
         var box = $("<div/>", {
             "class": "alert alert-danger",
             html: "<strong>Hint:</strong> " + ERROR_MSG,
-            style: "display:none; margin:1em;"});
+            style: "display:none; margin:1em;"
+        });
         $(".dimension#" + id()).append(box);
         return box;
     };
-    
-    this.update = function() {
+
+    this.update = function () {
         computeScores();
         checkForCompleteness();
         checkForError();
         checkForSuccess();
     }
-    
+
     function computeScores() {
         score1 = count(leftValue);
         score2 = count(rightValue);
-    
+
         if (isComplete()) {
             wasOnceComplete = true;
         }
     }
-    
+
     function count(id) {
         return $(".dimension #" + id + " :checked").length;
     }
@@ -91,7 +92,7 @@ function Dimension(leftValue, rightValue, statements, number) {
             }
         }
     }
-    
+
     function checkForError() {
         if (isError()) {
             errorBox.show("slow");
@@ -99,20 +100,20 @@ function Dimension(leftValue, rightValue, statements, number) {
             errorBox.hide("slow");
         }
     }
-    
-    this.isComplete = function() {
+
+    this.isComplete = function () {
         return isComplete();
     };
-        
+
     function isComplete() {
         return (score1 + score2) > 0 && score1 != score2;
     }
-    
+
     function isError() {
         return ((score1 + score2) > 0 && score1 == score2)
             || (wasOnceComplete && !isComplete());
     }
-    
+
     function checkForSuccess() {
         if (isComplete()) {
             if (score1 > score2) {
@@ -138,62 +139,74 @@ function Dimension(leftValue, rightValue, statements, number) {
             }
         }
     }
-        
+
     function markPanel(panel) {
-        panel.removeClass("panel-default");
-        panel.removeClass("panel-warning");
-        panel.addClass("panel-success");
+        panel.removeClass("border-default");
+        panel.removeClass("border-warning");
+        panel.addClass("border-success");
+
+        panel.children(".card-header").removeClass("bg-default");
+        panel.children(".card-header").removeClass("bg-warning");
+        panel.children(".card-header").addClass("bg-success");
     }
-    
+
     function markPanelTentative(panel) {
-        panel.removeClass("panel-default");
-        panel.removeClass("panel-success");
-        panel.addClass("panel-warning");
+        panel.removeClass("border-default");
+        panel.removeClass("border-success");
+        panel.addClass("border-warning");
+
+        panel.children(".card-header").removeClass("bg-default");
+        panel.children(".card-header").removeClass("bg-success");
+        panel.children(".card-header").addClass("bg-warning");
     }
-    
+
     function unmarkPanel(panel) {
-        panel.removeClass("panel-success");
-        panel.removeClass("panel-warning");
-        panel.addClass("panel-default");
+        panel.removeClass("border-success");
+        panel.removeClass("border-warning");
+        panel.addClass("border-default");
+
+        panel.children(".card-header").removeClass("bg-success");
+        panel.children(".card-header").removeClass("bg-warning");
+        panel.children(".card-header").addClass("bg-default");
     }
-    
-    this.resultAsChar = function() {
-        if (! isComplete())
+
+    this.resultAsChar = function () {
+        if (!isComplete())
             return "?";
-            
+
         if (score1 > score2) {
             return leftValue[0];
         } else {
             return rightValue[0];
         }
     };
-    
-    this.reveal = function() {
+
+    this.reveal = function () {
         showGroupName();
         showPanel(panel1);
         showPanel(panel2);
         removeGroupBorder();
         showRevealText();
     }
-    
+
     function showGroupName() {
         groupName.show();
         groupNumber.hide();
     }
-    
+
     function showPanel(panel) {
-        panel.addClass("panel");
+        panel.addClass("card");
         headerOf(panel).show();
     }
-    
+
     function headerOf(panel) {
-        return panel.children(".panel-heading").show();
+        return panel.children(".card-header").show();
     }
-    
+
     function removeGroupBorder() {
         group.removeClass("bordered");
     }
-    
+
     function showRevealText() {
         $(".only-revealed").show();
     }
@@ -209,16 +222,16 @@ function Questionnaire() {
         new Dimension("pragmatic", "idealistic", statements, 3),
         new Dimension("robust", "technologic", statements, 4)
     ];
-    
-    this.update = function() {
+
+    this.update = function () {
         for (dim in dimensions) {
             dimensions[dim].update();
         }
         var type = getDesignType();
         $("#resultString").html(RESULT_STRING.replace(/\$\{type\}/g, type));
     }
-    
-    this.getDesignType = function() {
+
+    this.getDesignType = function () {
         return getDesignType();
     }
 
@@ -229,17 +242,17 @@ function Questionnaire() {
         }
         return result.toUpperCase();
     }
-    
+
     function isComplete() {
         for (dim in dimensions) {
-            if (! dimensions[dim].isComplete()) {
+            if (!dimensions[dim].isComplete()) {
                 return false;
             }
         }
         return true;
     }
-    
-    this.reveal = function() {
+
+    this.reveal = function () {
         for (dim in dimensions) {
             dimensions[dim].reveal();
         }
@@ -248,15 +261,15 @@ function Questionnaire() {
     }
 }
 
-$(document).ready(function() {
+$(document).ready(function () {
     window.questionnaire = new Questionnaire();
 
     $("#template").hide();
 
-    $(".dimension :checkbox").click(function() {
+    $(".dimension :checkbox").on('click', function () {
         questionnaire.update();
     });
-    
+
     if (window.location.search === "?revealed") {
         questionnaire.reveal();
     }

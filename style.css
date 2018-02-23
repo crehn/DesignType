@@ -88,12 +88,12 @@ h2 {
     border: 2px solid #d9534f;
 }
 
-.dimension .panel-heading {
+.dimension .card-header {
     text-align: center;
     font-weight: bold;
 }
 
-.dimension .panel-body ul {
+.dimension .card-body ul {
     list-style-type: none;
     padding: 0;
 }
