@@ -1,97 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="icon" type="image/png" href="./favicon.png">
     <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="./favicon.png">
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css" />
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="bower_components/html5shiv/dist/html5shiv.js"></script>
-      <script src="bower_components/respond.js/dest/respond.min.js"></script>
-    <![endif]-->
 
     <title>How Do You Design Software?</title>
 </head>
+
 <body>
 
-<nav class="navbar navbar-inverse navbar-default" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" role="navigation">
+        <div class="container">
             <a class="navbar-brand" href="index.html">Design Types</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="nav navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="test_yourself.html">Test Yourself</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="assess_colleagues.html?revealed">Assess Colleagues</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="info.html">Learn More</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="statistics.html">Statistics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a class="nav-link" href="http://www.principles-wiki.net">principles-wiki.net</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li><a href="test_yourself.html">Test Yourself</a></li>
-                <li><a href="assess_colleagues.html?revealed">Assess Colleagues</a></li>
-                <li><a href="info.html">Learn More</a></li>
-                <li><a href="statistics.html">Statistics</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="http://www.principles-wiki.net">principles-wiki.net</a></li>
-            </ul>
+    </nav>
+    <div class="jumbotron">
+        <h1 class="main-title">How Do You Design Software?</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4 entry-point-col">
+                    <a href="info.html">
+                        <div class="entry-point">
+                            <img src="img/info.svg" alt="learn more" height="150" />
+                        </div>
+                    </a>
+                    <p>
+                        Learn more about the idea of principles and design types.
+                    </p>
+                    <button href="info.html" class="btn btn-lg btn-secondary">Learn More</button>
+                </div>
+                <div class="col-sm-4 entry-point-col entry-point-primary">
+                    <a href="test_yourself.html">
+                        <div class="entry-point">
+                            <img src="img/guy.svg" alt="Test yourself" height="200" />
+                        </div>
+                    </a>
+                    <p>
+                        Do you want to know how you design software? Fill out the questionnaire.
+                    </p>
+                    <button href="test_yourself.html" class="btn btn-lg btn-primary">Test Yourself</button>
+                </div>
+                <div class="col-sm-4 entry-point-col">
+                    <a href="assess_colleagues.html?revealed">
+                        <div class="entry-point">
+                            <img src="img/group.svg" alt="Assess colleagues" height="150" />
+                        </div>
+                    </a>
+                    <p>
+                        Ever wondered why you always argue with your colleagues?
+                    </p>
+                    <button href="assess_colleagues.html?revealed" class="btn btn-lg btn-secondary">Assess Your Colleagues</button>
+                </div>
+            </div>
         </div>
     </div>
-</nav>
-<div class="jumbotron">
-    <h1 class="main-title">How Do You Design Software?</h1>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-4 entry-point-col">
-                <a href="info.html">
-                    <div class="entry-point">
-                        <img src="img/info.svg" alt="learn more" height="150" />
-                    </div>
-                </a>
-                <p>
-                    Learn more about the idea of principles and design types.
-                </p>
-                <a href="info.html" class="btn btn-lg btn-default">Learn More</a>
-            </div>
-            <div class="col-sm-4 entry-point-col entry-point-primary">
-                <a href="test_yourself.html">
-                    <div class="entry-point">
-                        <img src="img/guy.svg" alt="Test yourself" height="200" />
-                    </div>
-                </a>
-                <p>
-                    Do you want to know how you design software? Fill out the questionnaire.
-                </p>
-                <a href="test_yourself.html" class="btn btn-lg btn-primary">Test Yourself</a>
-            </div>
-            <div class="col-sm-4 entry-point-col">
-                <a href="assess_colleagues.html?revealed">
-                    <div class="entry-point">
-                        <img src="img/group.svg" alt="Assess colleagues" height="150" />
-                    </div>
-                </a>
-                <p>
-                    Ever wondered why you always argue with your colleagues?
-                </p>
-                <a href="assess_colleagues.html?revealed" class="btn btn-lg btn-default">Assess Your Colleagues</a>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="container">
-    
-</div>
+    <main role="main" class="container">
 
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
-<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    </main>
+
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
 </body>
+
 </html>
