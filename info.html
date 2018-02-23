@@ -1,117 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="icon" type="image/png" href="./favicon.png">
     <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="./favicon.png">
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="comments.css" />
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="bower_components/html5shiv/dist/html5shiv.js"></script>
-      <script src="bower_components/respond.js/dest/respond.min.js"></script>
-    <![endif]-->
-    
     <script type="text/javascript">
-       var pageIdComments = 5; /* dimensions.html: 1, types.hmtl: 2, result.html: 3, statistics.html: 4, info.html (learn more): 5 */
+        var pageIdComments = 5; /* dimensions.html: 1, types.hmtl: 2, result.html: 3, statistics.html: 4, info.html (learn more): 5 */
     </script>
 
     <title>How Do You Design Software?</title>
 </head>
+
 <body>
-<div class="container page">
-    <nav class="navbar navbar-inverse navbar-default" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
+
+    <main role="main" class="container page">
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" role="navigation">
+            <div class="container">
                 <a class="navbar-brand" href="index.html">Design Types</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="nav navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="test_yourself.html">Test Yourself</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="assess_colleagues.html?revealed">Assess Colleagues</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="info.html">Learn More</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="statistics.html">Statistics</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a class="nav-link" href="http://www.principles-wiki.net">principles-wiki.net</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="test_yourself.html">Test Yourself</a></li>
-                    <li><a href="assess_colleagues.html?revealed">Assess Colleagues</a></li>
-                    <li class="active"><a href="info.html">Learn More</a></li>
-                    <li><a href="statistics.html">Statistics</a></li>
-                    <li><a href="about.html">About</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="http://www.principles-wiki.net">principles-wiki.net</a></li>
-                </ul>
-            </div>
+        </nav>
+
+        <div class="jumbotron">
+            <h1>How Do You Design Software?</h1>
+            <p>
+                About Principles, Dimensions, and Design Types.
+            </p>
         </div>
-    </nav>
 
-    <div class="jumbotron">
-        <h1>How Do You Design Software?</h1>
-        <p>
-            About Principles, Dimensions, and Design Types.
-        </p>
-    </div>
+        <section>
+            <h1>Principles, Dimensions, and Design Types</h1>
+            <p>
+                This page describes a few more details, terms and thoughts. In our mind there are 4 dimensions that contain two nearly contrary
+                parts or directions. These directions are not meant to be extreme points but rather a kind of set that contains
+                similar attitudes.
+            </p>
+            <p>
+                Let’s make an example:
+                <em>Simple</em> means to omit things that are not really necessary like never requested features. In an extreme
+                manner it can mean to omit also documentation because really simple code is documentation enough. This can
+                be but does not have to.
+            </p>
+            <p>
+                What we mean is that all dimensions have a wide range of aspects. You can agree with many of them but do not have to agree
+                to all. To get a contrast between the two parts of a dimension we tried to find naturally contrary mindsets.
+                We use these to force you to decide to which side you belong most. Well knowing that there are developers
+                who will be very balanced, we agreed in that there will be also ones who are typically extreme. When you
+                think about your colleagues you will quickly know who is extremely dedicated to a specific dimension. Those
+                are often very original guys. In many cases for each person one or two dimensions overshadow the others and
+                form the impression of others about this person.
+            </p>
+            <div style="display:inline">Find out more about the definition of all dimensions by exploring our
+                <a href="dimensions.html">dimensions page</a>.</div>
+            <div style="display:inline">
+                <img alt="Dimensions" src="./img/learnmore/dimensions.png" width="106" height="75">
+            </div>
+            <p>
+                When we combine all the predominating dimensions of someone it results in a design type. SAPR for example is the combination
+                of the attitudes Simple – Abstract – Pragmatic – Robust. Someone who is Abstract focuses on concepts and
+                abstractions to find a good structure for his application. If he is also Pragmatic he maybe will tend to
+                violate this structure for satisfying customer needs. If he is also Idealistic he maybe will over engineer
+                the whole system structure. Your predominate dimensions effect each other. In our Design Types we specify
+                these different combinations and describe the consequences for each type.
+            </p>
+            <div style="display:inline">Find out more about these combinations by exploring our
+                <a href="types.html">design types page</a>.</div>
+            <div style="display:inline">
+                <img alt="Types" src="./img/learnmore/example_type.png" width="76" height="75">
+            </div>
+        </section>
+        <section id="comments">
+            <div id="comment-template" class="comment">
+                <img src="todo_dyn" alt="" class="avatar">
+                <div>
+                    <h5 class="name">Template name</h5>
+                    <span class="date">Template date</span>
+                    <br>
+                    <p class="text">Template comment</p>
+                </div>
+            </div>
 
-    <section>
-        <h1>Principles, Dimensions, and Design Types</h1>
-        <p>
-            This page describes a few more details, terms and thoughts. In our mind there are 4 dimensions that contain two nearly contrary parts or directions. These directions are not meant to be extreme points but rather a kind of set that contains similar attitudes.
-        </p>
-        <p>
-            Let’s make an example: <em>Simple</em> means to omit things that are not really necessary like never requested features. In an extreme manner it can mean to omit also documentation because really simple code is documentation enough. This can be but does not have to.
-        </p>
-        <p>
-            What we mean is that all dimensions have a wide range of aspects. You can agree with many of them but do not have to agree to all. To get a contrast between the two parts of a dimension we tried to find naturally contrary mindsets. We use these to force you to decide to which side you belong most. Well knowing that there are developers who will be very balanced, we agreed in that there will be also ones who are typically extreme. When you think about your colleagues you will quickly know who is extremely dedicated to a specific dimension. Those are often very original guys. In many cases for each person one or two dimensions overshadow the others and form the impression of others about this person.
-        </p>
-        <div style="display:inline">Find out more about the definition of all dimensions by exploring our <a href="dimensions.html">dimensions page</a>.</div>
-        <div style="display:inline"><img alt="Dimensions" src="./img/learnmore/dimensions.png" width="106" height="75"></div>
-        <p>
-            When we combine all the predominating dimensions of someone it results in a design type. SAPR for example is the combination of the attitudes Simple – Abstract – Pragmatic – Robust. Someone who is Abstract focuses on concepts and abstractions to find a good structure for his application. If he is also Pragmatic he maybe will tend to violate this structure for satisfying customer needs. If he is also Idealistic he maybe will over engineer the whole system structure. Your predominate dimensions effect each other. In our Design Types we specify these different combinations and describe the consequences for each type.
-        </p>
-        <div style="display:inline">Find out more about these combinations by exploring our <a href="types.html">design types page</a>.</div>
-        <div style="display:inline"><img alt="Types" src="./img/learnmore/example_type.png" width="76" height="75"></div>
-    </section>
-    <section id="comments">
-		<div id="comment-template" class="comment">
-		    <img src="todo_dyn" alt="" class="avatar">
-		    <div>
-		        <h5 class="name">Template name</h5><span class="date">Template date</span><br>
-		        <p class="text">Template comment</p>
-		    </div>
-		</div>
-		
-		<div class="comment-container">
-		    <div class="new-button">
-		        <span>Write a comment ...</span>
-		    </div>
-		    <div class="new-form">
-		        <input type="text" id="new-comment-name" value="" placeholder="Your name">
-		        <input type="text" id="new-comment-email" value="" placeholder="Your e-mail address">
-		        <textarea id="new-comment-text"></textarea>
-		        <div class="btn btn-primary post-button">Post comment</div>
-		        <div class="btn btn-default cancel-button">Cancel</div>
-		    </div>
-		    <div class="clear"></div>
-		</div>  
-    </section>  
-    <footer>
-        Please give us <a class="feedback">Feedback</a> or discuss with us at <a href="https://www.xing.com/communities/groups/design-principles-patterns-types-08d2-1080100" target="_blank"><img src="./img/xing_logo2.png" alt="XING" height="25" width="25" /></a>
-    </footer>
-</div>
+            <div class="comment-container">
+                <div class="new-button">
+                    <span>Write a comment ...</span>
+                </div>
+                <div class="new-form">
+                    <input type="text" id="new-comment-name" value="" placeholder="Your name">
+                    <input type="text" id="new-comment-email" value="" placeholder="Your e-mail address">
+                    <textarea id="new-comment-text"></textarea>
+                    <div class="btn btn-primary post-button">Post comment</div>
+                    <div class="btn btn-default cancel-button">Cancel</div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </section>
+        <footer>
+            Please give us
+            <a class="feedback">Feedback</a> or discuss with us at
+            <a href="https://www.xing.com/communities/groups/design-principles-patterns-types-08d2-1080100" target="_blank">
+                <img src="./img/xing_logo2.png" alt="XING" height="25" width="25" />
+            </a>
+        </footer>
+    </main>
 
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
-<script>
-    var a = 'esign-';var b = 'ma';var c = 'es.net';var d = 'typ';var e = 'il@d';var f = 'ilto:ema';
-    $("a.feedback").attr('href', b+f+e+a+d+c);
-</script>
-<script src="comments.js"></script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-3.0.1.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script>
+        var a = 'esign-'; var b = 'ma'; var c = 'es.net'; var d = 'typ'; var e = 'il@d'; var f = 'ilto:ema';
+        $("a.feedback").attr('href', b + f + e + a + d + c);
+    </script>
+    <script src="comments.js"></script>
 </body>
+
 </html>
