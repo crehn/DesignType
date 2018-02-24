@@ -1,0 +1,66 @@
+.card-title a {
+    font-weight: bold;
+    color: inherit;
+}
+
+.card-text {
+    background-color: #ddcfb6 !important;
+    padding: 1em;
+    border-style: solid;
+    border-width: 2px;
+}
+
+.c-catchphrase {
+    text-align: center;
+    font-style: italic;
+    font-size: 120%;
+}
+
+.c-links {
+    background-color: #ddcfb6 !important;
+    padding: 0.5em;
+    border-style: solid;
+    border-width: 2px;
+}
+
+.c-links a {
+    font-size: 80%;
+    color: #212529;
+}
+
+.c-link-emph {
+    font-weight: bold;
+}
+
+.c-simple, .c-simple .card-text, .c-simple .c-links,
+.c-powerful, .c-powerful .card-text, .c-powerful .c-links {
+    background-color: #003917;
+    border-color: #aaffcc;
+}
+
+.c-abstract, .c-abstract .card-text, .c-abstract .c-links,
+.c-concrete, .c-concrete .card-text, .c-concrete .c-links {
+    background-color: #162d50;
+    border-color: #8ba7d9;
+}
+
+.c-idealistic, .c-idealistic .card-text, .c-idealistic .c-links,
+.c-pragmatic, .c-pragmatic .card-text, .c-pragmatic .c-links {
+    background-color: #501616;
+    border-color: #f4d7d7;
+}
+
+.c-simple .card-title a,
+.c-powerful .card-title a,
+.c-abstract .card-title a,
+.c-concrete .card-title a,
+.c-idealistic .card-title a,
+.c-pragmatic .card-title a {
+    color: white;
+}
+
+.c-technologic, .c-technologic .card-text, .c-technologic .c-links,
+.c-robust, .c-robust .card-text, .c-robust .c-links {
+    background-color: #ffe680;
+    border-color: #784421;
+}

@@ -3,7 +3,7 @@
     src: url('fonts/Metamorphous-Regular.ttf') format('truetype');
 }
 
-h1, h2, h3, .card-header, .btn, .navbar {
+h1, h2, h3, h4, h5, .card-header, .btn, .navbar {
     font-family: 'Metamorphous';
 }
 
