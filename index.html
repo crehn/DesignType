@@ -17,24 +17,28 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark" role="navigation">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Design Types</a>
+            <a class="navbar-brand" href="index.html">Design-Types.net</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
                 aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="nav navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="test_yourself.html">Test Yourself</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="design_types.html" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">Design Types</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown01">
+                            <a class="dropdown-item" href="test_yourself.html">Test Yourself</a>
+                            <a class="dropdown-item" href="assess_colleagues.html?revealed">Assess Colleagues</a>
+                            <a class="dropdown-item" href="statistics.html">Statistics</a>
+                            <a class="dropdown-item" href="design_types.html">Learn more...</a>
+                        </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="assess_colleagues.html?revealed">Assess Colleagues</a>
+                        <a class="nav-link" href="matrix.html">Design Matrix</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="info.html">Learn More</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="statistics.html">Statistics</a>
+                        <a class="nav-link" href="cards.html">Design Cards</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">About</a>
@@ -61,21 +65,22 @@
                     <p>
                         Examine technical problems from all perspectives.
                     </p>
-                    <button href="matrix.html" class="btn btn-lg btn-primary">Get the Matrix</button>
+                    <a href="matrix.html">
+                        <button class="btn btn-lg btn-primary">Get the Matrix</button>
+                    </a>
                 </div>
                 <div class="col-sm-4 entry-point-col entry-point-primary">
-                    <a href="test_yourself.html">
+                    <a href="design_types.html">
                         <div class="entry-point">
                             <img src="img/types_logo.png" alt="Design Types" height="225" />
                         </div>
                     </a>
                     <p>
-                        Do you want to know how you design software? Ever wondered why you always argue with your colleagues? Fill out the questionnaire
-                        and learn more.
+                        Learn why you always argue with your colleagues about software design.
                     </p>
-                    <button href="test_yourself.html" class="btn btn-lg btn-primary">Test Yourself</button>
-                    <button href="assess_colleagues.html?revealed" class="btn btn-lg btn-secondary">Assess Your Colleagues</button>
-                    <button href="info.html" class="btn btn-lg btn-secondary">Learn More</button>
+                    <a href="design_types.html">
+                        <button class="btn btn-lg btn-primary">Design Types</button>
+                    </a>
                 </div>
                 <div class="col-sm-4 entry-point-col">
                     <a href="cards.html">
@@ -86,7 +91,9 @@
                     <p>
                         Improve technical discussions by using proven arguments.
                     </p>
-                    <button href="cards.html" class="btn btn-lg btn-primary">Get the Cards</button>
+                    <a href="cards.html">
+                        <button class="btn btn-lg btn-primary">Get the Cards</button>
+                    </a>
                 </div>
             </div>
         </div>
