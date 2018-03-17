@@ -23,34 +23,40 @@
     <main role="main" class="container page">
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark" role="navigation">
-            <a class="navbar-brand" href="index.html">Design Types</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="nav navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="test_yourself.html">Test Yourself</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="assess_colleagues.html?revealed">Assess Colleagues</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="design_types.html">Learn More</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="statistics.html">Statistics</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
-                </ul>
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a class="nav-link" href="http://www.principles-wiki.net">principles-wiki.net</a>
-                    </li>
-                </ul>
+            <div class="container">
+                <a class="navbar-brand" href="index.html">Design-Types.net</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="nav navbar-nav mr-auto">
+                        <li class="nav-item dropdown active">
+                            <a class="nav-link dropdown-toggle" href="design_types.html" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">Design Types</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown01">
+                                <a class="dropdown-item" href="test_yourself.html">Test Yourself</a>
+                                <a class="dropdown-item" href="assess_colleagues.html?revealed">Assess Colleagues</a>
+                                <a class="dropdown-item" href="statistics.html">Statistics</a>
+                                <a class="dropdown-item" href="design_types.html">➤ Learn more...</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="matrix.html">Design Matrix</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="cards.html">Design Cards</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a class="nav-link" href="http://www.principles-wiki.net">principles-wiki.net</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
 
@@ -119,14 +125,60 @@
         <section>
             <h1>Dimensions</h1>
             <p>
-
+                There are four dimensions of software design:
+            </p>
+            <ul>
+                <li>simple-vs-powerful: Some prefer simple solutions and some powerful and generic ones.</li>
+                <li>abstract-vs.concrete: Some prefer having a bird's eye view on software and others rather look at every single
+                    line of code.</li>
+                <li>pargamtic-vs-idealistic. Some prefer producing value early on and others prefer building maintainable software.</li>
+                <li>robust-vs.technologic: Some prefer proven solutions and others like to experiment with new stuff.</li>
+            </ul>
+            <p>
+                Every dimension has its extremes but of course there are gray areas in between. Typically a solution cannot be 100% simple
+                and 100% generic at the same time. But solutions can be characterized somewhere on this scale. Likewise developers'
+                attitude towards software design can be characterized on the same scale. Some developers rather prefer simple
+                solutions some powerful solutions some don't have a strong preference on this scale.
+            </p>
+            <p>
+                The preferences on these four dimensions largely influence which arguments we use in design discussions. Even more so, if
+                there is a strong preference in one dimension and lesser tendencies in others, this strong preference often
+                dominates a discussion.
+            </p>
+            <p>
+                Read
+                <a href="dimensions.html">more about the four dimensions</a>.
             </p>
         </section>
 
         <section>
             <h1>Types</h1>
             <p>
-
+                There are four dimensions each having two opposite sides. This results in 16 design types. Each type has an abbreviation
+                and a name. For example, a developer being Powerful, Concreate, Pragmatic, Robust is called "The Sorcerer"
+                (RCPR) and someone being Simple, Concreate, Pragmatric, Technologic is "The Ninja" (SCPT).
+            </p>
+            <p>
+                Of course this can be a bit simplistic -- especially as many people don't have a strong tendency in all dimensions. Nevertheless
+                it's a nice model.
+            </p>
+            <p>
+                None of these types is better than the other. They are just different. They have their strengths and weaknesses and their
+                very own view on how to design software. People with similar types argue less and discussions among them
+                result in agreements faster. But this also means that certain aspects of design are rather overlooked when
+                there is too much similarity.
+            </p>
+            <p>
+                Some types complement each other but there are also type combinations that have difficulties working together. Especially
+                two idealistic people who are different in some other dimension often don't play well together. For example
+                an "Author" (SAIT) and a "Space Probe Engineer" (SAIR). Provided that they both have strong tendencies in
+                their dimensions, they will encounter some difficulties. The differnce in robust-vs-technologic results in
+                frequent disagreements and them both being idealistic intensifies their dispute and make it hard for them
+                to find a compromize.
+            </p>
+            <p>
+                Read
+                <a href="type.html">more about the 16 types</a>.
             </p>
         </section>
 
@@ -134,51 +186,6 @@
             <span style="color:red">TODO: Hier Slideshare-Präse einbauen</span>
         </section>
 
-
-
-
-
-        <section>
-            <h1>Principles, Dimensions, and Design Types</h1>
-            <p>
-                This page describes a few more details, terms and thoughts. In our mind there are 4 dimensions that contain two nearly contrary
-                parts or directions. These directions are not meant to be extreme points but rather a kind of set that contains
-                similar attitudes.
-            </p>
-            <p>
-                Let’s make an example:
-                <em>Simple</em> means to omit things that are not really necessary like never requested features. In an extreme
-                manner it can mean to omit also documentation because really simple code is documentation enough. This can
-                be but does not have to.
-            </p>
-            <p>
-                What we mean is that all dimensions have a wide range of aspects. You can agree with many of them but do not have to agree
-                to all. To get a contrast between the two parts of a dimension we tried to find naturally contrary mindsets.
-                We use these to force you to decide to which side you belong most. Well knowing that there are developers
-                who will be very balanced, we agreed in that there will be also ones who are typically extreme. When you
-                think about your colleagues you will quickly know who is extremely dedicated to a specific dimension. Those
-                are often very original guys. In many cases for each person one or two dimensions overshadow the others and
-                form the impression of others about this person.
-            </p>
-            <div style="display:inline">Find out more about the definition of all dimensions by exploring our
-                <a href="dimensions.html">dimensions page</a>.</div>
-            <div style="display:inline">
-                <img alt="Dimensions" src="./img/learnmore/dimensions.png" width="106" height="75">
-            </div>
-            <p>
-                When we combine all the predominating dimensions of someone it results in a design type. SAPR for example is the combination
-                of the attitudes Simple – Abstract – Pragmatic – Robust. Someone who is Abstract focuses on concepts and
-                abstractions to find a good structure for his application. If he is also Pragmatic he maybe will tend to
-                violate this structure for satisfying customer needs. If he is also Idealistic he maybe will over engineer
-                the whole system structure. Your predominate dimensions effect each other. In our Design Types we specify
-                these different combinations and describe the consequences for each type.
-            </p>
-            <div style="display:inline">Find out more about these combinations by exploring our
-                <a href="types.html">design types page</a>.</div>
-            <div style="display:inline">
-                <img alt="Types" src="./img/learnmore/example_type.png" width="76" height="75">
-            </div>
-        </section>
         <section id="comments">
             <div id="comment-template" class="comment">
                 <img src="todo_dyn" alt="" class="avatar">
