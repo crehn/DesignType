@@ -10,8 +10,8 @@ function BarChart(dataForBars) {
     var innerWidth = width - margin.left - margin.right;
     var innerHeight = height - margin.top - margin.bottom;
 
-    var x = d3.scale.ordinal().rangeRoundBands([0, innerWidth], .2);
-    var y = d3.scale.linear().range([innerHeight, 0]);
+    var x = d3.scaleBand().rangeRound([0, innerWidth]).padding(0.2);
+    var y = d3.scaleLinear().range([innerHeight, 0]);
 
     this.draw = function () {
         draw();
@@ -31,9 +31,8 @@ function BarChart(dataForBars) {
     }
 
     function drawXAxis(svg) {
-        var xAxis = d3.svg.axis()
-            .scale(x)
-            .orient("bottom");
+        var xAxis = d3.axisBottom()
+            .scale(x);
         x.domain(dataForBars.map(function (d) { return d.type; }));
 
         svg.append("g")
@@ -43,9 +42,8 @@ function BarChart(dataForBars) {
     }
 
     function drawYAxis(svg) {
-        var yAxis = d3.svg.axis()
+        var yAxis = d3.axisLeft()
             .scale(y)
-            .orient("left")
             .ticks(10, "%");
         y.domain([0, d3.max(dataForBars, function (d) { return d.amount; })]);
 
@@ -65,7 +63,7 @@ function BarChart(dataForBars) {
             .enter().append("rect")
             .attr("class", "bar")
             .attr("x", function (d) { return x(d.type); })
-            .attr("width", x.rangeBand())
+            .attr("width", x.bandwidth())
             .attr("y", function (d) { return y(d.amount); })
             .attr("height", function (d) { return innerHeight - y(d.amount); });
     }
@@ -74,7 +72,7 @@ function BarChart(dataForBars) {
         var txt = svg.selectAll(".txtstat")
             .data(dataForBars)
             .enter().append("text")
-            .attr("x", function (d) { return x(d.type) + (x.rangeBand() / 2); })
+            .attr("x", function (d) { return x(d.type) + (x.bandwidth() / 2); })
             .attr("y", function (d) { return y(d.amount) - (margin.top / 2); })
             .attr("dy", ".15em")
             .text(percentValueAsText)
@@ -100,8 +98,8 @@ function HorizontalBarChart(dataForBars, elementName) {
     var innerWidth = width - margin.left - margin.right;
     var innerHeight = height - margin.top - margin.bottom;
 
-    var x = d3.scale.linear().range([0, innerWidth]);
-    var y = d3.scale.ordinal().rangeRoundBands([innerHeight, 0], .2);
+    var x = d3.scaleLinear().range([0, innerWidth]);
+    var y = d3.scaleBand().rangeRound([innerHeight, 0]).padding(0.2);
 
     this.draw = function () {
         draw();
@@ -121,9 +119,8 @@ function HorizontalBarChart(dataForBars, elementName) {
     }
 
     function drawXAxis(svg) {
-        var xAxis = d3.svg.axis()
+        var xAxis = d3.axisBottom()
             .scale(x)
-            .orient("bottom")
             .ticks(10, "%");
         x.domain([0, 1]);
         //x.domain([0, d3.max(dataForBars, function(d) { return d.percentage; })]);
@@ -135,9 +132,8 @@ function HorizontalBarChart(dataForBars, elementName) {
     }
 
     function drawYAxis(svg) {
-        var yAxis = d3.svg.axis()
-            .scale(y)
-            .orient("left");
+        var yAxis = d3.axisLeft()
+            .scale(y);
         y.domain(dataForBars.map(function (d) { return d.overallIndex; }));
 
         svg.append("g")
@@ -156,7 +152,7 @@ function HorizontalBarChart(dataForBars, elementName) {
             .enter().append("rect")
             .attr("class", "bar")
             .attr("y", function (d) { return y(d.overallIndex); })
-            .attr("height", y.rangeBand())
+            .attr("height", y.bandwidth())
             //.attr("x", function(d) { return x(d.percentage); })
             .attr("x", 0)
             .attr("width", function (d) { return x(d.percentage); });
@@ -166,7 +162,7 @@ function HorizontalBarChart(dataForBars, elementName) {
         var txt = svg.selectAll(".txtstat" + elementName)
             .data(dataForBars)
             .enter().append("text")
-            .attr("y", function (d) { return y(d.overallIndex) + (y.rangeBand() / 2); })
+            .attr("y", function (d) { return y(d.overallIndex) + (y.bandwidth() / 2); })
             .attr("x", 2)
             .attr("dy", ".3em")
             .text(getStatementText)
@@ -188,14 +184,14 @@ function XYBarChart(dataForBars, elementName) {
     var innerWidth = width - margin.left - margin.right;
     var innerHeight = height - margin.top - margin.bottom;
 
-    var x = d3.scale.ordinal().rangeRoundBands([0, innerWidth], .2);
-    var y = d3.scale.linear().range([innerHeight, 0]);
+    var x = d3.scaleBand().rangeRound([0, innerWidth]).padding(0.2);
+    var y = d3.scaleLinear().range([innerHeight, 0]);
 
-    var color = d3.scale.category10();
+    var color = d3.scaleOrdinal(d3.schemeCategory10);
 
-    var line = d3.svg.line()
-        .interpolate("basis")
-        .x(function (d) { return x(d.curExperience) + x.rangeBand() / 2; })
+    var line = d3.line()
+        .curve(d3.curveBasis)
+        .x(function (d) { return x(d.curExperience) + x.bandwidth() / 2; })
         .y(function (d) { return y(d.curValue); });
 
     this.draw = function () {
@@ -228,9 +224,8 @@ function XYBarChart(dataForBars, elementName) {
     }
 
     function drawXAxis(svg) {
-        var xAxis = d3.svg.axis()
-            .scale(x)
-            .orient("bottom");
+        var xAxis = d3.axisBottom()
+            .scale(x);
 
         //x.domain([0, 1]);
         x.domain(dataForBars.map(function (d) { return d.experience; }));
@@ -242,9 +237,8 @@ function XYBarChart(dataForBars, elementName) {
     }
 
     function drawYAxis(svg) {
-        var yAxis = d3.svg.axis()
+        var yAxis = d3.axisLeft()
             .scale(y)
-            .orient("left")
             .ticks(10, "%");
 
         var maxVal = calcMaxOfObjArray(dataForBars);
