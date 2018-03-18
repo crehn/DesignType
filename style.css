@@ -46,6 +46,16 @@ body {
     margin: 2em;
 }
 
+.pop {
+    cursor:pointer;
+}
+
+@media (min-width: 576px) {
+    .modal-dialog {
+        max-width: 750px;
+    }
+}
+
 .only-revealed {
     display: none;
 }
