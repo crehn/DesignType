@@ -41,6 +41,11 @@ body {
     }
 }
 
+.logo-as-heading {
+    text-align: center;
+    margin: 2em;
+}
+
 .only-revealed {
     display: none;
 }
