@@ -41,7 +41,7 @@ function Card(card, cardData) {
 
     function buildLink(link) {
         var cssClass = link.set == 'basic' ? 'c-link-emph' : 'c-link';
-        return '<a class="' + cssClass + '" href="c?' + link.abbreviation + '" title="' + link.name + '">' + link.type + link.abbreviation + '</a>&nbsp;';
+        return '<a class="' + cssClass + '" href="c.html?' + link.abbreviation + '" title="' + link.name + '">' + link.type + link.abbreviation + '</a>&nbsp;';
     }
 
     function color(cardData) {
