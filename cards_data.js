@@ -17,11 +17,25 @@ function aLink(type, abbreviation, name) {
 }
 
 var cardsData = {
+    KISS: {
+        name: 'Keep it Simple Stupid',
+        aspect: 'simple',
+        catchphrase: 'Simple means readable, maintainable and less error-prone. Overengineering is harmful.',
+        description: "Complex code typically contains more bugs and it has to be maintained (maybe even by other people). To others it may seem obscure which can lead to frustration and bad code quality. Striving for simplicity means to avoid inheritance, low-level optimization, complex algorithms, fancy (language) features, configurability, etc.",
+        set: 'basic',
+        links: [
+            bLink('↓', 'RoP', 'Rule of Power'),
+            bLink('↑', 'CF', 'Customer Focus'),
+            aLink('↓', 'NFR', 'Non-Functional Requirements'),
+            aLink('⇅', 'MP', 'Model Principle'),
+        ],
+        wikiLink: 'principles:keep_it_simple_stupid',
+    },
     TP: {
         name: 'Technological Progress',
         aspect: 'technologic',
         catchphrase: 'Progress must not be ignored in a competitive environment.',
-        description: "New technology is not only motivating but also comes with benefits like more fea-tures, more performance, better maintain-ability, and fixed bugs. Furthermore old technology won't be supported for much longer and new people don't know the old stuff anymore. Continuously challenge existing solutions by evaluating alterna-tives.",
+        description: "New technology is not only motivating but also comes with benefits like more features, more performance, better maintainability, and fixed bugs. Furthermore old technology won't be supported for much longer and new people don't know the old stuff anymore. Continuously challenge existing solutions by evaluating alternatives.",
         set: 'basic',
         links: [
             bLink('↑', 'FRD', 'Frequency Reduces Difficulty'),
@@ -49,7 +63,7 @@ var cardsData = {
         name: "Don't Repeat Yourself",
         aspect: 'concrete',
         catchphrase: 'Duplication makes changing the code cumbersome and leads to bugs.',
-        description: "Having a functionality more than once means to update or bugfix it at every oc-currence which is more error-prone and more effort. Refactorings like method or class extraction may help as well as in-heritance, polymorphism and some design patterns.",
+        description: "Having a functionality more than once means to update or bugfix it at every occurrence which is more error-prone and more effort. Refactorings like method or class extraction may help as well as inheritance, polymorphism and some design patterns.",
         set: 'basic',
         links: [
             bLink('↓', 'KISS', 'Keep It Simple Stupid'),

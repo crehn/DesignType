@@ -5,7 +5,9 @@ function Card(card, cardData) {
     div.attr('id', 'card' + card);
     div.find('.design-card').addClass('c-' + cardData.aspect);
 
-    div.find('.c-self-link').attr('href', 'c?' + card);
+    div.find('.design-card-small .c-self-link').attr('title', cardData.name);
+    div.find('.design-card-small .c-self-link').on('click', () => showLarge(div));
+    div.find('.design-card-large .c-self-link').on('click', () => showSmall(div));
     div.find('.c-title').html(card + ' ' + cardData.name);
     div.find('.c-illus').html(card);
 
@@ -22,6 +24,20 @@ function Card(card, cardData) {
     div.find('.c-dimension img').attr('src', 'img/cards/' + cardData.aspect + '.png');
 
     $('#design-cards').append(div);
+
+    function showLarge(div) {
+        div.find('.design-card-large').show();
+        div.find('.design-card-small').hide();
+        div.addClass('col-lg-4');
+        div.removeClass('col-md-2');
+    }
+
+    function showSmall(div) {
+        div.find('.design-card-large').hide();
+        div.find('.design-card-small').show();
+        div.removeClass('col-lg-4');
+        div.addClass('col-md-2');
+    }
 
     function buildLink(link) {
         var cssClass = link.set == 'basic' ? 'c-link-emph' : 'c-link';
@@ -45,10 +61,18 @@ function Card(card, cardData) {
 
         }
     }
+
+    this.enlarge = function () {
+        showLarge(div);
+    }
 }
 
 function Cards(filter) {
     var cards = buildCards();
+
+    if (cards.length == 1) {
+        cards[0].enlarge();
+    }
 
     function buildCards() {
         if (filter.length > 0) {
@@ -60,11 +84,11 @@ function Cards(filter) {
 
     function buildFilteredCards() {
         debuglog('building ' + filter.length + ' card(s)');
-        filter.map(card => new Card(card, cardsData[card]));
+        return filter.map(card => new Card(card, cardsData[card]));
     }
 
     function buildAllCards() {
-        debuglog('building all card');
+        debuglog('building all cards');
         var result = [];
         for (card in cardsData) {
             result.push(new Card(card, cardsData[card]));

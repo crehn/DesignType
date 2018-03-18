@@ -29,6 +29,7 @@ body {
 
 .jumbotron p {
     font-size: 21px;
+    margin: 0;
 }
 
 .jumbotron h1 {

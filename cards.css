@@ -1,3 +1,7 @@
+.design-card-container {
+    padding: 0rem 0.5rem;
+}
+
 .design-card {
     margin-bottom: 1rem;
 
@@ -6,6 +10,14 @@
     
     padding: 1rem;
 }
+
+.design-card.design-card-small {
+    border: 0.75rem solid black !important;
+    padding: 0.75rem;
+}
+
+
+/* upper part ------------------------------------------------------------------------------------------------------- */
 
 .c-title, .c-title a {
     margin: 0.5rem 0rem 1rem 0rem;
@@ -17,6 +29,10 @@
 
 .design-card a {
     text-decoration: none;
+}
+
+.c-self-link {
+    cursor: pointer;
 }
 
 .c-illus {
@@ -34,6 +50,13 @@
     font-family: 'Metamorphous';
     font-size: 6rem;
 }
+
+.design-card-small .c-illus {
+    font-size: 2rem;
+}
+
+
+/* body --------------------------------------------------------------------------------------------------------------*/
 
 .c-body {
     margin: 1rem 0rem;
@@ -71,6 +94,9 @@
     text-decoration: underline;
 }
 
+
+/* footer ------------------------------------------------------------------------------------------------------------*/
+
 .c-links {
     border-style: solid;
     border-width: 2px;
@@ -93,6 +119,9 @@
 .c-link-emph {
     font-weight: bold;
 }
+
+
+/* colors ------------------------------------------------------------------------------------------------------------*/
 
 .c-simple .c-title,
 .c-powerful .c-title,
