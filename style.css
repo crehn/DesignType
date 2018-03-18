@@ -171,8 +171,7 @@ footer {
 
 #overlay {
     position:fixed;
-    width: 35em;
-    height: 20em;
+    max-width: 35em;
     top: 50%;
     left: 50%;
     margin-bottom: -50%;
