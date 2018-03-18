@@ -313,8 +313,8 @@ function TypesBarChart(dataForBars, resultType) {
     var innerWidth = width - margin.left - margin.right;
     var innerHeight = height - margin.top - margin.bottom;
 
-    var x = d3.scale.ordinal().rangeRoundBands([0, innerWidth], .2);
-    var y = d3.scale.linear().range([innerHeight, 0]);
+    var x = d3.scaleBand().rangeRound([0, innerWidth]).padding(0.2);
+    var y = d3.scaleLinear().range([innerHeight, 0]);
 
     this.draw = function () {
         draw();
@@ -334,9 +334,8 @@ function TypesBarChart(dataForBars, resultType) {
     }
 
     function drawXAxis(svg) {
-        var xAxis = d3.svg.axis()
-            .scale(x)
-            .orient("bottom");
+        var xAxis = d3.axisBottom()
+            .scale(x);
         x.domain(dataForBars.map(function (d) { return d.type; }));
 
         svg.append("g")
@@ -346,9 +345,8 @@ function TypesBarChart(dataForBars, resultType) {
     }
 
     function drawYAxis(svg) {
-        var yAxis = d3.svg.axis()
+        var yAxis = d3.axisLeft()
             .scale(y)
-            .orient("left")
             .ticks(10, "%");
         y.domain([0, d3.max(dataForBars, function (d) { return d.amount; })]);
 
@@ -368,7 +366,7 @@ function TypesBarChart(dataForBars, resultType) {
             .enter().append("rect")
             .attr("class", function (d) { return d.type === resultType ? "baractive" : "bar" })
             .attr("x", function (d) { return x(d.type); })
-            .attr("width", x.rangeBand())
+            .attr("width", x.bandwidth())
             .attr("y", function (d) { return y(d.amount); })
             .attr("height", function (d) { return innerHeight - y(d.amount); });
     }
@@ -377,7 +375,7 @@ function TypesBarChart(dataForBars, resultType) {
         var txt = svg.selectAll(".txtstat")
             .data(dataForBars)
             .enter().append("text")
-            .attr("x", function (d) { return x(d.type) + (x.rangeBand() / 2); })
+            .attr("x", function (d) { return x(d.type) + (x.bandwidth() / 2); })
             .attr("y", function (d) { return y(d.amount) - (margin.top / 2); })
             .attr("dy", ".15em")
             .text(percentValueAsText)
