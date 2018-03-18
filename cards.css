@@ -1,8 +1,8 @@
 .design-card {
     margin-bottom: 1rem;
 
-    border-width: 1px;
-    border-style: solid;
+    border: 1rem solid black !important;
+    border-radius: 1rem;
     
     padding: 1rem;
 }
@@ -24,7 +24,7 @@
     border-style: solid;
     border-radius: 10%;
 
-    padding: 1rem;
+    padding: 0.5rem;
     
     text-align: center;
 
@@ -48,9 +48,27 @@
 }
 
 .c-catchphrase {
+    margin-bottom: 0.5rem;
+
     text-align: center;
     font-style: italic;
-    font-size: 120%;
+    font-size: 110%;
+}
+
+.c-description {
+    margin: 0rem;
+
+    font-size: 80%;
+}
+
+.c-wikilink, .c-wikilink a {
+    text-align: right;
+    font-weight: bold;
+    color: #212529;
+}
+
+.c-wikilink a:hover {
+    text-decoration: underline;
 }
 
 .c-links {
