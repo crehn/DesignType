@@ -1,13 +1,50 @@
-.card-title a {
-    font-weight: bold;
-    color: inherit;
+.design-card {
+    margin-bottom: 1rem;
+
+    border-width: 1px;
+    border-style: solid;
+    
+    padding: 1rem;
 }
 
-.card-text {
-    background-color: #ddcfb6 !important;
-    padding: 1em;
+.c-title, .c-title a {
+    margin: 0.5rem 0rem 1rem 0rem;
+
+    text-align: center;
+    font-weight: bold;
+    color: #212529;
+}
+
+.design-card a {
+    text-decoration: none;
+}
+
+.c-illus {
+    border-width: 1 px;
+    border-style: solid;
+    border-radius: 10%;
+
+    padding: 1rem;
+    
+    text-align: center;
+
+    background-color: #e6e6e6 !important;
+    
+    color: #212529;
+    font-family: 'Metamorphous';
+    font-size: 6rem;
+}
+
+.c-body {
+    margin: 1rem 0rem;
+    
     border-style: solid;
     border-width: 2px;
+    border-radius: 10%;
+
+    background-color: #ddcfb6 !important;
+
+    padding: 1em;
 }
 
 .c-catchphrase {
@@ -17,10 +54,13 @@
 }
 
 .c-links {
-    background-color: #ddcfb6 !important;
-    padding: 0.5em;
     border-style: solid;
     border-width: 2px;
+    border-radius: 10%;
+    
+    padding: 0.5em;
+    
+    background-color: #ddcfb6 !important;
 }
 
 .c-links a {
@@ -28,39 +68,43 @@
     color: #212529;
 }
 
+.c-links a:hover {
+    text-decoration: underline;
+}
+
 .c-link-emph {
     font-weight: bold;
 }
 
-.c-simple, .c-simple .card-text, .c-simple .c-links,
-.c-powerful, .c-powerful .card-text, .c-powerful .c-links {
+.c-simple .c-title,
+.c-powerful .c-title,
+.c-abstract .c-title,
+.c-concrete .c-title,
+.c-idealistic .c-title,
+.c-pragmatic .c-title {
+    color: white;
+}
+
+.c-simple, .c-simple .c-illus, .c-simple .c-body, .c-simple .c-links,
+.c-powerful, .c-powerful .c-illus, .c-powerful .c-body, .c-powerful .c-links {
     background-color: #003917;
     border-color: #aaffcc;
 }
 
-.c-abstract, .c-abstract .card-text, .c-abstract .c-links,
-.c-concrete, .c-concrete .card-text, .c-concrete .c-links {
+.c-abstract, .c-abstract .c-illus, .c-abstract .c-body, .c-abstract .c-links,
+.c-concrete, .c-concrete .c-illus, .c-concrete .c-body, .c-concrete .c-links {
     background-color: #162d50;
     border-color: #8ba7d9;
 }
 
-.c-idealistic, .c-idealistic .card-text, .c-idealistic .c-links,
-.c-pragmatic, .c-pragmatic .card-text, .c-pragmatic .c-links {
+.c-idealistic, .c-idealistic .c-illus, .c-idealistic .c-body, .c-idealistic .c-links,
+.c-pragmatic, .c-pragmatic .c-illus, .c-pragmatic .c-body, .c-pragmatic .c-links {
     background-color: #501616;
     border-color: #f4d7d7;
 }
 
-.c-simple .card-title a,
-.c-powerful .card-title a,
-.c-abstract .card-title a,
-.c-concrete .card-title a,
-.c-idealistic .card-title a,
-.c-pragmatic .card-title a {
-    color: white;
-}
-
-.c-technologic, .c-technologic .card-text, .c-technologic .c-links,
-.c-robust, .c-robust .card-text, .c-robust .c-links {
+.c-technologic, .c-technologic .c-illus, .c-technologic .c-body, .c-technologic .c-links,
+.c-robust, .c-robust .c-illus, .c-robust .c-body, .c-robust .c-links {
     background-color: #ffe680;
     border-color: #784421;
 }
