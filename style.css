@@ -1,3 +1,5 @@
+/* general settings: fonts, colors, etc. ---------------------------------------------*/
+
 @font-face {
     font-family: 'Metamorphous';
     src: url('fonts/Metamorphous-Regular.ttf') format('truetype');
@@ -6,6 +8,26 @@
 h1, h2, h3, h4, h5, .card-header, .btn, .navbar {
     font-family: 'Metamorphous';
 }
+
+h1 {
+    text-align: center;
+}
+
+h1.main-title {
+    margin-bottom: 0.3em;
+}
+
+h2 {
+    text-align: center;
+    font-size: 20px;
+}
+
+.btn-primary {
+    border-color:  #2c699e;
+    background-color: #2c699e;
+}
+
+/* page ------------------------------------------------------------------------------*/
 
 body {
     background-color: #F5F5FF;
@@ -21,15 +43,21 @@ body {
     margin: 0 -15px;
 }
 
+footer {
+    border-top: 1px solid gray; 
+    text-align: center; 
+    color: gray; 
+    padding-top: 2em; 
+    padding-bottom: 2em;
+}
+
+
+/* jumbotron -------------------------------------------------------------------------*/
+
 .jumbotron {
     background-color: #f6a828;
     color: white;
     margin: 15px -15px;
-}
-
-.jumbotron p {
-    font-size: 21px;
-    margin: 0;
 }
 
 .jumbotron h1 {
@@ -41,6 +69,18 @@ body {
         font-size: 63px;
     }
 }
+
+.jumbotron:not(.homepage) p {
+    font-size: 21px;
+    margin: 0;
+}
+
+.jumbotron.homepage p {
+    font-size: 21px;
+}
+
+
+/* reusable general purpose classes -----------------------------------------------------*/
 
 .logo-as-heading {
     text-align: center;
@@ -57,28 +97,8 @@ body {
     }
 }
 
-.only-revealed {
-    display: none;
-}
 
-h1 {
-    text-align: center;
-}
-
-h1.main-title {
-    font-size:550%;
-    margin-bottom: 0.3em;
-}
-
-h2 {
-    text-align: center;
-    font-size: 20px;
-}
-
-#amount_survey_participants {
-	font-size: 120%;
-	font-weight: bold;
-}
+/* homepage ---------------------------------------------------------------------------*/
 
 .entry-point-col {
     text-align: center;
@@ -94,6 +114,27 @@ h2 {
 
 .entry-point-primary .btn-primary {
     font-size:2em;
+}
+
+@media screen and (max-width:480px) {
+    h1.main-title {
+        font-size:350%;
+    }
+    
+    .entry-point-col.entry-point-primary img {
+        height: 150px;
+    }
+    
+    .entry-point-col img {
+        height: 100px;
+    }
+}
+
+
+/* questionnaire ----------------------------------------------------------------------*/
+
+.only-revealed {
+    display: none;
 }
 
 .dimension.bordered {
@@ -123,40 +164,8 @@ h2 {
     font-weight:normal;
 }
 
-.result .ui-accordion-header.marked {
-    border: 2px solid #f6a828;
-}
 
-.ui-accordion-content a {
-    text-decoration: underline;
-}
-
-.ui-accordion-content a:hover {
-    text-decoration: none;
-    color: #d9534f;
-}
-
-.ui-accordion {
-    margin: 0.5em;
-}
-
-.about-authors {
-	text-align: center;
-}
-
-#legaldisclosure {
-	cursor: pointer;
-	color: blue;
-	text-decoration: underline;
-}
-
-footer {
-    border-top: 1px solid gray; 
-    text-align: center; 
-    color: gray; 
-    padding-top: 2em; 
-    padding-bottom: 2em;
-}
+/* overlay/modal dialog for questionnaire -------------------------------------------------------------*/
 
 #cover{
     position:fixed;
@@ -202,18 +211,24 @@ footer {
     margin: 0.5em;
 }
 
-@media screen and (max-width:480px) {
-    h1.main-title {
-        font-size:350%;
-    }
-    
-    .entry-point-col.entry-point-primary img {
-        height: 150px;
-    }
-    
-    .entry-point-col img {
-        height: 100px;
-    }
+
+/* accordions -------------------------------------------------------------------------*/
+
+.result .ui-accordion-header.marked {
+    border: 2px solid #f6a828;
+}
+
+.ui-accordion-content a {
+    text-decoration: underline;
+}
+
+.ui-accordion-content a:hover {
+    text-decoration: none;
+    color: #d9534f;
+}
+
+.ui-accordion {
+    margin: 0.5em;
 }
 
 @media print {
@@ -226,50 +241,8 @@ footer {
     }
 }
 
-/* diagnostic boxes */
-.box {
-    fill: steelblue;
-    stroke: black;
-    stroke-width: 3;
-}
 
-.txt {
-    color: white;
-    stroke: white;
-    text-anchor: middle; 
-    font-size: 1.5em; 
-    font-family: Arial;
-}
-
-/* Result statistics */
-.bar {
-    fill: steelblue;
-}
-
-.baractive {
-    fill: brown;
-}
-
-.axis {
-    font: 10px sans-serif;
-}
-
-.axis path,
-.axis line {
-    fill: none;
-    stroke: #000;
-    shape-rendering: crispEdges;
-}
-
-.line {
-    fill: none;
-    stroke: steelblue;
-    stroke-width: 1.5px;
-}
-
-.x.axis path {
-    display: none;
-}
+/* result ------------------------------------------------------------------------*/
 
 .typeicon {
     margin-bottom: 2em;
@@ -286,6 +259,36 @@ footer {
 .legendicon td {
     padding: 10px 0px 0px 5px;
 }
+
+.spreadshirt_disclaimer {
+	margin-top: 10px;
+	font-size: 0.8em;
+	color: darkgray;
+}
+
+.donation_row {
+    text-align: center;
+}
+
+
+/* diagnostic boxes --------------------------------------------------------------*/
+
+.box {
+    fill: steelblue;
+    stroke: black;
+    stroke-width: 3;
+}
+
+.txt {
+    color: white;
+    stroke: white;
+    text-anchor: middle; 
+    font-size: 1.5em; 
+    font-family: Arial;
+}
+
+
+/* cert -------------------------------------------------------------------------*/
 
 .certificate {
     font-size: 10pt;
@@ -325,16 +328,6 @@ footer {
     vertical-align: bottom;
 }
 
-.spreadshirt_disclaimer {
-	margin-top: 10px;
-	font-size: 0.8em;
-	color: darkgray;
-}
-
-.donation_row {
-    text-align: center;
-}
-
 @page {
     margin: 1.5cm;
 }
@@ -350,3 +343,52 @@ footer {
     }
 }
 
+
+/* statistics -------------------------------------------------------------------*/
+
+.bar {
+    fill: steelblue;
+}
+
+.baractive {
+    fill: brown;
+}
+
+.axis {
+    font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.line {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+}
+
+.x.axis path {
+    display: none;
+}
+
+
+/* refactor ---------------------------------------------------------------------------*/
+
+#amount_survey_participants {
+    font-size: 120%;
+    font-weight: bold;
+}
+
+.about-authors {
+    text-align: center;
+}
+
+#legaldisclosure {
+	cursor: pointer;
+	color: blue;
+	text-decoration: underline;
+}
