@@ -137,8 +137,11 @@ footer {
     display: none;
 }
 
-.dimension.bordered {
+.dimension {
     margin-bottom: 1em;
+}
+
+.dimension.bordered {
     border: 1px solid gray;
 }
 
