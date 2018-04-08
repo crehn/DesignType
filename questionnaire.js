@@ -3,6 +3,8 @@ function Dimension(leftValue, rightValue, statements, number) {
     var ERR_WRONG_NUMBER_OF_STATEMENTS = "Check exactly five stametements!";
     var ERR_AMBIGUOUS_RESULT = "One side should have more check marks than the other one!";
 
+    var revealed = false;
+
     var wasOnceComplete = false;
     var score1 = 0;
     var score2 = 0;
@@ -157,9 +159,11 @@ function Dimension(leftValue, rightValue, statements, number) {
     }
 
     function markPanel(panel) {
-        panel.removeClass("border-default");
-        panel.removeClass("border-warning");
-        panel.addClass("border-success");
+        if (revealed === true) {
+            panel.removeClass("border-default");
+            panel.removeClass("border-warning");
+            panel.addClass("border-success");
+        }
 
         panel.children(".card-header").removeClass("bg-default");
         panel.children(".card-header").removeClass("bg-warning");
@@ -167,9 +171,11 @@ function Dimension(leftValue, rightValue, statements, number) {
     }
 
     function markPanelTentative(panel) {
-        panel.removeClass("border-default");
-        panel.removeClass("border-success");
-        panel.addClass("border-warning");
+        if (revealed === true) {
+            panel.removeClass("border-default");
+            panel.removeClass("border-success");
+            panel.addClass("border-warning");
+        }
 
         panel.children(".card-header").removeClass("bg-default");
         panel.children(".card-header").removeClass("bg-success");
@@ -177,9 +183,11 @@ function Dimension(leftValue, rightValue, statements, number) {
     }
 
     function unmarkPanel(panel) {
-        panel.removeClass("border-success");
-        panel.removeClass("border-warning");
-        panel.addClass("border-default");
+        if (revealed === true) {
+            panel.removeClass("border-success");
+            panel.removeClass("border-warning");
+            panel.addClass("border-default");
+        }
 
         panel.children(".card-header").removeClass("bg-success");
         panel.children(".card-header").removeClass("bg-warning");
@@ -198,6 +206,7 @@ function Dimension(leftValue, rightValue, statements, number) {
     };
 
     this.reveal = function () {
+        revealed = true;
         showGroupName();
         showPanel(panel1);
         showPanel(panel2);
