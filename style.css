@@ -408,13 +408,3 @@ footer a {
     font-size: 120%;
     font-weight: bold;
 }
-
-.about-authors {
-    text-align: center;
-}
-
-#legaldisclosure {
-	cursor: pointer;
-	color: blue;
-	text-decoration: underline;
-}
