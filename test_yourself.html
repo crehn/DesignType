@@ -68,111 +68,139 @@
             </div>
         </noscript>
 
-        <section id="introduction">
-            <h1>Introduction</h1>
-            <p>
-                As developers we frequently make design decisions. They can be as general as "How many levels of abstractions do I need?"
-                or "Which framework should I use?" and as concrete as "How to name this method?" and "In which order should
-                these values be supplied?". They center around modularization (how to break a problem down into classes and
-                methods), interface design (how to craft these modules such that they are easily useable) and internal module
-                structure (how to compose the inner workings of classes).
-            </p>
-            <p>
-                Unfortunately there is no single correct solution for any of these questions. There are many bad solutions but there typically
-                are several "good" ones. Deciding among these good solutions is not an objective task as each of them has
-                different benefits and drawbacks. So the decisions are made in a subjective way which depends on a developer's
-                way of thinking.
-            </p>
-            <p>
-                The different attitudes may lead to frequent arguments on which way is best. The following questionnaire may help to find
-                out how you make design decisions.
-            </p>
-            <div class="alert alert-info">
-                <strong>Usage:</strong> In each group check
-                <em>exactly five</em> statements. Use those you can identify with most, those statements you could make yourself.
-            </div>
-        </section>
-        <div id="dimensions">
-            <section class="dimension bordered" id="template">
-                <h1>
-                    <span class="group-number">Group X</span>
-                    <span class="group-name" style="display:none">A vs. B</span>
-                </h1>
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="card" id="leftValue">
-                            <div class="card-header" style="display:none">
+        <div class="row">
+            <div class="col-md-10">
 
+                <section id="introduction">
+                    <h1>Introduction</h1>
+                    <p>
+                        As developers we frequently make design decisions. They can be as general as "How many levels of abstractions do I need?"
+                        or "Which framework should I use?" and as concrete as "How to name this method?" and "In which order
+                        should these values be supplied?". They center around modularization (how to break a problem down
+                        into classes and methods), interface design (how to craft these modules such that they are easily
+                        useable) and internal module structure (how to compose the inner workings of classes).
+                    </p>
+                    <p>
+                        Unfortunately there is no single correct solution for any of these questions. There are many bad solutions but there typically
+                        are several "good" ones. Deciding among these good solutions is not an objective task as each of
+                        them has different benefits and drawbacks. So the decisions are made in a subjective way which depends
+                        on a developer's way of thinking.
+                    </p>
+                    <p>
+                        The different attitudes may lead to frequent arguments on which way is best. The following questionnaire may help to find
+                        out how you make design decisions.
+                    </p>
+                    <div class="alert alert-info">
+                        <strong>Usage:</strong> In each group check
+                        <em>exactly five</em> statements. Use those you can identify with most, those statements you could make
+                        yourself.
+                    </div>
+                </section>
+                <div id="dimensions">
+                    <section class="dimension bordered" id="template">
+                        <h1>
+                            <span class="group-number">Group X</span>
+                            <span class="group-name" style="display:none">A vs. B</span>
+                        </h1>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="card" id="leftValue">
+                                    <div class="card-header" style="display:none">
+
+                                    </div>
+                                    <div class="card-body">
+                                        <ul>
+
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="card-body">
-                                <ul>
+                            <div class="col-lg-6">
+                                <div class="card" id="rightValue">
+                                    <div class="card-header" style="display:none">
 
-                                </ul>
+                                    </div>
+                                    <div class="card-body">
+                                        <ul>
+
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="card" id="rightValue">
-                            <div class="card-header" style="display:none">
-
-                            </div>
-                            <div class="card-body">
-                                <ul>
-
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    </section>
                 </div>
-            </section>
-        </div>
-        <div id="cover"></div>
-        <div id="overlay">
-            <a class="cancel">&times;</a>
-            <p>
-                You have already completed the questionnaire. You are free to fill out the questionnaire as often if you want. But there
-                is a way to do that without distorting the statistics.
-            </p>
-            <button class="btn btn-primary play-around">I want to play around with the questionnaire</button>
-            <br>
-            <button class="btn btn-secondary continue-submitting">I am another person.
-                <br/>Let me fill in that questionnaire, too</button>
-            <br/>
-            <button class="btn btn-secondary show-result">Where is my original result?</button>
-        </div>
-        <p>
-            <input type="button" id="clear" value="Clear Data" class="btn btn-secondary" title="remove all checkmarks and delete locally stored data"
-            />
-        </p>
-        <section id="controls" class="alert alert-secondary">
-            <input type="button" id="continue" value="Continue" class="btn btn-lg btn-primary float-right" />
-            <div class="clearfix">
-                Fill in the questionnaire to determine your design type. Check five statements in each group, then hit "continue".
+                <div id="cover"></div>
+                <div id="overlay">
+                    <a class="cancel">&times;</a>
+                    <p>
+                        You have already completed the questionnaire. You are free to fill out the questionnaire as often if you want. But there
+                        is a way to do that without distorting the statistics.
+                    </p>
+                    <button class="btn btn-primary play-around">I want to play around with the questionnaire</button>
+                    <br>
+                    <button class="btn btn-secondary continue-submitting">I am another person.
+                        <br/>Let me fill in that questionnaire, too</button>
+                    <br/>
+                    <button class="btn btn-secondary show-result">Where is my original result?</button>
+                </div>
+                <p>
+                    <input type="button" id="clear" value="Clear Data" class="btn btn-secondary" title="remove all checkmarks and delete locally stored data"
+                    />
+                </p>
+                <section id="controls" class="alert alert-secondary">
+                    <input type="button" id="continue" value="Continue" class="btn btn-lg btn-primary float-right" />
+                    <div class="clearfix">
+                        Fill in the questionnaire to determine your design type. Check five statements in each group, then hit "continue".
+                    </div>
+                    <div class="alert alert-danger" style="display:none; margin-top:0.5em;margin-bottom:0;" id="globalErrorBox">
+                        <strong>Hint:</strong> Please check exactly five statements in each group!
+                    </div>
+                </section>
+                <section id="result" style="display:none">
+                    <div id="resultString" class="alert alert-info">
+                        <strong>Result</strong>: Your design type is ????.</div>
+                </section>
             </div>
-            <div class="alert alert-danger" style="display:none; margin-top:0.5em;margin-bottom:0;" id="globalErrorBox">
-                <strong>Hint:</strong> Please check exactly five statements in each group!
+            <div class="sidebar col-md-2">
+                <section>
+                    <h1>Support</h1>
+                    <p>
+                        We've created design-types.net in our spare time hoping that it will be helpful to many people. Please consider supporting
+                        us by making a donation.
+                    </p>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" class="text-center">
+                        <input type="hidden" name="cmd" value="_s-xclick">
+                        <input type="hidden" name="hosted_button_id" value="XXAD9MAS7AVTN">
+                        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" name="submit">
+                        <img alt=" donate " src="https://www.paypalobjects.com/de_DE/i/scr/pixel.gif " width="1" height="1 ">
+                    </form>
+                </section>
+                <section>
+                    <h1>Stay Tuned</h1>
+                    <p>
+                        If you want wo get notified when the
+                        <a href="cards.html">Kickstarter campaign</a> starts, just write a
+                        <a class="feedback ">short email</a>. We will notify you when it starts or when there are other relevant news concering
+                        the design cards.
+                    </p>
+                </section>
             </div>
-        </section>
-        <section id="result" style="display:none">
-            <div id="resultString" class="alert alert-info">
-                <strong>Result</strong>: Your design type is ????.</div>
-        </section>
+        </div>
         <footer>
-            Please give us
-            <a class="feedback">Feedback</a> or discuss with us on
-            <a href="https://www.xing.com/communities/groups/design-principles-patterns-types-08d2-1080100" target="_blank">
-                <img src="./img/xing_logo2.png" alt="XING" height="25" width="25" />
-            </a>
+            <div>
+                <a class="feedback">E-Mail</a> |
+                <a href="https://www.xing.com/communities/groups/design-principles-patterns-types-08d2-1080100">
+                    Xing
+                </a> |
+                <a href="imprint.html">Imprint</a>
+            </div>
         </footer>
     </main>
 
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script>
-        var a = 'esign-'; var b = 'ma'; var c = 'es.net'; var d = 'typ'; var e = 'il@d'; var f = 'ilto:ema';
-        $("a.feedback").attr('href', b + f + e + a + d + c);
-    </script>
     <script src="utils.js"></script>
     <script src="test_yourself_statements.js"></script>
     <script src="questionnaire.js"></script>

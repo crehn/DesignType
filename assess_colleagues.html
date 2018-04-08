@@ -68,80 +68,107 @@
             </div>
         </noscript>
 
-        <section id="introduction">
-            <h1>Introduction</h1>
-            <p>
-                A big point in collaboration is to understand how code of someone else works or why this code has been implemented in this
-                way. Imagine you have taken over code from a colleague. Didn't you ask yourself "What was his motivation
-                to implement it this way?". It gets weird when you also think "I for myself would have implemented it in
-                a totally different way". There are many ways to handle this situation. One is too remove his code or completely
-                refactor it. Ok - having enough time to do this is rare. Another way is to talk with him and to understand
-                his motivation, find out why he made these design decisions.
-                <br>After you have discovered how you make design decisions by our
-                <a href="./test_yourself.html">questionnaire</a> you may assess your colleagues on this page. Knowing yourself as well as your colleagues
-                will help to improve the communication. We hope that you will also be able to avoid exhausting situations.
-                <br>Try it out.
-            </p>
-        </section>
-        <div id="dimensions">
-            <section class="dimension bordered" id="template">
-                <h1>
-                    <span class="group-number">Group X</span>
-                    <span class="group-name" style="display:none">A vs. B</span>
-                </h1>
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="card" id="leftValue">
-                            <div class="card-header" style="display:none">
+        <div class="row">
+            <div class="col-md-10">
 
+                <section id="introduction">
+                    <h1>Introduction</h1>
+                    <p>
+                        A big point in collaboration is to understand how code of someone else works or why this code has been implemented in this
+                        way. Imagine you have taken over code from a colleague. Didn't you ask yourself "What was his motivation
+                        to implement it this way?". It gets weird when you also think "I for myself would have implemented
+                        it in a totally different way". There are many ways to handle this situation. One is too remove his
+                        code or completely refactor it. Ok - having enough time to do this is rare. Another way is to talk
+                        with him and to understand his motivation, find out why he made these design decisions.
+                        <br>After you have discovered how you make design decisions by our
+                        <a href="./test_yourself.html">questionnaire</a> you may assess your colleagues on this page. Knowing yourself as well as your colleagues
+                        will help to improve the communication. We hope that you will also be able to avoid exhausting situations.
+                        <br>Try it out.
+                    </p>
+                </section>
+                <div id="dimensions">
+                    <section class="dimension bordered" id="template">
+                        <h1>
+                            <span class="group-number">Group X</span>
+                            <span class="group-name" style="display:none">A vs. B</span>
+                        </h1>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="card" id="leftValue">
+                                    <div class="card-header" style="display:none">
+
+                                    </div>
+                                    <div class="card-body">
+                                        <ul>
+
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="card-body">
-                                <ul>
+                            <div class="col-lg-6">
+                                <div class="card" id="rightValue">
+                                    <div class="card-header" style="display:none">
 
-                                </ul>
+                                    </div>
+                                    <div class="card-body">
+                                        <ul>
+
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="card" id="rightValue">
-                            <div class="card-header" style="display:none">
-
-                            </div>
-                            <div class="card-body">
-                                <ul>
-
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    </section>
                 </div>
-            </section>
-        </div>
 
-        <p>
-            <input type="button" id="clear" value="Clear Data" class="btn btn-secondary" title="remove all checkmarks and delete locally stored data"
-            />
-        </p>
-        <section id="result" style="display:none">
-            <div id="resultString" class="alert alert-info">
-                <strong>Result</strong>: The resulting design type is ????.</div>
-        </section>
+                <p>
+                    <input type="button" id="clear" value="Clear Data" class="btn btn-secondary" title="remove all checkmarks and delete locally stored data"
+                    />
+                </p>
+                <section id="result" style="display:none">
+                    <div id="resultString" class="alert alert-info">
+                        <strong>Result</strong>: The resulting design type is ????.</div>
+                </section>
+            </div>
+            <div class="sidebar col-md-2">
+                <section>
+                    <h1>Support</h1>
+                    <p>
+                        We've created design-types.net in our spare time hoping that it will be helpful to many people. Please consider supporting
+                        us by making a donation.
+                    </p>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" class="text-center">
+                        <input type="hidden" name="cmd" value="_s-xclick">
+                        <input type="hidden" name="hosted_button_id" value="XXAD9MAS7AVTN">
+                        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" name="submit">
+                        <img alt=" donate " src="https://www.paypalobjects.com/de_DE/i/scr/pixel.gif " width="1" height="1 ">
+                    </form>
+                </section>
+                <section>
+                    <h1>Stay Tuned</h1>
+                    <p>
+                        If you want wo get notified when the
+                        <a href="cards.html">Kickstarter campaign</a> starts, just write a
+                        <a class="feedback ">short email</a>. We will notify you when it starts or when there are other relevant news concering
+                        the design cards.
+                    </p>
+                </section>
+            </div>
+        </div>
         <footer>
-            Please give us
-            <a class="feedback">Feedback</a> or discuss with us on
-            <a href="https://www.xing.com/communities/groups/design-principles-patterns-types-08d2-1080100" target="_blank">
-                <img src="./img/xing_logo2.png" alt="XING" height="25" width="25" />
-            </a>
+            <div>
+                <a class="feedback">E-Mail</a> |
+                <a href="https://www.xing.com/communities/groups/design-principles-patterns-types-08d2-1080100">
+                    Xing
+                </a> |
+                <a href="imprint.html">Imprint</a>
+            </div>
         </footer>
     </main>
 
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script>
-        var a = 'esign-'; var b = 'ma'; var c = 'es.net'; var d = 'typ'; var e = 'il@d'; var f = 'ilto:ema';
-        $("a.feedback").attr('href', b + f + e + a + d + c);
-    </script>
     <script src="utils.js"></script>
     <script src="assess_colleagues_statements.js"></script>
     <script src="questionnaire.js"></script>

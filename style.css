@@ -24,7 +24,6 @@ h1.main-title {
 
 h2 {
     text-align: center;
-    font-size: 20px;
 }
 
 .btn-primary {
@@ -49,20 +48,22 @@ body {
 }
 
 footer {
-    border-top: 1px solid gray; 
-    text-align: center; 
-    color: gray; 
-    padding-top: 2em; 
+    border-top: 1px solid silver; 
     padding-bottom: 2em;
+    text-align: center;
+    color: gray;
 }
 
+footer a {
+    color: gray;
+}
 
 /* jumbotron -------------------------------------------------------------------------*/
 
 .jumbotron {
     background-color: #f6a828;
     color: white;
-    margin: 15px -15px;
+    margin: 15px -15px 0px -15px;
 }
 
 .jumbotron h1 {
@@ -85,6 +86,22 @@ footer {
 }
 
 
+/* sidebar ------------------------------------------------------------------------------*/
+
+.sidebar {
+    font-size: 0.9rem;
+    background-color: #EEEEEE;
+}
+
+.sidebar section {
+    margin-bottom: 2rem;
+}
+
+.sidebar h1 {
+    font-size: 1.6rem;
+}
+
+
 /* reusable general purpose classes -----------------------------------------------------*/
 
 .logo-as-heading {
@@ -101,6 +118,12 @@ footer {
         max-width: 750px;
     }
 }
+
+.vcenter {
+    display: flex;
+    align-items: center;
+}
+
 
 /* homepage ---------------------------------------------------------------------------*/
 
@@ -271,10 +294,6 @@ footer {
 	margin-top: 10px;
 	font-size: 0.8em;
 	color: darkgray;
-}
-
-.donation_row {
-    text-align: center;
 }
 
 

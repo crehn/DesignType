@@ -29,3 +29,8 @@ $(function () {
 String.prototype.capitalize = function () {
     return this.charAt(0).toUpperCase() + this.slice(1);
 };
+
+var a = 'esign-'; var b = 'ma'; var c = 'es.net'; var d = 'typ'; var e = 'il@d'; var f = 'ilto:ema';
+var result = b + f + e + a + d + c;
+$("a.feedback").attr('href', result);
+/*$("a.feedback").text(result.substr(7));*/

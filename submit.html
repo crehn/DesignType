@@ -62,214 +62,241 @@
             </p>
         </div>
 
-        <noscript>
-            <div class="alert alert-danger">
-                This questionnaire needs JavaScript in order to work.
-            </div>
-        </noscript>
+        <div class="row">
+            <div class="col-md-10">
 
-        <section>
-            <h1>Take Part in the Statistical Analysis</h1>
-            <p>
-                Take part in the statistical analysis by submitting the result. Our goal is to understand design types better and to correlate
-                design types with experience and working background. Questions we want to answer are:
-            </p>
-            <ul>
-                <li>Which are the predominant design types per age, education, and experience level?</li>
-                <li>How does the design type change over time?</li>
-                <li>Which are the predominant design types in certain industry sectors and companies?</li>
-                <li>Which are the predominant design types in certain job positions?</li>
-                <li>...</li>
-            </ul>
-        </section>
-        <section>
-            <h1>Statistical Questions</h1>
-            <form action="submit.php" method="post">
-                <input type="hidden" id="designType" name="designType" />
-
-                <p>
-                    All data is collected anonymously.
-                </p>
-
-                <h2>You</h2>
-
-                <label for="gender">Gender:</label>
-                <select id="gender" name="gender" size="1">
-                    <option></option>
-                    <option>male</option>
-                    <option>female</option>
-                </select>
-                <br />
-
-                <label for="age">Age:</label>
-                <select id="age" name="age" size="1">
-                    <option></option>
-                    <option value="till_18">till 18</option>
-                    <option>19-27</option>
-                    <option>28-36</option>
-                    <option>37-45</option>
-                    <option>46-54</option>
-                    <option>55-63</option>
-                    <option value="over_63">64 and above</option>
-                </select>
-                <br />
-
-                <label for="professionalYears">I've been working professionally in the software business for:</label>
-                <select id="professionalYears" name="professionalYears" size="1">
-                    <option></option>
-                    <option value="none">I'm not working, yet</option>
-                    <option value="1-3">1-3 years</option>
-                    <option value="4-6">4-6 years</option>
-                    <option value="7-9">7-9 years</option>
-                    <option value="10-12">10-12 years</option>
-                    <option value="13-15">13-15 years</option>
-                    <option value="16-25">16-25 years</option>
-                    <option value="26-35">26-35 years</option>
-                    <option value="36-45">36-45 years</option>
-                    <option value="over_45">&gt; 45 years</option>
-                </select>
-
-
-                <h2>Education</h2>
-
-                <label for="educationLevel">Professional education:</label>
-                <select id="educationLevel" name="educationLevel" size="1">
-                    <option></option>
-                    <option value="No">No professional education, yet</option>
-                    <option>Self-taught</option>
-                    <option value="Training">Professional training/college</option>
-                    <option value="Academic">University degree or similar</option>
-                    <option>PhD</option>
-                    <option>Prof</option>
-                </select>
-                <br />
-
-                <label for="educationBackground">Educational background:</label>
-                <select id="educationBackground" name="educationBackground" size="1">
-                    <option></option>
-                    <option>Programming/computer science</option>
-                    <option>Mathematics</option>
-                    <option>Physics</option>
-                    <option>Chemistry/pharmacy</option>
-                    <option>Biology</option>
-                    <option>Other science</option>
-                    <option>Electrical engineering</option>
-                    <option>Chemical engineering</option>
-                    <option>Other engineering</option>
-                    <option>Economics</option>
-                    <option>Something different</option>
-                </select>
-
-
-                <h2>Working Background</h2>
-
-                <label for="companySize">Company size:</label>
-                <select id="companySize" name="companySize" size="1">
-                    <option></option>
-                    <option value="0">I don't work</option>
-                    <option value="1">Self-employed</option>
-                    <option value="2-10">&lt; 10 employees</option>
-                    <option value="10-50">10-50 employees</option>
-                    <option value="50-100">50-100 employees</option>
-                    <option value="100-250">100-250 employees</option>
-                    <option value="250-1000">250-1000 employees</option>
-                    <option value="1000-5000">1000-5000 employees</option>
-                    <option value="5000-15000">5000-15 000 employees</option>
-                    <option value="15000-50000">15 000-50 000 employees</option>
-                    <option value="over_50000">&gt; 50 000 employees</option>
-                </select>
-                <br />
-
-                <label for="industrySector">Industry Sector:</label>
-                <select id="industrySector" name="industrySector" size="1">
-                    <option></option>
-                    <option value="n/a">I don't work</option>
-                    <option value="Software">Pure software development</option>
-                    <option>Telecommunication</option>
-                    <option>Media</option>
-                    <option>Consumer products</option>
-                    <option>Automotive</option>
-                    <option>Aviation</option>
-                    <option>Other engineering</option>
-                    <option>Chemistry</option>
-                    <option>Finance</option>
-                    <option>Insurance</option>
-                    <option>Commerce</option>
-                    <option>Medical</option>
-                    <option>Other</option>
-                </select>
-                <br />
-
-                <label for="role">Role:</label>
-                <select id="role" name="role" size="1">
-                    <option></option>
-                    <option value="n/a">I don't work</option>
-                    <option>Student</option>
-                    <option>Software developer</option>
-                    <option>Lead developer</option>
-                    <option value="Architect">Software architect/designer</option>
-                    <option>Consultant</option>
-                    <option>Manager</option>
-                    <option>Other</option>
-                </select>
-                <br />
-
-                <label for="programmingLanguage">I mainly use:</label>
-                <select id="programmingLanguage" name="programmingLanguage" size="1">
-                    <option></option>
-                    <option value="Web">HTML/JavaScript, etc.</option>
-                    <option value="Dynamic">Dynamically typed languages (PHP, Ruby, Phython, ...)</option>
-                    <option value="Static">Statically typed languages (Java, C#, C, C++, Delphi, ...)</option>
-                    <option value="Other">Other programming languages</option>
-                    <option value="Diagrams">UML or other diagrams</option>
-                    <option>Neither</option>
-                </select>
-                <br />
-
-                <label for="methodology">Software development process:</label>
-                <select id="methodology" name="methodology" size="1">
-                    <option></option>
-                    <option value="Traditional">Plan-driven (waterfall, v-model, ...)</option>
-                    <option value="Agile">Agile (Scrum, kanban, XP, ...)</option>
-                    <option>Neither</option>
-                </select>
-                <br />
-
-                <div class="alert alert-secondary">
-                    <input type="button" id="result" value="Result" class="btn btn-lg btn-primary float-right" />
-                    <div class="clearfix">
-                        <p>
-                            Click "Result" to see your result.
-                        </p>
+                <noscript>
+                    <div class="alert alert-danger">
+                        This questionnaire needs JavaScript in order to work.
                     </div>
-                </div>
-                <div class="alert alert-danger error-box" style="display:none">
+                </noscript>
+
+                <section>
+                    <h1>Take Part in the Statistical Analysis</h1>
                     <p>
-                        Sorry, something went wrong. We couldn't process your input. In order to work properly, your browser must support and allow
-                        local storage and ajax requests. Maybe you have very restrictive browser settings. Please get in
-                        touch with us. We'd like to learn about what causes this problem:
-                        <a class="feedback">Write us an email.</a>
+                        Take part in the statistical analysis by submitting the result. Our goal is to understand design types better and to correlate
+                        design types with experience and working background. Questions we want to answer are:
                     </p>
-                    <pre class="error-details"></pre>
-                </div>
-            </form>
-        </section>
+                    <ul>
+                        <li>Which are the predominant design types per age, education, and experience level?</li>
+                        <li>How does the design type change over time?</li>
+                        <li>Which are the predominant design types in certain industry sectors and companies?</li>
+                        <li>Which are the predominant design types in certain job positions?</li>
+                        <li>...</li>
+                    </ul>
+                </section>
+                <section>
+                    <h1>Statistical Questions</h1>
+                    <form action="submit.php" method="post">
+                        <input type="hidden" id="designType" name="designType" />
+
+                        <p>
+                            All data is collected anonymously.
+                        </p>
+
+                        <h2>You</h2>
+
+                        <label for="gender">Gender:</label>
+                        <select id="gender" name="gender" size="1">
+                            <option></option>
+                            <option>male</option>
+                            <option>female</option>
+                        </select>
+                        <br />
+
+                        <label for="age">Age:</label>
+                        <select id="age" name="age" size="1">
+                            <option></option>
+                            <option value="till_18">till 18</option>
+                            <option>19-27</option>
+                            <option>28-36</option>
+                            <option>37-45</option>
+                            <option>46-54</option>
+                            <option>55-63</option>
+                            <option value="over_63">64 and above</option>
+                        </select>
+                        <br />
+
+                        <label for="professionalYears">I've been working professionally in the software business for:</label>
+                        <select id="professionalYears" name="professionalYears" size="1">
+                            <option></option>
+                            <option value="none">I'm not working, (yet)</option>
+                            <option value="1-3">1-3 years</option>
+                            <option value="4-6">4-6 years</option>
+                            <option value="7-9">7-9 years</option>
+                            <option value="10-12">10-12 years</option>
+                            <option value="13-15">13-15 years</option>
+                            <option value="16-25">16-25 years</option>
+                            <option value="26-35">26-35 years</option>
+                            <option value="36-45">36-45 years</option>
+                            <option value="over_45">&gt; 45 years</option>
+                        </select>
+
+
+                        <h2>Education</h2>
+
+                        <label for="educationLevel">Professional education:</label>
+                        <select id="educationLevel" name="educationLevel" size="1">
+                            <option></option>
+                            <option value="No">No professional education, yet</option>
+                            <option>Self-taught</option>
+                            <option value="Training">Professional training/college</option>
+                            <option value="Academic">University degree or similar</option>
+                            <option>PhD</option>
+                            <option>Prof</option>
+                        </select>
+                        <br />
+
+                        <label for="educationBackground">Educational background:</label>
+                        <select id="educationBackground" name="educationBackground" size="1">
+                            <option></option>
+                            <option>Programming/computer science</option>
+                            <option>Mathematics</option>
+                            <option>Physics</option>
+                            <option>Chemistry/pharmacy</option>
+                            <option>Biology</option>
+                            <option>Other science</option>
+                            <option>Electrical engineering</option>
+                            <option>Chemical engineering</option>
+                            <option>Other engineering</option>
+                            <option>Economics</option>
+                            <option>Something different</option>
+                        </select>
+
+
+                        <h2>Working Background</h2>
+
+                        <label for="companySize">Company size:</label>
+                        <select id="companySize" name="companySize" size="1">
+                            <option></option>
+                            <option value="0">I don't work</option>
+                            <option value="1">Self-employed</option>
+                            <option value="2-10">&lt; 10 employees</option>
+                            <option value="10-50">10-50 employees</option>
+                            <option value="50-100">50-100 employees</option>
+                            <option value="100-250">100-250 employees</option>
+                            <option value="250-1000">250-1000 employees</option>
+                            <option value="1000-5000">1000-5000 employees</option>
+                            <option value="5000-15000">5000-15 000 employees</option>
+                            <option value="15000-50000">15 000-50 000 employees</option>
+                            <option value="over_50000">&gt; 50 000 employees</option>
+                        </select>
+                        <br />
+
+                        <label for="industrySector">Industry Sector:</label>
+                        <select id="industrySector" name="industrySector" size="1">
+                            <option></option>
+                            <option value="n/a">I don't work</option>
+                            <option value="Software">Pure software development</option>
+                            <option>Telecommunication</option>
+                            <option>Media</option>
+                            <option>Consumer products</option>
+                            <option>Automotive</option>
+                            <option>Aviation</option>
+                            <option>Other engineering</option>
+                            <option>Chemistry</option>
+                            <option>Finance</option>
+                            <option>Insurance</option>
+                            <option>Commerce</option>
+                            <option>Medical</option>
+                            <option>Other</option>
+                        </select>
+                        <br />
+
+                        <label for="role">Role:</label>
+                        <select id="role" name="role" size="1">
+                            <option></option>
+                            <option value="n/a">I don't work</option>
+                            <option>Student</option>
+                            <option>Software developer</option>
+                            <option>Lead developer</option>
+                            <option value="Architect">Software architect/designer</option>
+                            <option>Consultant</option>
+                            <option>Manager</option>
+                            <option>Other</option>
+                        </select>
+                        <br />
+
+                        <label for="programmingLanguage">I mainly use:</label>
+                        <select id="programmingLanguage" name="programmingLanguage" size="1">
+                            <option></option>
+                            <option value="Web">HTML/JavaScript, etc.</option>
+                            <option value="Dynamic">Dynamically typed languages (PHP, Ruby, Phython, ...)</option>
+                            <option value="Static">Statically typed languages (Java, C#, C, C++, Delphi, ...)</option>
+                            <option value="Other">Other programming languages</option>
+                            <option value="Diagrams">UML or other diagrams</option>
+                            <option>Neither</option>
+                        </select>
+                        <br />
+
+                        <label for="methodology">Software development process:</label>
+                        <select id="methodology" name="methodology" size="1">
+                            <option></option>
+                            <option value="Traditional">Plan-driven (waterfall, v-model, ...)</option>
+                            <option value="Agile">Agile (Scrum, kanban, XP, ...)</option>
+                            <option>Neither</option>
+                        </select>
+                        <br />
+
+                        <div class="alert alert-secondary">
+                            <input type="button" id="result" value="Result" class="btn btn-lg btn-primary float-right" />
+                            <div class="clearfix">
+                                <p>
+                                    Click "Result" to see your result.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="alert alert-danger error-box" style="display:none">
+                            <p>
+                                Sorry, something went wrong. We couldn't process your input. In order to work properly, your browser must support and allow
+                                local storage and ajax requests. Maybe you have very restrictive browser settings. Please
+                                get in touch with us. We'd like to learn about what causes this problem:
+                                <a class="feedback">Write us an email.</a>
+                            </p>
+                            <pre class="error-details"></pre>
+                        </div>
+                    </form>
+                </section>
+            </div>
+            <div class="sidebar col-md-2">
+                <section>
+                    <h1>Support</h1>
+                    <p>
+                        We've created design-types.net in our spare time hoping that it will be helpful to many people. Please consider supporting
+                        us by making a donation.
+                    </p>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" class="text-center">
+                        <input type="hidden" name="cmd" value="_s-xclick">
+                        <input type="hidden" name="hosted_button_id" value="XXAD9MAS7AVTN">
+                        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" name="submit">
+                        <img alt=" donate " src="https://www.paypalobjects.com/de_DE/i/scr/pixel.gif " width="1" height="1 ">
+                    </form>
+                </section>
+                <section>
+                    <h1>Stay Tuned</h1>
+                    <p>
+                        If you want wo get notified when the
+                        <a href="cards.html">Kickstarter campaign</a> starts, just write a
+                        <a class="feedback ">short email</a>. We will notify you when it starts or when there are other relevant news concering
+                        the design cards.
+                    </p>
+                </section>
+            </div>
+        </div>
         <footer>
-            Please give us
-            <a class="feedback">Feedback</a> or discuss with us on
-            <a href="https://www.xing.com/communities/groups/design-principles-patterns-types-08d2-1080100" target="_blank">
-                <img src="./img/xing_logo2.png" alt="XING" height="25" width="25" />
-            </a>
+            <div>
+                <a class="feedback">E-Mail</a> |
+                <a href="https://www.xing.com/communities/groups/design-principles-patterns-types-08d2-1080100">
+                    Xing
+                </a> |
+                <a href="imprint.html">Imprint</a>
+            </div>
         </footer>
     </main>
 
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script>
-        var a = 'esign-'; var b = 'ma'; var c = 'es.net'; var d = 'typ'; var e = 'il@d'; var f = 'ilto:ema';
-        $("a.feedback").attr('href', b + f + e + a + d + c);
-    </script>
     <script src="utils.js"></script>
     <script src="submit.js"></script>
 </body>

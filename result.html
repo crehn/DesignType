@@ -69,256 +69,273 @@
             </p>
         </div>
 
-        <section>
-            <a id="result"></a>
-            <h1>Your Design Type</h1>
-            <div class="alert alert-info" id="resultString">
-                Fill in the questionnaire to determine your design type.
-            </div>
-            <div id="types">
-                <h2 style="display:none" id="templateTypeName">XXXX: The Foobar</h2>
-                <div style="display:none" id="templateType">
-                    <div class="row">
-                        <div class="col-sm-6 typeicon text-center"></div>
-                        <div class="col-sm-6 typelegend">
-                            <table>
-                                <tr class="legendicon simple">
-                                    <td></td>
-                                </tr>
-                                <tr class="legendicon powerful">
-                                    <td></td>
-                                </tr>
-                                <tr class="legendicon abstract">
-                                    <td></td>
-                                </tr>
-                                <tr class="legendicon concrete">
-                                    <td></td>
-                                </tr>
-                                <tr class="legendicon pragmatic">
-                                    <td></td>
-                                </tr>
-                                <tr class="legendicon idealistic">
-                                    <td></td>
-                                </tr>
-                                <tr class="legendicon robust">
-                                    <td></td>
-                                </tr>
-                                <tr class="legendicon technologic">
-                                    <td></td>
-                                </tr>
-                            </table>
-                        </div>
+        <div class="row">
+            <div class="col-md-10">
+
+                <section>
+                    <a id="result"></a>
+                    <h1>Your Design Type</h1>
+                    <div class="alert alert-info" id="resultString">
+                        Fill in the questionnaire to determine your design type.
                     </div>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <dl>
-                                <dt>Description</dt>
-                                <dd class="description"></dd>
-                                <dt>Your designs are</dt>
-                                <dd class="designs"></dd>
-                                <dt>Programming is</dt>
-                                <dd class="programming"></dd>
-                            </dl>
-                        </div>
-                        <div class="col-sm-6">
-                            <dl>
-                                <dt>Principles you probably like</dt>
-                                <dd class="principles-liked"></dd>
-                                <dt>Principles you rather disregard</dt>
-                                <dd class="principles-disregarded"></dd>
-                                <dt>Strengths</dt>
-                                <dd class="strengths"></dd>
-                                <dt>Suggestions</dt>
-                                <dd class="suggestions"></dd>
-                                <dt class="further-reading">Further reading</dt>
-                                <dd class="further-reading"></dd>
-                            </dl>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="typediagnostic">
-            <a id="diagnostic"></a>
-            <h1>Diagnostic</h1>
-            <div class="row">
-                <div class="col-sm-6">
-                    <p>This is how your answers map to the four dimensions. You can see that they are a continuum rather than
-                        just two extremes (click on the dimension parts to learn more about it):</p>
-                    <div class="text-center" id="dimension-overlap-chart">
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <p>As this is just a coarse categorization, you may find that some adjacent type fits better to you (click
-                        on the types to see more details). The red area shows how your answers map to the types:</p>
-                    <div class="text-center" id="type-overlap-chart">
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section>
-            <h1>Print your result!</h1>
-            <div class="text-center">
-                <p>Print out your result and put it on the office wall or on your door</p>
-                <a href="" class="certificate-link">
-                    <img src="img/certificate.png" alt="print it">
-                </a>
-            </div>
-        </section>
-        <section>
-            <h1>Print your individual shirt!*</h1>
-            <div class="row container-box">
-                <div class="col-sm-6">
-                    <p>Print a shirt using your individual result.</p>
-                    <div id="shirt_display" class="shirt_bg shirt_bg_4">
-                        <img src="./php/shirtorders/test.png" alt="your personal shirt" class="overlay-img" height="143" width="99">
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <p>Choose color and size and press checkout (shirt is normally below 20 &euro;).</p>
-                    <div id="choose-product-color" class="loaded">
-                        <div id="color_white" class="btn btn-rect btn-clr-select color-img">
-                            <img src="//image.spreadshirtmedia.net/image-server/v1/appearances/1,width=40.jpg" alt="white" title="white" class="small">
-                        </div>
-                        <div id="color_black" class="btn btn-rect btn-clr-select color-img">
-                            <img src="//image.spreadshirtmedia.net/image-server/v1/appearances/2,width=40.jpg" alt="black" title="black" class="small">
-                        </div>
-                        <div id="color_royalblue" class="btn btn-rect btn-clr-select color-img">
-                            <img src="//image.spreadshirtmedia.net/image-server/v1/appearances/17,width=40.jpg" alt="royal blue" title="royal blue" class="small">
-                        </div>
-                        <div id="color_navy" class="btn btn-rect btn-clr-select color-img btn-clr-select-active">
-                            <img src="//image.spreadshirtmedia.net/image-server/v1/appearances/4,width=40.jpg" alt="navy" title="navy" class="small">
-                        </div>
-                        <div id="color_divablue" class="btn btn-rect btn-clr-select color-img">
-                            <img src="//image.spreadshirtmedia.net/image-server/v1/appearances/388,width=40.jpg" alt="diva blue" title="diva blue" class="small">
-                        </div>
-                        <div id="color_deepmint" class="btn btn-rect btn-clr-select color-img">
-                            <img src="//image.spreadshirtmedia.net/image-server/v1/appearances/594,width=40.jpg" alt="deep mint" title="deep mint" class="small">
-                        </div>
-                        <div id="color_kellygreen" class="btn btn-rect btn-clr-select color-img">
-                            <img src="//image.spreadshirtmedia.net/image-server/v1/appearances/92,width=40.jpg" alt="kelly green" title="kelly green"
-                                class="small">
-                        </div>
-                        <div id="color_red" class="btn btn-rect btn-clr-select color-img">
-                            <img src="//image.spreadshirtmedia.net/image-server/v1/appearances/5,width=40.jpg" alt="red" title="red" class="small">
-                        </div>
-                    </div>
-                    <div id="choose-product-size" class="span6 loaded">
-                        <div class="sizes-wrapper relative">
-                            <div class="overlay-partial-above left horizontal">
-                                <div>
-                                    <div id="size_s" class="btn btn-rect btn-size-select">S</div>
-                                    <div id="size_m" class="btn btn-rect btn-size-select">M</div>
-                                    <div id="size_l" class="btn btn-rect btn-size-select btn-size-active">L</div>
-                                    <div id="size_xl" class="btn btn-rect btn-size-select">XL</div>
-                                    <div id="size_xxl" class="btn btn-rect btn-size-select">XXL</div>
-                                    <div id="size_3xl" class="btn btn-rect btn-size-select">3XL</div>
+                    <div id="types">
+                        <h2 style="display:none" id="templateTypeName">XXXX: The Foobar</h2>
+                        <div style="display:none" id="templateType">
+                            <div class="row">
+                                <div class="col-sm-6 typeicon text-center"></div>
+                                <div class="col-sm-6 typelegend">
+                                    <table>
+                                        <tr class="legendicon simple">
+                                            <td></td>
+                                        </tr>
+                                        <tr class="legendicon powerful">
+                                            <td></td>
+                                        </tr>
+                                        <tr class="legendicon abstract">
+                                            <td></td>
+                                        </tr>
+                                        <tr class="legendicon concrete">
+                                            <td></td>
+                                        </tr>
+                                        <tr class="legendicon pragmatic">
+                                            <td></td>
+                                        </tr>
+                                        <tr class="legendicon idealistic">
+                                            <td></td>
+                                        </tr>
+                                        <tr class="legendicon robust">
+                                            <td></td>
+                                        </tr>
+                                        <tr class="legendicon technologic">
+                                            <td></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <dl>
+                                        <dt>Description</dt>
+                                        <dd class="description"></dd>
+                                        <dt>Your designs are</dt>
+                                        <dd class="designs"></dd>
+                                        <dt>Programming is</dt>
+                                        <dd class="programming"></dd>
+                                    </dl>
+                                </div>
+                                <div class="col-sm-6">
+                                    <dl>
+                                        <dt>Principles you probably like</dt>
+                                        <dd class="principles-liked"></dd>
+                                        <dt>Principles you rather disregard</dt>
+                                        <dd class="principles-disregarded"></dd>
+                                        <dt>Strengths</dt>
+                                        <dd class="strengths"></dd>
+                                        <dt>Suggestions</dt>
+                                        <dd class="suggestions"></dd>
+                                        <dt class="further-reading">Further reading</dt>
+                                        <dd class="further-reading"></dd>
+                                    </dl>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div id="checkout_area" class="loaded">
-                        <input id="checkout" value="Checkout" class="btn btn-lg btn-primary btn_checkout" type="button">
+                </section>
+                <section class="typediagnostic">
+                    <a id="diagnostic"></a>
+                    <h1>Diagnostic</h1>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <p>This is how your answers map to the four dimensions. You can see that they are a continuum rather
+                                than just two extremes (click on the dimension parts to learn more about it):</p>
+                            <div class="text-center" id="dimension-overlap-chart">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <p>As this is just a coarse categorization, you may find that some adjacent type fits better to
+                                you (click on the types to see more details). The red area shows how your answers map to
+                                the types:</p>
+                            <div class="text-center" id="type-overlap-chart">
+                            </div>
+                        </div>
                     </div>
-                    <p class="spreadshirt_disclaimer">* Shirts are provided by
-                        <a href="https://www.spreadshirt.de">Spreadshirt</a> (sprd.net AG). If you order a shirt this company will be in charge of fulfilling
-                        your request. There will be no contract with design-types.net nor any warranty (we even do not draw
-                        any commission).</p>
-                </div>
-            </div>
-        </section>
-        <section>
-            <h1>Statistics</h1>
-            <div class="row">
-                <div class="col-sm-12">
-                    <p>This is how the design types are distributed among those who already took part in the survey (see more
-                        at our
-                        <a href="statistics.html">statistics area</a>):</p>
-                    <div class="text-center" id="statsbox">
+                </section>
+                <section>
+                    <h1>Print your result!</h1>
+                    <div class="text-center">
+                        <p>Print out your result and put it on the office wall or on your door</p>
+                        <a href="" class="certificate-link">
+                            <img src="img/certificate.png" alt="print it">
+                        </a>
                     </div>
-                </div>
-            </div>
-        </section>
-        <section>
-            <h1>What's Next</h1>
-            <ul>
-                <li>
-                    <a href="test_yourself.html?revealed">Play around</a> with the questionnaire and see how your choices change the result</li>
-                <li>Find out how your
-                    <a href="assess_colleagues.html?revealed">colleagues</a> design software</li>
-                <li>Explore the other
-                    <a href="types.html">design types</a>
-                </li>
-                <li>Learn more about the four
-                    <a href="dimensions.html">dimensions</a>: simple-vs-powerful, abstract-vs-concrete, pragmatic-vs-idealistic, and technologic-vs-robust</li>
-                <li>Read more about the whole
-                    <a href="about.html">idea</a>
-                </li>
-                <li>Please give us
-                    <a class="feedback">feedback</a> on design types, the questionnaire and your result</li>
-            </ul>
-        </section>
-        <section>
-            <h1>Make a donation</h1>
-            <div class="donation_row">
-                <p>Design-types.net is a non profit initiative. Please support us by making a donation.</p>
-                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-                    <input type="hidden" name="cmd" value="_s-xclick">
-                    <input type="hidden" name="hosted_button_id" value="XXAD9MAS7AVTN">
-                    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" name="submit" alt="PayPal - The safer, easier way to pay online!">
-                    <img alt="donate" src="https://www.paypalobjects.com/de_DE/i/scr/pixel.gif" width="1" height="1">
-                </form>
-            </div>
-        </section>
-        <section class="clearfix">
-            <h1>Final Remarks</h1>
-            <p>
-                This categorization is by far not covering all aspects of a developer. Working style, prefered development process, people
-                skills, and many other aspects are neglected here. That's also not the goal of this questionnaire. Rather
-                the hope is that this structure helps you to understand how your colleagues think when they make design decisions.
-            </p>
-        </section>
-        <section id="comments">
-            <div id="comment-template" class="comment">
-                <img src="img/avatar.png" alt="" class="avatar">
-                <div>
-                    <h5 class="name">Template name</h5>
-                    <span class="date">Template date</span>
-                    <br>
-                    <p class="text">Template comment</p>
-                </div>
-            </div>
+                </section>
+                <section>
+                    <h1>Print your individual shirt!*</h1>
+                    <div class="row container-box">
+                        <div class="col-sm-6">
+                            <p>Print a shirt using your individual result.</p>
+                            <div id="shirt_display" class="shirt_bg shirt_bg_4">
+                                <img src="./php/shirtorders/test.png" alt="your personal shirt" class="overlay-img" height="143" width="99">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <p>Choose color and size and press checkout (shirt is normally below 20 &euro;).</p>
+                            <div id="choose-product-color" class="loaded">
+                                <div id="color_white" class="btn btn-rect btn-clr-select color-img">
+                                    <img src="//image.spreadshirtmedia.net/image-server/v1/appearances/1,width=40.jpg" alt="white" title="white" class="small">
+                                </div>
+                                <div id="color_black" class="btn btn-rect btn-clr-select color-img">
+                                    <img src="//image.spreadshirtmedia.net/image-server/v1/appearances/2,width=40.jpg" alt="black" title="black" class="small">
+                                </div>
+                                <div id="color_royalblue" class="btn btn-rect btn-clr-select color-img">
+                                    <img src="//image.spreadshirtmedia.net/image-server/v1/appearances/17,width=40.jpg" alt="royal blue" title="royal blue" class="small">
+                                </div>
+                                <div id="color_navy" class="btn btn-rect btn-clr-select color-img btn-clr-select-active">
+                                    <img src="//image.spreadshirtmedia.net/image-server/v1/appearances/4,width=40.jpg" alt="navy" title="navy" class="small">
+                                </div>
+                                <div id="color_divablue" class="btn btn-rect btn-clr-select color-img">
+                                    <img src="//image.spreadshirtmedia.net/image-server/v1/appearances/388,width=40.jpg" alt="diva blue" title="diva blue" class="small">
+                                </div>
+                                <div id="color_deepmint" class="btn btn-rect btn-clr-select color-img">
+                                    <img src="//image.spreadshirtmedia.net/image-server/v1/appearances/594,width=40.jpg" alt="deep mint" title="deep mint" class="small">
+                                </div>
+                                <div id="color_kellygreen" class="btn btn-rect btn-clr-select color-img">
+                                    <img src="//image.spreadshirtmedia.net/image-server/v1/appearances/92,width=40.jpg" alt="kelly green" title="kelly green"
+                                        class="small">
+                                </div>
+                                <div id="color_red" class="btn btn-rect btn-clr-select color-img">
+                                    <img src="//image.spreadshirtmedia.net/image-server/v1/appearances/5,width=40.jpg" alt="red" title="red" class="small">
+                                </div>
+                            </div>
+                            <div id="choose-product-size" class="span6 loaded">
+                                <div class="sizes-wrapper relative">
+                                    <div class="overlay-partial-above left horizontal">
+                                        <div>
+                                            <div id="size_s" class="btn btn-rect btn-size-select">S</div>
+                                            <div id="size_m" class="btn btn-rect btn-size-select">M</div>
+                                            <div id="size_l" class="btn btn-rect btn-size-select btn-size-active">L</div>
+                                            <div id="size_xl" class="btn btn-rect btn-size-select">XL</div>
+                                            <div id="size_xxl" class="btn btn-rect btn-size-select">XXL</div>
+                                            <div id="size_3xl" class="btn btn-rect btn-size-select">3XL</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="checkout_area" class="loaded">
+                                <input id="checkout" value="Checkout" class="btn btn-lg btn-primary btn_checkout" type="button">
+                            </div>
+                            <p class="spreadshirt_disclaimer">* Shirts are provided by
+                                <a href="https://www.spreadshirt.de">Spreadshirt</a> (sprd.net AG). If you order a shirt this company will be in charge of fulfilling
+                                your request. There will be no contract with design-types.net nor any warranty (we even do
+                                not draw any commission).</p>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h1>Statistics</h1>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <p>This is how the design types are distributed among those who already took part in the survey
+                                (see more at our
+                                <a href="statistics.html">statistics area</a>):</p>
+                            <div class="text-center" id="statsbox">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h1>What's Next</h1>
+                    <ul>
+                        <li>
+                            <a href="test_yourself.html?revealed">Play around</a> with the questionnaire and see how your choices change the result</li>
+                        <li>Find out how your
+                            <a href="assess_colleagues.html?revealed">colleagues</a> design software</li>
+                        <li>Explore the other
+                            <a href="types.html">design types</a>
+                        </li>
+                        <li>Learn more about the four
+                            <a href="dimensions.html">dimensions</a>: simple-vs-powerful, abstract-vs-concrete, pragmatic-vs-idealistic, and technologic-vs-robust</li>
+                        <li>Read more about the whole
+                            <a href="about.html">idea</a>
+                        </li>
+                        <li>Please give us
+                            <a class="feedback">feedback</a> on design types, the questionnaire and your result</li>
+                    </ul>
+                </section>
+                <section class="clearfix">
+                    <h1>Final Remarks</h1>
+                    <p>
+                        This categorization is by far not covering all aspects of a developer. Working style, prefered development process, people
+                        skills, and many other aspects are neglected here. That's also not the goal of this questionnaire.
+                        Rather the hope is that this structure helps you to understand how your colleagues think when they
+                        make design decisions.
+                    </p>
+                </section>
+                <section id="comments">
+                    <div id="comment-template" class="comment">
+                        <img src="img/avatar.png" alt="" class="avatar">
+                        <div>
+                            <h5 class="name">Template name</h5>
+                            <span class="date">Template date</span>
+                            <br>
+                            <p class="text">Template comment</p>
+                        </div>
+                    </div>
 
-            <div class="comment-container">
-                <div class="new-button">
-                    <span>Write a comment ...</span>
-                </div>
-                <div class="new-form">
-                    <input type="text" id="new-comment-name" value="" placeholder="Your name">
-                    <input type="text" id="new-comment-email" value="" placeholder="Your e-mail address">
-                    <textarea id="new-comment-text"></textarea>
-                    <div class="btn btn-primary post-button">Post comment</div>
-                    <div class="btn btn-secondary cancel-button">Cancel</div>
-                </div>
-                <div class="clear"></div>
+                    <div class="comment-container">
+                        <div class="new-button">
+                            <span>Write a comment ...</span>
+                        </div>
+                        <div class="new-form">
+                            <input type="text" id="new-comment-name" value="" placeholder="Your name">
+                            <input type="text" id="new-comment-email" value="" placeholder="Your e-mail address">
+                            <textarea id="new-comment-text"></textarea>
+                            <div class="btn btn-primary post-button">Post comment</div>
+                            <div class="btn btn-secondary cancel-button">Cancel</div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </section>
             </div>
-        </section>
+            <div class="sidebar col-md-2">
+                <section>
+                    <h1>Support</h1>
+                    <p>
+                        We've created design-types.net in our spare time hoping that it will be helpful to many people. Please consider supporting
+                        us by making a donation.
+                    </p>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" class="text-center">
+                        <input type="hidden" name="cmd" value="_s-xclick">
+                        <input type="hidden" name="hosted_button_id" value="XXAD9MAS7AVTN">
+                        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" name="submit">
+                        <img alt=" donate " src="https://www.paypalobjects.com/de_DE/i/scr/pixel.gif " width="1" height="1 ">
+                    </form>
+                </section>
+                <section>
+                    <h1>Stay Tuned</h1>
+                    <p>
+                        If you want wo get notified when the
+                        <a href="cards.html">Kickstarter campaign</a> starts, just write a
+                        <a class="feedback ">short email</a>. We will notify you when it starts or when there are other relevant news concering
+                        the design cards.
+                    </p>
+                </section>
+            </div>
+        </div>
         <footer>
-            Please give us
-            <a class="feedback">Feedback</a> or discuss with us on
-            <a href="https://www.xing.com/communities/groups/design-principles-patterns-types-08d2-1080100" target="_blank">
-                <img src="./img/xing_logo2.png" alt="XING" height="25" width="25" />
-            </a>
+            <div>
+                <a class="feedback">E-Mail</a> |
+                <a href="https://www.xing.com/communities/groups/design-principles-patterns-types-08d2-1080100">
+                    Xing
+                </a> |
+                <a href="imprint.html">Imprint</a>
+            </div>
         </footer>
     </main>
 
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script>
-        var a = 'esign-'; var b = 'ma'; var c = 'es.net'; var d = 'typ'; var e = 'il@d'; var f = 'ilto:ema';
-        $("a.feedback").attr('href', b + f + e + a + d + c);
-    </script>
     <script src="node_modules/components-jqueryui/jquery-ui.min.js"></script>
     <script src="node_modules/d3/build/d3.min.js"></script>
     <script src="utils.js"></script>
