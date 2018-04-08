@@ -1,4 +1,5 @@
-var statements = {}
+var mode = "colleague";
+var statements = {};
 statements.simple = [
     "Your colleague writes many but small classes and methods.",
     "In discussions about which solution will fit best, your colleague argues for implementing only the well known requirements instead of thinking too long about potentially upcoming requirements.",

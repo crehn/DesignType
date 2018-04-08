@@ -1,10 +1,7 @@
-String.prototype.capitalize = function () {
-    return this.charAt(0).toUpperCase() + this.slice(1);
-}
-
 function Dimension(leftValue, rightValue, statements, number) {
     var NUMBER_OF_STATEMENTS_NEEDED = 5;
-    var SUPPLY_CORRECT_NUMBER_OF_STATEMENTS = "Check exactly five stametements!";
+    var ERR_WRONG_NUMBER_OF_STATEMENTS = "Check exactly five stametements!";
+    var ERR_AMBIGUOUS_RESULT = "One side should have more check marks than the other one!";
 
     var wasOnceComplete = false;
     var score1 = 0;
@@ -33,12 +30,12 @@ function Dimension(leftValue, rightValue, statements, number) {
 
     function id() {
         return leftValue + "-vs-" + rightValue;
-    };
+    }
 
     function fillPanel(panel, value, statements) {
         panel.attr("id", value);
         panel.find(".card-header").text(value);
-        for (statement in statements) {
+        for (var statement in statements) {
             var li = $("<li/>");
             var label = $('<label/>', {
                 html: ' ' + statements[statement]
@@ -55,19 +52,27 @@ function Dimension(leftValue, rightValue, statements, number) {
     function createErrorBox() {
         var box = $("<div/>", {
             "class": "alert alert-danger",
-            html: "<strong>Hint:</strong> " + SUPPLY_CORRECT_NUMBER_OF_STATEMENTS,
+            html: "<strong>Hint:</strong> " + getErrorMessage(),
             style: "display:none; margin:1em;"
         });
         $(".dimension#" + id()).append(box);
         return box;
-    };
+    }
+
+    function getErrorMessage() {
+        if (mode === 'you') {
+            return ERR_WRONG_NUMBER_OF_STATEMENTS;
+        } else {
+            return ERR_AMBIGUOUS_RESULT;
+        }
+    }
 
     this.update = function () {
         computeScores();
         checkForCompleteness();
         checkForError();
         checkForSuccess();
-    }
+    };
 
     function computeScores() {
         score1 = count(leftValue);
@@ -107,12 +112,22 @@ function Dimension(leftValue, rightValue, statements, number) {
     };
 
     function isComplete() {
-        return (score1 + score2) == NUMBER_OF_STATEMENTS_NEEDED;
+        if (mode === 'you') {
+            return (score1 + score2) == NUMBER_OF_STATEMENTS_NEEDED;
+        } else {
+            return (score1 + score2) > 0 && score1 != score2;
+        }
     }
 
     function isError() {
-        return score1 + score2 > NUMBER_OF_STATEMENTS_NEEDED
-            || (wasOnceComplete && !isComplete());
+        if (mode === 'you') {
+            return score1 + score2 > NUMBER_OF_STATEMENTS_NEEDED
+                || (wasOnceComplete && !isComplete());
+
+        } else {
+            return ((score1 + score2) > 0 && score1 == score2)
+                || (wasOnceComplete && !isComplete());
+        }
     }
 
     function checkForSuccess() {
@@ -188,7 +203,7 @@ function Dimension(leftValue, rightValue, statements, number) {
         showPanel(panel2);
         removeGroupBorder();
         showRevealText();
-    }
+    };
 
     function showGroupName() {
         groupName.show();
@@ -211,13 +226,13 @@ function Dimension(leftValue, rightValue, statements, number) {
     function showRevealText() {
         $(".only-revealed").show();
     }
-};
+}
 
 function Overlay(questionnaire) {
     this.show = function () {
         $("#cover").show();
         $("#overlay").show('fast');
-    }
+    };
 
     $("#overlay .cancel").on('click', function () {
         hide();
@@ -250,8 +265,7 @@ function Overlay(questionnaire) {
     }
 }
 
-function Questionnaire(prefix) {
-    var SUPPLY_CORRECT_NUMBER_OF_STATEMENTS = "Check exactly five stametements in each group!";
+function Questionnaire(mode) {
     var RESULT_STRING = '<strong>Result:</strong> The resulting design type is <a href="types.html?type=${type}"><strong>${type}</strong>.';
 
     var dimensions = [
@@ -262,27 +276,27 @@ function Questionnaire(prefix) {
     ];
 
     this.update = function () {
-        for (dim in dimensions) {
+        for (var dim in dimensions) {
             dimensions[dim].update();
         }
         var type = getDesignType();
         $("#resultString").html(RESULT_STRING.replace(/\$\{type\}/g, type));
-    }
+    };
 
     this.getDesignType = function () {
         return getDesignType();
-    }
+    };
 
     function getDesignType() {
         var result = "";
-        for (dim in dimensions) {
+        for (var dim in dimensions) {
             result += dimensions[dim].resultAsChar();
         }
         return result.toUpperCase();
     }
 
     function isComplete() {
-        for (dim in dimensions) {
+        for (var dim in dimensions) {
             if (!dimensions[dim].isComplete()) {
                 return false;
             }
@@ -297,10 +311,10 @@ function Questionnaire(prefix) {
             $("#globalErrorBox").hide();
             continueToNextPage();
         }
-    }
+    };
 
     function continueToNextPage() {
-        if (prefix === 'you' && localStorage['you.ukey'] != null) {
+        if (mode === 'you' && localStorage['you.ukey'] != null) {
             overlay.show();
         } else {
             continueSubmitting();
@@ -309,7 +323,7 @@ function Questionnaire(prefix) {
 
     this.continueSubmitting = function () {
         continueSubmitting();
-    }
+    };
 
     function continueSubmitting() {
         window.location.href = 'submit.html?type=' + questionnaire.getDesignType() + '&ukey=' + uniqid();
@@ -324,44 +338,45 @@ function Questionnaire(prefix) {
     }
 
     this.reveal = function () {
-        for (dim in dimensions) {
+        for (var dim in dimensions) {
             dimensions[dim].reveal();
         }
         $("#result").show();
         $("#controls").hide();
-    }
+    };
 
     this.save = function () {
         var checkboxes = $(":checkbox");
-        for (cb in checkboxes) {
-            localStorage[prefix + "." + checkboxes[cb].id] = checkboxes[cb].checked;
-        }
-    }
+
+        checkboxes.each(function (cb) {
+            localStorage[mode + "." + checkboxes[cb].id] = checkboxes[cb].checked;
+        });
+    };
 
     this.load = function () {
         var checkboxes = $(":checkbox");
-        for (cb in checkboxes) {
-            checkboxes[cb].checked = (localStorage[prefix + "." + checkboxes[cb].id] === "true");
-        }
+        checkboxes.each(function (cb) {
+            checkboxes[cb].checked = (localStorage[mode + "." + checkboxes[cb].id] === "true");
+        });
         this.update();
-    }
+    };
 
     this.clear = function () {
         var checkboxes = $(":checkbox");
-        for (cb in checkboxes) {
+        checkboxes.each(function (cb) {
             checkboxes[cb].checked = false;
-        }
+        });
         localStorage.clear();
         this.update();
-    }
+    };
 
-    if (prefix === 'you') {
+    if (mode === 'you') {
         var overlay = new Overlay(this);
     }
 }
 
 $(document).ready(function () {
-    window.questionnaire = new Questionnaire(prefix);
+    window.questionnaire = new Questionnaire(mode);
     $("#template").hide();
 
     $(".dimension :checkbox").on('click', function () {

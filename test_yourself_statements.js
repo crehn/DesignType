@@ -1,20 +1,20 @@
-var prefix = "you";
-var statements = {}
+var mode = "you";
+var statements = {};
 statements.simple = [
-	"Software should be simple in order to be fast to write, maintainable, and low on bugs.",
-	"Avoid dependencies, libraries and complex language features that do not have a substantial advantage.",
-	"Don't implement features/flexibility/configurability unless there is a good reason to do so.",
-	"A class/method is good when it's small. Large units/modules are a smell.",
-	"Simple brute-force solutions may be slow but will work in the first place.",
-	"Good code needs almost no documentation."
+    "Software should be simple in order to be fast to write, maintainable, and low on bugs.",
+    "Avoid dependencies, libraries and complex language features that do not have a substantial advantage.",
+    "Don't implement features/flexibility/configurability unless there is a good reason to do so.",
+    "A class/method is good when it's small. Large units/modules are a smell.",
+    "Simple brute-force solutions may be slow but will work in the first place.",
+    "Good code needs almost no documentation."
 ];
 statements.powerful = [
-	"Investing a bit more time to solve a problem in a generic way, saves time in the long run.",
-	"Performance, scalability, portability, etc. have to be considered before and during implementation.",
-	"Make your software extensible, flexible and configurable at runtime so you don't have to change your code continuously.",
-	"Make yourself independent from external systems. Use an abstraction layer to do so.",
-	"Generics, exceptions, polymorphism, closures, operator overloading, aspect-orientation, reflection, etc. are powerful instruments that bring up a valuable benefit.",
-	"Code generators, DSLs, build profiles and configurable libraries can lift you to a higher level of effectiveness."
+    "Investing a bit more time to solve a problem in a generic way, saves time in the long run.",
+    "Performance, scalability, portability, etc. have to be considered before and during implementation.",
+    "Make your software extensible, flexible and configurable at runtime so you don't have to change your code continuously.",
+    "Make yourself independent from external systems. Use an abstraction layer to do so.",
+    "Generics, exceptions, polymorphism, closures, operator overloading, aspect-orientation, reflection, etc. are powerful instruments that bring up a valuable benefit.",
+    "Code generators, DSLs, build profiles and configurable libraries can lift you to a higher level of effectiveness."
 ];
 statements.abstract = [
     "Don't look at the code with a magnifying glass. Rather think in terms of abstractions, concepts and models.",
