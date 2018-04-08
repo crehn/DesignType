@@ -12,10 +12,10 @@ function getParameterByName(name) {
 function everythingFilledOut() {
     var result = true;
     var allSelects = $("select");
-    for (select in allSelects) {
+    allSelects.each(function (select) {
         if (allSelects[select].value == "")
             result = false;
-    }
+    });
     return result;
 }
 
@@ -123,4 +123,3 @@ $(document).ready(function () {
         storeData();
     });
 });
-

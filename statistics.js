@@ -15,7 +15,7 @@ function BarChart(dataForBars) {
 
     this.draw = function () {
         draw();
-    }
+    };
 
     function draw() {
         svg = d3.select("#statsbox").append("svg")
@@ -103,7 +103,7 @@ function HorizontalBarChart(dataForBars, elementName) {
 
     this.draw = function () {
         draw();
-    }
+    };
 
     function draw() {
         svg = d3.select("#" + elementName).append("svg")
@@ -171,7 +171,7 @@ function HorizontalBarChart(dataForBars, elementName) {
     }
 
     function getStatementText(d) {
-        var statement = (statements[d.attribute][d.index]).replace(/\<\/?code\>/g, "'");
+        var statement = (statements[d.attribute][d.index]).replace(/<\/?code\>/g, "'");
         return (Math.round(d.percentage * 100)) + " %: " + d.attribute + ": " + statement;
     }
 }
@@ -196,7 +196,7 @@ function XYBarChart(dataForBars, elementName) {
 
     this.draw = function () {
         draw();
-    }
+    };
 
     var seriesNames = ["simple", "abstract", "idealistic", "robust"];
     var dims = seriesNames.map(function (name) {

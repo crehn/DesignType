@@ -50,8 +50,8 @@ function postComment() {
             debuglog("comment successfully posted");
             $('#new-comment-text').val('');
             hideNewCommentForm(function () {
-                writeComment(resultingComment['name'], resultingComment['avatar'], resultingComment['timestamp'], resultingComment['text']);
-            })
+                writeComment(resultingComment.name, resultingComment.avatar, resultingComment.timestamp, resultingComment.text);
+            });
         }
     });
 }
@@ -76,7 +76,7 @@ function loadComments(pageId) {
         debuglog("loadComments - status: " + status + ", data: " + comments);
         if (comments != null) {
             for (var i = 0; i < comments.length; i++) {
-                writeComment(comments[i]['name'], comments[i]['avatar'], comments[i]['timestamp'], comments[i]['text']);
+                writeComment(comments[i].name, comments[i].avatar, comments[i].timestamp, comments[i].text);
             }
         }
     });

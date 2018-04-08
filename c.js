@@ -6,8 +6,8 @@ function Card(card, cardData) {
     div.find('.design-card').addClass('c-' + cardData.aspect);
 
     div.find('.design-card-small .c-self-link').attr('title', cardData.name);
-    div.find('.design-card-small .c-self-link').on('click', () => showLarge(div));
-    div.find('.design-card-large .c-self-link').on('click', () => showSmall(div));
+    div.find('.design-card-small .c-self-link').on('click', function () { showLarge(div); });
+    div.find('.design-card-large .c-self-link').on('click', function () { showSmall(div); });
     div.find('.c-title').html(card + ' ' + cardData.name);
     div.find('.c-illus').html(card);
 
@@ -16,7 +16,7 @@ function Card(card, cardData) {
     div.find('.c-wikilink a').attr('href', 'http://www.principles-wiki.net/' + cardData.wikiLink);
 
     div.find('.c-set').attr('src', 'img/cards/' + cardData.set + '_' + color(cardData) + '.png');
-    for (link in cardData.links) {
+    for (var link in cardData.links) {
         div.find('.c-links').append(buildLink(cardData.links[link]));
     }
     div.find('.c-dimension a').attr('href', 'dimensions.html?dimension=' + cardData.aspect);
@@ -64,7 +64,7 @@ function Card(card, cardData) {
 
     this.enlarge = function () {
         showLarge(div);
-    }
+    };
 }
 
 function Cards(filter) {
@@ -84,13 +84,13 @@ function Cards(filter) {
 
     function buildFilteredCards() {
         debuglog('building ' + filter.length + ' card(s)');
-        return filter.map(card => new Card(card, cardsData[card]));
+        return filter.map(function (card) { new Card(card, cardsData[card]); });
     }
 
     function buildAllCards() {
         debuglog('building all cards');
         var result = [];
-        for (card in cardsData) {
+        for (var card in cardsData) {
             result.push(new Card(card, cardsData[card]));
         }
         return result;
@@ -100,7 +100,7 @@ function Cards(filter) {
 $(document).ready(function () {
     var filter = window.location.search.substring(1)
         .split(',')
-        .filter(f => cardsData[f] != undefined);
+        .filter(function (f) { return cardsData[f] != undefined; });
 
     var cards = new Cards(filter);
     $('#templateCard').hide();

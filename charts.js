@@ -43,7 +43,7 @@ function DimensionOverlapChart(details, size) {
     this.draw = function () {
         calculatePositionsOfBoxesAndText();
         draw();
-    }
+    };
 
     function calculatePositionsOfBoxesAndText() {
         var xPosBoxesA = settings.border;
@@ -83,10 +83,10 @@ function DimensionOverlapChart(details, size) {
 
         var posMidPnt = 5; // 5 is middle index of eleven points (10 areas) in an array
         rectPoints = new Array(
-            new Point(xPoints[(posMidPnt - details['simple'])], yPoints[0]),
-            new Point(xPoints[(posMidPnt - details['abstract'])], yPoints[1]),
-            new Point(xPoints[(posMidPnt - details['pragmatic'])], yPoints[2]),
-            new Point(xPoints[(posMidPnt - details['robust'])], yPoints[3]));
+            new Point(xPoints[(posMidPnt - details.simple)], yPoints[0]),
+            new Point(xPoints[(posMidPnt - details.abstract)], yPoints[1]),
+            new Point(xPoints[(posMidPnt - details.pragmatic)], yPoints[2]),
+            new Point(xPoints[(posMidPnt - details.robust)], yPoints[3]));
     }
 
     function draw() {
@@ -103,9 +103,9 @@ function DimensionOverlapChart(details, size) {
         svg.selectAll(".box")
             .data(designTypeBoxes).enter()
             .append("rect")
-            .attr("x", function (d) { return d.x })
+            .attr("x", function (d) { return d.x; })
             .attr("width", settings.boxWidth)
-            .attr("y", function (d) { return d.y })
+            .attr("y", function (d) { return d.y; })
             .attr("height", settings.boxHeight)
             .attr("style", "fill: steelblue; stroke: black; stroke-width: 3; cursor: pointer;")
             .attr("onclick", getDimensionRedirect);
@@ -115,11 +115,11 @@ function DimensionOverlapChart(details, size) {
         svg.selectAll(".txt")
             .data(designTypeBoxes).enter()
             .append("text")
-            .attr("x", function (d) { return d.xTxt })
-            .attr("y", function (d) { return d.yTxt })
+            .attr("x", function (d) { return d.xTxt; })
+            .attr("y", function (d) { return d.yTxt; })
             .attr("dy", ".35em")
             .attr("style", getTextStyle)
-            .text(function (d, i) { return d.content })
+            .text(function (d, i) { return d.content; })
             .attr("onclick", getDimensionRedirect);
     }
 
@@ -127,9 +127,9 @@ function DimensionOverlapChart(details, size) {
         svg.selectAll(".bars")
             .data(rectPoints).enter()
             .append("rect")
-            .attr("x", function (d) { return d.x })
+            .attr("x", function (d) { return d.x; })
             .attr("width", settings.barLength)
-            .attr("y", function (d) { return d.y })
+            .attr("y", function (d) { return d.y; })
             .attr("height", settings.barHeight)
             .attr("style", "stroke:#660000; fill:#cc3333; stroke-width: 2; fill-opacity: .5;");
     }
@@ -164,7 +164,7 @@ function TypeOverlapChart(designType, details, ukey, size) {
 
         this.getAlternativeDimension = function (currentDimensionValue) {
             return getAlternativeDimension(currentDimensionValue);
-        }
+        };
 
         function getAlternativeDimension(curDim) {
             if (curDim == dim1) {
@@ -203,7 +203,7 @@ function TypeOverlapChart(designType, details, ukey, size) {
         drawText(svg);
         if (shouldDrawPolygon())
             drawPolygon(svg);
-    }
+    };
 
     function preparePolygonImage() {
         var simplePowerful = new DesignDimension("S", "P");
@@ -234,10 +234,10 @@ function TypeOverlapChart(designType, details, ukey, size) {
             new DesignTypeBox(xBoxes[3], yBoxes[3], xTxt[3], yTxt[3], contentBoxes[3]),
             new DesignTypeBox(xBoxes[4], yBoxes[4], xTxt[4], yTxt[4], contentBoxes[4]));
 
-        matchesDimTop = (details['simple'] > details['powerful']) ? details['powerful'] : details['simple'];
-        matchesDimLeft = (details['abstract'] > details['concrete']) ? details['concrete'] : details['abstract'];
-        matchesDimRight = (details['pragmatic'] > details['idealistic']) ? details['idealistic'] : details['pragmatic'];
-        matchesDimBottom = (details['robust'] > details['technologic']) ? details['technologic'] : details['robust'];
+        matchesDimTop = (details.simple > details.powerful) ? details.powerful : details.simple;
+        matchesDimLeft = (details.abstract > details.concrete) ? details.concrete : details.abstract;
+        matchesDimRight = (details.pragmatic > details.idealistic) ? details.idealistic : details.pragmatic;
+        matchesDimBottom = (details.robust > details.technologic) ? details.technologic : details.robust;
         debuglog("preparePolygonImage - top: " + matchesDimTop + "; left: " + matchesDimLeft + "; right: " + matchesDimRight + "; bottom: " + matchesDimBottom);
 
         var midImageX = boxOffsetLeft + settings.boxWidthHalf;
@@ -254,9 +254,9 @@ function TypeOverlapChart(designType, details, ukey, size) {
         svg.selectAll(".box")
             .data(resultTypeBoxes).enter()
             .append("rect")
-            .attr("x", function (d) { return d.x })
+            .attr("x", function (d) { return d.x; })
             .attr("width", settings.boxWidth)
-            .attr("y", function (d) { return d.y })
+            .attr("y", function (d) { return d.y; })
             .attr("height", settings.boxHeight)
             .attr("style", "fill: steelblue; stroke: black; stroke-width: 3; cursor: pointer;")
             .attr("onclick", getResultTypeRedirect);
@@ -266,10 +266,10 @@ function TypeOverlapChart(designType, details, ukey, size) {
         svg.selectAll(".txt")
             .data(resultTypeBoxes).enter()
             .append("text")
-            .attr("x", function (d) { return d.xTxt })
-            .attr("y", function (d) { return d.yTxt + settings.txtSpacer })
+            .attr("x", function (d) { return d.xTxt; })
+            .attr("y", function (d) { return d.yTxt + settings.txtSpacer; })
             .attr("style", "fill: white; stroke: white; text-anchor: middle; font-size: " + 1.1 * size + "rem; font-family: Metamorphous; cursor: pointer;")
-            .text(function (d, i) { return d.content })
+            .text(function (d, i) { return d.content; })
             .attr("onclick", getResultTypeRedirect);
     }
 
@@ -318,7 +318,7 @@ function TypesBarChart(dataForBars, resultType) {
 
     this.draw = function () {
         draw();
-    }
+    };
 
     function draw() {
         svg = d3.select("#statsbox").append("svg")
@@ -364,7 +364,7 @@ function TypesBarChart(dataForBars, resultType) {
         var bar = svg.selectAll(".bar")
             .data(dataForBars)
             .enter().append("rect")
-            .attr("class", function (d) { return d.type === resultType ? "baractive" : "bar" })
+            .attr("class", function (d) { return d.type === resultType ? "baractive" : "bar"; })
             .attr("x", function (d) { return x(d.type); })
             .attr("width", x.bandwidth())
             .attr("y", function (d) { return y(d.amount); })
