@@ -113,10 +113,11 @@ $(document).ready(function () {
     $('#result').attr('disabled', true);
     $("#designType").attr('value', getDesignType());
     $("select").on('change', function () {
-        if (everythingFilledOut())
+        if (everythingFilledOut()) {
             $("#result").attr("disabled", false);
-        else
+        } else {
             $("#result").attr("disabled", true);
+        }
     });
 
     $("#result").on('click', function () {
