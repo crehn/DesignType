@@ -136,7 +136,7 @@ function DimensionOverlapChart(details, size) {
 
     function getTextStyle(d) {
         var txtAnchor = d.xTxt > 100 ? "end" : "start"; // dirty - should be mod 2 by elements 
-        return "fill: white; stroke: white; text-anchor: " + txtAnchor + "; font-size: " + 1.4 * size + "em; font-family: Arial; cursor: pointer;";
+        return "fill: white; stroke: white; text-anchor: " + txtAnchor + "; font-size: " + 1.0 * size + "rem; font-family: Metamorphous; cursor: pointer;";
     }
 
     function getDimensionRedirect(d) {
@@ -268,7 +268,7 @@ function TypeOverlapChart(designType, details, ukey, size) {
             .append("text")
             .attr("x", function (d) { return d.xTxt })
             .attr("y", function (d) { return d.yTxt + settings.txtSpacer })
-            .attr("style", "fill: white; stroke: white; text-anchor: middle; font-size: " + 1.5 * size + "em; font-family: Arial; cursor: pointer;")
+            .attr("style", "fill: white; stroke: white; text-anchor: middle; font-size: " + 1.1 * size + "rem; font-family: Metamorphous; cursor: pointer;")
             .text(function (d, i) { return d.content })
             .attr("onclick", getResultTypeRedirect);
     }

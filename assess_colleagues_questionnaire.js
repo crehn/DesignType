@@ -213,7 +213,7 @@ function Dimension(leftValue, rightValue, statements, number) {
 };
 
 function Questionnaire() {
-    var SUPPLY_CORRECT_NUMBER_OF_STATEMENTS = "Please check alle dimensions: one side should have more checks than the other one!";
+    var SUPPLY_CORRECT_NUMBER_OF_STATEMENTS = "Please check all dimensions: one side should have more checks than the other one!";
     var RESULT_STRING = '<strong>Result:</strong> The resulting design type is <a href="types.html?type=${type}"><strong>${type}</strong>.';
 
     var dimensions = [

@@ -9,6 +9,11 @@ h1, h2, h3, h4, h5, .card-header, .btn, .navbar {
     font-family: 'Metamorphous';
 }
 
+h1, h2, h3, h4, h5 {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
 h1 {
     text-align: center;
 }
@@ -96,7 +101,6 @@ footer {
         max-width: 750px;
     }
 }
-
 
 /* homepage ---------------------------------------------------------------------------*/
 

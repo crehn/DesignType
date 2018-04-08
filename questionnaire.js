@@ -37,7 +37,7 @@ function Dimension(leftValue, rightValue, statements, number) {
 
     function fillPanel(panel, value, statements) {
         panel.attr("id", value);
-        panel.find(".panel-heading").text(value);
+        panel.find(".card-header").text(value);
         for (statement in statements) {
             var li = $("<li/>");
             var label = $('<label/>', {
@@ -142,21 +142,33 @@ function Dimension(leftValue, rightValue, statements, number) {
     }
 
     function markPanel(panel) {
-        panel.removeClass("panel-default");
-        panel.removeClass("panel-warning");
-        panel.addClass("panel-success");
+        panel.removeClass("border-default");
+        panel.removeClass("border-warning");
+        panel.addClass("border-success");
+
+        panel.children(".card-header").removeClass("bg-default");
+        panel.children(".card-header").removeClass("bg-warning");
+        panel.children(".card-header").addClass("bg-success");
     }
 
     function markPanelTentative(panel) {
-        panel.removeClass("panel-default");
-        panel.removeClass("panel-success");
-        panel.addClass("panel-warning");
+        panel.removeClass("border-default");
+        panel.removeClass("border-success");
+        panel.addClass("border-warning");
+
+        panel.children(".card-header").removeClass("bg-default");
+        panel.children(".card-header").removeClass("bg-success");
+        panel.children(".card-header").addClass("bg-warning");
     }
 
     function unmarkPanel(panel) {
-        panel.removeClass("panel-success");
-        panel.removeClass("panel-warning");
-        panel.addClass("panel-default");
+        panel.removeClass("border-success");
+        panel.removeClass("border-warning");
+        panel.addClass("border-default");
+
+        panel.children(".card-header").removeClass("bg-success");
+        panel.children(".card-header").removeClass("bg-warning");
+        panel.children(".card-header").addClass("bg-default");
     }
 
     this.resultAsChar = function () {
@@ -184,12 +196,12 @@ function Dimension(leftValue, rightValue, statements, number) {
     }
 
     function showPanel(panel) {
-        panel.addClass("panel");
+        panel.addClass("card");
         headerOf(panel).show();
     }
 
     function headerOf(panel) {
-        return panel.children(".panel-heading").show();
+        return panel.children(".card-header").show();
     }
 
     function removeGroupBorder() {
