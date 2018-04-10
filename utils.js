@@ -33,4 +33,4 @@ String.prototype.capitalize = function () {
 var a = 'esign-'; var b = 'ma'; var c = 'es.net'; var d = 'typ'; var e = 'il@d'; var f = 'ilto:ema';
 var result = b + f + e + a + d + c;
 $("a.feedback").attr('href', result);
-/*$("a.feedback").text(result.substr(7));*/
+$("a.feedback.feedback-plain").text(result.substr(7));
