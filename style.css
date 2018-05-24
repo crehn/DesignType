@@ -162,14 +162,14 @@ footer a {
     padding: 0;
 }
 
-.news h1 {
+.news h1, .tweets h1 {
     font-size: 1.8rem;
     font-weight: bold;
     text-align: left;
     padding: 0 0.5rem;
 }
 
-.news h1 .title-extension {
+h1 .title-extension {
     font-size: 0.8rem;
     font-weight: normal;
 }
