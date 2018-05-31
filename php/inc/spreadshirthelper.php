@@ -2,7 +2,7 @@
 require_once('config.php');
 
     const SHOP_ID = "1111559";
-    const SHOP_URL = "http://api.spreadshirt.net/api/v1/shops/" . SHOP_ID;
+    const SHOP_URL = "https://api.spreadshirt.net/api/v1/shops/" . SHOP_ID;
     
     function createSprdAuthHeader($method, $url) {
         $apiKey = SHOP_API_KEY;
