@@ -16,8 +16,7 @@
             </offset>
             <content dpi="25.4" unit="px">
                 <svg>
-<!--                     <image width="261.937" height="378.354" printColorIds="1" designId="u126188931"/> -->
-                    <image width="190" height="274" printColorRGBs="#f6a828,#4682b4,#013397,#fefe98,#895971,#aa0505,#858585,#000000,#FFFFFF" designId="u126188931"/>
+                    <image width="190" height="274" printColorRGBs="#f6a828,#4682b4,#013397,#fefe98,#895971,#aa0505,#858585,#000000,#FFFFFF" designId="uXXXXXXXXX"/>
                 </svg>
             </content>
             <restrictions>
