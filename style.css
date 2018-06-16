@@ -157,19 +157,20 @@ footer a {
     }
 }
 
-.news {
+.news, .tweets > div {
     background-color: white;
     padding: 0;
 }
 
-.news h1 {
+.news h1, .tweets h1 {
     font-size: 1.8rem;
     font-weight: bold;
     text-align: left;
-    padding: 0 0.5rem;
+    padding: 1rem 0.5rem 0rem 0.5rem;
+    margin-top: 0;
 }
 
-.news h1 .title-extension {
+h1 .title-extension {
     font-size: 0.8rem;
     font-weight: normal;
 }
@@ -178,6 +179,10 @@ footer a {
     border-bottom: 1px solid #0F466418;
     border-top: 1px solid #0F466418;
     padding: 0.5rem 1.25rem;
+}
+
+.news section:hover {
+    background-color: #F5F5FF;
 }
 
 .news section h2 {
