@@ -34,3 +34,6 @@ var a = 'esign-'; var b = 'ma'; var c = 'es.net'; var d = 'typ'; var e = 'il@d';
 var result = b + f + e + a + d + c;
 $("a.feedback").attr('href', result);
 $("a.feedback.feedback-plain").text(result.substr(7));
+
+var z = '+49'; var y = '7879'; var x = '955'; var w = '173';
+$("#telephone").html(z + w + x + y);
