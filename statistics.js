@@ -1,5 +1,3 @@
-var debug = true;
-
 //################### Statistics chart
 
 function BarChart(dataForBars) {
