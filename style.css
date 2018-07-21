@@ -76,6 +76,11 @@ footer a {
     }
 }
 
+.jumbotron.homepage {
+    padding: 1rem;
+    margin: 15px 0px 0px 0px;
+}
+
 .jumbotron:not(.homepage) p {
     font-size: 21px;
     margin: 0;
@@ -143,17 +148,13 @@ footer a {
     font-size:1.5rem;
 }
 
-@media screen and (max-width:480px) {
-    h1.main-title {
-        font-size:350%;
-    }
-    
+@media screen and (max-width:995px) {
     .entry-point-col.entry-point-primary img {
         height: 150px;
     }
     
     .entry-point-col img {
-        height: 100px;
+        height: 125px;
     }
 }
 
