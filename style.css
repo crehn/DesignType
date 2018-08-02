@@ -16,14 +16,18 @@ h1, h2, h3, h4, h5 {
 
 h1 {
     text-align: center;
+    border-top: 2px solid #212529;
+    border-bottom: 2px solid #212529;
 }
 
 h1.main-title {
     margin-bottom: 0.3em;
 }
 
-h2 {
-    text-align: center;
+h1, h2 {
+    margin: 1rem -15px 0.5rem -15px;
+    padding: 5px 15px;
+    background-color: #EEEEEE;
 }
 
 .btn-primary {
@@ -68,6 +72,8 @@ footer a {
 
 .jumbotron h1 {
     font-size: 36px;
+    border: none;
+    background: inherit;
 }
 
 @media screen and (min-width: 768px) {
@@ -168,7 +174,9 @@ footer a {
     font-weight: bold;
     text-align: left;
     padding: 1rem 0.5rem 0rem 0.5rem;
-    margin-top: 0;
+    margin: 0 0 0.5rem 0;
+    background: inherit;
+    border: none;
 }
 
 h1 .title-extension {
@@ -189,11 +197,40 @@ h1 .title-extension {
 .news section h2 {
     font-size: 1.4rem;
     font-weight: bold;
+    text-align: center;
+    background-color: inherit;
 }
 
 .news section time {
     font-size: 12px;
     color: #8899a6;
+}
+
+
+/* countdown ----------------------------------------------------------------------*/
+
+.countdown .box {
+    background-color: rgb(218, 218, 218);
+    margin: 0.5em;
+    padding: 0.5em;
+    color: black;
+    font-family: 'Metamorphous';
+    text-align: center;
+    width: 4rem;
+    float: left;
+}
+
+.value {
+    font-weight: bold;
+}
+
+.unit {
+    font-size: 0.5rem;
+}
+
+.countdown-link,
+.countdown-link:hover {
+    text-decoration: none;
 }
 
 
@@ -217,6 +254,10 @@ h1 .title-extension {
 
 .dimension.bordered.incomplete {
     border: 2px solid #d9534f;
+}
+.dimension.bordered h1{
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .dimension .card-header {
