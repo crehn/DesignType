@@ -99,7 +99,7 @@
                         architectural decisions. The core rule is that you play out cards/arguments one at a time taking
                         turns. This means that you cannot play out two cards at once. In this way you are forced to think
                         about the strongest argument. Furthermore one is more likely to convince another developer instead
-                        of merely persuading her by taking fast and stating a whole bunch of arguments.
+                        of merely persuading her by taking fast and stating a whole bunch of arguments at once.
                     </p>
                 </section>
 
@@ -114,32 +114,15 @@
                             </p>
                         </div>
                         <div class="col-md-6">
-                            <h2>Kickstarter</h2>
+                            <h2>Printed and Boxed</h2>
                             <p>
-                                We are going to produce the cards using high-quality playing card cardboard shipped with a nice transparent case. Please
-                                support our
-                                <a href="https://www.kickstarter.com/projects/designdudes/design-cards-improving-discussions-of-software-dev?ref=5mwuxc">Kickstarter campaign</a>. Supporters will get early access to beta-versions of the cards.
+                                We are going to produce the cards using high-quality playing card cardboard shipped with a nice transparent case. Our
+                                <a href="https://www.kickstarter.com/projects/designdudes/design-cards-improving-discussions-of-software-dev?ref=5mwuxc">Kickstarter campaign</a> was a tremendous success. So the printing is funded and our backers
+                                will receive the cards presumably in November. After that we will make the printed cards
+                                available via Amazon and/or some other online shop. If you want to get notified, once you
+                                can order the cards, just drop us an
+                                <a class="feedback">email</a>.
                             </p>
-                            <a class="countdown-link" href="https://www.kickstarter.com/projects/designdudes/design-cards-improving-discussions-of-software-dev?ref=5mwuxc">
-                                <div class="countdown">
-                                    <div class="box">
-                                        <div class="value days">0</div>
-                                        <div class="unit">Days</div>
-                                    </div>
-                                    <div class="box">
-                                        <div class="value hours">0</div>
-                                        <div class="unit">Hours</div>
-                                    </div>
-                                    <div class="box">
-                                        <div class="value minutes">0</div>
-                                        <div class="unit">Minutes</div>
-                                    </div>
-                                    <div class="box">
-                                        <div class="value seconds">0</div>
-                                        <div class="unit">Seconds</div>
-                                    </div>
-                                </div>
-                            </a>
                         </div>
                     </div>
                 </section>
@@ -223,54 +206,9 @@
 
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js "></script>
     <script src="utils.js"></script>
     <script src="comments.js"></script>
-
-
-    <script>
-        function showCountdown() {
-            var end = 1533117600000;
-            var now = Date.now();
-            var delta = Math.max(0, end - now);
-            var days = delta / (24 * 60 * 60 * 1000) | 0;
-            var hours = delta % (24 * 60 * 60 * 1000) / (60 * 60 * 1000) | 0;
-            var minutes = delta % (24 * 60 * 60 * 1000) % (60 * 60 * 1000) / (60 * 1000) | 0;
-            var seconds = delta % (24 * 60 * 60 * 1000) % (60 * 60 * 1000) % (60 * 1000) / 1000 | 0;
-
-            $('.countdown .days').text(days);
-            $('.countdown .hours').text(hours);
-            $('.countdown .minutes').text(minutes);
-            $('.countdown .seconds').text(seconds);
-        }
-
-        setInterval(showCountdown, 1000);
-    </script>
-    <style>
-        .countdown .box {
-            background-color: rgb(218, 218, 218);
-            margin: 0.5em;
-            padding: 0.5em;
-            color: black;
-            font-family: 'Metamorphous';
-            text-align: center;
-            width: 4rem;
-            float: left;
-        }
-
-        .value {
-            font-weight: bold;
-        }
-
-        .unit {
-            font-size: 0.5rem;
-        }
-
-        .countdown-link,
-        .countdown-link:hover {
-            text-decoration: none;
-        }
-
-    </style>
 </body>
 
 </html>
