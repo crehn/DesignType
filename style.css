@@ -135,6 +135,25 @@ footer a {
     align-items: center;
 }
 
+.img-box {
+    border: 1px solid #dee2e6;
+    padding: 0;
+}
+
+.img-box-padding {
+    padding: 15px;
+}
+
+.caption {
+    padding: 0.25rem;
+    
+    background-color: #EEEEEE;
+
+    text-align: center;
+    font-family: 'Metamorphous';
+    font-style: italic;
+}
+
 
 /* homepage ---------------------------------------------------------------------------*/
 
