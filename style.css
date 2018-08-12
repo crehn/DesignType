@@ -154,6 +154,13 @@ footer a {
     font-style: italic;
 }
 
+.button-smallprint {
+    font-size: 0.75rem;
+}
+
+.row-in-container {
+    margin: 0;
+}
 
 /* homepage ---------------------------------------------------------------------------*/
 
