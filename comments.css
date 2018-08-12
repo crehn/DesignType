@@ -44,8 +44,8 @@
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.4);
 }
 
-#comments .comment-container{  
-    padding: 0.5em;
+#comments .comment-container{
+    padding: 0.5rem 0;
 } 
 
 #comments .comment {
@@ -75,4 +75,3 @@
 #comments .comment .text {
     margin: 5px 5px 5px 45px;
 }
-
