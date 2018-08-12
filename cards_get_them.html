@@ -124,25 +124,32 @@
                         </div>
                     </div>
                     <h2>Notify me</h2>
-                    <form action="subscribe" method="GET">
-                        We can notify you, once the cards are ready for download and purchase.
+                    <form>
+                        We can notify you, once the cards are ready for download and purchase. See
+                        <a href="privacy.html">privacy declaration</a>.
                         <p>
                             Your email address:
                             <input type="email" class="col-md-6" name="email" autocomplete="on" autofocus placeholder="email address" required />
                         </p>
                         <div class="row row-in-container">
-                            <button type="submit" class="btn btn-lg col-lg-4" name="notify" value="notifyOnce">
+                            <button type="submit" class="btn btn-lg col-lg-4" name="notify" onclick="setNotificationOptions(event, 'once')">
                                 Notify me
                                 <div class="button-smallprint">and then delete my email address</div>
                             </button>
-                            <button type="submit" class="btn btn-lg btn-primary col-lg-4" name="notify" value="notifyContinuously">
+                            <button type="submit" class="btn btn-lg btn-primary col-lg-4" name="notify" onclick="setNotificationOptions(event, 'continuously')">
                                 Notify me
                                 <div class="button-smallprint">also in case of future products</div>
                             </button>
-                            <button type="submit" class="btn btn-lg col-lg-4" name="notify" value="never">
+                            <button type="submit" class="btn btn-lg col-lg-4" name="notify" onclick="setNotificationOptions(event, 'never')">
                                 Never notify me again
                                 <div class="button-smallprint">and delete my email address</div>
                             </button>
+                        </div>
+                        <div class="alert alert-success" id="notify-success" style="display: none">
+                            Successfully changed subscription options.
+                        </div>
+                        <div class="alert alert-danger" id="notify-error" style="display: none">
+                            Error setting subscription options.
                         </div>
                     </form>
                 </section>
@@ -229,6 +236,7 @@
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js "></script>
     <script src="utils.js"></script>
     <script src="comments.js"></script>
+    <script src="notify.js"></script>
 </body>
 
 </html>

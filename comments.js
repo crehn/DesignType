@@ -1,4 +1,4 @@
-// var pageIdComments has to be defined in each page using this functions.
+// var pageIdComments has to be defined in each page using these functions.
 
 function initializeCommentFeature() {
     $(function () {
