@@ -1,4 +1,7 @@
 function setNotificationOptions(event, notifyOption) {
+    $('#notify-error').hide();
+    $('#notify-success').hide();
+
     if (!document.querySelector('form').checkValidity()) {
         return;
     }
