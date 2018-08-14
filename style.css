@@ -51,17 +51,6 @@ body {
     margin: 0 -15px;
 }
 
-footer {
-    border-top: 1px solid silver; 
-    padding-bottom: 2em;
-    text-align: center;
-    color: gray;
-}
-
-footer a {
-    color: gray;
-}
-
 /* jumbotron -------------------------------------------------------------------------*/
 
 .jumbotron {
@@ -97,31 +86,11 @@ footer a {
 }
 
 
-/* sidebar ------------------------------------------------------------------------------*/
-
-.sidebar {
-    font-size: 0.9rem;
-    background-color: #EEEEEE;
-}
-
-.sidebar section {
-    margin-bottom: 2rem;
-}
-
-.sidebar h1 {
-    font-size: 1.2rem;
-}
-
-
 /* reusable general purpose classes -----------------------------------------------------*/
 
 .logo-as-heading {
     text-align: center;
     margin: 2em;
-}
-
-.pop {
-    cursor:pointer;
 }
 
 @media (min-width: 576px) {

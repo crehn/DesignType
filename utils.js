@@ -19,13 +19,6 @@ function debuglog(msg) {
     }
 }
 
-$(function () {
-    $('.pop').on('click', function () {
-        $('.imagepreview').attr('src', $(this).find('img').attr('src'));
-        $('#imagemodal').modal('show');
-    });
-});
-
 String.prototype.capitalize = function () {
     return this.charAt(0).toUpperCase() + this.slice(1);
 };

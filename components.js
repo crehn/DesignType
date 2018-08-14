@@ -1,0 +1,379 @@
+class CustomHtmlElement extends HTMLElement {
+    constructor(self) {
+        self = super(self);
+        this.innerHTML = this.html();
+        this.init();
+        return self;
+    }
+
+    init() { }
+    html() { }
+}
+
+
+class DtNavigation extends CustomHtmlElement {
+    html() {
+        return /*html*/`
+        <style>
+        </style>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" role="navigation">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Design-Types.net</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="nav navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="design_types.html" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">Design Types</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown01">
+                            <a class="dropdown-item" href="design_types.html">Concepts</a>
+                            <a class="dropdown-item" href="test_yourself.html">Test Yourself</a>
+                            <a class="dropdown-item" href="assess_colleagues.html?revealed">Assess Colleagues</a>
+                            <a class="dropdown-item" href="statistics.html">Statistics</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="matrix.html">Design Matrix</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="cards.html" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Design Cards</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown02">
+                            <a class="dropdown-item" href="cards.html">Introduction</a>
+                            <a class="dropdown-item" href="cards_detail.html">More Details on the Cards</a>
+                            <a class="dropdown-item" href="cards_usage.html">How to Use the Cards</a>
+                            <a class="dropdown-item" href="cards_get_them.html">Get the Cards</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a class="nav-link" href="http://www.principles-wiki.net">principles-wiki.net</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        </nav>
+        `;
+    }
+
+    init() {
+        $(this).find(`a.nav-link:contains("${this.getAttribute('active')}")`).addClass('active');
+        $(this).find(`a.dropdown-item:contains("${this.getAttribute('subitem')}")`).prepend('➤ ');
+    }
+}
+window.customElements.define('dt-nav', DtNavigation);
+
+
+class DtImage extends CustomHtmlElement {
+    html() {
+        return /*html*/`
+        <style>
+            .pop {
+                cursor:pointer;
+            }
+        </style>
+        <a class="pop">
+            <img src="" class="col-md-12" />
+        </a>
+        
+        <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog" data-dismiss="modal">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span aria-hidden="true">&times;</span>
+                            <span class="sr-only">Close</span>
+                        </button>
+                        <img src=" " class="imagepreview" style="width: 100%;" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        `;
+    }
+
+    init() {
+        $(this).find('img').attr('src', this.getAttribute('src'));
+        $(this).find('.pop').on('click', () => {
+            $(this).find('.imagepreview').attr('src', this.getAttribute('src'));
+            $(this).find('.modal').modal('show');
+        });
+    }
+}
+window.customElements.define('dt-img', DtImage);
+
+
+class DtComments extends CustomHtmlElement {
+    html() {
+        return /*html*/`
+        <style>
+            dt-comments .new-button {
+                border: 1px solid #d3d7dc;
+                border-radius: 3px;
+                padding: 0.5em 0.75em;
+                background-color: #f9f9f9;
+                
+                cursor: text;
+                color: #adb2bb;
+                font-size: 13px;
+            }
+            
+            dt-comments .new-form { 
+                display: none;
+                border-top: 1px dotted #d9d9d9;
+                padding: 1em 0em;
+            }
+            
+            dt-comments input[type="text"]{
+                width: 15em;
+                margin: 0.125em;
+                border: 1px solid #d3d7dc;
+                border-radius: 3px;
+                padding: 0.25em;
+                background-color: #f9f9f9;
+                color: #333;
+            }
+            
+            dt-comments textarea {
+                width: 98%; 
+                min-height: 8em;
+                margin: 0.125em;
+                border: 1px solid #d3d7dc;
+                border-radius: 3px;
+                padding: 0.25em; 
+                background-color: #f9f9f9;
+                color: #333;
+            }
+            
+            dt-comments textarea:focus, dt-comments input[type="text"]:focus {
+                outline: #f6a828 thin solid;
+                box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.4);
+            }
+            
+            dt-comments .comment-container{
+                padding: 0.5rem 0;
+            } 
+            
+            dt-comments .comment {
+                padding: 0.25em 0em;
+                min-height: 45px; 
+            }
+            
+            dt-comments .avatar{
+                float: left; 
+                margin-right: 10px;
+                border-radius: 3px;
+            }
+            
+            dt-comments .comment .name {
+                display: inline;
+                margin: 0 1em 0 0;
+                font-family: tahoma;
+                font-size: 13px;
+                color: #3b5998;
+            }
+            
+            dt-comments .comment .date {
+                font-size: 12px;
+                color: silver;
+            }
+            
+            dt-comments .comment .text {
+                margin: 5px 5px 5px 45px;
+            }        
+        </style>
+        <section id="comments">
+            <div id="comment-template" class="comment">
+                <img src="img/avatar.png" alt="" class="avatar">
+                <div>
+                    <h5 class="name">Template name</h5>
+                    <span class="date">Template date</span>
+                    <br>
+                    <p class="text">Template comment</p>
+                </div>
+            </div>
+
+            <div class="comment-container">
+                <div class="new-button">
+                    <span>Write a comment ...</span>
+                </div>
+                <div class="new-form">
+                    <input type="text" id="new-comment-name" value="" placeholder="Your name">
+                    <input type="text" id="new-comment-email" value="" placeholder="Your e-mail address">
+                    <textarea id="new-comment-text"></textarea>
+                    <button class="btn btn-primary post-button" disabled>Post comment</button>
+                    <button class="btn btn-secondary cancel-button">Cancel</button>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </section>
+        `;
+    }
+
+    init() {
+        this.pageId = this.getAttribute('pageid');
+        $('#comment-template').hide();
+        $('dt-comments .new-button').on('click', () => this._showNewCommentForm());
+        $('#new-comment-text').on('keyup', () => this._activatePostButtonIffThereIsText());
+        $('dt-comments .post-button').on('click', () => this.postComment());
+        $('dt-comments .cancel-button').on('click', () => this._cancelComment());
+        this.loadComments();
+    }
+
+    _showNewCommentForm() {
+        debuglog("show new comment form");
+        $("dt-comments .new-button").hide();
+        $('dt-comments .new-form').show();
+        $('#new-comment-name').trigger("focus");
+    }
+
+    _activatePostButtonIffThereIsText() {
+        if ($('#new-comment-text').val().length == 0) {
+            $('dt-comments .post-button').attr('disabled', true);
+        } else {
+            $('dt-comments .post-button').attr('disabled', false);
+        }
+    }
+
+    postComment() {
+        debuglog("post comment");
+        $.ajax({
+            method: "POST",
+            url: "php/addComment.php?pageId=" + this.pageId,
+            contentType: 'application/json',
+            data: JSON.stringify({
+                name: $('#new-comment-name').val(),
+                email: $('#new-comment-email').val(),
+                text: $('#new-comment-text').val().replace(/(\r\n|\n|\r)/gm, "[br]")
+            }),
+            success: resultingComment => {
+                debuglog("comment successfully posted");
+                $('#new-comment-text').val('');
+                this._hideNewCommentForm();
+                this._writeComment(resultingComment.name, resultingComment.avatar, resultingComment.timestamp, resultingComment.text);
+            }
+        });
+    }
+
+    _hideNewCommentForm() {
+        $("dt-comments .new-form").hide('fast', () => $('dt-comments .new-button').show('fast'));
+    }
+
+    _cancelComment() {
+        debuglog("cancel comment");
+        $('dt-comments .new-form').fadeOut('fast', () => $('dt-comments .new-button').fadeIn('fast'));
+    }
+
+    _writeComment(name, avatarUrl, timestamp, text) {
+        debuglog("write comment by " + name + " at " + timestamp);
+        var result = $("#comment-template").clone();
+        result.find(".avatar").attr("src", avatarUrl);
+        result.find(".name").html(name);
+        result.find(".date").html(timestamp);
+        var commentMod = text.replace(/\[br\]/g, "<br>");
+        result.find(".text").html(commentMod);
+        result.removeAttr('id');
+        result.show();
+        $(".clear").after(result);
+        return result;
+    }
+
+    loadComments() {
+        debuglog("loadComments for pageId " + this.pageId);
+        $.get("php/loadComments.php?pageId=" + this.pageId, (comments, status) => {
+            debuglog("loadComments - status: " + status + ", data: " + comments);
+            if (comments != null) {
+                for (var i = 0; i < comments.length; i++) {
+                    this._writeComment(comments[i].name, comments[i].avatar, comments[i].timestamp, comments[i].text);
+                }
+            }
+        });
+    }
+
+}
+window.customElements.define('dt-comments', DtComments);
+
+
+class DtSidebar extends CustomHtmlElement {
+    html() {
+        return /*html*/`
+        <style>
+            dt-sidebar {
+                font-size: 0.9rem;
+                background-color: #EEEEEE;
+            }
+            
+            dt-sidebar section {
+                margin-bottom: 2rem;
+            }
+            
+            dt-sidebar h1 {
+                font-size: 1.2rem;
+            }
+        </style>
+        <div class="">
+            <section>
+                <h1>Support</h1>
+                <p>
+                    We've created design-types.net in our spare time hoping that it will be helpful to many people. Please consider supporting
+                    us by making a donation.
+                </p>
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" class="text-center">
+                    <input type="hidden" name="cmd" value="_s-xclick">
+                    <input type="hidden" name="hosted_button_id" value="XXAD9MAS7AVTN">
+                    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" name="submit">
+                    <img alt=" donate " src="https://www.paypalobjects.com/de_DE/i/scr/pixel.gif " width="1" height="1 ">
+                </form>
+            </section>
+            <section>
+                <h1>Stay Tuned</h1>
+                <p>
+                    If you want to get in touch with us and stay up to date with what we are doing, follow us on
+                    <a href="https://twitter.com/SWDesignKnights">Twitter</a> or just write a
+                    <a class="feedback ">short email</a>. We like getting feedback.
+                </p>
+            </section>
+        </div>
+        `;
+    }
+}
+window.customElements.define('dt-sidebar', DtSidebar);
+
+
+class DtFooter extends CustomHtmlElement {
+    html() {
+        return /*html*/`
+        <style>
+            footer {
+                border-top: 1px solid silver; 
+                padding-bottom: 2em;
+                text-align: center;
+                color: gray;
+            }
+            
+            footer a {
+                color: gray;
+            }
+        </style>
+        <footer>
+            <div>
+                <a class="feedback">E-Mail</a> |
+                <a href="https://twitter.com/SWDesignKnights">Twitter</a> |
+                <a href="https://twitter.com/SWDesignKnights">Twitter</a> |
+                <a href="https://www.xing.com/communities/groups/design-principles-patterns-types-08d2-1080100">
+                    Xing
+                </a> |
+                <a href="privacy.html">Privacy</a> |
+                <a href="imprint.html">Imprint</a>
+            </div>
+        </footer>
+        `;
+    }
+}
+window.customElements.define('dt-footer', DtFooter);
