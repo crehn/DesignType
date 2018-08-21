@@ -114,6 +114,7 @@ class DtComments extends CustomHtmlElement {
         return /*html*/`
         <style>
             dt-comments .new-button {
+                margin: 0.5rem 0;
                 border: 1px solid #d3d7dc;
                 border-radius: 3px;
                 padding: 0.5em 0.75em;
@@ -159,7 +160,7 @@ class DtComments extends CustomHtmlElement {
             dt-comments .comment-container{
                 padding: 0.5rem 0;
             } 
-            
+
             dt-comments .comment {
                 padding: 0.25em 0em;
                 min-height: 45px; 
@@ -186,18 +187,18 @@ class DtComments extends CustomHtmlElement {
             
             dt-comments .comment .text {
                 margin: 5px 5px 5px 45px;
-            }        
+            }    
         </style>
         <section id="comments">
-            <div id="comment-template" class="comment">
-                <img src="img/avatar.png" alt="" class="avatar">
-                <div>
-                    <h5 class="name">Template name</h5>
-                    <span class="date">Template date</span>
-                    <br>
-                    <p class="text">Template comment</p>
-                </div>
-            </div>
+        <div id="comment-template" class="comment">
+        <img src="img/avatar.png" alt="" class="avatar">
+        <div>
+            <h5 class="name">Template name</h5>
+            <span class="date">Template date</span>
+            <br>
+            <p class="text">Template comment</p>
+        </div>
+    </div>
 
             <div class="comment-container">
                 <div class="new-button">
