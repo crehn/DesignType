@@ -2,7 +2,9 @@
     "name": "designtypes",
     "version": "0.0.0",
     "description": "A questionnaire for finding out how you think about software design",
-    "scripts": {},
+    "scripts": {
+        "dev": "browser-sync -w --no-open http://design-types.net/test/ ."
+    },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/crehn/DesignType.git"
@@ -19,5 +21,8 @@
         "document-register-element": "^1.11.0",
         "jquery": "^3.3.1",
         "popper.js": "^1.14.4"
+    },
+    "devDependencies": {
+        "browser-sync": "^2.24.6"
     }
 }
