@@ -352,14 +352,15 @@ class DtFooter extends CustomHtmlElement {
         return /*html*/`
         <style>
             footer {
+                margin: 0 -15px;
                 border-top: 1px solid silver; 
                 padding-bottom: 2em;
                 text-align: center;
-                color: gray;
+                color: #757575;
             }
             
             footer a {
-                color: gray;
+                color: #757575;
             }
         </style>
         <footer>
