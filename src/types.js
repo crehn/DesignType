@@ -29,7 +29,7 @@ function Type(value1, value2, value3, value4) {
     function createPanel() {
         var result = $("#templateType").clone();
         result.attr("id", abbreviation() + "_info");
-        result.find(".typeicon").append("<img src='./img/types/" + abbreviation().toUpperCase() + ".png' width='300' />");
+        result.find(".typeicon").append("<img src='./img/types/" + abbreviation().toUpperCase() + ".png' width='300' alt='' />");
         result.find(".description").html(typesData[abbreviation()].description);
         result.find(".designs").html(typesData[abbreviation()].designs);
         result.find(".programming").html(typesData[abbreviation()].programming);

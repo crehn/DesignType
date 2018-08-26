@@ -79,7 +79,7 @@ class DtImage extends CustomHtmlElement {
             }
         </style>
         <a class="pop">
-            <img src="" class="col-md-12" />
+            <img src="" class="col-md-12" alt="" />
         </a>
         
         <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -90,7 +90,7 @@ class DtImage extends CustomHtmlElement {
                             <span aria-hidden="true">&times;</span>
                             <span class="sr-only">Close</span>
                         </button>
-                        <img src=" " class="imagepreview" style="width: 100%;" />
+                        <img src=" " class="imagepreview" style="width: 100%;" alt="" />
                     </div>
                 </div>
             </div>
@@ -328,8 +328,8 @@ class DtSidebar extends CustomHtmlElement {
                 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" class="text-center">
                     <input type="hidden" name="cmd" value="_s-xclick">
                     <input type="hidden" name="hosted_button_id" value="XXAD9MAS7AVTN">
-                    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" name="submit">
-                    <img alt=" donate " src="https://www.paypalobjects.com/de_DE/i/scr/pixel.gif " width="1" height="1 ">
+                    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" name="submit" alt="donate">
+                    <img alt="" src="https://www.paypalobjects.com/de_DE/i/scr/pixel.gif" width="1" height="1">
                 </form>
             </section>
             <section>
