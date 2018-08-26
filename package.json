@@ -3,7 +3,8 @@
     "version": "0.0.0",
     "description": "A questionnaire for finding out how you think about software design",
     "scripts": {
-        "dev": "browser-sync -w --no-open http://design-types.net/test/ ."
+        "dev": "browser-sync -w --no-open http://design-types.net/test/ .",
+        "build": "npx babel src -d dist"
     },
     "repository": {
         "type": "git",
@@ -23,6 +24,8 @@
         "popper.js": "^1.14.4"
     },
     "devDependencies": {
+        "babel-cli": "^6.26.0",
+        "babel-preset-env": "^1.7.0",
         "browser-sync": "^2.24.6"
     }
 }
