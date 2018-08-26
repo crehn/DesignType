@@ -9,7 +9,7 @@
         "_mkdirs": "mkdir -p dist/node_modules",
         "_php": "cp -r php dist/",
         "_babel": "npx babel src -d dist --ignore node_modules --copy-files",
-        "_node_modules": "cp package.json dist/ && npm install --prefix dist/ --production && rm dist/package.json",
+        "_node_modules": "cp package.json dist/ && npm install --prefix dist/ --production",
         "_writeVersion": "date --rfc-3339=seconds > dist/version && git rev-parse HEAD >> dist/version"
     },
     "repository": {
