@@ -3,8 +3,14 @@
     "version": "0.0.0",
     "description": "A questionnaire for finding out how you think about software design",
     "scripts": {
-        "dev": "browser-sync -w --no-open http://design-types.net/test/ .",
-        "build": "npx babel src -d dist"
+        "dev": "browser-sync -w --no-open http://test.design-types.net src",
+        "clean": "rm -fr dist",
+        "build": "npm run _mkdirs && npm run _php && npm run _babel && npm run _node_modules && npm run _writeVersion",
+        "_mkdirs": "mkdir -p dist/node_modules",
+        "_php": "cp -r php dist/",
+        "_babel": "npx babel src -d dist --ignore node_modules --copy-files",
+        "_node_modules": "cp package.json dist/ && npm install --prefix dist/ --production && rm dist/package.json",
+        "_writeVersion": "date --rfc-3339=seconds > dist/version && git rev-parse HEAD >> dist/version"
     },
     "repository": {
         "type": "git",
