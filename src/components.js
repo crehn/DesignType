@@ -90,7 +90,7 @@ class DtImage extends CustomHtmlElement {
                             <span aria-hidden="true">&times;</span>
                             <span class="sr-only">Close</span>
                         </button>
-                        <img src=" " class="imagepreview" style="width: 100%;" alt="" />
+                        <img src="" class="imagepreview" style="width: 100%;" alt="" />
                     </div>
                 </div>
             </div>
@@ -182,7 +182,7 @@ class DtComments extends CustomHtmlElement {
             
             dt-comments .comment .date {
                 font-size: 12px;
-                color: silver;
+                color: #757575;
             }
             
             dt-comments .comment .text {
