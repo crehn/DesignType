@@ -177,7 +177,7 @@ function HorizontalBarChart(dataForBars, elementName) {
 function XYBarChart(dataForBars, elementName) {
     var width = Math.min(800, $("#" + elementName).width());
     var height = 0.5 * width;
-    var margin = { top: 20, right: 20, bottom: 30, left: 40 };
+    var margin = { top: 20, right: 40, bottom: 30, left: 40 };
 
     var innerWidth = width - margin.left - margin.right;
     var innerHeight = height - margin.top - margin.bottom;
