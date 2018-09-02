@@ -50,13 +50,13 @@ function insertComment($mysqli, $pageId, $comment) {
     global $log;
     try {    
         $tablenameCmt = DB_TABLEPREFIX . "Comments";
-        $insertStatement = "INSERT INTO $tablenameCmt (name, email, comment, id_post) VALUES (?, ?, ?, ?)";
+        $insertStatement = "INSERT INTO $tablenameCmt (name, email, comment, pageId) VALUES (?, ?, ?, ?)";
         $log->debug($insertStatement);
         if (!($stmt = $mysqli->prepare($insertStatement))) {
             error500("Prepare for insert failed: ({$mysqli->errno}) {$mysqli->error}");
         }
         
-        if (!$stmt->bind_param("sssi", $comment->name, $comment->email, $comment->text, $pageId)) {
+        if (!$stmt->bind_param("ssss", $comment->name, $comment->email, $comment->text, $pageId)) {
             error500("Binding parameters failed: ({$mysqli->errno}) {$mysqli->error}");
         }
         

@@ -38,14 +38,14 @@ function executeSelect($mysqli, $tableprefix, $pageId) {
     global $log;
     
     $tablenameCmt = $tableprefix . "Comments";
-    $selectStement = "SELECT name, email, comment, date FROM $tablenameCmt WHERE id_post = ? ORDER BY id DESC LIMIT " . MAX_COMMENTS;
+    $selectStement = "SELECT name, email, comment, date FROM $tablenameCmt WHERE pageId = ? ORDER BY id DESC LIMIT " . MAX_COMMENTS;
     $log->debug($selectStement);
 
     if (!($stmt = $mysqli->prepare($selectStement))) {
         error500("Prepare for select failed: ({$mysqli->errno}) {$mysqli->error}");
     }
 
-    if (!$stmt->bind_param("i", $pageId)) {
+    if (!$stmt->bind_param("s", $pageId)) {
         error500("Binding parameters failed: ({$mysqli->errno}) {$mysqli->error}");
     }
 

@@ -191,15 +191,15 @@ class DtComments extends CustomHtmlElement {
             }    
         </style>
         <section id="comments">
-        <div id="comment-template" class="comment">
-        <img src="img/avatar.png" alt="" class="avatar">
-        <div>
-            <h5 class="name">Template name</h5>
-            <span class="date">Template date</span>
-            <br>
-            <p class="text">Template comment</p>
-        </div>
-    </div>
+            <div id="comment-template" class="comment">
+                <img src="img/avatar.png" alt="" class="avatar">
+                <div>
+                    <h5 class="name">Template name</h5>
+                    <span class="date">Template date</span>
+                    <br>
+                    <p class="text">Template comment</p>
+                </div>
+            </div>
 
             <div class="comment-container">
                 <div class="new-button">
