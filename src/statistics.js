@@ -2,7 +2,7 @@
 
 function BarChart(dataForBars, htmlElementIdForDrawing) {
     //var width = Math.min(800, $("#statsbox").width());
-    var width = Math.min(800, $("#"+htmlElementIdForDrawing).width());
+    var width = Math.min(800, $("#" + htmlElementIdForDrawing).width());
     var height = 0.3 * width;
     var margin = { top: 20, right: 20, bottom: 30, left: 40 };
 
@@ -18,7 +18,7 @@ function BarChart(dataForBars, htmlElementIdForDrawing) {
     };
 
     function draw() {
-        svg = d3.select("#"+htmlElementIdForDrawing).append("svg")
+        var svg = d3.select("#" + htmlElementIdForDrawing).append("svg")
             .attr("width", width)
             .attr("height", height)
             .append("g")
@@ -106,7 +106,7 @@ function HorizontalBarChart(dataForBars, elementName) {
     };
 
     function draw() {
-        svg = d3.select("#" + elementName).append("svg")
+        var svg = d3.select("#" + elementName).append("svg")
             .attr("width", width)
             .attr("height", height)
             .append("g")
@@ -211,7 +211,7 @@ function XYBarChart(dataForBars, elementName) {
     color.domain(seriesNames);
 
     function draw() {
-        svg = d3.select("#" + elementName).append("svg")
+        var svg = d3.select("#" + elementName).append("svg")
             .attr("width", width)
             .attr("height", height)
             .append("g")
@@ -378,7 +378,7 @@ $(document).ready(function () {
     loadDimensionsByExperience();
 
     loadTopDimensionsByRole("Architect");
-    $("#rolename").change(function() {
+    $("#rolename").change(function () {
         // remove old one
         $("#top4dimensionsgraph").children().remove();
         // create new one
