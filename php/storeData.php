@@ -116,7 +116,7 @@ function insertChosenStatements($mysqli, $resultTypeFk) {
             IDEALISTIC_1, IDEALISTIC_2, IDEALISTIC_3, IDEALISTIC_4, IDEALISTIC_5, IDEALISTIC_6,
             TECHNOLOGIC_1, TECHNOLOGIC_2, TECHNOLOGIC_3, TECHNOLOGIC_4, TECHNOLOGIC_5, TECHNOLOGIC_6,
             ROBUST_1, ROBUST_2, ROBUST_3, ROBUST_4, ROBUST_5, ROBUST_6,
-            FK) 
+            ResultId) 
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $log->debug($insertStatement);
         if (!($stmt = $mysqli->prepare($insertStatement))) {

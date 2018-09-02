@@ -21,7 +21,7 @@ function executeSelect($mysqli, $ukey) {
         (IDEALISTIC_1 + IDEALISTIC_2 + IDEALISTIC_3 + IDEALISTIC_4 + IDEALISTIC_5 + IDEALISTIC_6) as sum_idealistic,
         (ROBUST_1 + ROBUST_2 + ROBUST_3 + ROBUST_4 + ROBUST_5 + ROBUST_6) as sum_robust,   
         (TECHNOLOGIC_1 + TECHNOLOGIC_2 + TECHNOLOGIC_3 + TECHNOLOGIC_4 + TECHNOLOGIC_5 + TECHNOLOGIC_6) as sum_technologic
-        from $tablenameCS cs inner join $tablenameRT rt on (cs.FK = rt.ID) where rt.USERKEY=?";
+        from $tablenameCS cs inner join $tablenameRT rt on (cs.ResultId = rt.ID) where rt.USERKEY=?";
     $log->debug($query);
     if (!($stmt = $mysqli->prepare($query))) {
         error500("Prepare for select failed: ({$mysqli->errno}) {$mysqli->error}");
