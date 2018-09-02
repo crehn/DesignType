@@ -1,7 +1,8 @@
 //################### Statistics chart
 
-function BarChart(dataForBars) {
-    var width = Math.min(800, $("#statsbox").width());
+function BarChart(dataForBars, htmlElementIdForDrawing) {
+    //var width = Math.min(800, $("#statsbox").width());
+    var width = Math.min(800, $("#"+htmlElementIdForDrawing).width());
     var height = 0.3 * width;
     var margin = { top: 20, right: 20, bottom: 30, left: 40 };
 
@@ -12,11 +13,12 @@ function BarChart(dataForBars) {
     var y = d3.scaleLinear().range([innerHeight, 0]);
 
     this.draw = function () {
-        draw();
+        //draw();
+        draw(htmlElementIdForDrawing);
     };
 
     function draw() {
-        svg = d3.select("#statsbox").append("svg")
+        svg = d3.select("#"+htmlElementIdForDrawing).append("svg")
             .attr("width", width)
             .attr("height", height)
             .append("g")
@@ -169,7 +171,7 @@ function HorizontalBarChart(dataForBars, elementName) {
     }
 
     function getStatementText(d) {
-        var statement = (statements[d.attribute][d.index]).replace(/<\/?code\>/g, "'");
+        var statement = (statements[d.attribute][d.index]).replace(/<\/?code\>/g, "'").replace(/&quot;/g, "'");
         return (Math.round(d.percentage * 100)) + " %: " + d.attribute + ": " + statement;
     }
 }
@@ -286,7 +288,7 @@ function XYBarChart(dataForBars, elementName) {
             .attr("y2", y(0.5))
             .style("stroke", "black")
             .style("stroke-dasharray", "5,5");
-        debuglog("draw line");
+        //debuglog("draw line");
     }
 }
 
@@ -317,11 +319,11 @@ function loadCountPerResultType() {
     var dataForBars;
     $.when(
         $.get("./php/loadCountPerResultType.php", function (data, status) {
-            debuglog("loadCountPerResultType - status: " + status + ", data: " + data);
+            debuglog("loadCountPerResultType - status: " + status + ", data: " + JSON.stringify(data));
             dataForBars = data;
         })
     ).then(function () {
-        var barChart = new BarChart(dataForBars);
+        var barChart = new BarChart(dataForBars, "statsbox");
         barChart.draw();
     });
 }
@@ -330,7 +332,7 @@ function loadTopsAndFlops() {
     var dataForTopsAndFlopsBars;
     $.when(
         $.get("./php/loadTopAndFlopStatements.php", function (data, status) {
-            debuglog("loadTopAndFlopStatements - status: " + status + ", data: " + data);
+            debuglog("loadTopAndFlopStatements - status: " + status + ", data: " + JSON.stringify(data));
             dataForTopsAndFlopsBars = data;
         })
     ).then(function () {
@@ -343,12 +345,26 @@ function loadDimensionsByExperience() {
     var dataDimsByExp;
     $.when(
         $.get("./php/loadDimensionsByExperience.php", function (data, status) {
-            debuglog("loadDimensionsByExperience - status: " + status + ", data: " + data);
+            debuglog("loadDimensionsByExperience - status: " + status + ", data: " + JSON.stringify(data));
             dataDimsByExp = data;
         })
     ).then(function () {
         var xyChart = new XYBarChart(dataDimsByExp, "dimensionsexpbox");
         xyChart.draw();
+    });
+}
+
+function loadTopDimensionsByRole(roleNameVal) {
+    var dataForBars;
+    //var roleNameVal = "Architect";
+    $.when(
+        $.get("./php/loadTopDimensionsByRole.php", { rolename: roleNameVal }, function (data, status) {
+            debuglog("loadTopDimensionsByRole - status: " + status + ", data: " + JSON.stringify(data));
+            dataForBars = data;
+        })
+    ).then(function () {
+        var barChart = new BarChart(dataForBars, "top4dimensionsgraph");
+        barChart.draw();
     });
 }
 
@@ -360,6 +376,15 @@ $(document).ready(function () {
     loadTopsAndFlops();
 
     loadDimensionsByExperience();
+
+    loadTopDimensionsByRole("Architect");
+    $("#rolename").change(function() {
+        // remove old one
+        $("#top4dimensionsgraph").children().remove();
+        // create new one
+        var rolename = $("#rolename").val();
+        loadTopDimensionsByRole(rolename);
+    });
 
     /*
     var dataForBars =[{"index":1,"percentage":0.05},{"index":2,"percentage":0.12},{"index":3,"percentage":0.01},{"index":4,"percentage":0.08},{"index":5,"percentage":0.04},{"index":6,"percentage":0.43},{"index":7,"percentage":0.23}];
