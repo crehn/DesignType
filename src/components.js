@@ -70,7 +70,7 @@ class DtNavigation extends CustomHtmlElement {
 window.customElements.define('dt-nav', DtNavigation);
 
 
-class DtImage extends CustomHtmlElement {
+class DtImageLightbox extends CustomHtmlElement {
     html() {
         return /*html*/`
         <style>
@@ -78,11 +78,7 @@ class DtImage extends CustomHtmlElement {
                 cursor:pointer;
             }
         </style>
-        <a class="pop">
-            <img src="" class="col-md-12" alt="" />
-        </a>
-        
-        <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" data-dismiss="modal">
                 <div class="modal-content">
                     <div class="modal-body">
@@ -99,14 +95,14 @@ class DtImage extends CustomHtmlElement {
     }
 
     init() {
-        $(this).find('img').attr('src', this.getAttribute('src'));
-        $(this).find('.pop').on('click', () => {
-            $(this).find('.imagepreview').attr('src', this.getAttribute('src'));
+        $('.pop').on('click', (event) => {
+            debuglog(event.target);
+            $(this).find('.imagepreview').attr('src', $(event.target).attr('src'));
             $(this).find('.modal').modal('show');
         });
     }
 }
-window.customElements.define('dt-img', DtImage);
+window.customElements.define('dt-img-lightbox', DtImageLightbox);
 
 
 class DtComments extends CustomHtmlElement {
