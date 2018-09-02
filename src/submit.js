@@ -37,8 +37,6 @@ function storeData() {
         methodology: $("#methodology").val(),
         companySize: $("#companySize").val(),
         industrySector: $("#industrySector").val(),
-        latitude: "2",
-        longitude: "2",
         simple1: localStorage["you.stmt_simple0"],
         simple2: localStorage["you.stmt_simple1"],
         simple3: localStorage["you.stmt_simple2"],

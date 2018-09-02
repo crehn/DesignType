@@ -60,9 +60,9 @@ function insertResultType($mysqli, $ukey) {
     try {
         $tablenameRT = DB_TABLEPREFIX . "ResultType";
         $insertStatement = "INSERT INTO $tablenameRT (USERKEY, DESIGN_TYPE, GENDER, AGE, PROF_YEARS, EDU_LEVEL, 
-            EDU_BACKGROUND, ROLE, PROG_LANG, METHODOLOGY, LATITUDE, LONGITUDE, 
+            EDU_BACKGROUND, ROLE, PROG_LANG, METHODOLOGY, 
             COMPANY_SIZE, INDUSTRY_SECTOR) 
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $log->debug($insertStatement);
         if (!($stmt = $mysqli->prepare($insertStatement))) {
             error500("Prepare for insert failed: ({$mysqli->errno}) {$mysqli->error}");
@@ -79,16 +79,14 @@ function insertResultType($mysqli, $ukey) {
         $methodology = getHttpPostData('methodology');
         $companySize = getHttpPostData('companySize');
         $industrySector = getHttpPostData('industrySector');
-        $latitude = getHttpPostData('latitude');
-        $longitude = getHttpPostData('longitude');
-
+        
         $log->info("ukey=$ukey, designType=$designType, gender=$gender, age=$age, professionalYears=$professionalYears, "
              . "educationLevel=$educationLevel, educationBackground=$educationBackground, role=$role, "
              . "programmingLanguage=$programmingLanguage, methodology=$methodology, companySize=$companySize, "
-             . "industrySector=$industrySector, latitude=$latitude, longitude=$longitude");
-        if (!$stmt->bind_param("ssssssssssddss", 
+             . "industrySector=$industrySector");
+        if (!$stmt->bind_param("ssssssssssss", 
             $ukey, $designType, $gender, $age, $professionalYears, $educationLevel, $educationBackground, $role, 
-            $programmingLanguage, $methodology, $latitude, $longitude, $companySize, $industrySector)) {
+            $programmingLanguage, $methodology, $companySize, $industrySector)) {
             error500("Binding parameters failed: ({$mysqli->errno}) {$mysqli->error}");
         }
 
