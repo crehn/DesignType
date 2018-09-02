@@ -136,7 +136,7 @@ function Types() {
 
     function buildTypes() {
         var result = {};
-        for (i = 0; i < 16; i++) {
+        for (var i = 0; i < 16; i++) {
             result[i] = indexToType(i);
             debuglog("built type number " + i + ": " + result[i].abbreviation());
         }

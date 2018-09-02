@@ -321,7 +321,7 @@ function TypesBarChart(dataForBars, resultType) {
     };
 
     function draw() {
-        svg = d3.select("#statsbox").append("svg")
+        var svg = d3.select("#statsbox").append("svg")
             .attr("width", width)
             .attr("height", height)
             .append("g")
