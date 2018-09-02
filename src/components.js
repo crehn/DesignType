@@ -15,6 +15,9 @@ class DtNavigation extends CustomHtmlElement {
     html() {
         return /*html*/`
         <style>
+            dt-nav .last-item-in-group {
+                border-bottom: 1px solid silver;
+            }
         </style>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark" role="navigation">
         <div class="container">
@@ -30,8 +33,10 @@ class DtNavigation extends CustomHtmlElement {
                             aria-expanded="false">Design Types</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown01">
                             <a class="dropdown-item" href="design_types.html">Concepts</a>
+                            <a class="dropdown-item" href="dimensions.html">Dimensions</a>
+                            <a class="dropdown-item last-item-in-group" href="types.html">Types</a>
                             <a class="dropdown-item" href="test_yourself.html">Test Yourself</a>
-                            <a class="dropdown-item" href="assess_colleagues.html?revealed">Assess Colleagues</a>
+                            <a class="dropdown-item last-item-in-group" href="assess_colleagues.html?revealed">Assess Colleagues</a>
                             <a class="dropdown-item" href="statistics.html">Statistics</a>
                         </div>
                     </li>
