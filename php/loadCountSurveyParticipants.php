@@ -24,7 +24,7 @@ function loadCountOfSurveyParticipants() {
 function getTotalNumberOfSurveyParticipants($mysqli) {
     global $log;
     try {
-        $tablename = DB_TABLEPREFIX . "ChoosenStatements";
+        $tablename = DB_TABLEPREFIX . "ChosenStatements";
         $query = "SELECT COUNT(*) FROM " . $tablename;
         $log->debug($query);
         $result = $mysqli->query($query);

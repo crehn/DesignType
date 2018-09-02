@@ -29,7 +29,7 @@ function loadTopAndFlopStatements() {
 function getTotalCount($mysqli) {
     global $log;
     try {
-        $tablename = DB_TABLEPREFIX . "ChoosenStatements";
+        $tablename = DB_TABLEPREFIX . "ChosenStatements";
         $query = "SELECT COUNT(*) FROM $tablename";
         $log->debug($query);
         $result = $mysqli->query($query);
@@ -45,7 +45,7 @@ function getTotalCount($mysqli) {
 function getCountByStatement($mysqli) {
     global $log;
     try {
-        $tablename = DB_TABLEPREFIX . "ChoosenStatements";
+        $tablename = DB_TABLEPREFIX . "ChosenStatements";
         $query = "SELECT 
             SUM(SIMPLE_1) as S1, SUM(SIMPLE_2) as S2, SUM(SIMPLE_3) as S3, SUM(SIMPLE_4) as S4, SUM(SIMPLE_5) as S5, SUM(SIMPLE_6) as S6,
             SUM(POWERFUL_1) as P1, SUM(POWERFUL_2) as P2, SUM(POWERFUL_3) as P3, SUM(POWERFUL_4) as P4, SUM(POWERFUL_5) as P5, SUM(POWERFUL_6) as P6,

@@ -10,7 +10,7 @@ if (DEBUG) {
 
 function executeSelect($mysqli, $ukey) {
     global $log;
-    $tablenameCS = DB_TABLEPREFIX . "ChoosenStatements";
+    $tablenameCS = DB_TABLEPREFIX . "ChosenStatements";
     $tablenameRT = DB_TABLEPREFIX . "ResultType";
     $query = "SELECT 
         (SIMPLE_1 + SIMPLE_2 + SIMPLE_3 + SIMPLE_4 + SIMPLE_5 + SIMPLE_6) as sum_simple,

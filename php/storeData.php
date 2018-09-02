@@ -107,7 +107,7 @@ function insertResultType($mysqli, $ukey) {
 function insertChosenStatements($mysqli, $resultTypeFk) {
     global $log;
     try {
-        $tablenameCS = DB_TABLEPREFIX . "ChoosenStatements"; //TODO: correct typo in table name
+        $tablenameCS = DB_TABLEPREFIX . "ChosenStatements";
 
         //TODO: consider a separate table for the statements; that way there could be additional data for the statements; furthermore there wouldn't be that many cols
         $insertStatement = "INSERT INTO $tablenameCS (SIMPLE_1, SIMPLE_2, SIMPLE_3, SIMPLE_4, SIMPLE_5, SIMPLE_6,
