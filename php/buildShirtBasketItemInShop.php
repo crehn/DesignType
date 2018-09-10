@@ -17,27 +17,47 @@ const PATH_SHIRTDESIGN_XML = "./shirtconfig/shirtdesign.xml";
 const PATH_PRODUCTCONFIG_XML = "./shirtconfig/productconfig.xml";
 const PATH_BASKET_XML = "./shirtconfig/basket.xml";
 const PATH_BASKETITEM_XML = "./shirtconfig/basketitem.xml";
-const PRODUCT_TYPE_ID = "6"; // 6=Men's T-Shirt; 812=Men’s Premium T-Shirt; 813=Women’s Premium T-Shirt; 631=Women's T-Shirt
 const PRINT_TYPE_ID = "2"; // 14=Flex Print (smooth); 17=Digital-direct printing
 const PRINT_COLOR_IDs = "13,20";
 const PRODUCT_TYPE_APPEARANCE_ID = "2"; // 1
-const PRODUCT_TYPE_PRINT_AREA_ID = "4";
+const PRODUCT_TYPE_PRINT_AREA_ID_MALE = "4";
+const PRODUCT_TYPE_PRINT_AREA_ID_FEMALE = "1280";
+const PRODUCT_TYPE_ID_MALE = "6";
+const PRODUCT_TYPE_ID_FEMALE = "631";
+const GENDER_MALE = "male";
+const GENDER_FEMALE = "female";
 
-    
+
 function buildShirt() {
     global $log;
-    
+
     $ukey = getHttpPostData('ukey');
     $shirtsize = getHttpPostData('shirt_size');
     $shirtcolor = getHttpPostData('shirt_color');
+    $shirtgender = getHttpPostData('shirt_gender');
     //$shipcountry = getHttpPostData('ship_country');
+    $log->debug("shirt order for ukey: " . $ukey . "; size: " . $shirtsize . "; color: " . $shirtcolor . "; gender: " . $shirtgender);
+    // 6=Men's T-Shirt; 812=Men’s Premium T-Shirt; 813=Women’s Premium T-Shirt; 631=Women's T-Shirt
+    $product_type_id = PRODUCT_TYPE_ID_MALE;
+    if ($shirtgender == GENDER_FEMALE) {
+        $product_type_id = PRODUCT_TYPE_ID_FEMALE;
+        $log->debug("shirt order is for female - reconfigure to product type with id: " . $product_type_id);
+    }
+
+    // just for test purposes (e.g. using postman) to create an valid api key
+    if (DEBUG) {
+        $testurl = "https://api.spreadshirt.net/api/v1/shops/1111559/productTypes/631";
+        $testapikey = createSprdAuthHeader("GET", $testurl);
+        $log->debug("api key for url: " . $testurl . "\n is: " . $testapikey);
+    }
+
     $log->debug("create shirt image for ukey: " . $ukey);
 
     // build the shirt design
     $designId = buildShirtDesign($ukey);
 
     // build the product
-    $product = buildIndividualShirtProduct($designId);
+    $product = buildIndividualShirtProduct($designId, $product_type_id);
 
     // build the basket with item and return checkout link
     $checkoutUrl = buildBasket($product, $shirtsize, $shirtcolor);
@@ -103,7 +123,7 @@ function buildShirtDesign($nameResultImg) {
 }
 
  
-function buildIndividualShirtProduct($designId) {
+function buildIndividualShirtProduct($designId, $product_type_id) {
     global $log;
     
     $log->debug("#buildIndividualShirtProduct: Step 1: get product type data");
@@ -111,7 +131,7 @@ function buildIndividualShirtProduct($designId) {
     $shop = getShop();
     $namespaces = $shop->getNamespaces(true);
     $attributes = $shop->productTypes->attributes($namespaces['xlink']);
-    $productTypeUrl = $attributes->href . "/" . PRODUCT_TYPE_ID;
+    $productTypeUrl = $attributes->href . "/" . $product_type_id;
     $log->info("#buildIndividualShirtProduct: Step 1: url of product type: " . $productTypeUrl);
 
     // do the HTTP call
@@ -140,13 +160,28 @@ function buildIndividualShirtProduct($designId) {
     // get positioning data for selected product type
     $printArea = null;
     foreach ($productType->printAreas->printArea as $current) {
-        if ($current['id'] == PRODUCT_TYPE_PRINT_AREA_ID) {
+        //$log->debug("current print area: " . var_dump($current));
+        if ($current['id'] == PRODUCT_TYPE_PRINT_AREA_ID_MALE) {
             $printArea = $current;
-            $log->debug("#buildIndividualShirtProduct: Step 3: found print area with id: " . PRODUCT_TYPE_PRINT_AREA_ID);
+            $log->debug("#buildIndividualShirtProduct: Step 3: found print area for male shirts with id: " . PRODUCT_TYPE_PRINT_AREA_ID_MALE);
+            break;
+        }
+        if ($current['id'] == PRODUCT_TYPE_PRINT_AREA_ID_FEMALE) {
+            $printArea = $current;
+            $log->debug("#buildIndividualShirtProduct: Step 3: found print area for female shirts with id: " . PRODUCT_TYPE_PRINT_AREA_ID_FEMALE);
+            break;
         }
     }
  
     $product = new SimpleXMLElement(getFileData(PATH_PRODUCTCONFIG_XML));
+    // set product type id
+    $product->productType['id'] = $product_type_id;
+    // set printArea
+    $product->configurations->configuration[0]->printArea['id'] = $printArea['id'];
+    // set female offset
+    if ($product_type_id == PRODUCT_TYPE_ID_FEMALE) {
+        $product->configurations->configuration[0]->offset->x = "50.0";
+    }
     // set right design id
     $imageElement = $product->configurations->configuration[0]->content->svg->image;
     //$log->debug("#buildIndividualShirtProduct: Step 3: image element within xml: " . $imageElement->asXML());

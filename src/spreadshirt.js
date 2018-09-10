@@ -1,9 +1,10 @@
 // 1=white, 2=black, 5=red, 4=navy, 17=royalblue, 231=heather grey, 120=brown, 88=grass green, 85=aqua, 
 // 129=asphalt 464=forest green, 146=light blue, 99=pink, 130=army, 114=lemon, 135=gold, 143=raspberry, 
-// 121=grey, 277=purple, 15=lime, 219, deep mint
+// 121=grey, 277=purple, 15=lime, 219, deep mint gibt es nicht mehr
 var shirtColor = 4;
 // 2=S, 3=M, 4=L, 5=XL, 6=XXL, 38=3XL
 var shirtSize = 4;
+var male = true;
 var country = 1;
 
 function changeShirtSize(newSize) {
@@ -18,10 +19,22 @@ function activateShirtSizeBtn(activeElementId) {
 }
 
 function changeShirtColor(newColor) {
-    shirtColor = newColor;
-    debuglog("new shirt color: " + newColor);
+    var colorToSet = 0;
+    // if switch of male to female for royal blue switch color code
+    if (male && newColor == 258) {
+        colorToSet = 17;
+        debuglog("switch color: " + colorToSet);
+    } else if (!male && newColor == 17) {
+        colorToSet = 258;
+        debuglog("switch shirt color: " + colorToSet);
+    } else {
+        colorToSet = newColor;
+    }
+    shirtColor = colorToSet;
+    debuglog("new shirt color: " + colorToSet);
     // change bg color of shirt
-    var newClazz = "shirt_bg shirt_bg_" + newColor;
+    var gender_extension = male ? "" : "_fem";
+    var newClazz = "shirt_bg shirt_bg_" + colorToSet + gender_extension;
     $("#shirt_display").attr('class', newClazz);
 }
 
@@ -56,8 +69,9 @@ function checkoutShirt(userkey) {
     $('#wholebody').css('cursor', 'wait');
     $('#checkout').css('cursor', 'wait');
     var shipCountry = $('#shipping_country').val();
-    debuglog("ship country: " + shipCountry);
-    $.post("./php/buildShirtBasketItemInShop.php", { ukey: userkey, shirt_size: shirtSize, shirt_color: shirtColor, ship_country: shipCountry })
+    var shirtGender = $('#shirt_gender').val();
+    debuglog("ship country: " + shipCountry + "; shirt gender: " + shirtGender);
+    $.post("./php/buildShirtBasketItemInShop.php", { ukey: userkey, shirt_size: shirtSize, shirt_color: shirtColor, ship_country: shipCountry, shirt_gender: shirtGender })
         .done(function (data, status) {
             debuglog("checkoutShirt - status: " + status + "; with url to checkout: " + data['0']);
             // relocate to checkout page
@@ -104,7 +118,7 @@ function initSpreadshirtFunctions(resultType, userkey) {
     });
 
     // shirt color buttons
-    // 1=white, 2=black, 5=red, 4=navy, 17=royalblue, 231=heather grey, 120=brown, 88=grass green, 85=aqua, 
+    // 1=white, 2=black, 5=red, 4=navy, 17=royalblue but 258 for women, 231=heather grey, 120=brown, 88=grass green, 85=aqua,
     // 129=asphalt 464=forest green, 146=light blue, 99=pink, 130=army, 114=lemon, 135=gold, 143=raspberry, 
     // 121=grey, 277=purple, 15=lime, 219, deep mint
     $("#color_white").on('click', function () {
@@ -127,10 +141,6 @@ function initSpreadshirtFunctions(resultType, userkey) {
         changeShirtColor(388);
         activateShirtColorBtn("#color_divablue");
     });
-    $("#color_deepmint").on('click', function () {
-        changeShirtColor(594);
-        activateShirtColorBtn("#color_deepmint");
-    });
     $("#color_kellygreen").on('click', function () {
         changeShirtColor(92);
         activateShirtColorBtn("#color_kellygreen");
@@ -140,9 +150,16 @@ function initSpreadshirtFunctions(resultType, userkey) {
         activateShirtColorBtn("#color_red");
     });
 
+    // gender combobox
+    $("#shirt_gender").change(function () {
+        var curGender = $("#shirt_gender").val();
+        male = (curGender == "male") ? true : false;
+        changeShirtColor(shirtColor); // just redraw with current color
+    });
+
+
     // checkout button
     $("#checkout").on('click', function () {
         checkoutShirt(userkey);
     });
-
 }

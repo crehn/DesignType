@@ -2,31 +2,53 @@
     vertical-align: middle; 
     height: 378px;
     width: 378px;
+    background-repeat: no-repeat;
+    background-size: 378px 378px;
     /*outline: 1px solid;*/
 }
+/* men shirts */
 .shirt_bg_1 {
-    background-image: url("./img/shirt/men_white_1.jpg"), url("./img/shirt/men_white_1.jpg");
+    background-image: url("./img/shirt/men_white_1.png"), url("./img/shirt/men_white_1.png");
 } 
 .shirt_bg_2 {
-    background-image: url("./img/shirt/men_black_2.jpg"), url("./img/shirt/men_black_2.jpg");
+    background-image: url("./img/shirt/men_black_2.png"), url("./img/shirt/men_black_2.png");
 }     
 .shirt_bg_17 {
-    background-image: url("./img/shirt/men_royalblue_17.jpg"), url("./img/shirt/men_royalblue_17.jpg");
+    background-image: url("./img/shirt/men_royalblue_17.png"), url("./img/shirt/men_royalblue_17.png");
 }
 .shirt_bg_4 {
-    background-image: url("./img/shirt/men_navy_4.jpg"), url("./img/shirt/men_navy_4.jpg");
+    background-image: url("./img/shirt/men_navy_4.png"), url("./img/shirt/men_navy_4.png");
 }
 .shirt_bg_388 {
-    background-image: url("./img/shirt/men_divablue_388.jpg"), url("./img/shirt/men_divablue_388.jpg");
-}
-.shirt_bg_594 {
-    background-image: url("./img/shirt/men_deepmint_594.jpg"), url("./img/shirt/men_deepmint_594.jpg");
+    background-image: url("./img/shirt/men_divablue_388.png"), url("./img/shirt/men_divablue_388.png");
 }
 .shirt_bg_92 {
-    background-image: url("./img/shirt/men_kellygreen_92.jpg"), url("./img/shirt/men_kellygreen_92.jpg");
+    background-image: url("./img/shirt/men_kellygreen_92.png"), url("./img/shirt/men_kellygreen_92.png");
 }
 .shirt_bg_5 {
-    background-image: url("./img/shirt/men_red_5.jpg"), url("./img/shirt/men_red_5.jpg");
+    background-image: url("./img/shirt/men_red_5.png"), url("./img/shirt/men_red_5.png");
+}
+/* women shirts */
+.shirt_bg_1_fem {
+    background-image: url("./img/shirt/women_white_1.png"), url("./img/shirt/women_white_1.png");
+}
+.shirt_bg_2_fem {
+    background-image: url("./img/shirt/women_black_2.png"), url("./img/shirt/women_black_2.png");
+}
+.shirt_bg_258_fem {
+    background-image: url("./img/shirt/women_royalblue_258.png"), url("./img/shirt/women_royalblue_258.png");
+}
+.shirt_bg_4_fem {
+    background-image: url("./img/shirt/women_navy_4.png"), url("./img/shirt/women_navy_4.png");
+}
+.shirt_bg_388_fem {
+    background-image: url("./img/shirt/women_divablue_388.png"), url("./img/shirt/women_divablue_388.png");
+}
+.shirt_bg_92_fem {
+    background-image: url("./img/shirt/women_kellygreen_92.png"), url("./img/shirt/women_kellygreen_92.png");
+}
+.shirt_bg_5_fem {
+    background-image: url("./img/shirt/women_red_5.png"), url("./img/shirt/women_red_5.png");
 }
 
 .overlay-img {

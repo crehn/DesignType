@@ -31,7 +31,7 @@
 <!-- 	</size> -->
 	<price>
 		<vatExcluded>1.00</vatExcluded>
-		<vatIncluded>1.00</vatIncluded>
+		<vatIncluded>1.19</vatIncluded>
 		<vat>19.00</vat>
 		<currency xlink:href="http://api.spreadshirt.net/api/v1/currencies/1" id="1" />
 	</price>
