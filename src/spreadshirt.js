@@ -66,6 +66,17 @@ function createShirtImage(resultType, userkey) {
 
 function checkoutShirt(userkey) {
     debuglog("checkoutShirt for: " + userkey);
+    var shipCountry = $('#shipping_country').val();
+    var shirtGender = $('#shirt_gender').val();
+    debuglog("checkout shirt for userkey: " + userkey + "; shirt Size: " + shirtSize + "; shirt color: " + shirtColor + "; ship country: " + shipCountry + "; shirt gender: " + shirtGender);
+
+    var checkOutUrl = "shirt_checkout.html?ukey=" + userkey + "&shirt_size=" + shirtSize + "&shirt_color=" + shirtColor + "&shirt_gender=" + shirtGender + "&ship_country=" + shipCountry;
+    debuglog("call url in new window: " + checkOutUrl);
+    window.open(checkOutUrl, "_blank");
+}
+
+function checkoutShirtOld(userkey) {
+    debuglog("checkoutShirt for: " + userkey);
     $('#wholebody').css('cursor', 'wait');
     $('#checkout').css('cursor', 'wait');
     var shipCountry = $('#shipping_country').val();
@@ -149,11 +160,24 @@ function initSpreadshirtFunctions(resultType, userkey) {
         changeShirtColor(5);
         activateShirtColorBtn("#color_red");
     });
+    $("#color_heathergrey").on('click', function () {
+        changeShirtColor(231);
+        activateShirtColorBtn("#color_heathergrey");
+    });
 
     // gender combobox
     $("#shirt_gender").change(function () {
         var curGender = $("#shirt_gender").val();
         male = (curGender == "male") ? true : false;
+        if (male) {
+           $("#size_3xl").show();
+        } else {
+           $("#size_3xl").hide();
+           if (shirtSize == 38) { // in case 3XL was selected to avoid that nothing is selected
+              changeShirtSize(3);
+              activateShirtSizeBtn("#size_m");
+           }
+        }
         changeShirtColor(shirtColor); // just redraw with current color
     });
 

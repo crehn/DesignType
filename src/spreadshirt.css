@@ -28,6 +28,9 @@
 .shirt_bg_5 {
     background-image: url("./img/shirt/men_red_5.png"), url("./img/shirt/men_red_5.png");
 }
+.shirt_bg_231 {
+    background-image: url("./img/shirt/men_heathergrey_231.png"), url("./img/shirt/men_heathergrey_231.png");
+}
 /* women shirts */
 .shirt_bg_1_fem {
     background-image: url("./img/shirt/women_white_1.png"), url("./img/shirt/women_white_1.png");
@@ -50,11 +53,14 @@
 .shirt_bg_5_fem {
     background-image: url("./img/shirt/women_red_5.png"), url("./img/shirt/women_red_5.png");
 }
+.shirt_bg_231_fem {
+    background-image: url("./img/shirt/women_heathergrey_231.png"), url("./img/shirt/women_heathergrey_231.png");
+}
 
 .overlay-img {
     /*width: 99px;
     height: 143px;*/
-    margin-top: 50px;
+    margin-top: 60px;
     margin-left: 139px; /* 378 / 2 minus 99 / 2 */
 }
 

@@ -372,6 +372,10 @@ h1 .title-extension {
 	color: darkgray;
 }
 
+.supersize-text {
+    font-size: 30pt;
+    font-weight: bold;
+}
 
 /* diagnostic boxes --------------------------------------------------------------*/
 
