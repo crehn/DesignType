@@ -47,6 +47,6 @@ $(document).ready(function(){
         countDown();
     } else {
     	debuglog("important parameters missing - cannot redirect to shirt checkout!");
-    	// TODO: render this message into html as well
+    	$('#countdown').text("Sorry - your shirt parameter are missing. Try again starting at the result page or contact us.");
     }
 });
