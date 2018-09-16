@@ -51,7 +51,6 @@ function initSpreadshirtFunctions(resultType, userkey) {
         changeShirtColor(); // just redraw with current color
     });
 
-    // checkout button
     $("#checkout").on('click', function () {
         redirectToShirtCheckout(userkey);
     });

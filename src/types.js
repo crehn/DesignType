@@ -186,7 +186,7 @@ function Types() {
         }
 
         var permlinkVal = window.location.href;
-        $("#resultString").html("<strong>Result:</strong> Your design type is <strong>" + typesData[type.toLowerCase()].name + " (" + type + ")</strong>. <br/><br/> <p>Permlink: <input type='text' size='75' name='permlink' value='" + permlinkVal + "' readonly></p>");
+        $("#resultString").html("<strong>Result:</strong> Your design type is <strong>" + typesData[type.toLowerCase()].name + " (" + type + ")</strong>. <br/><br/> <p>Permlink: <input type='text' class='permlink' name='permlink' value='" + permlinkVal + "' readonly></p>");
 
         if ($("#" + type.toLowerCase()).visible) {
             $("#types").accordion("option", "active", typeToIndex(type));

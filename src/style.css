@@ -350,6 +350,16 @@ h1 .title-extension {
 
 /* result ------------------------------------------------------------------------*/
 
+.permlink {
+    width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+    .permlink {
+        width: 85%;
+    }
+}
+
 .typeicon {
     margin-bottom: 2em;
 }
