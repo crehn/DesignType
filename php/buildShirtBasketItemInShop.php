@@ -35,7 +35,6 @@ function buildShirt() {
     $shirtsize = getHttpPostData('shirt_size');
     $shirtcolor = getHttpPostData('shirt_color');
     $shirtgender = getHttpPostData('shirt_gender');
-    //$shipcountry = getHttpPostData('ship_country');
     $log->debug("shirt order for ukey: " . $ukey . "; size: " . $shirtsize . "; color: " . $shirtcolor . "; gender: " . $shirtgender);
     // 6=Men's T-Shirt; 812=Men’s Premium T-Shirt; 813=Women’s Premium T-Shirt; 631=Women's T-Shirt
     $product_type_id = PRODUCT_TYPE_ID_MALE;
