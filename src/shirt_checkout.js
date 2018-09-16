@@ -2,9 +2,9 @@ var userKey;
 var shirtSize;
 var shirtColor;
 var shirtGender;
-var timer = 1;
+var timer = 10;
 
-$(document).ready(function() {
+$(document).ready(function () {
     userKey = getHttpParameter("ukey");
     shirtSize = getHttpParameter("shirt_size");
     shirtColor = getHttpParameter("shirt_color");
@@ -37,10 +37,10 @@ function gotoShirtCheckout() {
         shirt_size: shirtSize,
         shirt_color: shirtColor,
         shirt_gender: shirtGender
-    }).done(function(data, status) {
+    }).done(function (data, status) {
         debuglog("checkoutShirt - status: " + status + "; with url to checkout: " + data['0']);
         relocate(data['0']);
-    }).fail(function(err) {
+    }).fail(function (err) {
         debuglog("error creating spreadshirt basket item: " + err.responseText);
         $('#wholebody').css('cursor', 'auto');
     });
