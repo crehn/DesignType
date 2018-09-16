@@ -86,9 +86,8 @@ function changeShirtColor(newColor) {
         shirtColor = getColorCode(newColor);
         debuglog("new shirt color: " + shirtColor);
     }
-    var gender_extension = male ? "" : "_fem";
-    var newClass = "shirt_bg shirt_bg_" + shirtColor + gender_extension;
-    $("#shirt_display").attr('class', newClass);
+    var gender = male ? "men" : "women";
+    $("#shirt_display").attr('style', `background-image:url('./img/shirt/${gender}_${shirtColor}.png');`);
 }
 
 function getColorCode(newColor) {
