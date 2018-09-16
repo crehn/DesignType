@@ -75,28 +75,6 @@ function checkoutShirt(userkey) {
     window.open(checkOutUrl, "_blank");
 }
 
-function checkoutShirtOld(userkey) {
-    debuglog("checkoutShirt for: " + userkey);
-    $('#wholebody').css('cursor', 'wait');
-    $('#checkout').css('cursor', 'wait');
-    var shipCountry = $('#shipping_country').val();
-    var shirtGender = $('#shirt_gender').val();
-    debuglog("ship country: " + shipCountry + "; shirt gender: " + shirtGender);
-    $.post("./php/buildShirtBasketItemInShop.php", { ukey: userkey, shirt_size: shirtSize, shirt_color: shirtColor, ship_country: shipCountry, shirt_gender: shirtGender })
-        .done(function (data, status) {
-            debuglog("checkoutShirt - status: " + status + "; with url to checkout: " + data['0']);
-            // relocate to checkout page
-            $(location).attr('href', data['0']);
-            //window.open(data['0'], '_blank');
-            //return false;
-        })
-        .fail(function (err) {
-            debuglog("error creating spreadshirt basket item: " + err.responseText);
-            $('#wholebody').css('cursor', 'auto');
-            $('#checkout').css('cursor', 'auto');
-        });
-}
-
 function initSpreadshirtFunctions(resultType, userkey) {
     // build result image for spread shirt
     createShirtImage(resultType, userkey);
