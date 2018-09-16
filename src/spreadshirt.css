@@ -4,57 +4,60 @@
     width: 378px;
     background-repeat: no-repeat;
     background-size: 378px 378px;
-    /*outline: 1px solid;*/
 }
+
+
 /* men shirts */
 .shirt_bg_1 {
-    background-image: url("./img/shirt/men_white_1.png"), url("./img/shirt/men_white_1.png");
+    background-image: url("./img/shirt/men_white_1.png");
 } 
 .shirt_bg_2 {
-    background-image: url("./img/shirt/men_black_2.png"), url("./img/shirt/men_black_2.png");
+    background-image: url("./img/shirt/men_black_2.png");
 }     
 .shirt_bg_17 {
-    background-image: url("./img/shirt/men_royalblue_17.png"), url("./img/shirt/men_royalblue_17.png");
+    background-image: url("./img/shirt/men_royalblue_17.png");
 }
 .shirt_bg_4 {
-    background-image: url("./img/shirt/men_navy_4.png"), url("./img/shirt/men_navy_4.png");
+    background-image: url("./img/shirt/men_navy_4.png");
 }
 .shirt_bg_388 {
-    background-image: url("./img/shirt/men_divablue_388.png"), url("./img/shirt/men_divablue_388.png");
+    background-image: url("./img/shirt/men_divablue_388.png");
 }
 .shirt_bg_92 {
-    background-image: url("./img/shirt/men_kellygreen_92.png"), url("./img/shirt/men_kellygreen_92.png");
+    background-image: url("./img/shirt/men_kellygreen_92.png");
 }
 .shirt_bg_5 {
-    background-image: url("./img/shirt/men_red_5.png"), url("./img/shirt/men_red_5.png");
+    background-image: url("./img/shirt/men_red_5.png");
 }
 .shirt_bg_231 {
-    background-image: url("./img/shirt/men_heathergrey_231.png"), url("./img/shirt/men_heathergrey_231.png");
+    background-image: url("./img/shirt/men_heathergrey_231.png");
 }
+
+
 /* women shirts */
 .shirt_bg_1_fem {
-    background-image: url("./img/shirt/women_white_1.png"), url("./img/shirt/women_white_1.png");
+    background-image: url("./img/shirt/women_white_1.png");
 }
 .shirt_bg_2_fem {
-    background-image: url("./img/shirt/women_black_2.png"), url("./img/shirt/women_black_2.png");
+    background-image: url("./img/shirt/women_black_2.png");
 }
 .shirt_bg_258_fem {
-    background-image: url("./img/shirt/women_royalblue_258.png"), url("./img/shirt/women_royalblue_258.png");
+    background-image: url("./img/shirt/women_royalblue_258.png");
 }
 .shirt_bg_4_fem {
-    background-image: url("./img/shirt/women_navy_4.png"), url("./img/shirt/women_navy_4.png");
+    background-image: url("./img/shirt/women_navy_4.png");
 }
 .shirt_bg_388_fem {
-    background-image: url("./img/shirt/women_divablue_388.png"), url("./img/shirt/women_divablue_388.png");
+    background-image: url("./img/shirt/women_divablue_388.png");
 }
 .shirt_bg_92_fem {
-    background-image: url("./img/shirt/women_kellygreen_92.png"), url("./img/shirt/women_kellygreen_92.png");
+    background-image: url("./img/shirt/women_kellygreen_92.png");
 }
 .shirt_bg_5_fem {
-    background-image: url("./img/shirt/women_red_5.png"), url("./img/shirt/women_red_5.png");
+    background-image: url("./img/shirt/women_red_5.png");
 }
 .shirt_bg_231_fem {
-    background-image: url("./img/shirt/women_heathergrey_231.png"), url("./img/shirt/women_heathergrey_231.png");
+    background-image: url("./img/shirt/women_heathergrey_231.png");
 }
 
 .overlay-img {
@@ -64,104 +67,39 @@
     margin-left: 139px; /* 378 / 2 minus 99 / 2 */
 }
 
-#choose-product-color img {
-    max-width: 100%;
-    width: auto;
-    height: auto;
-    vertical-align: middle;
-    border: 0;
-    -ms-interpolation-mode: bicubic;
-}
-
-small, .small {
-    font-size: 85%;
-}
-
-.btn_checkout {
-    margin-top: 5px;
-    /*border: 1px solid transparent*/ /*does not work, seems that it does not overwrite .btn*/
-}
-    
-.btn {
+.shirt-config {
     display: inline-block;
-    *display: inline;
-    *zoom: 1;
-    font-weight: bold;
-    padding: 6px 22px 6px;
-    margin-bottom: 0;
-    font-size: 14px;
-    line-height: 20px;
-    *line-height: 20px;
-    text-align: center;
-    vertical-align: middle;
     cursor: pointer;
-    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
-    /*
-    color: #333;
-    background-color: #f2f2f2;
-    background-image: -moz-linear-gradient(top, #fafafa, #e6e6e6);
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fafafa),
-        to(#e6e6e6) );
-    background-image: -webkit-linear-gradient(top, #fafafa, #e6e6e6);
-    background-image: -o-linear-gradient(top, #fafafa, #e6e6e6);
-    background-image: linear-gradient(to bottom, #fafafa, #e6e6e6);
-    */
-    background-repeat: repeat-x;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff9f9f9',
-        endColorstr='#ffe5e5e5', GradientType=0 );
-    border: 1px solid #ccc;
-    /*
-    border-color: #e6e6e6 #e6e6e6 #bfbfbf;
-    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-    */
-    *background-color: #e6e6e6;
-    filter: progid:DXImageTransform.Microsoft.gradient(enabled=  false );
-    *border: 0;
-    border-bottom-color: #b3b3b3;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    border-radius: 2px;
-    *margin-left: .3em;
+
+    margin: 5px;
+    border: 1px solid #757575;
+    background: white;
+    padding: 3px;
+    font-size: 14px;
+    text-align: center;
 }
 
-.container-box .btn-clr-select {
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    border-radius: 2px;
+.shirt-config-color {
     height: 29px;
     width: 29px;
     padding: 0;
+    vertical-align: middle;
 }
 
-.btn-rect {
-    padding: 3px;
-    font-size: 12px;
-    line-height: 20px;
+.shirt-config-color img {
+    width: 100%;
+    height: 100%;
+    vertical-align: top;
 }
 
-.container-box .btn-clr-select,.container-box .btn-size-select {
-    margin: 5px 10px 10px 0;
-    transition: all .3s;
-    background: #fff;
-    -webkit-transition: all .01s ease;
-    -moz-transition: all .01s ease;
-    -o-transition: all .01s ease;
-    transition: all .01s ease;
-    border-radius: 0;
-    text-shadow: none;
-}
-
-.container-box .btn-size-select {
-    font-weight: normal;
-    display: inline-block;
+.shirt-config-size {
     width: 34px;
-    margin: 5px 10px 10px 0;
 }
 
-.btn-size-active {
+.shirt-config-active {
     border: 3px solid #1ed0c3;   
 }
 
-.btn-clr-select-active {
-    border: 3px solid #1ed0c3;    
+#checkout_area {
+    margin-top: 5px;
 }

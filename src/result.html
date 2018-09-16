@@ -143,7 +143,7 @@
                     </div>
                 </section>
                 <section>
-                    <h1>Print your individual shirt!*</h1>
+                    <h1>Print your Individual Shirt!*</h1>
                     <div class="row container-box">
                         <div class="col-sm-6">
                             <p>Print a shirt using your individual result.</p>
@@ -152,60 +152,62 @@
                             </div>
                         </div>
                         <div class="col-sm-6">
-                            <p>Choose color and size and press checkout<br>(shirt is normally below 20 &euro;).</p>
-                            <div id="choose-product-color" class="loaded">
-                                <div id="color_white" class="btn btn-rect btn-clr-select color-img">
-                                    <img src="img/shirt/choice_color_white.jpg" alt="white" title="white" class="small">
+                            <p>Choose color and size and press checkout (shirt is normally below 20 &euro;).</p>
+                            <div id="choose-product-color">
+                                <div class="shirt-config shirt-config-color" data-color="WHITE">
+                                    <img src="img/shirt/choice_color_white.jpg" alt="white" title="white">
                                 </div>
-                                <div id="color_black" class="btn btn-rect btn-clr-select color-img">
-                                    <img src="img/shirt/choice_color_black.jpg" alt="black" title="black" class="small">
+                                <div class="shirt-config shirt-config-color" data-color="HEATHER_GREY">
+                                    <img src="img/shirt/choice_color_heathergrey.jpg" alt="heather grey" title="heather grey">
                                 </div>
-                                <div id="color_royalblue" class="btn btn-rect btn-clr-select color-img">
-                                    <img src="img/shirt/choice_color_royalblue.jpg" alt="royal blue" title="royal blue" class="small">
+                                <div class="shirt-config shirt-config-color" data-color="BLACK">
+                                    <img src="img/shirt/choice_color_black.jpg" alt="black" title="black">
                                 </div>
-                                <div id="color_navy" class="btn btn-rect btn-clr-select color-img btn-clr-select-active">
-                                    <img src="img/shirt/choice_color_navy.jpg" alt="navy" title="navy" class="small">
+                                <div class="shirt-config shirt-config-color" data-color="ROYAL_BLUE">
+                                    <img src="img/shirt/choice_color_royalblue.jpg" alt="royal blue" title="royal blue">
                                 </div>
-                                <div id="color_divablue" class="btn btn-rect btn-clr-select color-img">
-                                    <img src="img/shirt/choice_color_divablue.jpg" alt="diva blue" title="diva blue" class="small">
+                                <div class="shirt-config shirt-config-color shirt-config-active" data-color="NAVY">
+                                    <img src="img/shirt/choice_color_navy.jpg" alt="navy" title="navy">
                                 </div>
-                                <div id="color_kellygreen" class="btn btn-rect btn-clr-select color-img">
-                                    <img src="img/shirt/choice_color_kellygreen.jpg" alt="kelly green" title="kelly green" class="small">
+                                <div class="shirt-config shirt-config-color" data-color="DIVA_BLUE">
+                                    <img src="img/shirt/choice_color_divablue.jpg" alt="diva blue" title="diva blue">
                                 </div>
-                                <div id="color_red" class="btn btn-rect btn-clr-select color-img">
-                                    <img src="img/shirt/choice_color_red.jpg" alt="red" title="red" class="small">
+                                <div class="shirt-config shirt-config-color" data-color="KELLY_GREEN">
+                                    <img src="img/shirt/choice_color_kellygreen.jpg" alt="kelly green" title="kelly green">
                                 </div>
-                                <div id="color_heathergrey" class="btn btn-rect btn-clr-select color-img">
-                                    <img src="img/shirt/choice_color_heathergrey.jpg" alt="heathergrey" title="heathergrey" class="small">
+                                <div class="shirt-config shirt-config-color" data-color="RED">
+                                    <img src="img/shirt/choice_color_red.jpg" alt="red" title="red">
                                 </div>
                             </div>
-                            <div id="choose-product-size" class="span6 loaded">
+                            <div id="choose-product-size">
                                 <div class="sizes-wrapper relative">
                                     <div class="overlay-partial-above left horizontal">
                                         <div>
-                                            <div id="size_s" class="btn btn-rect btn-size-select">S</div>
-                                            <div id="size_m" class="btn btn-rect btn-size-select">M</div>
-                                            <div id="size_l" class="btn btn-rect btn-size-select btn-size-active">L</div>
-                                            <div id="size_xl" class="btn btn-rect btn-size-select">XL</div>
-                                            <div id="size_xxl" class="btn btn-rect btn-size-select">XXL</div>
-                                            <div id="size_3xl" class="btn btn-rect btn-size-select">3XL</div>
+                                            <div id="size_s" class="shirt-config shirt-config-size" data-size="S">S</div>
+                                            <div id="size_m" class="shirt-config shirt-config-size" data-size="M">M</div>
+                                            <div id="size_l" class="shirt-config shirt-config-size shirt-config-active" data-size="L">L</div>
+                                            <div id="size_xl" class="shirt-config shirt-config-size" data-size="XL">XL</div>
+                                            <div id="size_xxl" class="shirt-config shirt-config-size" data-size="XXL">XXL</div>
+                                            <div id="size_3xl" class="shirt-config shirt-config-size" data-size="XXXL">3XL</div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div id="choose-gender" class="span6 loaded">
-                                <select id="shirt_gender" name="shirt_gender" size="1">
+                            <div id="choose-gender">
+                                <select class="shirt-config-gender" name="shirt_gender" size="1">
                                     <option value="male" selected>male</option>
                                     <option value="female">female</option>
                                 </select>
                             </div>
-                            <div id="checkout_area" class="loaded">
-                                <input id="checkout" value="Checkout" class="btn btn-lg btn-primary btn_checkout" type="button">
+                            <div id="checkout_area">
+                                <input id="checkout" value="Checkout" class="btn btn-primary" type="button">
                             </div>
-                            <p class="spreadshirt_disclaimer">* Shirts are provided by
-                                <a href="https://www.spreadshirt.de">Spreadshirt</a> (sprd.net AG). If you order a shirt
+                            <p class="spreadshirt_disclaimer">
+                                * Shirts are provided by
+                                <a href="https://www.spreadshirt.de">Spreadshirt</a> (sprd.net AG). If you order a shirt,
                                 this company will be in charge of fulfilling your request. There will be no contract with
-                                design-types.net nor any warranty (we even do not draw any commission).</p>
+                                design-types.net nor any warranty (we even do not draw any commission).
+                            </p>
                         </div>
                     </div>
                 </section>

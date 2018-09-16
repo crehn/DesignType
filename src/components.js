@@ -16,7 +16,7 @@ class DtNavigation extends CustomHtmlElement {
         return /*html*/`
         <style>
             dt-nav .last-item-in-group {
-                border-bottom: 1px solid silver;
+                border-bottom: 1px solid #757575;
             }
         </style>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark" role="navigation">
@@ -354,7 +354,7 @@ class DtFooter extends CustomHtmlElement {
         <style>
             footer {
                 margin: 0 -15px;
-                border-top: 1px solid silver; 
+                border-top: 1px solid #757575; 
                 padding-bottom: 2em;
                 text-align: center;
                 color: #757575;

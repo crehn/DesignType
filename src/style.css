@@ -241,7 +241,7 @@ h1 .title-extension {
 }
 
 .dimension.bordered {
-    border: 1px solid gray;
+    border: 1px solid #757575;
 }
 
 .dimension.bordered.complete {
@@ -369,7 +369,7 @@ h1 .title-extension {
 .spreadshirt_disclaimer {
 	margin-top: 10px;
 	font-size: 0.8em;
-	color: darkgray;
+	color: #757575;
 }
 
 .supersize-text {
