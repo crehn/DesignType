@@ -202,6 +202,9 @@ h1 .title-extension {
     color: #757575;
 }
 
+.load-news {
+    cursor: pointer;
+}
 
 /* countdown ----------------------------------------------------------------------*/
 
