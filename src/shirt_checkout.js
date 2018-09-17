@@ -42,7 +42,7 @@ function gotoShirtCheckout() {
         relocate(data['0']);
     }).fail(function (err) {
         debuglog("error creating spreadshirt basket item: " + err.responseText);
-        $('#wholebody').css('cursor', 'auto');
+        $('body').css('cursor', 'auto');
     });
 }
 
