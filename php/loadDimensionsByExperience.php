@@ -35,10 +35,10 @@ function loadValues($mysqli) {
                   when '36-45' then 'over_25'
                   when 'over_45' then 'over_25'
                   else PROF_YEARS
-               end as experience, count(PROF_YEARS) as simple
+               end as experience, count(1) as simple
                from $tablename
                where DESIGN_TYPE like 'S___'
-               group by PROF_YEARS)
+               group by experience)
             as simple
           join
             (select
@@ -47,10 +47,10 @@ function loadValues($mysqli) {
                   when '36-45' then 'over_25'
                   when 'over_45' then 'over_25'
                   else PROF_YEARS
-               end as experience, count(PROF_YEARS) as powerful
+               end as experience, count(1) as powerful
                from $tablename
                where DESIGN_TYPE like 'P___'
-               group by PROF_YEARS)
+               group by experience)
             as powerful
           on simple.experience = powerful.experience
           join
@@ -60,10 +60,10 @@ function loadValues($mysqli) {
                   when '36-45' then 'over_25'
                   when 'over_45' then 'over_25'
                   else PROF_YEARS
-               end as experience, count(PROF_YEARS) as abstract
+               end as experience, count(1) as abstract
                from $tablename
                where DESIGN_TYPE like '_A__'
-               group by PROF_YEARS)
+               group by experience)
             as abstract
           on simple.experience = abstract.experience
           join
@@ -73,10 +73,10 @@ function loadValues($mysqli) {
                   when '36-45' then 'over_25'
                   when 'over_45' then 'over_25'
                   else PROF_YEARS
-               end as experience, count(PROF_YEARS) as concrete
+               end as experience, count(1) as concrete
                from $tablename
                where DESIGN_TYPE like '_C__'
-               group by PROF_YEARS)
+               group by experience)
             as concrete
           on simple.experience = concrete.experience
           join
@@ -86,10 +86,10 @@ function loadValues($mysqli) {
                   when '36-45' then 'over_25'
                   when 'over_45' then 'over_25'
                   else PROF_YEARS
-               end as experience, count(PROF_YEARS) as pragmatic
+               end as experience, count(1) as pragmatic
                from $tablename
                where DESIGN_TYPE like '__P_'
-               group by PROF_YEARS)
+               group by experience)
             as pragmatic
           on simple.experience = pragmatic.experience
           join
@@ -99,10 +99,10 @@ function loadValues($mysqli) {
                   when '36-45' then 'over_25'
                   when 'over_45' then 'over_25'
                   else PROF_YEARS
-               end as experience, count(PROF_YEARS) as idealistic
+               end as experience, count(1) as idealistic
                from $tablename
                where DESIGN_TYPE like '__I_'
-               group by PROF_YEARS)
+               group by experience)
             as idealistic
           on simple.experience = idealistic.experience
           join
@@ -112,10 +112,10 @@ function loadValues($mysqli) {
                   when '36-45' then 'over_25'
                   when 'over_45' then 'over_25'
                   else PROF_YEARS
-               end as experience, count(PROF_YEARS) as robust
+               end as experience, count(1) as robust
                from $tablename
                where DESIGN_TYPE like '___R'
-               group by PROF_YEARS)
+               group by experience)
             as robust
           on simple.experience = robust.experience
           join
@@ -125,16 +125,21 @@ function loadValues($mysqli) {
                   when '36-45' then 'over_25'
                   when 'over_45' then 'over_25'
                   else PROF_YEARS
-               end as experience, count(PROF_YEARS) as technologic
+               end as experience, count(1) as technologic
                from $tablename
                where DESIGN_TYPE like '___T'
-               group by PROF_YEARS)
+               group by experience)
             as technologic
           on simple.experience = technologic.experience
           join
-            (select PROF_YEARS as experience, count(PROF_YEARS) as sum
+            (select case PROF_YEARS
+                  when '26-35' then 'over_25'
+                  when '36-45' then 'over_25'
+                  when 'over_45' then 'over_25'
+                  else PROF_YEARS
+               end as experience, count(1) as sum
                from $tablename
-               group by PROF_YEARS)
+               group by experience)
             as sum
           on simple.experience = sum.experience";
         $log->debug($query);
