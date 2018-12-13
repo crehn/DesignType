@@ -368,9 +368,6 @@ class DtFooter extends CustomHtmlElement {
             <div>
                 <a class="feedback">E-Mail</a> |
                 <a href="https://twitter.com/SWDesignKnights">Twitter</a> |
-                <a href="https://www.xing.com/communities/groups/design-principles-patterns-types-08d2-1080100">
-                    Xing
-                </a> |
                 <a href="privacy.html">Privacy</a> |
                 <a href="imprint.html">Imprint</a>
             </div>
