@@ -1,0 +1,126 @@
+.timeline {
+    position: relative;
+    padding: 20px 0 20px;
+    list-style: none;
+}
+
+.timeline > li {
+    overflow: auto;
+    margin-bottom: 15px;
+}
+
+ /* line */
+ .timeline::before {
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1.5px;
+    width: 3px;
+
+    background-color: #f6a828;
+    content: " ";
+}
+  
+/* year */
+.timeline > li.year {
+    z-index: 1;
+    position: relative;
+    
+    margin: 15px auto;
+    width: 70px;
+    height: 70px;
+
+    border: 2px solid #f6a828;
+    border-radius: 50%;
+    
+    background-color: white;
+    
+    padding-top: 22px;
+    
+    font-weight: bold;
+    text-align: center;
+}
+
+/* month */
+.timeline > li.month {
+    z-index: 1;
+    position: relative;
+
+    margin: 1em auto;
+    width: 200px;
+
+    background-color: #f6a828;
+    
+    padding: 3px 0;
+    
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* event: circle */
+.timeline > li.event::after {
+    display: block;
+
+    top:0;
+    margin: 1em auto;
+    width: 26px;
+    height: 26px;
+    
+    border-radius: 50%;
+    
+    background-color: #f6a828;
+    
+    content: '';
+}
+
+/* event: content */
+.timeline > li.event > .content {
+    float: right;
+    margin-left: calc(50% + 30px);
+    width: calc(50% - 30px);
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+}
+
+@media (min-width: 992px) {
+    .timeline > li.event.left > .content {
+        float: left;
+        margin-left: 0;
+        justify-content: flex-end;
+        text-align: right;
+    }
+}
+
+@media (max-width: 991px) {
+    /* line */
+    .timeline::before {
+        left: 75px;
+    }
+      
+    .timeline > li.year {
+        margin: 15px 0 0 40px;
+    }
+
+    .timeline > li.month {
+        margin: 15px 0;
+        width: 140px;
+    }
+
+    /* event: circle */
+    .timeline > li.event::after {
+        margin: 15px 0 0 62px;
+    }
+
+    .timeline > li.event > .content {
+        float: right;
+        margin-left: 100px;
+        width: calc(100% - 100px);
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+    }
+}
