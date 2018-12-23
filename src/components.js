@@ -324,7 +324,7 @@ class DtSidebar extends CustomHtmlElement {
                 <h1>Support</h1>
                 <p>
                     We've created design-types.net in our spare time hoping that it will be helpful to many people. Please consider supporting
-                    us by making a donation.
+                    us by making a donation or by <a href="cards_get_them.html">buying a Design Cards set</a>.
                 </p>
                 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" class="text-center">
                     <input type="hidden" name="cmd" value="_s-xclick">
@@ -337,8 +337,8 @@ class DtSidebar extends CustomHtmlElement {
                 <h1>Stay Tuned</h1>
                 <p>
                     If you want to get in touch with us and stay up to date with what we are doing, follow us on
-                    <a href="https://twitter.com/SWDesignKnights">Twitter</a> or just write a
-                    <a class="feedback ">short email</a>. We like getting feedback.
+                    <a href="https://twitter.com/SWDesignKnights">Twitter</a> or just write an
+                    <a class="feedback ">email</a>. We like getting feedback.
                 </p>
             </section>
         </div>
