@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="The Design Cards can be used as a game for learning software design">
+
+    <link rel="icon" type="image/png" href="./favicon.png">
+    <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="./favicon.png">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="node_modules/jquery/dist/jquery.min.js" defer></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js" defer></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js" defer></script>
+    <script src="node_modules/@webcomponents/custom-elements/src/native-shim.js" defer></script>
+    <script src="node_modules/document-register-element/build/document-register-element.js" defer></script>
+    <script src="utils.js" defer></script>
+    <script src="components.js" defer></script>
+
+    <title>Design Cards: Game Rules</title>
+</head>
+
+<body>
+
+    <main role="main" class="container page">
+        <dt-nav active="Design Cards" subitem="Game Rules"></dt-nav>
+
+        <div class="jumbotron">
+            <h1>Design Cards</h1>
+            <p>
+                The game rules.
+            </p>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10">
+                <section>
+                    <h1>Using the Design Cards as a Game</h1>
+                    <h2>Use Case and Preparation</h2>
+                    <p>
+                        Use the quiz and the learning game to get familiar with the
+                        Design Cards and with arguments and principles of software
+                        design. Use a single card set and read the cards before
+                        playing. Start with the basic set (<img src="img/cards/basic_set.png" />)
+                        and add the other cards once you are familiar with it.
+                    </p>
+                    <h2>Feedback</h2>
+                    <p>
+                        We've tried the basic rules for the quiz and the learning game but we have several more ideas
+                        and maybe you come up with something else. Feel free to post your ideas and experiences in the
+                        comments.
+                    </p>
+                </section>
+                <section>
+                    <h1>Quiz</h1>
+                    <h2>Basic Rules for 2+ Players</h2>
+                    <ol>
+                        <li>Shuffle the cards.</li>
+                        <li>Take turns. When it’s your turn, one of the other players draws
+                            a card and reads the title to you.</li>
+                        <li>If you can correctly explain the card based on the title, you get a point.</li>
+                        <li>If your answer is not correct the other players get a chance.</li>
+                        <li>In any case read the card aloud. Then it's the next player’s turn—even if this person
+                            already got a point by explaning your card.</li>
+                        <li>The game ends after 5 rounds (adjust based on the time you want to spend).</li>
+                        <li>The player with the most points wins.</li>
+                    </ol>
+                    <h2>More Ideas</h2>
+                    <ul>
+                        <li>Sort the cards by color so you have separate stacks of cards. When you draw a card, you can
+                            choose which stack to choose from.</li>
+                        <li>Cards from the basic set (<img src="img/cards/basic_set.png" />) get one point, cards from
+                            the advanced set get two, and extended set cards (once when there will be such) three.</li>
+                        <li>If you can name a situation from a past project where the argument on the card was
+                            considered or could have been considered, you get a second point. </li>
+                        <li>If you can name even a situation where using the card could have prevented a problem, you
+                            get a third point.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h1>Learning Game</h1>
+                    <h2>Basic Rules for 4+ Players</h2>
+                    <ol>
+                        <li>Split up into two teams who will play against each other.</li>
+                        <li>Remove action and question cards and shuffle the rest.</li>
+                        <li>Take turns. When it’s your turn, draw a card, read it quietly and try to explain the card
+                            without mentioning the words in the title or synonyms/antonyms thereof.
+                            <strong>TIP:</strong> Read the card carefully and use the examples given.</li>
+                        <li>While you explain, your team member(s) have 90 sec. to guess the title. If they manage to
+                            do so, your team gets a point.</li>
+                        <li>If your team members couldn’t guess correctly, the opposing team gets one single guess to
+                            get a point for themselves.</li>
+                        <li>In any case read the card aloud. Then it’s the turn of the other team.</li>
+                        <li>Every player should get the chance to explain and to guess. So also take turns within the
+                            teams.</li>
+                        <li>The game ends after each team has read 5 cards (adjust based on the time you want to
+                            spend).</li>
+                        <li>The team with the most points wins.</li>
+                    </ol>
+                    <h2>More Ideas</h2>
+                    <ul>
+                        <li>Don't remove action and question cards. They can also be part of the game.</li>
+                        <li>Instead of explaining the card with words, you can draw a picture (think of diagrams or
+                            examples).</li>
+                        <li>Split each turn into two phases. First the card is explained and the team members just
+                            listen. Then the team members discuss among each other and decide on the answer. The first
+                            answer they agree on counts.</li>
+                    </ul>
+                </section>
+
+                <dt-comments pageid="cards_games"></dt-comments>
+            </div>
+            <dt-sidebar class="col-md-2"></dt-sidebar>
+        </div>
+        <dt-footer></dt-footer>
+    </main>
+</body>
+
+</html>
