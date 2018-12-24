@@ -49,16 +49,16 @@ class DtNavigation extends CustomHtmlElement {
                             <a class="dropdown-item" href="cards.html">Introduction</a>
                             <a class="dropdown-item" href="cards_detail.html">More Details on the Cards</a>
                             <a class="dropdown-item" href="cards_usage.html">How to Use the Cards</a>
-                            <a class="dropdown-item" href="cards_get_them.html">Get the Cards</a>
+                            <a class="dropdown-item last-item-in-group" href="cards_get_them.html">Get the Cards</a>
+                            <a class="dropdown-item external" href="http://www.principles-wiki.net">principles-wiki.net</a>                        
                         </div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
-                </ul>
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a class="nav-link" href="http://www.principles-wiki.net">principles-wiki.net</a>
+                    <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="design_knights.html" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown03">
+                        <a class="dropdown-item" href="design_knights.html">Design Knights</a>
+                        <a class="dropdown-item" href="timeline.html">Timeline</a>
+                    </div>
                     </li>
                 </ul>
             </div>
