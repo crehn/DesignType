@@ -2,6 +2,23 @@ class DtNews extends CustomHtmlElement {
     html() {
         return /*html*/`
         <section>
+            <h2>Kickstarter Campaign is Live!</h2>
+            <p>
+                We've launched our
+                <a href="https://www.kickstarter.com/projects/designdudes/design-cards-improving-discussions-of-software-dev?ref=5mwuxc">Kickstarter
+                    campaign
+                </a>. This means we will finally be producing the Design Cards! Spread the word!
+            </p>
+            <div class="text-center">
+                <a href="https://www.kickstarter.com/projects/designdudes/design-cards-improving-discussions-of-software-dev?ref=5mwuxc">
+                    <img src="img/cards/Design_Cards_in_case.jpg" width="50%" alt="Design Cards Kickstarter campaign" />
+                </a>
+            </div>
+            <div class="text-right">
+                <time datetime="2018-06-20">2018-06-20</time>
+            </div>
+        </section>                
+        <section>
             <h2>Entwicklertag Karlsruhe</h2>
             <p>
                 Next Wednesday (2018-06-20) we will be speaking at Entwicklertag Karlsruhe. This is a software developer
