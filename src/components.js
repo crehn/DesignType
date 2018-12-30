@@ -44,7 +44,7 @@ class DtNavigation extends CustomHtmlElement {
                         <a class="nav-link" href="matrix.html">Design Matrix</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="cards.html" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Design Cards</a>
+                        <a class="nav-link dropdown-toggle" href="design_cards.html" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Design Cards</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown02">
                             <a class="dropdown-item" href="design_cards.html">Introduction</a>
                             <a class="dropdown-item" href="cards_detail.html">More Details on the Cards</a>
