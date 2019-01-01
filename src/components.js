@@ -60,6 +60,7 @@ class DtNavigation extends CustomHtmlElement {
                     <div class="dropdown-menu" aria-labelledby="dropdown03">
                         <a class="dropdown-item" href="design_knights.html">Design Knights</a>
                         <a class="dropdown-item" href="timeline.html">Timeline</a>
+                        <a class="dropdown-item" href="faq.html">FAQ</a>
                     </div>
                     </li>
                 </ul>
