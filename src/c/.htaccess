@@ -1,3 +1,5 @@
+Options -Indexes
+
 RewriteEngine on
 RewriteBase "/"
-RewriteRule ".*" "c_wip.html"
+RewriteRule "^[a-zA-Z0-9_]+$" "c_wip.html"
