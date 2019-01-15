@@ -50,8 +50,8 @@ class DtNavigation extends CustomHtmlElement {
                             <a class="dropdown-item" href="cards_detail.html">More Details on the Cards</a>
                             <a class="dropdown-item last-item-in-group" href="cards_get_them.html">Get the Cards</a>
                             <a class="dropdown-item" href="cards_usage_alone.html">Using the Cards Alone</a>
-                            <a class="dropdown-item" href="cards_discussions.html">Discussion Rules</a>
-                            <a class="dropdown-item last-item-in-group" href="cardgames.html">Game Rules</a>
+                            <a class="dropdown-item" href="cards_discussions.html">Using the Cards in Discussions</a>
+                            <a class="dropdown-item last-item-in-group" href="cardgames.html">Cards Gamification</a>
                             <a class="dropdown-item external" href="http://www.principles-wiki.net">principles-wiki.net</a>                        
                         </div>
                     </li>
