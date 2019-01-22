@@ -58,7 +58,7 @@ class DtNavigation extends CustomHtmlElement {
                     <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="design_knights.html" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown03">
-                        <a class="dropdown-item" href="design_knights.html">Design Knights</a>
+                        <a class="dropdown-item" href="design_knights.html">The Design Knights</a>
                         <a class="dropdown-item" href="timeline.html">Timeline</a>
                         <a class="dropdown-item" href="faq.html">FAQ</a>
                     </div>
