@@ -105,7 +105,9 @@ class DtImageLightbox extends CustomHtmlElement {
     init() {
         $('.pop').on('click', (event) => {
             debuglog(event.target);
-            $(this).find('.imagepreview').attr('src', $(event.target).attr('src'));
+            var src = $(event.target).attr('src');
+            src = src.replace("_sm.", ".");
+            $(this).find('.imagepreview').attr('src', src);
             $(this).find('.modal').modal('show');
         });
     }
