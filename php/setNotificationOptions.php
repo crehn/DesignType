@@ -10,7 +10,7 @@ if (DEBUG) {
 
 function main() {
     $options = json_decode(getRequestBody());
-    writeNotificationEmail($options);
+    writeConfirmationEmail(sanitize($options));
     echo json_encode(array('result' => 'ok'));
 }
 
@@ -24,19 +24,27 @@ function sanitize($options) {
     return $options;
 }
 
-function writeNotificationEmail($options) {
+function writeConfirmationEmail($options) {
     global $log;
-    $to = MAILRECIPIENTS;
-    $subject = "[design-types.net] notification option set";
-    $message = "email: $options->email\r\nnotify: $options->notifyOption\r\ntimestamp: " . date(DateTime::ISO8601);
+    $to = $options->email;
+    $hash = hash('sha256', SECRET . $options->email);
+    $subject = "[design-types.net] Please confirm your notification settings";
+    $message = "Please confirm your notification settings by clicking on this link: 
+        
+    " . BASEPATH . "/php/confirmNotificationOptions?email=$options->email&option=$options->notifyOption&hash=$hash
+        
+If you don't know what this is about, just ignore this email.
+
+--
+design-types.net";
     $headers = "From: email@design-types.net\r\n" .
                "Reply-To: email@design-types.net\r\n" .
                'X-Mailer: PHP/' . phpversion();
     
     if (!mail($to, $subject, $message, $headers)) {
-        $log->error("could not send notification email");
+        $log->error("could not send confirmation email");
     }
-    $log->debug("sent notification email");
+    $log->debug("sent confirmation email");
 }
 
 main();
