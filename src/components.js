@@ -21,7 +21,7 @@ class DtNavigation extends CustomHtmlElement {
         </style>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark" role="navigation">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Design-Types.net</a>
+            <a class="navbar-brand" href="/index.html">Design-Types.net</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
                 aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -29,38 +29,38 @@ class DtNavigation extends CustomHtmlElement {
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="nav navbar-nav mr-auto">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="design_types.html" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+                        <a class="nav-link dropdown-toggle" href="/design_types.html" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">Design Types</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown01">
-                            <a class="dropdown-item" href="design_types.html">Concepts</a>
-                            <a class="dropdown-item" href="dimensions.html">Dimensions</a>
-                            <a class="dropdown-item last-item-in-group" href="types.html">Types</a>
-                            <a class="dropdown-item" href="test_yourself.html">Test Yourself</a>
-                            <a class="dropdown-item last-item-in-group" href="assess_colleagues.html?revealed">Assess Colleagues</a>
-                            <a class="dropdown-item" href="statistics.html">Statistics</a>
+                            <a class="dropdown-item" href="/design_types.html">Concepts</a>
+                            <a class="dropdown-item" href="/dimensions.html">Dimensions</a>
+                            <a class="dropdown-item last-item-in-group" href="/types.html">Types</a>
+                            <a class="dropdown-item" href="/test_yourself.html">Test Yourself</a>
+                            <a class="dropdown-item last-item-in-group" href="/assess_colleagues.html?revealed">Assess Colleagues</a>
+                            <a class="dropdown-item" href="/statistics.html">Statistics</a>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="matrix.html">Design Matrix</a>
+                        <a class="nav-link" href="/matrix.html">Design Matrix</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="design_cards.html" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Design Cards</a>
+                        <a class="nav-link dropdown-toggle" href="/design_cards.html" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Design Cards</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown02">
-                            <a class="dropdown-item" href="design_cards.html">Introduction</a>
-                            <a class="dropdown-item" href="cards_detail.html">More Details on the Cards</a>
-                            <a class="dropdown-item last-item-in-group" href="cards_get_them.html">Get the Cards</a>
-                            <a class="dropdown-item" href="cards_usage_alone.html">Using the Cards Alone</a>
-                            <a class="dropdown-item" href="cards_discussions.html">Using the Cards in Discussions</a>
-                            <a class="dropdown-item last-item-in-group" href="cardgames.html">Cards Gamification</a>
+                            <a class="dropdown-item" href="/design_cards.html">Introduction</a>
+                            <a class="dropdown-item" href="/cards_detail.html">More Details on the Cards</a>
+                            <a class="dropdown-item last-item-in-group" href="/cards_get_them.html">Get the Cards</a>
+                            <a class="dropdown-item" href="/cards_usage_alone.html">Using the Cards Alone</a>
+                            <a class="dropdown-item" href="/cards_discussions.html">Using the Cards in Discussions</a>
+                            <a class="dropdown-item last-item-in-group" href="/cardgames.html">Cards Gamification</a>
                             <a class="dropdown-item external" href="http://www.principles-wiki.net">principles-wiki.net</a>                        
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="design_knights.html" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+                    <a class="nav-link dropdown-toggle" href="/design_knights.html" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown03">
-                        <a class="dropdown-item" href="design_knights.html">The Design Knights</a>
-                        <a class="dropdown-item" href="timeline.html">Timeline</a>
-                        <a class="dropdown-item" href="faq.html">FAQ</a>
+                        <a class="dropdown-item" href="/design_knights.html">The Design Knights</a>
+                        <a class="dropdown-item" href="/timeline.html">Timeline</a>
+                        <a class="dropdown-item" href="/faq.html">FAQ</a>
                     </div>
                     </li>
                 </ul>
@@ -329,7 +329,7 @@ class DtSidebar extends CustomHtmlElement {
                 <h1>Support</h1>
                 <p>
                     We've created design-types.net in our spare time hoping that it will be helpful to many people. Please consider supporting
-                    us by making a donation or by <a href="cards_get_them.html">buying a Design Cards set</a>.
+                    us by making a donation or by <a href="/cards_get_them.html">buying a Design Cards set</a>.
                 </p>
                 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" class="text-center">
                     <input type="hidden" name="cmd" value="_s-xclick">
@@ -373,8 +373,8 @@ class DtFooter extends CustomHtmlElement {
             <div>
                 <a class="feedback">E-Mail</a> |
                 <a href="https://twitter.com/SWDesignKnights">Twitter</a> |
-                <a href="privacy.html">Privacy</a> |
-                <a href="imprint.html">Imprint</a>
+                <a href="/privacy.html">Privacy</a> |
+                <a href="/imprint.html">Imprint</a>
             </div>
         </footer>
         `;
