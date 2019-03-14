@@ -167,6 +167,11 @@ body {
     margin: 0;
 }
 
+.smallprint {
+    font-size: 0.75rem;
+    color: gray;
+}
+
 /* homepage ---------------------------------------------------------------------------*/
 
 .entry-point-col {
