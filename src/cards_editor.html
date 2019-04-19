@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Use the Design Cards for learning and preparing design decisions">
+
+    <link rel="icon" type="image/png" href="./favicon.png">
+    <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="./favicon.png">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="node_modules/jquery/dist/jquery.min.js" defer></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js" defer></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js" defer></script>
+    <script src="node_modules/@webcomponents/custom-elements/src/native-shim.js" defer></script>
+    <script src="node_modules/document-register-element/build/document-register-element.js" defer></script>
+    <script src="utils.js" defer></script>
+    <script src="components.js" defer></script>
+
+    <title>Design Cards: Create your Own!</title>
+</head>
+
+<body>
+
+    <main role="main" class="container page">
+        <dt-nav active="Design Cards" subitem="Using the Cards Alone"></dt-nav>
+
+        <div class="jumbotron">
+            <h1>Design Cards</h1>
+            <p>
+                Create your Own!
+            </p>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10">
+                <section>
+                    <h1>Create your Own Design Cards</h1>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <table>
+                                <tr>
+                                    <th>Submitter (your name)</th>
+                                    <td><input type="text" name="submitter" id="submitter" /></td>
+                                </tr>
+                                <tr>
+                                    <th>Email</th>
+                                    <td><input type="text" name="email" id="email" /></td>
+                                </tr>
+                                <tr>
+                                    <th>Abbreviation</th>
+                                    <td><input type="text" name="abbreviation" id="abbreviation" /></td>
+                                </tr>
+                                <tr>
+                                    <th>Aspect</th>
+                                    <td>
+                                        <select name="aspect" id="aspect">
+                                            <option value="neutral">neutral</option>
+                                            <option value="simple">simple</option>
+                                            <option value="powerful">powerful</option>
+                                            <option value="abstract">abstract</option>
+                                            <option value="concrete">concrete</option>
+                                            <option value="pragmatic">pragmatic</option>
+                                            <option value="idealistic">idealistic</option>
+                                            <option value="robust">robust</option>
+                                            <option value="technologic">technologic</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Name</th>
+                                    <td>
+                                        <input type="text" name="name" id="name" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Short Description/Catchphrase</th>
+                                    <td>
+                                        <input type="text" name="short" id="short" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Long Description</th>
+                                    <td>
+                                        <textarea name="long" id="long"></textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Comment</th>
+                                    <td>
+                                        <textarea name="comment" id="comment"></textarea>
+                                    </td>
+                                </tr>
+                            </table>
+                            <label><input type="checkbox" name="publish" value="publish">Please publish my card on the website so others can see, download, and comment it.</label>
+                                <label><input type="checkbox" name="use" value="use">The Software Design Knights may use my card or derived versions thereof for creating and selling card sets.</label>
+                        </div>
+                        <div class="col-md-4">
+                            <img id="preview" src="img/cards/editor/template.svg" alt="preview" />
+                            <button id="refresh" class="btn btn-primary">Refresh</button>
+                        </div>
+                    </div>
+                </section>
+
+                <dt-img-lightbox></dt-img-lightbox>
+            </div>
+            <dt-sidebar class="col-md-2"></dt-sidebar>
+        </div>
+        <dt-footer></dt-footer>
+    </main>
+    <script>
+        $('#refresh').click();
+    </script>
+</body>
+
+</html>
