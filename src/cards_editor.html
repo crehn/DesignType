@@ -18,7 +18,8 @@
     <script src="node_modules/document-register-element/build/document-register-element.js" defer></script>
     <script src="utils.js" defer></script>
     <script src="components.js" defer></script>
-
+    <script src="cards_editor.js" defer></script>
+    
     <title>Design Cards: Create your Own!</title>
 </head>
 
@@ -38,70 +39,7 @@
             <div class="col-md-10">
                 <section>
                     <h1>Create your Own Design Cards</h1>
-                    <div class="row">
-                        <div class="col-md-8">
-                            <table>
-                                <tr>
-                                    <th>Submitter (your name)</th>
-                                    <td><input type="text" name="submitter" id="submitter" /></td>
-                                </tr>
-                                <tr>
-                                    <th>Email</th>
-                                    <td><input type="text" name="email" id="email" /></td>
-                                </tr>
-                                <tr>
-                                    <th>Abbreviation</th>
-                                    <td><input type="text" name="abbreviation" id="abbreviation" /></td>
-                                </tr>
-                                <tr>
-                                    <th>Aspect</th>
-                                    <td>
-                                        <select name="aspect" id="aspect">
-                                            <option value="neutral">neutral</option>
-                                            <option value="simple">simple</option>
-                                            <option value="powerful">powerful</option>
-                                            <option value="abstract">abstract</option>
-                                            <option value="concrete">concrete</option>
-                                            <option value="pragmatic">pragmatic</option>
-                                            <option value="idealistic">idealistic</option>
-                                            <option value="robust">robust</option>
-                                            <option value="technologic">technologic</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>Name</th>
-                                    <td>
-                                        <input type="text" name="name" id="name" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>Short Description/Catchphrase</th>
-                                    <td>
-                                        <input type="text" name="short" id="short" />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>Long Description</th>
-                                    <td>
-                                        <textarea name="long" id="long"></textarea>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>Comment</th>
-                                    <td>
-                                        <textarea name="comment" id="comment"></textarea>
-                                    </td>
-                                </tr>
-                            </table>
-                            <label><input type="checkbox" name="publish" value="publish">Please publish my card on the website so others can see, download, and comment it.</label>
-                                <label><input type="checkbox" name="use" value="use">The Software Design Knights may use my card or derived versions thereof for creating and selling card sets.</label>
-                        </div>
-                        <div class="col-md-4">
-                            <img id="preview" src="img/cards/editor/template.svg" alt="preview" />
-                            <button id="refresh" class="btn btn-primary">Refresh</button>
-                        </div>
-                    </div>
+                    <dt-card-editor></dt-card-editor>
                 </section>
 
                 <dt-img-lightbox></dt-img-lightbox>
@@ -110,9 +48,6 @@
         </div>
         <dt-footer></dt-footer>
     </main>
-    <script>
-        $('#refresh').click();
-    </script>
 </body>
 
 </html>
