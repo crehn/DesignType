@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Design Cards Quiz to learn arguments of software development">
+
+    <link rel="icon" type="image/png" href="./favicon.png">
+    <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="./favicon.png">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css" />
+	
+<style>
+label {
+    margin: 1rem 0rem;
+
+    background-color: #f6d896 !important;
+
+    padding: 0.7em;
+}
+
+.margintop {
+	margin: 1rem 0rem;
+}
+
+.marginleft {
+	margin: 0rem 0.5rem;
+}
+
+.fromprinciples {
+	border: 1px solid lightgrey;
+	margin: 15px 3px 3px 3px;
+}
+
+.powbyprincipleswiki {
+	margin: 0px 0px -10px 0px;
+	float: right;
+	color: darkgrey;
+}
+
+.header-table {
+	background-color: #f6d896 !important;
+	font-weight: bold;
+}
+</style>
+
+    <script src="node_modules/jquery/dist/jquery.min.js" defer></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js" defer></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js" defer></script>
+    <script src="node_modules/@webcomponents/custom-elements/src/native-shim.js" defer></script>
+    <script src="node_modules/document-register-element/build/document-register-element.js" defer></script>
+    <script src="utils.js" defer></script>
+    <script src="components.js" defer></script>
+	<script src="cards_data.js" defer></script>
+    <script src="cards_display.js" defer></script>
+
+
+    <title>TODO Cardname</title>
+</head>
+
+<body>
+
+    <main role="main" class="container page">
+        <dt-nav active="Design Cards"></dt-nav>
+
+        <div class="jumbotron">
+            <h1 class="c_cardname">TODO Cardname</h1>
+            <p>
+                Learn the Design Cards arguments.
+            </p>
+        </div>
+		
+		<div class="row">
+			
+			<div class="col">
+				<label for="acronym">Design Card Acronym:</label>
+				<br />
+				<span id="acronym" class="c_acronym"></span>	
+				<br />
+				<label for="cardname">Design Card Name:</label>
+				<br />
+				<span id="cardname" class="c_cardname"></span>	
+				<br />
+				<label for="dimension">Design Card Dimension:</label>
+				<br />
+				<img id="dimensionpicture" src="todo" height="50" /> : <a id="dimensionlink" href="todo"><span id="dimension" class="c_dimension"></span></a>	
+				<br />
+				<label for="level">Design Card Level:</label>
+				<br />
+				<img id="levelpicture" src="todo" height="50" /> : <span id="level" class="c_level"></span>		
+				<br />
+			</div>
+			<div class="col">
+				<img id="cardpicture" class="margintop" src="todo" />
+			</div>
+			<div class="col">
+				<label for="shortdesc">Short description:</label>
+				<br />
+				<span id="shortdesc" class="c_shortdesc"></span>	
+				<br />
+				<label for="longdesc">Long description:</label>
+				<br />
+				<span id="longdesc" class="c_longdesc"></span>	
+			</div>
+			<dt-sidebar class="col-md-2"></dt-sidebar>
+			
+			<div class="w-100">
+				<div class="col">
+					<a href="./c.html" >&lt;&lt; all cards</a>
+				</div>
+			</div>
+			
+			<div class="w-100">
+				<div class="col">
+					<h2>Related Arguments</h2>
+					<div class="references table-responsive"></div>
+				</div>
+			</div>
+			
+			<div class="w-100 fromprinciples">
+				<div class="col">
+					<div class="rationale"></div>
+					<span class="powbyprincipleswiki">powered by principles-wiki</span>
+				</div>
+			</div>
+			
+			<div class="w-100 fromprinciples">
+				<div class="col">
+					<div class="strategies"></div>
+					<span class="powbyprincipleswiki">powered by principles-wiki</span>
+				</div>
+			</div>
+				
+			<div class="w-100">
+				<div class="marginleft">
+				<dt-comments pageid="todo id"></dt-comments>
+				</div>
+			</div>
+		</div>
+
+			
+        <dt-footer></dt-footer>
+    </main>
+</body>
+
+</html>
