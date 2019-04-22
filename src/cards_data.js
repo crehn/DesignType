@@ -16,20 +16,35 @@ function aLink(type, abbreviation, name) {
     };
 }
 
+function refLink(type, abbreviation, name, set, notes) {
+    return {
+        type: type,
+        abbreviation: abbreviation,
+        name: name,
+        set: set,
+		notes: notes
+    };
+}
+
 var cardsData = {
     KISS: {
+		abbreviation: 'KISS',
         name: 'Keep it Simple Stupid',
         aspect: 'simple',
+		aspectIcon: './img/cardset/icons/coat_simple.png',
         catchphrase: 'Simple means readable, maintainable and less error-prone. Overengineering is harmful.',
         description: "Complex code typically contains more bugs and it has to be maintained (maybe even by other people). To others it may seem obscure which can lead to frustration and bad code quality. Striving for simplicity means to avoid inheritance, low-level optimization, complex algorithms, fancy (language) features, configurability, etc.",
-        set: 'basic',
+        pathToPicture: "./img/cardset/KISS.png",
+		set: 'basic',
+		setIcon: './img/cardset/icons/basic_simple.png',
+		principlesWikiUrl: "http://principles-wiki.net/principles:keep_it_simple_stupid",
+		commentId: "c_kiss",
         links: [
-            bLink('↓', 'RoP', 'Rule of Power'),
-            bLink('↑', 'CF', 'Customer Focus'),
-            aLink('↓', 'NFR', 'Non-Functional Requirements'),
-            aLink('⇅', 'MP', 'Model Principle'),
+            refLink('↓', 'RoP', 'Rule of Power', 'basic', 'ToDo'),
+            refLink('↑', 'CF', 'Customer Focus', 'basic', 'ToDo'),
+            refLink('↓', 'NFR', 'Non-Functional Requirements', 'advanced', 'ToDo'),
+            refLink('⇅', 'MP', 'Model Principle', 'advanced', 'ToDo'),
         ],
-        wikiLink: 'principles:keep_it_simple_stupid',
     },
     TP: {
         name: 'Technological Progress',
