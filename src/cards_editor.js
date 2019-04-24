@@ -132,8 +132,10 @@ class DtCardEditor extends CustomHtmlElement {
     map(attribute) {
         $(this).find(`#${attribute}`).on('change', event => {
             debuglog(`setting ${attribute} to ${event.target.value}`);
-            return $(this).find('dt-design-card').attr(attribute, event.target.value);
+            const value = event.target.value || '';
+            return $(this).find('dt-design-card').attr(attribute, value);
         });
+        $(this).find(`#${attribute}`).change();
     }
 
 }
