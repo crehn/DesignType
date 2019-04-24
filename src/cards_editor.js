@@ -55,16 +55,6 @@ class DtCardEditor extends CustomHtmlElement {
                 <div class="col-lg-7">
                     <div class="form-row">
                         <div class="col form-group">
-                            <label for="submitter">Submitter</label>
-                            <input type="text" name="submitter" id="submitter" class="form-control" placeholder="Your Name" />
-                        </div>
-                        <div class="col form-group">
-                            <label for="email">Email</label>
-                            <input type="text" name="email" id="email" class="form-control" placeholder="Email address" />
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="col form-group">
                             <label for="abbr">Abbreviation</label>
                             <input type="text" name="abbr" id="abbr" class="form-control" placeholder="Abbreviation" />
                         </div>
@@ -95,6 +85,16 @@ class DtCardEditor extends CustomHtmlElement {
                         <label for="long">Long Description</label>
                         <textarea name="long" id="long" class="form-control" placeholder="More detailed description" rows="5"></textarea>
                     </div>
+                    <div class="form-row">
+                        <div class="col form-group">
+                            <label for="submitter">Submitter</label>
+                            <input type="text" name="submitter" id="submitter" class="form-control" placeholder="Your Name" />
+                        </div>
+                        <div class="col form-group">
+                            <label for="email">Email</label>
+                            <input type="text" name="email" id="email" class="form-control" placeholder="Email address" />
+                        </div>
+                    </div>
                     <div class="form-group">
                         <label for="comment">Comment</label>
                         <textarea name="comment" id="comment" class="form-control" placeholder="Comment to be published alongside your card" rows="5"></textarea>
@@ -104,19 +104,25 @@ class DtCardEditor extends CustomHtmlElement {
                     <dt-design-card></dt-design-card>
                 </div>
             </div>
-            <div class="form-check">
-                <label class="form-check-label">
-                    <input type="checkbox" name="publish" value="publish" class="form-check-input">
-                    Please publish my card on the website so others can see, download, and comment it.
-                </label>
+            <div class="form-row">
+                <div class="col-md-10">
+                    <div class="form-check">
+                        <input type="checkbox" id="publish" name="publish" value="publish" class="form-check-input">
+                        <label class="form-check-label" for="publish">
+                            Please publish my card on the website so others can see, download, and comment it.
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" id="useage_rights" name="useage_rights" value="useage_rights" class="form-check-input">
+                        <label class="form-check-label" for="useage_rights">
+                            The Software Design Knights may use my card or derived versions thereof for creating and selling card sets.
+                        </label>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-lg btn-primary float-right" name="submit" id="submit">Submit</button>
+                </div>                
             </div>
-            <div class="form-check">
-                <label class="form-check-label">
-                    <input type="checkbox" name="use" value="use" class="form-check-input">
-                    The Software Design Knights may use my card or derived versions thereof for creating and selling card sets.
-                </label>
-            </div>
-            <button class="btn btn-primary" name="submit" id="submit">Submit</button>
         </form>
         `;
     }
