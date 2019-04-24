@@ -4,12 +4,12 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Design Cards Quiz to learn arguments of software development">
+    <meta name="description" content="Design Cards help you to use proven arguments in discussions on software design">
 
-    <link rel="icon" type="image/png" href="./favicon.png">
-    <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="./favicon.png">
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="../favicon.png">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../style.css" />
 	
 <style>
 label {
@@ -24,7 +24,7 @@ label {
 	margin: 1rem 0rem;
 }
 
-.marginleft {
+.commentmarginhorizontal {
 	margin: 0rem 0.5rem;
 }
 
@@ -33,9 +33,14 @@ label {
 	margin: 15px 3px 3px 3px;
 }
 
-.powbyprincipleswiki {
+.principleswikitext {
 	margin: 0px 0px -10px 0px;
 	float: right;
+	color: darkgrey;
+}
+.principleswikilink,
+.principleswikilink:active,
+.principleswikilink:hover {
 	color: darkgrey;
 }
 
@@ -45,18 +50,18 @@ label {
 }
 </style>
 
-    <script src="node_modules/jquery/dist/jquery.min.js" defer></script>
-    <script src="node_modules/popper.js/dist/umd/popper.min.js" defer></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js" defer></script>
-    <script src="node_modules/@webcomponents/custom-elements/src/native-shim.js" defer></script>
-    <script src="node_modules/document-register-element/build/document-register-element.js" defer></script>
-    <script src="utils.js" defer></script>
-    <script src="components.js" defer></script>
+    <script src="../node_modules/jquery/dist/jquery.min.js" defer></script>
+    <script src="../node_modules/popper.js/dist/umd/popper.min.js" defer></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js" defer></script>
+    <script src="../node_modules/@webcomponents/custom-elements/src/native-shim.js" defer></script>
+    <script src="../node_modules/document-register-element/build/document-register-element.js" defer></script>
+    <script src="../utils.js" defer></script>
+    <script src="../components.js" defer></script>
 	<script src="cards_data.js" defer></script>
     <script src="cards_display.js" defer></script>
 
 
-    <title>TODO Cardname</title>
+    <title>AUTOFILLED Cardname</title>
 </head>
 
 <body>
@@ -65,7 +70,7 @@ label {
         <dt-nav active="Design Cards"></dt-nav>
 
         <div class="jumbotron">
-            <h1 class="c_cardname">TODO Cardname</h1>
+            <h1 class="c_cardname">AUTOFILLED Cardname</h1>
             <p>
                 Learn the Design Cards arguments.
             </p>
@@ -84,11 +89,11 @@ label {
 				<br />
 				<label for="dimension">Design Card Dimension:</label>
 				<br />
-				<img id="dimensionpicture" src="todo" height="50" /> : <a id="dimensionlink" href="todo"><span id="dimension" class="c_dimension"></span></a>	
+				<img id="dimensionpicture" src="AUTOFILLED" height="50" /> : <a id="dimensionlink" href="AUTOFILLED"><span id="dimension" class="c_dimension"></span></a>
 				<br />
 				<label for="level">Design Card Level:</label>
 				<br />
-				<img id="levelpicture" src="todo" height="50" /> : <span id="level" class="c_level"></span>		
+				<img id="levelpicture" src="AUTOFILLED" height="50" /> : <span id="level" class="c_level"></span>
 				<br />
 			</div>
 			<div class="col">
@@ -121,20 +126,20 @@ label {
 			<div class="w-100 fromprinciples">
 				<div class="col">
 					<div class="rationale"></div>
-					<span class="powbyprincipleswiki">powered by principles-wiki</span>
+					<span class="principleswikitext">Learn more at <a href="AUTOFILLED" class="principleswikilink">principles-wiki</a></span>
 				</div>
 			</div>
 			
 			<div class="w-100 fromprinciples">
 				<div class="col">
 					<div class="strategies"></div>
-					<span class="powbyprincipleswiki">powered by principles-wiki</span>
+					<span class="principleswikitext">Learn more at <a href="AUTOFILLED" class="principleswikilink">principles-wiki</a></span>
 				</div>
 			</div>
 				
 			<div class="w-100">
-				<div class="marginleft">
-				<dt-comments pageid="todo id"></dt-comments>
+				<div class="commentmarginhorizontal">
+					<dt-comments-subfolder pageid="c_kiss"></dt-comments-subfolder>
 				</div>
 			</div>
 		</div>

@@ -13,12 +13,12 @@ var cardsData = {
 		abbreviation: 'KISS',
         name: 'Keep it Simple Stupid',
         aspect: 'simple',
-		aspectIcon: './img/cardset/icons/coat_simple.png',
+		aspectIcon: '../img/cardset/icons/coat_simple.png',
         catchphrase: 'Simple means readable, maintainable and less error-prone. Overengineering is harmful.',
         description: "Complex code typically contains more bugs and it has to be maintained (maybe even by other people). To others it may seem obscure which can lead to frustration and bad code quality. Striving for simplicity means to avoid inheritance, low-level optimization, complex algorithms, fancy (language) features, configurability, etc.",
-        pathToPicture: "./img/cardset/KISS.png",
+        pathToPicture: "../img/cardset/KISS.png",
 		set: 'basic',
-		setIcon: './img/cardset/icons/basic_simple.png',
+		setIcon: '../img/cardset/icons/basic_simple.png',
 		principlesWikiUrl: "http://principles-wiki.net/principles:keep_it_simple_stupid",
 		commentId: "c_kiss",
         links: [
@@ -519,7 +519,7 @@ var cardsData = {
             refLink('↑', 'ML', 'Murphy’s Law', 'basic', 'ToDo'),
             refLink('↑', 'EUHM', 'Easy to Use and Hard to Misuse', 'advanced', 'ToDo'),
             refLink('↓', 'KISS', 'Keep It Simple Stupid', 'basic', 'ToDo'),
-            refLink('⇅', 'NFR, 'Non-Functional Requirements', 'advanced', 'ToDo'),
+            refLink('⇅', 'NFR', 'Non-Functional Requirements', 'advanced', 'ToDo'),
         ],
     },
     RoS: {
@@ -535,8 +535,8 @@ var cardsData = {
         principlesWikiUrl: "none",
         commentId: "c_ros",
         links: [
-            refLink('↑', 'DRW, 'Don’t Reinvent the Wheel', 'advanced', 'ToDo'),
-            refLink('↓', 'NFR, 'Non-Functional Requirements', 'advanced', 'ToDo'),
+            refLink('↑', 'DRW', 'Don’t Reinvent the Wheel', 'advanced', 'ToDo'),
+            refLink('↓', 'NFR', 'Non-Functional Requirements', 'advanced', 'ToDo'),
             refLink('↓', 'KISS', 'Keep It Simple Stupid', 'basic', 'ToDo'),
             refLink('⇅', 'TP', 'Technological Progress', 'basic', 'ToDo'),
         ],
@@ -555,7 +555,7 @@ var cardsData = {
         commentId: "c_XXX",
         links: [
             refLink('↑', 'FRD', 'Frequency Reduces Difficulty', 'advanced', 'ToDo'),
-            refLink('↓', 'IR, 'Instability Risk', 'advanced', 'ToDo'),
+            refLink('↓', 'IR', 'Instability Risk', 'advanced', 'ToDo'),
             refLink('↓', 'UFT', 'Use Familiar Technology', 'advanced', 'ToDo'),
             refLink('⇅', 'RoS', 'Rule of Standardization', 'advanced', 'ToDo'),
         ],
@@ -575,7 +575,7 @@ var cardsData = {
         links: [
             refLink('↑', 'ML', 'Murphy’s Law', 'basic', 'ToDo'),
             refLink('↑', 'EaO', 'Early and Often', 'advanced', 'ToDo'),
-            refLink('↓', 'IR, 'Instability Risk', 'advanced', 'ToDo'),
+            refLink('↓', 'IR', 'Instability Risk', 'advanced', 'ToDo'),
             refLink('↓', 'ICC', 'In the Concrete Case', 'advanced', 'ToDo'),
         ],
     },
@@ -592,7 +592,7 @@ var cardsData = {
         principlesWikiUrl: "none",
         commentId: "c_drw",
         links: [
-            refLink('↑', 'EbE, 'Experience by Experiments', 'advanced', 'ToDo'),
+            refLink('↑', 'EbE', 'Experience by Experiments', 'advanced', 'ToDo'),
             refLink('↓', 'LC', 'Low Coupling', 'basic', 'ToDo'),
             refLink('↓', 'ICC', 'In the Concrete Case', 'advanced', 'ToDo'),
             refLink('⇅', 'RoS', 'Rule of Standardization', 'advanced', 'ToDo'),
@@ -612,9 +612,9 @@ var cardsData = {
         commentId: "c_ebe",
         links: [
             refLink('↑', 'TP', 'Technological Progress', 'basic', 'ToDo'),
-            refLink('↓', 'IR, 'Instability Risk', 'advanced', 'ToDo'),
+            refLink('↓', 'IR', 'Instability Risk', 'advanced', 'ToDo'),
             refLink('↓', 'CF', 'Customer Focus', 'basic', 'ToDo'),
-            refLink('⇅', 'FP, 'Flexibility Principle', 'advanced', 'ToDo'),
+            refLink('⇅', 'FP', 'Flexibility Principle', 'advanced', 'ToDo'),
         ],
     },
     qFoc: {
