@@ -196,6 +196,10 @@ class DtComments extends CustomHtmlElement {
             ${this.getCommentHtmlTag()} .comment .text {
                 margin: 5px 5px 5px 45px;
             }
+
+            .commentmarginhorizontal {
+            	margin: 0rem 0.5rem;
+            }
         </style>
         <section id="comments">
             <div id="comment-template" class="comment">

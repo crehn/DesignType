@@ -541,6 +541,79 @@ h1 .title-extension {
     display: none;
 }
 
+/* card overview and detail pages ---------------------------------------------------------------------------*/
+
+.dimensionstext {
+	margin: 0px 0px -11px 15px;
+	float: right;
+	color: black;
+	background-color: lightgrey !important;
+	border: 1px solid darkgrey;
+
+	padding-left: 30px;
+    padding-right: 30px;
+}
+
+.dimbox {
+	border: 1px solid lightgrey;
+	margin: 15px 3px 3px 3px;
+}
+
+.simplepowerfulbox {
+	/* background-color: #69ff94 !important; */
+	background-color: rgba(105,255,148,0.3) !important;
+}
+
+.abstractconcretebox {
+	/* background-color: #8ba7d9 !important; */
+	background-color: rgba(139,167,217,0.3) !important;
+}
+
+.pragmaticidealisticbox {
+	/* background-color: #fcb284 !important; */
+	background-color: rgba(252,178,132,0.3) !important;
+}
+
+.robusttechnologicbox {
+	/* background-color: #feef5c !important; */
+	background-color: rgba(254,239,92,0.3) !important;
+}
+
+.questionactionbox {
+	/* background-color: #f6a728 !important; */
+	background-color: rgba(246,167,40,0.3) !important;
+}
+
+.cardpicmargintop {
+	margin: 1rem 0rem;
+}
+
+#carddetailscontainer label {
+    margin: 1rem 0rem;
+    background-color: #f6d896 !important;
+    padding: 0.7em;
+}
+
+.fromprinciples {
+	border: 1px solid lightgrey;
+	margin: 15px 3px 3px 3px;
+}
+
+.principleswikitext {
+	margin: 0px 0px -10px 0px;
+	float: right;
+	color: darkgrey;
+}
+.principleswikilink,
+.principleswikilink:active,
+.principleswikilink:hover {
+	color: darkgrey;
+}
+
+.header-table-cardrefs {
+	background-color: #f6d896 !important;
+	font-weight: bold;
+}
 
 /* refactor ---------------------------------------------------------------------------*/
 
