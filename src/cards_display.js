@@ -1,26 +1,48 @@
 
 function fillPageWithContent(cardname) {
 	
-	var designCardObj = cardsData[cardname];
-	debuglog("Found design card object with name: " + designCardObj.name);
+	var designCardObj = getCardObject(cardname);
 
-	putHtmlTemplateIntoPage();
-	
+    putImageSourcesIntoPage(designCardObj);
+
     putCardsContentIntoPage(designCardObj);
-
-	putImageSourcesAndHrefsIntoPage(designCardObj);
 
     if (isArgument(designCardObj.aspect)) {
         putReferencedArgumentsIntoPage(designCardObj.links);
         loadContentFromPrinciplesWikiIntoPage(designCardObj.principlesWikiUrl);
+        putDimensionInfoIntoPage(designCardObj, true);
 	} else {
 	    debuglog("hide card argument parts for non argument cards.");
         hideNonArgumentParts();
+        putDimensionInfoIntoPage(designCardObj, false);
 	}
+
+	putCommentIdIntoPage(designCardObj);
 }
 
-function putHtmlTemplateIntoPage(){
-    $('#carddetailscontainer').prepend(carddetailtemplate);
+function putDimensionInfoIntoPage(designCardObj, isArgumentCard){
+    if (isArgumentCard) {
+        var dimensionLink = "./dimensions.html?dimension=" + designCardObj.aspect;
+        $('#dimension').append("<a id=\"dimensionlink\" href=\"" + dimensionLink + "\">" + designCardObj.aspect + "</a>");
+    } else {
+        $('#dimension').text(designCardObj.aspect);
+    }
+}
+
+function getCardObject(cardname){
+    var designCardObj = cardsData[cardname];
+    if (typeof designCardObj != "undefined") {
+        debuglog("Found design card object with name: " + designCardObj.name);
+        return designCardObj;
+    } else {
+        debuglog("Unknown card object with cardname: " + cardname + " - route to cards overview");
+        $(location).attr('href', "./cards.html");
+    }
+}
+
+function putCommentIdIntoPage(designCardObj){
+    debuglog("dynamically change comment pageid to: " + designCardObj.commentId);
+    $('dt-comments').attr("pageid", designCardObj.commentId);
 }
 
 function hideNonArgumentParts() {
@@ -83,24 +105,24 @@ function putCardsContentIntoPage(designCardObj) {
 	$('.c_cardname').text(designCardObj.name);
 	$('#acronym').text(designCardObj.abbreviation);
 	$('#cardname').text(designCardObj.name);
-	$('#dimension').text(designCardObj.aspect);
 	$('#level').text(designCardObj.set);
 	$('#shortdesc').text(designCardObj.catchphrase);
 	$('#longdesc').text(designCardObj.description);
 }
 
-function putImageSourcesAndHrefsIntoPage(designCardObj) {
+function putImageSourcesIntoPage(designCardObj) {
 	$('#cardpicture').attr("src", designCardObj.pathToPicture);
 	$('#levelpicture').attr("src", designCardObj.setIcon);
 	$('#dimensionpicture').attr("src", designCardObj.aspectIcon);
-	$('#dimensionlink').attr("href", "./dimensions.html?dimension=" + designCardObj.aspect);
 }
 
 function investigateCardnameFromUrl() {
     var url = $(location).attr('href');
     var cardname;
     // just one condition: html file/URL ending name MUST match string index of array that contains all design card arguments
-    if (url.lastIndexOf('.html') != -1) {
+    if (url.lastIndexOf('?cardid=') != -1) {
+        cardname = url.substring(url.lastIndexOf('=')+1, url.length);
+    } else if (url.lastIndexOf('.html') != -1) {
         cardname = url.substring(url.lastIndexOf('/')+1, url.lastIndexOf('.'));
     } else {
         cardname = url.substring(url.lastIndexOf('/')+1, url.length);

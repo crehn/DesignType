@@ -115,13 +115,11 @@ class DtImageLightbox extends CustomHtmlElement {
 window.customElements.define('dt-img-lightbox', DtImageLightbox);
 
 class DtComments extends CustomHtmlElement {
-    getRelativePath() { return ""; } // for subcomponents to define relative path
-    getCommentHtmlTag() { return "dt-comments"; }  // for subcomponents to define own html tag
 
     html() {
         return /*html*/`
         <style>
-            ${this.getCommentHtmlTag()} .new-button {
+            dt-comments .new-button {
                 margin: 0.5rem 0;
                 border: 1px solid #d3d7dc;
                 border-radius: 3px;
@@ -133,13 +131,13 @@ class DtComments extends CustomHtmlElement {
                 font-size: 13px;
             }
 
-            ${this.getCommentHtmlTag()} .new-form {
+            dt-comments .new-form {
                 display: none;
                 border-top: 1px dotted #d9d9d9;
                 padding: 1em 0em;
             }
 
-            ${this.getCommentHtmlTag()} input[type="text"]{
+            dt-comments input[type="text"]{
                 width: 15em;
                 margin: 0.125em;
                 border: 1px solid #d3d7dc;
@@ -149,7 +147,7 @@ class DtComments extends CustomHtmlElement {
                 color: #333;
             }
 
-            ${this.getCommentHtmlTag()} textarea {
+            dt-comments textarea {
                 width: 98%;
                 min-height: 8em;
                 margin: 0.125em;
@@ -160,27 +158,27 @@ class DtComments extends CustomHtmlElement {
                 color: #333;
             }
 
-            ${this.getCommentHtmlTag()} textarea:focus, ${this.getCommentHtmlTag()} input[type="text"]:focus {
+            dt-comments textarea:focus, dt-comments input[type="text"]:focus {
                 outline: #f6a828 thin solid;
                 box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.4);
             }
 
-            ${this.getCommentHtmlTag()} .comment-container{
+            dt-comments .comment-container{
                 padding: 0.5rem 0;
             }
 
-            ${this.getCommentHtmlTag()} .comment {
+            dt-comments .comment {
                 padding: 0.25em 0em;
                 min-height: 45px;
             }
 
-            ${this.getCommentHtmlTag()} .avatar{
+            dt-comments .avatar{
                 float: left;
                 margin-right: 10px;
                 border-radius: 3px;
             }
 
-            ${this.getCommentHtmlTag()} .comment .name {
+            dt-comments .comment .name {
                 display: inline;
                 margin: 0 1em 0 0;
                 font-family: tahoma;
@@ -188,12 +186,12 @@ class DtComments extends CustomHtmlElement {
                 color: #3b5998;
             }
 
-            ${this.getCommentHtmlTag()} .comment .date {
+            dt-comments .comment .date {
                 font-size: 12px;
                 color: #757575;
             }
 
-            ${this.getCommentHtmlTag()} .comment .text {
+            dt-comments .comment .text {
                 margin: 5px 5px 5px 45px;
             }
 
@@ -203,7 +201,7 @@ class DtComments extends CustomHtmlElement {
         </style>
         <section id="comments">
             <div id="comment-template" class="comment">
-                <img src="${this.getRelativePath()}img/avatar.png" alt="" class="avatar">
+                <img src="/img/avatar.png" alt="" class="avatar">
                 <div>
                     <h5 class="name">Template name</h5>
                     <span class="date">Template date</span>
@@ -229,58 +227,74 @@ class DtComments extends CustomHtmlElement {
         `;
     }
 
+    static get observedAttributes() {
+        return ['pageid'];
+    }
+
+    attributeChangedCallback(attr, oldValue, newValue) {
+        //debuglog("attribute[" + attr + "] changed from " + oldValue + " to " + newValue);
+        if (attr == "pageid") {
+            this.pageId = newValue;
+            this.loadComments();
+        }
+    }
+
     init() {
         this.pageId = this.getAttribute('pageid');
         $('#comment-template').hide();
-        $(this.getCommentHtmlTag() + ' .new-button').on('click', () => this._showNewCommentForm());
+        $('dt-comments .new-button').on('click', () => this._showNewCommentForm());
         $('#new-comment-text').on('keyup', () => this._activatePostButtonIffThereIsText());
-        $(this.getCommentHtmlTag() + ' .post-button').on('click', () => this.postComment());
-        $(this.getCommentHtmlTag() + ' .cancel-button').on('click', () => this._cancelComment());
+        $('dt-comments .post-button').on('click', () => this.postComment());
+        $('dt-comments .cancel-button').on('click', () => this._cancelComment());
         this.loadComments();
     }
 
     _showNewCommentForm() {
         debuglog("show new comment form");
-        $(this.getCommentHtmlTag() + ' .new-button').hide();
-        $(this.getCommentHtmlTag() + ' .new-form').show();
+        $('dt-comments .new-button').hide();
+        $('dt-comments .new-form').show();
         $('#new-comment-name').trigger("focus");
     }
 
     _activatePostButtonIffThereIsText() {
         if ($('#new-comment-text').val().length == 0) {
-            $(this.getCommentHtmlTag() + ' .post-button').attr('disabled', true);
+            $('dt-comments .post-button').attr('disabled', true);
         } else {
-            $(this.getCommentHtmlTag() + ' .post-button').attr('disabled', false);
+            $('dt-comments .post-button').attr('disabled', false);
         }
     }
 
     postComment() {
-        debuglog("post comment");
-        $.ajax({
-            method: "POST",
-            url: this.getRelativePath() + "php/addComment.php?pageId=" + this.pageId,
-            contentType: 'application/json',
-            data: JSON.stringify({
-                name: $('#new-comment-name').val(),
-                email: $('#new-comment-email').val(),
-                text: $('#new-comment-text').val().replace(/(\r\n|\n|\r)/gm, "[br]")
-            }),
-            success: resultingComment => {
-                debuglog("comment successfully posted");
-                $('#new-comment-text').val('');
-                this._hideNewCommentForm();
-                this._writeComment(resultingComment.name, resultingComment.avatar, resultingComment.timestamp, resultingComment.text);
-            }
-        });
+        if (typeof this.pageId != "undefined" && this.pageId != "none") {
+            debuglog("post comment");
+            $.ajax({
+                method: "POST",
+                url: "/php/addComment.php?pageId=" + this.pageId,
+                contentType: 'application/json',
+                data: JSON.stringify({
+                    name: $('#new-comment-name').val(),
+                    email: $('#new-comment-email').val(),
+                    text: $('#new-comment-text').val().replace(/(\r\n|\n|\r)/gm, "[br]")
+                }),
+                success: resultingComment => {
+                    debuglog("comment successfully posted");
+                    $('#new-comment-text').val('');
+                    this._hideNewCommentForm();
+                    this._writeComment(resultingComment.name, resultingComment.avatar, resultingComment.timestamp, resultingComment.text);
+                }
+            });
+        } else {
+            debuglog("do NOT post comment because pageid ["+this.pageId+"] is invalid!");
+        }
     }
 
     _hideNewCommentForm() {
-        $(this.getCommentHtmlTag() + ' .new-form').hide('fast', () => $(this.getCommentHtmlTag() + ' .new-button').show('fast'));
+        $('dt-comments .new-form').hide('fast', () => $('dt-comments .new-button').show('fast'));
     }
 
     _cancelComment() {
         debuglog("cancel comment");
-        $(this.getCommentHtmlTag() + ' .new-form').fadeOut('fast', () => $(this.getCommentHtmlTag() + ' .new-button').fadeIn('fast'));
+        $('dt-comments .new-form').fadeOut('fast', () => $('dt-comments .new-button').fadeIn('fast'));
     }
 
     _writeComment(name, avatarUrl, timestamp, text) {
@@ -298,25 +312,23 @@ class DtComments extends CustomHtmlElement {
     }
 
     loadComments() {
-        debuglog("loadComments for pageId " + this.pageId);
-        $.get(this.getRelativePath() + "php/loadComments.php?pageId=" + this.pageId, (comments, status) => {
-            debuglog("loadComments - status: " + status + ", data: " + comments);
-            if (comments != null) {
-                for (var i = 0; i < comments.length; i++) {
-                    this._writeComment(comments[i].name, comments[i].avatar, comments[i].timestamp, comments[i].text);
+        if (typeof this.pageId != "undefined" && this.pageId != "none") {
+            debuglog("loadComments for pageId " + this.pageId);
+            $.get("/php/loadComments.php?pageId=" + this.pageId, (comments, status) => {
+                debuglog("loadComments - status: " + status + ", data: " + comments);
+                if (comments != null) {
+                    for (var i = 0; i < comments.length; i++) {
+                        this._writeComment(comments[i].name, comments[i].avatar, comments[i].timestamp, comments[i].text);
+                    }
                 }
-            }
-        });
+            });
+         } else {
+             debuglog("do NOT load comment because pageid ["+this.pageId+"] is invalid!");
+         }
     }
 
 }
 window.customElements.define('dt-comments', DtComments);
-
-class DtCommentsSubfolder extends DtComments {
-    getRelativePath() { return "../"; }
-    getCommentHtmlTag() { return "dt-comments-subfolder"; }
-}
-window.customElements.define('dt-comments-subfolder', DtCommentsSubfolder);
 
 class DtSidebar extends CustomHtmlElement {
     html() {
