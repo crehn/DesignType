@@ -79,6 +79,8 @@ function loadContentFromPrinciplesWikiIntoPage(principlesWikiUrl) {
             // set direct links
             $('.principleswikilink').attr("href", principlesWikiUrl);
         });
+    } else {
+        $('.fromprinciples').hide();
     }
 }
 
@@ -97,7 +99,9 @@ function putReferencedArgumentsIntoPage(refLinks) {
 		}
 		tableLinks += "</tbody></table>";
 		$('.references').append(tableLinks);
-	}
+	} else {
+        $('#referencedargs').hide();
+    }
 }
 
 function putCardsContentIntoPage(designCardObj) {
