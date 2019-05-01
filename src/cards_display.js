@@ -20,7 +20,7 @@ function fillPageWithContent(cardname) {
 
 function putDimensionInfoIntoPage(designCardObj, isArgumentCard) {
     if (isArgumentCard) {
-        var dimensionLink = "./dimensions.html?dimension=" + designCardObj.aspect;
+        var dimensionLink = "/dimensions.html?dimension=" + designCardObj.aspect;
         $('#dimension').append("<a id=\"dimensionlink\" href=\"" + dimensionLink + "\">" + designCardObj.aspect + "</a>");
     } else {
         $('#dimension').text(designCardObj.aspect);
