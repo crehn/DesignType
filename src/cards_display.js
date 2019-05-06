@@ -72,7 +72,7 @@ function putReferencedArgumentsIntoPage(refLinks) {
         tableLinks += '<td>Type</td><td>Abbreviation</td><td>Name</td>';
         tableLinks += '</tr></thead>';
         tableLinks += '<tbody>';
-        for (i = 0; i < refLinks.length; i++) {
+        for (var i = 0; i < refLinks.length; i++) {
             var link = refLinks[i];
             //debuglog(`${link.type}|${link.abbreviation}|${link.name}|${link.set}|${link.notes}`);
             //tableLinks += `<tr><td>${link.type}</td><td><a href='./${link.abbreviation}.html'>${link.abbreviation}</td><td>${link.name}</a></td><td>${link.set}</td><td>${link.notes}</td></tr>`;
