@@ -91,16 +91,14 @@ function loadContentFromPrinciplesWikiIntoPage(principlesWikiUrl) {
         return;
     }
 
-    var corsProblemSolverUrl = 'http://www.whateverorigin.org/get?url=';
-    var correspondingWebsite = encodeURIComponent(principlesWikiUrl);
-    $.getJSON(corsProblemSolverUrl + correspondingWebsite + '&callback=?', function (data) {
+    $.get(principlesWikiUrl, function (data) {
         //debuglog('loaded: ' + data.contents);
-        var rationaleDiv = $($.parseHTML(data.contents)).find("h2:contains('Rationale')").next('.level2');
+        var rationaleDiv = $($.parseHTML(data)).find("h2:contains('Rationale')").next('.level2');
         absolutifyLinks(rationaleDiv);
         //debuglog(rationaleDiv);
         $('.rationale').append('<h2>Rationale</h2>');
         $('.rationale').append(rationaleDiv);
-        var strategiesDiv = $($.parseHTML(data.contents)).find("h2:contains('Strategies')").next('.level2');
+        var strategiesDiv = $($.parseHTML(data)).find("h2:contains('Strategies')").next('.level2');
         absolutifyLinks(strategiesDiv);
         //debuglog(strategiesDiv);
         $('.strategies').append('<h2>Strategies</h2>');
