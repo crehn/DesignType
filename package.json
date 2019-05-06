@@ -5,10 +5,11 @@
     "scripts": {
         "dev": "browser-sync -w --no-open http://test.design-types.net src",
         "clean": "rm -fr dist",
-        "build": "npm run _mkdirs && npm run _php && npm run _babel && npm run _node_modules && npm run _writeVersion",
-        "_mkdirs": "mkdir -p dist/node_modules",
+        "build": "npm run _mkdirs && npm run _php && npm run _babel && npm run _dotfiles && npm run _node_modules && npm run _writeVersion",
+        "_mkdirs": "mkdir -p dist/node_modules && mkdir -p dist/c",
         "_php": "cp -r php dist/",
         "_babel": "npx babel src -d dist --ignore node_modules --copy-files",
+        "_dotfiles": "cd src && find . -name \".[a-zA-Z0-9]*\" -exec cp {} ../dist/{} \\; && cd ..",
         "_node_modules": "cp package.json dist/ && cp package-lock.json dist/ && npm install --prefix dist/ --production",
         "_writeVersion": "date --rfc-3339=seconds > dist/version && git rev-parse HEAD >> dist/version"
     },
