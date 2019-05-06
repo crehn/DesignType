@@ -560,28 +560,23 @@ h1 .title-extension {
 }
 
 .simplepowerfulbox {
-	/* background-color: #69ff94 !important; */
-	background-color: rgba(105,255,148,0.3) !important;
+	background-color: rgba(105,255,148,0.3);
 }
 
 .abstractconcretebox {
-	/* background-color: #8ba7d9 !important; */
-	background-color: rgba(139,167,217,0.3) !important;
+	background-color: rgba(139,167,217,0.3);
 }
 
 .pragmaticidealisticbox {
-	/* background-color: #fcb284 !important; */
-	background-color: rgba(252,178,132,0.3) !important;
+	background-color: rgba(252,178,132,0.3);
 }
 
 .robusttechnologicbox {
-	/* background-color: #feef5c !important; */
-	background-color: rgba(254,239,92,0.3) !important;
+	background-color: rgba(254,239,92,0.3);
 }
 
 .questionactionbox {
-	/* background-color: #f6a728 !important; */
-	background-color: rgba(246,167,40,0.3) !important;
+	background-color: rgba(246,167,40,0.3);
 }
 
 .cardpicmargintop {
@@ -594,19 +589,27 @@ h1 .title-extension {
     padding: 0.7em;
 }
 
-.fromprinciples {
+.wikicontent {
 	border: 1px solid lightgrey;
 	margin: 15px 3px 3px 3px;
 }
 
-.principleswikitext {
-	margin: 0px 0px -10px 0px;
+.wikicontent h2 {
+    margin: 1rem -19px 0.5rem -19px;
+}
+
+.wikicontent p {
+    padding: 0 1rem;
+}
+
+.wikilinktext {
+    margin: -0.8rem 1rem 0 0;
 	float: right;
 	color: darkgrey;
 }
-.principleswikilink,
-.principleswikilink:active,
-.principleswikilink:hover {
+.wikilink,
+.wikilink:active,
+.wikilink:hover {
 	color: darkgrey;
 }
 

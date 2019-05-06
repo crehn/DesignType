@@ -45,7 +45,7 @@ function putCommentIdIntoPage(designCardObj) {
 
 function hideNonArgumentParts() {
     $('#referencedargs').hide();
-    $('.fromprinciples').hide();
+    $('.wikicontent').hide();
 }
 
 function isArgument(cardAspect) {
@@ -68,10 +68,10 @@ function loadContentFromPrinciplesWikiIntoPage(principlesWikiUrl) {
             $('.strategies').append('<h2>Strategies</h2>');
             $('.strategies').append(strategiesDiv);
             // set direct links
-            $('.principleswikilink').attr("href", principlesWikiUrl);
+            $('.wikilink').attr("href", principlesWikiUrl);
         });
     } else {
-        $('.fromprinciples').hide();
+        $('.wikicontent').hide();
     }
 }
 
