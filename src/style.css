@@ -605,7 +605,8 @@ h1 .title-extension {
 .wikilinktext {
     margin: -0.8rem 1rem 0 0;
 	float: right;
-	color: darkgrey;
+    color: darkgrey;
+    background-color: white;
 }
 .wikilink,
 .wikilink:active,
