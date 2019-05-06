@@ -96,15 +96,23 @@ function loadContentFromPrinciplesWikiIntoPage(principlesWikiUrl) {
     $.getJSON(corsProblemSolverUrl + correspondingWebsite + '&callback=?', function (data) {
         //debuglog('loaded: ' + data.contents);
         var rationaleDiv = $($.parseHTML(data.contents)).find("h2:contains('Rationale')").next('.level2');
+        absolutifyLinks(rationaleDiv);
         //debuglog(rationaleDiv);
         $('.rationale').append('<h2>Rationale</h2>');
         $('.rationale').append(rationaleDiv);
         var strategiesDiv = $($.parseHTML(data.contents)).find("h2:contains('Strategies')").next('.level2');
+        absolutifyLinks(strategiesDiv);
         //debuglog(strategiesDiv);
         $('.strategies').append('<h2>Strategies</h2>');
         $('.strategies').append(strategiesDiv);
         // set direct links
         $('.wikilink').attr('href', principlesWikiUrl);
+    });
+}
+
+function absolutifyLinks(div) {
+    div.find('a').each(function () {
+        this.href = this.href.replace(/^http:\/\/[^/]+\/(.*:.*)$/, 'http://principles-wiki.net/$1');
     });
 }
 
