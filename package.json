@@ -27,12 +27,12 @@
         "components-jqueryui": "^1.12.1",
         "d3": "^4.13.0",
         "document-register-element": "^1.13.2",
-        "jquery": "^3.4.0",
+        "jquery": "^3.4.1",
         "popper.js": "^1.15.0"
     },
     "devDependencies": {
         "babel-cli": "^6.26.0",
         "babel-preset-env": "^1.7.0",
-        "browser-sync": "^2.26.3"
+        "browser-sync": "^2.26.5"
     }
 }
