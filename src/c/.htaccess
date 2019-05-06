@@ -2,5 +2,5 @@ Options -Indexes
 
 RewriteEngine on
 RewriteBase "/"
-RewriteRule "^[a-zA-Z0-9_]+$" "card_details.html"
+RewriteRule "^[a-zA-Z0-9_.]+$" "card_details.html"
 #RewriteRule "^[a-zA-Z0-9_]+$" "card_details.html?cardid=$1"
