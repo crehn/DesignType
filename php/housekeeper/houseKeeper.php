@@ -1,7 +1,7 @@
 <?php
-require_once('inc/Logger.php');
-require_once('inc/config.php');
-require_once('inc/common.php');
+require_once('./../inc/Logger.php');
+require_once('./../inc/config.php');
+//require_once('./../inc/common.php');
 
 $log = new Logger(basename(__FILE__, ".php"));
 if (DEBUG) {
@@ -9,64 +9,73 @@ if (DEBUG) {
 }
 
 const FILENAME_LAST_STATUS_DATE = "./last_status_date.txt";
+const LB = "<br>"; // or \n
 
 $statusMessages = array();
 
-function doHouseKeeping() {
+function doHouseKeeping($action) {
     global $log;
     try {
-        $action = $_GET['action'];
         if (strcmp($action, "clean") == 0) {
             $log->info("start housekeeping");
 
             // get interval
             $statusTill = time();
             $statusFrom = getLastStatusTimestamp();
-            storeAndlogStatusMessage("Status interval from: " . date('d.m.Y - H:i:s', $statusFrom) . " till: " . date('d.m.Y - H:i:s', $statusTill));
+            $timediff = $statusTill - $statusFrom;
+            $INTERVAL_ONE_WEEK = 1000 * 60 * 60 * 24 * 7;
+            $log->debug("timediff: " . $timediff);
+            if ($timediff > $INTERVAL_ONE_WEEK) {
+                // save back new last status timestamp immediately that no parallel process can proceed
+                writeLastStatusTimestamp($statusTill);
 
-            // get all questionnaire result files in a sorted array
-            $allResultImagesTimeDesc = getAllFilesOfAKindSortedTimeDesc(HK_PATH_QUEST_RESULTS . '/*.png');
-            // count new questionnaire results
-            if (HK_TOGGLE_COUNT_QUEST_RESULTS) {
-                $questionnaireResults = countResultsSinceTimestamp($allResultImagesTimeDesc, $statusFrom);
-                storeAndlogStatusMessage("There have been " . $questionnaireResults . " new questionnaire results.");
-            }
-            // remove oldest questionnaire results
-            if (HK_TOGGLE_REMOVE_OLD_RESULTS) {
-                $removedFiles = removeOldestQuestionnaireResults($allResultImagesTimeDesc);
-                storeAndlogStatusMessage("Removed " . $removedFiles . " old result files, only keeping the last: " . HK_QUEST_RESULTS_TO_KEEP);
-            }
+                storeAndlogStatusMessage("Status interval from: " . date('d.m.Y - H:i:s', $statusFrom) . " till: " . date('d.m.Y - H:i:s', $statusTill));
 
-            // get all log files
-            $allLogFilesTimeDesc = getAllFilesOfAKindSortedTimeDesc('./log' . '/*.log');
-            // count possible shirt orders
-            if (HK_TOGGLE_COUNT_SHIRT_ORDERS) {
-                $possibleShirtOrders = countPossibleShirtOrders($allLogFilesTimeDesc, $statusFrom);
-                storeAndlogStatusMessage("Found " . $possibleShirtOrders . " possible shirt orders documented in the log files.");
-            }
-            // collect all errors
-            if (HK_TOGGLE_COLLECT_ERRORS) {
-                $errorLogEntries = collectErrorLogLines($allLogFilesTimeDesc, $statusFrom);
-                storeAndlogStatusMessage("All errors from the log files:");
-                foreach($errorLogEntries as $curLogline) {
-                    storeAndlogStatusMessage($curLogline);
+                // get all questionnaire result files in a sorted array
+                $allResultImagesTimeDesc = getAllFilesOfAKindSortedTimeDesc(HK_PATH_QUEST_RESULTS . '/*.png');
+                // count new questionnaire results
+                if (HK_TOGGLE_COUNT_QUEST_RESULTS) {
+                    $questionnaireResults = countResultsSinceTimestamp($allResultImagesTimeDesc, $statusFrom);
+                    storeAndlogStatusMessage("There have been " . $questionnaireResults . " new questionnaire results.");
                 }
-            }
-            // archive old logs
-            if (HK_TOGGLE_ARCHIVE_LOGS) {
-                $archivedLogFiles = archiveOldLogs($allLogFilesTimeDesc, $statusFrom, $statusTill);
-                storeAndlogStatusMessage("Archived " . $archivedLogFiles . " log files.");
-            }
-            // send status mail
-            if (HK_TOGGLE_SEND_STATUS_MAIL) {
-                $message = buildMailMessage();
-                writeNotificationEmail($message);
-            }
-            // save back new last status timestamp
-            writeLastStatusTimestamp($statusTill);
+                // remove oldest questionnaire results
+                if (HK_TOGGLE_REMOVE_OLD_RESULTS) {
+                    $removedFiles = removeOldestQuestionnaireResults($allResultImagesTimeDesc);
+                    storeAndlogStatusMessage("Removed " . $removedFiles . " old result files, only keeping the last: " . HK_QUEST_RESULTS_TO_KEEP);
+                }
 
-            echoStatus();
-            $log->info("finished housekeeping");
+                // get all log files
+                $allLogFilesTimeDesc = getAllFilesOfAKindSortedTimeDesc('./../log' . '/*.log');
+                // count possible shirt orders
+                if (HK_TOGGLE_COUNT_SHIRT_ORDERS) {
+                    $possibleShirtOrders = countPossibleShirtOrders($allLogFilesTimeDesc, $statusFrom);
+                    storeAndlogStatusMessage("Found " . $possibleShirtOrders . " possible shirt orders documented in the log files.");
+                }
+                // collect all errors
+                if (HK_TOGGLE_COLLECT_ERRORS) {
+                    $errorLogEntries = collectErrorLogLines($allLogFilesTimeDesc, $statusFrom);
+                    storeAndlogStatusMessage("All errors from the log files:");
+                    foreach($errorLogEntries as $curLogline) {
+                        storeAndlogStatusMessage($curLogline);
+                    }
+                }
+                // archive old logs
+                if (HK_TOGGLE_ARCHIVE_LOGS) {
+                    $archivedLogFiles = archiveOldLogs($allLogFilesTimeDesc, $statusFrom, $statusTill);
+                    storeAndlogStatusMessage("Archived " . $archivedLogFiles . " log files.");
+                }
+                // send status mail
+                if (HK_TOGGLE_SEND_STATUS_MAIL) {
+                    $message = buildMailMessage();
+                    writeNotificationEmail($message);
+                }
+
+                echoStatus();
+                $log->info("finished housekeeping");
+            } else {
+                $log->info("no housekeeping last cleanup is less than 7 days ago: " . date('d.m.Y - H:i:s', $statusFrom) . " vs now: " . date('d.m.Y - H:i:s', $statusTill));
+                echo "no housekeeping last cleanup is less than 7 days ago: " . date('d.m.Y - H:i:s', $statusFrom) . " vs now: " . date('d.m.Y - H:i:s', $statusTill);
+            }
         } else if (strcmp($action, "status") == 0) {
             investigateAndPrintoutCurrentStatus();
         } else {
@@ -82,8 +91,8 @@ function archiveOldLogs($allLogFilesTimeDesc, $statusFrom, $statusTill) {
     $oldFilesToDelete = array();
     $errorLogZip = new ZipArchive;
     $appLogZip = new ZipArchive;
-    $errorzipname = './log/errorlogs-' . date('Ymd', $statusFrom) . '-' . date('Ymd', $statusTill) . '.zip';
-    $appzipname = './log/applogs-' . date('Ymd', $statusFrom) . '-' . date('Ymd', $statusTill) . '.zip';
+    $errorzipname = './../log/errorlogs-' . date('Ymd', $statusFrom) . '-' . date('Ymd', $statusTill) . '.zip';
+    $appzipname = './../log/applogs-' . date('Ymd', $statusFrom) . '-' . date('Ymd', $statusTill) . '.zip';
     $log->debug("create zip for error logs: " . $errorzipname . " and zip for app logs: " . $appzipname);
     $zip1Ready = $errorLogZip->open($errorzipname, ZIPARCHIVE::CREATE | ZIPARCHIVE::OVERWRITE);
     $zip2Ready = $appLogZip->open($appzipname, ZIPARCHIVE::CREATE | ZIPARCHIVE::OVERWRITE);
@@ -119,17 +128,17 @@ function investigateAndPrintoutCurrentStatus() {
     $statusFrom = getDateBeforeDays(7);
     $allResultImagesTimeDesc = getAllFilesOfAKindSortedTimeDesc(HK_PATH_QUEST_RESULTS . '/*.png');
     $questionnaireResults = countResultsSinceTimestamp($allResultImagesTimeDesc, $statusFrom);
-    $allLogFilesTimeDesc = getAllFilesOfAKindSortedTimeDesc('./log' . '/*.log');
+    $allLogFilesTimeDesc = getAllFilesOfAKindSortedTimeDesc('./../log' . '/*.log');
     $possibleShirtOrders = countPossibleShirtOrders($allLogFilesTimeDesc, $statusFrom);
     $errorLogEntries = collectErrorLogLines($allLogFilesTimeDesc, $statusFrom);
-    echo "Housekeeper Status Page\n\nAll relevant status infos for design-types.net\nsince " . date('d.m.Y - H:i:s', $statusFrom) . " until now.\n";
-    echo "New questionnaire results: " . $questionnaireResults . "\n";
-    echo "Possible shirt orders: " . $possibleShirtOrders . "\n";
-    echo "\nAll errors from logs:\n";
+    echo "Housekeeper Status Page" . LB . LB . "All relevant status infos for design-types.net" . LB . "since " . date('d.m.Y - H:i:s', $statusFrom) . " until now." . LB;
+    echo "New questionnaire results: " . $questionnaireResults . LB;
+    echo "Possible shirt orders: " . $possibleShirtOrders . LB;
+    echo LB . "All errors from logs:" . LB;
     foreach($errorLogEntries as $curLogline) {
-        echo $curLogline . "\n";
+        echo $curLogline . LB;
     }
-    echo "\nBest regards\nYour Housekeeper";
+    echo LB . "Best regards" . LB . "Your Housekeeper";
 }
 
 function collectErrorLogLines($allLogFilesTimeDesc, $statusFrom) {
@@ -178,11 +187,11 @@ function countPossibleShirtOrders($allLogFilesTimeDesc, $statusFrom) {
 function echoStatus() {
     global $log;
     global $statusMessages;
-    $echoMessage = "Housekeeper Cleanup Info Page\n\nAll relevant actions that have been done for design-types.net in the current interval.\n";
+    $echoMessage = "Housekeeper Cleanup Info Page" . LB . LB . "All relevant actions that have been done for design-types.net in the current interval." . LB;
     foreach($statusMessages as $curMsg) {
-        $echoMessage .= $curMsg . "\n";
+        $echoMessage .= $curMsg . LB;
     }
-    $echoMessage .= "\n\nBest regards\nYour Housekeeper";
+    $echoMessage .= LB . LB . "Best regards" . LB . "Your Housekeeper";
     echo $echoMessage;
 }
 
@@ -254,16 +263,17 @@ function writeLastStatusTimestamp($newStatusTimestamp) {
 
 function getLastStatusTimestamp() {
     global $log;
-    if(file_exists(FILENAME_LAST_STATUS_DATE) && is_file(FILENAME_LAST_STATUS_DATE)) {
-        $fileContent = file_get_contents(FILENAME_LAST_STATUS_DATE, false);
-        //$log->debug("file content: " . $fileContent);
-        $timestamp = substr($fileContent, 0, 10);
-        $log->debug("last status date: " . date('d.m.Y - H:i:s', $timestamp));
-        return $timestamp;
-    } else {
-        $log->error("could not access file: " . FILENAME_LAST_STATUS_DATE);
-        die('Error: could not access file: '.FILENAME_LAST_STATUS_DATE);
+
+    if(!file_exists(FILENAME_LAST_STATUS_DATE)) {
+        $log->warn("could not access file: " . FILENAME_LAST_STATUS_DATE . " - have to create new one with lats status now - 7 days!");
+        writeLastStatusTimestamp(getDateBeforeDays(7));
     }
+
+    $fileContent = file_get_contents(FILENAME_LAST_STATUS_DATE, false);
+    //$log->debug("file content: " . $fileContent);
+    $timestamp = substr($fileContent, 0, 10);
+    $log->debug("last status date: " . date('d.m.Y - H:i:s', $timestamp));
+    return $timestamp;
 }
 
 function storeAndlogStatusMessage($message) {
@@ -294,5 +304,10 @@ function writeNotificationEmail($message) {
     $log->info("sent status email with status: " . $message);
 }
 
-doHouseKeeping();
+function doHouseKeepingFromWeb() {
+    $action = $_GET['action'];
+    doHouseKeeping($action);
+}
+
+doHouseKeepingFromWeb();
 ?>
