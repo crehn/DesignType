@@ -31,7 +31,25 @@ class DtDesignCard extends CustomHtmlElement {
     }
 
     _subst(str, attrName) {
+        debuglog(">>>>>><" + str);
+        if (attrName == 'short') {
+            return this._substShort(attrName, str);
+        }
+
         return str.replace(new RegExp(`§${attrName}§`, 'g'), this.getAttribute(attrName));
+    }
+
+    _substShort(attrName, str) {
+        const replacement = `<tspan
+           style="display:inline;font-style:italic;font-size:2.46944427px;line-height:3px;font-family:sans-serif;text-align:center;fill:#000000;stroke:none;"
+           id="short"
+           y="68.083374"
+           x="45.945976"
+           sodipodi:role="line"
+           transform="matrix(3.7795276,0,0,3.7795276,-38.267656,-83.164724)">»${this.getAttribute(attrName)}«</tspan>`;
+
+        const regex = new RegExp(`(<tspan[^>]*>)?§${attrName}§</tspan>`, 'g');
+        return str.replace(regex, replacement);
     }
 }
 window.customElements.define('dt-design-card', DtDesignCard);
@@ -137,8 +155,8 @@ class DtCardEditor extends CustomHtmlElement {
 
     map(attribute) {
         $(this).find(`#${attribute}`).on('change', event => {
-            debuglog(`setting ${attribute} to ${event.target.value}`);
             const value = event.target.value || '';
+            debuglog(`setting ${attribute} to ${value}`);
             return $(this).find('dt-design-card').attr(attribute, value);
         });
         $(this).find(`#${attribute}`).change();

@@ -818,9 +818,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.14"
-     inkscape:cx="100.62038"
-     inkscape:cy="157.52681"
+     inkscape:zoom="4.28"
+     inkscape:cx="142.85899"
+     inkscape:cy="148.32234"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -997,7 +997,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -1301,16 +1301,12 @@
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.46944427px;line-height:3px;font-family:Metamorphous;-inkscape-font-specification:Metamorphous;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="45.945976"
        y="68.083374"
-       id="text3069"><tspan
+       id="text_short"><tspan
          sodipodi:role="line"
          x="45.945976"
          y="68.083374"
-         id="tspan3067"
-         style="stroke-width:0.26458332px"><tspan
-           x="45.945976"
-           y="68.083374"
-           style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.46944427px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';stroke-width:0.26458332px"
-           id="tspan3065">»§short§«</tspan></tspan></text>
+         id="short"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';stroke-width:0.26458332px">»§short§«</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:2.48255706px;line-height:98.00000191%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;display:inline;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458335px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -1339,8 +1335,8 @@
          sodipodi:role="line"
          id="links"
          x="30.424105"
-         y="104.93362"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:0.26458332px"></tspan></text>
+         y="106.63919"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:0.26458332px" /></text>
     <g
        id="qr"
        transform="matrix(0.05069119,0,0,0.05066574,60.845366,99.465836)"
@@ -3559,9 +3555,9 @@
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222223px;line-height:125%;font-family:Metamorphous;-inkscape-font-specification:Metamorphous;text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="68.099472"
        y="61.486954"
-       id="text7932"><tspan
+       id="text_submitter"><tspan
          sodipodi:role="line"
-         id="tspan7930"
+         id="submitter"
          x="68.099472"
          y="61.486954"
          style="font-size:1.41111112px;text-align:end;text-anchor:end;stroke-width:0.26458332px">contributed by §submitter§</tspan></text>
@@ -3571,7 +3567,8 @@
      id="layer4"
      inkscape:label="Cover"
      style="display:inline;opacity:1"
-     transform="translate(-10.124984,-22.004)">
+     transform="translate(-10.124984,-22.004)"
+     sodipodi:insensitive="true">
     <path
        d="m 76.673907,110.20585 c -2.4e-4,2.10488 -1.696206,3.74523 -3.788411,3.74523 l -55.923939,-1e-5 c -2.092205,0 -3.817902,-1.64826 -3.817144,-3.75313 l 0.02931,-81.354022 c 7.59e-4,-2.104873 1.601122,-3.791389 3.693327,-3.791327 l 56.010175,0.0017 c 2.092205,6.2e-5 3.80619,1.680669 3.805951,3.785543 z M 10.124984,117 l 69.600002,-5e-5 -2e-6,-94.995948 h -69.6 z"
        style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277778"
