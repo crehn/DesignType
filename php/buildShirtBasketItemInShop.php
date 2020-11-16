@@ -86,7 +86,7 @@ function buildShirtDesign($nameResultImg) {
     curl_close($curlHandle);
     //$log->debug("#buildShirtDesign: Step 1: Result: " . $result);
 
-    $dataUrl = parseHttpHeaders($result, "Location");
+    $dataUrl = parseHttpHeaders($result, "location");
     $designId = substr (strrchr ($dataUrl, "/"), 1);
     $log->info("#buildShirtDesign: Step 1: from result xml parsed Design ID: " . $designId . " and Design URL: " . $dataUrl);
 
@@ -198,7 +198,7 @@ function buildIndividualShirtProduct($designId, $product_type_id) {
     curl_close($curlHandle);
     $log->debug("#buildIndividualShirtProduct: Step 3: product created with result: " . $result);
 
-    $productUrl = parseHttpHeaders($result, "Location");
+    $productUrl = parseHttpHeaders($result, "location");
     $log->debug("#buildIndividualShirtProduct: Step 4: load product spec from url: " . $productUrl);
     // do the HTTP call
     $curlHandle = curl_init($productUrl);
@@ -253,7 +253,7 @@ function buildBasket($product, $shirtsize, $shirtcolor) {
     setPOSTCurlOptions($curlHandle, $basketsUrl, "application/xml", $basket->asXML(), true); // true mandatory/needed
     $result = curl_exec($curlHandle);
     curl_close($curlHandle);
-    $basketUrl = parseHttpHeaders($result, "Location");
+    $basketUrl = parseHttpHeaders($result, "location");
     $log->debug("#buildBasket: Step 2: basket created at url: " . $basketUrl);
 
     // create basket item
