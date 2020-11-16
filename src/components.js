@@ -232,7 +232,7 @@ class DtComments extends CustomHtmlElement {
     }
 
     attributeChangedCallback(attr, oldValue, newValue) {
-        //debuglog("attribute[" + attr + "] changed from " + oldValue + " to " + newValue);
+        debuglog("attribute[" + attr + "] changed from " + oldValue + " to " + newValue);
         if (attr == "pageid") {
             this.pageId = newValue;
             this.loadComments();
@@ -246,7 +246,6 @@ class DtComments extends CustomHtmlElement {
         $('#new-comment-text').on('keyup', () => this._activatePostButtonIffThereIsText());
         $('dt-comments .post-button').on('click', () => this.postComment());
         $('dt-comments .cancel-button').on('click', () => this._cancelComment());
-        this.loadComments();
     }
 
     _showNewCommentForm() {
@@ -284,7 +283,7 @@ class DtComments extends CustomHtmlElement {
                 }
             });
         } else {
-            debuglog("do NOT post comment because pageid ["+this.pageId+"] is invalid!");
+            debuglog("do NOT post comment because pageid [" + this.pageId + "] is invalid!");
         }
     }
 
@@ -322,9 +321,9 @@ class DtComments extends CustomHtmlElement {
                     }
                 }
             });
-         } else {
-             debuglog("do NOT load comment because pageid ["+this.pageId+"] is invalid!");
-         }
+        } else {
+            debuglog("do NOT load comment because pageid [" + this.pageId + "] is invalid!");
+        }
     }
 
 }
