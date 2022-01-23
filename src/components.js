@@ -20,52 +20,52 @@ class DtNavigation extends CustomHtmlElement {
             }
         </style>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark" role="navigation">
-        <div class="container">
-            <a class="navbar-brand" href="/index.html">Design-Types.net</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="nav navbar-nav mr-auto">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="/design_types.html" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">Design Types</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdown01">
-                            <a class="dropdown-item" href="/design_types.html">Concepts</a>
-                            <a class="dropdown-item" href="/dimensions.html">Dimensions</a>
-                            <a class="dropdown-item last-item-in-group" href="/types.html">Types</a>
-                            <a class="dropdown-item" href="/test_yourself.html">Test Yourself</a>
-                            <a class="dropdown-item last-item-in-group" href="/assess_colleagues.html?revealed">Assess Colleagues</a>
-                            <a class="dropdown-item" href="/statistics.html">Statistics</a>
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/index.html">Design-Types.net</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="nav navbar-nav mr-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="/design_types.html" id="dropdown01" data-bs-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">Design Types</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown01">
+                                <a class="dropdown-item" href="/design_types.html">Concepts</a>
+                                <a class="dropdown-item" href="/dimensions.html">Dimensions</a>
+                                <a class="dropdown-item last-item-in-group" href="/types.html">Types</a>
+                                <a class="dropdown-item" href="/test_yourself.html">Test Yourself</a>
+                                <a class="dropdown-item last-item-in-group" href="/assess_colleagues.html?revealed">Assess Colleagues</a>
+                                <a class="dropdown-item" href="/statistics.html">Statistics</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/matrix.html">Design Matrix</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="/design_cards.html" id="dropdown02" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Design Cards</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown02">
+                                <a class="dropdown-item" href="/design_cards.html">Introduction</a>
+                                <a class="dropdown-item" href="/cards_detail.html">More Details on the Cards</a>
+                                <a class="dropdown-item last-item-in-group" href="/cards_get_them.html">Get the Cards</a>
+                                <a class="dropdown-item" href="/cards_usage_alone.html">Using the Cards Alone</a>
+                                <a class="dropdown-item" href="/cards_discussions.html">Using the Cards in Discussions</a>
+                                <a class="dropdown-item last-item-in-group" href="/cardgames.html">Cards Gamification</a>
+                                <a class="dropdown-item external" href="http://www.principles-wiki.net">principles-wiki.net</a>                        
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="/design_knights.html" id="dropdown03" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown03">
+                            <a class="dropdown-item" href="/design_knights.html">The Design Knights</a>
+                            <a class="dropdown-item" href="/timeline.html">Timeline</a>
+                            <a class="dropdown-item" href="/faq.html">FAQ</a>
                         </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/matrix.html">Design Matrix</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="/design_cards.html" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Design Cards</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdown02">
-                            <a class="dropdown-item" href="/design_cards.html">Introduction</a>
-                            <a class="dropdown-item" href="/cards_detail.html">More Details on the Cards</a>
-                            <a class="dropdown-item last-item-in-group" href="/cards_get_them.html">Get the Cards</a>
-                            <a class="dropdown-item" href="/cards_usage_alone.html">Using the Cards Alone</a>
-                            <a class="dropdown-item" href="/cards_discussions.html">Using the Cards in Discussions</a>
-                            <a class="dropdown-item last-item-in-group" href="/cardgames.html">Cards Gamification</a>
-                            <a class="dropdown-item external" href="http://www.principles-wiki.net">principles-wiki.net</a>                        
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="/design_knights.html" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About</a>
-                    <div class="dropdown-menu" aria-labelledby="dropdown03">
-                        <a class="dropdown-item" href="/design_knights.html">The Design Knights</a>
-                        <a class="dropdown-item" href="/timeline.html">Timeline</a>
-                        <a class="dropdown-item" href="/faq.html">FAQ</a>
-                    </div>
-                    </li>
-                </ul>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
         </nav>
         `;
     }
@@ -90,9 +90,8 @@ class DtImageLightbox extends CustomHtmlElement {
             <div class="modal-dialog" data-dismiss="modal">
                 <div class="modal-content">
                     <div class="modal-body">
-                        <button type="button" class="close" data-dismiss="modal">
-                            <span aria-hidden="true">&times;</span>
-                            <span class="sr-only">Close</span>
+                        <button type="button" class="btn-close float-end" data-bs-dismiss="modal">
+                            <span class="visually-hidden">Close</span>
                         </button>
                         <img src="" class="imagepreview" style="width: 100%;" alt="" />
                     </div>

@@ -29,7 +29,7 @@
     <main role="main" class="container page">
         <dt-nav active="Design Types" subitem="Test Yourself"></dt-nav>
 
-        <div class="jumbotron">
+        <div class="jumbotron p-4">
             <h1>Design Types</h1>
             <p>
                 Test yourself by answering this questionnaire.
@@ -42,25 +42,33 @@
                 <section id="introduction">
                     <h1>Introduction</h1>
                     <p>
-                        As developers we frequently make design decisions. They can be as general as "How many levels of abstractions do I need?"
-                        or "Which framework should I use?" and as concrete as "How to name this method?" and "In which order
-                        should these values be supplied?". They center around modularization (how to break a problem down
-                        into classes and methods), interface design (how to craft these modules such that they are easily
+                        As developers we frequently make design decisions. They can be as general as "How many levels of
+                        abstractions do I need?"
+                        or "Which framework should I use?" and as concrete as "How to name this method?" and "In which
+                        order
+                        should these values be supplied?". They center around modularization (how to break a problem
+                        down
+                        into classes and methods), interface design (how to craft these modules such that they are
+                        easily
                         useable) and internal module structure (how to compose the inner workings of classes).
                     </p>
                     <p>
-                        Unfortunately there is no single correct solution for any of these questions. There are many bad solutions but there typically
+                        Unfortunately there is no single correct solution for any of these questions. There are many bad
+                        solutions but there typically
                         are several "good" ones. Deciding among these good solutions is not an objective task as each of
-                        them has different benefits and drawbacks. So the decisions are made in a subjective way which depends
+                        them has different benefits and drawbacks. So the decisions are made in a subjective way which
+                        depends
                         on a developer's way of thinking.
                     </p>
                     <p>
-                        The different attitudes may lead to frequent arguments on which way is best. The following questionnaire may help to find
+                        The different attitudes may lead to frequent arguments on which way is best. The following
+                        questionnaire may help to find
                         out how you make design decisions.
                     </p>
                     <div class="alert alert-info">
                         <strong>Usage:</strong> In each group check
-                        <em>exactly five</em> statements. Use those you can identify with most, those statements you could
+                        <em>exactly five</em> statements. Use those you can identify with most, those statements you
+                        could
                         make yourself.
                     </div>
                 </section>
@@ -102,14 +110,15 @@
                 <div id="overlay">
                     <a class="cancel">&times;</a>
                     <p>
-                        You have already completed the questionnaire. You are free to fill out the questionnaire as often if you want. But there
+                        You have already completed the questionnaire. You are free to fill out the questionnaire as
+                        often if you want. But there
                         is a way to do that without distorting the statistics.
                     </p>
                     <button class="btn btn-primary play-around">I want to play around with the questionnaire</button>
                     <br>
                     <button class="btn btn-secondary continue-submitting">I am another person.
-                        <br/>Let me fill in that questionnaire, too</button>
-                    <br/>
+                        <br />Let me fill in that questionnaire, too</button>
+                    <br />
                     <button class="btn btn-secondary show-result">Where is my original result?</button>
                 </div>
                 <p>
@@ -117,17 +126,20 @@
                     />
                 </p>
                 <section id="controls" class="alert alert-secondary">
-                    <input type="button" id="continue" value="Continue" class="btn btn-lg btn-primary float-right" />
+                    <input type="button" id="continue" value="Continue" class="btn btn-lg btn-primary float-end" />
                     <div class="clearfix">
-                        Fill in the questionnaire to determine your design type. Check five statements in each group, then hit "continue".
+                        Fill in the questionnaire to determine your design type. Check five statements in each group,
+                        then hit "continue".
                     </div>
-                    <div class="alert alert-danger" style="display:none; margin-top:0.5em;margin-bottom:0;" id="globalErrorBox">
+                    <div class="alert alert-danger" style="display:none; margin-top:0.5em;margin-bottom:0;"
+                        id="globalErrorBox">
                         <strong>Hint:</strong> Please check exactly five statements in each group!
                     </div>
                 </section>
                 <section id="result" style="display:none">
                     <div id="resultString" class="alert alert-info">
-                        <strong>Result</strong>: Your design type is ????.</div>
+                        <strong>Result</strong>: Your design type is ????.
+                    </div>
                 </section>
             </div>
             <dt-sidebar class="col-md-2"></dt-sidebar>

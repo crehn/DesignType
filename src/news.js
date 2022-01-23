@@ -14,7 +14,7 @@ class DtNews extends CustomHtmlElement {
                     <img src="img/cards/Design_Cards_in_case.jpg" width="50%" alt="Design Cards Kickstarter campaign" />
                 </a>
             </div>
-            <div class="text-right">
+            <div class="text-end">
                 <time datetime="2018-06-20">2018-06-20</time>
             </div>
         </section>                
@@ -29,7 +29,7 @@ class DtNews extends CustomHtmlElement {
                 </a> we will present Design Types, Design Cards, and Design Matrix. We are looking forward to seeing
                 you there.
             </p>
-            <div class="text-right">
+            <div class="text-end">
                 <time datetime="2018-06-14">2018-06-14</time>
             </div>
         </section>
@@ -39,7 +39,7 @@ class DtNews extends CustomHtmlElement {
                 If you want to stay up to date with what's new, follow us on Twitter:
                 <a href="https://twitter.com/SWDesignKnights">@SWDesignKnights</a>
             </p>
-            <div class="text-right">
+            <div class="text-end">
                 <time datetime="2018-04-17">2018-04-17</time>
             </div>
         </section>
@@ -54,7 +54,7 @@ class DtNews extends CustomHtmlElement {
                     <img src="img/Design_Matrix.png" width="50%" alt="Design Matrix" />
                 </a>
             </div>
-            <div class="text-right">
+            <div class="text-end">
                 <time datetime="2018-04-16">2018-04-16</time>
             </div>
         </section>
