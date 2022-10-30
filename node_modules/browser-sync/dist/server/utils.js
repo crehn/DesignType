@@ -204,7 +204,7 @@ var serverUtils = {
                 view: "details"
             })
         });
-        var mwStack = []
+        const mwStack = []
             .concat(beforeMiddlewares, defaultMiddlewares, afterMiddlewares)
             .filter(Boolean);
         return mwStack;

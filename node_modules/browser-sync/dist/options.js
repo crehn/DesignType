@@ -1,8 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var _ = require("./lodash.custom");
-var Immutable = require("immutable");
-var defaultConfig = require("./default-config");
+exports.setUiPort = exports.setMiddleware = exports.fixSnippetIncludePaths = exports.fixSnippetIgnorePaths = exports.fixRewriteRules = exports.liftExtensionsOptionFromCli = exports.setServerOpts = exports.setNamespace = exports.setStartPath = exports.setScheme = exports.setMode = exports.setOpen = exports.setProxyWs = void 0;
+const _ = require("./lodash.custom");
+const Immutable = require("immutable");
+const defaultConfig = require("./default-config");
 /**
  * Move top-level ws options to proxy.ws
  * This is to allow it to be set from the CLI
@@ -37,7 +38,7 @@ exports.setOpen = setOpen;
  * @param incoming
  */
 function setMode(incoming) {
-    var output = incoming.set("mode", (function () {
+    const output = incoming.set("mode", (function () {
         if (incoming.get("server")) {
             return "server";
         }

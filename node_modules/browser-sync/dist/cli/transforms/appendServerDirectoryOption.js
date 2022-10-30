@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.appendServerDirectoryOption = void 0;
 function appendServerDirectoryOption(incoming) {
     if (!incoming.get("server"))
         return [incoming, []];

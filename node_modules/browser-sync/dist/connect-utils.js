@@ -17,7 +17,7 @@ var connectUtils = {
      * @returns {Boolean}
      */
     enabled: function (options) {
-        var userValue = options.get("snippet");
+        const userValue = options.get("snippet");
         if (typeof userValue === "boolean") {
             return userValue;
         }

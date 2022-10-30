@@ -255,8 +255,8 @@ module.exports = {
         /**
          * Append the 'listen' option
          */
-        var opts = uiOpts.update(function (uiOpts) {
-            var listen = bs.options.get("listen");
+        const opts = uiOpts.update(uiOpts => {
+            const listen = bs.options.get("listen");
             if (listen) {
                 return uiOpts.set("listen", listen);
             }

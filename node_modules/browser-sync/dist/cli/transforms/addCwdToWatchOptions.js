@@ -1,7 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.addCwdToWatchOptions = void 0;
 function addCwdToWatchOptions(incoming) {
-    var output = incoming.updateIn(["watchOptions", "cwd"], function (watchCwd) {
+    const output = incoming.updateIn(["watchOptions", "cwd"], watchCwd => {
         return watchCwd || incoming.get("cwd");
     });
     return [output, []];

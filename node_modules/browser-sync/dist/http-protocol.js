@@ -3,7 +3,7 @@ var queryString = require("qs");
 var proto = exports;
 var instanceMethods = ["exit", "notify", "pause", "resume"];
 var getBody = require("raw-body");
-var permittedSocketEvents = [
+const permittedSocketEvents = [
     "file:reload",
     "browser:reload",
     "browser:notify",
@@ -49,19 +49,19 @@ proto.middleware = function (bs) {
         if (req.method === "POST") {
             return getBody(req, function (err, body) {
                 if (err) {
-                    var output_1 = ["Error: could not parse JSON."];
+                    const output = ["Error: could not parse JSON."];
                     res.writeHead(500, { "Content-Type": "text/plain" });
-                    return res.end(output_1.join("\n"));
+                    return res.end(output.join("\n"));
                 }
                 try {
-                    var _a = JSON.parse(body.toString()), name = _a[0], payload = _a[1];
+                    const [name, payload] = JSON.parse(body.toString());
                     bs.io.sockets.emit(name, payload);
-                    return res.end("Browsersync HTTP Protocol received: " + name + " " + JSON.stringify(payload));
+                    return res.end(`Browsersync HTTP Protocol received: ${name} ${JSON.stringify(payload)}`);
                 }
                 catch (e) {
-                    var output_2 = ["Error: " + e.message];
+                    const output = [`Error: ${e.message}`];
                     res.writeHead(500, { "Content-Type": "text/plain" });
-                    return res.end(output_2.join("\n"));
+                    return res.end(output.join("\n"));
                 }
             });
         }
