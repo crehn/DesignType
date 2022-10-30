@@ -12,8 +12,7 @@
     <link rel="stylesheet" href="style.css" />
 
     <script src="node_modules/jquery/dist/jquery.min.js" defer></script>
-    <script src="node_modules/popper.js/dist/umd/popper.min.js" defer></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js" defer></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
     <script src="node_modules/@webcomponents/custom-elements/src/native-shim.js" defer></script>
     <script src="node_modules/document-register-element/build/document-register-element.js" defer></script>
     <script src="utils.js" defer></script>
@@ -104,25 +103,25 @@
                             Your email address:
                             <input type="email" class="col-md-6" name="email" autocomplete="on" autofocus placeholder="email address" required />
                         </p>
-                            <div class="row row-in-container">
-                                <button type="submit" class="btn btn-lg btn-primary col-lg-4" name="notify"
-                                    onclick="setNotificationOptions(event, 'continuously')">
-                                    Notify me
-                                    <div class="button-smallprint">in case of future products</div>
-                                </button>
-                                &nbsp;
-                                <button type="submit" class="btn btn-lg btn-secondary col-lg-4" name="notify"
-                                    onclick="setNotificationOptions(event, 'never')">
-                                    Never notify me again
-                                    <div class="button-smallprint">and delete my email address</div>
-                                </button>
-                            </div>
-                            <div class="alert alert-success" id="notify-success" style="display: none">
-                                We've sent you an email. Please click on the link to confirm.
-                            </div>
-                            <div class="alert alert-danger" id="notify-error" style="display: none">
-                                Error setting subscription options.
-                            </div>
+                        <div class="row row-in-container">
+                            <button type="submit" class="btn btn-lg btn-primary col-lg-4" name="notify"
+                                onclick="setNotificationOptions(event, 'continuously')">
+                                Notify me
+                                <div class="button-smallprint">in case of future products</div>
+                            </button>
+                            &nbsp;
+                            <button type="submit" class="btn btn-lg btn-secondary col-lg-4" name="notify"
+                                onclick="setNotificationOptions(event, 'never')">
+                                Never notify me again
+                                <div class="button-smallprint">and delete my email address</div>
+                            </button>
+                        </div>
+                        <div class="alert alert-success" id="notify-success" style="display: none">
+                            We've sent you an email. Please click on the link to confirm.
+                        </div>
+                        <div class="alert alert-danger" id="notify-error" style="display: none">
+                            Error setting subscription options.
+                        </div>
                     </form>
                 </section>
 

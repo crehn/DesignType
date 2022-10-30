@@ -10,101 +10,117 @@
     <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="./favicon.png">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css" />
-<style>
-.design-card-container {
-    padding: 0.5rem 0.5rem;
-}
-.sameline {
-	display: inline-block;
-	vertical-align: bottom;
-}
-.design-card {
-    margin-bottom: 1rem;
+    <style>
+        .design-card-container {
+            padding: 0.5rem 0.5rem;
+        }
 
-    border: 1px solid black !important;
-    border-radius: 1rem;
-    
-    padding: 1rem;
-}
-.qcard-body {
-    margin: 1rem 0rem;
-    
-    border-style: solid;
-    border-width: 2px;
-    border-radius: 10%;
+        .sameline {
+            display: inline-block;
+            vertical-align: bottom;
+        }
 
-    background-color: #ddcfb6 !important;
+        .design-card {
+            margin-bottom: 1rem;
 
-    padding: 1em;
-}
-.qcard-title, .qcard-title a {
-    margin: 0.5rem 0rem 1rem 0rem;
+            border: 1px solid black !important;
+            border-radius: 1rem;
 
-    text-align: center;
-    font-weight: bold;
-    color: #212529;
-}
-.qcard-illus {
-    border-width: 1 px;
-    border-style: solid;
-    border-radius: 10%;
+            padding: 1rem;
+        }
 
-    padding: 0.5rem;
-    
-    text-align: center;
+        .qcard-body {
+            margin: 1rem 0rem;
 
-    background-color: #e6e6e6 !important;
-    
-    color: #212529;
-    font-family: 'Metamorphous';
-    font-size: 2rem;
-}
-.qcard-desc {
-    margin: 0rem;
-    font-size: 80%;
-}
+            border-style: solid;
+            border-width: 2px;
+            border-radius: 10%;
 
-.quiztable {
-    border: 1px solid black !important;
-	background-color: #f2f2f2;
-	text-align: center;
-}
-.quiztable thead {
-	background-color: #EEEEEE;
-	border-bottom: 1px solid black
-}
-.quiztable tr {
-	border: 1px dotted black !important;
-}
-.quizdesc {
-	text-align: left;
-    font-size: 60%;
-}
-.quizright {
-    background-color: #80ff80;
-}
-.quizwrong {
-    background-color: #ff8080;
-}
-.quizpoints {
-	font-size: 200%;
-	font-weight: bold;
-}
-.quizno {
-	font-size: 150%;
-	font-weight: bold;
-}
-.storescore {
-    text-align: center;
-}
-.btn-mt5 {
-	margin-top: 5px;
-}
-</style>	
+            background-color: #ddcfb6 !important;
+
+            padding: 1em;
+        }
+
+        .qcard-title,
+        .qcard-title a {
+            margin: 0.5rem 0rem 1rem 0rem;
+
+            text-align: center;
+            font-weight: bold;
+            color: #212529;
+        }
+
+        .qcard-illus {
+            border-width: 1 px;
+            border-style: solid;
+            border-radius: 10%;
+
+            padding: 0.5rem;
+
+            text-align: center;
+
+            background-color: #e6e6e6 !important;
+
+            color: #212529;
+            font-family: 'Metamorphous';
+            font-size: 2rem;
+        }
+
+        .qcard-desc {
+            margin: 0rem;
+            font-size: 80%;
+        }
+
+        .quiztable {
+            border: 1px solid black !important;
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+
+        .quiztable thead {
+            background-color: #EEEEEE;
+            border-bottom: 1px solid black
+        }
+
+        .quiztable tr {
+            border: 1px dotted black !important;
+        }
+
+        .quizdesc {
+            text-align: left;
+            font-size: 60%;
+        }
+
+        .quizright {
+            background-color: #80ff80;
+        }
+
+        .quizwrong {
+            background-color: #ff8080;
+        }
+
+        .quizpoints {
+            font-size: 200%;
+            font-weight: bold;
+        }
+
+        .quizno {
+            font-size: 150%;
+            font-weight: bold;
+        }
+
+        .storescore {
+            text-align: center;
+        }
+
+        .btn-mt5 {
+            margin-top: 5px;
+        }
+
+    </style>
 
     <script src="node_modules/jquery/dist/jquery.min.js" defer></script>
-    <script src="node_modules/popper.js/dist/umd/popper.min.js" defer></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js" defer></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
     <script src="node_modules/@webcomponents/custom-elements/src/native-shim.js" defer></script>
     <script src="node_modules/document-register-element/build/document-register-element.js" defer></script>
     <script src="utils.js" defer></script>
@@ -128,104 +144,111 @@
 
         <div class="row">
             <div class="col-md-10">
-				<section>
+                <section>
                     <h1>Design Cards Online Quiz</h1>
-					<p>
-						Use our online quiz to learn the arguments of our Design Cards. When ready click the start button. You will get prompted a Design Card description 
-						and have to assign it to a dimension e.g. is it a <italic>simple</italic> or a <italic>powerful</italic> argument. After choosing the dimension you 
-						can choose the name of the Design Card e.g. <italic>KISS</italic>. For each turn you have 15 seconds. There will be 7 cards to guess. 
-						Every right dimension counts one point. For the correct card name you get a second point. Having all cards guessed right grants you one bonus point.
-						When you have finished you may leave your name with your score that may be shown in our highscore section.
-					</p>
-				</section>
+                    <p>
+                        Use our online quiz to learn the arguments of our Design Cards. When ready click the start
+                        button. You will get prompted a Design Card description
+                        and have to assign it to a dimension e.g. is it a <italic>simple</italic> or a <italic>powerful
+                        </italic> argument. After choosing the dimension you
+                        can choose the name of the Design Card e.g. <italic>KISS</italic>. For each turn you have 15
+                        seconds. There will be 7 cards to guess.
+                        Every right dimension counts one point. For the correct card name you get a second point. Having
+                        all cards guessed right grants you one bonus point.
+                        When you have finished you may leave your name with your score that may be shown in our
+                        highscore section.
+                    </p>
+                </section>
 
-				<section>
-					<div class="start-quiz text-center">
-						<input type="button" id="startquiz" value="Start the Quiz" class="btn btn-lg btn-primary" />
-					</div>
-				</section>
-				
-				<section>
-					<div id="quiz-questions" class="design-card-container" style="display:none">
-						<div class="col-md-5 sameline" id="questionArea">
-							<div class="design-card">
-								<a>
-									<h5 class="qcard-title">
-										Design Card Name?
-									</h5>
-									<div class="qcard-illus">
-										???
-									</div>
-								</a>
-								<div class="qcard-body">
-									<p id="question-carddesc" class="qcard-desc">A longer description of the argument.</p>
-								</div>
-							</div>
-						</div>
-						
-						<div class="col-md-5 sameline" id="answerArea">
-				
-							<div class="design-card">
-								<label for="answer-dimension">Choose the dimension:</label>
-								<br />
-								<select id="answer-dimension" name="dimension" size="1">
-									<option></option>
-								</select>
-								<br />
-								<label for="answer-cardname">Choose the card:</label>
-								<br />
-								<select id="answer-cardname" name="cardname" size="1">
-									<option></option>
-								</select>	
-								<br />
-								<label for="answer">Submit your answer:</label>
-								<br />
-								<input type="button" id="answer" value="My answer" class="btn btn-lg btn-primary" />
-							</div>
-							
-							<div>
-								<p>Countdown:</p>
-								<p id="countdown" class="supersize-text text-center" style="display:none">5</p>
-							</div>
-						</div>	
-					</div>
-				</section>
+                <section>
+                    <div class="start-quiz text-center">
+                        <input type="button" id="startquiz" value="Start the Quiz" class="btn btn-lg btn-primary" />
+                    </div>
+                </section>
 
-				<section>
-					<div id="quiz-result-container" style="display:none">
-						<h1>Your Result</h1>
-						<div id="quiz-result">result table</div>
-						<div id="store-score" class="storescore">
-							<div>
-								<label for="scorename" tabindex="2">You made it into the highscore.<br />Put in your name/alias:</label>
-							</div>
-							<div>
-								<input type="text" id="scorename" size="21" maxlength="50" tabindex="1">
-								<input type="hidden" id="scorepoints" value="0">
-							</div>
-							<div>
-								<input type="button" id="store" value="Store your score" class="btn btn-lg btn-primary btn-mt5" tabindex="3" disabled/>
-							</div>
-						</div>
-						<div id="store-commit"></div>
-					</div>	
-				</section>
-				
-				</section>
-					<div>
-						<h1>Highscore</h1>
-						<p>
-							See how the best participants of the last month scored.
-						</p>
-					</div>
-					<div id="highscore"></div>
-				</section>
-				
+                <section>
+                    <div id="quiz-questions" class="design-card-container" style="display:none">
+                        <div class="col-md-5 sameline" id="questionArea">
+                            <div class="design-card">
+                                <a>
+                                    <h5 class="qcard-title">
+                                        Design Card Name?
+                                    </h5>
+                                    <div class="qcard-illus">
+                                        ???
+                                    </div>
+                                </a>
+                                <div class="qcard-body">
+                                    <p id="question-carddesc" class="qcard-desc">A longer description of the argument.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-5 sameline" id="answerArea">
+
+                            <div class="design-card">
+                                <label for="answer-dimension">Choose the dimension:</label>
+                                <br />
+                                <select id="answer-dimension" name="dimension" size="1">
+                                    <option></option>
+                                </select>
+                                <br />
+                                <label for="answer-cardname">Choose the card:</label>
+                                <br />
+                                <select id="answer-cardname" name="cardname" size="1">
+                                    <option></option>
+                                </select>
+                                <br />
+                                <label for="answer">Submit your answer:</label>
+                                <br />
+                                <input type="button" id="answer" value="My answer" class="btn btn-lg btn-primary" />
+                            </div>
+
+                            <div>
+                                <p>Countdown:</p>
+                                <p id="countdown" class="supersize-text text-center" style="display:none">5</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <div id="quiz-result-container" style="display:none">
+                        <h1>Your Result</h1>
+                        <div id="quiz-result">result table</div>
+                        <div id="store-score" class="storescore">
+                            <div>
+                                <label for="scorename" tabindex="2">You made it into the highscore.<br />Put in your
+                                    name/alias:</label>
+                            </div>
+                            <div>
+                                <input type="text" id="scorename" size="21" maxlength="50" tabindex="1">
+                                <input type="hidden" id="scorepoints" value="0">
+                            </div>
+                            <div>
+                                <input type="button" id="store" value="Store your score" class="btn btn-lg btn-primary btn-mt5" tabindex="3" disabled/>
+                            </div>
+                        </div>
+                        <div id="store-commit"></div>
+                    </div>
+                </section>
+
+                </section>
+                <div>
+                    <h1>Highscore</h1>
+                    <p>
+                        See how the best participants of the last month scored.
+                    </p>
+                </div>
+                <div id="highscore"></div>
+                </section>
+
             </div>
-		
+
             <dt-sidebar class="col-md-2"></dt-sidebar>
         </div>
-			
+
         <dt-footer></dt-footer>
     </main>
 </body>
