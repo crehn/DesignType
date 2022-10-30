@@ -6,11 +6,22 @@
     src: url('fonts/Metamorphous-Regular.ttf') format('truetype');
 }
 
-h1, h2, h3, h4, h5, .card-header, .btn, .navbar {
+h1,
+h2,
+h3,
+h4,
+h5,
+.card-header,
+.btn,
+.navbar {
     font-family: 'Metamorphous';
 }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
     margin-top: 1rem;
     margin-bottom: 0.5rem;
 }
@@ -25,14 +36,15 @@ h1.main-title {
     margin-bottom: 0.3em;
 }
 
-h1, h2 {
+h1,
+h2 {
     margin: 1rem -15px 0.5rem -15px;
     padding: 5px 15px;
     background-color: #EEEEEE;
 }
 
 .btn-primary {
-    border-color:  #2c699e;
+    border-color: #2c699e;
     background-color: #2c699e;
 }
 
@@ -48,7 +60,8 @@ a.external:before {
     content: '↗ ';
 }
 
-.hoverable .on-hover, .hoverable:hover .on-hover-hide {
+.hoverable .on-hover,
+.hoverable:hover .on-hover-hide {
     display: none;
 }
 
@@ -106,7 +119,7 @@ body {
 }
 
 @media screen and (min-width: 768px) {
-        .jumbotron h1 {
+    .jumbotron h1 {
         font-size: 63px;
     }
 }
@@ -155,7 +168,7 @@ body {
 
 .caption {
     padding: 0.25rem;
-    
+
     background-color: #EEEEEE;
 
     text-align: center;
@@ -184,32 +197,34 @@ body {
 }
 
 .entry-point {
-    border:1px solid white;
-    border-radius:10%;
-    background:rgba(255,255,255,0.5);
+    border: 1px solid white;
+    border-radius: 10%;
+    background: rgba(255, 255, 255, 0.5);
     padding: 2em;
 }
 
 .entry-point-primary .btn-primary {
-    font-size:1.5rem;
+    font-size: 1.5rem;
 }
 
 @media screen and (max-width:995px) {
     .entry-point-col.entry-point-primary img {
         height: 150px;
     }
-    
+
     .entry-point-col img {
         height: 125px;
     }
 }
 
-.news, .tweets > div {
+.news,
+.tweets>div {
     background-color: white;
     padding: 0;
 }
 
-.news h1, .tweets h1 {
+.news h1,
+.tweets h1 {
     font-size: 1.8rem;
     font-weight: bold;
     text-align: left;
@@ -248,6 +263,10 @@ h1 .title-extension {
 
 .load-news {
     cursor: pointer;
+}
+
+#twitter-loader {
+    padding: 1rem;
 }
 
 /* countdown ----------------------------------------------------------------------*/
@@ -298,7 +317,8 @@ h1 .title-extension {
 .dimension.bordered.incomplete {
     border: 2px solid #d9534f;
 }
-.dimension.bordered h1{
+
+.dimension.bordered h1 {
     margin-left: 0;
     margin-right: 0;
 }
@@ -314,25 +334,25 @@ h1 .title-extension {
 }
 
 .dimension label {
-    font-weight:normal;
+    font-weight: normal;
 }
 
 
 /* overlay/modal dialog for questionnaire -------------------------------------------------------------*/
 
-#cover{
-    position:fixed;
-    top:0;
-    left:0;
-    z-index:5;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.6);
-    display:none;
+#cover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
 }
 
 #overlay {
-    position:fixed;
+    position: fixed;
     max-width: 35em;
     top: 50%;
     left: 50%;
@@ -341,7 +361,7 @@ h1 .title-extension {
     transform: translate(-50%, -50%);
     z-index: 10;
     border: 5px solid #cccccc;
-    border-radius:10px;
+    border-radius: 10px;
     padding: 2.5em;
     background-color: white;
     text-align: center;
@@ -349,14 +369,14 @@ h1 .title-extension {
 }
 
 #overlay .cancel {
-    display:block;
-    position:absolute;
-    top:3px;
-    right:10px;
-    color:black;
-    font-size:30px;
-    text-decoration:none;
-    font-weight:bold;
+    display: block;
+    position: absolute;
+    top: 3px;
+    right: 10px;
+    color: black;
+    font-size: 30px;
+    text-decoration: none;
+    font-weight: bold;
     cursor: pointer;
 }
 
@@ -388,7 +408,7 @@ h1 .title-extension {
     #types div {
         display: block !important;
     }
-    
+
     a.dont-print-url:after {
         content: "";
     }
@@ -416,7 +436,7 @@ h1 .title-extension {
 }
 
 .legendicon {
-    margin-top: .3em;	
+    margin-top: .3em;
 }
 
 .legendicon td {
@@ -424,9 +444,9 @@ h1 .title-extension {
 }
 
 .spreadshirt_disclaimer {
-	margin-top: 10px;
-	font-size: 0.8em;
-	color: #757575;
+    margin-top: 10px;
+    font-size: 0.8em;
+    color: #757575;
 }
 
 .supersize-text {
@@ -445,8 +465,8 @@ h1 .title-extension {
 .txt {
     color: white;
     stroke: white;
-    text-anchor: middle; 
-    font-size: 1.5em; 
+    text-anchor: middle;
+    font-size: 1.5em;
     font-family: Arial;
 }
 
@@ -474,14 +494,14 @@ h1 .title-extension {
 
 .certheader {
     text-align: center;
-    font-size: 1.5em; 
+    font-size: 1.5em;
     font-weight: bold;
     margin-top: 0.5em;
     margin-bottom: 1em;
 }
 
 .certificate .dimension-description {
-    margin-bottom:2em;
+    margin-bottom: 2em;
 }
 
 .certificate .qr {
@@ -491,14 +511,16 @@ h1 .title-extension {
     vertical-align: bottom;
 }
 
-@media print  {
+@media print {
     @page {
         size: a4;
         margin: 1.5cm;
     }
+
     body {
         min-width: 0px !important;
     }
+
     .container {
         min-width: 0px !important;
     }
@@ -508,6 +530,7 @@ h1 .title-extension {
     .certificate {
         padding-bottom: 0.5cm;
     }
+
     .certificate .qr {
         margin-top: 0.5cm;
     }
@@ -548,32 +571,32 @@ h1 .title-extension {
 /* card overview and detail pages ---------------------------------------------------------------------------*/
 
 .dimbox {
-	border: 1px solid lightgrey;
-	margin: 15px 3px 3px 3px;
+    border: 1px solid lightgrey;
+    margin: 15px 3px 3px 3px;
 }
 
 .simplepowerfulbox {
-	background-color: rgba(105,255,148,0.3);
+    background-color: rgba(105, 255, 148, 0.3);
 }
 
 .abstractconcretebox {
-	background-color: rgba(139,167,217,0.3);
+    background-color: rgba(139, 167, 217, 0.3);
 }
 
 .pragmaticidealisticbox {
-	background-color: rgba(252,178,132,0.3);
+    background-color: rgba(252, 178, 132, 0.3);
 }
 
 .robusttechnologicbox {
-	background-color: rgba(254,239,92,0.3);
+    background-color: rgba(254, 239, 92, 0.3);
 }
 
 .questionactionbox {
-	background-color: rgba(246,167,40,0.3);
+    background-color: rgba(246, 167, 40, 0.3);
 }
 
 .cardpicmargintop {
-	margin: 1rem 0rem;
+    margin: 1rem 0rem;
 }
 
 #carddetailscontainer label {
@@ -583,8 +606,8 @@ h1 .title-extension {
 }
 
 .wikicontent {
-	border: 1px solid lightgrey;
-	margin: 15px 3px 3px 3px;
+    border: 1px solid lightgrey;
+    margin: 15px 3px 3px 3px;
 }
 
 .wikicontent h2 {
@@ -597,18 +620,19 @@ h1 .title-extension {
 
 .wikilinktext {
     margin: -0.8rem 1rem 0 0;
-	float: right;
+    float: right;
     color: darkgrey;
     background-color: white;
 }
+
 .wikilink,
 .wikilink:active,
 .wikilink:hover {
-	color: darkgrey;
+    color: darkgrey;
 }
 
 .header-table-cardrefs {
-	font-weight: bold;
+    font-weight: bold;
 }
 
 /* refactor ---------------------------------------------------------------------------*/
