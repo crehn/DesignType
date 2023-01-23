@@ -2,8 +2,8 @@ Options +Indexes
 
 RewriteEngine On
 # ensure no www.
-RewriteCond %{HTTP_HOST} ^www\. [NC]
-RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+RewriteCond %{HTTP_HOST} ^www\.(.+) [NC]
+RewriteRule ^ http://%1%{REQUEST_URI} [L,R=301]
 # ensure https
 RewriteCond %{HTTP:X-Forwarded-Proto} !https 
 RewriteCond %{HTTPS} off
